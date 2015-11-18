@@ -6,10 +6,18 @@ Created on Sep 30, 2015
 
 
 
-from condStateComputation import compValOff
-from condStateComputation import compValOn
+import math
 
 
+
+
+def compValOn(v0, alpha, beta, t, t0): 
+    return v0 * math.exp(beta*(t0 - t))
+        
+        
+
+def compValOff(v0, alpha, beta, t, t0): 
+    return 1.0 + (v0 - 1.0)  *  math.exp(alpha*(t0 - t))      
 
 
 class PulseConductanceState(object):
@@ -17,13 +25,13 @@ class PulseConductanceState(object):
     classdocs
     use the formalism of Destexhe(1997) to compute the Hodgkin-Huxley states of an ionic channel
     '''
-   
-
+    
+    
     def __init__(self, kind, conf, pool,index):
         '''
         Constructor
         Inputs: kind: type of the state(m, h, n, q).
-                    conf: an instance of the Configuration class with the functions to correctly parmeterize the model. See the Configuration class.
+                    conf: an instance of the Configuration class with the functions to correctly parameterize the model. See the Configuration class.
                     pool: the pool that this state belongs.
                     index: the index of the unit that this state belongs.                    
         '''
@@ -56,16 +64,15 @@ class PulseConductanceState(object):
             self.computeValueOn = compValOff
             self.computeValueOff = compValOn         
         
-    
+
     def changeState(self,t):
         '''
         void function that modify the current situation (true/false) of the state
         inputs: t: instant t
         '''
-        self.t0, self.v0  = t, self.value
-        self.state = not self.state
-                
-        
+        self.t0, self.v0,    self.state  = t, self.value, not self.state                
+    
+    
     def computeStateValue(self, t):
         '''
         compute the state value by using the approximation of Destexhe (1997) to compute the Hodgkin-Huxley states.
@@ -79,3 +86,5 @@ class PulseConductanceState(object):
             else: self.value = self.computeValueOff(self.v0, self.alpha_ms1, self.beta_ms1, t, self.t0)
         else: self.value = self.computeValueOn(self.v0, self.alpha_ms1, self.beta_ms1, t, self.t0)
 
+    
+    
