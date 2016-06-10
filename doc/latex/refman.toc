@@ -1,0 +1,313 @@
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Packages}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}Axon\discretionary {-}{}{}Delay Namespace Reference}{9}{section.5.1}
+\contentsline {section}{\numberline {5.2}Channel\discretionary {-}{}{}Conductance Namespace Reference}{9}{section.5.2}
+\contentsline {section}{\numberline {5.3}Compartment Namespace Reference}{9}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Function Documentation}{9}{subsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.1.1}calc\discretionary {-}{}{}G\discretionary {-}{}{}Leak}{9}{subsubsection.5.3.1.1}
+\contentsline {section}{\numberline {5.4}Configuration Namespace Reference}{10}{section.5.4}
+\contentsline {section}{\numberline {5.5}Motor\discretionary {-}{}{}Unit Namespace Reference}{10}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Function Documentation}{10}{subsection.5.5.1}
+\contentsline {subsubsection}{\numberline {5.5.1.1}calc\discretionary {-}{}{}G\discretionary {-}{}{}Coupling}{10}{subsubsection.5.5.1.1}
+\contentsline {subsubsection}{\numberline {5.5.1.2}comp\discretionary {-}{}{}G\discretionary {-}{}{}Coupling\discretionary {-}{}{}Matrix}{10}{subsubsection.5.5.1.2}
+\contentsline {subsubsection}{\numberline {5.5.1.3}runge\discretionary {-}{}{}\_\discretionary {-}{}{}kutta}{11}{subsubsection.5.5.1.3}
+\contentsline {section}{\numberline {5.6}Motor\discretionary {-}{}{}Unit\discretionary {-}{}{}Pool Namespace Reference}{11}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Function Documentation}{12}{subsection.5.6.1}
+\contentsline {subsubsection}{\numberline {5.6.1.1}compute\discretionary {-}{}{}Force}{12}{subsubsection.5.6.1.1}
+\contentsline {subsubsection}{\numberline {5.6.1.2}twitch\discretionary {-}{}{}Saturation}{12}{subsubsection.5.6.1.2}
+\contentsline {section}{\numberline {5.7}Neural\discretionary {-}{}{}Tract Namespace Reference}{12}{section.5.7}
+\contentsline {section}{\numberline {5.8}Neural\discretionary {-}{}{}Tract\discretionary {-}{}{}Unit Namespace Reference}{12}{section.5.8}
+\contentsline {section}{\numberline {5.9}Point\discretionary {-}{}{}Process\discretionary {-}{}{}Generator Namespace Reference}{13}{section.5.9}
+\contentsline {subsection}{\numberline {5.9.1}Function Documentation}{13}{subsection.5.9.1}
+\contentsline {subsubsection}{\numberline {5.9.1.1}gamma\discretionary {-}{}{}Point}{13}{subsubsection.5.9.1.1}
+\contentsline {section}{\numberline {5.10}Pulse\discretionary {-}{}{}Conductance\discretionary {-}{}{}State Namespace Reference}{13}{section.5.10}
+\contentsline {subsection}{\numberline {5.10.1}Function Documentation}{13}{subsection.5.10.1}
+\contentsline {subsubsection}{\numberline {5.10.1.1}comp\discretionary {-}{}{}Val\discretionary {-}{}{}Off}{13}{subsubsection.5.10.1.1}
+\contentsline {subsubsection}{\numberline {5.10.1.2}comp\discretionary {-}{}{}Val\discretionary {-}{}{}On}{13}{subsubsection.5.10.1.2}
+\contentsline {section}{\numberline {5.11}simulation Namespace Reference}{13}{section.5.11}
+\contentsline {subsection}{\numberline {5.11.1}Function Documentation}{13}{subsection.5.11.1}
+\contentsline {subsubsection}{\numberline {5.11.1.1}simulador}{13}{subsubsection.5.11.1.1}
+\contentsline {section}{\numberline {5.12}Synapse Namespace Reference}{14}{section.5.12}
+\contentsline {subsection}{\numberline {5.12.1}Function Documentation}{14}{subsection.5.12.1}
+\contentsline {subsubsection}{\numberline {5.12.1.1}comp\discretionary {-}{}{}Ri\discretionary {-}{}{}Start}{14}{subsubsection.5.12.1.1}
+\contentsline {subsubsection}{\numberline {5.12.1.2}comp\discretionary {-}{}{}Ri\discretionary {-}{}{}Stop}{14}{subsubsection.5.12.1.2}
+\contentsline {subsubsection}{\numberline {5.12.1.3}comp\discretionary {-}{}{}Roff}{14}{subsubsection.5.12.1.3}
+\contentsline {subsubsection}{\numberline {5.12.1.4}comp\discretionary {-}{}{}Roff\discretionary {-}{}{}Start}{15}{subsubsection.5.12.1.4}
+\contentsline {subsubsection}{\numberline {5.12.1.5}comp\discretionary {-}{}{}Roff\discretionary {-}{}{}Stop}{15}{subsubsection.5.12.1.5}
+\contentsline {subsubsection}{\numberline {5.12.1.6}comp\discretionary {-}{}{}Ron}{15}{subsubsection.5.12.1.6}
+\contentsline {subsubsection}{\numberline {5.12.1.7}comp\discretionary {-}{}{}Ron\discretionary {-}{}{}Start}{15}{subsubsection.5.12.1.7}
+\contentsline {subsubsection}{\numberline {5.12.1.8}comp\discretionary {-}{}{}Ron\discretionary {-}{}{}Stop}{16}{subsubsection.5.12.1.8}
+\contentsline {subsubsection}{\numberline {5.12.1.9}comp\discretionary {-}{}{}Synap\discretionary {-}{}{}Cond}{16}{subsubsection.5.12.1.9}
+\contentsline {section}{\numberline {5.13}Synapses\discretionary {-}{}{}Factory Namespace Reference}{16}{section.5.13}
+\contentsline {chapter}{\numberline {6}Class Documentation}{17}{chapter.6}
+\contentsline {section}{\numberline {6.1}Axon\discretionary {-}{}{}Delay.\discretionary {-}{}{}Axon\discretionary {-}{}{}Delay Class Reference}{17}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{17}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Constructor \& Destructor Documentation}{17}{subsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.2.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}init\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}}{17}{subsubsection.6.1.2.1}
+\contentsline {subsection}{\numberline {6.1.3}Member Function Documentation}{18}{subsection.6.1.3}
+\contentsline {subsubsection}{\numberline {6.1.3.1}add\discretionary {-}{}{}Spinal\discretionary {-}{}{}Spike}{18}{subsubsection.6.1.3.1}
+\contentsline {subsubsection}{\numberline {6.1.3.2}add\discretionary {-}{}{}Terminal\discretionary {-}{}{}Spike}{18}{subsubsection.6.1.3.2}
+\contentsline {subsection}{\numberline {6.1.4}Member Data Documentation}{18}{subsection.6.1.4}
+\contentsline {subsubsection}{\numberline {6.1.4.1}index}{18}{subsubsection.6.1.4.1}
+\contentsline {subsubsection}{\numberline {6.1.4.2}latency\discretionary {-}{}{}Spinal\discretionary {-}{}{}Terminal\discretionary {-}{}{}\_\discretionary {-}{}{}ms}{18}{subsubsection.6.1.4.2}
+\contentsline {subsubsection}{\numberline {6.1.4.3}latency\discretionary {-}{}{}Stimulus\discretionary {-}{}{}Spinal\discretionary {-}{}{}\_\discretionary {-}{}{}ms}{18}{subsubsection.6.1.4.3}
+\contentsline {subsubsection}{\numberline {6.1.4.4}latency\discretionary {-}{}{}Stimulus\discretionary {-}{}{}Terminal\discretionary {-}{}{}\_\discretionary {-}{}{}ms}{18}{subsubsection.6.1.4.4}
+\contentsline {subsubsection}{\numberline {6.1.4.5}length\discretionary {-}{}{}\_\discretionary {-}{}{}m}{19}{subsubsection.6.1.4.5}
+\contentsline {subsubsection}{\numberline {6.1.4.6}stimulus\discretionary {-}{}{}Positionto\discretionary {-}{}{}Terminal}{19}{subsubsection.6.1.4.6}
+\contentsline {subsubsection}{\numberline {6.1.4.7}terminal\discretionary {-}{}{}Spike\discretionary {-}{}{}Train}{19}{subsubsection.6.1.4.7}
+\contentsline {subsubsection}{\numberline {6.1.4.8}velocity\discretionary {-}{}{}\_\discretionary {-}{}{}m\discretionary {-}{}{}\_\discretionary {-}{}{}s}{19}{subsubsection.6.1.4.8}
+\contentsline {section}{\numberline {6.2}Channel\discretionary {-}{}{}Conductance.\discretionary {-}{}{}Channel\discretionary {-}{}{}Conductance Class Reference}{19}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{19}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Constructor \& Destructor Documentation}{20}{subsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.2.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}init\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}}{20}{subsubsection.6.2.2.1}
+\contentsline {subsection}{\numberline {6.2.3}Member Function Documentation}{20}{subsection.6.2.3}
+\contentsline {subsubsection}{\numberline {6.2.3.1}comp\discretionary {-}{}{}Cond\discretionary {-}{}{}Kf}{20}{subsubsection.6.2.3.1}
+\contentsline {subsubsection}{\numberline {6.2.3.2}comp\discretionary {-}{}{}Cond\discretionary {-}{}{}Ks}{20}{subsubsection.6.2.3.2}
+\contentsline {subsubsection}{\numberline {6.2.3.3}comp\discretionary {-}{}{}Cond\discretionary {-}{}{}Na}{20}{subsubsection.6.2.3.3}
+\contentsline {subsubsection}{\numberline {6.2.3.4}compute\discretionary {-}{}{}Current}{20}{subsubsection.6.2.3.4}
+\contentsline {subsection}{\numberline {6.2.4}Member Data Documentation}{21}{subsection.6.2.4}
+\contentsline {subsubsection}{\numberline {6.2.4.1}comp\discretionary {-}{}{}Cond}{21}{subsubsection.6.2.4.1}
+\contentsline {subsubsection}{\numberline {6.2.4.2}cond\discretionary {-}{}{}State}{21}{subsubsection.6.2.4.2}
+\contentsline {subsubsection}{\numberline {6.2.4.3}Eq\discretionary {-}{}{}Pot\discretionary {-}{}{}\_\discretionary {-}{}{}m\discretionary {-}{}{}V}{21}{subsubsection.6.2.4.3}
+\contentsline {subsubsection}{\numberline {6.2.4.4}gmax\discretionary {-}{}{}\_\discretionary {-}{}{}mu\discretionary {-}{}{}S}{21}{subsubsection.6.2.4.4}
+\contentsline {subsubsection}{\numberline {6.2.4.5}kind}{21}{subsubsection.6.2.4.5}
+\contentsline {subsubsection}{\numberline {6.2.4.6}len\discretionary {-}{}{}States}{21}{subsubsection.6.2.4.6}
+\contentsline {subsubsection}{\numberline {6.2.4.7}state\discretionary {-}{}{}Type}{21}{subsubsection.6.2.4.7}
+\contentsline {section}{\numberline {6.3}Compartment.\discretionary {-}{}{}Compartment Class Reference}{21}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{22}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Constructor \& Destructor Documentation}{22}{subsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.2.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}init\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}}{22}{subsubsection.6.3.2.1}
+\contentsline {subsection}{\numberline {6.3.3}Member Function Documentation}{22}{subsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.1}compute\discretionary {-}{}{}Current}{22}{subsubsection.6.3.3.1}
+\contentsline {subsection}{\numberline {6.3.4}Member Data Documentation}{22}{subsection.6.3.4}
+\contentsline {subsubsection}{\numberline {6.3.4.1}area\discretionary {-}{}{}\_\discretionary {-}{}{}cm2}{22}{subsubsection.6.3.4.1}
+\contentsline {subsubsection}{\numberline {6.3.4.2}capacitance\discretionary {-}{}{}\_\discretionary {-}{}{}n\discretionary {-}{}{}F}{22}{subsubsection.6.3.4.2}
+\contentsline {subsubsection}{\numberline {6.3.4.3}Channels}{22}{subsubsection.6.3.4.3}
+\contentsline {subsubsection}{\numberline {6.3.4.4}diameter\discretionary {-}{}{}\_\discretionary {-}{}{}mum}{23}{subsubsection.6.3.4.4}
+\contentsline {subsubsection}{\numberline {6.3.4.5}g\discretionary {-}{}{}Leak}{23}{subsubsection.6.3.4.5}
+\contentsline {subsubsection}{\numberline {6.3.4.6}index}{23}{subsubsection.6.3.4.6}
+\contentsline {subsubsection}{\numberline {6.3.4.7}kind}{23}{subsubsection.6.3.4.7}
+\contentsline {subsubsection}{\numberline {6.3.4.8}length\discretionary {-}{}{}\_\discretionary {-}{}{}mum}{23}{subsubsection.6.3.4.8}
+\contentsline {subsubsection}{\numberline {6.3.4.9}neuron\discretionary {-}{}{}Kind}{23}{subsubsection.6.3.4.9}
+\contentsline {subsubsection}{\numberline {6.3.4.10}number\discretionary {-}{}{}Channels}{23}{subsubsection.6.3.4.10}
+\contentsline {subsubsection}{\numberline {6.3.4.11}numberof\discretionary {-}{}{}Multi\discretionary {-}{}{}Synapses}{23}{subsubsection.6.3.4.11}
+\contentsline {subsubsection}{\numberline {6.3.4.12}specif\discretionary {-}{}{}Res\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Ohmcm2}{23}{subsubsection.6.3.4.12}
+\contentsline {subsubsection}{\numberline {6.3.4.13}Synapses\discretionary {-}{}{}In}{23}{subsubsection.6.3.4.13}
+\contentsline {subsubsection}{\numberline {6.3.4.14}Synapses\discretionary {-}{}{}Out}{23}{subsubsection.6.3.4.14}
+\contentsline {section}{\numberline {6.4}Configuration.\discretionary {-}{}{}Configuration Class Reference}{24}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{24}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Constructor \& Destructor Documentation}{24}{subsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.2.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}init\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}}{24}{subsubsection.6.4.2.1}
+\contentsline {subsection}{\numberline {6.4.3}Member Function Documentation}{25}{subsection.6.4.3}
+\contentsline {subsubsection}{\numberline {6.4.3.1}determine\discretionary {-}{}{}Synapses}{25}{subsubsection.6.4.3.1}
+\contentsline {subsubsection}{\numberline {6.4.3.2}input\discretionary {-}{}{}Function\discretionary {-}{}{}Get}{25}{subsubsection.6.4.3.2}
+\contentsline {subsubsection}{\numberline {6.4.3.3}parameter\discretionary {-}{}{}Set}{25}{subsubsection.6.4.3.3}
+\contentsline {subsection}{\numberline {6.4.4}Member Data Documentation}{25}{subsection.6.4.4}
+\contentsline {subsubsection}{\numberline {6.4.4.1}conf\discretionary {-}{}{}Array}{25}{subsubsection.6.4.4.1}
+\contentsline {subsubsection}{\numberline {6.4.4.2}sim\discretionary {-}{}{}Duration\discretionary {-}{}{}\_\discretionary {-}{}{}ms}{26}{subsubsection.6.4.4.2}
+\contentsline {subsubsection}{\numberline {6.4.4.3}time\discretionary {-}{}{}Step\discretionary {-}{}{}\_\discretionary {-}{}{}ms}{26}{subsubsection.6.4.4.3}
+\contentsline {subsubsection}{\numberline {6.4.4.4}time\discretionary {-}{}{}Step\discretionary {-}{}{}By\discretionary {-}{}{}Six\discretionary {-}{}{}\_\discretionary {-}{}{}ms}{26}{subsubsection.6.4.4.4}
+\contentsline {subsubsection}{\numberline {6.4.4.5}time\discretionary {-}{}{}Step\discretionary {-}{}{}By\discretionary {-}{}{}Two\discretionary {-}{}{}\_\discretionary {-}{}{}ms}{26}{subsubsection.6.4.4.5}
+\contentsline {section}{\numberline {6.5}Motor\discretionary {-}{}{}Unit.\discretionary {-}{}{}Motor\discretionary {-}{}{}Unit Class Reference}{26}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{27}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Constructor \& Destructor Documentation}{28}{subsection.6.5.2}
+\contentsline {subsubsection}{\numberline {6.5.2.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}init\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}}{28}{subsubsection.6.5.2.1}
+\contentsline {subsection}{\numberline {6.5.3}Member Function Documentation}{28}{subsection.6.5.3}
+\contentsline {subsubsection}{\numberline {6.5.3.1}add\discretionary {-}{}{}Soma\discretionary {-}{}{}Spike}{28}{subsubsection.6.5.3.1}
+\contentsline {subsubsection}{\numberline {6.5.3.2}atualize\discretionary {-}{}{}Compartments}{28}{subsubsection.6.5.3.2}
+\contentsline {subsubsection}{\numberline {6.5.3.3}atualize\discretionary {-}{}{}Delay}{29}{subsubsection.6.5.3.3}
+\contentsline {subsubsection}{\numberline {6.5.3.4}atualize\discretionary {-}{}{}Motor\discretionary {-}{}{}Unit}{29}{subsubsection.6.5.3.4}
+\contentsline {subsubsection}{\numberline {6.5.3.5}d\discretionary {-}{}{}Vdt}{30}{subsubsection.6.5.3.5}
+\contentsline {subsection}{\numberline {6.5.4}Member Data Documentation}{30}{subsection.6.5.4}
+\contentsline {subsubsection}{\numberline {6.5.4.1}b\discretionary {-}{}{}Sat}{30}{subsubsection.6.5.4.1}
+\contentsline {subsubsection}{\numberline {6.5.4.2}capacitance\discretionary {-}{}{}Inv}{30}{subsubsection.6.5.4.2}
+\contentsline {subsubsection}{\numberline {6.5.4.3}compartment}{31}{subsubsection.6.5.4.3}
+\contentsline {subsubsection}{\numberline {6.5.4.4}comp\discretionary {-}{}{}Number}{31}{subsubsection.6.5.4.4}
+\contentsline {subsubsection}{\numberline {6.5.4.5}conf}{31}{subsubsection.6.5.4.5}
+\contentsline {subsubsection}{\numberline {6.5.4.6}Delay}{31}{subsubsection.6.5.4.6}
+\contentsline {subsubsection}{\numberline {6.5.4.7}G}{31}{subsubsection.6.5.4.7}
+\contentsline {subsubsection}{\numberline {6.5.4.8}i\discretionary {-}{}{}Injected}{31}{subsubsection.6.5.4.8}
+\contentsline {subsubsection}{\numberline {6.5.4.9}i\discretionary {-}{}{}Ionic}{31}{subsubsection.6.5.4.9}
+\contentsline {subsubsection}{\numberline {6.5.4.10}index}{31}{subsubsection.6.5.4.10}
+\contentsline {subsubsection}{\numberline {6.5.4.11}kind}{31}{subsubsection.6.5.4.11}
+\contentsline {subsubsection}{\numberline {6.5.4.12}M\discretionary {-}{}{}N\discretionary {-}{}{}Ref\discretionary {-}{}{}Per\discretionary {-}{}{}\_\discretionary {-}{}{}ms}{32}{subsubsection.6.5.4.12}
+\contentsline {subsubsection}{\numberline {6.5.4.13}nerve}{32}{subsubsection.6.5.4.13}
+\contentsline {subsubsection}{\numberline {6.5.4.14}soma\discretionary {-}{}{}Index}{32}{subsubsection.6.5.4.14}
+\contentsline {subsubsection}{\numberline {6.5.4.15}soma\discretionary {-}{}{}Spike\discretionary {-}{}{}Train}{32}{subsubsection.6.5.4.15}
+\contentsline {subsubsection}{\numberline {6.5.4.16}terminal\discretionary {-}{}{}Spike\discretionary {-}{}{}Train}{32}{subsubsection.6.5.4.16}
+\contentsline {subsubsection}{\numberline {6.5.4.17}threshold\discretionary {-}{}{}\_\discretionary {-}{}{}m\discretionary {-}{}{}V}{32}{subsubsection.6.5.4.17}
+\contentsline {subsubsection}{\numberline {6.5.4.18}t\discretionary {-}{}{}Soma\discretionary {-}{}{}Spike}{32}{subsubsection.6.5.4.18}
+\contentsline {subsubsection}{\numberline {6.5.4.19}Twitch\discretionary {-}{}{}Amp\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}N}{32}{subsubsection.6.5.4.19}
+\contentsline {subsubsection}{\numberline {6.5.4.20}Twitch\discretionary {-}{}{}Tc\discretionary {-}{}{}\_\discretionary {-}{}{}ms}{32}{subsubsection.6.5.4.20}
+\contentsline {subsubsection}{\numberline {6.5.4.21}tw\discretionary {-}{}{}Tet}{33}{subsubsection.6.5.4.21}
+\contentsline {subsubsection}{\numberline {6.5.4.22}v\discretionary {-}{}{}\_\discretionary {-}{}{}m\discretionary {-}{}{}V}{33}{subsubsection.6.5.4.22}
+\contentsline {section}{\numberline {6.6}Motor\discretionary {-}{}{}Unit\discretionary {-}{}{}Pool.\discretionary {-}{}{}Motor\discretionary {-}{}{}Unit\discretionary {-}{}{}Pool Class Reference}{33}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{34}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.6.2}Constructor \& Destructor Documentation}{34}{subsection.6.6.2}
+\contentsline {subsubsection}{\numberline {6.6.2.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}init\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}}{34}{subsubsection.6.6.2.1}
+\contentsline {subsection}{\numberline {6.6.3}Member Function Documentation}{34}{subsection.6.6.3}
+\contentsline {subsubsection}{\numberline {6.6.3.1}atualize\discretionary {-}{}{}Activation\discretionary {-}{}{}Signal}{34}{subsubsection.6.6.3.1}
+\contentsline {subsubsection}{\numberline {6.6.3.2}atualize\discretionary {-}{}{}Force\discretionary {-}{}{}No\discretionary {-}{}{}Hill}{34}{subsubsection.6.6.3.2}
+\contentsline {subsubsection}{\numberline {6.6.3.3}atualize\discretionary {-}{}{}Motor\discretionary {-}{}{}Unit\discretionary {-}{}{}Pool}{35}{subsubsection.6.6.3.3}
+\contentsline {subsubsection}{\numberline {6.6.3.4}list\discretionary {-}{}{}Spikes}{35}{subsubsection.6.6.3.4}
+\contentsline {subsection}{\numberline {6.6.4}Member Data Documentation}{35}{subsection.6.6.4}
+\contentsline {subsubsection}{\numberline {6.6.4.1}activation\discretionary {-}{}{}\_\discretionary {-}{}{}non\discretionary {-}{}{}Sat}{35}{subsubsection.6.6.4.1}
+\contentsline {subsubsection}{\numberline {6.6.4.2}activation\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Sat}{35}{subsubsection.6.6.4.2}
+\contentsline {subsubsection}{\numberline {6.6.4.3}activation\discretionary {-}{}{}Model}{35}{subsubsection.6.6.4.3}
+\contentsline {subsubsection}{\numberline {6.6.4.4}Act\discretionary {-}{}{}Matrix}{35}{subsubsection.6.6.4.4}
+\contentsline {subsubsection}{\numberline {6.6.4.5}an}{35}{subsubsection.6.6.4.5}
+\contentsline {subsubsection}{\numberline {6.6.4.6}atualize\discretionary {-}{}{}Force}{35}{subsubsection.6.6.4.6}
+\contentsline {subsubsection}{\numberline {6.6.4.7}b\discretionary {-}{}{}Sat}{35}{subsubsection.6.6.4.7}
+\contentsline {subsubsection}{\numberline {6.6.4.8}conf}{35}{subsubsection.6.6.4.8}
+\contentsline {subsubsection}{\numberline {6.6.4.9}dirac\discretionary {-}{}{}Delta\discretionary {-}{}{}Value}{36}{subsubsection.6.6.4.9}
+\contentsline {subsubsection}{\numberline {6.6.4.10}force}{36}{subsubsection.6.6.4.10}
+\contentsline {subsubsection}{\numberline {6.6.4.11}hill\discretionary {-}{}{}Model}{36}{subsubsection.6.6.4.11}
+\contentsline {subsubsection}{\numberline {6.6.4.12}kind}{36}{subsubsection.6.6.4.12}
+\contentsline {subsubsection}{\numberline {6.6.4.13}M\discretionary {-}{}{}Unumber}{36}{subsubsection.6.6.4.13}
+\contentsline {subsubsection}{\numberline {6.6.4.14}pool}{36}{subsubsection.6.6.4.14}
+\contentsline {subsubsection}{\numberline {6.6.4.15}pool\discretionary {-}{}{}Soma\discretionary {-}{}{}Spikes}{36}{subsubsection.6.6.4.15}
+\contentsline {subsubsection}{\numberline {6.6.4.16}pool\discretionary {-}{}{}Terminal\discretionary {-}{}{}Spikes}{36}{subsubsection.6.6.4.16}
+\contentsline {subsubsection}{\numberline {6.6.4.17}time\discretionary {-}{}{}Index}{36}{subsubsection.6.6.4.17}
+\contentsline {subsubsection}{\numberline {6.6.4.18}twitch\discretionary {-}{}{}Amp\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}N}{36}{subsubsection.6.6.4.18}
+\contentsline {subsubsection}{\numberline {6.6.4.19}tw\discretionary {-}{}{}Tet}{36}{subsubsection.6.6.4.19}
+\contentsline {subsubsection}{\numberline {6.6.4.20}unit}{36}{subsubsection.6.6.4.20}
+\contentsline {section}{\numberline {6.7}Neural\discretionary {-}{}{}Tract.\discretionary {-}{}{}Neural\discretionary {-}{}{}Tract Class Reference}{37}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{37}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Constructor \& Destructor Documentation}{37}{subsection.6.7.2}
+\contentsline {subsubsection}{\numberline {6.7.2.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}init\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}}{37}{subsubsection.6.7.2.1}
+\contentsline {subsection}{\numberline {6.7.3}Member Function Documentation}{37}{subsection.6.7.3}
+\contentsline {subsubsection}{\numberline {6.7.3.1}atualize\discretionary {-}{}{}Pool}{37}{subsubsection.6.7.3.1}
+\contentsline {subsubsection}{\numberline {6.7.3.2}list\discretionary {-}{}{}Spikes}{37}{subsubsection.6.7.3.2}
+\contentsline {subsection}{\numberline {6.7.4}Member Data Documentation}{37}{subsection.6.7.4}
+\contentsline {subsubsection}{\numberline {6.7.4.1}F\discretionary {-}{}{}R}{37}{subsubsection.6.7.4.1}
+\contentsline {subsubsection}{\numberline {6.7.4.2}kind}{38}{subsubsection.6.7.4.2}
+\contentsline {subsubsection}{\numberline {6.7.4.3}Number}{38}{subsubsection.6.7.4.3}
+\contentsline {subsubsection}{\numberline {6.7.4.4}pool}{38}{subsubsection.6.7.4.4}
+\contentsline {subsubsection}{\numberline {6.7.4.5}pool\discretionary {-}{}{}Terminal\discretionary {-}{}{}Spikes}{38}{subsubsection.6.7.4.5}
+\contentsline {subsubsection}{\numberline {6.7.4.6}target}{38}{subsubsection.6.7.4.6}
+\contentsline {subsubsection}{\numberline {6.7.4.7}time\discretionary {-}{}{}Index}{38}{subsubsection.6.7.4.7}
+\contentsline {subsubsection}{\numberline {6.7.4.8}unit}{38}{subsubsection.6.7.4.8}
+\contentsline {section}{\numberline {6.8}Neural\discretionary {-}{}{}Tract\discretionary {-}{}{}Unit.\discretionary {-}{}{}Neural\discretionary {-}{}{}Tract\discretionary {-}{}{}Unit Class Reference}{38}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}Detailed Description}{39}{subsection.6.8.1}
+\contentsline {subsection}{\numberline {6.8.2}Constructor \& Destructor Documentation}{39}{subsection.6.8.2}
+\contentsline {subsubsection}{\numberline {6.8.2.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}init\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}}{39}{subsubsection.6.8.2.1}
+\contentsline {subsection}{\numberline {6.8.3}Member Function Documentation}{39}{subsection.6.8.3}
+\contentsline {subsubsection}{\numberline {6.8.3.1}atualize\discretionary {-}{}{}Neural\discretionary {-}{}{}Tract\discretionary {-}{}{}Unit}{39}{subsubsection.6.8.3.1}
+\contentsline {subsubsection}{\numberline {6.8.3.2}transmit\discretionary {-}{}{}Spikes}{39}{subsubsection.6.8.3.2}
+\contentsline {subsection}{\numberline {6.8.4}Member Data Documentation}{39}{subsection.6.8.4}
+\contentsline {subsubsection}{\numberline {6.8.4.1}Gamma\discretionary {-}{}{}Order}{39}{subsubsection.6.8.4.1}
+\contentsline {subsubsection}{\numberline {6.8.4.2}indices\discretionary {-}{}{}Of\discretionary {-}{}{}Synapses\discretionary {-}{}{}On\discretionary {-}{}{}Target}{40}{subsubsection.6.8.4.2}
+\contentsline {subsubsection}{\numberline {6.8.4.3}spikes\discretionary {-}{}{}Generator}{40}{subsubsection.6.8.4.3}
+\contentsline {subsubsection}{\numberline {6.8.4.4}Synapses\discretionary {-}{}{}Out}{40}{subsubsection.6.8.4.4}
+\contentsline {subsubsection}{\numberline {6.8.4.5}terminal\discretionary {-}{}{}Spike\discretionary {-}{}{}Train}{40}{subsubsection.6.8.4.5}
+\contentsline {subsubsection}{\numberline {6.8.4.6}transmit\discretionary {-}{}{}Spikes\discretionary {-}{}{}Through\discretionary {-}{}{}Synapses}{40}{subsubsection.6.8.4.6}
+\contentsline {section}{\numberline {6.9}Point\discretionary {-}{}{}Process\discretionary {-}{}{}Generator.\discretionary {-}{}{}Point\discretionary {-}{}{}Process\discretionary {-}{}{}Generator Class Reference}{40}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{40}{subsection.6.9.1}
+\contentsline {subsection}{\numberline {6.9.2}Constructor \& Destructor Documentation}{41}{subsection.6.9.2}
+\contentsline {subsubsection}{\numberline {6.9.2.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}init\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}}{41}{subsubsection.6.9.2.1}
+\contentsline {subsection}{\numberline {6.9.3}Member Function Documentation}{41}{subsection.6.9.3}
+\contentsline {subsubsection}{\numberline {6.9.3.1}atualize\discretionary {-}{}{}Generator}{41}{subsubsection.6.9.3.1}
+\contentsline {subsection}{\numberline {6.9.4}Member Data Documentation}{41}{subsection.6.9.4}
+\contentsline {subsubsection}{\numberline {6.9.4.1}Gamma\discretionary {-}{}{}Order}{41}{subsubsection.6.9.4.1}
+\contentsline {subsubsection}{\numberline {6.9.4.2}Gamma\discretionary {-}{}{}Order\discretionary {-}{}{}Inv}{41}{subsubsection.6.9.4.2}
+\contentsline {subsubsection}{\numberline {6.9.4.3}index}{41}{subsubsection.6.9.4.3}
+\contentsline {subsubsection}{\numberline {6.9.4.4}points}{41}{subsubsection.6.9.4.4}
+\contentsline {subsubsection}{\numberline {6.9.4.5}threshold}{41}{subsubsection.6.9.4.5}
+\contentsline {subsubsection}{\numberline {6.9.4.6}y}{41}{subsubsection.6.9.4.6}
+\contentsline {section}{\numberline {6.10}Pulse\discretionary {-}{}{}Conductance\discretionary {-}{}{}State.\discretionary {-}{}{}Pulse\discretionary {-}{}{}Conductance\discretionary {-}{}{}State Class Reference}{41}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{42}{subsection.6.10.1}
+\contentsline {subsection}{\numberline {6.10.2}Constructor \& Destructor Documentation}{42}{subsection.6.10.2}
+\contentsline {subsubsection}{\numberline {6.10.2.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}init\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}}{42}{subsubsection.6.10.2.1}
+\contentsline {subsection}{\numberline {6.10.3}Member Function Documentation}{42}{subsection.6.10.3}
+\contentsline {subsubsection}{\numberline {6.10.3.1}change\discretionary {-}{}{}State}{42}{subsubsection.6.10.3.1}
+\contentsline {subsubsection}{\numberline {6.10.3.2}compute\discretionary {-}{}{}State\discretionary {-}{}{}Value}{43}{subsubsection.6.10.3.2}
+\contentsline {subsection}{\numberline {6.10.4}Member Data Documentation}{43}{subsection.6.10.4}
+\contentsline {subsubsection}{\numberline {6.10.4.1}act\discretionary {-}{}{}Type}{43}{subsubsection.6.10.4.1}
+\contentsline {subsubsection}{\numberline {6.10.4.2}alpha\discretionary {-}{}{}\_\discretionary {-}{}{}ms1}{43}{subsubsection.6.10.4.2}
+\contentsline {subsubsection}{\numberline {6.10.4.3}beta\discretionary {-}{}{}\_\discretionary {-}{}{}ms1}{43}{subsubsection.6.10.4.3}
+\contentsline {subsubsection}{\numberline {6.10.4.4}compute\discretionary {-}{}{}Value\discretionary {-}{}{}Off}{43}{subsubsection.6.10.4.4}
+\contentsline {subsubsection}{\numberline {6.10.4.5}compute\discretionary {-}{}{}Value\discretionary {-}{}{}On}{43}{subsubsection.6.10.4.5}
+\contentsline {subsubsection}{\numberline {6.10.4.6}kind}{43}{subsubsection.6.10.4.6}
+\contentsline {subsubsection}{\numberline {6.10.4.7}Pulse\discretionary {-}{}{}Dur\discretionary {-}{}{}\_\discretionary {-}{}{}ms}{43}{subsubsection.6.10.4.7}
+\contentsline {subsubsection}{\numberline {6.10.4.8}state}{43}{subsubsection.6.10.4.8}
+\contentsline {subsubsection}{\numberline {6.10.4.9}t0}{44}{subsubsection.6.10.4.9}
+\contentsline {subsubsection}{\numberline {6.10.4.10}v0}{44}{subsubsection.6.10.4.10}
+\contentsline {subsubsection}{\numberline {6.10.4.11}value}{44}{subsubsection.6.10.4.11}
+\contentsline {section}{\numberline {6.11}Synapse.\discretionary {-}{}{}Synapse Class Reference}{44}{section.6.11}
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{45}{subsection.6.11.1}
+\contentsline {subsection}{\numberline {6.11.2}Constructor \& Destructor Documentation}{45}{subsection.6.11.2}
+\contentsline {subsubsection}{\numberline {6.11.2.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}init\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}}{45}{subsubsection.6.11.2.1}
+\contentsline {subsection}{\numberline {6.11.3}Member Function Documentation}{45}{subsection.6.11.3}
+\contentsline {subsubsection}{\numberline {6.11.3.1}add\discretionary {-}{}{}Conductance}{45}{subsubsection.6.11.3.1}
+\contentsline {subsubsection}{\numberline {6.11.3.2}compute\discretionary {-}{}{}Conductance}{45}{subsubsection.6.11.3.2}
+\contentsline {subsubsection}{\numberline {6.11.3.3}compute\discretionary {-}{}{}Current}{46}{subsubsection.6.11.3.3}
+\contentsline {subsubsection}{\numberline {6.11.3.4}compute\discretionary {-}{}{}Current2}{46}{subsubsection.6.11.3.4}
+\contentsline {subsubsection}{\numberline {6.11.3.5}receive\discretionary {-}{}{}Spike}{47}{subsubsection.6.11.3.5}
+\contentsline {subsubsection}{\numberline {6.11.3.6}start\discretionary {-}{}{}Conductance\discretionary {-}{}{}Dynamics}{47}{subsubsection.6.11.3.6}
+\contentsline {subsubsection}{\numberline {6.11.3.7}start\discretionary {-}{}{}Conductance\discretionary {-}{}{}None}{47}{subsubsection.6.11.3.7}
+\contentsline {subsubsection}{\numberline {6.11.3.8}stop\discretionary {-}{}{}Conductance\discretionary {-}{}{}Dynamics}{48}{subsubsection.6.11.3.8}
+\contentsline {subsubsection}{\numberline {6.11.3.9}stop\discretionary {-}{}{}Conductance\discretionary {-}{}{}None}{48}{subsubsection.6.11.3.9}
+\contentsline {subsection}{\numberline {6.11.4}Member Data Documentation}{48}{subsection.6.11.4}
+\contentsline {subsubsection}{\numberline {6.11.4.1}alpha\discretionary {-}{}{}\_\discretionary {-}{}{}ms1}{48}{subsubsection.6.11.4.1}
+\contentsline {subsubsection}{\numberline {6.11.4.2}beta\discretionary {-}{}{}\_\discretionary {-}{}{}ms1}{48}{subsubsection.6.11.4.2}
+\contentsline {subsubsection}{\numberline {6.11.4.3}compute\discretionary {-}{}{}Current}{49}{subsubsection.6.11.4.3}
+\contentsline {subsubsection}{\numberline {6.11.4.4}conductance\discretionary {-}{}{}State}{49}{subsubsection.6.11.4.4}
+\contentsline {subsubsection}{\numberline {6.11.4.5}delay\discretionary {-}{}{}\_\discretionary {-}{}{}ms}{49}{subsubsection.6.11.4.5}
+\contentsline {subsubsection}{\numberline {6.11.4.6}dynamics}{49}{subsubsection.6.11.4.6}
+\contentsline {subsubsection}{\numberline {6.11.4.7}Eq\discretionary {-}{}{}Pot\discretionary {-}{}{}\_\discretionary {-}{}{}m\discretionary {-}{}{}V}{49}{subsubsection.6.11.4.7}
+\contentsline {subsubsection}{\numberline {6.11.4.8}exp\discretionary {-}{}{}Finish}{49}{subsubsection.6.11.4.8}
+\contentsline {subsubsection}{\numberline {6.11.4.9}gmax\discretionary {-}{}{}\_\discretionary {-}{}{}mu\discretionary {-}{}{}S}{49}{subsubsection.6.11.4.9}
+\contentsline {subsubsection}{\numberline {6.11.4.10}g\discretionary {-}{}{}Max\discretionary {-}{}{}Tot\discretionary {-}{}{}\_\discretionary {-}{}{}mu\discretionary {-}{}{}S}{49}{subsubsection.6.11.4.10}
+\contentsline {subsubsection}{\numberline {6.11.4.11}kind}{49}{subsubsection.6.11.4.11}
+\contentsline {subsubsection}{\numberline {6.11.4.12}neuron\discretionary {-}{}{}Kind}{49}{subsubsection.6.11.4.12}
+\contentsline {subsubsection}{\numberline {6.11.4.13}Non}{49}{subsubsection.6.11.4.13}
+\contentsline {subsubsection}{\numberline {6.11.4.14}number\discretionary {-}{}{}Of\discretionary {-}{}{}Incoming\discretionary {-}{}{}Synapses}{49}{subsubsection.6.11.4.14}
+\contentsline {subsubsection}{\numberline {6.11.4.15}pool}{50}{subsubsection.6.11.4.15}
+\contentsline {subsubsection}{\numberline {6.11.4.16}ri}{50}{subsubsection.6.11.4.16}
+\contentsline {subsubsection}{\numberline {6.11.4.17}r\discretionary {-}{}{}Inf}{50}{subsubsection.6.11.4.17}
+\contentsline {subsubsection}{\numberline {6.11.4.18}Roff}{50}{subsubsection.6.11.4.18}
+\contentsline {subsubsection}{\numberline {6.11.4.19}roff}{50}{subsubsection.6.11.4.19}
+\contentsline {subsubsection}{\numberline {6.11.4.20}Ron}{50}{subsubsection.6.11.4.20}
+\contentsline {subsubsection}{\numberline {6.11.4.21}ron}{50}{subsubsection.6.11.4.21}
+\contentsline {subsubsection}{\numberline {6.11.4.22}spikes\discretionary {-}{}{}Received}{50}{subsubsection.6.11.4.22}
+\contentsline {subsubsection}{\numberline {6.11.4.23}start\discretionary {-}{}{}Dynamic\discretionary {-}{}{}Function}{50}{subsubsection.6.11.4.23}
+\contentsline {subsubsection}{\numberline {6.11.4.24}start\discretionary {-}{}{}Entrance}{50}{subsubsection.6.11.4.24}
+\contentsline {subsubsection}{\numberline {6.11.4.25}stop\discretionary {-}{}{}Dynamic\discretionary {-}{}{}Function}{50}{subsubsection.6.11.4.25}
+\contentsline {subsubsection}{\numberline {6.11.4.26}stop\discretionary {-}{}{}Entrance}{50}{subsubsection.6.11.4.26}
+\contentsline {subsubsection}{\numberline {6.11.4.27}syn\discretionary {-}{}{}Contrib}{51}{subsubsection.6.11.4.27}
+\contentsline {subsubsection}{\numberline {6.11.4.28}t0}{51}{subsubsection.6.11.4.28}
+\contentsline {subsubsection}{\numberline {6.11.4.29}tau\discretionary {-}{}{}Off}{51}{subsubsection.6.11.4.29}
+\contentsline {subsubsection}{\numberline {6.11.4.30}tau\discretionary {-}{}{}On}{51}{subsubsection.6.11.4.30}
+\contentsline {subsubsection}{\numberline {6.11.4.31}t\discretionary {-}{}{}Begin\discretionary {-}{}{}Of\discretionary {-}{}{}Pulse}{51}{subsubsection.6.11.4.31}
+\contentsline {subsubsection}{\numberline {6.11.4.32}t\discretionary {-}{}{}End\discretionary {-}{}{}Of\discretionary {-}{}{}Pulse}{51}{subsubsection.6.11.4.32}
+\contentsline {subsubsection}{\numberline {6.11.4.33}ti}{51}{subsubsection.6.11.4.33}
+\contentsline {subsubsection}{\numberline {6.11.4.34}Tmax\discretionary {-}{}{}\_\discretionary {-}{}{}m\discretionary {-}{}{}M}{51}{subsubsection.6.11.4.34}
+\contentsline {subsubsection}{\numberline {6.11.4.35}t\discretionary {-}{}{}Peak\discretionary {-}{}{}\_\discretionary {-}{}{}ms}{51}{subsubsection.6.11.4.35}
+\contentsline {section}{\numberline {6.12}Synapses\discretionary {-}{}{}Factory.\discretionary {-}{}{}Synapses\discretionary {-}{}{}Factory Class Reference}{51}{section.6.12}
+\contentsline {subsection}{\numberline {6.12.1}Detailed Description}{52}{subsection.6.12.1}
+\contentsline {subsection}{\numberline {6.12.2}Constructor \& Destructor Documentation}{52}{subsection.6.12.2}
+\contentsline {subsubsection}{\numberline {6.12.2.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}init\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}}{52}{subsubsection.6.12.2.1}
+\contentsline {subsection}{\numberline {6.12.3}Member Data Documentation}{52}{subsection.6.12.3}
+\contentsline {subsubsection}{\numberline {6.12.3.1}number\discretionary {-}{}{}Of\discretionary {-}{}{}Synapses}{52}{subsubsection.6.12.3.1}
+\contentsline {chapter}{\numberline {7}File Documentation}{53}{chapter.7}
+\contentsline {section}{\numberline {7.1}Axon\discretionary {-}{}{}Delay.\discretionary {-}{}{}py File Reference}{53}{section.7.1}
+\contentsline {section}{\numberline {7.2}Channel\discretionary {-}{}{}Conductance.\discretionary {-}{}{}py File Reference}{53}{section.7.2}
+\contentsline {section}{\numberline {7.3}Compartment.\discretionary {-}{}{}py File Reference}{53}{section.7.3}
+\contentsline {section}{\numberline {7.4}Configuration.\discretionary {-}{}{}py File Reference}{54}{section.7.4}
+\contentsline {section}{\numberline {7.5}Motor\discretionary {-}{}{}Unit.\discretionary {-}{}{}py File Reference}{54}{section.7.5}
+\contentsline {section}{\numberline {7.6}Motor\discretionary {-}{}{}Unit\discretionary {-}{}{}Pool.\discretionary {-}{}{}py File Reference}{54}{section.7.6}
+\contentsline {section}{\numberline {7.7}Neural\discretionary {-}{}{}Tract.\discretionary {-}{}{}py File Reference}{55}{section.7.7}
+\contentsline {section}{\numberline {7.8}Neural\discretionary {-}{}{}Tract\discretionary {-}{}{}Unit.\discretionary {-}{}{}py File Reference}{55}{section.7.8}
+\contentsline {section}{\numberline {7.9}Point\discretionary {-}{}{}Process\discretionary {-}{}{}Generator.\discretionary {-}{}{}py File Reference}{55}{section.7.9}
+\contentsline {section}{\numberline {7.10}Pulse\discretionary {-}{}{}Conductance\discretionary {-}{}{}State.\discretionary {-}{}{}py File Reference}{55}{section.7.10}
+\contentsline {section}{\numberline {7.11}simulation.\discretionary {-}{}{}py File Reference}{56}{section.7.11}
+\contentsline {section}{\numberline {7.12}Synapse.\discretionary {-}{}{}py File Reference}{56}{section.7.12}
+\contentsline {section}{\numberline {7.13}Synapses\discretionary {-}{}{}Factory.\discretionary {-}{}{}py File Reference}{56}{section.7.13}
+\contentsline {chapter}{Index}{58}{section*.77}

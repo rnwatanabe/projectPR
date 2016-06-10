@@ -1,7 +1,7 @@
 '''
-Created on Sep 30, 2015
+Class that uses the formalism of Destexhe(1997) to compute the Hodgkin-Huxley states of an ionic channel.
 
-@author: root
+Author - Renato Naville Watanabe
 '''
 
 
@@ -21,19 +21,18 @@ def compValOff(v0, alpha, beta, t, t0):
 
 
 class PulseConductanceState(object):
-    '''
-    classdocs
-    use the formalism of Destexhe(1997) to compute the Hodgkin-Huxley states of an ionic channel
-    '''
+    
     
     
     def __init__(self, kind, conf, pool,index):
         '''
-        Constructor
-        Inputs: kind: type of the state(m, h, n, q).
-                    conf: an instance of the Configuration class with the functions to correctly parameterize the model. See the Configuration class.
-                    pool: the pool that this state belongs.
-                    index: the index of the unit that this state belongs.                    
+        Initializes the pulse conductance state.
+
+        Variables:
+            kind - type of the state(m, h, n, q).
+            conf - an instance of the Configuration class with the functions to correctly parameterize the model. See the Configuration class.
+            pool - the pool that this state belongs.
+            index - the index of the unit that this state belongs.                    
         '''
         self.kind = kind
         self.value = float(0)
@@ -68,7 +67,9 @@ class PulseConductanceState(object):
     def changeState(self,t):
         '''
         void function that modify the current situation (true/false) of the state
-        inputs: t: instant t
+        
+        Inputs: 
+            t - instant t
         '''
         self.t0, self.v0,    self.state  = t, self.value, not self.state                
     
@@ -76,7 +77,9 @@ class PulseConductanceState(object):
     def computeStateValue(self, t):
         '''
         compute the state value by using the approximation of Destexhe (1997) to compute the Hodgkin-Huxley states.
-        input: t: instant t
+        
+        Input: 
+            t - instant t
         '''
         
         if (self.state):

@@ -1,7 +1,5 @@
 '''
-Created on Sep 30, 2015
-
-@author: root
+Author - Renato Naville Watanabe
 '''
 
 import numpy as np
@@ -10,32 +8,22 @@ from PulseConductanceState import PulseConductanceState
 
 
 
-
-
-def compKfCond(gmax, state, V, EqPot):  return gmax *math.pow(state, 4.0) * (EqPot - V)
-
-
-def compKsCond(gmax, state, V, EqPot):  return gmax * math.pow(state, 2.0) * (EqPot - V)
-
-        
-def compNaCond(gmax, state1, state2, V, EqPot):  return gmax * math.pow(state1, 3.0) * state2 * (EqPot - V)
-
-
 class ChannelConductance(object):
     '''
-    classdocs
-    Implements a model of the ionic Channels in a compartment. 
+    Class that implements a model of the ionic Channels in a compartment.
     '''
 
     
     def __init__(self, kind, conf, compArea, pool, index):
         '''
-        Constructor
-        inputs: kind: string with the type of the ionic channel (Na, Ks, Kf or Ca)
-                      conf: instance of the Configuration class (see Configuration file)
-                      compArea: float with the area of the compartment that the Channel belongs, in cm2
-                      pool: the pool that this state belongs.
-                      index: the index of the unit that this state belongs.          
+        Builds an ionic channel conductance.
+
+        Inputs: 
+            kind - string with the type of the ionic channel (Na, Ks, Kf or Ca)
+            conf - instance of the Configuration class (see Configuration file)
+            compArea - float with the area of the compartment that the Channel belongs, in cm2
+            pool - the pool that this state belongs.
+            index - the index of the unit that this state belongs.          
         '''
         self.kind = str(kind)
         self.condState = []
@@ -72,10 +60,14 @@ class ChannelConductance(object):
     
     def computeCurrent(self, t, V_mV): 
         '''
-        computes the current genrated by the ionic Channel
-        inputs:    t: instant in ms
-                        V_mV: membrane potential of the compartment in mV
-        outputs: ionic current in nA
+        Computes the current genrated by the ionic Channel
+        
+        Inputs:
+            t - instant in ms
+            V_mV - membrane potential of the compartment in mV
+        
+        Outputs:
+            Ionic current in nA
         '''        
         for i in xrange(0, self.lenStates): self.condState[i].computeStateValue(t)        
                           
@@ -83,26 +75,40 @@ class ChannelConductance(object):
    
     def compCondKf(self, V_mV):
         '''
-        computes the conductance of a Kf Channel. This function is assigned as self.compCond to a Kf Channel at the class constructor.
-        input: V_mV: membrane potential of the compartment in mV
-        output: conductance in muS
+        Computes the conductance of a Kf Channel. This function is assigned as self.compCond to a Kf Channel at the class constructor.
+        
+        Input:
+            V_mV - membrane potential of the compartment in mV
+        
+        Output:
+            Conductance in muS
         '''
-        return  compKfCond(self.gmax_muS, self.condState[0].value, V_mV, self.EqPot_mV) 
-    
+        return self.gmax_muS * math.pow(self.condState[0].value, 4.0) * (self.EqPot_mV - V_mV)
+            
     
     def compCondKs(self, V_mV):
         '''
-        computes the conductance of a Ks Channel. This function is assigned as self.compCond to a Ks Channel at the class constructor.
-        input: V_mV: membrane potential of the compartment in mV
-        output: conductance in muS
+        Computes the conductance of a Ks Channel. This function is assigned as self.compCond to a Ks Channel at the class constructor.
+        
+        Input:
+            V_mV - membrane potential of the compartment in mV
+        
+        Output:
+            Conductance in muS
         '''
-        return  compKsCond(self.gmax_muS, self.condState[0].value, V_mV, self.EqPot_mV) 
+        return self.gmax_muS * math.pow(self.condState[0].value, 2.0) * (self.EqPot_mV - V_mV)
+         
     
     def compCondNa(self, V_mV):
         '''
-        computes the conductance of a Na Channel. This function is assigned as self.compCond to a Na Channel at the class constructor.
-        input: V_mV: membrane potential of the compartment in mV
-        output: conductance in muS
+        Computes the conductance of a Na Channel. This function is assigned as self.compCond to a Na Channel at the class constructor.
+        
+        Input:
+            V_mV - membrane potential of the compartment in mV
+        
+        Output:
+            Conductance in muS
         '''
-        return  compNaCond(self.gmax_muS, self.condState[0].value, self.condState[1].value,  V_mV, self.EqPot_mV) 
+        return self.gmax_muS * math.pow(self.condState[0].value, 3.0) * self.condState[1].value * (self.EqPot_mV - V_mV)
+         
         

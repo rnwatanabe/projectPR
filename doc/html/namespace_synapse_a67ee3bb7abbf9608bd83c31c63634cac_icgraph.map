@@ -1,0 +1,6 @@
+<map id="Synapse.compRiStop" name="Synapse.compRiStop">
+<area shape="rect" id="node2" href="$class_synapse_1_1_synapse.html#aa8deb85e48c1a9b27453e0ebde27b2cf" title="Synapse.Synapse.stopConductanceNone" alt="" coords="203,31,469,57"/>
+<area shape="rect" id="node3" href="$class_synapse_1_1_synapse.html#a744b7b46e7dfee8871f4c3b29fe099ae" title="Synapse.Synapse.computeCurrent" alt="" coords="534,5,759,32"/>
+<area shape="rect" id="node4" href="$class_synapse_1_1_synapse.html#a88599102e16f4fe28f9cf7580c3a8108" title="Synapse.Synapse.computeConductance" alt="" coords="517,56,776,83"/>
+<area shape="rect" id="node5" href="$class_synapse_1_1_synapse.html#ad4eb9663dc124db77c7e99578ab7eff7" title="Synapse.Synapse.computeCurrent2" alt="" coords="824,56,1056,83"/>
+</map>

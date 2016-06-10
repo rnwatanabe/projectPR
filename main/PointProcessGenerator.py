@@ -16,7 +16,7 @@ def  gammaPoint(GammaOrder):
         aux = 1.0
         
         for i in xrange(0, GammaOrder):
-            aux *= random.uniform(0.0, 1.0)
+            aux *= np.random.uniform(0.0, 1.0)
         
         return -(1.0/GammaOrder)*math.log(aux)
     

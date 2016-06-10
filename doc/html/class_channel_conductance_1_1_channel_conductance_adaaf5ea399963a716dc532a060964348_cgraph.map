@@ -1,0 +1,5 @@
+<map id="ChannelConductance.ChannelConductance.__init__" name="ChannelConductance.ChannelConductance.__init__">
+<area shape="rect" id="node2" href="$class_channel_conductance_1_1_channel_conductance.html#a956928953c88e1c03c113fc98ec42cc6" title="Computes the conductance of a Kf Channel. " alt="" coords="254,5,453,46"/>
+<area shape="rect" id="node3" href="$class_channel_conductance_1_1_channel_conductance.html#a19cc2a71f96187c7c647855d586cecaa" title="Computes the conductance of a Ks Channel. " alt="" coords="254,70,453,111"/>
+<area shape="rect" id="node4" href="$class_channel_conductance_1_1_channel_conductance.html#a26e6cf970cc7a8732f590dceb1d7c993" title="Computes the conductance of a Na Channel. " alt="" coords="254,135,453,177"/>
+</map>

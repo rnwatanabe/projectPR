@@ -1,0 +1,210 @@
+\hypertarget{class_channel_conductance_1_1_channel_conductance}{\section{Channel\-Conductance.\-Channel\-Conductance Class Reference}
+\label{class_channel_conductance_1_1_channel_conductance}\index{Channel\-Conductance.\-Channel\-Conductance@{Channel\-Conductance.\-Channel\-Conductance}}
+}
+
+
+Class that implements a model of the ionic Channels in a compartment.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_channel_conductance_1_1_channel_conductance_adaaf5ea399963a716dc532a060964348}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em Builds an ionic channel conductance. \end{DoxyCompactList}\item 
+def \hyperlink{class_channel_conductance_1_1_channel_conductance_abde599b9096579b94d24295678f45b6d}{compute\-Current}
+\begin{DoxyCompactList}\small\item\em Computes the current genrated by the ionic Channel. \end{DoxyCompactList}\item 
+def \hyperlink{class_channel_conductance_1_1_channel_conductance_a956928953c88e1c03c113fc98ec42cc6}{comp\-Cond\-Kf}
+\begin{DoxyCompactList}\small\item\em Computes the conductance of a Kf Channel. \end{DoxyCompactList}\item 
+def \hyperlink{class_channel_conductance_1_1_channel_conductance_a19cc2a71f96187c7c647855d586cecaa}{comp\-Cond\-Ks}
+\begin{DoxyCompactList}\small\item\em Computes the conductance of a Ks Channel. \end{DoxyCompactList}\item 
+def \hyperlink{class_channel_conductance_1_1_channel_conductance_a26e6cf970cc7a8732f590dceb1d7c993}{comp\-Cond\-Na}
+\begin{DoxyCompactList}\small\item\em Computes the conductance of a Na Channel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_channel_conductance_1_1_channel_conductance_a7bf3e28aab2160014358cde589f2ec39}{kind}
+\item 
+\hyperlink{class_channel_conductance_1_1_channel_conductance_a628553cbc1efd93b30b0a15afd4417d9}{cond\-State}
+\item 
+\hyperlink{class_channel_conductance_1_1_channel_conductance_a654a73b6cd5853b509e7f7fba060572b}{Eq\-Pot\-\_\-m\-V}
+\item 
+\hyperlink{class_channel_conductance_1_1_channel_conductance_a80a0238a90b30b411c9381f682d0aeec}{gmax\-\_\-mu\-S}
+\item 
+\hyperlink{class_channel_conductance_1_1_channel_conductance_aa3c889bb4528c3abe7b69862cf87119d}{state\-Type}
+\item 
+\hyperlink{class_channel_conductance_1_1_channel_conductance_a0a91eec3fa2b1dfc66c6379943a5907f}{comp\-Cond}
+\item 
+\hyperlink{class_channel_conductance_1_1_channel_conductance_ae217799d13e5d225af048b7ba503fde1}{len\-States}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that implements a model of the ionic Channels in a compartment. 
+
+Definition at line 16 of file Channel\-Conductance.\-py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_channel_conductance_1_1_channel_conductance_adaaf5ea399963a716dc532a060964348}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def Channel\-Conductance.\-Channel\-Conductance.\-\_\-\-\_\-init\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{kind, }
+\item[{}]{conf, }
+\item[{}]{comp\-Area, }
+\item[{}]{pool, }
+\item[{}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_channel_conductance_1_1_channel_conductance_adaaf5ea399963a716dc532a060964348}
+
+
+Builds an ionic channel conductance. 
+
+Inputs\-: kind -\/ string with the type of the ionic channel (Na, Ks, Kf or Ca) conf -\/ instance of the \hyperlink{namespace_configuration}{Configuration} class (see \hyperlink{namespace_configuration}{Configuration} file) comp\-Area -\/ float with the area of the compartment that the Channel belongs, in cm2 pool -\/ the pool that this state belongs. index -\/ the index of the unit that this state belongs. 
+
+Definition at line 30 of file Channel\-Conductance.\-py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_channel_conductance_1_1_channel_conductance_a956928953c88e1c03c113fc98ec42cc6}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!comp\-Cond\-Kf@{comp\-Cond\-Kf}}
+\index{comp\-Cond\-Kf@{comp\-Cond\-Kf}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
+\subsubsection[{comp\-Cond\-Kf}]{\setlength{\rightskip}{0pt plus 5cm}def Channel\-Conductance.\-Channel\-Conductance.\-comp\-Cond\-Kf (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{V\-\_\-m\-V}
+\end{DoxyParamCaption}
+)}}\label{class_channel_conductance_1_1_channel_conductance_a956928953c88e1c03c113fc98ec42cc6}
+
+
+Computes the conductance of a Kf Channel. 
+
+This function is assigned as self.\-comp\-Cond to a Kf Channel at the class constructor. \begin{DoxyVerb}    Input:
+        V_mV - membrane potential of the compartment in mV
+
+    Output:
+        Conductance in muS\end{DoxyVerb}
+ 
+
+Definition at line 90 of file Channel\-Conductance.\-py.
+
+\hypertarget{class_channel_conductance_1_1_channel_conductance_a19cc2a71f96187c7c647855d586cecaa}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!comp\-Cond\-Ks@{comp\-Cond\-Ks}}
+\index{comp\-Cond\-Ks@{comp\-Cond\-Ks}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
+\subsubsection[{comp\-Cond\-Ks}]{\setlength{\rightskip}{0pt plus 5cm}def Channel\-Conductance.\-Channel\-Conductance.\-comp\-Cond\-Ks (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{V\-\_\-m\-V}
+\end{DoxyParamCaption}
+)}}\label{class_channel_conductance_1_1_channel_conductance_a19cc2a71f96187c7c647855d586cecaa}
+
+
+Computes the conductance of a Ks Channel. 
+
+This function is assigned as self.\-comp\-Cond to a Ks Channel at the class constructor. \begin{DoxyVerb}    Input:
+        V_mV - membrane potential of the compartment in mV
+
+    Output:
+        Conductance in muS\end{DoxyVerb}
+ 
+
+Definition at line 104 of file Channel\-Conductance.\-py.
+
+\hypertarget{class_channel_conductance_1_1_channel_conductance_a26e6cf970cc7a8732f590dceb1d7c993}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!comp\-Cond\-Na@{comp\-Cond\-Na}}
+\index{comp\-Cond\-Na@{comp\-Cond\-Na}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
+\subsubsection[{comp\-Cond\-Na}]{\setlength{\rightskip}{0pt plus 5cm}def Channel\-Conductance.\-Channel\-Conductance.\-comp\-Cond\-Na (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{V\-\_\-m\-V}
+\end{DoxyParamCaption}
+)}}\label{class_channel_conductance_1_1_channel_conductance_a26e6cf970cc7a8732f590dceb1d7c993}
+
+
+Computes the conductance of a Na Channel. 
+
+This function is assigned as self.\-comp\-Cond to a Na Channel at the class constructor. \begin{DoxyVerb}    Input:
+        V_mV - membrane potential of the compartment in mV
+
+    Output:
+        Conductance in muS\end{DoxyVerb}
+ 
+
+Definition at line 118 of file Channel\-Conductance.\-py.
+
+\hypertarget{class_channel_conductance_1_1_channel_conductance_abde599b9096579b94d24295678f45b6d}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!compute\-Current@{compute\-Current}}
+\index{compute\-Current@{compute\-Current}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
+\subsubsection[{compute\-Current}]{\setlength{\rightskip}{0pt plus 5cm}def Channel\-Conductance.\-Channel\-Conductance.\-compute\-Current (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{t, }
+\item[{}]{V\-\_\-m\-V}
+\end{DoxyParamCaption}
+)}}\label{class_channel_conductance_1_1_channel_conductance_abde599b9096579b94d24295678f45b6d}
+
+
+Computes the current genrated by the ionic Channel. 
+
+Inputs\-: t -\/ instant in ms V\-\_\-m\-V -\/ membrane potential of the compartment in m\-V
+
+Outputs\-: Ionic current in n\-A 
+
+Definition at line 75 of file Channel\-Conductance.\-py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_channel_conductance_1_1_channel_conductance_a0a91eec3fa2b1dfc66c6379943a5907f}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!comp\-Cond@{comp\-Cond}}
+\index{comp\-Cond@{comp\-Cond}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
+\subsubsection[{comp\-Cond}]{\setlength{\rightskip}{0pt plus 5cm}Channel\-Conductance.\-Channel\-Conductance.\-comp\-Cond}}\label{class_channel_conductance_1_1_channel_conductance_a0a91eec3fa2b1dfc66c6379943a5907f}
+
+
+Definition at line 44 of file Channel\-Conductance.\-py.
+
+\hypertarget{class_channel_conductance_1_1_channel_conductance_a628553cbc1efd93b30b0a15afd4417d9}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!cond\-State@{cond\-State}}
+\index{cond\-State@{cond\-State}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
+\subsubsection[{cond\-State}]{\setlength{\rightskip}{0pt plus 5cm}Channel\-Conductance.\-Channel\-Conductance.\-cond\-State}}\label{class_channel_conductance_1_1_channel_conductance_a628553cbc1efd93b30b0a15afd4417d9}
+
+
+Definition at line 32 of file Channel\-Conductance.\-py.
+
+\hypertarget{class_channel_conductance_1_1_channel_conductance_a654a73b6cd5853b509e7f7fba060572b}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!Eq\-Pot\-\_\-m\-V@{Eq\-Pot\-\_\-m\-V}}
+\index{Eq\-Pot\-\_\-m\-V@{Eq\-Pot\-\_\-m\-V}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
+\subsubsection[{Eq\-Pot\-\_\-m\-V}]{\setlength{\rightskip}{0pt plus 5cm}Channel\-Conductance.\-Channel\-Conductance.\-Eq\-Pot\-\_\-m\-V}}\label{class_channel_conductance_1_1_channel_conductance_a654a73b6cd5853b509e7f7fba060572b}
+
+
+Definition at line 34 of file Channel\-Conductance.\-py.
+
+\hypertarget{class_channel_conductance_1_1_channel_conductance_a80a0238a90b30b411c9381f682d0aeec}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!gmax\-\_\-mu\-S@{gmax\-\_\-mu\-S}}
+\index{gmax\-\_\-mu\-S@{gmax\-\_\-mu\-S}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
+\subsubsection[{gmax\-\_\-mu\-S}]{\setlength{\rightskip}{0pt plus 5cm}Channel\-Conductance.\-Channel\-Conductance.\-gmax\-\_\-mu\-S}}\label{class_channel_conductance_1_1_channel_conductance_a80a0238a90b30b411c9381f682d0aeec}
+
+
+Definition at line 35 of file Channel\-Conductance.\-py.
+
+\hypertarget{class_channel_conductance_1_1_channel_conductance_a7bf3e28aab2160014358cde589f2ec39}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!kind@{kind}}
+\index{kind@{kind}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
+\subsubsection[{kind}]{\setlength{\rightskip}{0pt plus 5cm}Channel\-Conductance.\-Channel\-Conductance.\-kind}}\label{class_channel_conductance_1_1_channel_conductance_a7bf3e28aab2160014358cde589f2ec39}
+
+
+Definition at line 31 of file Channel\-Conductance.\-py.
+
+\hypertarget{class_channel_conductance_1_1_channel_conductance_ae217799d13e5d225af048b7ba503fde1}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!len\-States@{len\-States}}
+\index{len\-States@{len\-States}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
+\subsubsection[{len\-States}]{\setlength{\rightskip}{0pt plus 5cm}Channel\-Conductance.\-Channel\-Conductance.\-len\-States}}\label{class_channel_conductance_1_1_channel_conductance_ae217799d13e5d225af048b7ba503fde1}
+
+
+Definition at line 58 of file Channel\-Conductance.\-py.
+
+\hypertarget{class_channel_conductance_1_1_channel_conductance_aa3c889bb4528c3abe7b69862cf87119d}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!state\-Type@{state\-Type}}
+\index{state\-Type@{state\-Type}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
+\subsubsection[{state\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Channel\-Conductance.\-Channel\-Conductance.\-state\-Type}}\label{class_channel_conductance_1_1_channel_conductance_aa3c889bb4528c3abe7b69862cf87119d}
+
+
+Definition at line 37 of file Channel\-Conductance.\-py.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_channel_conductance_8py}{Channel\-Conductance.\-py}\end{DoxyCompactItemize}

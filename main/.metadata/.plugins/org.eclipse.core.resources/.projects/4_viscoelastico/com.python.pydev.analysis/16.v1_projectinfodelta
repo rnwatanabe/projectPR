@@ -1,0 +1,14 @@
+INSTUPVoigt_ForceLength
+/home/renato/Dropbox/Concurso_UFABC_Biomecânica/aulas/4_Viscoelástico/codigos/Voigt_ForceLength.py
+INFOS:&&2|1|2|0&&1|2|2|0&&2|3|2|2&&3|4|2|5&&3|6|2|5&&3|7|2|5&&3|8|2|5&&3|9|2|5&&2|10|2|2&&2|11|2|2
+__init__=3
+timeStep=8
+Voigt_ForceLength.__init__=5
+b=4
+euler=1
+computeLength=10
+length=9
+dLdt=11
+force=7
+Voigt_ForceLength=2
+k=6

@@ -1,0 +1,52 @@
+'''
+Created on May 24, 2016
+
+@author: root
+'''
+
+
+from Maxwell_ForceLength import Maxwell_ForceLength
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+
+if __name__ == '__main__':
+    
+    #
+    timeStep = 0.0001
+    Tf = 10
+    
+    #    
+    b = 1
+    k = 1
+    
+    #
+    stepTime = 1
+    t = np.arange(0, Tf, timeStep)
+    force = 0.5 * (np.sign(t-stepTime) + 1)
+    
+    
+    #    
+    maxwellModel = Maxwell_ForceLength(b, k, force, timeStep)
+    
+    for i in xrange(1, len(t)-1):
+        maxwellModel.computeLength(t[i])
+    
+    print sys.version
+    #
+    
+    plt.figure()
+    plt.plot(t, force,'-')
+    
+    plt.figure()
+    plt.plot(t, maxwellModel.length,'-')
+    
+    plt.figure()
+    plt.plot(t, maxwellModel.length_k,'-')
+    
+    plt.figure()
+    plt.plot(t, maxwellModel.length_b,'-')
+    
+    plt.show()
+        
+    

@@ -17,11 +17,18 @@ import time
 
 def calcGCoupling(cytR, lComp1, lComp2, dComp1, dComp2):
     '''
-    calculates the coupling conductance between two compartments
-    Inputs: cytR. Cytoplasmatic resistance in Ohm.cm
-                lComp1, lComp2: length of the compartments in mum
-                dComp1, dComp2 diameter of the compartments in mum
-    Output: coupling conductance in MS
+    Calculates the coupling conductance between two compartments.
+
+
+    - Inputs: 
+         + **cytR**: Cytoplasmatic resistance in \f$\Omega\f$.cm.
+
+         + **lComp1, lComp2**: length of the compartments in \f$\mu\f$m.
+
+         + **dComp1, dComp2**: diameter of the compartments in \f$\mu\f$m.
+
+    - Output:
+         + coupling conductance in MS
     '''
     rAxis1 = (cytR * lComp1) / (math.pi * math.pow(dComp1/2, 2))
     rAxis2 = (cytR * lComp2) / (math.pi * math.pow(dComp2/2, 2))
@@ -33,20 +40,25 @@ def calcGCoupling(cytR, lComp1, lComp2, dComp1, dComp2):
 
 def compGCouplingMatrix(gc):
     '''
-    computes the Coupling Matrix to be used in the dVdt function of the N compartments of the motor unit. 
+    Computes the Coupling Matrix to be used in the dVdt function of the N compartments of the motor unit. 
     The Matrix uses the values obtained with the function calcGcoupling.
-                _______________________________________________________
-                |-gc[0]           gc[0]              0      ....                    .....          0        0          0|
-                |gc[0]    -gc[0]-gc[1]    gc[1]    0  .....                     .....                           0|
-                |  .      .                ...                        ...                                .....                      0|  
-    GC =   |  :        . .  . ........................................                                                           :|
-                |  0  .......   0         gc[i-1]    -gc[i-1]-gc[i]    gc[i]    0     .....            0        :|
-                |  0 ...    ...............................                                ....        ..............................|
-                |  0  .............................................gc[N-2]    -gc[N-2]-gc[N-1]    gc[N-1]|
-                |  0 ..........................................................................  gc[N-1]        -gc[N-1]|
-                |---------------------------------------------------------------------------------------------------|
-    Inputs: the vector with N elements, with the coupling conductance of each compartment of the Motor Unit.
-    Output: the GC matrix
+
+    \f{equation}{
+       GC = \left[\begin{array}{cccccccc}
+       -g_c[0]&g_c[0]&0&...&...&0&0&0\\
+       g_c[0]&-g_c[0]-g_c[1]&g_c[1]&0&...&...&0&0\\
+       \vdots&&\ddots&&...&&0&0 \\
+       0&...&g_c[i-1]&-g_c[i-1]-g_c[i]&g_c[i]&0&...&0\\
+       0&0&0&...&...&&&\\
+       0&&...&&g_c[N-2]&-g_c[N-2]-g_c[N-1]&g_c[N-1]\\
+       0&...&0&&&0&g_c[N-1]&-g_c[N-1]\end{array}\right] 
+    \f} 
+ 
+- Inputs: 
+    + **gc**: the vector with N elements, with the coupling conductance of each compartment of the Motor Unit.
+
+- Output:
+    + the GC matrix
     '''
     
     GC = np.zeros((len(gc),len(gc)))
@@ -64,7 +76,21 @@ def compGCouplingMatrix(gc):
 
 def runge_kutta(derivativeFunction, t, x, timeStep, timeStepByTwo,  timeStepBySix):
     '''
-    
+    Function to implement the fourth order Runge-Kutta Method to solve numerically a 
+    differential equation.
+
+    - Inputs: 
+        + **derivativeFunction**: function that corresponds to the derivative of the differential equation.
+
+        + **t**: current instant.
+
+        + **x**:  current state value.
+
+        + **timeStep**: time step of the solution of the differential equation, in the same unit of t.
+
+        + **timeStepByTwo**:  timeStep divided by two, for computational efficiency.
+
+        + **timeStepBySix**: timeStep divided by six, for computational efficiency.
     '''       
     k1 = derivativeFunction(t, x)
     k2 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k1)
@@ -77,27 +103,50 @@ def runge_kutta(derivativeFunction, t, x, timeStep, timeStepByTwo,  timeStepBySi
 
 class MotorUnit(object):
     '''
-    classdocs
+    Class that implements a motor unit model. Encompasses a motoneuron and a muscle unit.
     '''
    
 
     def __init__(self, conf, pool, index, kind):
         '''
         Constructor
+
+        - Inputs:
+            + **conf**: Configuration object with the simulation parameters.
+
+            + **pool**: string with Motor unit pool to which the motor unit belongs.
+
+            + **index**: integer corresponding to the motor unit order in the pool, according to 
+            the Henneman's principle (size principle).
+
+            + **kind**: string with the type of the motor unit. It can be S (slow), FR (fast and resistant), 
+            and FF (fast and fatigable).  
         '''
+
+        ## Configuration object with the simulation parameters.
         self.conf = conf
+
+        ## String with the type of the motor unit. It can be S (slow), FR (fast and resistant) and FF (fast and fatigable).
         self.kind = kind
-        ## Neural compartments
+        
+        # Neural compartments
+        ## The instant of the last spie of the Motor unit at the Soma compartment.
         self.tSomaSpike = float("-inf")
         compartmentsList = ['dendrite', 'soma']
+        ## Vector with the instants of spikes at the soma.
         self.somaSpikeTrain = []
+        ## Integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle).
         self.index = int(index)
+        ## Vector of Compartment of the Motor Unit.
         self.compartment = []
+        ## Value of the membrane potential, in mV, that is considered a spike.
         self.threshold_mV = conf.parameterSet('threshold', pool, index)
                 
         for i in compartmentsList: self.compartment.append(Compartment(i, conf, pool, index, self.kind))        
         
+        ## Number of compartments.
         self.compNumber = len(self.compartment)
+        ## Vector with membrane potential,in mV, of all compartments. 
         self.v_mV = np.zeros((self.compNumber), dtype = np.float64)
         
         
@@ -116,58 +165,81 @@ class MotorUnit(object):
             capacitance_nF[self.compartment.index(i)] = i.capacitance_nF
             gLeak[self.compartment.index(i)] = i.gLeak
             
-         
+
+        ## Vector with  the inverse of the capacitance of all compartments. 
         self.capacitanceInv = 1 / capacitance_nF
-       
-        
-        self.iIonic = np.full_like(self.v_mV, 0.0)  
-        self.iSynaptic = np.full_like(self.v_mV, 0)
+
+        ## Vector with current, in nA,  of each compartment coming from other elements of the model. For example 
+        ## from ionic channels and synapses.       
+        self.iIonic = np.full_like(self.v_mV, 0.0)
+        ## Vector with the current, in nA, injected in each compartment.
         self.iInjected = np.zeros_like(self.v_mV, dtype = 'd')
         #self.iInjected = np.array([0, 10.0])
         
         GC = compGCouplingMatrix(gCoupling_MS)
         
         GL = -np.diag(gLeak)
-        self.G = np.zeros_like(GC, dtype = float)
+        
+        ## Matrix of the conductance of the motoneuron. Multiplied by the vector self.v_mV,
+        ## results in the passive currents of each compartment.
         self.G = np.float64(GC + GL)
-       
-        
-        
-           
-        
+
+
+        ## index of the soma compartment.
         self.somaIndex = compartmentsList.index('soma')
         
+        ## Refractory period, in ms, of the motoneuron.
         self.MNRefPer_ms = float(conf.parameterSet('MNSomaRefPer', pool, index))
         
-        ## delay
+        # delay
+        ## String with type of the nerve. It can be PTN (posterior tibial nerve) or CPN
+        ## (common peroneal nerve).
         if (pool == 'SOL' or pool == 'MG' or pool == 'LG'):
             self.nerve = 'PTN'
         else:
             self.nerve = 'CPN'
             
+        ## AxonDelay object of the motor unit.
         self.Delay = AxonDelay(conf, self.nerve, pool, index)
+
+
+        ## Vector with the instants of spikes at the terminal.
         self.terminalSpikeTrain = []
                 
         
-        ## contraction Data
-        self.activationModel = conf.parameterSet('activationModel', pool, 0)
+        # contraction Data
+        activationModel = conf.parameterSet('activationModel', pool, 0)
         
+        ## Contraction time of the twitch muscle unit, in ms.
         self.TwitchTc_ms = conf.parameterSet('twitchTimePeak', pool, index)
+        ## Amplutude of the muscle unit twitch, in N.
         self.TwitchAmp_N = conf.parameterSet('twitchPeak', pool, index)
-        self.bSat = conf.parameterSet('bSat'+self.activationModel,pool,index)
-        self.twTet = conf.parameterSet('twTet'+self.activationModel,pool,index)
+        ## Parameter of the saturation.
+        self.bSat = conf.parameterSet('bSat'+ activationModel,pool,index)
+        ## Twitch- tetanus relationship
+        self.twTet = conf.parameterSet('twTet' + activationModel,pool,index)
         
         ## EMG data
         
         
     
-    def atualizeMotorUnit(self, t): 
+    def atualizeMotorUnit(self, t):
+        '''
+        Atualize the dynamical and nondynamical (delay) parts of the motor unit.
+
+        - Inputs:
+            + **t**: current instant, in ms.
+        ''' 
         self.atualizeCompartments(t)
         self.atualizeDelay(t)
         
     def atualizeCompartments(self, t):
         '''
-        atualize all neural compartments
+        Atualize all neural compartments.
+
+        - Inputs:
+            + **t**: current instant, in ms.
+
         '''
         
         np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.conf.timeStep_ms, self.conf.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -16.0, 120.0, self.v_mV)
@@ -176,8 +248,12 @@ class MotorUnit(object):
        
     def dVdt(self, t, V): 
         '''
-        compute the potential derivative of all compartments of
-        the motor unit
+        Compute the potential derivative of all compartments of the motor unit.
+
+        - Inputs:
+            + **t**: current instant, in ms.
+
+            + **V**: Vector with the current potential value of all neural compartments of the motor unit.
         '''
         for compartment in xrange(0, self.compNumber):  
             self.iIonic.itemset(compartment, self.compartment[compartment].computeCurrent(t, V.item(compartment)))
@@ -188,8 +264,10 @@ class MotorUnit(object):
     
     def addSomaSpike(self, t):
         '''
-        when the soma potential is above the threshold
-        a spike is added tom the soma
+        When the soma potential is above the threshold a spike is added tom the soma.
+
+        - Inputs:
+            + **t**: current instant, in ms.
         '''
         self.tSomaSpike = t
         self.somaSpikeTrain.append([t, int(self.index)])
@@ -201,6 +279,10 @@ class MotorUnit(object):
               
     def atualizeDelay(self, t):
         '''
+        Atualize the terminal spike train, by considering the Delay of the nerve.
+
+        - Inputs:
+            + **t**: current instant, in ms.
         '''
         if abs(t - self.Delay.terminalSpikeTrain) < 1e-3: 
             self.terminalSpikeTrain.append([t, self.index])

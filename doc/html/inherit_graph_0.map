@@ -1,0 +1,14 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_axon_delay_1_1_axon_delay.html" title="AxonDelay.AxonDelay" alt="" coords="140,5,295,32"/>
+<area shape="rect" id="node3" href="$class_channel_conductance_1_1_channel_conductance.html" title="ChannelConductance.Channel\lConductance" alt="" coords="118,57,317,98"/>
+<area shape="rect" id="node4" href="$class_compartment_1_1_compartment.html" title="Compartment.Compartment" alt="" coords="125,123,309,149"/>
+<area shape="rect" id="node5" href="$class_configuration_1_1_configuration.html" title="Configuration.Configuration" alt="" coords="127,173,307,200"/>
+<area shape="rect" id="node6" href="$class_motor_unit_1_1_motor_unit.html" title="MotorUnit.MotorUnit" alt="" coords="147,224,287,251"/>
+<area shape="rect" id="node7" href="$class_motor_unit_pool_1_1_motor_unit_pool.html" title="MotorUnitPool.MotorUnitPool" alt="" coords="121,275,313,301"/>
+<area shape="rect" id="node8" href="$class_neural_tract_1_1_neural_tract.html" title="NeuralTract.NeuralTract" alt="" coords="136,325,299,352"/>
+<area shape="rect" id="node9" href="$class_neural_tract_unit_1_1_neural_tract_unit.html" title="NeuralTractUnit.NeuralTractUnit" alt="" coords="112,376,323,403"/>
+<area shape="rect" id="node10" href="$class_point_process_generator_1_1_point_process_generator.html" title="PointProcessGenerator.Point\lProcessGenerator" alt="" coords="122,427,313,469"/>
+<area shape="rect" id="node11" href="$class_pulse_conductance_state_1_1_pulse_conductance_state.html" title="PulseConductanceState.Pulse\lConductanceState" alt="" coords="117,493,317,534"/>
+<area shape="rect" id="node12" href="$class_synapse_1_1_synapse.html" title="Synapse.Synapse" alt="" coords="153,559,281,585"/>
+<area shape="rect" id="node13" href="$class_synapses_factory_1_1_synapses_factory.html" title="SynapsesFactory.Synapses\lFactory" alt="" coords="124,610,311,651"/>
+</map>

@@ -1,0 +1,42 @@
+'''
+Created on May 25, 2016
+
+@author: root
+'''
+
+
+import numpy as np
+
+class Maxwell_ForceLength(object):
+    '''
+    classdocs
+    '''
+
+
+    def __init__(self, b, k, input):
+        '''
+        Constructor
+        '''
+        self.b = b
+        self.k = k
+        self.length = np.zeros((len(input), 1))
+        self.velocity = np.zeros((len(input), 1))
+        self.input = input
+    
+    def computeLengthDerivative(self, t):
+        pass
+    
+    
+    def viscousComponent(self):
+        return self.input / self.b
+    
+    
+    def elasticComponent(self):
+        return self.k * self.length
+    
+    
+
+        
+        
+        
+    

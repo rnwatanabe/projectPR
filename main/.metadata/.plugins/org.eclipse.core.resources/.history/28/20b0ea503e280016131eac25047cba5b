@@ -1,0 +1,29 @@
+'''
+Created on Jun 1, 2016
+
+@author: root
+'''
+
+class StandardLinear_ForceLength(object):
+    '''
+    classdocs
+    '''
+
+
+    def __init__(self, b, k1, k2, force, timeStep):
+        '''
+        Constructor
+        '''
+        
+        self.b = b
+        self.k1 = k1
+        self.k2 = k2
+        self.force = force
+        self.timeStep = timeStep
+        self.length = np.zeros((len(force), 1))
+        self.length_k1 = np.zeros((len(force), 1))
+        self.length_k2 = np.zeros((len(force), 1))
+        self.length_b = np.zeros((len(force), 1))
+        
+    def computeLength(self, t):
+        

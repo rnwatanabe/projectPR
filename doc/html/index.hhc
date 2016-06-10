@@ -1,0 +1,617 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Packages"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Packages"><param name="Local" value="namespaces.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="AxonDelay"><param name="Local" value="namespace_axon_delay.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="ChannelConductance"><param name="Local" value="namespace_channel_conductance.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Compartment"><param name="Local" value="namespace_compartment.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Configuration"><param name="Local" value="namespace_configuration.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="MotorUnit"><param name="Local" value="namespace_motor_unit.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="MotorUnitPool"><param name="Local" value="namespace_motor_unit_pool.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTract"><param name="Local" value="namespace_neural_tract.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTractUnit"><param name="Local" value="namespace_neural_tract_unit.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="PointProcessGenerator"><param name="Local" value="namespace_point_process_generator.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="PulseConductanceState"><param name="Local" value="namespace_pulse_conductance_state.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="simulation"><param name="Local" value="namespacesimulation.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Synapse"><param name="Local" value="namespace_synapse.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesFactory"><param name="Local" value="namespace_synapses_factory.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Package Functions"><param name="Local" value="namespacemembers.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="All"><param name="Local" value="namespacemembers.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Functions"><param name="Local" value="namespacemembers_func.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Classes"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class List"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="AxonDelay"><param name="Local" value="namespace_axon_delay.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="AxonDelay"><param name="Local" value="class_axon_delay_1_1_axon_delay.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#ae4b6037beb2f833d82c5703bcb47ffb0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addSpinalSpike"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a5483df94745af77bf54f707f9a05a0e0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addTerminalSpike"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a49115bea963cde5e2c4317510d73cf7c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="index"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a5dbb9b5002d4b54bf347f48337bdb1c6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="latencySpinalTerminal_ms"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#aaa0b8daf2629cd7fa19d539fe2168d0f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="latencyStimulusSpinal_ms"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a81ea09febed911b8f5e4d56a5f434f8d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="latencyStimulusTerminal_ms"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a88845b9926b97db88174ce088d5af5e0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="length_m"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a08ab7285929002db2108179ea9f5d5dd"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stimulusPositiontoTerminal"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a3f6bb8f38c4474806544d01fbe9c0361"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="terminalSpikeTrain"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#aba392d8938766355063cf4bf3a87962d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="velocity_m_s"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a59cc448f95b38b88b7103c3058e8c397"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="ChannelConductance"><param name="Local" value="namespace_channel_conductance.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ChannelConductance"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#adaaf5ea399963a716dc532a060964348"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="compCondKf"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a956928953c88e1c03c113fc98ec42cc6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="compCondKs"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a19cc2a71f96187c7c647855d586cecaa"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="compCondNa"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a26e6cf970cc7a8732f590dceb1d7c993"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeCurrent"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#abde599b9096579b94d24295678f45b6d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="compCond"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a0a91eec3fa2b1dfc66c6379943a5907f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="condState"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a628553cbc1efd93b30b0a15afd4417d9"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="EqPot_mV"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a654a73b6cd5853b509e7f7fba060572b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="gmax_muS"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a80a0238a90b30b411c9381f682d0aeec"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a7bf3e28aab2160014358cde589f2ec39"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="lenStates"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#ae217799d13e5d225af048b7ba503fde1"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stateType"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#aa3c889bb4528c3abe7b69862cf87119d"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Compartment"><param name="Local" value="namespace_compartment.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Compartment"><param name="Local" value="class_compartment_1_1_compartment.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_compartment_1_1_compartment.html#af6abb8e8999054b0f4d99c440dc06e42"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeCurrent"><param name="Local" value="class_compartment_1_1_compartment.html#ab10c374833a5c36df0552d40e64e45b9"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="area_cm2"><param name="Local" value="class_compartment_1_1_compartment.html#a5d841c1a80dbaaf257dfc0a9cb763abc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="capacitance_nF"><param name="Local" value="class_compartment_1_1_compartment.html#ac7d7462a45d4d623ed688c187c9184aa"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Channels"><param name="Local" value="class_compartment_1_1_compartment.html#aa444563be9598d7cc54fd8d10ea6a04f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="diameter_mum"><param name="Local" value="class_compartment_1_1_compartment.html#aacb7db7022f5d3534d17642d47281cbb"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="gLeak"><param name="Local" value="class_compartment_1_1_compartment.html#a10d50da6a622982a6483c7cd78482bde"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="index"><param name="Local" value="class_compartment_1_1_compartment.html#a9402ef46ede52521ebbb9e9d2d68d631"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_compartment_1_1_compartment.html#a74f2266a2231c4a81cc680bc201f0ffd"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="length_mum"><param name="Local" value="class_compartment_1_1_compartment.html#a8154742b0082eea301690e3566e477b6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="neuronKind"><param name="Local" value="class_compartment_1_1_compartment.html#ad42f32769afd94d1e7d7d54008efb6fa"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="numberChannels"><param name="Local" value="class_compartment_1_1_compartment.html#a0fa96147f76e7814f30610027ed425df"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="numberofMultiSynapses"><param name="Local" value="class_compartment_1_1_compartment.html#aed4deea8b0fc160f16ecb1ef39cacba4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="specifRes_Ohmcm2"><param name="Local" value="class_compartment_1_1_compartment.html#aed6025b5335c2ce41d37c02fd3c1c042"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesIn"><param name="Local" value="class_compartment_1_1_compartment.html#abe41aff3bffed80f4b848bd14763d506"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesOut"><param name="Local" value="class_compartment_1_1_compartment.html#a85d64ebf548276c873501d2dc3489ceb"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Configuration"><param name="Local" value="namespace_configuration.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Configuration"><param name="Local" value="class_configuration_1_1_configuration.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_configuration_1_1_configuration.html#af834fc08a3bb0f94184988cef9298691"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="determineSynapses"><param name="Local" value="class_configuration_1_1_configuration.html#aef3bdd8d00baa7835588ca008d480cee"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="inputFunctionGet"><param name="Local" value="class_configuration_1_1_configuration.html#a590029f6dd5b22113bd6cc40e641ed9b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="parameterSet"><param name="Local" value="class_configuration_1_1_configuration.html#a67eeb73e7a40b8b060e242df3dcc3518"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="confArray"><param name="Local" value="class_configuration_1_1_configuration.html#a2b8c2d210ef82ba5088de3c8c9a8725d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="simDuration_ms"><param name="Local" value="class_configuration_1_1_configuration.html#aea238884fe3daa1287aa069f35d4ad3e"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="timeStep_ms"><param name="Local" value="class_configuration_1_1_configuration.html#a6379aaa6e54523ca81e3713d1846679b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="timeStepBySix_ms"><param name="Local" value="class_configuration_1_1_configuration.html#aa49387a016f5d528136ab5812821cb99"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="timeStepByTwo_ms"><param name="Local" value="class_configuration_1_1_configuration.html#a58f6e3bf5491f8fb229697fc3690aa12"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="MotorUnit"><param name="Local" value="namespace_motor_unit.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MotorUnit"><param name="Local" value="class_motor_unit_1_1_motor_unit.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a5816d9af440be9c847293eff9c7a9f43"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addSomaSpike"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#accb8b6700ed06e1396b70af62a9f31c6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeCompartments"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#ae4093022b48cee82d78c99ecc24cb247"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeDelay"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#af9ed66e359c4402ae951d79d5264f566"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeMotorUnit"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a1239418d3f8428a663ff99061710460f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="dVdt"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#af694436ac5bd3194cfcbe42b8a60180d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="bSat"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a2256c241b36e0181e3530e6f791545a0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="capacitanceInv"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a0cf2afb5bd12374db56b9d9a5a1671e6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="compartment"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a6d4da7327031b3cb9c7041a4a790e524"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="compNumber"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#afe7281fb12c41102980b6b48d5a49713"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="conf"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a10539f5129881188923f3a3a164d2cba"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Delay"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#abe82ffa1e293d10225b67870a962eab8"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="G"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a9b9f157ab92b47470ca7ec6bd3473dd3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="iInjected"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a06045eca379d38892670a491dbac0829"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="iIonic"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a0541858216e7d01582312f9a7a99d595"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="index"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a4f3205a9273aabb92d425992d91a1848"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a08ed5171ba46e0b1ea5bc7d08296c612"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MNRefPer_ms"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#abbdaa195ac00926d96d509ae01dcda05"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="nerve"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a754ee6b88fc2a09899da9f9b13bfbf59"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="somaIndex"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a7cd2be92814b5892bdd18dafd824da9f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="somaSpikeTrain"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a8c86d98daa6c509e226ab165fa92515f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="terminalSpikeTrain"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a2e33990aaab69454943aa00db6b8d2eb"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="threshold_mV"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#affbd0b90f1dce6a0f929775e54f8c212"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="tSomaSpike"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#abca82ec2c7312bb475989bb45e82ca28"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="TwitchAmp_N"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#ad14af870eb3dd7468041853f2c6e8cab"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="TwitchTc_ms"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a083581c89ebb964e58721667307dd2bc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="twTet"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a2a466c5f2f798901c1c438f9d57c2221"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="v_mV"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#aa8968f89250895ae2ae572e9106709f2"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="MotorUnitPool"><param name="Local" value="namespace_motor_unit_pool.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MotorUnitPool"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a627cffa9977225e58194d63a338059dc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeActivationSignal"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a03b7c1202f680bd8ba3af9b0b06bd71c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeForceNoHill"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a8fbb182559fe08eb45800271655b711f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeMotorUnitPool"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#ae525c6bba27837f09d2a767544780b0f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="listSpikes"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a156ffc40be4c7c37f79905fa58b017e5"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="activation_nonSat"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a467ac7b080b79b9515d5846d75e95d1c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="activation_Sat"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#ac475d1369c38d0bc5064c7243b4e1d44"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="activationModel"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#abaa7680d0691fac81f66b200dfcfd203"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ActMatrix"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#ad03b9e215e833188060e90bc4392d42b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="an"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#ac72c67b4a1f6134965ab77e2d798b5a4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeForce"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a21f9a6a5d113b5b0f67a3557c47ebd5a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="bSat"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a4e107835e34b4f56d06b9b28c143fe40"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="conf"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a3b2ee8f3e5500bfdc8fa731a5cb7d622"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="diracDeltaValue"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a48b53d4f838ca8cfe2bc41c8308f2060"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="force"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a97011c17140c45a42a00105279f014ad"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="hillModel"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a963061fdcfee8f9dc33e4d6f130ea59b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#aeb57d0463ad56a16b166d00dc6079b95"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MUnumber"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#aa5884530baaa20f46007805bc574407d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="pool"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a832364dc014aa8a1b2947abfe063f626"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="poolSomaSpikes"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a3790757a111061662ad0f98120b25e69"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="poolTerminalSpikes"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a4f0b93df27eb6303fa1a3d49653d4fd3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="timeIndex"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#ab5659e1c9355ecf529d9b8be8cbf6d65"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="twitchAmp_N"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a03538b06e7220f9d48c7306ed6508c05"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="twTet"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a785a769c5b4824603a24339e4f0d8dfe"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="unit"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a1b14c831606c27efae62f1468850393b"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTract"><param name="Local" value="namespace_neural_tract.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTract"><param name="Local" value="class_neural_tract_1_1_neural_tract.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a4bcd77ff91855685b0b96d3522ba7d20"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizePool"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a0f826ea8fadc13ea0af3bfdf5508b4f0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="listSpikes"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a600b048655026f9271cec0a812b11dc4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="FR"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#aefbec14cba88a937841314d47f6056c0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#af52b112c86e0c774fa204b7e2154b6aa"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Number"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a9cf4c6df3fb8818e955817bb3ea9ffc4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="pool"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#af0d232b9b86f3bae802b32777d0405d0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="poolTerminalSpikes"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a1d104906ff30028e44e377a9e1ed5a3d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="target"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a637995fcac5bdd80ab1a9d4ea3de7f40"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="timeIndex"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#adcda2b95aa86d4e7eebcc2557aee58cf"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="unit"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a95db7d0720ec12f091758968476ba240"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTractUnit"><param name="Local" value="namespace_neural_tract_unit.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTractUnit"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#a8b10daafc9b7e804ba7d1c62aa854fa6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeNeuralTractUnit"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#aaa36d43c7f4d1664696922e731f9e14a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="transmitSpikes"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#a1c44e3b23ebda745d84d88c015c1cb25"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="GammaOrder"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#aee01a134ce97127783d75757ec15f352"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="indicesOfSynapsesOnTarget"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#a4e5fa20e16e924e7f27a087e8f7a19a7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="spikesGenerator"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#a57cbb130e004fb3f7ee8d8a540f7dff0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesOut"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#a740d2cfa17ad57c7dbd40fbafc654b95"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="terminalSpikeTrain"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#ac34c86235329e753e8cfdfcc1e24c53f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="transmitSpikesThroughSynapses"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#ac6fa367f6ada8045919674feaed4f6ad"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="PointProcessGenerator"><param name="Local" value="namespace_point_process_generator.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PointProcessGenerator"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#af40e8d97d489b9ef5ce0446ea327ce93"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeGenerator"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#a9e80adf5fea28ec4adb90489f0c42670"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="GammaOrder"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#aa6c6513cd7f00dbdceb5f945a07cffee"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="GammaOrderInv"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#aa70be756b1535ff4512affa05a732fda"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="index"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#a57f6c8af8fd3d37ed8ab2f4abe9be5d8"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="points"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#ab36d31f34c0330e13ae9732d53984bab"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="threshold"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#abcb23e09b752b797a1f11f2679373ca1"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="y"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#a70a43b5c26daf20833ecbc9f4d979726"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="PulseConductanceState"><param name="Local" value="namespace_pulse_conductance_state.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PulseConductanceState"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a21c7b2a5374d272d27296ea8bc968f36"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="changeState"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#ac1ee5a9b9dc0ad6aa8e86052aa17268f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeStateValue"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#ae81d1a5bbbf4fd80db0ded06631bd9c2"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="actType"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a0677d7b972a6f6a12abc666212a12297"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="alpha_ms1"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a5fe4e2c9035df43a1e8eb9d66d669e14"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="beta_ms1"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a8ebc0c29d97fa09699d7dfb724e94f82"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeValueOff"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a89e0cc154bd699aee7529574a8fe556c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeValueOn"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a7f6710b9f97ac5879888402cd5ed15d4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a53d237daaa4815ad375e2377da89845e"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PulseDur_ms"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#afda03b180fc3cb619de615632e725a6f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="state"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#ac85aa714a187088e1b31fa2369ed4bca"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="t0"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a55f44caf230fc3899811924118705f56"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="v0"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a215539a3eb60e280225053c83f386d79"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="value"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a832cdff7f315b8c16bef00642fb385dd"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="simulation"><param name="Local" value="namespacesimulation.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Synapse"><param name="Local" value="namespace_synapse.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Synapse"><param name="Local" value="class_synapse_1_1_synapse.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_synapse_1_1_synapse.html#a2503e88be21ea89ad4f652b2fedfd76e"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addConductance"><param name="Local" value="class_synapse_1_1_synapse.html#a4fa7b6b92a4b197dba58ac346cfffc6f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeConductance"><param name="Local" value="class_synapse_1_1_synapse.html#a88599102e16f4fe28f9cf7580c3a8108"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeCurrent"><param name="Local" value="class_synapse_1_1_synapse.html#a744b7b46e7dfee8871f4c3b29fe099ae"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeCurrent2"><param name="Local" value="class_synapse_1_1_synapse.html#ad4eb9663dc124db77c7e99578ab7eff7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="receiveSpike"><param name="Local" value="class_synapse_1_1_synapse.html#a18fc05b9e95285fded46afa38688a052"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="startConductanceDynamics"><param name="Local" value="class_synapse_1_1_synapse.html#a6d3fc87143221f0bcfdb5f86095099c5"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="startConductanceNone"><param name="Local" value="class_synapse_1_1_synapse.html#af9d45f19ead577a6d98d9dd5e304cb13"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stopConductanceDynamics"><param name="Local" value="class_synapse_1_1_synapse.html#a25802c58dc6c64cd265f7cbae3c07958"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stopConductanceNone"><param name="Local" value="class_synapse_1_1_synapse.html#aa8deb85e48c1a9b27453e0ebde27b2cf"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="alpha_ms1"><param name="Local" value="class_synapse_1_1_synapse.html#ae15502cd5d5604d38328b2b1432477d7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="beta_ms1"><param name="Local" value="class_synapse_1_1_synapse.html#ab59f413cbd21555531be209dee307a97"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeCurrent"><param name="Local" value="class_synapse_1_1_synapse.html#a9f68cb297a4bc98c4cb9d5c042b5d0d6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="conductanceState"><param name="Local" value="class_synapse_1_1_synapse.html#a89d3762daa9c60be63403a5ce9fd9a84"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="delay_ms"><param name="Local" value="class_synapse_1_1_synapse.html#a14adfda48133bd314f4dcd65fc9a2366"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="dynamics"><param name="Local" value="class_synapse_1_1_synapse.html#a67a1454de1ef2f08ffa3a10bf8466158"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="EqPot_mV"><param name="Local" value="class_synapse_1_1_synapse.html#adc80e9a62c17b29a92c2e7a0413e572d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="expFinish"><param name="Local" value="class_synapse_1_1_synapse.html#aa9ae256b272ceb8e9e4a931a9cd5d163"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="gmax_muS"><param name="Local" value="class_synapse_1_1_synapse.html#a7922dac4765183cb6052905cc0d251cb"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="gMaxTot_muS"><param name="Local" value="class_synapse_1_1_synapse.html#a470750725ecb176e048a973b9dc23ea3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_synapse_1_1_synapse.html#aa2ea45450a3ad13cfefcae9fabe6ce15"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="neuronKind"><param name="Local" value="class_synapse_1_1_synapse.html#a031af2fe7be76f9b5f69c087228a1b9a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Non"><param name="Local" value="class_synapse_1_1_synapse.html#af8779bbc2ee2c5ae7747ee5cfbcf112e"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="numberOfIncomingSynapses"><param name="Local" value="class_synapse_1_1_synapse.html#a6e55e008336cc47551669f3d77248d57"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="pool"><param name="Local" value="class_synapse_1_1_synapse.html#a133990bf3ab7f1efa8b416be73d07a11"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ri"><param name="Local" value="class_synapse_1_1_synapse.html#adc85234a081ad18bf19473be530dcf78"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rInf"><param name="Local" value="class_synapse_1_1_synapse.html#afd263d49a97910efd8955a2aadef50e0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Roff"><param name="Local" value="class_synapse_1_1_synapse.html#ae67ffbbd23cd9c56f20bda9e8e040663"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="roff"><param name="Local" value="class_synapse_1_1_synapse.html#a9a8d45c76378fae50d7ed2af29602aa8"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Ron"><param name="Local" value="class_synapse_1_1_synapse.html#ae759c51a7196995510fe3eb086050c76"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ron"><param name="Local" value="class_synapse_1_1_synapse.html#a2e4a3427e071a311ac52341ad67f90c6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="spikesReceived"><param name="Local" value="class_synapse_1_1_synapse.html#a58ea1b63c2053745598fa27dfc72cf9f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="startDynamicFunction"><param name="Local" value="class_synapse_1_1_synapse.html#ac76e1ee32dfde6ec33fcc52e8cdd0ef7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="startEntrance"><param name="Local" value="class_synapse_1_1_synapse.html#a857ba1cf500bbc602d94655683f62609"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stopDynamicFunction"><param name="Local" value="class_synapse_1_1_synapse.html#afeef9c1a33ee0b333c5df72478d91745"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stopEntrance"><param name="Local" value="class_synapse_1_1_synapse.html#aac4c50cca15e42396f1bfff761693696"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="synContrib"><param name="Local" value="class_synapse_1_1_synapse.html#ac9fc1da99a88f8dd286d3ff3ce484b85"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="t0"><param name="Local" value="class_synapse_1_1_synapse.html#ad0adf1cb832bd7ce7918f2779171d7d7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="tauOff"><param name="Local" value="class_synapse_1_1_synapse.html#afd5638a223c3fdcc672002dbced7bed0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="tauOn"><param name="Local" value="class_synapse_1_1_synapse.html#aae46f8edd1e94ea2ab51e3612afd3a3f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="tBeginOfPulse"><param name="Local" value="class_synapse_1_1_synapse.html#acdc426c52a2a13183d5f8c54a830bfa2"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="tEndOfPulse"><param name="Local" value="class_synapse_1_1_synapse.html#adfd02fa815d45efd0cb1bc0124fe2c90"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ti"><param name="Local" value="class_synapse_1_1_synapse.html#a714c95723607acad52af96ad55b6c575"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Tmax_mM"><param name="Local" value="class_synapse_1_1_synapse.html#ae4bcd698c5be77c2a6629d511d75f046"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="tPeak_ms"><param name="Local" value="class_synapse_1_1_synapse.html#a09b9b092efcb0d6745fa32fadcd46375"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesFactory"><param name="Local" value="namespace_synapses_factory.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesFactory"><param name="Local" value="class_synapses_factory_1_1_synapses_factory.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_synapses_factory_1_1_synapses_factory.html#a8b653e2419b9b65dd5b9feb89faf0eb4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="numberOfSynapses"><param name="Local" value="class_synapses_factory_1_1_synapses_factory.html#af83fbc27851417b677391ece9bf49a29"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Index"><param name="Local" value="classes.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Hierarchy"><param name="Local" value="hierarchy.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="object"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="AxonDelay.AxonDelay"><param name="Local" value="class_axon_delay_1_1_axon_delay.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ChannelConductance.ChannelConductance"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Compartment.Compartment"><param name="Local" value="class_compartment_1_1_compartment.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Configuration.Configuration"><param name="Local" value="class_configuration_1_1_configuration.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MotorUnit.MotorUnit"><param name="Local" value="class_motor_unit_1_1_motor_unit.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MotorUnitPool.MotorUnitPool"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTract.NeuralTract"><param name="Local" value="class_neural_tract_1_1_neural_tract.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTractUnit.NeuralTractUnit"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PointProcessGenerator.PointProcessGenerator"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PulseConductanceState.PulseConductanceState"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Synapse.Synapse"><param name="Local" value="class_synapse_1_1_synapse.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesFactory.SynapsesFactory"><param name="Local" value="class_synapses_factory_1_1_synapses_factory.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Members"><param name="Local" value="functions.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="All"><param name="Local" value="functions.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Functions"><param name="Local" value="functions_func.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Variables"><param name="Local" value="functions_vars.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Files"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="File List"><param name="Local" value="files.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="AxonDelay.py"><param name="Local" value="_axon_delay_8py.html"><param name="ImageNumber" value="11"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="AxonDelay"><param name="Local" value="class_axon_delay_1_1_axon_delay.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#ae4b6037beb2f833d82c5703bcb47ffb0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addSpinalSpike"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a5483df94745af77bf54f707f9a05a0e0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addTerminalSpike"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a49115bea963cde5e2c4317510d73cf7c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="index"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a5dbb9b5002d4b54bf347f48337bdb1c6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="latencySpinalTerminal_ms"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#aaa0b8daf2629cd7fa19d539fe2168d0f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="latencyStimulusSpinal_ms"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a81ea09febed911b8f5e4d56a5f434f8d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="latencyStimulusTerminal_ms"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a88845b9926b97db88174ce088d5af5e0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="length_m"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a08ab7285929002db2108179ea9f5d5dd"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stimulusPositiontoTerminal"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a3f6bb8f38c4474806544d01fbe9c0361"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="terminalSpikeTrain"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#aba392d8938766355063cf4bf3a87962d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="velocity_m_s"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a59cc448f95b38b88b7103c3058e8c397"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="ChannelConductance.py"><param name="Local" value="_channel_conductance_8py.html"><param name="ImageNumber" value="11"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ChannelConductance"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#adaaf5ea399963a716dc532a060964348"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="compCondKf"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a956928953c88e1c03c113fc98ec42cc6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="compCondKs"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a19cc2a71f96187c7c647855d586cecaa"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="compCondNa"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a26e6cf970cc7a8732f590dceb1d7c993"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeCurrent"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#abde599b9096579b94d24295678f45b6d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="compCond"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a0a91eec3fa2b1dfc66c6379943a5907f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="condState"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a628553cbc1efd93b30b0a15afd4417d9"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="EqPot_mV"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a654a73b6cd5853b509e7f7fba060572b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="gmax_muS"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a80a0238a90b30b411c9381f682d0aeec"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#a7bf3e28aab2160014358cde589f2ec39"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="lenStates"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#ae217799d13e5d225af048b7ba503fde1"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stateType"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#aa3c889bb4528c3abe7b69862cf87119d"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Compartment.py"><param name="Local" value="_compartment_8py.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Compartment"><param name="Local" value="class_compartment_1_1_compartment.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_compartment_1_1_compartment.html#af6abb8e8999054b0f4d99c440dc06e42"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeCurrent"><param name="Local" value="class_compartment_1_1_compartment.html#ab10c374833a5c36df0552d40e64e45b9"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="area_cm2"><param name="Local" value="class_compartment_1_1_compartment.html#a5d841c1a80dbaaf257dfc0a9cb763abc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="capacitance_nF"><param name="Local" value="class_compartment_1_1_compartment.html#ac7d7462a45d4d623ed688c187c9184aa"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Channels"><param name="Local" value="class_compartment_1_1_compartment.html#aa444563be9598d7cc54fd8d10ea6a04f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="diameter_mum"><param name="Local" value="class_compartment_1_1_compartment.html#aacb7db7022f5d3534d17642d47281cbb"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="gLeak"><param name="Local" value="class_compartment_1_1_compartment.html#a10d50da6a622982a6483c7cd78482bde"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="index"><param name="Local" value="class_compartment_1_1_compartment.html#a9402ef46ede52521ebbb9e9d2d68d631"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_compartment_1_1_compartment.html#a74f2266a2231c4a81cc680bc201f0ffd"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="length_mum"><param name="Local" value="class_compartment_1_1_compartment.html#a8154742b0082eea301690e3566e477b6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="neuronKind"><param name="Local" value="class_compartment_1_1_compartment.html#ad42f32769afd94d1e7d7d54008efb6fa"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="numberChannels"><param name="Local" value="class_compartment_1_1_compartment.html#a0fa96147f76e7814f30610027ed425df"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="numberofMultiSynapses"><param name="Local" value="class_compartment_1_1_compartment.html#aed4deea8b0fc160f16ecb1ef39cacba4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="specifRes_Ohmcm2"><param name="Local" value="class_compartment_1_1_compartment.html#aed6025b5335c2ce41d37c02fd3c1c042"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesIn"><param name="Local" value="class_compartment_1_1_compartment.html#abe41aff3bffed80f4b848bd14763d506"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesOut"><param name="Local" value="class_compartment_1_1_compartment.html#a85d64ebf548276c873501d2dc3489ceb"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="calcGLeak"><param name="Local" value="_compartment_8py.html#a32af1519f82a3df2abdd1a3e132cf0a8"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Configuration.py"><param name="Local" value="_configuration_8py.html"><param name="ImageNumber" value="11"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Configuration"><param name="Local" value="class_configuration_1_1_configuration.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_configuration_1_1_configuration.html#af834fc08a3bb0f94184988cef9298691"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="determineSynapses"><param name="Local" value="class_configuration_1_1_configuration.html#aef3bdd8d00baa7835588ca008d480cee"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="inputFunctionGet"><param name="Local" value="class_configuration_1_1_configuration.html#a590029f6dd5b22113bd6cc40e641ed9b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="parameterSet"><param name="Local" value="class_configuration_1_1_configuration.html#a67eeb73e7a40b8b060e242df3dcc3518"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="confArray"><param name="Local" value="class_configuration_1_1_configuration.html#a2b8c2d210ef82ba5088de3c8c9a8725d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="simDuration_ms"><param name="Local" value="class_configuration_1_1_configuration.html#aea238884fe3daa1287aa069f35d4ad3e"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="timeStep_ms"><param name="Local" value="class_configuration_1_1_configuration.html#a6379aaa6e54523ca81e3713d1846679b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="timeStepBySix_ms"><param name="Local" value="class_configuration_1_1_configuration.html#aa49387a016f5d528136ab5812821cb99"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="timeStepByTwo_ms"><param name="Local" value="class_configuration_1_1_configuration.html#a58f6e3bf5491f8fb229697fc3690aa12"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="MotorUnit.py"><param name="Local" value="_motor_unit_8py.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MotorUnit"><param name="Local" value="class_motor_unit_1_1_motor_unit.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a5816d9af440be9c847293eff9c7a9f43"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addSomaSpike"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#accb8b6700ed06e1396b70af62a9f31c6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeCompartments"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#ae4093022b48cee82d78c99ecc24cb247"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeDelay"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#af9ed66e359c4402ae951d79d5264f566"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeMotorUnit"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a1239418d3f8428a663ff99061710460f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="dVdt"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#af694436ac5bd3194cfcbe42b8a60180d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="bSat"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a2256c241b36e0181e3530e6f791545a0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="capacitanceInv"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a0cf2afb5bd12374db56b9d9a5a1671e6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="compartment"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a6d4da7327031b3cb9c7041a4a790e524"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="compNumber"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#afe7281fb12c41102980b6b48d5a49713"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="conf"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a10539f5129881188923f3a3a164d2cba"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Delay"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#abe82ffa1e293d10225b67870a962eab8"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="G"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a9b9f157ab92b47470ca7ec6bd3473dd3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="iInjected"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a06045eca379d38892670a491dbac0829"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="iIonic"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a0541858216e7d01582312f9a7a99d595"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="index"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a4f3205a9273aabb92d425992d91a1848"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a08ed5171ba46e0b1ea5bc7d08296c612"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MNRefPer_ms"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#abbdaa195ac00926d96d509ae01dcda05"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="nerve"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a754ee6b88fc2a09899da9f9b13bfbf59"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="somaIndex"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a7cd2be92814b5892bdd18dafd824da9f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="somaSpikeTrain"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a8c86d98daa6c509e226ab165fa92515f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="terminalSpikeTrain"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a2e33990aaab69454943aa00db6b8d2eb"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="threshold_mV"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#affbd0b90f1dce6a0f929775e54f8c212"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="tSomaSpike"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#abca82ec2c7312bb475989bb45e82ca28"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="TwitchAmp_N"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#ad14af870eb3dd7468041853f2c6e8cab"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="TwitchTc_ms"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a083581c89ebb964e58721667307dd2bc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="twTet"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a2a466c5f2f798901c1c438f9d57c2221"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="v_mV"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#aa8968f89250895ae2ae572e9106709f2"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="calcGCoupling"><param name="Local" value="_motor_unit_8py.html#a232c5f6b9bf5b3e04a26c5e8ff0bda57"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="compGCouplingMatrix"><param name="Local" value="_motor_unit_8py.html#aa8a5016f6b73726a88d8fdcf0c8ec9e5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="runge_kutta"><param name="Local" value="_motor_unit_8py.html#ad34c81597ff5e9cdcf53fd13e78d2d6c"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="MotorUnitPool.py"><param name="Local" value="_motor_unit_pool_8py.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MotorUnitPool"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a627cffa9977225e58194d63a338059dc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeActivationSignal"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a03b7c1202f680bd8ba3af9b0b06bd71c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeForceNoHill"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a8fbb182559fe08eb45800271655b711f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeMotorUnitPool"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#ae525c6bba27837f09d2a767544780b0f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="listSpikes"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a156ffc40be4c7c37f79905fa58b017e5"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="activation_nonSat"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a467ac7b080b79b9515d5846d75e95d1c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="activation_Sat"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#ac475d1369c38d0bc5064c7243b4e1d44"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="activationModel"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#abaa7680d0691fac81f66b200dfcfd203"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ActMatrix"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#ad03b9e215e833188060e90bc4392d42b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="an"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#ac72c67b4a1f6134965ab77e2d798b5a4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeForce"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a21f9a6a5d113b5b0f67a3557c47ebd5a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="bSat"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a4e107835e34b4f56d06b9b28c143fe40"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="conf"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a3b2ee8f3e5500bfdc8fa731a5cb7d622"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="diracDeltaValue"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a48b53d4f838ca8cfe2bc41c8308f2060"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="force"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a97011c17140c45a42a00105279f014ad"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="hillModel"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a963061fdcfee8f9dc33e4d6f130ea59b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#aeb57d0463ad56a16b166d00dc6079b95"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MUnumber"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#aa5884530baaa20f46007805bc574407d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="pool"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a832364dc014aa8a1b2947abfe063f626"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="poolSomaSpikes"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a3790757a111061662ad0f98120b25e69"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="poolTerminalSpikes"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a4f0b93df27eb6303fa1a3d49653d4fd3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="timeIndex"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#ab5659e1c9355ecf529d9b8be8cbf6d65"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="twitchAmp_N"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a03538b06e7220f9d48c7306ed6508c05"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="twTet"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a785a769c5b4824603a24339e4f0d8dfe"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="unit"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a1b14c831606c27efae62f1468850393b"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="computeForce"><param name="Local" value="_motor_unit_pool_8py.html#a21ec390f1b0dedf181ae349c8b6f97aa"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="twitchSaturation"><param name="Local" value="_motor_unit_pool_8py.html#a3ed1b9ccd29068fac93964327dd54bf9"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTract.py"><param name="Local" value="_neural_tract_8py.html"><param name="ImageNumber" value="11"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTract"><param name="Local" value="class_neural_tract_1_1_neural_tract.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a4bcd77ff91855685b0b96d3522ba7d20"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizePool"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a0f826ea8fadc13ea0af3bfdf5508b4f0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="listSpikes"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a600b048655026f9271cec0a812b11dc4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="FR"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#aefbec14cba88a937841314d47f6056c0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#af52b112c86e0c774fa204b7e2154b6aa"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Number"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a9cf4c6df3fb8818e955817bb3ea9ffc4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="pool"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#af0d232b9b86f3bae802b32777d0405d0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="poolTerminalSpikes"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a1d104906ff30028e44e377a9e1ed5a3d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="target"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a637995fcac5bdd80ab1a9d4ea3de7f40"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="timeIndex"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#adcda2b95aa86d4e7eebcc2557aee58cf"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="unit"><param name="Local" value="class_neural_tract_1_1_neural_tract.html#a95db7d0720ec12f091758968476ba240"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTractUnit.py"><param name="Local" value="_neural_tract_unit_8py.html"><param name="ImageNumber" value="11"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTractUnit"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#a8b10daafc9b7e804ba7d1c62aa854fa6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeNeuralTractUnit"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#aaa36d43c7f4d1664696922e731f9e14a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="transmitSpikes"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#a1c44e3b23ebda745d84d88c015c1cb25"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="GammaOrder"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#aee01a134ce97127783d75757ec15f352"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="indicesOfSynapsesOnTarget"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#a4e5fa20e16e924e7f27a087e8f7a19a7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="spikesGenerator"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#a57cbb130e004fb3f7ee8d8a540f7dff0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesOut"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#a740d2cfa17ad57c7dbd40fbafc654b95"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="terminalSpikeTrain"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#ac34c86235329e753e8cfdfcc1e24c53f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="transmitSpikesThroughSynapses"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#ac6fa367f6ada8045919674feaed4f6ad"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="PointProcessGenerator.py"><param name="Local" value="_point_process_generator_8py.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PointProcessGenerator"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#af40e8d97d489b9ef5ce0446ea327ce93"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="atualizeGenerator"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#a9e80adf5fea28ec4adb90489f0c42670"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="GammaOrder"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#aa6c6513cd7f00dbdceb5f945a07cffee"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="GammaOrderInv"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#aa70be756b1535ff4512affa05a732fda"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="index"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#a57f6c8af8fd3d37ed8ab2f4abe9be5d8"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="points"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#ab36d31f34c0330e13ae9732d53984bab"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="threshold"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#abcb23e09b752b797a1f11f2679373ca1"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="y"><param name="Local" value="class_point_process_generator_1_1_point_process_generator.html#a70a43b5c26daf20833ecbc9f4d979726"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="gammaPoint"><param name="Local" value="_point_process_generator_8py.html#ad591b4c4f24356425c2958ea43647ddd"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="PulseConductanceState.py"><param name="Local" value="_pulse_conductance_state_8py.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PulseConductanceState"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a21c7b2a5374d272d27296ea8bc968f36"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="changeState"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#ac1ee5a9b9dc0ad6aa8e86052aa17268f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeStateValue"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#ae81d1a5bbbf4fd80db0ded06631bd9c2"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="actType"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a0677d7b972a6f6a12abc666212a12297"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="alpha_ms1"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a5fe4e2c9035df43a1e8eb9d66d669e14"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="beta_ms1"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a8ebc0c29d97fa09699d7dfb724e94f82"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeValueOff"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a89e0cc154bd699aee7529574a8fe556c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeValueOn"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a7f6710b9f97ac5879888402cd5ed15d4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a53d237daaa4815ad375e2377da89845e"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PulseDur_ms"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#afda03b180fc3cb619de615632e725a6f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="state"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#ac85aa714a187088e1b31fa2369ed4bca"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="t0"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a55f44caf230fc3899811924118705f56"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="v0"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a215539a3eb60e280225053c83f386d79"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="value"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a832cdff7f315b8c16bef00642fb385dd"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="compValOff"><param name="Local" value="_pulse_conductance_state_8py.html#a1cd804c6d3299a3ee17a4e96628e9ec7"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="compValOn"><param name="Local" value="_pulse_conductance_state_8py.html#ab354e94cc78939492454ad81c2e86223"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="simulation.py"><param name="Local" value="simulation_8py.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="simulador"><param name="Local" value="simulation_8py.html#a90ad3c33d4918e34f3ff6e6f69e9c2ec"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Synapse.py"><param name="Local" value="_synapse_8py.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Synapse"><param name="Local" value="class_synapse_1_1_synapse.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_synapse_1_1_synapse.html#a2503e88be21ea89ad4f652b2fedfd76e"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="addConductance"><param name="Local" value="class_synapse_1_1_synapse.html#a4fa7b6b92a4b197dba58ac346cfffc6f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeConductance"><param name="Local" value="class_synapse_1_1_synapse.html#a88599102e16f4fe28f9cf7580c3a8108"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeCurrent"><param name="Local" value="class_synapse_1_1_synapse.html#a744b7b46e7dfee8871f4c3b29fe099ae"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeCurrent2"><param name="Local" value="class_synapse_1_1_synapse.html#ad4eb9663dc124db77c7e99578ab7eff7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="receiveSpike"><param name="Local" value="class_synapse_1_1_synapse.html#a18fc05b9e95285fded46afa38688a052"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="startConductanceDynamics"><param name="Local" value="class_synapse_1_1_synapse.html#a6d3fc87143221f0bcfdb5f86095099c5"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="startConductanceNone"><param name="Local" value="class_synapse_1_1_synapse.html#af9d45f19ead577a6d98d9dd5e304cb13"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stopConductanceDynamics"><param name="Local" value="class_synapse_1_1_synapse.html#a25802c58dc6c64cd265f7cbae3c07958"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stopConductanceNone"><param name="Local" value="class_synapse_1_1_synapse.html#aa8deb85e48c1a9b27453e0ebde27b2cf"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="alpha_ms1"><param name="Local" value="class_synapse_1_1_synapse.html#ae15502cd5d5604d38328b2b1432477d7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="beta_ms1"><param name="Local" value="class_synapse_1_1_synapse.html#ab59f413cbd21555531be209dee307a97"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeCurrent"><param name="Local" value="class_synapse_1_1_synapse.html#a9f68cb297a4bc98c4cb9d5c042b5d0d6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="conductanceState"><param name="Local" value="class_synapse_1_1_synapse.html#a89d3762daa9c60be63403a5ce9fd9a84"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="delay_ms"><param name="Local" value="class_synapse_1_1_synapse.html#a14adfda48133bd314f4dcd65fc9a2366"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="dynamics"><param name="Local" value="class_synapse_1_1_synapse.html#a67a1454de1ef2f08ffa3a10bf8466158"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="EqPot_mV"><param name="Local" value="class_synapse_1_1_synapse.html#adc80e9a62c17b29a92c2e7a0413e572d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="expFinish"><param name="Local" value="class_synapse_1_1_synapse.html#aa9ae256b272ceb8e9e4a931a9cd5d163"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="gmax_muS"><param name="Local" value="class_synapse_1_1_synapse.html#a7922dac4765183cb6052905cc0d251cb"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="gMaxTot_muS"><param name="Local" value="class_synapse_1_1_synapse.html#a470750725ecb176e048a973b9dc23ea3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="kind"><param name="Local" value="class_synapse_1_1_synapse.html#aa2ea45450a3ad13cfefcae9fabe6ce15"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="neuronKind"><param name="Local" value="class_synapse_1_1_synapse.html#a031af2fe7be76f9b5f69c087228a1b9a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Non"><param name="Local" value="class_synapse_1_1_synapse.html#af8779bbc2ee2c5ae7747ee5cfbcf112e"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="numberOfIncomingSynapses"><param name="Local" value="class_synapse_1_1_synapse.html#a6e55e008336cc47551669f3d77248d57"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="pool"><param name="Local" value="class_synapse_1_1_synapse.html#a133990bf3ab7f1efa8b416be73d07a11"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ri"><param name="Local" value="class_synapse_1_1_synapse.html#adc85234a081ad18bf19473be530dcf78"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rInf"><param name="Local" value="class_synapse_1_1_synapse.html#afd263d49a97910efd8955a2aadef50e0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Roff"><param name="Local" value="class_synapse_1_1_synapse.html#ae67ffbbd23cd9c56f20bda9e8e040663"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="roff"><param name="Local" value="class_synapse_1_1_synapse.html#a9a8d45c76378fae50d7ed2af29602aa8"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Ron"><param name="Local" value="class_synapse_1_1_synapse.html#ae759c51a7196995510fe3eb086050c76"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ron"><param name="Local" value="class_synapse_1_1_synapse.html#a2e4a3427e071a311ac52341ad67f90c6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="spikesReceived"><param name="Local" value="class_synapse_1_1_synapse.html#a58ea1b63c2053745598fa27dfc72cf9f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="startDynamicFunction"><param name="Local" value="class_synapse_1_1_synapse.html#ac76e1ee32dfde6ec33fcc52e8cdd0ef7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="startEntrance"><param name="Local" value="class_synapse_1_1_synapse.html#a857ba1cf500bbc602d94655683f62609"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stopDynamicFunction"><param name="Local" value="class_synapse_1_1_synapse.html#afeef9c1a33ee0b333c5df72478d91745"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stopEntrance"><param name="Local" value="class_synapse_1_1_synapse.html#aac4c50cca15e42396f1bfff761693696"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="synContrib"><param name="Local" value="class_synapse_1_1_synapse.html#ac9fc1da99a88f8dd286d3ff3ce484b85"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="t0"><param name="Local" value="class_synapse_1_1_synapse.html#ad0adf1cb832bd7ce7918f2779171d7d7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="tauOff"><param name="Local" value="class_synapse_1_1_synapse.html#afd5638a223c3fdcc672002dbced7bed0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="tauOn"><param name="Local" value="class_synapse_1_1_synapse.html#aae46f8edd1e94ea2ab51e3612afd3a3f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="tBeginOfPulse"><param name="Local" value="class_synapse_1_1_synapse.html#acdc426c52a2a13183d5f8c54a830bfa2"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="tEndOfPulse"><param name="Local" value="class_synapse_1_1_synapse.html#adfd02fa815d45efd0cb1bc0124fe2c90"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ti"><param name="Local" value="class_synapse_1_1_synapse.html#a714c95723607acad52af96ad55b6c575"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Tmax_mM"><param name="Local" value="class_synapse_1_1_synapse.html#ae4bcd698c5be77c2a6629d511d75f046"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="tPeak_ms"><param name="Local" value="class_synapse_1_1_synapse.html#a09b9b092efcb0d6745fa32fadcd46375"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="compRiStart"><param name="Local" value="_synapse_8py.html#a6d5943c0d974d992b8c9daa3ff3818d6"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="compRiStop"><param name="Local" value="_synapse_8py.html#a67ee3bb7abbf9608bd83c31c63634cac"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="compRoff"><param name="Local" value="_synapse_8py.html#aadfeb939e02125a55a2b2acc6634ba41"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="compRoffStart"><param name="Local" value="_synapse_8py.html#a4ff37207e236e81ae7bced77172a5af5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="compRoffStop"><param name="Local" value="_synapse_8py.html#a8e85651ec0d366f191a2093a1bd2bc84"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="compRon"><param name="Local" value="_synapse_8py.html#a16fdc8aab9a394041c8b6667511a1fd7"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="compRonStart"><param name="Local" value="_synapse_8py.html#a3bbc4948087cc789af35085ea0423a93"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="compRonStop"><param name="Local" value="_synapse_8py.html#a9915f1de7bde4ece67ef45a7e7324c21"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="compSynapCond"><param name="Local" value="_synapse_8py.html#a55ffd471fbed3550b464a9862687f541"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesFactory.py"><param name="Local" value="_synapses_factory_8py.html"><param name="ImageNumber" value="11"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesFactory"><param name="Local" value="class_synapses_factory_1_1_synapses_factory.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_synapses_factory_1_1_synapses_factory.html#a8b653e2419b9b65dd5b9feb89faf0eb4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="numberOfSynapses"><param name="Local" value="class_synapses_factory_1_1_synapses_factory.html#af83fbc27851417b677391ece9bf49a29"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    </UL>
+  </UL>
+</UL>
+</BODY>
+</HTML>

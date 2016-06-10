@@ -1,0 +1,3 @@
+\form#0:\begin{equation} GC = \left[\begin{array}{cccccccc} -g_c[0]&g_c[0]&0&...&...&0&0&0\\ g_c[0]&-g_c[0]-g_c[1]&g_c[1]&0&...&...&0&0\\ \vdots&&\ddots&&...&&0&0 \\ 0&...&g_c[i-1]&-g_c[i-1]-g_c[i]&g_c[i]&0&...&0\\ 0&0&0&...&...&&&\\ 0&&...&&g_c[N-2]&-g_c[N-2]-g_c[N-1]&g_c[N-1]\\ 0&...&0&&&0&g_c[N-1]&-g_c[N-1]\end{array}\right] \end{equation}
+\form#1:$\Omega$
+\form#2:$\mu$

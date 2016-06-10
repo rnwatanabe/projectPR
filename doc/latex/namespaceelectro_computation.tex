@@ -1,0 +1,67 @@
+\hypertarget{namespaceelectro_computation}{\section{electro\-Computation Namespace Reference}
+\label{namespaceelectro_computation}\index{electro\-Computation@{electro\-Computation}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceelectro_computation_adcb89336bc33d6300433d5bacdebfeb6}{calc\-G\-Coupling}
+\begin{DoxyCompactList}\small\item\em calculates the coupling conductance between two compartments Inputs\-: cyt\-R. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceelectro_computation_a4e598ec996ba008c3919e1c46f28597b}{calc\-G\-Leak}
+\begin{DoxyCompactList}\small\item\em computes the leak conductance of the compartment input\-: area\-: area of the compartment in cm2 specific\-Res\-: specific resistance of the compartment in Ohm.\-cm2 output\-: g\-Leak in M\-S \end{DoxyCompactList}\item 
+def \hyperlink{namespaceelectro_computation_a7511cdb4b5ac319bfc67afd66e0583fa}{comp\-G\-Coupling\-Matrix}
+\begin{DoxyCompactList}\small\item\em computes the Coupling Matrix to be used in the d\-Vdt function of the N compartments of the motor unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespaceelectro_computation_adcb89336bc33d6300433d5bacdebfeb6}{\index{electro\-Computation@{electro\-Computation}!calc\-G\-Coupling@{calc\-G\-Coupling}}
+\index{calc\-G\-Coupling@{calc\-G\-Coupling}!electroComputation@{electro\-Computation}}
+\subsubsection[{calc\-G\-Coupling}]{\setlength{\rightskip}{0pt plus 5cm}def electro\-Computation.\-calc\-G\-Coupling (
+\begin{DoxyParamCaption}
+\item[{}]{cyt\-R, }
+\item[{}]{l\-Comp1, }
+\item[{}]{l\-Comp2, }
+\item[{}]{d\-Comp1, }
+\item[{}]{d\-Comp2}
+\end{DoxyParamCaption}
+)}}\label{namespaceelectro_computation_adcb89336bc33d6300433d5bacdebfeb6}
+
+
+calculates the coupling conductance between two compartments Inputs\-: cyt\-R. 
+
+Cytoplasmatic resistance in Ohm.\-cm l\-Comp1, l\-Comp2\-: length of the compartments in mum d\-Comp1, d\-Comp2 diameter of the compartments in mum Output\-: coupling conductance in M\-S 
+
+Definition at line 19 of file electro\-Computation.\-py.
+
+\hypertarget{namespaceelectro_computation_a4e598ec996ba008c3919e1c46f28597b}{\index{electro\-Computation@{electro\-Computation}!calc\-G\-Leak@{calc\-G\-Leak}}
+\index{calc\-G\-Leak@{calc\-G\-Leak}!electroComputation@{electro\-Computation}}
+\subsubsection[{calc\-G\-Leak}]{\setlength{\rightskip}{0pt plus 5cm}def electro\-Computation.\-calc\-G\-Leak (
+\begin{DoxyParamCaption}
+\item[{}]{area, }
+\item[{}]{specific\-Res}
+\end{DoxyParamCaption}
+)}}\label{namespaceelectro_computation_a4e598ec996ba008c3919e1c46f28597b}
+
+
+computes the leak conductance of the compartment input\-: area\-: area of the compartment in cm2 specific\-Res\-: specific resistance of the compartment in Ohm.\-cm2 output\-: g\-Leak in M\-S 
+
+
+
+Definition at line 33 of file electro\-Computation.\-py.
+
+\hypertarget{namespaceelectro_computation_a7511cdb4b5ac319bfc67afd66e0583fa}{\index{electro\-Computation@{electro\-Computation}!comp\-G\-Coupling\-Matrix@{comp\-G\-Coupling\-Matrix}}
+\index{comp\-G\-Coupling\-Matrix@{comp\-G\-Coupling\-Matrix}!electroComputation@{electro\-Computation}}
+\subsubsection[{comp\-G\-Coupling\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}def electro\-Computation.\-comp\-G\-Coupling\-Matrix (
+\begin{DoxyParamCaption}
+\item[{}]{gc}
+\end{DoxyParamCaption}
+)}}\label{namespaceelectro_computation_a7511cdb4b5ac319bfc67afd66e0583fa}
+
+
+computes the Coupling Matrix to be used in the d\-Vdt function of the N compartments of the motor unit. 
+
+The Matrix uses the values obtained with the function calc\-Gcoupling. 
+
+ $\vert$-\/gc\mbox{[}0\mbox{]} gc\mbox{[}0\mbox{]} 0 .... ..... 0 0 0$\vert$ $\vert$gc\mbox{[}0\mbox{]} -\/gc\mbox{[}0\mbox{]}-\/gc\mbox{[}1\mbox{]} gc\mbox{[}1\mbox{]} 0 ..... ..... 0$\vert$ $\vert$ . . ... ... ..... 0$\vert$ G\-C = $\vert$ \-: . . . ........................................ \-:$\vert$ $\vert$ 0 ....... 0 gc\mbox{[}i-\/1\mbox{]} -\/gc\mbox{[}i-\/1\mbox{]}-\/gc\mbox{[}i\mbox{]} gc\mbox{[}i\mbox{]} 0 ..... 0 \-:$\vert$ $\vert$ 0 ... ............................... .... ..............................$\vert$ $\vert$ 0 .............................................gc\mbox{[}N-\/2\mbox{]} -\/gc\mbox{[}N-\/2\mbox{]}-\/gc\mbox{[}N-\/1\mbox{]} gc\mbox{[}N-\/1\mbox{]}$\vert$ $\vert$ 0 .......................................................................... gc\mbox{[}N-\/1\mbox{]} -\/gc\mbox{[}N-\/1\mbox{]}$\vert$ $\vert$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$\vert$ Inputs\-: the vector with N elements, with the coupling conductance of each compartment of the Motor Unit. Output\-: the G\-C matrix 
+
+Definition at line 53 of file electro\-Computation.\-py.
+

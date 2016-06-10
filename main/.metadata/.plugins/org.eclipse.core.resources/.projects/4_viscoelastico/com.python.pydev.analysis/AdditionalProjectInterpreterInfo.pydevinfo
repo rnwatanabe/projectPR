@@ -1,0 +1,42 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/media/renato/Backup_Disk/GitRepositories/projectPR/main/.metadata/.plugins/org.eclipse.core.resources/.projects/4_viscoelastico/com.python.pydev.analysis/v2_indexcache
+Maxwell_ForceLength|1464809897000000000|/home/renato/Dropbox/Concurso_UFABC_Biomecânica/aulas/4_Viscoelástico/codigos/Maxwell_ForceLength.py
+Voigt_ForceLength|1464810385000000000|/home/renato/Dropbox/Concurso_UFABC_Biomecânica/aulas/4_Viscoelástico/codigos/Voigt_ForceLength.py
+-- END DISKCACHE
+-- START DICTIONARY
+3
+3=Maxwell_ForceLength.__init__
+1=Maxwell_ForceLength
+2=Voigt_ForceLength
+-- END DICTIONARY
+-- START TREE 1
+12
+Tf|0|
+b|0|
+eul|1|euler!10@
+for|0|
+k|0|
+max|1|Maxwell_ForceLength!9@
+myc|0|
+run|0|
+ste|0|
+t|0|
+tim|0|
+voi|1|Voigt_ForceLength!17@
+-- END TREE
+-- START TREE 2
+12
+__i|2|__init__!2&18@__init__!1&10@
+b|1|b!3&11@
+com|3|computeLength!1&10@computeSpringLength!1&10@computeViscosityLength!1&10@
+dlb|1|dLbdt!1&10@
+ela|0|
+for|1|force!3&11@
+inp|0|
+k|1|k!3&11@
+len|3|length!3&11@length_b!3&11@length_k!3&11@
+tim|1|timeStep!3&11@
+vel|1|velocity!3&11@
+vis|0|
+-- END TREE

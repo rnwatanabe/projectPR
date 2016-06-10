@@ -1,7 +1,5 @@
 '''
-Created on Oct 7, 2015
-
-@author: root
+Author: Renato Naville Watanabe
 '''
 from ChannelConductance import ChannelConductance
 

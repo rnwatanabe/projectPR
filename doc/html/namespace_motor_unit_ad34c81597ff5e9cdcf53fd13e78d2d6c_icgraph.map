@@ -1,0 +1,4 @@
+<map id="MotorUnit.runge_kutta" name="MotorUnit.runge_kutta">
+<area shape="rect" id="node2" href="$class_motor_unit_1_1_motor_unit.html#ae4093022b48cee82d78c99ecc24cb247" title="Atualize all neural compartments. " alt="" coords="205,5,395,46"/>
+<area shape="rect" id="node3" href="$class_motor_unit_1_1_motor_unit.html#a1239418d3f8428a663ff99061710460f" title="Atualize the dynamical and nondynamical (delay) parts of the motor unit. " alt="" coords="443,5,632,46"/>
+</map>

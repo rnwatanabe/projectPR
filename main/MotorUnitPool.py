@@ -84,7 +84,7 @@ class MotorUnitPool(object):
         self.diracDeltaValue = 1.0 / conf.timeStep_ms
         
         #Force
-        self.force = np.zeros((round(conf.simDuration_ms/conf.timeStep_ms), 1), dtype = float)
+        self.force = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         self.hillModel = conf.parameterSet('hillModel',pool, 0)
         if self.hillModel == 'No': self.atualizeForce = self.atualizeForceNoHill
         

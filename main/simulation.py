@@ -24,7 +24,7 @@ def simulador():
 
     conf = Configuration('confTest.rmto')       
     
-
+    
     
     pools = []
     pools.append(MotorUnitPool(conf, 'SOL'))        
@@ -41,7 +41,7 @@ def simulador():
         pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
     toc = time.clock()
-    print str(toc - tic)+ ' seconds'
+    print str(toc - tic) + ' seconds'
     
    
     

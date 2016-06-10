@@ -1,0 +1,208 @@
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state}{\section{Pulse\-Conductance\-State.\-Pulse\-Conductance\-State Class Reference}
+\label{class_pulse_conductance_state_1_1_pulse_conductance_state}\index{Pulse\-Conductance\-State.\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State.\-Pulse\-Conductance\-State}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_a21c7b2a5374d272d27296ea8bc968f36}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em Initializes the pulse conductance state. \end{DoxyCompactList}\item 
+def \hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_ac1ee5a9b9dc0ad6aa8e86052aa17268f}{change\-State}
+\begin{DoxyCompactList}\small\item\em void function that modify the current situation (true/false) of the state \end{DoxyCompactList}\item 
+def \hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_ae81d1a5bbbf4fd80db0ded06631bd9c2}{compute\-State\-Value}
+\begin{DoxyCompactList}\small\item\em compute the state value by using the approximation of Destexhe (1997) to compute the Hodgkin-\/\-Huxley states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_a53d237daaa4815ad375e2377da89845e}{kind}
+\item 
+\hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_a832cdff7f315b8c16bef00642fb385dd}{value}
+\item 
+\hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_a215539a3eb60e280225053c83f386d79}{v0}
+\item 
+\hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_a55f44caf230fc3899811924118705f56}{t0}
+\item 
+\hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_ac85aa714a187088e1b31fa2369ed4bca}{state}
+\item 
+\hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_a8ebc0c29d97fa09699d7dfb724e94f82}{beta\-\_\-ms1}
+\item 
+\hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_a5fe4e2c9035df43a1e8eb9d66d669e14}{alpha\-\_\-ms1}
+\item 
+\hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_afda03b180fc3cb619de615632e725a6f}{Pulse\-Dur\-\_\-ms}
+\item 
+\hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_a0677d7b972a6f6a12abc666212a12297}{act\-Type}
+\item 
+\hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_a7f6710b9f97ac5879888402cd5ed15d4}{compute\-Value\-On}
+\item 
+\hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state_a89e0cc154bd699aee7529574a8fe556c}{compute\-Value\-Off}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file Pulse\-Conductance\-State.\-py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_a21c7b2a5374d272d27296ea8bc968f36}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-\_\-\-\_\-init\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{kind, }
+\item[{}]{conf, }
+\item[{}]{pool, }
+\item[{}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_a21c7b2a5374d272d27296ea8bc968f36}
+
+
+Initializes the pulse conductance state. 
+
+Variables\-: kind -\/ type of the state(m, h, n, q). conf -\/ an instance of the \hyperlink{namespace_configuration}{Configuration} class with the functions to correctly parameterize the model. See the \hyperlink{namespace_configuration}{Configuration} class. pool -\/ the pool that this state belongs. index -\/ the index of the unit that this state belongs. 
+
+Definition at line 38 of file Pulse\-Conductance\-State.\-py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_ac1ee5a9b9dc0ad6aa8e86052aa17268f}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!change\-State@{change\-State}}
+\index{change\-State@{change\-State}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{change\-State}]{\setlength{\rightskip}{0pt plus 5cm}def Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-change\-State (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_ac1ee5a9b9dc0ad6aa8e86052aa17268f}
+
+
+void function that modify the current situation (true/false) of the state 
+
+Inputs\-: t -\/ instant t 
+
+Definition at line 76 of file Pulse\-Conductance\-State.\-py.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pulse_conductance_state_1_1_pulse_conductance_state_ac1ee5a9b9dc0ad6aa8e86052aa17268f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_ae81d1a5bbbf4fd80db0ded06631bd9c2}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!compute\-State\-Value@{compute\-State\-Value}}
+\index{compute\-State\-Value@{compute\-State\-Value}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{compute\-State\-Value}]{\setlength{\rightskip}{0pt plus 5cm}def Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-compute\-State\-Value (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_ae81d1a5bbbf4fd80db0ded06631bd9c2}
+
+
+compute the state value by using the approximation of Destexhe (1997) to compute the Hodgkin-\/\-Huxley states. 
+
+Input\-: t -\/ instant t 
+
+Definition at line 87 of file Pulse\-Conductance\-State.\-py.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pulse_conductance_state_1_1_pulse_conductance_state_ae81d1a5bbbf4fd80db0ded06631bd9c2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_a0677d7b972a6f6a12abc666212a12297}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!act\-Type@{act\-Type}}
+\index{act\-Type@{act\-Type}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{act\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-act\-Type}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_a0677d7b972a6f6a12abc666212a12297}
+
+
+Definition at line 53 of file Pulse\-Conductance\-State.\-py.
+
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_a5fe4e2c9035df43a1e8eb9d66d669e14}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!alpha\-\_\-ms1@{alpha\-\_\-ms1}}
+\index{alpha\-\_\-ms1@{alpha\-\_\-ms1}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{alpha\-\_\-ms1}]{\setlength{\rightskip}{0pt plus 5cm}Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-alpha\-\_\-ms1}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_a5fe4e2c9035df43a1e8eb9d66d669e14}
+
+
+Definition at line 49 of file Pulse\-Conductance\-State.\-py.
+
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_a8ebc0c29d97fa09699d7dfb724e94f82}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!beta\-\_\-ms1@{beta\-\_\-ms1}}
+\index{beta\-\_\-ms1@{beta\-\_\-ms1}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{beta\-\_\-ms1}]{\setlength{\rightskip}{0pt plus 5cm}Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-beta\-\_\-ms1}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_a8ebc0c29d97fa09699d7dfb724e94f82}
+
+
+Definition at line 48 of file Pulse\-Conductance\-State.\-py.
+
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_a89e0cc154bd699aee7529574a8fe556c}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!compute\-Value\-Off@{compute\-Value\-Off}}
+\index{compute\-Value\-Off@{compute\-Value\-Off}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{compute\-Value\-Off}]{\setlength{\rightskip}{0pt plus 5cm}Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-compute\-Value\-Off}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_a89e0cc154bd699aee7529574a8fe556c}
+
+
+Definition at line 63 of file Pulse\-Conductance\-State.\-py.
+
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_a7f6710b9f97ac5879888402cd5ed15d4}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!compute\-Value\-On@{compute\-Value\-On}}
+\index{compute\-Value\-On@{compute\-Value\-On}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{compute\-Value\-On}]{\setlength{\rightskip}{0pt plus 5cm}Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-compute\-Value\-On}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_a7f6710b9f97ac5879888402cd5ed15d4}
+
+
+Definition at line 62 of file Pulse\-Conductance\-State.\-py.
+
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_a53d237daaa4815ad375e2377da89845e}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!kind@{kind}}
+\index{kind@{kind}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{kind}]{\setlength{\rightskip}{0pt plus 5cm}Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-kind}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_a53d237daaa4815ad375e2377da89845e}
+
+
+Definition at line 39 of file Pulse\-Conductance\-State.\-py.
+
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_afda03b180fc3cb619de615632e725a6f}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!Pulse\-Dur\-\_\-ms@{Pulse\-Dur\-\_\-ms}}
+\index{Pulse\-Dur\-\_\-ms@{Pulse\-Dur\-\_\-ms}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{Pulse\-Dur\-\_\-ms}]{\setlength{\rightskip}{0pt plus 5cm}Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-Pulse\-Dur\-\_\-ms}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_afda03b180fc3cb619de615632e725a6f}
+
+
+Definition at line 50 of file Pulse\-Conductance\-State.\-py.
+
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_ac85aa714a187088e1b31fa2369ed4bca}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!state@{state}}
+\index{state@{state}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-state}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_ac85aa714a187088e1b31fa2369ed4bca}
+
+
+Definition at line 46 of file Pulse\-Conductance\-State.\-py.
+
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_a55f44caf230fc3899811924118705f56}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!t0@{t0}}
+\index{t0@{t0}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{t0}]{\setlength{\rightskip}{0pt plus 5cm}Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-t0}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_a55f44caf230fc3899811924118705f56}
+
+
+Definition at line 44 of file Pulse\-Conductance\-State.\-py.
+
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_a215539a3eb60e280225053c83f386d79}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!v0@{v0}}
+\index{v0@{v0}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{v0}]{\setlength{\rightskip}{0pt plus 5cm}Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-v0}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_a215539a3eb60e280225053c83f386d79}
+
+
+Definition at line 43 of file Pulse\-Conductance\-State.\-py.
+
+\hypertarget{class_pulse_conductance_state_1_1_pulse_conductance_state_a832cdff7f315b8c16bef00642fb385dd}{\index{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}!value@{value}}
+\index{value@{value}!PulseConductanceState::PulseConductanceState@{Pulse\-Conductance\-State\-::\-Pulse\-Conductance\-State}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}Pulse\-Conductance\-State.\-Pulse\-Conductance\-State.\-value}}\label{class_pulse_conductance_state_1_1_pulse_conductance_state_a832cdff7f315b8c16bef00642fb385dd}
+
+
+Definition at line 40 of file Pulse\-Conductance\-State.\-py.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_pulse_conductance_state_8py}{Pulse\-Conductance\-State.\-py}\end{DoxyCompactItemize}
