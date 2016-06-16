@@ -21,14 +21,26 @@ def calcGCoupling(cytR, lComp1, lComp2, dComp1, dComp2):
 
 
     - Inputs: 
-         + **cytR**: Cytoplasmatic resistance in \f$\Omega\f$.cm.
+         + **cytR**: Cytoplasmatic resistivity in \f$\Omega\f$.cm.
 
          + **lComp1, lComp2**: length of the compartments in \f$\mu\f$m.
 
          + **dComp1, dComp2**: diameter of the compartments in \f$\mu\f$m.
 
     - Output:
-         + coupling conductance in MS
+         + coupling conductance in MS.
+
+    The coupling conductance between compartment 1 and 2 is
+    computed by the following equation:
+
+    \f{equation}{
+        g_c = \frac{2.10^2}{\frac{R_{cyt}l_1}{\pi r_1^2}+\frac{R_{cyt}l_2}{\pi r_2^2}}
+    \f}
+    where \f$g_c\f$ is the coupling conductance [MS], \f$R_{cyt}\f$ is the
+    cytoplasmatic resistivity [\f$\Omega\f$.cm], \f$l_1\f$ and \f$l_2\f$
+    are the lengths [\f$\mu\f$m] of compartments 1 and 2, respectively and
+    \f$r_1\f$ and \f$r_2\f$ are the radius [\f$\mu\f$m] of compartments 1 and
+    2, respectively.
     '''
     rAxis1 = (cytR * lComp1) / (math.pi * math.pow(dComp1/2, 2))
     rAxis2 = (cytR * lComp2) / (math.pi * math.pow(dComp2/2, 2))
@@ -42,6 +54,13 @@ def compGCouplingMatrix(gc):
     '''
     Computes the Coupling Matrix to be used in the dVdt function of the N compartments of the motor unit. 
     The Matrix uses the values obtained with the function calcGcoupling.
+ 
+    - Inputs: 
+        + **gc**: the vector with N elements, with the coupling conductance of each compartment of the Motor Unit.
+
+    - Output:
+        + the GC matrix
+
 
     \f{equation}{
        GC = \left[\begin{array}{cccccccc}
@@ -49,16 +68,10 @@ def compGCouplingMatrix(gc):
        g_c[0]&-g_c[0]-g_c[1]&g_c[1]&0&...&...&0&0\\
        \vdots&&\ddots&&...&&0&0 \\
        0&...&g_c[i-1]&-g_c[i-1]-g_c[i]&g_c[i]&0&...&0\\
-       0&0&0&...&...&&&\\
-       0&&...&&g_c[N-2]&-g_c[N-2]-g_c[N-1]&g_c[N-1]\\
+       0&0&0&...&...&&&0\\
+       0&&...&&g_c[N-2]&-g_c[N-2]-g_c[N-1]&g_c[N-1]&0\\
        0&...&0&&&0&g_c[N-1]&-g_c[N-1]\end{array}\right] 
     \f} 
- 
-- Inputs: 
-    + **gc**: the vector with N elements, with the coupling conductance of each compartment of the Motor Unit.
-
-- Output:
-    + the GC matrix
     '''
     
     GC = np.zeros((len(gc),len(gc)))
@@ -91,6 +104,28 @@ def runge_kutta(derivativeFunction, t, x, timeStep, timeStepByTwo,  timeStepBySi
         + **timeStepByTwo**:  timeStep divided by two, for computational efficiency.
 
         + **timeStepBySix**: timeStep divided by six, for computational efficiency.
+
+    This method is intended to solve the following differential equation:
+
+    \f{equation}{
+        \frac{dx(t)}{dt} = f(t, x(t))
+    \f}
+    First, four derivatives are computed:
+
+    \f{align}{
+        k_1 &= f(t,x(t))\\
+        k_2 &= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_1)\\
+        k_3 &= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_2)\\
+        k_4 &= f(t+\Delta t, x(t) + \Delta t.k_3)
+    \f}
+    where \f$\Delta t\f$ is the time step of the numerical solution of the
+    differential equation.
+
+    Then the value of \f$x(t+\Delta t)\f$ is computed with:
+
+    \f{equation}{
+        x(t+\Delta t) = x(t) + \frac{\Delta t}{6}(k_1 + 2k_2 + 2k_3+k_4)
+    \f}
     '''       
     k1 = derivativeFunction(t, x)
     k2 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k1)

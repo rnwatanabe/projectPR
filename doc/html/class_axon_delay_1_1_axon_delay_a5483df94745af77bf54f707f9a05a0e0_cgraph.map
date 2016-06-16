@@ -1,3 +1,3 @@
 <map id="AxonDelay.AxonDelay.addSpinalSpike" name="AxonDelay.AxonDelay.addSpinalSpike">
-<area shape="rect" id="node2" href="$class_axon_delay_1_1_axon_delay.html#a49115bea963cde5e2c4317510d73cf7c" title="AxonDelay.AxonDelay.addTerminal\lSpike" alt="" coords="269,5,499,46"/>
+<area shape="rect" id="node2" href="$class_axon_delay_1_1_axon_delay.html#a49115bea963cde5e2c4317510d73cf7c" title="Indicates to the AxonDelay object that a spike has occurred in the Terminal. " alt="" coords="269,5,499,46"/>
 </map>

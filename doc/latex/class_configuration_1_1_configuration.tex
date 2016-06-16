@@ -35,7 +35,7 @@ def \hyperlink{class_configuration_1_1_configuration_aef3bdd8d00baa7835588ca008d
 \subsection{Detailed Description}
 Class that builds an object of \hyperlink{class_configuration_1_1_configuration}{Configuration}, based on a configuration file. 
 
-Definition at line 13 of file Configuration.\-py.
+Definition at line 15 of file Configuration.\-py.
 
 
 
@@ -52,17 +52,17 @@ Definition at line 13 of file Configuration.\-py.
 
 Constructor. 
 
-Builds the \hyperlink{class_configuration_1_1_configuration}{Configuration} object.
-
-\begin{DoxyVerb}     Inputs:
-         - filename: name of the file with the paremeter values. The extension  of the file should be .rmto
+Builds the \hyperlink{class_configuration_1_1_configuration}{Configuration} object. A \hyperlink{class_configuration_1_1_configuration}{Configuration} object is responsible to set the variables that are used in the whole system, such as time\-Step and sim\-Duration.
 
 
-         The variables timeStep and simDuration that are used in the whole system are set at the constructor 
-     of the Configuration class.\end{DoxyVerb}
- 
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries filename}\-: name of the file with the parameter values. The extension of the file should be .rmto. 
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Definition at line 31 of file Configuration.\-py.
+Definition at line 29 of file Configuration.\-py.
 
 
 
@@ -81,15 +81,19 @@ Function used to determine all the synapses that a given pool makes.
 
 It is used in the \hyperlink{namespace_synapses_factory}{Synapses\-Factory} class.
 
-\begin{DoxyVerb}     Inputs:
 
-         neuralSource - string with the pool name from which is desired to know what synapses it will make.
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries neural\-Source} -\/ string with the pool name from which is desired to know what synapses it will make.
+\end{DoxyItemize}
+\item Outputs\-:
+\begin{DoxyItemize}
+\item array of strings with all the synapses target that the neural\-Source will make. 
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-     Outputs:
-         - array of strings with all the synapses target that the neuralSource will make.\end{DoxyVerb}
- 
-
-Definition at line 137 of file Configuration.\-py.
+Definition at line 130 of file Configuration.\-py.
 
 \hypertarget{class_configuration_1_1_configuration_a590029f6dd5b22113bd6cc40e641ed9b}{\index{Configuration\-::\-Configuration@{Configuration\-::\-Configuration}!input\-Function\-Get@{input\-Function\-Get}}
 \index{input\-Function\-Get@{input\-Function\-Get}!Configuration::Configuration@{Configuration\-::\-Configuration}}
@@ -105,16 +109,19 @@ Returns a numpy array with the values of the function for the whole simulation.
 
 It is used to obtain before the simulation run all the values of the inputs.
 
-\begin{DoxyVerb}     Inputs:
 
-         function - function from which is desired to obtain its values  during the simulation duration.
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries function}\-: function from which is desired to obtain its values during the simulation duration.
+\end{DoxyItemize}
+\item Output\-:
+\begin{DoxyItemize}
+\item narray with the function values for each instant. 
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-     Output:
-
-         - narray with the function values for each instant.\end{DoxyVerb}
- 
-
-Definition at line 119 of file Configuration.\-py.
+Definition at line 114 of file Configuration.\-py.
 
 \hypertarget{class_configuration_1_1_configuration_a67eeb73e7a40b8b060e242df3dcc3518}{\index{Configuration\-::\-Configuration@{Configuration\-::\-Configuration}!parameter\-Set@{parameter\-Set}}
 \index{parameter\-Set@{parameter\-Set}!Configuration::Configuration@{Configuration\-::\-Configuration}}
@@ -132,21 +139,21 @@ Function that returns the value of wished parameter specified in the param\-Tag 
 
 In the case of min/max parameters, the value returned is the specific to the index of the unit that called the function.
 
-\begin{DoxyVerb}     Inputs: 
 
-         paramTag - string with the name of the wished parameter as in the first column of the rmto file.
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries param\-Tag}\-: string with the name of the wished parameter as in the first column of the rmto file.
+\item {\bfseries pool}\-: pool from which the unit that will receive the parameter value belongs. For example S\-O\-L. It is used only in the parameters that have a range.
+\item {\bfseries index}\-: index of the unit. It is is an integer.
+\end{DoxyItemize}
+\item Outputs\-:
+\begin{DoxyItemize}
+\item required parameter value 
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-         pool - pool from which the unit that will receive the parameter value belongs. For example SOL. 
-         It is used only in the parameters that have a range.
-
-         index - index of the unit. It is is an integer.
-
-     Outputs:
-
-         - required parameter value\end{DoxyVerb}
- 
-
-Definition at line 72 of file Configuration.\-py.
+Definition at line 70 of file Configuration.\-py.
 
 
 
@@ -160,7 +167,7 @@ An array with all the simulation parameters.
 
 
 
-Definition at line 34 of file Configuration.\-py.
+Definition at line 32 of file Configuration.\-py.
 
 \hypertarget{class_configuration_1_1_configuration_aea238884fe3daa1287aa069f35d4ad3e}{\index{Configuration\-::\-Configuration@{Configuration\-::\-Configuration}!sim\-Duration\-\_\-ms@{sim\-Duration\-\_\-ms}}
 \index{sim\-Duration\-\_\-ms@{sim\-Duration\-\_\-ms}!Configuration::Configuration@{Configuration\-::\-Configuration}}
@@ -171,7 +178,7 @@ Total length of the simulation in ms.
 
 
 
-Definition at line 44 of file Configuration.\-py.
+Definition at line 42 of file Configuration.\-py.
 
 \hypertarget{class_configuration_1_1_configuration_a6379aaa6e54523ca81e3713d1846679b}{\index{Configuration\-::\-Configuration@{Configuration\-::\-Configuration}!time\-Step\-\_\-ms@{time\-Step\-\_\-ms}}
 \index{time\-Step\-\_\-ms@{time\-Step\-\_\-ms}!Configuration::Configuration@{Configuration\-::\-Configuration}}
@@ -182,7 +189,7 @@ Time step of the numerical solution of the differential equation.
 
 
 
-Definition at line 41 of file Configuration.\-py.
+Definition at line 39 of file Configuration.\-py.
 
 \hypertarget{class_configuration_1_1_configuration_aa49387a016f5d528136ab5812821cb99}{\index{Configuration\-::\-Configuration@{Configuration\-::\-Configuration}!time\-Step\-By\-Six\-\_\-ms@{time\-Step\-By\-Six\-\_\-ms}}
 \index{time\-Step\-By\-Six\-\_\-ms@{time\-Step\-By\-Six\-\_\-ms}!Configuration::Configuration@{Configuration\-::\-Configuration}}
@@ -193,7 +200,7 @@ The variable time\-Step divided by six, for computaional efficiency.
 
 
 
-Definition at line 48 of file Configuration.\-py.
+Definition at line 46 of file Configuration.\-py.
 
 \hypertarget{class_configuration_1_1_configuration_a58f6e3bf5491f8fb229697fc3690aa12}{\index{Configuration\-::\-Configuration@{Configuration\-::\-Configuration}!time\-Step\-By\-Two\-\_\-ms@{time\-Step\-By\-Two\-\_\-ms}}
 \index{time\-Step\-By\-Two\-\_\-ms@{time\-Step\-By\-Two\-\_\-ms}!Configuration::Configuration@{Configuration\-::\-Configuration}}
@@ -204,7 +211,7 @@ The variable time\-Step divided by two, for computaional efficiency.
 
 
 
-Definition at line 46 of file Configuration.\-py.
+Definition at line 44 of file Configuration.\-py.
 
 
 

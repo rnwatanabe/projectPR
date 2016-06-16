@@ -37,17 +37,21 @@ Calculates the coupling conductance between two compartments.
 \begin{DoxyItemize}
 \item Inputs\-:
 \begin{DoxyItemize}
-\item {\bfseries cyt\-R}\-: Cytoplasmatic resistance in $\Omega$.cm.
+\item {\bfseries cyt\-R}\-: Cytoplasmatic resistivity in $\Omega$.cm.
 \item {\bfseries l\-Comp1, l\-Comp2}\-: length of the compartments in $\mu$m.
 \item {\bfseries d\-Comp1, d\-Comp2}\-: diameter of the compartments in $\mu$m.
 \end{DoxyItemize}
 \item Output\-:
 \begin{DoxyItemize}
-\item coupling conductance in M\-S 
+\item coupling conductance in M\-S.
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 34 of file Motor\-Unit.\-py.
+The coupling conductance between compartment 1 and 2 is computed by the following equation\-:
+
+\begin{equation} g_c = \frac{2.10^2}{\frac{R_{cyt}l_1}{\pi r_1^2}+\frac{R_{cyt}l_2}{\pi r_2^2}} \end{equation} where $g_c$ is the coupling conductance \mbox{[}M\-S\mbox{]}, $R_{cyt}$ is the cytoplasmatic resistivity \mbox{[} $\Omega$.cm\mbox{]}, $l_1$ and $l_2$ are the lengths \mbox{[} $\mu$m\mbox{]} of compartments 1 and 2, respectively and $r_1$ and $r_2$ are the radius \mbox{[} $\mu$m\mbox{]} of compartments 1 and 2, respectively. 
+
+Definition at line 46 of file Motor\-Unit.\-py.
 
 \hypertarget{namespace_motor_unit_aa8a5016f6b73726a88d8fdcf0c8ec9e5}{\index{Motor\-Unit@{Motor\-Unit}!comp\-G\-Coupling\-Matrix@{comp\-G\-Coupling\-Matrix}}
 \index{comp\-G\-Coupling\-Matrix@{comp\-G\-Coupling\-Matrix}!MotorUnit@{Motor\-Unit}}
@@ -62,8 +66,6 @@ Computes the Coupling Matrix to be used in the d\-Vdt function of the N compartm
 
 The Matrix uses the values obtained with the function calc\-Gcoupling.
 
-\begin{equation} GC = \left[\begin{array}{cccccccc} -g_c[0]&g_c[0]&0&...&...&0&0&0\\ g_c[0]&-g_c[0]-g_c[1]&g_c[1]&0&...&...&0&0\\ \vdots&&\ddots&&...&&0&0 \\ 0&...&g_c[i-1]&-g_c[i-1]-g_c[i]&g_c[i]&0&...&0\\ 0&0&0&...&...&&&\\ 0&&...&&g_c[N-2]&-g_c[N-2]-g_c[N-1]&g_c[N-1]\\ 0&...&0&&&0&g_c[N-1]&-g_c[N-1]\end{array}\right] \end{equation}
-
 
 \begin{DoxyItemize}
 \item Inputs\-:
@@ -72,11 +74,13 @@ The Matrix uses the values obtained with the function calc\-Gcoupling.
 \end{DoxyItemize}
 \item Output\-:
 \begin{DoxyItemize}
-\item the G\-C matrix 
+\item the G\-C matrix
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 65 of file Motor\-Unit.\-py.
+\begin{equation} GC = \left[\begin{array}{cccccccc} -g_c[0]&g_c[0]&0&...&...&0&0&0\\ g_c[0]&-g_c[0]-g_c[1]&g_c[1]&0&...&...&0&0\\ \vdots&&\ddots&&...&&0&0 \\ 0&...&g_c[i-1]&-g_c[i-1]-g_c[i]&g_c[i]&0&...&0\\ 0&0&0&...&...&&&0\\ 0&&...&&g_c[N-2]&-g_c[N-2]-g_c[N-1]&g_c[N-1]&0\\ 0&...&0&&&0&g_c[N-1]&-g_c[N-1]\end{array}\right] \end{equation} 
+
+Definition at line 78 of file Motor\-Unit.\-py.
 
 \hypertarget{namespace_motor_unit_ad34c81597ff5e9cdcf53fd13e78d2d6c}{\index{Motor\-Unit@{Motor\-Unit}!runge\-\_\-kutta@{runge\-\_\-kutta}}
 \index{runge\-\_\-kutta@{runge\-\_\-kutta}!MotorUnit@{Motor\-Unit}}
@@ -103,16 +107,25 @@ Function to implement the fourth order Runge-\/\-Kutta Method to solve numerical
 \item {\bfseries x}\-: current state value.
 \item {\bfseries time\-Step}\-: time step of the solution of the differential equation, in the same unit of t.
 \item {\bfseries time\-Step\-By\-Two}\-: time\-Step divided by two, for computational efficiency.
-\item {\bfseries time\-Step\-By\-Six}\-: time\-Step divided by six, for computational efficiency. 
+\item {\bfseries time\-Step\-By\-Six}\-: time\-Step divided by six, for computational efficiency.
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 98 of file Motor\-Unit.\-py.
+This method is intended to solve the following differential equation\-:
+
+\begin{equation} \frac{dx(t)}{dt} = f(t, x(t)) \end{equation} First, four derivatives are computed\-:
+
+\begin{align} k_1 &= f(t,x(t))\\ k_2 &= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_1)\\ k_3 &= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_2)\\ k_4 &= f(t+\Delta t, x(t) + \Delta t.k_3) \end{align} where $\Delta t$ is the time step of the numerical solution of the differential equation.
+
+Then the value of $x(t+\Delta t)$ is computed with\-:
+
+\begin{equation} x(t+\Delta t) = x(t) + \frac{\Delta t}{6}(k_1 + 2k_2 + 2k_3+k_4) \end{equation} 
+
+Definition at line 133 of file Motor\-Unit.\-py.
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

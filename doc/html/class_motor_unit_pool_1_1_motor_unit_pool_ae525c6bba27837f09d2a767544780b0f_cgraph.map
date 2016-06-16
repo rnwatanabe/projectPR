@@ -1,4 +1,4 @@
 <map id="MotorUnitPool.MotorUnitPool.atualizeMotorUnitPool" name="MotorUnitPool.MotorUnitPool.atualizeMotorUnitPool">
 <area shape="rect" id="node2" href="$class_motor_unit_pool_1_1_motor_unit_pool.html#a03b7c1202f680bd8ba3af9b0b06bd71c" title="MotorUnitPool.MotorUnitPool.atualize\lActivationSignal" alt="" coords="297,5,538,46"/>
-<area shape="rect" id="node3" href="$namespace_motor_unit_pool.html#a3ed1b9ccd29068fac93964327dd54bf9" title="MotorUnitPool.twitchSaturation" alt="" coords="587,12,789,39"/>
+<area shape="rect" id="node3" href="$namespace_motor_unit_pool.html#a3ed1b9ccd29068fac93964327dd54bf9" title="Computes the muscle unit force after the nonlinear saturation. " alt="" coords="587,12,789,39"/>
 </map>

@@ -3,7 +3,7 @@
 }
 
 
-classdocs  
+Generator of point processes.  
 
 
 \subsection*{Public Member Functions}
@@ -17,23 +17,23 @@ def \hyperlink{class_point_process_generator_1_1_point_process_generator_a9e80ad
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_point_process_generator_1_1_point_process_generator_aa6c6513cd7f00dbdceb5f945a07cffee}{Gamma\-Order}
-\item 
+\begin{DoxyCompactList}\small\item\em Integer order of the Gamma distribution. \end{DoxyCompactList}\item 
 \hyperlink{class_point_process_generator_1_1_point_process_generator_aa70be756b1535ff4512affa05a732fda}{Gamma\-Order\-Inv}
-\item 
+\begin{DoxyCompactList}\small\item\em Inverse of the Gamma\-Order. \end{DoxyCompactList}\item 
 \hyperlink{class_point_process_generator_1_1_point_process_generator_a57f6c8af8fd3d37ed8ab2f4abe9be5d8}{index}
-\item 
-\hyperlink{class_point_process_generator_1_1_point_process_generator_abcb23e09b752b797a1f11f2679373ca1}{threshold}
-\item 
-\hyperlink{class_point_process_generator_1_1_point_process_generator_ab36d31f34c0330e13ae9732d53984bab}{points}
-\item 
+\begin{DoxyCompactList}\small\item\em Integer corresponding to the unit order in the pool to which this generator is associated. \end{DoxyCompactList}\item 
 \hyperlink{class_point_process_generator_1_1_point_process_generator_a70a43b5c26daf20833ecbc9f4d979726}{y}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Auxiliary variable cummulating a value that indicates whether there will be a new spike or not. \end{DoxyCompactList}\item 
+\hyperlink{class_point_process_generator_1_1_point_process_generator_abcb23e09b752b797a1f11f2679373ca1}{threshold}
+\begin{DoxyCompactList}\small\item\em Spike threshold. \end{DoxyCompactList}\item 
+\hyperlink{class_point_process_generator_1_1_point_process_generator_ab36d31f34c0330e13ae9732d53984bab}{points}
+\begin{DoxyCompactList}\small\item\em List of spike instants of the generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-classdocs 
+Generator of point processes. 
 
-Definition at line 30 of file Point\-Process\-Generator.\-py.
+Definition at line 46 of file Point\-Process\-Generator.\-py.
 
 
 
@@ -52,8 +52,15 @@ Definition at line 30 of file Point\-Process\-Generator.\-py.
 Constructor. 
 
 
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries Gamma\-Order}\-: integer order of the Gamma distribution.
+\item {\bfseries index}\-: integer corresponding to the unit order in the pool. 
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Definition at line 36 of file Point\-Process\-Generator.\-py.
+Definition at line 57 of file Point\-Process\-Generator.\-py.
 
 
 
@@ -64,12 +71,30 @@ Definition at line 36 of file Point\-Process\-Generator.\-py.
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{t, }
-\item[{}]{F\-R}
+\item[{}]{firing\-Rate}
 \end{DoxyParamCaption}
 )}}\label{class_point_process_generator_1_1_point_process_generator_a9e80adf5fea28ec4adb90489f0c42670}
 
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries t}\-: current instant, in ms.
+\item {\bfseries firing\-Rate}\-: instant firing rate, in spikes/s. 
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Definition at line 48 of file Point\-Process\-Generator.\-py.
+Definition at line 86 of file Point\-Process\-Generator.\-py.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_process_generator_1_1_point_process_generator_a9e80adf5fea28ec4adb90489f0c42670_cgraph}
+\end{center}
+\end{figure}
+
 
 
 
@@ -79,42 +104,66 @@ Definition at line 48 of file Point\-Process\-Generator.\-py.
 \subsubsection[{Gamma\-Order}]{\setlength{\rightskip}{0pt plus 5cm}Point\-Process\-Generator.\-Point\-Process\-Generator.\-Gamma\-Order}}\label{class_point_process_generator_1_1_point_process_generator_aa6c6513cd7f00dbdceb5f945a07cffee}
 
 
-Definition at line 38 of file Point\-Process\-Generator.\-py.
+Integer order of the Gamma distribution. 
+
+Gamma order 1 is Poisson process and order 10 is a Gaussian process. 
+
+Definition at line 60 of file Point\-Process\-Generator.\-py.
 
 \hypertarget{class_point_process_generator_1_1_point_process_generator_aa70be756b1535ff4512affa05a732fda}{\index{Point\-Process\-Generator\-::\-Point\-Process\-Generator@{Point\-Process\-Generator\-::\-Point\-Process\-Generator}!Gamma\-Order\-Inv@{Gamma\-Order\-Inv}}
 \index{Gamma\-Order\-Inv@{Gamma\-Order\-Inv}!PointProcessGenerator::PointProcessGenerator@{Point\-Process\-Generator\-::\-Point\-Process\-Generator}}
 \subsubsection[{Gamma\-Order\-Inv}]{\setlength{\rightskip}{0pt plus 5cm}Point\-Process\-Generator.\-Point\-Process\-Generator.\-Gamma\-Order\-Inv}}\label{class_point_process_generator_1_1_point_process_generator_aa70be756b1535ff4512affa05a732fda}
 
 
-Definition at line 39 of file Point\-Process\-Generator.\-py.
+Inverse of the Gamma\-Order. 
+
+This is necessary for computational efficiency. 
+
+Definition at line 63 of file Point\-Process\-Generator.\-py.
 
 \hypertarget{class_point_process_generator_1_1_point_process_generator_a57f6c8af8fd3d37ed8ab2f4abe9be5d8}{\index{Point\-Process\-Generator\-::\-Point\-Process\-Generator@{Point\-Process\-Generator\-::\-Point\-Process\-Generator}!index@{index}}
 \index{index@{index}!PointProcessGenerator::PointProcessGenerator@{Point\-Process\-Generator\-::\-Point\-Process\-Generator}}
 \subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}Point\-Process\-Generator.\-Point\-Process\-Generator.\-index}}\label{class_point_process_generator_1_1_point_process_generator_a57f6c8af8fd3d37ed8ab2f4abe9be5d8}
 
 
-Definition at line 40 of file Point\-Process\-Generator.\-py.
+Integer corresponding to the unit order in the pool to which this generator is associated. 
+
+
+
+Definition at line 66 of file Point\-Process\-Generator.\-py.
 
 \hypertarget{class_point_process_generator_1_1_point_process_generator_ab36d31f34c0330e13ae9732d53984bab}{\index{Point\-Process\-Generator\-::\-Point\-Process\-Generator@{Point\-Process\-Generator\-::\-Point\-Process\-Generator}!points@{points}}
 \index{points@{points}!PointProcessGenerator::PointProcessGenerator@{Point\-Process\-Generator\-::\-Point\-Process\-Generator}}
 \subsubsection[{points}]{\setlength{\rightskip}{0pt plus 5cm}Point\-Process\-Generator.\-Point\-Process\-Generator.\-points}}\label{class_point_process_generator_1_1_point_process_generator_ab36d31f34c0330e13ae9732d53984bab}
 
 
-Definition at line 45 of file Point\-Process\-Generator.\-py.
+List of spike instants of the generator. 
+
+
+
+Definition at line 76 of file Point\-Process\-Generator.\-py.
 
 \hypertarget{class_point_process_generator_1_1_point_process_generator_abcb23e09b752b797a1f11f2679373ca1}{\index{Point\-Process\-Generator\-::\-Point\-Process\-Generator@{Point\-Process\-Generator\-::\-Point\-Process\-Generator}!threshold@{threshold}}
 \index{threshold@{threshold}!PointProcessGenerator::PointProcessGenerator@{Point\-Process\-Generator\-::\-Point\-Process\-Generator}}
 \subsubsection[{threshold}]{\setlength{\rightskip}{0pt plus 5cm}Point\-Process\-Generator.\-Point\-Process\-Generator.\-threshold}}\label{class_point_process_generator_1_1_point_process_generator_abcb23e09b752b797a1f11f2679373ca1}
 
 
-Definition at line 44 of file Point\-Process\-Generator.\-py.
+Spike threshold. 
+
+When the auxiliary variable y reaches the value of threshold, there is a new spike. 
+
+Definition at line 74 of file Point\-Process\-Generator.\-py.
 
 \hypertarget{class_point_process_generator_1_1_point_process_generator_a70a43b5c26daf20833ecbc9f4d979726}{\index{Point\-Process\-Generator\-::\-Point\-Process\-Generator@{Point\-Process\-Generator\-::\-Point\-Process\-Generator}!y@{y}}
 \index{y@{y}!PointProcessGenerator::PointProcessGenerator@{Point\-Process\-Generator\-::\-Point\-Process\-Generator}}
 \subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}Point\-Process\-Generator.\-Point\-Process\-Generator.\-y}}\label{class_point_process_generator_1_1_point_process_generator_a70a43b5c26daf20833ecbc9f4d979726}
 
 
-Definition at line 54 of file Point\-Process\-Generator.\-py.
+Auxiliary variable cummulating a value that indicates whether there will be a new spike or not. 
+
+
+
+Definition at line 70 of file Point\-Process\-Generator.\-py.
 
 
 

@@ -4,6 +4,7 @@
 <param name="FrameName" value="right">
 </OBJECT>
 <UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ReMoto in Python"><param name="Local" value="index.html"><param name="ImageNumber" value="11"></OBJECT>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Packages"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="Packages"><param name="Local" value="namespaces.html"><param name="ImageNumber" value="1"></OBJECT>
@@ -73,7 +74,6 @@
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_compartment_1_1_compartment.html#af6abb8e8999054b0f4d99c440dc06e42"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="computeCurrent"><param name="Local" value="class_compartment_1_1_compartment.html#ab10c374833a5c36df0552d40e64e45b9"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="area_cm2"><param name="Local" value="class_compartment_1_1_compartment.html#a5d841c1a80dbaaf257dfc0a9cb763abc"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="capacitance_nF"><param name="Local" value="class_compartment_1_1_compartment.html#ac7d7462a45d4d623ed688c187c9184aa"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="Channels"><param name="Local" value="class_compartment_1_1_compartment.html#aa444563be9598d7cc54fd8d10ea6a04f"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="diameter_mum"><param name="Local" value="class_compartment_1_1_compartment.html#aacb7db7022f5d3534d17642d47281cbb"><param name="ImageNumber" value="11"></OBJECT>
@@ -83,8 +83,6 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="length_mum"><param name="Local" value="class_compartment_1_1_compartment.html#a8154742b0082eea301690e3566e477b6"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="neuronKind"><param name="Local" value="class_compartment_1_1_compartment.html#ad42f32769afd94d1e7d7d54008efb6fa"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="numberChannels"><param name="Local" value="class_compartment_1_1_compartment.html#a0fa96147f76e7814f30610027ed425df"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="numberofMultiSynapses"><param name="Local" value="class_compartment_1_1_compartment.html#aed4deea8b0fc160f16ecb1ef39cacba4"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="specifRes_Ohmcm2"><param name="Local" value="class_compartment_1_1_compartment.html#aed6025b5335c2ce41d37c02fd3c1c042"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesIn"><param name="Local" value="class_compartment_1_1_compartment.html#abe41aff3bffed80f4b848bd14763d506"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesOut"><param name="Local" value="class_compartment_1_1_compartment.html#a85d64ebf548276c873501d2dc3489ceb"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
@@ -296,7 +294,6 @@
         </UL>
       </UL>
     </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Index"><param name="Local" value="classes.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Hierarchy"><param name="Local" value="hierarchy.html"><param name="ImageNumber" value="1"></OBJECT>
     <UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="object"><param name="ImageNumber" value="1"></OBJECT>
@@ -367,7 +364,6 @@
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="__init__"><param name="Local" value="class_compartment_1_1_compartment.html#af6abb8e8999054b0f4d99c440dc06e42"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="computeCurrent"><param name="Local" value="class_compartment_1_1_compartment.html#ab10c374833a5c36df0552d40e64e45b9"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="area_cm2"><param name="Local" value="class_compartment_1_1_compartment.html#a5d841c1a80dbaaf257dfc0a9cb763abc"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="capacitance_nF"><param name="Local" value="class_compartment_1_1_compartment.html#ac7d7462a45d4d623ed688c187c9184aa"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="Channels"><param name="Local" value="class_compartment_1_1_compartment.html#aa444563be9598d7cc54fd8d10ea6a04f"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="diameter_mum"><param name="Local" value="class_compartment_1_1_compartment.html#aacb7db7022f5d3534d17642d47281cbb"><param name="ImageNumber" value="11"></OBJECT>
@@ -377,8 +373,6 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="length_mum"><param name="Local" value="class_compartment_1_1_compartment.html#a8154742b0082eea301690e3566e477b6"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="neuronKind"><param name="Local" value="class_compartment_1_1_compartment.html#ad42f32769afd94d1e7d7d54008efb6fa"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="numberChannels"><param name="Local" value="class_compartment_1_1_compartment.html#a0fa96147f76e7814f30610027ed425df"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="numberofMultiSynapses"><param name="Local" value="class_compartment_1_1_compartment.html#aed4deea8b0fc160f16ecb1ef39cacba4"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="specifRes_Ohmcm2"><param name="Local" value="class_compartment_1_1_compartment.html#aed6025b5335c2ce41d37c02fd3c1c042"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesIn"><param name="Local" value="class_compartment_1_1_compartment.html#abe41aff3bffed80f4b848bd14763d506"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SynapsesOut"><param name="Local" value="class_compartment_1_1_compartment.html#a85d64ebf548276c873501d2dc3489ceb"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
@@ -466,7 +460,6 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="twTet"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a785a769c5b4824603a24339e4f0d8dfe"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="unit"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#a1b14c831606c27efae62f1468850393b"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="computeForce"><param name="Local" value="_motor_unit_pool_8py.html#a21ec390f1b0dedf181ae349c8b6f97aa"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="twitchSaturation"><param name="Local" value="_motor_unit_pool_8py.html#a3ed1b9ccd29068fac93964327dd54bf9"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="NeuralTract.py"><param name="Local" value="_neural_tract_8py.html"><param name="ImageNumber" value="11"></OBJECT>

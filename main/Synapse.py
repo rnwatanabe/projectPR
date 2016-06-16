@@ -7,30 +7,23 @@ Created on Oct 26, 2015
 import math
 import numpy as np
 
-
-
-
-    
-
 def compSynapCond(Gmax, Ron, Roff):
+    '''
+     Computes the synaptic conductance 
+    '''
     return Gmax * (Ron + Roff)
 
-
-def compRon(Non, rInf, ron, t0, t,  tauOn):
-    return Non * rInf + (ron - Non * rInf) * math.exp((t0 - t) / tauOn) 
-
+def compRon(Non, rInf, ron, t0, t, tauOn):
+    return Non * rInf + (ron - Non * rInf) * math.exp((t0 - t) / tauOn)
 
 def compRoff(roff, t0, t, tauOff):
-    return roff  * math.exp((t0 - t) / tauOff) 
-
+    return roff  * math.exp((t0 - t) / tauOff)
 
 def compRiStart(ri, t, ti, tPeak, tauOff):
     return ri * math.exp(-(t - ti- tPeak) / tauOff)
 
-
 def compRiStop(rInf, ri, expFinish):
     return rInf + (ri - rInf) * expFinish
- 
 
 def compRonStart(Ron, ri, synContrib):
     return Ron + ri * synContrib
@@ -38,21 +31,17 @@ def compRonStart(Ron, ri, synContrib):
 def compRoffStart(Roff, ri, synContrib):
     return Roff - ri * synContrib
 
-
 def compRonStop(Ron, ri, synContrib):
     return Ron - ri * synContrib
-
 
 def compRoffStop(Roff, ri, synContrib):
     return Roff + ri * synContrib
 
-
 class Synapse(object):
     '''
-    classdocs
+    Implements the synapse model from Destexhe (1994) using the 
+    computational method from Lytton (1996).
     '''
-
-    
     def __init__(self, conf, pool, index, compartment, kind, neuronKind):
         '''
         Constructor
@@ -60,53 +49,48 @@ class Synapse(object):
         self.pool = pool
         self.kind = kind
         self.neuronKind = neuronKind
-        
+
         self.EqPot_mV = float(conf.parameterSet('EqPotSyn_' + pool + '_'  + self.neuronKind + '_' + self.kind, pool, index))
         self.alpha_ms1 = float(conf.parameterSet('alphaSyn_' + self.kind + '_' + pool + '_'  + self.neuronKind, pool, index))
         self.beta_ms1 = float(conf.parameterSet('betaSyn_' + self.kind + '_' + pool + '_'  + self.neuronKind, pool, index))
         self.Tmax_mM = float(conf.parameterSet('TmaxSyn_' + self.kind + '_' + pool + '_'  + self.neuronKind, pool, index))
         self.tPeak_ms = float(conf.parameterSet('tPeakSyn_' + self.kind + '_' + pool + '_'  + self.neuronKind, pool, index))
-        
-        
+
         self.gmax_muS = np.array([])
         self.delay_ms = np.array([])
         self.dynamics = []
-        
 
-        
-        
         self.gMaxTot_muS = 0
         self.numberOfIncomingSynapses = 0
-        
-        
+
+
         self.rInf = (self.alpha_ms1 * self.Tmax_mM) / (self.alpha_ms1 * self.Tmax_mM + self.beta_ms1)
         self.tauOn = 1.0 / (self.alpha_ms1 * self.Tmax_mM + self.beta_ms1)
         self.tauOff = 1.0 / self.beta_ms1
-        self.expFinish = math.exp(- self.tPeak_ms/self.tauOn)
-        
-             
+        self.expFinish = math.exp(- self.tPeak_ms / self.tauOn)
+
+
         self.Non = 0
         self.Ron = 0.0
         self.ron = 0.0
         self.Roff = 0.0
         self.roff = 0.0
         self.t0 = 0.0
-        
-        self.spikesReceived =[]
-        
-        self.conductanceState = np.array([])        
+
+        self.spikesReceived = []
+
+        self.conductanceState = np.array([])
         self.tBeginOfPulse = np.array([])
         self.tEndOfPulse = np.array([])
-        self.ri =  np.array([])
-        self.ti =  np.array([])
-        self.synContrib =  np.array([])
+        self.ri = np.array([])
+        self.ti = np.array([])
+        self.synContrib = np.array([])
         self.startDynamicFunction = []
-        self.stopDynamicFunction = [] 
-       
+        self.stopDynamicFunction = []
+
         self.startEntrance = 0
         self.stopEntrance = 0
-    
-    
+
     def computeCurrent(self, t, V_mV):
         '''
         '''

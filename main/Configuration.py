@@ -1,6 +1,8 @@
 '''
-About:  
-Author - Renato Naville Watanabe
+\mainpage ReMoto in Python
+
+This program ...
+
 '''
 
 import numpy as np
@@ -15,16 +17,12 @@ class Configuration(object):
         '''
         Constructor.
         
-        Builds the Configuration object.
-
-
-
-        Inputs:
-            - filename: name of the file with the paremeter values. The extension  of the file should be .rmto
-
-        
-            The variables timeStep and simDuration that are used in the whole system are set at the constructor 
-        of the Configuration class.
+        Builds the Configuration object. A Configuration object is responsible to set the variables
+        that are used in the whole system, such as timeStep and simDuration.
+          
+        - Inputs:
+            + **filename**: name of the file with the parameter values. The extension  of the file should be .rmto.
+          
         '''
 
         ## An array with all the simulation parameters.
@@ -53,18 +51,18 @@ class Configuration(object):
         function. 
 
 
-        Inputs: 
-        
-            paramTag - string with the name of the wished parameter as in the first column of the rmto file.
+- Inputs: 
 
-            pool - pool from which the unit that will receive the parameter value belongs. For example SOL. 
-            It is used only in the parameters that have a range.
+    + **paramTag**: string with the name of the wished parameter as in the first column of the rmto file.
 
-            index - index of the unit. It is is an integer.
+    + **pool**: pool from which the unit that will receive the parameter value belongs. For example SOL. 
+    It is used only in the parameters that have a range.
 
-        Outputs:
-            
-            - required parameter value
+    + **index**: index of the unit. It is is an integer.
+
+- Outputs:
+    
+    + required parameter value
         '''
         #get 
         for i in xrange(0, len(self.confArray)):
@@ -103,14 +101,11 @@ class Configuration(object):
         Returns a numpy array with the values of the function for the whole simulation.
         It is used to obtain before the simulation run all the values of the inputs.
 
-
-        Inputs:
-
-            function - function from which is desired to obtain its values  during the simulation duration.
+        - Inputs:
+            + **function**: function from which is desired to obtain its values  during the simulation duration.
         
-        Output:
-
-            - narray with the function values for each instant.
+        - Output:
+            + narray with the function values for each instant.
         '''
         
         t = np.arange(0, self.simDuration_ms, self.timeStep_ms)        
@@ -121,13 +116,11 @@ class Configuration(object):
         '''
         Function used to determine all the synapses that a given pool makes. It is used in the SynapsesFactory class.
         
+- Inputs:
+    + **neuralSource** - string with the pool name from which is desired to know what synapses it will make.
 
-        Inputs:
-
-            neuralSource - string with the pool name from which is desired to know what synapses it will make.
-        
-        Outputs:
-            - array of strings with all the synapses target that the neuralSource will make.
+- Outputs:
+    + array of strings with all the synapses target that the neuralSource will make.
         '''
         Synapses = []
         

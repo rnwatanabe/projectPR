@@ -9,21 +9,45 @@ Author - Renato Naville Watanabe
 import math
 
 
+def compValOn(v0, alpha, beta, t, t0):
+    '''
+    Time course of the state during the pulse for the *inactivation* states
+    and before and after the pulse for the *activation* states.
 
+    The value of the state \f$v\f$ is computed according to the following
+    equation:
 
-def compValOn(v0, alpha, beta, t, t0): 
-    return v0 * math.exp(beta*(t0 - t))
-        
-        
+    \f{equation}{
+        v(t) = v_0\exp[-\beta(t-t_0)]
+    \f} 
+    where \f$t_0\f$ is the time at which the pulse changed
+    the value (on to off or off to on) and \f$v_0\f$ is value
+    of the state at that time.
+    '''
+    return v0 * math.exp(beta * (t0 - t))
 
-def compValOff(v0, alpha, beta, t, t0): 
-    return 1.0 + (v0 - 1.0)  *  math.exp(alpha*(t0 - t))      
+def compValOff(v0, alpha, beta, t, t0):
+    '''
+    Time course of the state during the pulse for the *activation* states
+    and before and after the pulse for the *inactivation* states.
 
+    The value of the state \f$v\f$ is computed according to the following
+    equation:
+
+    \f{equation}{
+        v(t) = 1 + (v_0 - 1)\exp[-\alpha(t-t_0)]
+    \f} 
+    where \f$t_0\f$ is the time at which the pulse changed
+    the value (on to off or off to on) and \f$v_0\f$ is value
+    of the state at that time.
+    '''
+    return 1.0 + (v0 - 1.0)  *  math.exp(alpha * (t0 - t))
 
 class PulseConductanceState(object):
-    
-    
-    
+    '''
+    Implements the Destexhe pulse approximation of the solution of 
+    the states of the Hodgkin-Huxley neuron model.
+    '''
     def __init__(self, kind, conf, pool,index):
         '''
         Initializes the pulse conductance state.
@@ -62,30 +86,32 @@ class PulseConductanceState(object):
         else:
             self.computeValueOn = compValOff
             self.computeValueOff = compValOn         
-        
 
-    def changeState(self,t):
+
+    def changeState(self, t):
         '''
-        void function that modify the current situation (true/false) of the state
-        
-        Inputs: 
-            t - instant t
+        Void function that modify the current situation (true/false)
+        of the state.
+
+        - Inputs:
+            + **t**: current instant, in ms.
         '''
-        self.t0, self.v0,    self.state  = t, self.value, not self.state                
-    
-    
+        self.t0, self.v0, self.state = t, self.value, not self.state
+
+
     def computeStateValue(self, t):
         '''
-        compute the state value by using the approximation of Destexhe (1997) to compute the Hodgkin-Huxley states.
-        
-        Input: 
-            t - instant t
+        Compute the state value by using the approximation of Destexhe (1997) to
+        compute the Hodgkin-Huxley states.
+
+        - Input:
+            + **t**: current instant, in ms.
         '''
-        
-        if (self.state):
+
+        if self.state:
             if (t - self.t0 > self.PulseDur_ms):
                 self.changeState(t)
-                self.value = self.computeValueOn(self.v0, self.alpha_ms1, self.beta_ms1, t, self.t0)                    
+                self.value = self.computeValueOn(self.v0, self.alpha_ms1, self.beta_ms1, t, self.t0)
             else: self.value = self.computeValueOff(self.v0, self.alpha_ms1, self.beta_ms1, t, self.t0)
         else: self.value = self.computeValueOn(self.v0, self.alpha_ms1, self.beta_ms1, t, self.t0)
 

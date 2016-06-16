@@ -4,7 +4,7 @@
 <area shape="rect" id="node4" href="$namespace_synapse.html#aadfeb939e02125a55a2b2acc6634ba41" title="Synapse.compRoff" alt="" coords="658,56,793,83"/>
 <area shape="rect" id="node5" href="$class_synapse_1_1_synapse.html#af9d45f19ead577a6d98d9dd5e304cb13" title="Synapse.Synapse.startConductanceNone" alt="" coords="592,107,859,133"/>
 <area shape="rect" id="node9" href="$class_synapse_1_1_synapse.html#aa8deb85e48c1a9b27453e0ebde27b2cf" title="Synapse.Synapse.stopConductanceNone" alt="" coords="593,157,858,184"/>
-<area shape="rect" id="node13" href="$namespace_synapse.html#a55ffd471fbed3550b464a9862687f541" title="Synapse.compSynapCond" alt="" coords="637,208,814,235"/>
+<area shape="rect" id="node13" href="$namespace_synapse.html#a55ffd471fbed3550b464a9862687f541" title="Computes the synaptic conductance. " alt="" coords="637,208,814,235"/>
 <area shape="rect" id="node6" href="$namespace_synapse.html#a6d5943c0d974d992b8c9daa3ff3818d6" title="Synapse.compRiStart" alt="" coords="913,5,1063,32"/>
 <area shape="rect" id="node7" href="$namespace_synapse.html#a3bbc4948087cc789af35085ea0423a93" title="Synapse.compRonStart" alt="" coords="907,56,1069,83"/>
 <area shape="rect" id="node8" href="$namespace_synapse.html#a4ff37207e236e81ae7bced77172a5af5" title="Synapse.compRoffStart" alt="" coords="907,107,1069,133"/>

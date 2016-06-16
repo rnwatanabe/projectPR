@@ -15,6 +15,11 @@ class NeuralTract(object):
     def __init__(self, conf, pool):
         '''
         Constructor
+
+        - Inputs:
+            + **conf**:
+
+            + **pool**: 
         '''
         self.kind = 'NT'
         self.pool = pool

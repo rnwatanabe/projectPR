@@ -3,7 +3,7 @@
 }
 
 
-classdocs  
+Class that implements a neural compartment.  
 
 
 \subsection*{Public Member Functions}
@@ -12,44 +12,40 @@ classdocs
 def \hyperlink{class_compartment_1_1_compartment_af6abb8e8999054b0f4d99c440dc06e42}{\-\_\-\-\_\-init\-\_\-\-\_\-}
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 def \hyperlink{class_compartment_1_1_compartment_ab10c374833a5c36df0552d40e64e45b9}{compute\-Current}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Computes the active currents of the compartment. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_compartment_1_1_compartment_aa444563be9598d7cc54fd8d10ea6a04f}{Channels}
-\item 
+\begin{DoxyCompactList}\small\item\em List of \hyperlink{namespace_channel_conductance}{Channel\-Conductance} objects in the \hyperlink{class_compartment_1_1_compartment}{Compartment}. \end{DoxyCompactList}\item 
 \hyperlink{class_compartment_1_1_compartment_ad42f32769afd94d1e7d7d54008efb6fa}{neuron\-Kind}
-\item 
+\begin{DoxyCompactList}\small\item\em String with the type of the motor unit. \end{DoxyCompactList}\item 
 \hyperlink{class_compartment_1_1_compartment_a85d64ebf548276c873501d2dc3489ceb}{Synapses\-Out}
-\item 
+\begin{DoxyCompactList}\small\item\em List of summed synapses (see Lytton, 1996) that the \hyperlink{class_compartment_1_1_compartment}{Compartment} do with other neural components. \end{DoxyCompactList}\item 
 \hyperlink{class_compartment_1_1_compartment_abe41aff3bffed80f4b848bd14763d506}{Synapses\-In}
-\item 
+\begin{DoxyCompactList}\small\item\em List of summed synapses (see Lytton, 1996) that the \hyperlink{class_compartment_1_1_compartment}{Compartment} receive from other neural components. \end{DoxyCompactList}\item 
 \hyperlink{class_compartment_1_1_compartment_a74f2266a2231c4a81cc680bc201f0ffd}{kind}
-\item 
+\begin{DoxyCompactList}\small\item\em The kind of compartment. \end{DoxyCompactList}\item 
 \hyperlink{class_compartment_1_1_compartment_a9402ef46ede52521ebbb9e9d2d68d631}{index}
-\item 
+\begin{DoxyCompactList}\small\item\em Integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle). \end{DoxyCompactList}\item 
 \hyperlink{class_compartment_1_1_compartment_a8154742b0082eea301690e3566e477b6}{length\-\_\-mum}
-\item 
+\begin{DoxyCompactList}\small\item\em Length of the compartment, in $\mu$m. \end{DoxyCompactList}\item 
 \hyperlink{class_compartment_1_1_compartment_aacb7db7022f5d3534d17642d47281cbb}{diameter\-\_\-mum}
-\item 
-\hyperlink{class_compartment_1_1_compartment_a5d841c1a80dbaaf257dfc0a9cb763abc}{area\-\_\-cm2}
-\item 
-\hyperlink{class_compartment_1_1_compartment_aed6025b5335c2ce41d37c02fd3c1c042}{specif\-Res\-\_\-\-Ohmcm2}
-\item 
+\begin{DoxyCompactList}\small\item\em Diameter of the compartment, in $\mu$m. \end{DoxyCompactList}\item 
 \hyperlink{class_compartment_1_1_compartment_ac7d7462a45d4d623ed688c187c9184aa}{capacitance\-\_\-n\-F}
-\item 
+\begin{DoxyCompactList}\small\item\em Capacitance of the compartment, in n\-F. \end{DoxyCompactList}\item 
 \hyperlink{class_compartment_1_1_compartment_a10d50da6a622982a6483c7cd78482bde}{g\-Leak}
-\item 
+\begin{DoxyCompactList}\small\item\em Leak conductance of the compartment, in M\-S. \end{DoxyCompactList}\item 
 \hyperlink{class_compartment_1_1_compartment_a0fa96147f76e7814f30610027ed425df}{number\-Channels}
-\item 
-\hyperlink{class_compartment_1_1_compartment_aed4deea8b0fc160f16ecb1ef39cacba4}{numberof\-Multi\-Synapses}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Integer with the number of ionic channels. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-classdocs 
+Class that implements a neural compartment. 
 
-Definition at line 25 of file Compartment.\-py.
+For now it is implemented {\itshape dendrite} and {\itshape soma}. 
+
+Definition at line 40 of file Compartment.\-py.
 
 
 
@@ -71,8 +67,18 @@ Definition at line 25 of file Compartment.\-py.
 Constructor. 
 
 
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries kind}\-: The kind of compartment. For now, it can be {\itshape soma} or {\itshape dendrite}.
+\item {\bfseries conf}\-: \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters.
+\item {\bfseries pool}\-: string with Motor unit pool to which the motor unit belongs.
+\item {\bfseries index}\-: integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle).
+\item {\bfseries neuron\-Kind}\-: string with the type of the motor unit. It can be {\itshape S} (slow), {\itshape F\-R} (fast and resistant), and {\itshape F\-F} (fast and fatigable). 
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Definition at line 32 of file Compartment.\-py.
+Definition at line 60 of file Compartment.\-py.
 
 
 
@@ -88,108 +94,144 @@ Definition at line 32 of file Compartment.\-py.
 )}}\label{class_compartment_1_1_compartment_ab10c374833a5c36df0552d40e64e45b9}
 
 
-Definition at line 66 of file Compartment.\-py.
+Computes the active currents of the compartment. 
+
+Active currents are the currents from the ionic channels and from the synapses.
+
+
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries t}\-: current instant, in ms.
+\item {\bfseries V\-\_\-m\-V}\-: membrane potential, in m\-V. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 116 of file Compartment.\-py.
 
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_compartment_1_1_compartment_a5d841c1a80dbaaf257dfc0a9cb763abc}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!area\-\_\-cm2@{area\-\_\-cm2}}
-\index{area\-\_\-cm2@{area\-\_\-cm2}!Compartment::Compartment@{Compartment\-::\-Compartment}}
-\subsubsection[{area\-\_\-cm2}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-area\-\_\-cm2}}\label{class_compartment_1_1_compartment_a5d841c1a80dbaaf257dfc0a9cb763abc}
-
-
-Definition at line 49 of file Compartment.\-py.
-
 \hypertarget{class_compartment_1_1_compartment_ac7d7462a45d4d623ed688c187c9184aa}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!capacitance\-\_\-n\-F@{capacitance\-\_\-n\-F}}
 \index{capacitance\-\_\-n\-F@{capacitance\-\_\-n\-F}!Compartment::Compartment@{Compartment\-::\-Compartment}}
 \subsubsection[{capacitance\-\_\-n\-F}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-capacitance\-\_\-n\-F}}\label{class_compartment_1_1_compartment_ac7d7462a45d4d623ed688c187c9184aa}
 
 
-Definition at line 51 of file Compartment.\-py.
+Capacitance of the compartment, in n\-F. 
+
+
+
+Definition at line 89 of file Compartment.\-py.
 
 \hypertarget{class_compartment_1_1_compartment_aa444563be9598d7cc54fd8d10ea6a04f}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!Channels@{Channels}}
 \index{Channels@{Channels}!Compartment::Compartment@{Compartment\-::\-Compartment}}
 \subsubsection[{Channels}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-Channels}}\label{class_compartment_1_1_compartment_aa444563be9598d7cc54fd8d10ea6a04f}
 
 
-Definition at line 34 of file Compartment.\-py.
+List of \hyperlink{namespace_channel_conductance}{Channel\-Conductance} objects in the \hyperlink{class_compartment_1_1_compartment}{Compartment}. 
+
+
+
+Definition at line 63 of file Compartment.\-py.
 
 \hypertarget{class_compartment_1_1_compartment_aacb7db7022f5d3534d17642d47281cbb}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!diameter\-\_\-mum@{diameter\-\_\-mum}}
 \index{diameter\-\_\-mum@{diameter\-\_\-mum}!Compartment::Compartment@{Compartment\-::\-Compartment}}
 \subsubsection[{diameter\-\_\-mum}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-diameter\-\_\-mum}}\label{class_compartment_1_1_compartment_aacb7db7022f5d3534d17642d47281cbb}
 
 
-Definition at line 48 of file Compartment.\-py.
+Diameter of the compartment, in $\mu$m. 
+
+
+
+Definition at line 85 of file Compartment.\-py.
 
 \hypertarget{class_compartment_1_1_compartment_a10d50da6a622982a6483c7cd78482bde}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!g\-Leak@{g\-Leak}}
 \index{g\-Leak@{g\-Leak}!Compartment::Compartment@{Compartment\-::\-Compartment}}
 \subsubsection[{g\-Leak}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-g\-Leak}}\label{class_compartment_1_1_compartment_a10d50da6a622982a6483c7cd78482bde}
 
 
-Definition at line 52 of file Compartment.\-py.
+Leak conductance of the compartment, in M\-S. 
+
+
+
+Definition at line 91 of file Compartment.\-py.
 
 \hypertarget{class_compartment_1_1_compartment_a9402ef46ede52521ebbb9e9d2d68d631}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!index@{index}}
 \index{index@{index}!Compartment::Compartment@{Compartment\-::\-Compartment}}
 \subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-index}}\label{class_compartment_1_1_compartment_a9402ef46ede52521ebbb9e9d2d68d631}
 
 
-Definition at line 45 of file Compartment.\-py.
+Integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle). 
+
+
+
+Definition at line 80 of file Compartment.\-py.
 
 \hypertarget{class_compartment_1_1_compartment_a74f2266a2231c4a81cc680bc201f0ffd}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!kind@{kind}}
 \index{kind@{kind}!Compartment::Compartment@{Compartment\-::\-Compartment}}
 \subsubsection[{kind}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-kind}}\label{class_compartment_1_1_compartment_a74f2266a2231c4a81cc680bc201f0ffd}
 
 
-Definition at line 42 of file Compartment.\-py.
+The kind of compartment. 
+
+For now, it can be {\itshape soma} or {\itshape dendrite}. 
+
+Definition at line 76 of file Compartment.\-py.
 
 \hypertarget{class_compartment_1_1_compartment_a8154742b0082eea301690e3566e477b6}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!length\-\_\-mum@{length\-\_\-mum}}
 \index{length\-\_\-mum@{length\-\_\-mum}!Compartment::Compartment@{Compartment\-::\-Compartment}}
 \subsubsection[{length\-\_\-mum}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-length\-\_\-mum}}\label{class_compartment_1_1_compartment_a8154742b0082eea301690e3566e477b6}
 
 
-Definition at line 47 of file Compartment.\-py.
+Length of the compartment, in $\mu$m. 
+
+
+
+Definition at line 83 of file Compartment.\-py.
 
 \hypertarget{class_compartment_1_1_compartment_ad42f32769afd94d1e7d7d54008efb6fa}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!neuron\-Kind@{neuron\-Kind}}
 \index{neuron\-Kind@{neuron\-Kind}!Compartment::Compartment@{Compartment\-::\-Compartment}}
 \subsubsection[{neuron\-Kind}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-neuron\-Kind}}\label{class_compartment_1_1_compartment_ad42f32769afd94d1e7d7d54008efb6fa}
 
 
-Definition at line 35 of file Compartment.\-py.
+String with the type of the motor unit. 
+
+It can be {\itshape S} (slow), {\itshape F\-R} (fast and resistant), and {\itshape F\-F} (fast and fatigable). 
+
+Definition at line 66 of file Compartment.\-py.
 
 \hypertarget{class_compartment_1_1_compartment_a0fa96147f76e7814f30610027ed425df}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!number\-Channels@{number\-Channels}}
 \index{number\-Channels@{number\-Channels}!Compartment::Compartment@{Compartment\-::\-Compartment}}
 \subsubsection[{number\-Channels}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-number\-Channels}}\label{class_compartment_1_1_compartment_a0fa96147f76e7814f30610027ed425df}
 
 
-Definition at line 62 of file Compartment.\-py.
-
-\hypertarget{class_compartment_1_1_compartment_aed4deea8b0fc160f16ecb1ef39cacba4}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!numberof\-Multi\-Synapses@{numberof\-Multi\-Synapses}}
-\index{numberof\-Multi\-Synapses@{numberof\-Multi\-Synapses}!Compartment::Compartment@{Compartment\-::\-Compartment}}
-\subsubsection[{numberof\-Multi\-Synapses}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-numberof\-Multi\-Synapses}}\label{class_compartment_1_1_compartment_aed4deea8b0fc160f16ecb1ef39cacba4}
+Integer with the number of ionic channels. 
 
 
-Definition at line 63 of file Compartment.\-py.
 
-\hypertarget{class_compartment_1_1_compartment_aed6025b5335c2ce41d37c02fd3c1c042}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!specif\-Res\-\_\-\-Ohmcm2@{specif\-Res\-\_\-\-Ohmcm2}}
-\index{specif\-Res\-\_\-\-Ohmcm2@{specif\-Res\-\_\-\-Ohmcm2}!Compartment::Compartment@{Compartment\-::\-Compartment}}
-\subsubsection[{specif\-Res\-\_\-\-Ohmcm2}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-specif\-Res\-\_\-\-Ohmcm2}}\label{class_compartment_1_1_compartment_aed6025b5335c2ce41d37c02fd3c1c042}
-
-
-Definition at line 50 of file Compartment.\-py.
+Definition at line 102 of file Compartment.\-py.
 
 \hypertarget{class_compartment_1_1_compartment_abe41aff3bffed80f4b848bd14763d506}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!Synapses\-In@{Synapses\-In}}
 \index{Synapses\-In@{Synapses\-In}!Compartment::Compartment@{Compartment\-::\-Compartment}}
 \subsubsection[{Synapses\-In}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-Synapses\-In}}\label{class_compartment_1_1_compartment_abe41aff3bffed80f4b848bd14763d506}
 
 
-Definition at line 38 of file Compartment.\-py.
+List of summed synapses (see Lytton, 1996) that the \hyperlink{class_compartment_1_1_compartment}{Compartment} receive from other neural components. 
+
+
+
+Definition at line 71 of file Compartment.\-py.
 
 \hypertarget{class_compartment_1_1_compartment_a85d64ebf548276c873501d2dc3489ceb}{\index{Compartment\-::\-Compartment@{Compartment\-::\-Compartment}!Synapses\-Out@{Synapses\-Out}}
 \index{Synapses\-Out@{Synapses\-Out}!Compartment::Compartment@{Compartment\-::\-Compartment}}
 \subsubsection[{Synapses\-Out}]{\setlength{\rightskip}{0pt plus 5cm}Compartment.\-Compartment.\-Synapses\-Out}}\label{class_compartment_1_1_compartment_a85d64ebf548276c873501d2dc3489ceb}
 
 
-Definition at line 36 of file Compartment.\-py.
+List of summed synapses (see Lytton, 1996) that the \hyperlink{class_compartment_1_1_compartment}{Compartment} do with other neural components. 
+
+
+
+Definition at line 68 of file Compartment.\-py.
 
 
 

@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage{epsfig}
+\pagestyle{empty}
+\begin{document}
+$\text{cm}^2$
+\pagebreak
+
+$\Omega.cm^2$
+\pagebreak
+
+\begin{equation} g = 10^6 . \frac{A}{\rho} \end{equation}
+\pagebreak
+
+$A$
+\pagebreak
+
+$\rho$
+\pagebreak
+
+$g$
+\pagebreak
+
+\begin{equation} g_c = \frac{2.10^2}{\frac{R_{cyt}l_1}{\pi r_1^2}+\frac{R_{cyt}l_2}{\pi r_2^2}} \end{equation}
+\pagebreak
+
+$g_c$
+\pagebreak
+
+$R_{cyt}$
+\pagebreak
+
+$l_1$
+\pagebreak
+
+$l_2$
+\pagebreak
+
+$r_1$
+\pagebreak
+
+$r_2$
+\pagebreak
+
+\begin{equation} GC = \left[\begin{array}{cccccccc} -g_c[0]&g_c[0]&0&...&...&0&0&0\\ g_c[0]&-g_c[0]-g_c[1]&g_c[1]&0&...&...&0&0\\ \vdots&&\ddots&&...&&0&0 \\ 0&...&g_c[i-1]&-g_c[i-1]-g_c[i]&g_c[i]&0&...&0\\ 0&0&0&...&...&&&0\\ 0&&...&&g_c[N-2]&-g_c[N-2]-g_c[N-1]&g_c[N-1]&0\\ 0&...&0&&&0&g_c[N-1]&-g_c[N-1]\end{array}\right] \end{equation}
+\pagebreak
+
+\begin{equation} \frac{dx(t)}{dt} = f(t, x(t)) \end{equation}
+\pagebreak
+
+\begin{align} k_1 &= f(t,x(t))\\ k_2 &= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_1)\\ k_3 &= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_2)\\ k_4 &= f(t+\Delta t, x(t) + \Delta t.k_3) \end{align}
+\pagebreak
+
+$\Delta t$
+\pagebreak
+
+$x(t+\Delta t)$
+\pagebreak
+
+\begin{equation} x(t+\Delta t) = x(t) + \frac{\Delta t}{6}(k_1 + 2k_2 + 2k_3+k_4) \end{equation}
+\pagebreak
+
+\begin{equation} F_{sat} = \frac{1-e^{-b.force}}{1+e^{-b.force}} \end{equation}
+\pagebreak
+
+\begin{equation} \Gamma = -\frac{1}{\lambda}\ln(\limits\prod_{i=1}^{\lambda} U(0,1)) \end{equation}
+\pagebreak
+
+$\lambda$
+\pagebreak
+
+$v$
+\pagebreak
+
+\begin{equation} v(t) = v_0\exp[-\beta(t-t_0)] \end{equation}
+\pagebreak
+
+$t_0$
+\pagebreak
+
+$v_0$
+\pagebreak
+
+\begin{equation} v(t) = 1 + (v_0 - 1)\exp[-\alpha(t-t_0)] \end{equation}
+\pagebreak
+
+\end{document}

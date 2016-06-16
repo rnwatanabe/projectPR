@@ -5,12 +5,12 @@
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_point_process_generator_1_1_point_process_generator}{Point\-Process\-Generator}
-\begin{DoxyCompactList}\small\item\em classdocs \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Generator of point processes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{namespace_point_process_generator_ad591b4c4f24356425c2958ea43647ddd}{gamma\-Point}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Generates a number according to a Gamma Distribution with an integer order {\bfseries Gamma\-Order}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -18,10 +18,41 @@ def \hyperlink{namespace_point_process_generator_ad591b4c4f24356425c2958ea43647d
 \index{gamma\-Point@{gamma\-Point}!PointProcessGenerator@{Point\-Process\-Generator}}
 \subsubsection[{gamma\-Point}]{\setlength{\rightskip}{0pt plus 5cm}def Point\-Process\-Generator.\-gamma\-Point (
 \begin{DoxyParamCaption}
-\item[{}]{Gamma\-Order}
+\item[{}]{Gamma\-Order, }
+\item[{}]{Gamma\-Order\-Inv}
 \end{DoxyParamCaption}
 )}}\label{namespace_point_process_generator_ad591b4c4f24356425c2958ea43647ddd}
 
 
-Definition at line 15 of file Point\-Process\-Generator.\-py.
+Generates a number according to a Gamma Distribution with an integer order {\bfseries Gamma\-Order}. 
+
+
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries Gamma\-Order}\-: integer order of the Gamma distribution.
+\item {\bfseries Gamma\-Order\-Inv}\-: inverse of the Gamma\-Order. This is necessary for computational efficiency.
+\end{DoxyItemize}
+\item Outputs\-:
+\begin{DoxyItemize}
+\item The number generated from the Gamma distribution.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+The number is generated according to\-:
+
+\begin{equation} \Gamma = -\frac{1}{\lambda}\ln(\limits\prod_{i=1}^{\lambda} U(0,1)) \end{equation} where $\lambda$ is the order of the Gamma distribution and U(a,b) is a uniform distribution from a to b. 
+
+Definition at line 37 of file Point\-Process\-Generator.\-py.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_point_process_generator_ad591b4c4f24356425c2958ea43647ddd_icgraph}
+\end{center}
+\end{figure}
+
 

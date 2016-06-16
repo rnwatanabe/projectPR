@@ -5,12 +5,12 @@
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_compartment_1_1_compartment}{Compartment}
-\begin{DoxyCompactList}\small\item\em classdocs \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Class that implements a neural compartment. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{namespace_compartment_a32af1519f82a3df2abdd1a3e132cf0a8}{calc\-G\-Leak}
-\begin{DoxyCompactList}\small\item\em computes the leak conductance of the compartment input\-: area\-: area of the compartment in cm2 specific\-Res\-: specific resistance of the compartment in Ohm.\-cm2 output\-: g\-Leak in M\-S \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Computes the leak conductance of the compartment. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -24,9 +24,24 @@ def \hyperlink{namespace_compartment_a32af1519f82a3df2abdd1a3e132cf0a8}{calc\-G\
 )}}\label{namespace_compartment_a32af1519f82a3df2abdd1a3e132cf0a8}
 
 
-computes the leak conductance of the compartment input\-: area\-: area of the compartment in cm2 specific\-Res\-: specific resistance of the compartment in Ohm.\-cm2 output\-: g\-Leak in M\-S 
+Computes the leak conductance of the compartment. 
 
 
+\begin{DoxyItemize}
+\item Input\-:
+\begin{DoxyItemize}
+\item {\bfseries area}\-: area of the compartment in cm $^2$.
+\item {\bfseries specific\-Res}\-: specific resistance of the compartment in $\Omega.cm^2$.
+\end{DoxyItemize}
+\item Output\-:
+\begin{DoxyItemize}
+\item Leak conductance in M\-S.
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Definition at line 18 of file Compartment.\-py.
+It is compute according to the following formula\-:
+
+\begin{equation} g = 10^6 . \frac{A}{\rho} \end{equation} where $A$ is the compartment area \mbox{[}cm $^2$\mbox{]}, $\rho$ is the specific resistance \mbox{[} $\Omega.cm^2$\mbox{]} and $g$ is the compartment conductance \mbox{[}M\-S\mbox{]}. 
+
+Definition at line 32 of file Compartment.\-py.
 

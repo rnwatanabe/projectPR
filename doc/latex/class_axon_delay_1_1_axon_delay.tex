@@ -12,36 +12,36 @@ Class that implements a delay correspondent to the nerve.
 def \hyperlink{class_axon_delay_1_1_axon_delay_ae4b6037beb2f833d82c5703bcb47ffb0}{\-\_\-\-\_\-init\-\_\-\-\_\-}
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 def \hyperlink{class_axon_delay_1_1_axon_delay_a49115bea963cde5e2c4317510d73cf7c}{add\-Terminal\-Spike}
-\item 
+\begin{DoxyCompactList}\small\item\em Indicates to the \hyperlink{class_axon_delay_1_1_axon_delay}{Axon\-Delay} object that a spike has occurred in the Terminal. \end{DoxyCompactList}\item 
 def \hyperlink{class_axon_delay_1_1_axon_delay_a5483df94745af77bf54f707f9a05a0e0}{add\-Spinal\-Spike}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Indicates to the \hyperlink{class_axon_delay_1_1_axon_delay}{Axon\-Delay} object that a spike has occurred in the soma. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_axon_delay_1_1_axon_delay_a5dbb9b5002d4b54bf347f48337bdb1c6}{index}
-\item 
+\begin{DoxyCompactList}\small\item\em Integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle). \end{DoxyCompactList}\item 
 \hyperlink{class_axon_delay_1_1_axon_delay_a08ab7285929002db2108179ea9f5d5dd}{length\-\_\-m}
-\item 
+\begin{DoxyCompactList}\small\item\em Length, in m, of the part of the nerve that is not modelled as a delay. \end{DoxyCompactList}\item 
 \hyperlink{class_axon_delay_1_1_axon_delay_a59cc448f95b38b88b7103c3058e8c397}{velocity\-\_\-m\-\_\-s}
-\item 
+\begin{DoxyCompactList}\small\item\em Velocity of conduction, in m/s, of the part of the nerve that is not modelled as a delay. \end{DoxyCompactList}\item 
 \hyperlink{class_axon_delay_1_1_axon_delay_a3f6bb8f38c4474806544d01fbe9c0361}{stimulus\-Positionto\-Terminal}
-\item 
+\begin{DoxyCompactList}\small\item\em Distance, in m, of the stimulus position to the terminal. \end{DoxyCompactList}\item 
 \hyperlink{class_axon_delay_1_1_axon_delay_a81ea09febed911b8f5e4d56a5f434f8d}{latency\-Stimulus\-Spinal\-\_\-ms}
-\item 
+\begin{DoxyCompactList}\small\item\em time, in ms, that the signal takes to travel between the stimulus and the spinal cord. \end{DoxyCompactList}\item 
 \hyperlink{class_axon_delay_1_1_axon_delay_aaa0b8daf2629cd7fa19d539fe2168d0f}{latency\-Spinal\-Terminal\-\_\-ms}
-\item 
+\begin{DoxyCompactList}\small\item\em time, in ms, that the signal takes to travel between the spinal cord and the terminal. \end{DoxyCompactList}\item 
 \hyperlink{class_axon_delay_1_1_axon_delay_a88845b9926b97db88174ce088d5af5e0}{latency\-Stimulus\-Terminal\-\_\-ms}
-\item 
+\begin{DoxyCompactList}\small\item\em time, in ms, tat the signal takes to travel between the stimulus and the terminal. \end{DoxyCompactList}\item 
 \hyperlink{class_axon_delay_1_1_axon_delay_aba392d8938766355063cf4bf3a87962d}{terminal\-Spike\-Train}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Float with instant, in ms, of the last spike in the terminal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Class that implements a delay correspondent to the nerve. 
 
-This class corresponds to the part of the axon that is modeled with no dynamics. 
+This class corresponds to the part of the axon that is modeled with no dynamics. Ideally this class would not exist and all the axon would be modelled in the motor unit or sensory class with the proper dynamics. 
 
-Definition at line 15 of file Axon\-Delay.\-py.
+Definition at line 16 of file Axon\-Delay.\-py.
 
 
 
@@ -61,12 +61,18 @@ Definition at line 15 of file Axon\-Delay.\-py.
 
 Constructor. 
 
-Inputs\-:
+
 \begin{DoxyItemize}
-\item conf 
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries conf}\-: \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters.
+\item {\bfseries nerve}\-: string with type of the nerve. It can be P\-T\-N (posterior tibial nerve) or C\-P\-N (common peroneal nerve).
+\item {\bfseries pool}\-: string with Motor unit pool to which the motor unit belongs.
+\item {\bfseries index}\-: integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle). 
+\end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 26 of file Axon\-Delay.\-py.
+Definition at line 34 of file Axon\-Delay.\-py.
 
 
 
@@ -81,7 +87,17 @@ Definition at line 26 of file Axon\-Delay.\-py.
 )}}\label{class_axon_delay_1_1_axon_delay_a5483df94745af77bf54f707f9a05a0e0}
 
 
-Definition at line 45 of file Axon\-Delay.\-py.
+Indicates to the \hyperlink{class_axon_delay_1_1_axon_delay}{Axon\-Delay} object that a spike has occurred in the soma. 
+
+
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries t}\-: current instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 75 of file Axon\-Delay.\-py.
 
 
 
@@ -104,7 +120,17 @@ Here is the call graph for this function\-:\nopagebreak
 )}}\label{class_axon_delay_1_1_axon_delay_a49115bea963cde5e2c4317510d73cf7c}
 
 
-Definition at line 41 of file Axon\-Delay.\-py.
+Indicates to the \hyperlink{class_axon_delay_1_1_axon_delay}{Axon\-Delay} object that a spike has occurred in the Terminal. 
+
+
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries t}\-: current instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 64 of file Axon\-Delay.\-py.
 
 
 
@@ -125,56 +151,88 @@ Here is the caller graph for this function\-:\nopagebreak
 \subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}Axon\-Delay.\-Axon\-Delay.\-index}}\label{class_axon_delay_1_1_axon_delay_a5dbb9b5002d4b54bf347f48337bdb1c6}
 
 
-Definition at line 27 of file Axon\-Delay.\-py.
+Integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle). 
+
+
+
+Definition at line 38 of file Axon\-Delay.\-py.
 
 \hypertarget{class_axon_delay_1_1_axon_delay_aaa0b8daf2629cd7fa19d539fe2168d0f}{\index{Axon\-Delay\-::\-Axon\-Delay@{Axon\-Delay\-::\-Axon\-Delay}!latency\-Spinal\-Terminal\-\_\-ms@{latency\-Spinal\-Terminal\-\_\-ms}}
 \index{latency\-Spinal\-Terminal\-\_\-ms@{latency\-Spinal\-Terminal\-\_\-ms}!AxonDelay::AxonDelay@{Axon\-Delay\-::\-Axon\-Delay}}
 \subsubsection[{latency\-Spinal\-Terminal\-\_\-ms}]{\setlength{\rightskip}{0pt plus 5cm}Axon\-Delay.\-Axon\-Delay.\-latency\-Spinal\-Terminal\-\_\-ms}}\label{class_axon_delay_1_1_axon_delay_aaa0b8daf2629cd7fa19d539fe2168d0f}
 
 
-Definition at line 34 of file Axon\-Delay.\-py.
+time, in ms, that the signal takes to travel between the spinal cord and the terminal. 
+
+
+
+Definition at line 49 of file Axon\-Delay.\-py.
 
 \hypertarget{class_axon_delay_1_1_axon_delay_a81ea09febed911b8f5e4d56a5f434f8d}{\index{Axon\-Delay\-::\-Axon\-Delay@{Axon\-Delay\-::\-Axon\-Delay}!latency\-Stimulus\-Spinal\-\_\-ms@{latency\-Stimulus\-Spinal\-\_\-ms}}
 \index{latency\-Stimulus\-Spinal\-\_\-ms@{latency\-Stimulus\-Spinal\-\_\-ms}!AxonDelay::AxonDelay@{Axon\-Delay\-::\-Axon\-Delay}}
 \subsubsection[{latency\-Stimulus\-Spinal\-\_\-ms}]{\setlength{\rightskip}{0pt plus 5cm}Axon\-Delay.\-Axon\-Delay.\-latency\-Stimulus\-Spinal\-\_\-ms}}\label{class_axon_delay_1_1_axon_delay_a81ea09febed911b8f5e4d56a5f434f8d}
 
 
-Definition at line 33 of file Axon\-Delay.\-py.
+time, in ms, that the signal takes to travel between the stimulus and the spinal cord. 
+
+
+
+Definition at line 47 of file Axon\-Delay.\-py.
 
 \hypertarget{class_axon_delay_1_1_axon_delay_a88845b9926b97db88174ce088d5af5e0}{\index{Axon\-Delay\-::\-Axon\-Delay@{Axon\-Delay\-::\-Axon\-Delay}!latency\-Stimulus\-Terminal\-\_\-ms@{latency\-Stimulus\-Terminal\-\_\-ms}}
 \index{latency\-Stimulus\-Terminal\-\_\-ms@{latency\-Stimulus\-Terminal\-\_\-ms}!AxonDelay::AxonDelay@{Axon\-Delay\-::\-Axon\-Delay}}
 \subsubsection[{latency\-Stimulus\-Terminal\-\_\-ms}]{\setlength{\rightskip}{0pt plus 5cm}Axon\-Delay.\-Axon\-Delay.\-latency\-Stimulus\-Terminal\-\_\-ms}}\label{class_axon_delay_1_1_axon_delay_a88845b9926b97db88174ce088d5af5e0}
 
 
-Definition at line 35 of file Axon\-Delay.\-py.
+time, in ms, tat the signal takes to travel between the stimulus and the terminal. 
+
+
+
+Definition at line 51 of file Axon\-Delay.\-py.
 
 \hypertarget{class_axon_delay_1_1_axon_delay_a08ab7285929002db2108179ea9f5d5dd}{\index{Axon\-Delay\-::\-Axon\-Delay@{Axon\-Delay\-::\-Axon\-Delay}!length\-\_\-m@{length\-\_\-m}}
 \index{length\-\_\-m@{length\-\_\-m}!AxonDelay::AxonDelay@{Axon\-Delay\-::\-Axon\-Delay}}
 \subsubsection[{length\-\_\-m}]{\setlength{\rightskip}{0pt plus 5cm}Axon\-Delay.\-Axon\-Delay.\-length\-\_\-m}}\label{class_axon_delay_1_1_axon_delay_a08ab7285929002db2108179ea9f5d5dd}
 
 
-Definition at line 29 of file Axon\-Delay.\-py.
+Length, in m, of the part of the nerve that is not modelled as a delay. 
+
+
+
+Definition at line 41 of file Axon\-Delay.\-py.
 
 \hypertarget{class_axon_delay_1_1_axon_delay_a3f6bb8f38c4474806544d01fbe9c0361}{\index{Axon\-Delay\-::\-Axon\-Delay@{Axon\-Delay\-::\-Axon\-Delay}!stimulus\-Positionto\-Terminal@{stimulus\-Positionto\-Terminal}}
 \index{stimulus\-Positionto\-Terminal@{stimulus\-Positionto\-Terminal}!AxonDelay::AxonDelay@{Axon\-Delay\-::\-Axon\-Delay}}
 \subsubsection[{stimulus\-Positionto\-Terminal}]{\setlength{\rightskip}{0pt plus 5cm}Axon\-Delay.\-Axon\-Delay.\-stimulus\-Positionto\-Terminal}}\label{class_axon_delay_1_1_axon_delay_a3f6bb8f38c4474806544d01fbe9c0361}
 
 
-Definition at line 31 of file Axon\-Delay.\-py.
+Distance, in m, of the stimulus position to the terminal. 
+
+
+
+Definition at line 45 of file Axon\-Delay.\-py.
 
 \hypertarget{class_axon_delay_1_1_axon_delay_aba392d8938766355063cf4bf3a87962d}{\index{Axon\-Delay\-::\-Axon\-Delay@{Axon\-Delay\-::\-Axon\-Delay}!terminal\-Spike\-Train@{terminal\-Spike\-Train}}
 \index{terminal\-Spike\-Train@{terminal\-Spike\-Train}!AxonDelay::AxonDelay@{Axon\-Delay\-::\-Axon\-Delay}}
 \subsubsection[{terminal\-Spike\-Train}]{\setlength{\rightskip}{0pt plus 5cm}Axon\-Delay.\-Axon\-Delay.\-terminal\-Spike\-Train}}\label{class_axon_delay_1_1_axon_delay_aba392d8938766355063cf4bf3a87962d}
 
 
-Definition at line 38 of file Axon\-Delay.\-py.
+Float with instant, in ms, of the last spike in the terminal. 
+
+
+
+Definition at line 54 of file Axon\-Delay.\-py.
 
 \hypertarget{class_axon_delay_1_1_axon_delay_a59cc448f95b38b88b7103c3058e8c397}{\index{Axon\-Delay\-::\-Axon\-Delay@{Axon\-Delay\-::\-Axon\-Delay}!velocity\-\_\-m\-\_\-s@{velocity\-\_\-m\-\_\-s}}
 \index{velocity\-\_\-m\-\_\-s@{velocity\-\_\-m\-\_\-s}!AxonDelay::AxonDelay@{Axon\-Delay\-::\-Axon\-Delay}}
 \subsubsection[{velocity\-\_\-m\-\_\-s}]{\setlength{\rightskip}{0pt plus 5cm}Axon\-Delay.\-Axon\-Delay.\-velocity\-\_\-m\-\_\-s}}\label{class_axon_delay_1_1_axon_delay_a59cc448f95b38b88b7103c3058e8c397}
 
 
-Definition at line 30 of file Axon\-Delay.\-py.
+Velocity of conduction, in m/s, of the part of the nerve that is not modelled as a delay. 
+
+
+
+Definition at line 43 of file Axon\-Delay.\-py.
 
 
 

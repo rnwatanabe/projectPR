@@ -12,31 +12,55 @@ from scipy.sparse import lil_matrix
  
 
 def twitchSaturation(force, b):
+    '''
+    Computes the muscle unit force after the nonlinear saturation. 
+
+    \f{equation}{
+        F_{sat} = \frac{1-e^{-b.force}}{1+e^{-b.force}}
+    \f}
+
+- Inputs:
+    + **force**: force before the saturation.
+
+    + **b**: saturation function parameter.
+
+- Outputs:
+    + Saturated force.
+    '''
     return 2.0 / (1 + np.exp(-b * force)) - 1
 
- 
-def computeForce(force, TwAmp, TwTet):
-    return np.sum(force * TwAmp * TwTet)   
 
 
 class MotorUnitPool(object):
     '''
-    classdocs
+    Class that implements a motor unit pool. Encompasses a set of motor units that controls a single  muscle.
     '''
 
 
     def __init__(self, conf, pool):
         '''
         Constructor
+
+        - Inputs:
+            + **conf**: Configuration object with the simulation parameters.
+
+            + **pool**: string with Motor unit pool to which the motor unit belongs.
         '''
+
+        ## Indicates that is Motor Unit pool.
         self.kind = 'MU'
+
+        ## Configuration object with the simulation parameters.
         self.conf = conf
+        ## String with Motor unit pool to which the motor unit belongs.
         self.pool = pool
         MUnumber_S = int(conf.parameterSet('MUnumber_S_' + pool, pool, 0))
         MUnumber_FR = int(conf.parameterSet('MUnumber_FR_' + pool, pool, 0))
-        MUnumber_FF = int(conf.parameterSet('MUnumber_FF_' + pool, pool, 0))  
+        MUnumber_FF = int(conf.parameterSet('MUnumber_FF_' + pool, pool, 0))
+        ## Number of motor units.
         self.MUnumber = MUnumber_S + MUnumber_FR + MUnumber_FF
         
+        ## List of MotorUnit objects.
         self.unit = []
         
         
@@ -47,22 +71,26 @@ class MotorUnitPool(object):
                 self.unit.append(MotorUnit(conf, pool, i, 'FR'))
             else:
                 self.unit.append(MotorUnit(conf, pool, i, 'FF'))
-            
+
+        ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])    
+        ## Vector with the instants of spikes in the terminal, in ms.
         self.poolTerminalSpikes = np.array([])
         
-        ##activation signal
-        
+        #activation signal
+        ## Model of the activation signal. For now, it can be *SOCDS* (second order critically damped system).
         self.activationModel = conf.parameterSet('activationModel', pool, 0)
-        
-        
-        
-        if (self.activationModel == 'SOCDS'):
+
+
+
+        if self.activationModel == 'SOCDS':
+            '''
+            Matrix that multiplied     
+            '''
             self.ActMatrix = lil_matrix((self.MUnumber, 3*self.MUnumber), dtype = float)
             
             for i in xrange(0, self.MUnumber):
-                
-                self.ActMatrix[i,3*i:3*i+3] = [2*math.exp(-conf.timeStep_ms/self.unit[i].TwitchTc_ms), 
+                self.ActMatrix[i,3*i:3*i+3] = [2*math.exp(-conf.timeStep_ms/self.unit[i].TwitchTc_ms),
                                     -math.exp(-2*conf.timeStep_ms/self.unit[i].TwitchTc_ms), 
                                     math.pow(conf.timeStep_ms, 2.0)/self.unit[i].TwitchTc_ms*math.exp(1.0-conf.timeStep_ms/self.unit[i].TwitchTc_ms)]
              
@@ -103,19 +131,21 @@ class MotorUnitPool(object):
         
     def atualizeActivationSignal(self, t):
         for i in xrange(self.MUnumber):
-            self.an.itemset(3*i+1, self.an.item(3*i))
-            self.an.itemset(3*i, self.activation_nonSat.item(i))            
+            self.an[3*i+1] = self.an[3*i]
+            self.an[3*i] = self.activation_nonSat[i]            
             if self.unit[i].terminalSpikeTrain and abs(t - self.conf.timeStep_ms - self.unit[i].terminalSpikeTrain[-1][0]) < 1e-6: 
-                self.an.itemset(3*i+2, self.diracDeltaValue)
-            else: self.an.itemset(3*i+2,  0.0)
+                self.an[3*i+2] = self.diracDeltaValue
+            else: self.an[3*i+2] =  0.0
         
         self.activation_nonSat = self.ActMatrix.dot(self.an)        
         self.activation_Sat = twitchSaturation(self.activation_nonSat, self.bSat)
         
     
     def atualizeForceNoHill(self):
-        
-        self.force[self.timeIndex] = computeForce(self.activation_Sat, self.twitchAmp_N, self.twTet)            
+        '''
+        Compute the muscle force when no muscle dynamics (Hill model) is used.
+        '''
+        self.force[self.timeIndex] = np.sum(self.activation_Sat * self.twitchAmp_N * self.twTet)            
         
         
            
