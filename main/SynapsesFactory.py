@@ -9,13 +9,15 @@ import numpy as np
 
 class SynapsesFactory(object):
     '''
-    classdocs
+    Class to build all the synapses in the system.
     '''
 
 
     def __init__(self, conf, pools):
         '''
         Constructor
+
+        
         '''
         
         self.numberOfSynapses = 0
@@ -42,7 +44,7 @@ class SynapsesFactory(object):
                                                 if (np.random.uniform(0.0,1.0) <= conn):
                                                     for synapse in xrange(len(pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn)): 
                                                         if pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].kind == 'excitatory':
-                                                            pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].addConductance(gmax, delay, dyn, 1.0)
+                                                            pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].addConductance(gmax, delay, dyn)
                                                             pools[poolOut].unit[unitOut].transmitSpikesThroughSynapses.append(pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse])                                                            
                                                             pools[poolOut].unit[unitOut].indicesOfSynapsesOnTarget.append(len(pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].gmax_muS) - 1)
                                                             self.numberOfSynapses += 1

@@ -22,7 +22,8 @@ class AxonDelay(object):
         - Inputs:
             + **conf**: Configuration object with the simulation parameters.
 
-            + **nerve**: string with type of the nerve. It can be PTN (posterior tibial nerve) or CPN (common peroneal nerve).
+            + **nerve**: string with type of the nerve. It can be *PTN* 
+            (posterior tibial nerve) or *CPN* (common peroneal nerve).
 
             + **pool**: string with Motor unit pool to which the motor unit belongs.
 

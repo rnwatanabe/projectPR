@@ -10,20 +10,20 @@ Class that implements a model of the ionic Channels in a compartment.
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{class_channel_conductance_1_1_channel_conductance_adaaf5ea399963a716dc532a060964348}{\-\_\-\-\_\-init\-\_\-\-\_\-}
-\begin{DoxyCompactList}\small\item\em Builds an ionic channel conductance. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 def \hyperlink{class_channel_conductance_1_1_channel_conductance_abde599b9096579b94d24295678f45b6d}{compute\-Current}
 \begin{DoxyCompactList}\small\item\em Computes the current genrated by the ionic Channel. \end{DoxyCompactList}\item 
 def \hyperlink{class_channel_conductance_1_1_channel_conductance_a956928953c88e1c03c113fc98ec42cc6}{comp\-Cond\-Kf}
 \begin{DoxyCompactList}\small\item\em Computes the conductance of a Kf Channel. \end{DoxyCompactList}\item 
 def \hyperlink{class_channel_conductance_1_1_channel_conductance_a19cc2a71f96187c7c647855d586cecaa}{comp\-Cond\-Ks}
-\begin{DoxyCompactList}\small\item\em Computes the conductance of a Ks Channel. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Computes the conductance of a slow potassium Channel. \end{DoxyCompactList}\item 
 def \hyperlink{class_channel_conductance_1_1_channel_conductance_a26e6cf970cc7a8732f590dceb1d7c993}{comp\-Cond\-Na}
 \begin{DoxyCompactList}\small\item\em Computes the conductance of a Na Channel. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_channel_conductance_1_1_channel_conductance_a7bf3e28aab2160014358cde589f2ec39}{kind}
-\begin{DoxyCompactList}\small\item\em String with the type of the ionic channel (Na, Ks, Kf or Ca). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em string with the type of the ionic channel. \end{DoxyCompactList}\item 
 \hyperlink{class_channel_conductance_1_1_channel_conductance_a628553cbc1efd93b30b0a15afd4417d9}{cond\-State}
 \begin{DoxyCompactList}\small\item\em List of Conductance\-State objects, representing each state of the ionic channel. \end{DoxyCompactList}\item 
 \hyperlink{class_channel_conductance_1_1_channel_conductance_a654a73b6cd5853b509e7f7fba060572b}{Eq\-Pot\-\_\-m\-V}
@@ -60,18 +60,20 @@ Definition at line 16 of file Channel\-Conductance.\-py.
 )}}\label{class_channel_conductance_1_1_channel_conductance_adaaf5ea399963a716dc532a060964348}
 
 
-Builds an ionic channel conductance. 
+Constructor. 
+
+Builds an ionic channel conductance.
 
 -\/\-Inputs\-:
 \begin{DoxyItemize}
-\item {\bfseries kind}\-: string with the type of the ionic channel (Na, Ks, Kf or Ca).
+\item {\bfseries kind}\-: string with the type of the ionic channel. For now it can be {\itshape Na} (Sodium), {\itshape Ks} (slow Potassium), {\itshape Kf} (fast Potassium) or {\itshape Ca} (Calcium).
 \item {\bfseries conf}\-: instance of the \hyperlink{namespace_configuration}{Configuration} class (see \hyperlink{namespace_configuration}{Configuration} file).
-\item {\bfseries comp\-Area}\-: -\/ float with the area of the compartment that the Channel belongs, in $\text{cm}^2$.
-\item {\bfseries pool} -\/ the pool that this state belongs.
-\item {\bfseries index} -\/ the index of the unit that this state belongs. 
+\item {\bfseries comp\-Area}\-: float with the area of the compartment that the Channel belongs, in $\text{cm}^2$.
+\item {\bfseries pool}\-: the pool that this state belongs.
+\item {\bfseries index}\-: the index of the unit that this state belongs. 
 \end{DoxyItemize}
 
-Definition at line 30 of file Channel\-Conductance.\-py.
+Definition at line 38 of file Channel\-Conductance.\-py.
 
 
 
@@ -100,10 +102,14 @@ This function is assigned as self.\-comp\-Cond to a Kf Channel at the class cons
 
 Output\-:
 \begin{DoxyItemize}
-\item Conductance in $\mu$S. 
+\item Conductance in $\mu$S.
 \end{DoxyItemize}
 
-Definition at line 97 of file Channel\-Conductance.\-py.
+It is computed as\-:
+
+\begin{equation} g = g_{max}n^4(E_0-V) \end{equation} where $E_0$ is the equilibrium potential of the compartment, V is the membrane potential and $n$ is the state of a fast potassium channel.. 
+
+Definition at line 115 of file Channel\-Conductance.\-py.
 
 \hypertarget{class_channel_conductance_1_1_channel_conductance_a19cc2a71f96187c7c647855d586cecaa}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!comp\-Cond\-Ks@{comp\-Cond\-Ks}}
 \index{comp\-Cond\-Ks@{comp\-Cond\-Ks}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
@@ -115,7 +121,7 @@ Definition at line 97 of file Channel\-Conductance.\-py.
 )}}\label{class_channel_conductance_1_1_channel_conductance_a19cc2a71f96187c7c647855d586cecaa}
 
 
-Computes the conductance of a Ks Channel. 
+Computes the conductance of a slow potassium Channel. 
 
 This function is assigned as self.\-comp\-Cond to a Ks Channel at the class constructor.
 
@@ -127,11 +133,15 @@ This function is assigned as self.\-comp\-Cond to a Ks Channel at the class cons
 \end{DoxyItemize}
 \item Output\-:
 \begin{DoxyItemize}
-\item Conductance in $\mu$S. 
+\item Conductance in $\mu$S.
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 112 of file Channel\-Conductance.\-py.
+It is computed as\-:
+
+\begin{equation} g = g_{max}q^2(E_0-V) \end{equation} where $E_0$ is the equilibrium potential of the compartment, $V$ is the membrane potential and $q$ is the state of a slow potassium channel. 
+
+Definition at line 138 of file Channel\-Conductance.\-py.
 
 \hypertarget{class_channel_conductance_1_1_channel_conductance_a26e6cf970cc7a8732f590dceb1d7c993}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!comp\-Cond\-Na@{comp\-Cond\-Na}}
 \index{comp\-Cond\-Na@{comp\-Cond\-Na}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
@@ -145,14 +155,21 @@ Definition at line 112 of file Channel\-Conductance.\-py.
 
 Computes the conductance of a Na Channel. 
 
-This function is assigned as self.\-comp\-Cond to a Na Channel at the class constructor. \begin{DoxyVerb}    -Input:
-        + **V_mV**: membrane potential of the compartment in mV.
+This function is assigned as self.\-comp\-Cond to a Na Channel at the class constructor. -\/\-Input\-:
+\begin{DoxyItemize}
+\item {\bfseries V\-\_\-m\-V}\-: membrane potential of the compartment in m\-V.
+\end{DoxyItemize}
 
-    Output:
-        + Conductance in \form#2S.\end{DoxyVerb}
- 
+Output\-:
+\begin{DoxyItemize}
+\item Conductance in $\mu$S.
+\end{DoxyItemize}
 
-Definition at line 126 of file Channel\-Conductance.\-py.
+It is computed as\-:
+
+\begin{equation} g = g_{max}m^3h(E_0-V) \end{equation} where $E_0$ is the equilibrium potential of the compartment, V is the membrane potential and $m$ and $h$ are the states of a sodium channel.. 
+
+Definition at line 159 of file Channel\-Conductance.\-py.
 
 \hypertarget{class_channel_conductance_1_1_channel_conductance_abde599b9096579b94d24295678f45b6d}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!compute\-Current@{compute\-Current}}
 \index{compute\-Current@{compute\-Current}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
@@ -176,11 +193,11 @@ Computes the current genrated by the ionic Channel.
 \end{DoxyItemize}
 \item Outputs\-:
 \begin{DoxyItemize}
-\item Ionic current in n\-A 
+\item Ionic current, in n\-A 
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 81 of file Channel\-Conductance.\-py.
+Definition at line 91 of file Channel\-Conductance.\-py.
 
 
 
@@ -194,7 +211,7 @@ Function that computes the conductance dynamics.
 
 
 
-Definition at line 50 of file Channel\-Conductance.\-py.
+Definition at line 60 of file Channel\-Conductance.\-py.
 
 \hypertarget{class_channel_conductance_1_1_channel_conductance_a628553cbc1efd93b30b0a15afd4417d9}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!cond\-State@{cond\-State}}
 \index{cond\-State@{cond\-State}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
@@ -205,7 +222,7 @@ List of Conductance\-State objects, representing each state of the ionic channel
 
 
 
-Definition at line 34 of file Channel\-Conductance.\-py.
+Definition at line 44 of file Channel\-Conductance.\-py.
 
 \hypertarget{class_channel_conductance_1_1_channel_conductance_a654a73b6cd5853b509e7f7fba060572b}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!Eq\-Pot\-\_\-m\-V@{Eq\-Pot\-\_\-m\-V}}
 \index{Eq\-Pot\-\_\-m\-V@{Eq\-Pot\-\_\-m\-V}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
@@ -216,7 +233,7 @@ Equilibrium Potential of the ionic channel, m\-V.
 
 
 
-Definition at line 37 of file Channel\-Conductance.\-py.
+Definition at line 47 of file Channel\-Conductance.\-py.
 
 \hypertarget{class_channel_conductance_1_1_channel_conductance_a80a0238a90b30b411c9381f682d0aeec}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!gmax\-\_\-mu\-S@{gmax\-\_\-mu\-S}}
 \index{gmax\-\_\-mu\-S@{gmax\-\_\-mu\-S}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
@@ -227,18 +244,18 @@ Maximal conductance, in $\mu$S, of the ionic channel.
 
 
 
-Definition at line 39 of file Channel\-Conductance.\-py.
+Definition at line 49 of file Channel\-Conductance.\-py.
 
 \hypertarget{class_channel_conductance_1_1_channel_conductance_a7bf3e28aab2160014358cde589f2ec39}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!kind@{kind}}
 \index{kind@{kind}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
 \subsubsection[{kind}]{\setlength{\rightskip}{0pt plus 5cm}Channel\-Conductance.\-Channel\-Conductance.\-kind}}\label{class_channel_conductance_1_1_channel_conductance_a7bf3e28aab2160014358cde589f2ec39}
 
 
-String with the type of the ionic channel (Na, Ks, Kf or Ca). 
+string with the type of the ionic channel. 
 
+For now it can be {\itshape Na} (Sodium), {\itshape Ks} (slow Potassium), {\itshape Kf} (fast Potassium) or {\itshape Ca} (Calcium). 
 
-
-Definition at line 32 of file Channel\-Conductance.\-py.
+Definition at line 42 of file Channel\-Conductance.\-py.
 
 \hypertarget{class_channel_conductance_1_1_channel_conductance_ae217799d13e5d225af048b7ba503fde1}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!len\-States@{len\-States}}
 \index{len\-States@{len\-States}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
@@ -249,7 +266,7 @@ Integer with the number of states in the ionic channel.
 
 
 
-Definition at line 64 of file Channel\-Conductance.\-py.
+Definition at line 74 of file Channel\-Conductance.\-py.
 
 \hypertarget{class_channel_conductance_1_1_channel_conductance_aa3c889bb4528c3abe7b69862cf87119d}{\index{Channel\-Conductance\-::\-Channel\-Conductance@{Channel\-Conductance\-::\-Channel\-Conductance}!state\-Type@{state\-Type}}
 \index{state\-Type@{state\-Type}!ChannelConductance::ChannelConductance@{Channel\-Conductance\-::\-Channel\-Conductance}}
@@ -260,7 +277,7 @@ String with type of dynamics of the states.
 
 For now it accepts the string pulse. 
 
-Definition at line 42 of file Channel\-Conductance.\-py.
+Definition at line 52 of file Channel\-Conductance.\-py.
 
 
 

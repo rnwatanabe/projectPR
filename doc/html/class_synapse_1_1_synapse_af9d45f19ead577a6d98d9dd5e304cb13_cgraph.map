@@ -1,5 +1,5 @@
 <map id="Synapse.Synapse.startConductanceNone" name="Synapse.Synapse.startConductanceNone">
-<area shape="rect" id="node2" href="$namespace_synapse.html#a6d5943c0d974d992b8c9daa3ff3818d6" title="Synapse.compRiStart" alt="" coords="326,5,477,32"/>
+<area shape="rect" id="node2" href="$namespace_synapse.html#a6d5943c0d974d992b8c9daa3ff3818d6" title="Computes the fraction of bound postsynaptic receptors to neurotransmitters in individual synapses whe..." alt="" coords="326,5,477,32"/>
 <area shape="rect" id="node3" href="$namespace_synapse.html#a3bbc4948087cc789af35085ea0423a93" title="Synapse.compRonStart" alt="" coords="321,56,482,83"/>
 <area shape="rect" id="node4" href="$namespace_synapse.html#a4ff37207e236e81ae7bced77172a5af5" title="Synapse.compRoffStart" alt="" coords="320,107,483,133"/>
 </map>

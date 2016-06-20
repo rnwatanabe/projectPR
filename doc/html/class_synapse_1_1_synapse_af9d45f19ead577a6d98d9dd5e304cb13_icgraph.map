@@ -1,5 +1,5 @@
 <map id="Synapse.Synapse.startConductanceNone" name="Synapse.Synapse.startConductanceNone">
-<area shape="rect" id="node2" href="$class_synapse_1_1_synapse.html#a744b7b46e7dfee8871f4c3b29fe099ae" title="Synapse.Synapse.computeCurrent" alt="" coords="337,5,562,32"/>
+<area shape="rect" id="node2" href="$class_synapse_1_1_synapse.html#a744b7b46e7dfee8871f4c3b29fe099ae" title="Computes the current on the compartment due to the synapse. " alt="" coords="337,5,562,32"/>
 <area shape="rect" id="node3" href="$class_synapse_1_1_synapse.html#a88599102e16f4fe28f9cf7580c3a8108" title="Synapse.Synapse.computeConductance" alt="" coords="320,56,579,83"/>
-<area shape="rect" id="node4" href="$class_synapse_1_1_synapse.html#ad4eb9663dc124db77c7e99578ab7eff7" title="Synapse.Synapse.computeCurrent2" alt="" coords="627,56,859,83"/>
+<area shape="rect" id="node4" href="$class_synapse_1_1_synapse.html#ad4eb9663dc124db77c7e99578ab7eff7" title="The same function of computeCurrent. " alt="" coords="627,56,859,83"/>
 </map>

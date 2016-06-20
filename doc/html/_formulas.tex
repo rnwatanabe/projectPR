@@ -5,6 +5,33 @@
 $\text{cm}^2$
 \pagebreak
 
+\begin{equation} g = g_{max}n^4(E_0-V) \end{equation}
+\pagebreak
+
+$E_0$
+\pagebreak
+
+$n$
+\pagebreak
+
+\begin{equation} g = g_{max}q^2(E_0-V) \end{equation}
+\pagebreak
+
+$V$
+\pagebreak
+
+$q$
+\pagebreak
+
+\begin{equation} g = g_{max}m^3h(E_0-V) \end{equation}
+\pagebreak
+
+$m$
+\pagebreak
+
+$h$
+\pagebreak
+
 $\Omega.cm^2$
 \pagebreak
 
@@ -81,6 +108,54 @@ $v_0$
 \pagebreak
 
 \begin{equation} v(t) = 1 + (v_0 - 1)\exp[-\alpha(t-t_0)] \end{equation}
+\pagebreak
+
+\begin{equation} G = G_{max}(R_{on} + R_{off}) \end{equation}
+\pagebreak
+
+$G$
+\pagebreak
+
+$G_{max}$
+\pagebreak
+
+$N_{on}=\limits\sum_{i=1}g_{i_{on}}/G_{max}$
+\pagebreak
+
+$\tau_{on}=\frac{1}{\alpha.T_{max} +\beta}$
+\pagebreak
+
+\begin{equation} R_{on_{newValue}} = N_{on}r_{\infty}\Bigg[1-\exp\left(-\frac{t-t_0}{\tau_{on}}\right)\Bigg] + R_{on_{oldValue}}\exp\left(-\frac{t-t_0}{\tau_{on}}\right) \end{equation}
+\pagebreak
+
+\begin{equation} R_{off_{newValue}} = R_{off_{oldValue}}\exp\left(-\frac{t - t0}{\tau_{off}} \right) \end{equation}
+\pagebreak
+
+\begin{equation} r_{i_{newValue}} = r_{i_{oldValue}} \exp\left(\frac{t_i+T_{dur}-t}{\tau_{off}}\right) \end{equation}
+\pagebreak
+
+$\exp(T_{dur}/\tau_{on})$
+\pagebreak
+
+\begin{equation} r_{i_{newValue}} = r_{\infty} + (r_{i_{oldValue}} - r_{\infty}) \exp\left(\frac{T_{dur}}{\tau_{on}}\right) \end{equation}
+\pagebreak
+
+\begin{equation} R_{on_{newValue}} = R_{on_{oldValue}} + r_iS_{indCont} \end{equation}
+\pagebreak
+
+\begin{equation} R_{off_{newValue}} = R_{off_{oldValue}} - r_iS_{indCont} \end{equation}
+\pagebreak
+
+\begin{equation} R_{on_{newValue}} = R_{on_{oldValue}} - r_iS_{indCont} \end{equation}
+\pagebreak
+
+\begin{equation} R_{off_{newValue}} = R_{off_{oldValue}} + r_iS_{indCont} \end{equation}
+\pagebreak
+
+$G_{max} = \limits\sum_{i=1}^Ng_i$
+\pagebreak
+
+$\tau_{off}=\frac{1}{\beta}$
 \pagebreak
 
 \end{document}

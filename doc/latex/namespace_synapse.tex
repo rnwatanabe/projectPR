@@ -5,28 +5,28 @@
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_synapse_1_1_synapse}{Synapse}
-\begin{DoxyCompactList}\small\item\em classdocs \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Implements the synapse model from Destexhe (1994) using the computational method from Lytton (1996). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{namespace_synapse_a55ffd471fbed3550b464a9862687f541}{comp\-Synap\-Cond}
 \begin{DoxyCompactList}\small\item\em Computes the synaptic conductance. \end{DoxyCompactList}\item 
 def \hyperlink{namespace_synapse_a16fdc8aab9a394041c8b6667511a1fd7}{comp\-Ron}
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that have neurotransmitters being released (during the pulse). \end{DoxyCompactList}\item 
 def \hyperlink{namespace_synapse_aadfeb939e02125a55a2b2acc6634ba41}{comp\-Roff}
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that do not have neurotransmitters being released (before and after the pulse). \end{DoxyCompactList}\item 
 def \hyperlink{namespace_synapse_a6d5943c0d974d992b8c9daa3ff3818d6}{comp\-Ri\-Start}
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the fraction of bound postsynaptic receptors to neurotransmitters in individual synapses when the neurotransmitter begin (begin of the pulse). \end{DoxyCompactList}\item 
 def \hyperlink{namespace_synapse_a67ee3bb7abbf9608bd83c31c63634cac}{comp\-Ri\-Stop}
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the fraction of bound postsynaptic receptors to neurotransmitters in individual synapses when the neurotransmitter release stops (the pulse ends). \end{DoxyCompactList}\item 
 def \hyperlink{namespace_synapse_a3bbc4948087cc789af35085ea0423a93}{comp\-Ron\-Start}
-\item 
+\begin{DoxyCompactList}\small\item\em Incorporates a new conductance to the set of conductances during a pulse. \end{DoxyCompactList}\item 
 def \hyperlink{namespace_synapse_a4ff37207e236e81ae7bced77172a5af5}{comp\-Roff\-Start}
-\item 
+\begin{DoxyCompactList}\small\item\em Incorporates a new conductance to the set of conductances that are not during a pulse. \end{DoxyCompactList}\item 
 def \hyperlink{namespace_synapse_a9915f1de7bde4ece67ef45a7e7324c21}{comp\-Ron\-Stop}
-\item 
+\begin{DoxyCompactList}\small\item\em Removes a conductance from the set of conductances during a pulse. \end{DoxyCompactList}\item 
 def \hyperlink{namespace_synapse_a8e85651ec0d366f191a2093a1bd2bc84}{comp\-Roff\-Stop}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Removes a conductance from the set of conductances that are not during a pulse. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -43,18 +43,29 @@ def \hyperlink{namespace_synapse_a8e85651ec0d366f191a2093a1bd2bc84}{comp\-Roff\-
 )}}\label{namespace_synapse_a6d5943c0d974d992b8c9daa3ff3818d6}
 
 
-Definition at line 24 of file Synapse.\-py.
+Computes the fraction of bound postsynaptic receptors to neurotransmitters in individual synapses when the neurotransmitter begin (begin of the pulse). 
 
 
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries ri}\-: the fraction of postsynaptic receptors that were bound to neurotransmitters at the last state change.
+\item {\bfseries t}\-: current instant, in ms.
+\item {\bfseries ti}\-: The instant that the last pulse began.
+\item {\bfseries t\-Peak}\-: The duration of the pulse.
+\item {\bfseries tau\-Off}\-: Time constant after a pulse, in ms.
+\end{DoxyItemize}
+\item Output\-:
+\begin{DoxyItemize}
+\item individual synapse state value.
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespace_synapse_a6d5943c0d974d992b8c9daa3ff3818d6_icgraph}
-\end{center}
-\end{figure}
+It is computed by the following equation\-:
 
+\begin{equation} r_{i_{newValue}} = r_{i_{oldValue}} \exp\left(\frac{t_i+T_{dur}-t}{\tau_{off}}\right) \end{equation} 
+
+Definition at line 142 of file Synapse.\-py.
 
 \hypertarget{namespace_synapse_a67ee3bb7abbf9608bd83c31c63634cac}{\index{Synapse@{Synapse}!comp\-Ri\-Stop@{comp\-Ri\-Stop}}
 \index{comp\-Ri\-Stop@{comp\-Ri\-Stop}!Synapse@{Synapse}}
@@ -67,24 +78,33 @@ Here is the caller graph for this function\-:\nopagebreak
 )}}\label{namespace_synapse_a67ee3bb7abbf9608bd83c31c63634cac}
 
 
-Definition at line 27 of file Synapse.\-py.
+Computes the fraction of bound postsynaptic receptors to neurotransmitters in individual synapses when the neurotransmitter release stops (the pulse ends). 
 
 
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries r\-Inf}\-: the fraction of postsynaptic receptors that would be bound to neurotransmitters after an infinite amount of time with neurotransmitter being released.
+\item {\bfseries ri}\-: the fraction of postsynaptic receptors that were bound to neurotransmitters at the last state change.
+\item {\bfseries exp\-Finish}\-: Is the value of the exponential at the end of the pulse ( $\exp(T_{dur}/\tau_{on})$). It is is computed before for computational efficiency.
+\end{DoxyItemize}
+\item Output\-:
+\begin{DoxyItemize}
+\item individual synapse state value.
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespace_synapse_a67ee3bb7abbf9608bd83c31c63634cac_icgraph}
-\end{center}
-\end{figure}
+It is computed by the following equation\-:
 
+\begin{equation} r_{i_{newValue}} = r_{\infty} + (r_{i_{oldValue}} - r_{\infty}) \exp\left(\frac{T_{dur}}{\tau_{on}}\right) \end{equation} 
+
+Definition at line 173 of file Synapse.\-py.
 
 \hypertarget{namespace_synapse_aadfeb939e02125a55a2b2acc6634ba41}{\index{Synapse@{Synapse}!comp\-Roff@{comp\-Roff}}
 \index{comp\-Roff@{comp\-Roff}!Synapse@{Synapse}}
 \subsubsection[{comp\-Roff}]{\setlength{\rightskip}{0pt plus 5cm}def Synapse.\-comp\-Roff (
 \begin{DoxyParamCaption}
-\item[{}]{roff, }
+\item[{}]{Roff, }
 \item[{}]{t0, }
 \item[{}]{t, }
 \item[{}]{tau\-Off}
@@ -92,18 +112,28 @@ Here is the caller graph for this function\-:\nopagebreak
 )}}\label{namespace_synapse_aadfeb939e02125a55a2b2acc6634ba41}
 
 
-Definition at line 21 of file Synapse.\-py.
+Computes the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that do not have neurotransmitters being released (before and after the pulse). 
 
 
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries Roff}\-: sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that do not have neurotransmitters being released (before and after the pulse).
+\item {\bfseries t0}\-: instant that the last spike arrived to the compartment.
+\item {\bfseries t}\-: current instant, in ms.
+\item {\bfseries tau\-Off}\-: time constant after a pulse, in ms.
+\end{DoxyItemize}
+\item Output\-:
+\begin{DoxyItemize}
+\item The fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that do not have neurotransmitters being released.
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespace_synapse_aadfeb939e02125a55a2b2acc6634ba41_icgraph}
-\end{center}
-\end{figure}
+It is computed by the following formula\-:
 
+\begin{equation} R_{off_{newValue}} = R_{off_{oldValue}}\exp\left(-\frac{t - t0}{\tau_{off}} \right) \end{equation} 
+
+Definition at line 112 of file Synapse.\-py.
 
 \hypertarget{namespace_synapse_a4ff37207e236e81ae7bced77172a5af5}{\index{Synapse@{Synapse}!comp\-Roff\-Start@{comp\-Roff\-Start}}
 \index{comp\-Roff\-Start@{comp\-Roff\-Start}!Synapse@{Synapse}}
@@ -116,18 +146,27 @@ Here is the caller graph for this function\-:\nopagebreak
 )}}\label{namespace_synapse_a4ff37207e236e81ae7bced77172a5af5}
 
 
-Definition at line 33 of file Synapse.\-py.
+Incorporates a new conductance to the set of conductances that are not during a pulse. 
 
 
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries Roff}\-: sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that do not have neurotransmitters being released (before and after the pulse).
+\item {\bfseries ri}\-: fraction of postsynaptic receptors that are bound to neurotransmitters of the individual synapses.
+\item {\bfseries syn\-Contrib}\-: individual conductance constribution to the global synaptic conductance.
+\end{DoxyItemize}
+\item Output\-:
+\begin{DoxyItemize}
+\item The new value of the sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that do not have neurotransmitters being released (before and after the pulse).
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespace_synapse_a4ff37207e236e81ae7bced77172a5af5_icgraph}
-\end{center}
-\end{figure}
+It is computed as\-:
 
+\begin{equation} R_{off_{newValue}} = R_{off_{oldValue}} - r_iS_{indCont} \end{equation} 
+
+Definition at line 235 of file Synapse.\-py.
 
 \hypertarget{namespace_synapse_a8e85651ec0d366f191a2093a1bd2bc84}{\index{Synapse@{Synapse}!comp\-Roff\-Stop@{comp\-Roff\-Stop}}
 \index{comp\-Roff\-Stop@{comp\-Roff\-Stop}!Synapse@{Synapse}}
@@ -140,18 +179,27 @@ Here is the caller graph for this function\-:\nopagebreak
 )}}\label{namespace_synapse_a8e85651ec0d366f191a2093a1bd2bc84}
 
 
-Definition at line 39 of file Synapse.\-py.
+Removes a conductance from the set of conductances that are not during a pulse. 
 
 
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries Roff}\-: sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that do not have neurotransmitters being released (before and after the pulse).
+\item {\bfseries ri}\-: fraction of postsynaptic receptors that are bound to neurotransmitters of the individual synapses.
+\item {\bfseries syn\-Contrib}\-: individual conductance constribution to the global synaptic conductance.
+\end{DoxyItemize}
+\item Output\-:
+\begin{DoxyItemize}
+\item The new value of the sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that do not have neurotransmitters being released (before and after the pulse).
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespace_synapse_a8e85651ec0d366f191a2093a1bd2bc84_icgraph}
-\end{center}
-\end{figure}
+It is computed as\-:
 
+\begin{equation} R_{off_{newValue}} = R_{off_{oldValue}} + r_iS_{indCont} \end{equation} 
+
+Definition at line 297 of file Synapse.\-py.
 
 \hypertarget{namespace_synapse_a16fdc8aab9a394041c8b6667511a1fd7}{\index{Synapse@{Synapse}!comp\-Ron@{comp\-Ron}}
 \index{comp\-Ron@{comp\-Ron}!Synapse@{Synapse}}
@@ -159,7 +207,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \begin{DoxyParamCaption}
 \item[{}]{Non, }
 \item[{}]{r\-Inf, }
-\item[{}]{ron, }
+\item[{}]{Ron, }
 \item[{}]{t0, }
 \item[{}]{t, }
 \item[{}]{tau\-On}
@@ -167,18 +215,30 @@ Here is the caller graph for this function\-:\nopagebreak
 )}}\label{namespace_synapse_a16fdc8aab9a394041c8b6667511a1fd7}
 
 
-Definition at line 18 of file Synapse.\-py.
+Computes the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that have neurotransmitters being released (during the pulse). 
 
 
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries Non}\-: sum of the fractions of the individual conductances that are receiving neurotransmitter (during pulse) relative to the $G_{max}$ ( $N_{on}=\limits\sum_{i=1}g_{i_{on}}/G_{max}$).
+\item {\bfseries r\-Inf}\-: the fraction of postsynaptic receptors that would be bound to neurotransmitters after an infinite amount of time with neurotransmitter being released.
+\item {\bfseries Ron}\-: sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that have neurotransmitters being released (during the pulse).
+\item {\bfseries t0}\-: instant that the last spike arrived to the compartment.
+\item {\bfseries t}\-: current instant, in ms.
+\item {\bfseries tau\-On}\-: Time constant during a pulse, in ms. $\tau_{on}=\frac{1}{\alpha.T_{max} +\beta}$.
+\end{DoxyItemize}
+\item Outputs\-:
+\begin{DoxyItemize}
+\item The fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that have neurotransmitters being released
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespace_synapse_a16fdc8aab9a394041c8b6667511a1fd7_icgraph}
-\end{center}
-\end{figure}
+It is computed by the following equation\-:
 
+\begin{equation} R_{on_{newValue}} = N_{on}r_{\infty}\Bigg[1-\exp\left(-\frac{t-t_0}{\tau_{on}}\right)\Bigg] + R_{on_{oldValue}}\exp\left(-\frac{t-t_0}{\tau_{on}}\right) \end{equation} 
+
+Definition at line 78 of file Synapse.\-py.
 
 \hypertarget{namespace_synapse_a3bbc4948087cc789af35085ea0423a93}{\index{Synapse@{Synapse}!comp\-Ron\-Start@{comp\-Ron\-Start}}
 \index{comp\-Ron\-Start@{comp\-Ron\-Start}!Synapse@{Synapse}}
@@ -191,18 +251,27 @@ Here is the caller graph for this function\-:\nopagebreak
 )}}\label{namespace_synapse_a3bbc4948087cc789af35085ea0423a93}
 
 
-Definition at line 30 of file Synapse.\-py.
+Incorporates a new conductance to the set of conductances during a pulse. 
 
 
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries Ron}\-: sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that have neurotransmitters being released (during the pulse).
+\item {\bfseries ri}\-: fraction of postsynaptic receptors that are bound to neurotransmitters of the individual synapses.
+\item {\bfseries syn\-Contrib}\-: individual conductance constribution to the global synaptic conductance.
+\end{DoxyItemize}
+\item Output\-:
+\begin{DoxyItemize}
+\item The new value of the sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that have neurotransmitters being released (during the pulse).
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespace_synapse_a3bbc4948087cc789af35085ea0423a93_icgraph}
-\end{center}
-\end{figure}
+It is computed as\-:
 
+\begin{equation} R_{on_{newValue}} = R_{on_{oldValue}} + r_iS_{indCont} \end{equation} 
+
+Definition at line 203 of file Synapse.\-py.
 
 \hypertarget{namespace_synapse_a9915f1de7bde4ece67ef45a7e7324c21}{\index{Synapse@{Synapse}!comp\-Ron\-Stop@{comp\-Ron\-Stop}}
 \index{comp\-Ron\-Stop@{comp\-Ron\-Stop}!Synapse@{Synapse}}
@@ -215,18 +284,27 @@ Here is the caller graph for this function\-:\nopagebreak
 )}}\label{namespace_synapse_a9915f1de7bde4ece67ef45a7e7324c21}
 
 
-Definition at line 36 of file Synapse.\-py.
+Removes a conductance from the set of conductances during a pulse. 
 
 
+\begin{DoxyItemize}
+\item Inputs\-:
+\begin{DoxyItemize}
+\item {\bfseries Ron}\-: sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that have neurotransmitters being released (during the pulse).
+\item {\bfseries ri}\-: fraction of postsynaptic receptors that are bound to neurotransmitters of the individual synapses.
+\item {\bfseries syn\-Contrib}\-: individual conductance constribution to the global synaptic conductance.
+\end{DoxyItemize}
+\item Output\-:
+\begin{DoxyItemize}
+\item The new value of the sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that have neurotransmitters being released (during the pulse).
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespace_synapse_a9915f1de7bde4ece67ef45a7e7324c21_icgraph}
-\end{center}
-\end{figure}
+It is computed as\-:
 
+\begin{equation} R_{on_{newValue}} = R_{on_{oldValue}} - r_iS_{indCont} \end{equation} 
+
+Definition at line 265 of file Synapse.\-py.
 
 \hypertarget{namespace_synapse_a55ffd471fbed3550b464a9862687f541}{\index{Synapse@{Synapse}!comp\-Synap\-Cond@{comp\-Synap\-Cond}}
 \index{comp\-Synap\-Cond@{comp\-Synap\-Cond}!Synapse@{Synapse}}
@@ -242,17 +320,22 @@ Here is the caller graph for this function\-:\nopagebreak
 Computes the synaptic conductance. 
 
 
+\begin{DoxyItemize}
+\item Input\-:
+\begin{DoxyItemize}
+\item {\bfseries Gmax}\-: the sum of individual conductances of all synapses in the compartment, in $\mu$S.
+\item {\bfseries Ron}\-: sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that have neurotransmitters being released (during the pulse).
+\item {\bfseries Roff}\-: sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that do not have neurotransmitters being released (before and after the pulse).
+\end{DoxyItemize}
+\item Output\-:
+\begin{DoxyItemize}
+\item the synaptic conductance of all synapses in the compartment, in $\mu$S.
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Definition at line 15 of file Synapse.\-py.
+It is computed by the following formula\-:
 
+\begin{equation} G = G_{max}(R_{on} + R_{off}) \end{equation} where $G$ is the synaptic conductance of all synapses in the compartment. 
 
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespace_synapse_a55ffd471fbed3550b464a9862687f541_icgraph}
-\end{center}
-\end{figure}
-
+Definition at line 39 of file Synapse.\-py.
 

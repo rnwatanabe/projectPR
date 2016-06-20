@@ -1,7 +1,30 @@
 '''
 \mainpage ReMoto in Python
 
-This program ...
+This program is a neuronal simulation system, intended for studying spinal cord neuronal 
+networks responsible for muscle control. These networks are affected by descending drive, 
+afferent drive, and electrical nerve stimulation. The simulator may be used to investigate
+phenomena at several levels of organization, e.g., at the neuronal membrane level or at 
+the whole muscle behavior level (e.g., muscle force generation). This versatility is due 
+to the fact that each element (neurons, synapses, muscle fibers) has its own specific 
+mathematical model, usually involving the action of voltage- or neurotransmitter-dependent
+ionic channels. The simulator should be helpful in activities such as interpretation of
+results obtained from neurophysiological experiments in humans or mammals, proposal of 
+hypothesis or testing models or theories on neuronal dynamics or neuronal network processing,
+validation of experimental protocols, and teaching neurophysiology.
+
+The elements that take part in the system belong to the following classes: motoneurons, 
+muscle fibers (electrical activity and force generation), Renshaw cells, Ia inhibitory 
+interneurons, Ib inhibitory interneurons, Ia and Ib afferents. The neurons are interconnected
+by chemical synapses, which can be exhibit depression or facilitation.
+
+The system simulates the following nuclei involved in flexion and extension of the human or
+cat ankle: Medial Gastrocnemius (MG), Lateral Gastrocnemius (LG), Soleus (SOL), and Tibialis
+Anterior (TA).
+
+A web-based version can be found in [remoto.leb.usp.br](http://remoto.leb.usp.br/remoto/index.html).
+The version to which this documentation  refers is from a Python program that can be found in
+[github.com/rnwatanabe/projectPR](https://github.com/rnwatanabe/projectPR).
 
 '''
 

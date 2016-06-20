@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.20)  16 JUN 2016 15:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.20)  20 JUN 2016 18:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1045,13 +1045,11 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 69.
  [4] [5] [6]
-[7] [8] [9] [10])
+[7] [8] [9])
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
- [11] [12
-
-]
+ [10]
 Package hyperref Info: Option `pageanchor' set `true' on input line 130.
 
 Chapter 1.
@@ -1063,7 +1061,13 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 18.66588pt on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 18.66588pt on input line 133.
-(./index.tex) [1
+(./index.tex
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 7.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+))
+[1
+
 
 ] [2
 
@@ -1212,7 +1216,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 [13]
-<namespace_motor_unit_ad34c81597ff5e9cdcf53fd13e78d2d6c_icgraph.pdf, id=1825, 5
+<namespace_motor_unit_ad34c81597ff5e9cdcf53fd13e78d2d6c_icgraph.pdf, id=1725, 5
 52.0625pt x 110.4125pt>
 File: namespace_motor_unit_ad34c81597ff5e9cdcf53fd13e78d2d6c_icgraph.pdf Graphi
 c file (type pdf)
@@ -1223,7 +1227,7 @@ _icgraph.pdf used on input line 132.
 (pdftex.def)             Requested size: 350.0pt x 70.00331pt.
 )
 (./namespace_motor_unit_pool.tex
-<namespace_motor_unit_pool_a3ed1b9ccd29068fac93964327dd54bf9_icgraph.pdf, id=18
+<namespace_motor_unit_pool_a3ed1b9ccd29068fac93964327dd54bf9_icgraph.pdf, id=17
 28, 670.505pt x 110.4125pt>
 File: namespace_motor_unit_pool_a3ed1b9ccd29068fac93964327dd54bf9_icgraph.pdf G
 raphic file (type pdf)
@@ -1251,7 +1255,7 @@ I'm ignoring this misplaced \limits or \nolimits command.
 [15 <./namespace_motor_unit_pool_a3ed1b9ccd29068fac93964327dd54bf9_icgraph.pdf>
 ]
 <namespace_point_process_generator_ad591b4c4f24356425c2958ea43647ddd_icgraph.pd
-f, id=1866, 447.6725pt x 110.4125pt>
+f, id=1768, 447.6725pt x 110.4125pt>
 File: namespace_point_process_generator_ad591b4c4f24356425c2958ea43647ddd_icgra
 ph.pdf Graphic file (type pdf)
 
@@ -1267,137 +1271,19 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.99994pt on input line 32.
  [16 <./namespace_point_process_generator_ad591b4c4f24356425c2958ea43647ddd_icg
 raph.pdf>])
-(./namespacesimulation.tex) (./namespace_synapse.tex
-<namespace_synapse_a6d5943c0d974d992b8c9daa3ff3818d6_icgraph.pdf, id=1898, 873.
-2625pt x 138.5175pt>
-File: namespace_synapse_a6d5943c0d974d992b8c9daa3ff3818d6_icgraph.pdf Graphic f
-ile (type pdf)
+(./namespacesimulation.tex) (./namespace_synapse.tex [17] [18] [19]
+! Limit controls must follow a math operator.
+l.224 ...lative to the $G_{max}$ ( $N_{on}=\limits
+                                                  \sum_{i=1}g_{i_{on}}/G_{ma...
+I'm ignoring this misplaced \limits or \nolimits command.
 
-<use namespace_synapse_a6d5943c0d974d992b8c9daa3ff3818d6_icgraph.pdf>
-Package pdftex.def Info: namespace_synapse_a6d5943c0d974d992b8c9daa3ff3818d6_ic
-graph.pdf used on input line 54.
-(pdftex.def)             Requested size: 350.0pt x 55.51591pt.
- [17]
-<namespace_synapse_a67ee3bb7abbf9608bd83c31c63634cac_icgraph.pdf, id=1917, 871.
-255pt x 138.5175pt>
-File: namespace_synapse_a67ee3bb7abbf9608bd83c31c63634cac_icgraph.pdf Graphic f
-ile (type pdf)
-
-<use namespace_synapse_a67ee3bb7abbf9608bd83c31c63634cac_icgraph.pdf>
-Package pdftex.def Info: namespace_synapse_a67ee3bb7abbf9608bd83c31c63634cac_ic
-graph.pdf used on input line 78.
-(pdftex.def)             Requested size: 350.0pt x 55.64485pt.
-
-<namespace_synapse_aadfeb939e02125a55a2b2acc6634ba41_icgraph.pdf, id=1918, 624.
-3325pt x 100.375pt>
-File: namespace_synapse_aadfeb939e02125a55a2b2acc6634ba41_icgraph.pdf Graphic f
-ile (type pdf)
-
-<use namespace_synapse_aadfeb939e02125a55a2b2acc6634ba41_icgraph.pdf>
-Package pdftex.def Info: namespace_synapse_aadfeb939e02125a55a2b2acc6634ba41_ic
-graph.pdf used on input line 103.
-(pdftex.def)             Requested size: 350.0pt x 56.27086pt.
-
-<namespace_synapse_a4ff37207e236e81ae7bced77172a5af5_icgraph.pdf, id=1919, 881.
-2925pt x 138.5175pt>
-File: namespace_synapse_a4ff37207e236e81ae7bced77172a5af5_icgraph.pdf Graphic f
-ile (type pdf)
-
-<use namespace_synapse_a4ff37207e236e81ae7bced77172a5af5_icgraph.pdf>
-Package pdftex.def Info: namespace_synapse_a4ff37207e236e81ae7bced77172a5af5_ic
-graph.pdf used on input line 127.
-(pdftex.def)             Requested size: 350.0pt x 55.01076pt.
- [18 <./namespace_synapse_a6d5943c0d974d992b8c9daa3ff3818d6_icgraph.pdf> <./nam
-espace_synapse_a67ee3bb7abbf9608bd83c31c63634cac_icgraph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./namespace_synapse_a67ee3bb7abbf9608bd
-83c31c63634cac_icgraph.pdf): PDF inclusion: multiple pdfs with page group inclu
-ded in a single page
-> <./namespace_synapse_aadfeb939e02125a55a2b2acc6634ba41_icgraph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./namespace_synapse_aadfeb939e02125a55a
-2b2acc6634ba41_icgraph.pdf): PDF inclusion: multiple pdfs with page group inclu
-ded in a single page
-> <./namespace_synapse_a4ff37207e236e81ae7bced77172a5af5_icgraph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./namespace_synapse_a4ff37207e236e81ae7
-bced77172a5af5_icgraph.pdf): PDF inclusion: multiple pdfs with page group inclu
-ded in a single page
->]
-<namespace_synapse_a8e85651ec0d366f191a2093a1bd2bc84_icgraph.pdf, id=1945, 881.
-2925pt x 138.5175pt>
-File: namespace_synapse_a8e85651ec0d366f191a2093a1bd2bc84_icgraph.pdf Graphic f
-ile (type pdf)
-
-<use namespace_synapse_a8e85651ec0d366f191a2093a1bd2bc84_icgraph.pdf>
-Package pdftex.def Info: namespace_synapse_a8e85651ec0d366f191a2093a1bd2bc84_ic
-graph.pdf used on input line 151.
-(pdftex.def)             Requested size: 350.0pt x 55.01076pt.
-
-<namespace_synapse_a16fdc8aab9a394041c8b6667511a1fd7_icgraph.pdf, id=1946, 622.
-325pt x 100.375pt>
-File: namespace_synapse_a16fdc8aab9a394041c8b6667511a1fd7_icgraph.pdf Graphic f
-ile (type pdf)
-
-<use namespace_synapse_a16fdc8aab9a394041c8b6667511a1fd7_icgraph.pdf>
-Package pdftex.def Info: namespace_synapse_a16fdc8aab9a394041c8b6667511a1fd7_ic
-graph.pdf used on input line 178.
-(pdftex.def)             Requested size: 350.0pt x 56.4516pt.
-
-<namespace_synapse_a3bbc4948087cc789af35085ea0423a93_icgraph.pdf, id=1947, 881.
-2925pt x 138.5175pt>
-File: namespace_synapse_a3bbc4948087cc789af35085ea0423a93_icgraph.pdf Graphic f
-ile (type pdf)
-
-<use namespace_synapse_a3bbc4948087cc789af35085ea0423a93_icgraph.pdf>
-Package pdftex.def Info: namespace_synapse_a3bbc4948087cc789af35085ea0423a93_ic
-graph.pdf used on input line 202.
-(pdftex.def)             Requested size: 350.0pt x 55.01076pt.
-
-<namespace_synapse_a9915f1de7bde4ece67ef45a7e7324c21_icgraph.pdf, id=1948, 879.
-285pt x 138.5175pt>
-File: namespace_synapse_a9915f1de7bde4ece67ef45a7e7324c21_icgraph.pdf Graphic f
-ile (type pdf)
-
-<use namespace_synapse_a9915f1de7bde4ece67ef45a7e7324c21_icgraph.pdf>
-Package pdftex.def Info: namespace_synapse_a9915f1de7bde4ece67ef45a7e7324c21_ic
-graph.pdf used on input line 226.
-(pdftex.def)             Requested size: 350.0pt x 55.13547pt.
- [19 <./namespace_synapse_a8e85651ec0d366f191a2093a1bd2bc84_icgraph.pdf> <./nam
-espace_synapse_a16fdc8aab9a394041c8b6667511a1fd7_icgraph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./namespace_synapse_a16fdc8aab9a394041c
-8b6667511a1fd7_icgraph.pdf): PDF inclusion: multiple pdfs with page group inclu
-ded in a single page
-> <./namespace_synapse_a3bbc4948087cc789af35085ea0423a93_icgraph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./namespace_synapse_a3bbc4948087cc789af
-35085ea0423a93_icgraph.pdf): PDF inclusion: multiple pdfs with page group inclu
-ded in a single page
-> <./namespace_synapse_a9915f1de7bde4ece67ef45a7e7324c21_icgraph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./namespace_synapse_a9915f1de7bde4ece67
-ef45a7e7324c21_icgraph.pdf): PDF inclusion: multiple pdfs with page group inclu
-ded in a single page
->]
-<namespace_synapse_a55ffd471fbed3550b464a9862687f541_icgraph.pdf, id=1975, 656.
-4525pt x 100.375pt>
-File: namespace_synapse_a55ffd471fbed3550b464a9862687f541_icgraph.pdf Graphic f
-ile (type pdf)
-
-<use namespace_synapse_a55ffd471fbed3550b464a9862687f541_icgraph.pdf>
-Package pdftex.def Info: namespace_synapse_a55ffd471fbed3550b464a9862687f541_ic
-graph.pdf used on input line 254.
-(pdftex.def)             Requested size: 350.0pt x 53.51706pt.
-)
-(./namespace_synapses_factory.tex) [20 <./namespace_synapse_a55ffd471fbed3550b4
-64a9862687f541_icgraph.pdf>]
+[20]) (./namespace_synapses_factory.tex [21]) [22]
 Chapter 7.
-(./class_axon_delay_1_1_axon_delay.tex [21
+(./class_axon_delay_1_1_axon_delay.tex [23
 
 ]
 <class_axon_delay_1_1_axon_delay_a5483df94745af77bf54f707f9a05a0e0_cgraph.pdf, 
-id=2021, 451.6875pt x 110.4125pt>
+id=1882, 451.6875pt x 110.4125pt>
 File: class_axon_delay_1_1_axon_delay_a5483df94745af77bf54f707f9a05a0e0_cgraph.
 pdf Graphic file (type pdf)
 
@@ -1408,7 +1294,7 @@ Package pdftex.def Info: class_axon_delay_1_1_axon_delay_a5483df94745af77bf54f7
 (pdftex.def)             Requested size: 350.0pt x 85.56036pt.
 
 <class_axon_delay_1_1_axon_delay_a49115bea963cde5e2c4317510d73cf7c_icgraph.pdf,
- id=2023, 451.6875pt x 110.4125pt>
+ id=1884, 451.6875pt x 110.4125pt>
 File: class_axon_delay_1_1_axon_delay_a49115bea963cde5e2c4317510d73cf7c_icgraph
 .pdf Graphic file (type pdf)
 
@@ -1417,8 +1303,8 @@ pdf>
 Package pdftex.def Info: class_axon_delay_1_1_axon_delay_a49115bea963cde5e2c431
 7510d73cf7c_icgraph.pdf used on input line 141.
 (pdftex.def)             Requested size: 350.0pt x 85.56036pt.
- [22 <./class_axon_delay_1_1_axon_delay_a5483df94745af77bf54f707f9a05a0e0_cgrap
-h.pdf>] [23 <./class_axon_delay_1_1_axon_delay_a49115bea963cde5e2c4317510d73cf7
+ [24 <./class_axon_delay_1_1_axon_delay_a5483df94745af77bf54f707f9a05a0e0_cgrap
+h.pdf>] [25 <./class_axon_delay_1_1_axon_delay_a49115bea963cde5e2c4317510d73cf7
 c_icgraph.pdf>]) (./class_channel_conductance_1_1_channel_conductance.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
@@ -1427,11 +1313,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
 
-[24]
+[26]
 ! Undefined control sequence.
 <recently read> \text 
                       
-l.69 ...rtment that the Channel belongs, in $\text
+l.71 ...rtment that the Channel belongs, in $\text
                                                   {cm}^2$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1439,18 +1325,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[25]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 148.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 148.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [26])
-(./class_compartment_1_1_compartment.tex [27] [28] [29])
-(./class_configuration_1_1_configuration.tex [30] [31])
-(./class_motor_unit_1_1_motor_unit.tex [32] [33]
+[27] [28]) (./class_compartment_1_1_compartment.tex [29] [30] [31])
+(./class_configuration_1_1_configuration.tex [32] [33] [34])
+(./class_motor_unit_1_1_motor_unit.tex [35] [36]
 <class_motor_unit_1_1_motor_unit_accb8b6700ed06e1396b70af62a9f31c6_icgraph.pdf,
- id=2245, 588.1975pt x 110.4125pt>
+ id=2113, 588.1975pt x 110.4125pt>
 File: class_motor_unit_1_1_motor_unit_accb8b6700ed06e1396b70af62a9f31c6_icgraph
 .pdf Graphic file (type pdf)
 
@@ -1461,7 +1340,7 @@ af62a9f31c6_icgraph.pdf used on input line 142.
 (pdftex.def)             Requested size: 350.0pt x 65.70045pt.
 
 <class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247_cgraph.pdf, 
-id=2246, 409.53pt x 187.70125pt>
+id=2114, 409.53pt x 187.70125pt>
 File: class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247_cgraph.
 pdf Graphic file (type pdf)
 
@@ -1470,10 +1349,9 @@ df>
 Package pdftex.def Info: class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c9
 9ecc24cb247_cgraph.pdf used on input line 175.
 (pdftex.def)             Requested size: 350.0pt x 160.42609pt.
- [34 <./class_motor_unit_1_1_motor_unit_accb8b6700ed06e1396b70af62a9f31c6_icgra
-ph.pdf>]
+
 <class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247_icgraph.pdf,
- id=2257, 401.5pt x 110.4125pt>
+ id=2115, 401.5pt x 110.4125pt>
 File: class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247_icgraph
 .pdf Graphic file (type pdf)
 
@@ -1483,8 +1361,18 @@ Package pdftex.def Info: class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c9
 9ecc24cb247_icgraph.pdf used on input line 186.
 (pdftex.def)             Requested size: 350.0pt x 96.25688pt.
 
+Underfull \vbox (badness 3646) has occurred while \output is active []
+
+ [37 <./class_motor_unit_1_1_motor_unit_accb8b6700ed06e1396b70af62a9f31c6_icgra
+ph.pdf> <./class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247_cg
+raph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_motor_unit_1_1_motor_unit_ae409
+3022b48cee82d78c99ecc24cb247_cgraph.pdf): PDF inclusion: multiple pdfs with pag
+e group included in a single page
+>]
 <class_motor_unit_1_1_motor_unit_af9ed66e359c4402ae951d79d5264f566_icgraph.pdf,
- id=2258, 401.5pt x 110.4125pt>
+ id=2131, 401.5pt x 110.4125pt>
 File: class_motor_unit_1_1_motor_unit_af9ed66e359c4402ae951d79d5264f566_icgraph
 .pdf Graphic file (type pdf)
 
@@ -1493,22 +1381,9 @@ pdf>
 Package pdftex.def Info: class_motor_unit_1_1_motor_unit_af9ed66e359c4402ae951d
 79d5264f566_icgraph.pdf used on input line 219.
 (pdftex.def)             Requested size: 350.0pt x 96.25688pt.
- [35 <./class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247_cgrap
-h.pdf> <./class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247_icg
-raph.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./class_motor_unit_1_1_motor_unit_ae409
-3022b48cee82d78c99ecc24cb247_icgraph.pdf): PDF inclusion: multiple pdfs with pa
-ge group included in a single page
-> <./class_motor_unit_1_1_motor_unit_af9ed66e359c4402ae951d79d5264f566_icgraph.
-pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./class_motor_unit_1_1_motor_unit_af9ed
-66e359c4402ae951d79d5264f566_icgraph.pdf): PDF inclusion: multiple pdfs with pa
-ge group included in a single page
->]
 <class_motor_unit_1_1_motor_unit_a1239418d3f8428a663ff99061710460f_cgraph.pdf, 
-id=2280, 588.1975pt x 192.72pt>
+id=2132, 588.1975pt x 192.72pt>
 File: class_motor_unit_1_1_motor_unit_a1239418d3f8428a663ff99061710460f_cgraph.
 pdf Graphic file (type pdf)
 
@@ -1517,9 +1392,22 @@ df>
 Package pdftex.def Info: class_motor_unit_1_1_motor_unit_a1239418d3f8428a663ff9
 9061710460f_cgraph.pdf used on input line 252.
 (pdftex.def)             Requested size: 350.0pt x 114.67715pt.
+ [38 <./class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247_icgra
+ph.pdf> <./class_motor_unit_1_1_motor_unit_af9ed66e359c4402ae951d79d5264f566_ic
+graph.pdf
 
+pdfTeX warning: /usr/bin/pdflatex (file ./class_motor_unit_1_1_motor_unit_af9ed
+66e359c4402ae951d79d5264f566_icgraph.pdf): PDF inclusion: multiple pdfs with pa
+ge group included in a single page
+> <./class_motor_unit_1_1_motor_unit_a1239418d3f8428a663ff99061710460f_cgraph.p
+df
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_motor_unit_1_1_motor_unit_a1239
+418d3f8428a663ff99061710460f_cgraph.pdf): PDF inclusion: multiple pdfs with pag
+e group included in a single page
+>]
 <class_motor_unit_1_1_motor_unit_af694436ac5bd3194cfcbe42b8a60180d_icgraph.pdf,
- id=2281, 566.115pt x 110.4125pt>
+ id=2153, 566.115pt x 110.4125pt>
 File: class_motor_unit_1_1_motor_unit_af694436ac5bd3194cfcbe42b8a60180d_icgraph
 .pdf Graphic file (type pdf)
 
@@ -1528,16 +1416,11 @@ pdf>
 Package pdftex.def Info: class_motor_unit_1_1_motor_unit_af694436ac5bd3194cfcbe
 42b8a60180d_icgraph.pdf used on input line 287.
 (pdftex.def)             Requested size: 350.0pt x 68.26465pt.
- [36 <./class_motor_unit_1_1_motor_unit_a1239418d3f8428a663ff99061710460f_cgrap
-h.pdf> <./class_motor_unit_1_1_motor_unit_af694436ac5bd3194cfcbe42b8a60180d_icg
-raph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./class_motor_unit_1_1_motor_unit_af694
-436ac5bd3194cfcbe42b8a60180d_icgraph.pdf): PDF inclusion: multiple pdfs with pa
-ge group included in a single page
->] [37] [38]) (./class_motor_unit_pool_1_1_motor_unit_pool.tex [39]
+ [39 <./class_motor_unit_1_1_motor_unit_af694436ac5bd3194cfcbe42b8a60180d_icgra
+ph.pdf>] [40]) (./class_motor_unit_pool_1_1_motor_unit_pool.tex [41]
+[42]
 <class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8ba3af9b0b06bd71c_cg
-raph.pdf, id=2362, 451.6875pt x 110.4125pt>
+raph.pdf, id=2237, 451.6875pt x 110.4125pt>
 File: class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8ba3af9b0b06bd7
 1c_cgraph.pdf Graphic file (type pdf)
 
@@ -1548,7 +1431,7 @@ Package pdftex.def Info: class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f6
 (pdftex.def)             Requested size: 350.0pt x 85.56036pt.
 
 <class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8ba3af9b0b06bd71c_ic
-graph.pdf, id=2363, 481.8pt x 110.4125pt>
+graph.pdf, id=2238, 481.8pt x 110.4125pt>
 File: class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8ba3af9b0b06bd7
 1c_icgraph.pdf Graphic file (type pdf)
 
@@ -1557,16 +1440,9 @@ c_icgraph.pdf>
 Package pdftex.def Info: class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f6
 80bd8ba3af9b0b06bd71c_icgraph.pdf used on input line 133.
 (pdftex.def)             Requested size: 350.0pt x 80.20958pt.
- [40 <./class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8ba3af9b0b06b
-d71c_cgraph.pdf> <./class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8
-ba3af9b0b06bd71c_icgraph.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./class_motor_unit_pool_1_1_motor_unit_
-pool_a03b7c1202f680bd8ba3af9b0b06bd71c_icgraph.pdf): PDF inclusion: multiple pd
-fs with page group included in a single page
->]
 <class_motor_unit_pool_1_1_motor_unit_pool_ae525c6bba27837f09d2a767544780b0f_cg
-raph.pdf, id=2387, 670.505pt x 110.4125pt>
+raph.pdf, id=2239, 670.505pt x 110.4125pt>
 File: class_motor_unit_pool_1_1_motor_unit_pool_ae525c6bba27837f09d2a767544780b
 0f_cgraph.pdf Graphic file (type pdf)
 
@@ -1575,11 +1451,18 @@ f_cgraph.pdf>
 Package pdftex.def Info: class_motor_unit_pool_1_1_motor_unit_pool_ae525c6bba27
 837f09d2a767544780b0f_cgraph.pdf used on input line 171.
 (pdftex.def)             Requested size: 350.0pt x 57.63383pt.
- [41 <./class_motor_unit_pool_1_1_motor_unit_pool_ae525c6bba27837f09d2a76754478
-0b0f_cgraph.pdf>] [42]) (./class_neural_tract_1_1_neural_tract.tex [43] [44]) (
-./class_neural_tract_unit_1_1_neural_tract_unit.tex
+ [43 <./class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8ba3af9b0b06b
+d71c_cgraph.pdf> <./class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8
+ba3af9b0b06bd71c_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_motor_unit_pool_1_1_motor_unit_
+pool_a03b7c1202f680bd8ba3af9b0b06bd71c_icgraph.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+>] [44 <./class_motor_unit_pool_1_1_motor_unit_pool_ae525c6bba27837f09d2a767544
+780b0f_cgraph.pdf>] [45]) (./class_neural_tract_1_1_neural_tract.tex [46])
+(./class_neural_tract_unit_1_1_neural_tract_unit.tex [47]
 <class_neural_tract_unit_1_1_neural_tract_unit_aaa36d43c7f4d1664696922e731f9e14
-a_cgraph.pdf, id=2449, 397.485pt x 110.4125pt>
+a_cgraph.pdf, id=2316, 397.485pt x 110.4125pt>
 File: class_neural_tract_unit_1_1_neural_tract_unit_aaa36d43c7f4d1664696922e731
 f9e14a_cgraph.pdf Graphic file (type pdf)
 
@@ -1588,9 +1471,10 @@ f9e14a_cgraph.pdf Graphic file (type pdf)
 Package pdftex.def Info: class_neural_tract_unit_1_1_neural_tract_unit_aaa36d43
 c7f4d1664696922e731f9e14a_cgraph.pdf used on input line 83.
 (pdftex.def)             Requested size: 350.0pt x 97.22562pt.
- [45]
+ [48 <./class_neural_tract_unit_1_1_neural_tract_unit_aaa36d43c7f4d1664696922e7
+31f9e14a_cgraph.pdf>]
 <class_neural_tract_unit_1_1_neural_tract_unit_a1c44e3b23ebda745d84d88c015c1cb2
-5_icgraph.pdf, id=2465, 397.485pt x 110.4125pt>
+5_icgraph.pdf, id=2338, 397.485pt x 110.4125pt>
 File: class_neural_tract_unit_1_1_neural_tract_unit_a1c44e3b23ebda745d84d88c015
 c1cb25_icgraph.pdf Graphic file (type pdf)
 
@@ -1599,16 +1483,12 @@ c1cb25_icgraph.pdf Graphic file (type pdf)
 Package pdftex.def Info: class_neural_tract_unit_1_1_neural_tract_unit_a1c44e3b
 23ebda745d84d88c015c1cb25_icgraph.pdf used on input line 106.
 (pdftex.def)             Requested size: 350.0pt x 97.22562pt.
- [46 <./class_neural_tract_unit_1_1_neural_tract_unit_aaa36d43c7f4d1664696922e7
-31f9e14a_cgraph.pdf> <./class_neural_tract_unit_1_1_neural_tract_unit_a1c44e3b2
-3ebda745d84d88c015c1cb25_icgraph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./class_neural_tract_unit_1_1_neural_tr
-act_unit_a1c44e3b23ebda745d84d88c015c1cb25_icgraph.pdf): PDF inclusion: multipl
-e pdfs with page group included in a single page
->]) (./class_point_process_generator_1_1_point_process_generator.tex [47]
+)
+(./class_point_process_generator_1_1_point_process_generator.tex [49 <./class_n
+eural_tract_unit_1_1_neural_tract_unit_a1c44e3b23ebda745d84d88c015c1cb25_icgrap
+h.pdf>]
 <class_point_process_generator_1_1_point_process_generator_a9e80adf5fea28ec4adb
-90489f0c42670_cgraph.pdf, id=2505, 447.6725pt x 110.4125pt>
+90489f0c42670_cgraph.pdf, id=2359, 447.6725pt x 110.4125pt>
 File: class_point_process_generator_1_1_point_process_generator_a9e80adf5fea28e
 c4adb90489f0c42670_cgraph.pdf Graphic file (type pdf)
 
@@ -1617,165 +1497,50 @@ c4adb90489f0c42670_cgraph.pdf Graphic file (type pdf)
 Package pdftex.def Info: class_point_process_generator_1_1_point_process_genera
 tor_a9e80adf5fea28ec4adb90489f0c42670_cgraph.pdf used on input line 94.
 (pdftex.def)             Requested size: 350.0pt x 86.32524pt.
- [48 <./class_point_process_generator_1_1_point_process_generator_a9e80adf5fea2
-8ec4adb90489f0c42670_cgraph.pdf>])
-(./class_pulse_conductance_state_1_1_pulse_conductance_state.tex [49]
+ [50] [51 <./class_point_process_generator_1_1_point_process_generator_a9e80adf
+5fea28ec4adb90489f0c42670_cgraph.pdf>])
+(./class_pulse_conductance_state_1_1_pulse_conductance_state.tex [52]
 <class_pulse_conductance_state_1_1_pulse_conductance_state_ac1ee5a9b9dc0ad6aa8e
-86052aa17268f_icgraph.pdf, id=2554, 459.7175pt x 110.4125pt>
+86052aa17268f_icgraph.pdf, id=2422, 459.7175pt x 110.4125pt>
 File: class_pulse_conductance_state_1_1_pulse_conductance_state_ac1ee5a9b9dc0ad
 6aa8e86052aa17268f_icgraph.pdf Graphic file (type pdf)
 
 <use class_pulse_conductance_state_1_1_pulse_conductance_state_ac1ee5a9b9dc0ad6
 aa8e86052aa17268f_icgraph.pdf>
 Package pdftex.def Info: class_pulse_conductance_state_1_1_pulse_conductance_st
-ate_ac1ee5a9b9dc0ad6aa8e86052aa17268f_icgraph.pdf used on input line 104.
+ate_ac1ee5a9b9dc0ad6aa8e86052aa17268f_icgraph.pdf used on input line 103.
 (pdftex.def)             Requested size: 350.0pt x 84.06598pt.
 
 <class_pulse_conductance_state_1_1_pulse_conductance_state_ae81d1a5bbbf4fd80db0
-ded06631bd9c2_cgraph.pdf, id=2555, 459.7175pt x 110.4125pt>
+ded06631bd9c2_cgraph.pdf, id=2423, 459.7175pt x 110.4125pt>
 File: class_pulse_conductance_state_1_1_pulse_conductance_state_ae81d1a5bbbf4fd
 80db0ded06631bd9c2_cgraph.pdf Graphic file (type pdf)
 
 <use class_pulse_conductance_state_1_1_pulse_conductance_state_ae81d1a5bbbf4fd8
 0db0ded06631bd9c2_cgraph.pdf>
 Package pdftex.def Info: class_pulse_conductance_state_1_1_pulse_conductance_st
-ate_ae81d1a5bbbf4fd80db0ded06631bd9c2_cgraph.pdf used on input line 138.
+ate_ae81d1a5bbbf4fd80db0ded06631bd9c2_cgraph.pdf used on input line 136.
 (pdftex.def)             Requested size: 350.0pt x 84.06598pt.
- [50 <./class_pulse_conductance_state_1_1_pulse_conductance_state_ac1ee5a9b9dc0
+ [53 <./class_pulse_conductance_state_1_1_pulse_conductance_state_ac1ee5a9b9dc0
 ad6aa8e86052aa17268f_icgraph.pdf> <./class_pulse_conductance_state_1_1_pulse_co
 nductance_state_ae81d1a5bbbf4fd80db0ded06631bd9c2_cgraph.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./class_pulse_conductance_state_1_1_pul
 se_conductance_state_ae81d1a5bbbf4fd80db0ded06631bd9c2_cgraph.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
->]) (./class_synapse_1_1_synapse.tex [51] [52]
-<class_synapse_1_1_synapse_a88599102e16f4fe28f9cf7580c3a8108_cgraph.pdf, id=267
-3, 670.505pt x 291.0875pt>
-File: class_synapse_1_1_synapse_a88599102e16f4fe28f9cf7580c3a8108_cgraph.pdf Gr
-aphic file (type pdf)
+>]) (./class_synapse_1_1_synapse.tex [54]
+! Limit controls must follow a math operator.
+l.40 ...ompartment, in $\mu$S ( $G_{max} = \limits
+                                                  \sum_{i=1}^Ng_i$). \end{Do...
+I'm ignoring this misplaced \limits or \nolimits command.
 
-<use class_synapse_1_1_synapse_a88599102e16f4fe28f9cf7580c3a8108_cgraph.pdf>
-Package pdftex.def Info: class_synapse_1_1_synapse_a88599102e16f4fe28f9cf7580c3
-a8108_cgraph.pdf used on input line 172.
-(pdftex.def)             Requested size: 350.0pt x 151.94377pt.
+[55] [56]
+! Limit controls must follow a math operator.
+l.179 ...mpartment, in $\mu$S ( $G_{max} = \limits
+                                                  \sum_{i=1}^Ng_i$).
+I'm ignoring this misplaced \limits or \nolimits command.
 
-<class_synapse_1_1_synapse_a88599102e16f4fe28f9cf7580c3a8108_icgraph.pdf, id=26
-74, 485.815pt x 100.375pt>
-File: class_synapse_1_1_synapse_a88599102e16f4fe28f9cf7580c3a8108_icgraph.pdf G
-raphic file (type pdf)
-
-<use class_synapse_1_1_synapse_a88599102e16f4fe28f9cf7580c3a8108_icgraph.pdf>
-Package pdftex.def Info: class_synapse_1_1_synapse_a88599102e16f4fe28f9cf7580c3
-a8108_icgraph.pdf used on input line 183.
-(pdftex.def)             Requested size: 350.0pt x 72.31282pt.
-
-<class_synapse_1_1_synapse_a744b7b46e7dfee8871f4c3b29fe099ae_cgraph.pdf, id=267
-5, 646.415pt x 291.0875pt>
-File: class_synapse_1_1_synapse_a744b7b46e7dfee8871f4c3b29fe099ae_cgraph.pdf Gr
-aphic file (type pdf)
-
-<use class_synapse_1_1_synapse_a744b7b46e7dfee8871f4c3b29fe099ae_cgraph.pdf>
-Package pdftex.def Info: class_synapse_1_1_synapse_a744b7b46e7dfee8871f4c3b29fe
-099ae_cgraph.pdf used on input line 207.
-(pdftex.def)             Requested size: 350.0pt x 157.60686pt.
-
-Underfull \vbox (badness 3623) has occurred while \output is active []
-
- [53 <./class_synapse_1_1_synapse_a88599102e16f4fe28f9cf7580c3a8108_cgraph.pdf>
- <./class_synapse_1_1_synapse_a88599102e16f4fe28f9cf7580c3a8108_icgraph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./class_synapse_1_1_synapse_a88599102e1
-6f4fe28f9cf7580c3a8108_icgraph.pdf): PDF inclusion: multiple pdfs with page gro
-up included in a single page
->]
-<class_synapse_1_1_synapse_ad4eb9663dc124db77c7e99578ab7eff7_cgraph.pdf, id=269
-1, 881.2925pt x 291.0875pt>
-File: class_synapse_1_1_synapse_ad4eb9663dc124db77c7e99578ab7eff7_cgraph.pdf Gr
-aphic file (type pdf)
-
-<use class_synapse_1_1_synapse_ad4eb9663dc124db77c7e99578ab7eff7_cgraph.pdf>
-Package pdftex.def Info: class_synapse_1_1_synapse_ad4eb9663dc124db77c7e99578ab
-7eff7_cgraph.pdf used on input line 231.
-(pdftex.def)             Requested size: 350.0pt x 115.60234pt.
-
-<class_synapse_1_1_synapse_a6d3fc87143221f0bcfdb5f86095099c5_icgraph.pdf, id=26
-92, 463.7325pt x 110.4125pt>
-File: class_synapse_1_1_synapse_a6d3fc87143221f0bcfdb5f86095099c5_icgraph.pdf G
-raphic file (type pdf)
-
-<use class_synapse_1_1_synapse_a6d3fc87143221f0bcfdb5f86095099c5_icgraph.pdf>
-Package pdftex.def Info: class_synapse_1_1_synapse_a6d3fc87143221f0bcfdb5f86095
-099c5_icgraph.pdf used on input line 268.
-(pdftex.def)             Requested size: 350.0pt x 83.3348pt.
-
-[54 <./class_synapse_1_1_synapse_a744b7b46e7dfee8871f4c3b29fe099ae_cgraph.pdf> 
-<./class_synapse_1_1_synapse_ad4eb9663dc124db77c7e99578ab7eff7_cgraph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./class_synapse_1_1_synapse_ad4eb9663dc
-124db77c7e99578ab7eff7_cgraph.pdf): PDF inclusion: multiple pdfs with page grou
-p included in a single page
-> <./class_synapse_1_1_synapse_a6d3fc87143221f0bcfdb5f86095099c5_icgraph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./class_synapse_1_1_synapse_a6d3fc87143
-221f0bcfdb5f86095099c5_icgraph.pdf): PDF inclusion: multiple pdfs with page gro
-up included in a single page
->]
-<class_synapse_1_1_synapse_af9d45f19ead577a6d98d9dd5e304cb13_cgraph.pdf, id=271
-4, 439.6425pt x 176.66pt>
-File: class_synapse_1_1_synapse_af9d45f19ead577a6d98d9dd5e304cb13_cgraph.pdf Gr
-aphic file (type pdf)
-
-<use class_synapse_1_1_synapse_af9d45f19ead577a6d98d9dd5e304cb13_cgraph.pdf>
-Package pdftex.def Info: class_synapse_1_1_synapse_af9d45f19ead577a6d98d9dd5e30
-4cb13_cgraph.pdf used on input line 292.
-(pdftex.def)             Requested size: 350.0pt x 140.6435pt.
-
-<class_synapse_1_1_synapse_af9d45f19ead577a6d98d9dd5e304cb13_icgraph.pdf, id=27
-15, 722.7pt x 138.5175pt>
-File: class_synapse_1_1_synapse_af9d45f19ead577a6d98d9dd5e304cb13_icgraph.pdf G
-raphic file (type pdf)
-
-<use class_synapse_1_1_synapse_af9d45f19ead577a6d98d9dd5e304cb13_icgraph.pdf>
-Package pdftex.def Info: class_synapse_1_1_synapse_af9d45f19ead577a6d98d9dd5e30
-4cb13_icgraph.pdf used on input line 303.
-(pdftex.def)             Requested size: 350.0pt x 67.08366pt.
-
-<class_synapse_1_1_synapse_aa8deb85e48c1a9b27453e0ebde27b2cf_cgraph.pdf, id=271
-6, 439.6425pt x 176.66pt>
-File: class_synapse_1_1_synapse_aa8deb85e48c1a9b27453e0ebde27b2cf_cgraph.pdf Gr
-aphic file (type pdf)
-
-<use class_synapse_1_1_synapse_aa8deb85e48c1a9b27453e0ebde27b2cf_cgraph.pdf>
-Package pdftex.def Info: class_synapse_1_1_synapse_aa8deb85e48c1a9b27453e0ebde2
-7b2cf_cgraph.pdf used on input line 340.
-(pdftex.def)             Requested size: 350.0pt x 140.6435pt.
-
-<class_synapse_1_1_synapse_aa8deb85e48c1a9b27453e0ebde27b2cf_icgraph.pdf, id=27
-17, 722.7pt x 138.5175pt>
-File: class_synapse_1_1_synapse_aa8deb85e48c1a9b27453e0ebde27b2cf_icgraph.pdf G
-raphic file (type pdf)
-
-<use class_synapse_1_1_synapse_aa8deb85e48c1a9b27453e0ebde27b2cf_icgraph.pdf>
-Package pdftex.def Info: class_synapse_1_1_synapse_aa8deb85e48c1a9b27453e0ebde2
-7b2cf_icgraph.pdf used on input line 351.
-(pdftex.def)             Requested size: 350.0pt x 67.08366pt.
-
-Underfull \vbox (badness 1281) has occurred while \output is active []
-
- [55 <./class_synapse_1_1_synapse_af9d45f19ead577a6d98d9dd5e304cb13_cgraph.pdf>
- <./class_synapse_1_1_synapse_af9d45f19ead577a6d98d9dd5e304cb13_icgraph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./class_synapse_1_1_synapse_af9d45f19ea
-d577a6d98d9dd5e304cb13_icgraph.pdf): PDF inclusion: multiple pdfs with page gro
-up included in a single page
-> <./class_synapse_1_1_synapse_aa8deb85e48c1a9b27453e0ebde27b2cf_cgraph.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./class_synapse_1_1_synapse_aa8deb85e48
-c1a9b27453e0ebde27b2cf_cgraph.pdf): PDF inclusion: multiple pdfs with page grou
-p included in a single page
->] [56 <./class_synapse_1_1_synapse_aa8deb85e48c1a9b27453e0ebde27b2cf_icgraph.p
-df>] [57] [58]) (./class_synapses_factory_1_1_synapses_factory.tex) [59]
-[60
+[57]) (./class_synapses_factory_1_1_synapses_factory.tex [58]) [59] [60
 
 ]
 Chapter 8.
@@ -1903,21 +1668,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 192.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 192.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 192.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: FD5D65275D25DD6B6FFC8C5EB70230B7;48079.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+(rerunfilecheck)             Checksum: 63D59CAA50903E36C14A0AAB9C1132B4;45164.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 192.
  ) 
 Here is how much of TeX's memory you used:
- 13695 strings out of 493304
- 229226 string characters out of 6139871
- 272099 words of memory out of 5000000
- 16100 multiletter control sequences out of 15000+600000
- 91267 words of font info for 127 fonts, out of 8000000 for 9000
+ 13554 strings out of 493304
+ 220076 string characters out of 6139871
+ 270999 words of memory out of 5000000
+ 15990 multiletter control sequences out of 15000+600000
+ 95589 words of font info for 138 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 48i,13n,43p,517b,522s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,13n,43p,1047b,522s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1932,10 +1693,10 @@ nts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on refman.pdf (83 pages, 396972 bytes).
+Output written on refman.pdf (81 pages, 374708 bytes).
 PDF statistics:
- 3560 PDF objects out of 3580 (max. 8388607)
- 3352 compressed objects within 34 object streams
- 711 named destinations out of 1000 (max. 500000)
- 2666 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3317 PDF objects out of 3580 (max. 8388607)
+ 3149 compressed objects within 32 object streams
+ 686 named destinations out of 1000 (max. 500000)
+ 2424 words of extra memory for PDF output out of 10000 (max. 10000000)
 

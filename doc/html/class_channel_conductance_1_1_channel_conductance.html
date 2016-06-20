@@ -62,7 +62,7 @@
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:adaaf5ea399963a716dc532a060964348"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_conductance_1_1_channel_conductance.html#adaaf5ea399963a716dc532a060964348">__init__</a></td></tr>
-<tr class="memdesc:adaaf5ea399963a716dc532a060964348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds an ionic channel conductance.  <a href="#adaaf5ea399963a716dc532a060964348">More...</a><br/></td></tr>
+<tr class="memdesc:adaaf5ea399963a716dc532a060964348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#adaaf5ea399963a716dc532a060964348">More...</a><br/></td></tr>
 <tr class="separator:adaaf5ea399963a716dc532a060964348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abde599b9096579b94d24295678f45b6d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_conductance_1_1_channel_conductance.html#abde599b9096579b94d24295678f45b6d">computeCurrent</a></td></tr>
 <tr class="memdesc:abde599b9096579b94d24295678f45b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the current genrated by the ionic Channel.  <a href="#abde599b9096579b94d24295678f45b6d">More...</a><br/></td></tr>
@@ -71,7 +71,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a956928953c88e1c03c113fc98ec42cc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the conductance of a Kf Channel.  <a href="#a956928953c88e1c03c113fc98ec42cc6">More...</a><br/></td></tr>
 <tr class="separator:a956928953c88e1c03c113fc98ec42cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19cc2a71f96187c7c647855d586cecaa"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_conductance_1_1_channel_conductance.html#a19cc2a71f96187c7c647855d586cecaa">compCondKs</a></td></tr>
-<tr class="memdesc:a19cc2a71f96187c7c647855d586cecaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the conductance of a Ks Channel.  <a href="#a19cc2a71f96187c7c647855d586cecaa">More...</a><br/></td></tr>
+<tr class="memdesc:a19cc2a71f96187c7c647855d586cecaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the conductance of a slow potassium Channel.  <a href="#a19cc2a71f96187c7c647855d586cecaa">More...</a><br/></td></tr>
 <tr class="separator:a19cc2a71f96187c7c647855d586cecaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26e6cf970cc7a8732f590dceb1d7c993"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_conductance_1_1_channel_conductance.html#a26e6cf970cc7a8732f590dceb1d7c993">compCondNa</a></td></tr>
 <tr class="memdesc:a26e6cf970cc7a8732f590dceb1d7c993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the conductance of a Na Channel.  <a href="#a26e6cf970cc7a8732f590dceb1d7c993">More...</a><br/></td></tr>
@@ -80,7 +80,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a7bf3e28aab2160014358cde589f2ec39"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_conductance_1_1_channel_conductance.html#a7bf3e28aab2160014358cde589f2ec39">kind</a></td></tr>
-<tr class="memdesc:a7bf3e28aab2160014358cde589f2ec39"><td class="mdescLeft">&#160;</td><td class="mdescRight">String with the type of the ionic channel (Na, Ks, Kf or Ca).  <a href="#a7bf3e28aab2160014358cde589f2ec39">More...</a><br/></td></tr>
+<tr class="memdesc:a7bf3e28aab2160014358cde589f2ec39"><td class="mdescLeft">&#160;</td><td class="mdescRight">string with the type of the ionic channel.  <a href="#a7bf3e28aab2160014358cde589f2ec39">More...</a><br/></td></tr>
 <tr class="separator:a7bf3e28aab2160014358cde589f2ec39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a628553cbc1efd93b30b0a15afd4417d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_conductance_1_1_channel_conductance.html#a628553cbc1efd93b30b0a15afd4417d9">condState</a></td></tr>
 <tr class="memdesc:a628553cbc1efd93b30b0a15afd4417d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of ConductanceState objects, representing each state of the ionic channel.  <a href="#a628553cbc1efd93b30b0a15afd4417d9">More...</a><br/></td></tr>
@@ -154,17 +154,18 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Builds an ionic channel conductance. </p>
+<p>Constructor. </p>
+<p>Builds an ionic channel conductance.</p>
 <p>-Inputs:</p>
 <ul>
-<li><b>kind</b>: string with the type of the ionic channel (Na, Ks, Kf or Ca).</li>
+<li><b>kind</b>: string with the type of the ionic channel. For now it can be <em>Na</em> (Sodium), <em>Ks</em> (slow Potassium), <em>Kf</em> (fast Potassium) or <em>Ca</em> (Calcium).</li>
 <li><b>conf</b>: instance of the <a class="el" href="namespace_configuration.html">Configuration</a> class (see <a class="el" href="namespace_configuration.html">Configuration</a> file).</li>
-<li><b>compArea</b>: - float with the area of the compartment that the Channel belongs, in <img class="formulaInl" alt="$\text{cm}^2$" src="form_4.png"/>.</li>
-<li><b>pool</b> - the pool that this state belongs.</li>
-<li><b>index</b> - the index of the unit that this state belongs. </li>
+<li><b>compArea</b>: float with the area of the compartment that the Channel belongs, in <img class="formulaInl" alt="$\text{cm}^2$" src="form_4.png"/>.</li>
+<li><b>pool</b>: the pool that this state belongs.</li>
+<li><b>index</b>: the index of the unit that this state belongs. </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00030">30</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00038">38</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -203,10 +204,15 @@ Public Attributes</h2></td></tr>
 </ul>
 <p>Output:</p>
 <ul>
-<li>Conductance in <img class="formulaInl" alt="$\mu$" src="form_2.png"/>S. </li>
+<li>Conductance in <img class="formulaInl" alt="$\mu$" src="form_2.png"/>S.</li>
 </ul>
+<p>It is computed as:</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{equation} g = g_{max}n^4(E_0-V) \end{equation}" src="form_5.png"/>
+</p>
+<p> where <img class="formulaInl" alt="$E_0$" src="form_6.png"/> is the equilibrium potential of the compartment, V is the membrane potential and <img class="formulaInl" alt="$n$" src="form_7.png"/> is the state of a fast potassium channel.. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00097">97</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00115">115</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -234,7 +240,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Computes the conductance of a Ks Channel. </p>
+<p>Computes the conductance of a slow potassium Channel. </p>
 <p>This function is assigned as self.compCond to a Ks Channel at the class constructor.</p>
 <ul>
 <li>Input:<ul>
@@ -242,12 +248,17 @@ Public Attributes</h2></td></tr>
 </ul>
 </li>
 <li>Output:<ul>
-<li>Conductance in <img class="formulaInl" alt="$\mu$" src="form_2.png"/>S. </li>
+<li>Conductance in <img class="formulaInl" alt="$\mu$" src="form_2.png"/>S.</li>
 </ul>
 </li>
 </ul>
+<p>It is computed as:</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{equation} g = g_{max}q^2(E_0-V) \end{equation}" src="form_8.png"/>
+</p>
+<p> where <img class="formulaInl" alt="$E_0$" src="form_6.png"/> is the equilibrium potential of the compartment, <img class="formulaInl" alt="$V$" src="form_9.png"/> is the membrane potential and <img class="formulaInl" alt="$q$" src="form_10.png"/> is the state of a slow potassium channel. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00112">112</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00138">138</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -276,13 +287,21 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the conductance of a Na Channel. </p>
-<p>This function is assigned as self.compCond to a Na Channel at the class constructor. </p>
-<pre class="fragment">    -Input:
-        + **V_mV**: membrane potential of the compartment in mV.
+<p>This function is assigned as self.compCond to a Na Channel at the class constructor. -Input:</p>
+<ul>
+<li><b>V_mV</b>: membrane potential of the compartment in mV.</li>
+</ul>
+<p>Output:</p>
+<ul>
+<li>Conductance in <img class="formulaInl" alt="$\mu$" src="form_2.png"/>S.</li>
+</ul>
+<p>It is computed as:</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{equation} g = g_{max}m^3h(E_0-V) \end{equation}" src="form_11.png"/>
+</p>
+<p> where <img class="formulaInl" alt="$E_0$" src="form_6.png"/> is the equilibrium potential of the compartment, V is the membrane potential and <img class="formulaInl" alt="$m$" src="form_12.png"/> and <img class="formulaInl" alt="$h$" src="form_13.png"/> are the states of a sodium channel.. </p>
 
-    Output:
-        + Conductance in \form#2S.</pre> 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00126">126</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00159">159</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -324,12 +343,12 @@ Public Attributes</h2></td></tr>
 </ul>
 </li>
 <li>Outputs:<ul>
-<li>Ionic current in nA </li>
+<li>Ionic current, in nA </li>
 </ul>
 </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00081">81</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00091">91</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -346,7 +365,7 @@ Public Attributes</h2></td></tr>
 
 <p>Function that computes the conductance dynamics. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00050">50</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00060">60</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -362,7 +381,7 @@ Public Attributes</h2></td></tr>
 
 <p>List of ConductanceState objects, representing each state of the ionic channel. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00034">34</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00044">44</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -378,7 +397,7 @@ Public Attributes</h2></td></tr>
 
 <p>Equilibrium Potential of the ionic channel, mV. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00037">37</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00047">47</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -394,7 +413,7 @@ Public Attributes</h2></td></tr>
 
 <p>Maximal conductance, in <img class="formulaInl" alt="$\mu$" src="form_2.png"/>S, of the ionic channel. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00039">39</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00049">49</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -408,9 +427,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>String with the type of the ionic channel (Na, Ks, Kf or Ca). </p>
+<p>string with the type of the ionic channel. </p>
+<p>For now it can be <em>Na</em> (Sodium), <em>Ks</em> (slow Potassium), <em>Kf</em> (fast Potassium) or <em>Ca</em> (Calcium). </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00032">32</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00042">42</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -426,7 +446,7 @@ Public Attributes</h2></td></tr>
 
 <p>Integer with the number of states in the ionic channel. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00064">64</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00074">74</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -443,7 +463,7 @@ Public Attributes</h2></td></tr>
 <p>String with type of dynamics of the states. </p>
 <p>For now it accepts the string pulse. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00042">42</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00052">52</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -453,7 +473,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 16 2016 15:34:30 for PyReMoto by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 20 2016 18:14:00 for PyReMoto by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

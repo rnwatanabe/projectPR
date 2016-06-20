@@ -2,10 +2,10 @@
 <area shape="rect" id="node2" href="$class_synapse_1_1_synapse.html#af9d45f19ead577a6d98d9dd5e304cb13" title="Synapse.Synapse.startConductanceNone" alt="" coords="280,81,547,108"/>
 <area shape="rect" id="node6" href="$class_synapse_1_1_synapse.html#aa8deb85e48c1a9b27453e0ebde27b2cf" title="Synapse.Synapse.stopConductanceNone" alt="" coords="281,183,546,209"/>
 <area shape="rect" id="node10" href="$class_synapse_1_1_synapse.html#a6d3fc87143221f0bcfdb5f86095099c5" title="Synapse.Synapse.startConductance\lDynamics" alt="" coords="296,234,531,275"/>
-<area shape="rect" id="node3" href="$namespace_synapse.html#a6d5943c0d974d992b8c9daa3ff3818d6" title="Synapse.compRiStart" alt="" coords="601,5,751,32"/>
+<area shape="rect" id="node3" href="$namespace_synapse.html#a6d5943c0d974d992b8c9daa3ff3818d6" title="Computes the fraction of bound postsynaptic receptors to neurotransmitters in individual synapses whe..." alt="" coords="601,5,751,32"/>
 <area shape="rect" id="node4" href="$namespace_synapse.html#a3bbc4948087cc789af35085ea0423a93" title="Synapse.compRonStart" alt="" coords="595,56,757,83"/>
 <area shape="rect" id="node5" href="$namespace_synapse.html#a4ff37207e236e81ae7bced77172a5af5" title="Synapse.compRoffStart" alt="" coords="595,107,757,133"/>
-<area shape="rect" id="node7" href="$namespace_synapse.html#a67ee3bb7abbf9608bd83c31c63634cac" title="Synapse.compRiStop" alt="" coords="601,157,751,184"/>
+<area shape="rect" id="node7" href="$namespace_synapse.html#a67ee3bb7abbf9608bd83c31c63634cac" title="Computes the fraction of bound postsynaptic receptors to neurotransmitters in individual synapses whe..." alt="" coords="601,157,751,184"/>
 <area shape="rect" id="node8" href="$namespace_synapse.html#a9915f1de7bde4ece67ef45a7e7324c21" title="Synapse.compRonStop" alt="" coords="596,208,756,235"/>
 <area shape="rect" id="node9" href="$namespace_synapse.html#a8e85651ec0d366f191a2093a1bd2bc84" title="Synapse.compRoffStop" alt="" coords="595,259,757,285"/>
 </map>

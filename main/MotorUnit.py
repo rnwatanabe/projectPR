@@ -138,9 +138,9 @@ def runge_kutta(derivativeFunction, t, x, timeStep, timeStepByTwo,  timeStepBySi
 
 class MotorUnit(object):
     '''
-    Class that implements a motor unit model. Encompasses a motoneuron and a muscle unit.
+    Class that implements a motor unit model. Encompasses a motoneuron
+    and a muscle unit.
     '''
-   
 
     def __init__(self, conf, pool, index, kind):
         '''
@@ -149,13 +149,15 @@ class MotorUnit(object):
         - Inputs:
             + **conf**: Configuration object with the simulation parameters.
 
-            + **pool**: string with Motor unit pool to which the motor unit belongs.
+            + **pool**: string with Motor unit pool to which the motor
+            unit belongs.
 
-            + **index**: integer corresponding to the motor unit order in the pool, according to 
-            the Henneman's principle (size principle).
+            + **index**: integer corresponding to the motor unit order in
+            the pool, according to the Henneman's principle (size principle).
 
-            + **kind**: string with the type of the motor unit. It can be S (slow), FR (fast and resistant), 
-            and FF (fast and fatigable).  
+            + **kind**: string with the type of the motor unit. It can
+            be *S* (slow), *FR* (fast and resistant), and
+            *FF* (fast and fatigable).
         '''
 
         ## Configuration object with the simulation parameters.
@@ -288,12 +290,12 @@ class MotorUnit(object):
         - Inputs:
             + **t**: current instant, in ms.
 
-            + **V**: Vector with the current potential value of all neural compartments of the motor unit.
+            + **V**: Vector with the current potential value of all neural
+            compartments of the motor unit.
         '''
         for compartment in xrange(0, self.compNumber):  
             self.iIonic.itemset(compartment, self.compartment[compartment].computeCurrent(t, V.item(compartment)))
-        
-        
+              
         return (self.iIonic + np.dot(self.G, V)  + self.iInjected) * self.capacitanceInv
     
     

@@ -24,7 +24,6 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#abaa7680d0691fac81f66b200dfcfd203"><param name="Name" value="activationModel"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_motor_unit_pool_1_1_motor_unit_pool.html#ad03b9e215e833188060e90bc4392d42b"><param name="Name" value="ActMatrix"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a0677d7b972a6f6a12abc666212a12297"><param name="Name" value="actType"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a4fa7b6b92a4b197dba58ac346cfffc6f"><param name="Name" value="addConductance"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#accb8b6700ed06e1396b70af62a9f31c6"><param name="Name" value="addSomaSpike"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a5483df94745af77bf54f707f9a05a0e0"><param name="Name" value="addSpinalSpike"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a49115bea963cde5e2c4317510d73cf7c"><param name="Name" value="addTerminalSpike"></OBJECT>
@@ -174,13 +173,10 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_synapse.html#a55ffd471fbed3550b464a9862687f541"><param name="Name" value="Synapse"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_synapse.html#a55ffd471fbed3550b464a9862687f541"><param name="Name" value="Synapse.py"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a88599102e16f4fe28f9cf7580c3a8108"><param name="Name" value="computeConductance"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ad4eb9663dc124db77c7e99578ab7eff7"><param name="Name" value="computeCurrent2"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#abde599b9096579b94d24295678f45b6d"><param name="Name" value="computeCurrent"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#abde599b9096579b94d24295678f45b6d"><param name="Name" value="ChannelConductance::ChannelConductance"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_compartment_1_1_compartment.html#ab10c374833a5c36df0552d40e64e45b9"><param name="Name" value="Compartment::Compartment"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a744b7b46e7dfee8871f4c3b29fe099ae"><param name="Name" value="Synapse::Synapse"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#ae81d1a5bbbf4fd80db0ded06631bd9c2"><param name="Name" value="computeStateValue"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a89e0cc154bd699aee7529574a8fe556c"><param name="Name" value="computeValueOff"></OBJECT>
@@ -456,12 +452,9 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_pulse_conductance_state.html#ab354e94cc78939492454ad81c2e86223"><param name="Name" value="compValOn"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#afda03b180fc3cb619de615632e725a6f"><param name="Name" value="PulseDur_ms"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a18fc05b9e95285fded46afa38688a052"><param name="Name" value="receiveSpike"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#adc85234a081ad18bf19473be530dcf78"><param name="Name" value="ri"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#afd263d49a97910efd8955a2aadef50e0"><param name="Name" value="rInf"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ae67ffbbd23cd9c56f20bda9e8e040663"><param name="Name" value="Roff"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a9a8d45c76378fae50d7ed2af29602aa8"><param name="Name" value="roff"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a2e4a3427e071a311ac52341ad67f90c6"><param name="Name" value="ron"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ae759c51a7196995510fe3eb086050c76"><param name="Name" value="Ron"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_motor_unit.html#ad34c81597ff5e9cdcf53fd13e78d2d6c"><param name="Name" value="runge_kutta"></OBJECT>
   <UL>
@@ -480,18 +473,9 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a7cd2be92814b5892bdd18dafd824da9f"><param name="Name" value="somaIndex"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_motor_unit_1_1_motor_unit.html#a8c86d98daa6c509e226ab165fa92515f"><param name="Name" value="somaSpikeTrain"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#a57cbb130e004fb3f7ee8d8a540f7dff0"><param name="Name" value="spikesGenerator"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a58ea1b63c2053745598fa27dfc72cf9f"><param name="Name" value="spikesReceived"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a6d3fc87143221f0bcfdb5f86095099c5"><param name="Name" value="startConductanceDynamics"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#af9d45f19ead577a6d98d9dd5e304cb13"><param name="Name" value="startConductanceNone"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ac76e1ee32dfde6ec33fcc52e8cdd0ef7"><param name="Name" value="startDynamicFunction"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a857ba1cf500bbc602d94655683f62609"><param name="Name" value="startEntrance"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#ac85aa714a187088e1b31fa2369ed4bca"><param name="Name" value="state"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_channel_conductance_1_1_channel_conductance.html#aa3c889bb4528c3abe7b69862cf87119d"><param name="Name" value="stateType"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_axon_delay_1_1_axon_delay.html#a3f6bb8f38c4474806544d01fbe9c0361"><param name="Name" value="stimulusPositiontoTerminal"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a25802c58dc6c64cd265f7cbae3c07958"><param name="Name" value="stopConductanceDynamics"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#aa8deb85e48c1a9b27453e0ebde27b2cf"><param name="Name" value="stopConductanceNone"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#afeef9c1a33ee0b333c5df72478d91745"><param name="Name" value="stopDynamicFunction"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#aac4c50cca15e42396f1bfff761693696"><param name="Name" value="stopEntrance"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_synapse.html"><param name="Name" value="Synapse"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_synapse_8py.html"><param name="Name" value="Synapse.py"></OBJECT>
   <UL>
@@ -508,12 +492,8 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html"><param name="Name" value="Synapse::Synapse"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a2503e88be21ea89ad4f652b2fedfd76e"><param name="Name" value="__init__"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a4fa7b6b92a4b197dba58ac346cfffc6f"><param name="Name" value="addConductance"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ae15502cd5d5604d38328b2b1432477d7"><param name="Name" value="alpha_ms1"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ab59f413cbd21555531be209dee307a97"><param name="Name" value="beta_ms1"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a88599102e16f4fe28f9cf7580c3a8108"><param name="Name" value="computeConductance"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a744b7b46e7dfee8871f4c3b29fe099ae"><param name="Name" value="computeCurrent"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ad4eb9663dc124db77c7e99578ab7eff7"><param name="Name" value="computeCurrent2"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a89d3762daa9c60be63403a5ce9fd9a84"><param name="Name" value="conductanceState"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a14adfda48133bd314f4dcd65fc9a2366"><param name="Name" value="delay_ms"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a67a1454de1ef2f08ffa3a10bf8466158"><param name="Name" value="dynamics"></OBJECT>
@@ -526,23 +506,10 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#af8779bbc2ee2c5ae7747ee5cfbcf112e"><param name="Name" value="Non"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a6e55e008336cc47551669f3d77248d57"><param name="Name" value="numberOfIncomingSynapses"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a133990bf3ab7f1efa8b416be73d07a11"><param name="Name" value="pool"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a18fc05b9e95285fded46afa38688a052"><param name="Name" value="receiveSpike"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#adc85234a081ad18bf19473be530dcf78"><param name="Name" value="ri"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#afd263d49a97910efd8955a2aadef50e0"><param name="Name" value="rInf"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ae67ffbbd23cd9c56f20bda9e8e040663"><param name="Name" value="Roff"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a9a8d45c76378fae50d7ed2af29602aa8"><param name="Name" value="roff"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ae759c51a7196995510fe3eb086050c76"><param name="Name" value="Ron"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a2e4a3427e071a311ac52341ad67f90c6"><param name="Name" value="ron"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a58ea1b63c2053745598fa27dfc72cf9f"><param name="Name" value="spikesReceived"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a6d3fc87143221f0bcfdb5f86095099c5"><param name="Name" value="startConductanceDynamics"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#af9d45f19ead577a6d98d9dd5e304cb13"><param name="Name" value="startConductanceNone"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ac76e1ee32dfde6ec33fcc52e8cdd0ef7"><param name="Name" value="startDynamicFunction"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a857ba1cf500bbc602d94655683f62609"><param name="Name" value="startEntrance"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#a25802c58dc6c64cd265f7cbae3c07958"><param name="Name" value="stopConductanceDynamics"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#aa8deb85e48c1a9b27453e0ebde27b2cf"><param name="Name" value="stopConductanceNone"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#afeef9c1a33ee0b333c5df72478d91745"><param name="Name" value="stopDynamicFunction"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#aac4c50cca15e42396f1bfff761693696"><param name="Name" value="stopEntrance"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ac9fc1da99a88f8dd286d3ff3ce484b85"><param name="Name" value="synContrib"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ad0adf1cb832bd7ce7918f2779171d7d7"><param name="Name" value="t0"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#afd5638a223c3fdcc672002dbced7bed0"><param name="Name" value="tauOff"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#aae46f8edd1e94ea2ab51e3612afd3a3f"><param name="Name" value="tauOn"></OBJECT>
@@ -576,7 +543,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_compartment_1_1_compartment.html#a85d64ebf548276c873501d2dc3489ceb"><param name="Name" value="Compartment::Compartment"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_neural_tract_unit_1_1_neural_tract_unit.html#a740d2cfa17ad57c7dbd40fbafc654b95"><param name="Name" value="NeuralTractUnit::NeuralTractUnit"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_synapse_1_1_synapse.html#ac9fc1da99a88f8dd286d3ff3ce484b85"><param name="Name" value="synContrib"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a55f44caf230fc3899811924118705f56"><param name="Name" value="t0"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a55f44caf230fc3899811924118705f56"><param name="Name" value="PulseConductanceState::PulseConductanceState"></OBJECT>
