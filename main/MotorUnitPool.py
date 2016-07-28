@@ -6,28 +6,13 @@ Created on Oct 8, 2015
 
 import numpy as np
 from MotorUnit import MotorUnit
+from MuscularActivation import MuscularActivation
 import math
 from scipy.sparse import lil_matrix
 
  
 
-def twitchSaturation(activationsat, b):
-    '''
-    Computes the muscle unit force after the nonlinear saturation. 
 
-    \f{equation}{
-        a_{sat} = \frac{1-e^{-b.a_{nSat}}}{1+e^{-b.a_{nSat}}}
-    \f}
-
-- Inputs:
-    + **activationsat**: activation signal before the saturation.
-
-    + **b**: saturation function parameter.
-
-- Outputs:
-    + Saturated force.
-    '''
-    return 2.0 / (1 + np.exp(-b * activationsat)) - 1
 
 
 
@@ -79,72 +64,17 @@ class MotorUnitPool(object):
         self.poolTerminalSpikes = np.array([])
         
         #activation signal
-        ## Model of the activation signal. For now, it can be *SOCDS* (second order critically damped system).
-        self.activationModel = conf.parameterSet('activationModel', pool, 0)
-
-
-
-        if self.activationModel == 'SOCDS':
-            ## Matrix that multiplied by the vector formed as the formula below gives the activation
-            ## signal at instant \f$n\f$:
-            ## \f{equation}{
-            ##    \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}                    
-            ## \f}
-            ## where \f$a_i(n)\f$ is the activation signal of the motor unit \f$i\f$, \f$e_i(n)\f$ is
-            ## 1/T (inverse of simulation time step, Dirac's delta approximation) if the motor unit \f$i\f$,
-            ## fired at instant \f$n\f$. The vector \f$Av\f$ is updated every step at the function
-            ## atualizeActivationSignal.
-            ## The activation matrix itself is formed as:
-            ## \f{equation}{
-            ##      \resizebox{0.95\hsize}{!}{$\scriptstyle
-            ##      A = \left[\begin{array}{ccccccccccc}\scriptscriptstyle  2\exp\left(-\frac{T}{T_{c_1}}\right)&\scriptscriptstyle -\exp\left(-2\frac{T}{T_{c_1}}\right)&\scriptscriptstyle  \frac{T^2}{T_{c_1}}\exp\left(1-\frac{T}{T_{c_1}} \right)&\scriptscriptstyle 0&\scriptscriptstyle ...&\scriptscriptstyle  0&\scriptscriptstyle  0& \scriptscriptstyle 0&\scriptscriptstyle 0&\scriptscriptstyle 0&\scriptscriptstyle 0\\
-            ##                \scriptscriptstyle 0&\scriptscriptstyle 0&\scriptscriptstyle 0&\scriptscriptstyle \ddots&\scriptscriptstyle ...&&&&&\scriptscriptstyle ...&\scriptscriptstyle 0\\
-            ##                \scriptscriptstyle 0&\scriptscriptstyle ...&&\scriptscriptstyle 0&\scriptscriptstyle 2\exp\left(-\frac{T}{T_{c_i}}\right)&\scriptscriptstyle -\exp\left(-2\frac{T}{T_{c_i}}\right)&\scriptscriptstyle \frac{T^2}{T_{c_i}}\exp\left(1-\frac{T}{T_{c_i}} \right)&\scriptscriptstyle 0&&&\scriptscriptstyle 0\\
-            ##                \scriptscriptstyle0&\scriptscriptstyle0&\scriptscriptstyle...&&&\scriptscriptstyle0&\scriptscriptstyle 0&\scriptscriptstyle\ddots&\scriptscriptstyle0&\scriptscriptstyle0\\
-            ##                \scriptscriptstyle0&\scriptscriptstyle0&\scriptscriptstyle0&\scriptscriptstyle...&&&&\scriptscriptstyle0&\scriptscriptstyle 2\exp\left(-\frac{T}{T_{c_{N_{MU}}}}\right)&\scriptscriptstyle -\exp\left(-2\frac{T}{T_{c_{N_{MU}}}}\right)&\scriptscriptstyle \frac{T^2}{T_{c_{{MU}}}}\exp\left(1-\frac{T}{T_{c_{N_{MU}}}} \right)\end{array}\right]$}
-            ## \f} 
-            ## The nonsaturated activation signal \f$a\f$ of all the motor units is obtained with:
-            ## \f{equation}{
-            ##   a = A.Av 
-            ## \f}
-            ## where each elemement o \f$a\f$ is the activation signal of a motor unit.
-            self.ActMatrix = lil_matrix((self.MUnumber, 3*self.MUnumber), dtype = float)
-            
-            for i in xrange(0, self.MUnumber):
-                self.ActMatrix[i,3*i:3*i+3] = [2*math.exp(-conf.timeStep_ms/self.unit[i].TwitchTc_ms),
-                                    -math.exp(-2*conf.timeStep_ms/self.unit[i].TwitchTc_ms), 
-                                    math.pow(conf.timeStep_ms, 2.0)/self.unit[i].TwitchTc_ms*math.exp(1.0-conf.timeStep_ms/self.unit[i].TwitchTc_ms)]
-             
-            self.ActMatrix.tocsr()   
-            ## Is a vector formed as:
-            ## \f{equation}{
-            ##    \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}                    
-            ## \f}
-            ## It is multiplied by the matriz actMatrix to obtain the activation signal 
-            ## (see actMatrix explanation)
-            self.an = np.zeros((3*self.MUnumber, 1), dtype = float)
-
-        ## The non-saturated activation signal of all motor units (see actMatrix explanation).
-        self.activation_nonSat = np.zeros((self.MUnumber, 1), dtype = float)
-        ## The parameter \f$b\f$ (see twitchSaturation function explanation) of 
-        ## each motor unit.
-        self.bSat = np.zeros((self.MUnumber, 1), dtype = float)
+        self.Activation = MuscularActivation(self.conf,self.pool, self.MUnumber,self.unit)
+        
+        #Force
         ## Twitch- tetanus relationship (see atualizeForceNoHill function explanation)
         self.twTet = np.zeros((self.MUnumber, 1), dtype = float)
         ## Amplitude of the muscle unit twitch, in N (see atualizeForceNoHill function explanation).
         self.twitchAmp_N = np.zeros((self.MUnumber, 1), dtype = float)
+
         for i in xrange(0, self.MUnumber):
-            self.bSat[i] = self.unit[i].bSat
             self.twitchAmp_N[i] = self.unit[i].TwitchAmp_N
             self.twTet[i] = self.unit[i].twTet  
-        
-        ## The non-saturated activation signal of all motor units (see actMatrix explanation).
-        self.activation_Sat = np.zeros((self.MUnumber, 1), dtype = float)    
-        ## Dirac's delta approximation amplitude value. Is the inverse
-        ## of the simulation time step (\f$1/T\f$). 
-        self.diracDeltaValue = 1.0 / conf.timeStep_ms
-        
-        #Force
         ## Muscle force along time, in N.
         self.force = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         ## String indicating whther a Hill model is used or not. For now, it can be *No*.
@@ -167,26 +97,11 @@ class MotorUnitPool(object):
             + **t**: current instant, in ms.
         '''
         for i in self.unit: i.atualizeMotorUnit(t)
-        self.atualizeActivationSignal(t)
+        self.Activation.atualizeActivationSignal(t, self.unit)
         self.atualizeForce()
         self.timeIndex += 1
 
-    def atualizeActivationSignal(self, t):
-        '''
-        Update the activation signal of the motor units.
-
-        - Inputs:
-            + **t**: current instant, in ms.        
-        '''
-        for i in xrange(self.MUnumber):
-            self.an[3*i+1] = self.an[3*i]
-            self.an[3*i] = self.activation_nonSat[i]
-            if self.unit[i].terminalSpikeTrain and abs(t - self.conf.timeStep_ms - self.unit[i].terminalSpikeTrain[-1][0]) < 1e-6: 
-                self.an[3*i+2] = self.diracDeltaValue
-            else: self.an[3*i+2] =  0.0
-        
-        self.activation_nonSat = self.ActMatrix.dot(self.an)        
-        self.activation_Sat = twitchSaturation(self.activation_nonSat, self.bSat)
+    
         
     
     def atualizeForceNoHill(self):
@@ -209,7 +124,7 @@ class MotorUnitPool(object):
         }
         where \f$N_{MU}\f$ is the number of motor units in the pool.
         '''
-        self.force[self.timeIndex] = np.sum(self.activation_Sat * self.twitchAmp_N * self.twTet)            
+        self.force[self.timeIndex] = np.sum(self.Activation.activation_Sat * self.twitchAmp_N * self.twTet)            
 
     def listSpikes(self):
         '''
