@@ -47,7 +47,7 @@ def simulador():
         pools[0].poolTerminalSpikes[:, 1]+1, '.')
 
     plt.figure()
-    plt.plot(t, pools[0].force, '-')
+    plt.plot(t, pools[0].Muscle.force, '-')
 
     plt.show()
 
