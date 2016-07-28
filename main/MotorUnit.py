@@ -163,11 +163,14 @@ class MotorUnit(object):
         ## Configuration object with the simulation parameters.
         self.conf = conf
 
-        ## String with the type of the motor unit. It can be S (slow), FR (fast and resistant) and FF (fast and fatigable).
+        ## String with the type of the motor unit. It can be
+        ## *S* (slow), *FR* (fast and resistant) and
+        ## *FF** (fast and fatigable).
         self.kind = kind
         
         # Neural compartments
-        ## The instant of the last spie of the Motor unit at the Soma compartment.
+        ## The instant of the last spike of the Motor unit
+        ## at the Soma compartment.
         self.tSomaSpike = float("-inf")
         compartmentsList = ['dendrite', 'soma']
         ## Vector with the instants of spikes at the soma.
@@ -249,7 +252,7 @@ class MotorUnit(object):
         
         ## Contraction time of the twitch muscle unit, in ms.
         self.TwitchTc_ms = conf.parameterSet('twitchTimePeak', pool, index)
-        ## Amplutude of the muscle unit twitch, in N.
+        ## Amplitude of the muscle unit twitch, in N.
         self.TwitchAmp_N = conf.parameterSet('twitchPeak', pool, index)
         ## Parameter of the saturation.
         self.bSat = conf.parameterSet('bSat'+ activationModel,pool,index)
@@ -292,6 +295,13 @@ class MotorUnit(object):
 
             + **V**: Vector with the current potential value of all neural
             compartments of the motor unit.
+        
+        \f{equation}{
+            \frac{dV}{dt} = (I_{active} + GV+ I_{inj})C_inv   
+        }
+        where all the variables are vectors with the number of elements equal
+        to the number of compartments and \f$G\f$ is the conductance matrix built
+        in the compGCouplingMatrix function.
         '''
         for compartment in xrange(0, self.compNumber):  
             self.iIonic.itemset(compartment, self.compartment[compartment].computeCurrent(t, V.item(compartment)))

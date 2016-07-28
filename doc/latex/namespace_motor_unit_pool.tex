@@ -1,55 +1,54 @@
-\hypertarget{namespace_motor_unit_pool}{\section{Motor\-Unit\-Pool Namespace Reference}
-\label{namespace_motor_unit_pool}\index{Motor\-Unit\-Pool@{Motor\-Unit\-Pool}}
-}
+\hypertarget{namespace_motor_unit_pool}{}\section{Motor\+Unit\+Pool Namespace Reference}
+\label{namespace_motor_unit_pool}\index{Motor\+Unit\+Pool@{Motor\+Unit\+Pool}}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool}{Motor\-Unit\-Pool}
+class \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool}{Motor\+Unit\+Pool}
 \begin{DoxyCompactList}\small\item\em Class that implements a motor unit pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{namespace_motor_unit_pool_a3ed1b9ccd29068fac93964327dd54bf9}{twitch\-Saturation}
+def \hyperlink{namespace_motor_unit_pool_aacaa939935d8190221721483670a8b5e}{twitch\+Saturation} (activationsat, b)
 \begin{DoxyCompactList}\small\item\em Computes the muscle unit force after the nonlinear saturation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\hypertarget{namespace_motor_unit_pool_a3ed1b9ccd29068fac93964327dd54bf9}{\index{Motor\-Unit\-Pool@{Motor\-Unit\-Pool}!twitch\-Saturation@{twitch\-Saturation}}
-\index{twitch\-Saturation@{twitch\-Saturation}!MotorUnitPool@{Motor\-Unit\-Pool}}
-\subsubsection[{twitch\-Saturation}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\-Unit\-Pool.\-twitch\-Saturation (
+\index{Motor\+Unit\+Pool@{Motor\+Unit\+Pool}!twitch\+Saturation@{twitch\+Saturation}}
+\index{twitch\+Saturation@{twitch\+Saturation}!Motor\+Unit\+Pool@{Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{twitch\+Saturation(activationsat, b)}{twitchSaturation(activationsat, b)}}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\+Unit\+Pool.\+twitch\+Saturation (
 \begin{DoxyParamCaption}
-\item[{}]{force, }
+\item[{}]{activationsat, }
 \item[{}]{b}
 \end{DoxyParamCaption}
-)}}\label{namespace_motor_unit_pool_a3ed1b9ccd29068fac93964327dd54bf9}
+)}\hypertarget{namespace_motor_unit_pool_aacaa939935d8190221721483670a8b5e}{}\label{namespace_motor_unit_pool_aacaa939935d8190221721483670a8b5e}
 
 
 Computes the muscle unit force after the nonlinear saturation. 
 
-\begin{equation} F_{sat} = \frac{1-e^{-b.force}}{1+e^{-b.force}} \end{equation}
+\begin{equation} a_{sat} = \frac{1-e^{-b.a_{nSat}}}{1+e^{-b.a_{nSat}}} \end{equation}
 
 
 \begin{DoxyItemize}
-\item Inputs\-:
+\item Inputs\+:
 \begin{DoxyItemize}
-\item {\bfseries force}\-: force before the saturation.
-\item {\bfseries b}\-: saturation function parameter.
+\item {\bfseries activationsat}\+: activation signal before the saturation.
+\item {\bfseries b}\+: saturation function parameter.
 \end{DoxyItemize}
-\item Outputs\-:
+\item Outputs\+:
 \begin{DoxyItemize}
 \item Saturated force. 
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 31 of file Motor\-Unit\-Pool.\-py.
+Definition at line 31 of file Motor\+Unit\+Pool.\+py.
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespace_motor_unit_pool_a3ed1b9ccd29068fac93964327dd54bf9_icgraph}
+\includegraphics[width=350pt]{namespace_motor_unit_pool_aacaa939935d8190221721483670a8b5e_icgraph}
 \end{center}
 \end{figure}
 

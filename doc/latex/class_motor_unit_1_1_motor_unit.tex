@@ -1,6 +1,5 @@
-\hypertarget{class_motor_unit_1_1_motor_unit}{\section{Motor\-Unit.\-Motor\-Unit Class Reference}
-\label{class_motor_unit_1_1_motor_unit}\index{Motor\-Unit.\-Motor\-Unit@{Motor\-Unit.\-Motor\-Unit}}
-}
+\hypertarget{class_motor_unit_1_1_motor_unit}{}\section{Motor\+Unit.\+Motor\+Unit Class Reference}
+\label{class_motor_unit_1_1_motor_unit}\index{Motor\+Unit.\+Motor\+Unit@{Motor\+Unit.\+Motor\+Unit}}
 
 
 Class that implements a motor unit model.  
@@ -9,17 +8,17 @@ Class that implements a motor unit model.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{class_motor_unit_1_1_motor_unit_a5816d9af440be9c847293eff9c7a9f43}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+def \hyperlink{class_motor_unit_1_1_motor_unit_ac5228576ec1287f06debf92067c7402b}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{class_motor_unit_1_1_motor_unit_a10539f5129881188923f3a3a164d2cba}{conf}, pool, \hyperlink{class_motor_unit_1_1_motor_unit_a4f3205a9273aabb92d425992d91a1848}{index}, \hyperlink{class_motor_unit_1_1_motor_unit_a08ed5171ba46e0b1ea5bc7d08296c612}{kind})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-def \hyperlink{class_motor_unit_1_1_motor_unit_a1239418d3f8428a663ff99061710460f}{atualize\-Motor\-Unit}
+def \hyperlink{class_motor_unit_1_1_motor_unit_ab57693c2f49518b08639456595e92d87}{atualize\+Motor\+Unit} (self, t)
 \begin{DoxyCompactList}\small\item\em Atualize the dynamical and nondynamical (delay) parts of the motor unit. \end{DoxyCompactList}\item 
-def \hyperlink{class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247}{atualize\-Compartments}
+def \hyperlink{class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b}{atualize\+Compartments} (self, t)
 \begin{DoxyCompactList}\small\item\em Atualize all neural compartments. \end{DoxyCompactList}\item 
-def \hyperlink{class_motor_unit_1_1_motor_unit_af694436ac5bd3194cfcbe42b8a60180d}{d\-Vdt}
+def \hyperlink{class_motor_unit_1_1_motor_unit_adf30fdef09ac21cfc2a261b762a7f618}{d\+Vdt} (self, t, V)
 \begin{DoxyCompactList}\small\item\em Compute the potential derivative of all compartments of the motor unit. \end{DoxyCompactList}\item 
-def \hyperlink{class_motor_unit_1_1_motor_unit_accb8b6700ed06e1396b70af62a9f31c6}{add\-Soma\-Spike}
+def \hyperlink{class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534}{add\+Soma\+Spike} (self, t)
 \begin{DoxyCompactList}\small\item\em When the soma potential is above the threshold a spike is added tom the soma. \end{DoxyCompactList}\item 
-def \hyperlink{class_motor_unit_1_1_motor_unit_af9ed66e359c4402ae951d79d5264f566}{atualize\-Delay}
+def \hyperlink{class_motor_unit_1_1_motor_unit_a0aa5e024003845e3f48bc0e618068edc}{atualize\+Delay} (self, t)
 \begin{DoxyCompactList}\small\item\em Atualize the terminal spike train, by considering the Delay of the nerve. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -28,45 +27,45 @@ def \hyperlink{class_motor_unit_1_1_motor_unit_af9ed66e359c4402ae951d79d5264f566
 \begin{DoxyCompactList}\small\item\em \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters. \end{DoxyCompactList}\item 
 \hyperlink{class_motor_unit_1_1_motor_unit_a08ed5171ba46e0b1ea5bc7d08296c612}{kind}
 \begin{DoxyCompactList}\small\item\em String with the type of the motor unit. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_abca82ec2c7312bb475989bb45e82ca28}{t\-Soma\-Spike}
-\begin{DoxyCompactList}\small\item\em The instant of the last spie of the Motor unit at the Soma compartment. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_a8c86d98daa6c509e226ab165fa92515f}{soma\-Spike\-Train}
+\hyperlink{class_motor_unit_1_1_motor_unit_abca82ec2c7312bb475989bb45e82ca28}{t\+Soma\+Spike}
+\begin{DoxyCompactList}\small\item\em The instant of the last spike of the Motor unit at the Soma compartment. \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_1_1_motor_unit_a8c86d98daa6c509e226ab165fa92515f}{soma\+Spike\+Train}
 \begin{DoxyCompactList}\small\item\em Vector with the instants of spikes at the soma. \end{DoxyCompactList}\item 
 \hyperlink{class_motor_unit_1_1_motor_unit_a4f3205a9273aabb92d425992d91a1848}{index}
-\begin{DoxyCompactList}\small\item\em Integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Integer corresponding to the motor unit order in the pool, according to the Henneman\textquotesingle{}s principle (size principle). \end{DoxyCompactList}\item 
 \hyperlink{class_motor_unit_1_1_motor_unit_a6d4da7327031b3cb9c7041a4a790e524}{compartment}
 \begin{DoxyCompactList}\small\item\em Vector of \hyperlink{namespace_compartment}{Compartment} of the Motor Unit. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_affbd0b90f1dce6a0f929775e54f8c212}{threshold\-\_\-m\-V}
-\begin{DoxyCompactList}\small\item\em Value of the membrane potential, in m\-V, that is considered a spike. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_afe7281fb12c41102980b6b48d5a49713}{comp\-Number}
+\hyperlink{class_motor_unit_1_1_motor_unit_affbd0b90f1dce6a0f929775e54f8c212}{threshold\+\_\+mV}
+\begin{DoxyCompactList}\small\item\em Value of the membrane potential, in mV, that is considered a spike. \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_1_1_motor_unit_afe7281fb12c41102980b6b48d5a49713}{comp\+Number}
 \begin{DoxyCompactList}\small\item\em Number of compartments. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_aa8968f89250895ae2ae572e9106709f2}{v\-\_\-m\-V}
-\begin{DoxyCompactList}\small\item\em Vector with membrane potential,in m\-V, of all compartments. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_a0cf2afb5bd12374db56b9d9a5a1671e6}{capacitance\-Inv}
+\hyperlink{class_motor_unit_1_1_motor_unit_aa8968f89250895ae2ae572e9106709f2}{v\+\_\+mV}
+\begin{DoxyCompactList}\small\item\em Vector with membrane potential,in mV, of all compartments. \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_1_1_motor_unit_a0cf2afb5bd12374db56b9d9a5a1671e6}{capacitance\+Inv}
 \begin{DoxyCompactList}\small\item\em Vector with the inverse of the capacitance of all compartments. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_a0541858216e7d01582312f9a7a99d595}{i\-Ionic}
-\begin{DoxyCompactList}\small\item\em Vector with current, in n\-A, of each compartment coming from other elements of the model. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_a06045eca379d38892670a491dbac0829}{i\-Injected}
-\begin{DoxyCompactList}\small\item\em Vector with the current, in n\-A, injected in each compartment. \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_1_1_motor_unit_a0541858216e7d01582312f9a7a99d595}{i\+Ionic}
+\begin{DoxyCompactList}\small\item\em Vector with current, in nA, of each compartment coming from other elements of the model. \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_1_1_motor_unit_a06045eca379d38892670a491dbac0829}{i\+Injected}
+\begin{DoxyCompactList}\small\item\em Vector with the current, in nA, injected in each compartment. \end{DoxyCompactList}\item 
 \hyperlink{class_motor_unit_1_1_motor_unit_a9b9f157ab92b47470ca7ec6bd3473dd3}{G}
 \begin{DoxyCompactList}\small\item\em Matrix of the conductance of the motoneuron. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_a7cd2be92814b5892bdd18dafd824da9f}{soma\-Index}
+\hyperlink{class_motor_unit_1_1_motor_unit_a7cd2be92814b5892bdd18dafd824da9f}{soma\+Index}
 \begin{DoxyCompactList}\small\item\em index of the soma compartment. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_abbdaa195ac00926d96d509ae01dcda05}{M\-N\-Ref\-Per\-\_\-ms}
+\hyperlink{class_motor_unit_1_1_motor_unit_abbdaa195ac00926d96d509ae01dcda05}{M\+N\+Ref\+Per\+\_\+ms}
 \begin{DoxyCompactList}\small\item\em Refractory period, in ms, of the motoneuron. \end{DoxyCompactList}\item 
 \hyperlink{class_motor_unit_1_1_motor_unit_a754ee6b88fc2a09899da9f9b13bfbf59}{nerve}
 \begin{DoxyCompactList}\small\item\em String with type of the nerve. \end{DoxyCompactList}\item 
 \hyperlink{class_motor_unit_1_1_motor_unit_abe82ffa1e293d10225b67870a962eab8}{Delay}
-\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_axon_delay}{Axon\-Delay} object of the motor unit. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_a2e33990aaab69454943aa00db6b8d2eb}{terminal\-Spike\-Train}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_axon_delay}{Axon\+Delay} object of the motor unit. \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_1_1_motor_unit_a2e33990aaab69454943aa00db6b8d2eb}{terminal\+Spike\+Train}
 \begin{DoxyCompactList}\small\item\em Vector with the instants of spikes at the terminal. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_a083581c89ebb964e58721667307dd2bc}{Twitch\-Tc\-\_\-ms}
+\hyperlink{class_motor_unit_1_1_motor_unit_a083581c89ebb964e58721667307dd2bc}{Twitch\+Tc\+\_\+ms}
 \begin{DoxyCompactList}\small\item\em Contraction time of the twitch muscle unit, in ms. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_ad14af870eb3dd7468041853f2c6e8cab}{Twitch\-Amp\-\_\-\-N}
-\begin{DoxyCompactList}\small\item\em Amplutude of the muscle unit twitch, in N. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_a2256c241b36e0181e3530e6f791545a0}{b\-Sat}
+\hyperlink{class_motor_unit_1_1_motor_unit_ad14af870eb3dd7468041853f2c6e8cab}{Twitch\+Amp\+\_\+N}
+\begin{DoxyCompactList}\small\item\em Amplitude of the muscle unit twitch, in N. \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_1_1_motor_unit_a2256c241b36e0181e3530e6f791545a0}{b\+Sat}
 \begin{DoxyCompactList}\small\item\em Parameter of the saturation. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_1_1_motor_unit_a2a466c5f2f798901c1c438f9d57c2221}{tw\-Tet}
+\hyperlink{class_motor_unit_1_1_motor_unit_a2a466c5f2f798901c1c438f9d57c2221}{tw\+Tet}
 \begin{DoxyCompactList}\small\item\em Twitch-\/ tetanus relationship. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -75,14 +74,14 @@ Class that implements a motor unit model.
 
 Encompasses a motoneuron and a muscle unit. 
 
-Definition at line 147 of file Motor\-Unit.\-py.
+Definition at line 148 of file Motor\+Unit.\+py.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_motor_unit_1_1_motor_unit_a5816d9af440be9c847293eff9c7a9f43}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
-\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\-Unit.\-Motor\-Unit.\-\_\-\-\_\-init\-\_\-\-\_\- (
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, conf, pool, index, kind)}{__init__(self, conf, pool, index, kind)}}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\+Unit.\+Motor\+Unit.\+\_\+\+\_\+init\+\_\+\+\_\+ (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{conf, }
@@ -90,201 +89,201 @@ Definition at line 147 of file Motor\-Unit.\-py.
 \item[{}]{index, }
 \item[{}]{kind}
 \end{DoxyParamCaption}
-)}}\label{class_motor_unit_1_1_motor_unit_a5816d9af440be9c847293eff9c7a9f43}
+)}\hypertarget{class_motor_unit_1_1_motor_unit_ac5228576ec1287f06debf92067c7402b}{}\label{class_motor_unit_1_1_motor_unit_ac5228576ec1287f06debf92067c7402b}
 
 
 Constructor. 
 
 
 \begin{DoxyItemize}
-\item Inputs\-:
+\item Inputs\+:
 \begin{DoxyItemize}
-\item {\bfseries conf}\-: \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters.
-\item {\bfseries pool}\-: string with Motor unit pool to which the motor unit belongs.
-\item {\bfseries index}\-: integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle).
-\item {\bfseries kind}\-: string with the type of the motor unit. It can be S (slow), F\-R (fast and resistant), and F\-F (fast and fatigable). 
+\item {\bfseries conf}\+: \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters.
+\item {\bfseries pool}\+: string with Motor unit pool to which the motor unit belongs.
+\item {\bfseries index}\+: integer corresponding to the motor unit order in the pool, according to the Henneman\textquotesingle{}s principle (size principle).
+\item {\bfseries kind}\+: string with the type of the motor unit. It can be {\itshape S} (slow), {\itshape FR} (fast and resistant), and {\itshape FF} (fast and fatigable). 
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 165 of file Motor\-Unit.\-py.
+Definition at line 167 of file Motor\+Unit.\+py.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_motor_unit_1_1_motor_unit_accb8b6700ed06e1396b70af62a9f31c6}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!add\-Soma\-Spike@{add\-Soma\-Spike}}
-\index{add\-Soma\-Spike@{add\-Soma\-Spike}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{add\-Soma\-Spike}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\-Unit.\-Motor\-Unit.\-add\-Soma\-Spike (
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!add\+Soma\+Spike@{add\+Soma\+Spike}}
+\index{add\+Soma\+Spike@{add\+Soma\+Spike}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{add\+Soma\+Spike(self, t)}{addSomaSpike(self, t)}}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\+Unit.\+Motor\+Unit.\+add\+Soma\+Spike (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{t}
 \end{DoxyParamCaption}
-)}}\label{class_motor_unit_1_1_motor_unit_accb8b6700ed06e1396b70af62a9f31c6}
+)}\hypertarget{class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534}{}\label{class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534}
 
 
 When the soma potential is above the threshold a spike is added tom the soma. 
 
 
 \begin{DoxyItemize}
-\item Inputs\-:
+\item Inputs\+:
 \begin{DoxyItemize}
-\item {\bfseries t}\-: current instant, in ms. 
+\item {\bfseries t}\+: current instant, in ms. 
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 316 of file Motor\-Unit.\-py.
+Definition at line 328 of file Motor\+Unit.\+py.
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_motor_unit_1_1_motor_unit_accb8b6700ed06e1396b70af62a9f31c6_icgraph}
+\includegraphics[width=350pt]{class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!atualize\-Compartments@{atualize\-Compartments}}
-\index{atualize\-Compartments@{atualize\-Compartments}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{atualize\-Compartments}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\-Unit.\-Motor\-Unit.\-atualize\-Compartments (
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!atualize\+Compartments@{atualize\+Compartments}}
+\index{atualize\+Compartments@{atualize\+Compartments}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{atualize\+Compartments(self, t)}{atualizeCompartments(self, t)}}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\+Unit.\+Motor\+Unit.\+atualize\+Compartments (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{t}
 \end{DoxyParamCaption}
-)}}\label{class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247}
+)}\hypertarget{class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b}{}\label{class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b}
 
 
 Atualize all neural compartments. 
 
 
 \begin{DoxyItemize}
-\item Inputs\-:
+\item Inputs\+:
 \begin{DoxyItemize}
-\item {\bfseries t}\-: current instant, in ms. 
+\item {\bfseries t}\+: current instant, in ms. 
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 286 of file Motor\-Unit.\-py.
+Definition at line 291 of file Motor\+Unit.\+py.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247_cgraph}
+\includegraphics[width=350pt]{class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_motor_unit_1_1_motor_unit_ae4093022b48cee82d78c99ecc24cb247_icgraph}
+\includegraphics[width=350pt]{class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_motor_unit_1_1_motor_unit_af9ed66e359c4402ae951d79d5264f566}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!atualize\-Delay@{atualize\-Delay}}
-\index{atualize\-Delay@{atualize\-Delay}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{atualize\-Delay}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\-Unit.\-Motor\-Unit.\-atualize\-Delay (
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!atualize\+Delay@{atualize\+Delay}}
+\index{atualize\+Delay@{atualize\+Delay}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{atualize\+Delay(self, t)}{atualizeDelay(self, t)}}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\+Unit.\+Motor\+Unit.\+atualize\+Delay (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{t}
 \end{DoxyParamCaption}
-)}}\label{class_motor_unit_1_1_motor_unit_af9ed66e359c4402ae951d79d5264f566}
+)}\hypertarget{class_motor_unit_1_1_motor_unit_a0aa5e024003845e3f48bc0e618068edc}{}\label{class_motor_unit_1_1_motor_unit_a0aa5e024003845e3f48bc0e618068edc}
 
 
 Atualize the terminal spike train, by considering the Delay of the nerve. 
 
 
 \begin{DoxyItemize}
-\item Inputs\-:
+\item Inputs\+:
 \begin{DoxyItemize}
-\item {\bfseries t}\-: current instant, in ms. 
+\item {\bfseries t}\+: current instant, in ms. 
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 332 of file Motor\-Unit.\-py.
+Definition at line 344 of file Motor\+Unit.\+py.
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_motor_unit_1_1_motor_unit_af9ed66e359c4402ae951d79d5264f566_icgraph}
+\includegraphics[width=350pt]{class_motor_unit_1_1_motor_unit_a0aa5e024003845e3f48bc0e618068edc_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a1239418d3f8428a663ff99061710460f}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!atualize\-Motor\-Unit@{atualize\-Motor\-Unit}}
-\index{atualize\-Motor\-Unit@{atualize\-Motor\-Unit}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{atualize\-Motor\-Unit}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\-Unit.\-Motor\-Unit.\-atualize\-Motor\-Unit (
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!atualize\+Motor\+Unit@{atualize\+Motor\+Unit}}
+\index{atualize\+Motor\+Unit@{atualize\+Motor\+Unit}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{atualize\+Motor\+Unit(self, t)}{atualizeMotorUnit(self, t)}}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\+Unit.\+Motor\+Unit.\+atualize\+Motor\+Unit (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{t}
 \end{DoxyParamCaption}
-)}}\label{class_motor_unit_1_1_motor_unit_a1239418d3f8428a663ff99061710460f}
+)}\hypertarget{class_motor_unit_1_1_motor_unit_ab57693c2f49518b08639456595e92d87}{}\label{class_motor_unit_1_1_motor_unit_ab57693c2f49518b08639456595e92d87}
 
 
 Atualize the dynamical and nondynamical (delay) parts of the motor unit. 
 
 
 \begin{DoxyItemize}
-\item Inputs\-:
+\item Inputs\+:
 \begin{DoxyItemize}
-\item {\bfseries t}\-: current instant, in ms. 
+\item {\bfseries t}\+: current instant, in ms. 
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 274 of file Motor\-Unit.\-py.
+Definition at line 279 of file Motor\+Unit.\+py.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_motor_unit_1_1_motor_unit_a1239418d3f8428a663ff99061710460f_cgraph}
+\includegraphics[width=350pt]{class_motor_unit_1_1_motor_unit_ab57693c2f49518b08639456595e92d87_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_motor_unit_1_1_motor_unit_af694436ac5bd3194cfcbe42b8a60180d}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!d\-Vdt@{d\-Vdt}}
-\index{d\-Vdt@{d\-Vdt}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{d\-Vdt}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\-Unit.\-Motor\-Unit.\-d\-Vdt (
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!d\+Vdt@{d\+Vdt}}
+\index{d\+Vdt@{d\+Vdt}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{d\+Vdt(self, t, V)}{dVdt(self, t, V)}}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\+Unit.\+Motor\+Unit.\+d\+Vdt (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{t, }
 \item[{}]{V}
 \end{DoxyParamCaption}
-)}}\label{class_motor_unit_1_1_motor_unit_af694436ac5bd3194cfcbe42b8a60180d}
+)}\hypertarget{class_motor_unit_1_1_motor_unit_adf30fdef09ac21cfc2a261b762a7f618}{}\label{class_motor_unit_1_1_motor_unit_adf30fdef09ac21cfc2a261b762a7f618}
 
 
 Compute the potential derivative of all compartments of the motor unit. 
 
 
 \begin{DoxyItemize}
-\item Inputs\-:
+\item Inputs\+:
 \begin{DoxyItemize}
-\item {\bfseries t}\-: current instant, in ms.
-\item {\bfseries V}\-: Vector with the current potential value of all neural compartments of the motor unit. 
+\item {\bfseries t}\+: current instant, in ms.
+\item {\bfseries V}\+: Vector with the current potential value of all neural compartments of the motor unit. 
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 301 of file Motor\-Unit.\-py.
+Definition at line 314 of file Motor\+Unit.\+py.
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_motor_unit_1_1_motor_unit_af694436ac5bd3194cfcbe42b8a60180d_icgraph}
+\includegraphics[width=350pt]{class_motor_unit_1_1_motor_unit_adf30fdef09ac21cfc2a261b762a7f618_icgraph}
 \end{center}
 \end{figure}
 
@@ -292,250 +291,250 @@ Here is the caller graph for this function\-:\nopagebreak
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_motor_unit_1_1_motor_unit_a2256c241b36e0181e3530e6f791545a0}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!b\-Sat@{b\-Sat}}
-\index{b\-Sat@{b\-Sat}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{b\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-b\-Sat}}\label{class_motor_unit_1_1_motor_unit_a2256c241b36e0181e3530e6f791545a0}
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!b\+Sat@{b\+Sat}}
+\index{b\+Sat@{b\+Sat}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{b\+Sat}{bSat}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+b\+Sat}\hypertarget{class_motor_unit_1_1_motor_unit_a2256c241b36e0181e3530e6f791545a0}{}\label{class_motor_unit_1_1_motor_unit_a2256c241b36e0181e3530e6f791545a0}
 
 
 Parameter of the saturation. 
 
 
 
-Definition at line 259 of file Motor\-Unit.\-py.
+Definition at line 264 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a0cf2afb5bd12374db56b9d9a5a1671e6}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!capacitance\-Inv@{capacitance\-Inv}}
-\index{capacitance\-Inv@{capacitance\-Inv}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{capacitance\-Inv}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-capacitance\-Inv}}\label{class_motor_unit_1_1_motor_unit_a0cf2afb5bd12374db56b9d9a5a1671e6}
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!capacitance\+Inv@{capacitance\+Inv}}
+\index{capacitance\+Inv@{capacitance\+Inv}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{capacitance\+Inv}{capacitanceInv}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+capacitance\+Inv}\hypertarget{class_motor_unit_1_1_motor_unit_a0cf2afb5bd12374db56b9d9a5a1671e6}{}\label{class_motor_unit_1_1_motor_unit_a0cf2afb5bd12374db56b9d9a5a1671e6}
 
 
 Vector with the inverse of the capacitance of all compartments. 
 
 
 
-Definition at line 211 of file Motor\-Unit.\-py.
+Definition at line 216 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a6d4da7327031b3cb9c7041a4a790e524}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!compartment@{compartment}}
-\index{compartment@{compartment}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{compartment}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-compartment}}\label{class_motor_unit_1_1_motor_unit_a6d4da7327031b3cb9c7041a4a790e524}
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!compartment@{compartment}}
+\index{compartment@{compartment}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{compartment}{compartment}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+compartment}\hypertarget{class_motor_unit_1_1_motor_unit_a6d4da7327031b3cb9c7041a4a790e524}{}\label{class_motor_unit_1_1_motor_unit_a6d4da7327031b3cb9c7041a4a790e524}
 
 
 Vector of \hyperlink{namespace_compartment}{Compartment} of the Motor Unit. 
 
 
 
-Definition at line 182 of file Motor\-Unit.\-py.
+Definition at line 187 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_afe7281fb12c41102980b6b48d5a49713}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!comp\-Number@{comp\-Number}}
-\index{comp\-Number@{comp\-Number}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{comp\-Number}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-comp\-Number}}\label{class_motor_unit_1_1_motor_unit_afe7281fb12c41102980b6b48d5a49713}
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!comp\+Number@{comp\+Number}}
+\index{comp\+Number@{comp\+Number}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{comp\+Number}{compNumber}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+comp\+Number}\hypertarget{class_motor_unit_1_1_motor_unit_afe7281fb12c41102980b6b48d5a49713}{}\label{class_motor_unit_1_1_motor_unit_afe7281fb12c41102980b6b48d5a49713}
 
 
 Number of compartments. 
 
 
 
-Definition at line 189 of file Motor\-Unit.\-py.
+Definition at line 194 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a10539f5129881188923f3a3a164d2cba}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!conf@{conf}}
-\index{conf@{conf}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{conf}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-conf}}\label{class_motor_unit_1_1_motor_unit_a10539f5129881188923f3a3a164d2cba}
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!conf@{conf}}
+\index{conf@{conf}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{conf}{conf}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+conf}\hypertarget{class_motor_unit_1_1_motor_unit_a10539f5129881188923f3a3a164d2cba}{}\label{class_motor_unit_1_1_motor_unit_a10539f5129881188923f3a3a164d2cba}
 
 
 \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters. 
 
 
 
-Definition at line 168 of file Motor\-Unit.\-py.
+Definition at line 170 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_abe82ffa1e293d10225b67870a962eab8}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!Delay@{Delay}}
-\index{Delay@{Delay}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{Delay}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-Delay}}\label{class_motor_unit_1_1_motor_unit_abe82ffa1e293d10225b67870a962eab8}
-
-
-\hyperlink{namespace_axon_delay}{Axon\-Delay} object of the motor unit. 
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!Delay@{Delay}}
+\index{Delay@{Delay}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{Delay}{Delay}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+Delay}\hypertarget{class_motor_unit_1_1_motor_unit_abe82ffa1e293d10225b67870a962eab8}{}\label{class_motor_unit_1_1_motor_unit_abe82ffa1e293d10225b67870a962eab8}
 
 
+\hyperlink{namespace_axon_delay}{Axon\+Delay} object of the motor unit. 
 
-Definition at line 244 of file Motor\-Unit.\-py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a9b9f157ab92b47470ca7ec6bd3473dd3}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!G@{G}}
-\index{G@{G}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{G}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-G}}\label{class_motor_unit_1_1_motor_unit_a9b9f157ab92b47470ca7ec6bd3473dd3}
+
+Definition at line 249 of file Motor\+Unit.\+py.
+
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!G@{G}}
+\index{G@{G}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{G}{G}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+G}\hypertarget{class_motor_unit_1_1_motor_unit_a9b9f157ab92b47470ca7ec6bd3473dd3}{}\label{class_motor_unit_1_1_motor_unit_a9b9f157ab92b47470ca7ec6bd3473dd3}
 
 
 Matrix of the conductance of the motoneuron. 
 
-Multiplied by the vector self.\-v\-\_\-m\-V, results in the passive currents of each compartment. 
+Multiplied by the vector self.\+v\+\_\+mV, results in the passive currents of each compartment. 
 
-Definition at line 226 of file Motor\-Unit.\-py.
+Definition at line 231 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a06045eca379d38892670a491dbac0829}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!i\-Injected@{i\-Injected}}
-\index{i\-Injected@{i\-Injected}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{i\-Injected}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-i\-Injected}}\label{class_motor_unit_1_1_motor_unit_a06045eca379d38892670a491dbac0829}
-
-
-Vector with the current, in n\-A, injected in each compartment. 
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!i\+Injected@{i\+Injected}}
+\index{i\+Injected@{i\+Injected}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{i\+Injected}{iInjected}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+i\+Injected}\hypertarget{class_motor_unit_1_1_motor_unit_a06045eca379d38892670a491dbac0829}{}\label{class_motor_unit_1_1_motor_unit_a06045eca379d38892670a491dbac0829}
 
 
-
-Definition at line 217 of file Motor\-Unit.\-py.
-
-\hypertarget{class_motor_unit_1_1_motor_unit_a0541858216e7d01582312f9a7a99d595}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!i\-Ionic@{i\-Ionic}}
-\index{i\-Ionic@{i\-Ionic}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{i\-Ionic}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-i\-Ionic}}\label{class_motor_unit_1_1_motor_unit_a0541858216e7d01582312f9a7a99d595}
+Vector with the current, in nA, injected in each compartment. 
 
 
-Vector with current, in n\-A, of each compartment coming from other elements of the model. 
+
+Definition at line 222 of file Motor\+Unit.\+py.
+
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!i\+Ionic@{i\+Ionic}}
+\index{i\+Ionic@{i\+Ionic}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{i\+Ionic}{iIonic}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+i\+Ionic}\hypertarget{class_motor_unit_1_1_motor_unit_a0541858216e7d01582312f9a7a99d595}{}\label{class_motor_unit_1_1_motor_unit_a0541858216e7d01582312f9a7a99d595}
+
+
+Vector with current, in nA, of each compartment coming from other elements of the model. 
 
 For example from ionic channels and synapses. 
 
-Definition at line 215 of file Motor\-Unit.\-py.
+Definition at line 220 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a4f3205a9273aabb92d425992d91a1848}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!index@{index}}
-\index{index@{index}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-index}}\label{class_motor_unit_1_1_motor_unit_a4f3205a9273aabb92d425992d91a1848}
-
-
-Integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle). 
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!index@{index}}
+\index{index@{index}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{index}{index}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+index}\hypertarget{class_motor_unit_1_1_motor_unit_a4f3205a9273aabb92d425992d91a1848}{}\label{class_motor_unit_1_1_motor_unit_a4f3205a9273aabb92d425992d91a1848}
 
 
+Integer corresponding to the motor unit order in the pool, according to the Henneman\textquotesingle{}s principle (size principle). 
 
-Definition at line 180 of file Motor\-Unit.\-py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a08ed5171ba46e0b1ea5bc7d08296c612}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!kind@{kind}}
-\index{kind@{kind}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{kind}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-kind}}\label{class_motor_unit_1_1_motor_unit_a08ed5171ba46e0b1ea5bc7d08296c612}
+
+Definition at line 185 of file Motor\+Unit.\+py.
+
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!kind@{kind}}
+\index{kind@{kind}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{kind}{kind}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+kind}\hypertarget{class_motor_unit_1_1_motor_unit_a08ed5171ba46e0b1ea5bc7d08296c612}{}\label{class_motor_unit_1_1_motor_unit_a08ed5171ba46e0b1ea5bc7d08296c612}
 
 
 String with the type of the motor unit. 
 
-It can be S (slow), F\-R (fast and resistant) and F\-F (fast and fatigable). 
+It can be {\itshape S} (slow), {\itshape FR} (fast and resistant) and $\ast$\+F\+F$\ast$$\ast$ (fast and fatigable). 
 
-Definition at line 171 of file Motor\-Unit.\-py.
+Definition at line 175 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_abbdaa195ac00926d96d509ae01dcda05}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!M\-N\-Ref\-Per\-\_\-ms@{M\-N\-Ref\-Per\-\_\-ms}}
-\index{M\-N\-Ref\-Per\-\_\-ms@{M\-N\-Ref\-Per\-\_\-ms}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{M\-N\-Ref\-Per\-\_\-ms}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-M\-N\-Ref\-Per\-\_\-ms}}\label{class_motor_unit_1_1_motor_unit_abbdaa195ac00926d96d509ae01dcda05}
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!M\+N\+Ref\+Per\+\_\+ms@{M\+N\+Ref\+Per\+\_\+ms}}
+\index{M\+N\+Ref\+Per\+\_\+ms@{M\+N\+Ref\+Per\+\_\+ms}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{M\+N\+Ref\+Per\+\_\+ms}{MNRefPer_ms}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+M\+N\+Ref\+Per\+\_\+ms}\hypertarget{class_motor_unit_1_1_motor_unit_abbdaa195ac00926d96d509ae01dcda05}{}\label{class_motor_unit_1_1_motor_unit_abbdaa195ac00926d96d509ae01dcda05}
 
 
 Refractory period, in ms, of the motoneuron. 
 
 
 
-Definition at line 233 of file Motor\-Unit.\-py.
+Definition at line 238 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a754ee6b88fc2a09899da9f9b13bfbf59}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!nerve@{nerve}}
-\index{nerve@{nerve}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{nerve}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-nerve}}\label{class_motor_unit_1_1_motor_unit_a754ee6b88fc2a09899da9f9b13bfbf59}
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!nerve@{nerve}}
+\index{nerve@{nerve}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{nerve}{nerve}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+nerve}\hypertarget{class_motor_unit_1_1_motor_unit_a754ee6b88fc2a09899da9f9b13bfbf59}{}\label{class_motor_unit_1_1_motor_unit_a754ee6b88fc2a09899da9f9b13bfbf59}
 
 
 String with type of the nerve. 
 
-It can be P\-T\-N (posterior tibial nerve) or C\-P\-N (common peroneal nerve). 
+It can be P\+TN (posterior tibial nerve) or C\+PN (common peroneal nerve). 
 
-Definition at line 239 of file Motor\-Unit.\-py.
+Definition at line 244 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a7cd2be92814b5892bdd18dafd824da9f}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!soma\-Index@{soma\-Index}}
-\index{soma\-Index@{soma\-Index}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{soma\-Index}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-soma\-Index}}\label{class_motor_unit_1_1_motor_unit_a7cd2be92814b5892bdd18dafd824da9f}
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!soma\+Index@{soma\+Index}}
+\index{soma\+Index@{soma\+Index}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{soma\+Index}{somaIndex}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+soma\+Index}\hypertarget{class_motor_unit_1_1_motor_unit_a7cd2be92814b5892bdd18dafd824da9f}{}\label{class_motor_unit_1_1_motor_unit_a7cd2be92814b5892bdd18dafd824da9f}
 
 
 index of the soma compartment. 
 
 
 
-Definition at line 230 of file Motor\-Unit.\-py.
+Definition at line 235 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a8c86d98daa6c509e226ab165fa92515f}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!soma\-Spike\-Train@{soma\-Spike\-Train}}
-\index{soma\-Spike\-Train@{soma\-Spike\-Train}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{soma\-Spike\-Train}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-soma\-Spike\-Train}}\label{class_motor_unit_1_1_motor_unit_a8c86d98daa6c509e226ab165fa92515f}
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!soma\+Spike\+Train@{soma\+Spike\+Train}}
+\index{soma\+Spike\+Train@{soma\+Spike\+Train}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{soma\+Spike\+Train}{somaSpikeTrain}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+soma\+Spike\+Train}\hypertarget{class_motor_unit_1_1_motor_unit_a8c86d98daa6c509e226ab165fa92515f}{}\label{class_motor_unit_1_1_motor_unit_a8c86d98daa6c509e226ab165fa92515f}
 
 
 Vector with the instants of spikes at the soma. 
 
 
 
-Definition at line 178 of file Motor\-Unit.\-py.
+Definition at line 183 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a2e33990aaab69454943aa00db6b8d2eb}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!terminal\-Spike\-Train@{terminal\-Spike\-Train}}
-\index{terminal\-Spike\-Train@{terminal\-Spike\-Train}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{terminal\-Spike\-Train}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-terminal\-Spike\-Train}}\label{class_motor_unit_1_1_motor_unit_a2e33990aaab69454943aa00db6b8d2eb}
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!terminal\+Spike\+Train@{terminal\+Spike\+Train}}
+\index{terminal\+Spike\+Train@{terminal\+Spike\+Train}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{terminal\+Spike\+Train}{terminalSpikeTrain}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+terminal\+Spike\+Train}\hypertarget{class_motor_unit_1_1_motor_unit_a2e33990aaab69454943aa00db6b8d2eb}{}\label{class_motor_unit_1_1_motor_unit_a2e33990aaab69454943aa00db6b8d2eb}
 
 
 Vector with the instants of spikes at the terminal. 
 
 
 
-Definition at line 248 of file Motor\-Unit.\-py.
+Definition at line 253 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_affbd0b90f1dce6a0f929775e54f8c212}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!threshold\-\_\-m\-V@{threshold\-\_\-m\-V}}
-\index{threshold\-\_\-m\-V@{threshold\-\_\-m\-V}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{threshold\-\_\-m\-V}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-threshold\-\_\-m\-V}}\label{class_motor_unit_1_1_motor_unit_affbd0b90f1dce6a0f929775e54f8c212}
-
-
-Value of the membrane potential, in m\-V, that is considered a spike. 
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!threshold\+\_\+mV@{threshold\+\_\+mV}}
+\index{threshold\+\_\+mV@{threshold\+\_\+mV}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{threshold\+\_\+mV}{threshold_mV}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+threshold\+\_\+mV}\hypertarget{class_motor_unit_1_1_motor_unit_affbd0b90f1dce6a0f929775e54f8c212}{}\label{class_motor_unit_1_1_motor_unit_affbd0b90f1dce6a0f929775e54f8c212}
 
 
-
-Definition at line 184 of file Motor\-Unit.\-py.
-
-\hypertarget{class_motor_unit_1_1_motor_unit_abca82ec2c7312bb475989bb45e82ca28}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!t\-Soma\-Spike@{t\-Soma\-Spike}}
-\index{t\-Soma\-Spike@{t\-Soma\-Spike}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{t\-Soma\-Spike}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-t\-Soma\-Spike}}\label{class_motor_unit_1_1_motor_unit_abca82ec2c7312bb475989bb45e82ca28}
-
-
-The instant of the last spie of the Motor unit at the Soma compartment. 
+Value of the membrane potential, in mV, that is considered a spike. 
 
 
 
-Definition at line 175 of file Motor\-Unit.\-py.
+Definition at line 189 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_ad14af870eb3dd7468041853f2c6e8cab}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!Twitch\-Amp\-\_\-\-N@{Twitch\-Amp\-\_\-\-N}}
-\index{Twitch\-Amp\-\_\-\-N@{Twitch\-Amp\-\_\-\-N}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{Twitch\-Amp\-\_\-\-N}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-Twitch\-Amp\-\_\-\-N}}\label{class_motor_unit_1_1_motor_unit_ad14af870eb3dd7468041853f2c6e8cab}
-
-
-Amplutude of the muscle unit twitch, in N. 
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!t\+Soma\+Spike@{t\+Soma\+Spike}}
+\index{t\+Soma\+Spike@{t\+Soma\+Spike}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{t\+Soma\+Spike}{tSomaSpike}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+t\+Soma\+Spike}\hypertarget{class_motor_unit_1_1_motor_unit_abca82ec2c7312bb475989bb45e82ca28}{}\label{class_motor_unit_1_1_motor_unit_abca82ec2c7312bb475989bb45e82ca28}
 
 
+The instant of the last spike of the Motor unit at the Soma compartment. 
 
-Definition at line 257 of file Motor\-Unit.\-py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a083581c89ebb964e58721667307dd2bc}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!Twitch\-Tc\-\_\-ms@{Twitch\-Tc\-\_\-ms}}
-\index{Twitch\-Tc\-\_\-ms@{Twitch\-Tc\-\_\-ms}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{Twitch\-Tc\-\_\-ms}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-Twitch\-Tc\-\_\-ms}}\label{class_motor_unit_1_1_motor_unit_a083581c89ebb964e58721667307dd2bc}
+
+Definition at line 180 of file Motor\+Unit.\+py.
+
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!Twitch\+Amp\+\_\+N@{Twitch\+Amp\+\_\+N}}
+\index{Twitch\+Amp\+\_\+N@{Twitch\+Amp\+\_\+N}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{Twitch\+Amp\+\_\+N}{TwitchAmp_N}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+Twitch\+Amp\+\_\+N}\hypertarget{class_motor_unit_1_1_motor_unit_ad14af870eb3dd7468041853f2c6e8cab}{}\label{class_motor_unit_1_1_motor_unit_ad14af870eb3dd7468041853f2c6e8cab}
+
+
+Amplitude of the muscle unit twitch, in N. 
+
+
+
+Definition at line 262 of file Motor\+Unit.\+py.
+
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!Twitch\+Tc\+\_\+ms@{Twitch\+Tc\+\_\+ms}}
+\index{Twitch\+Tc\+\_\+ms@{Twitch\+Tc\+\_\+ms}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{Twitch\+Tc\+\_\+ms}{TwitchTc_ms}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+Twitch\+Tc\+\_\+ms}\hypertarget{class_motor_unit_1_1_motor_unit_a083581c89ebb964e58721667307dd2bc}{}\label{class_motor_unit_1_1_motor_unit_a083581c89ebb964e58721667307dd2bc}
 
 
 Contraction time of the twitch muscle unit, in ms. 
 
 
 
-Definition at line 255 of file Motor\-Unit.\-py.
+Definition at line 260 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_a2a466c5f2f798901c1c438f9d57c2221}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!tw\-Tet@{tw\-Tet}}
-\index{tw\-Tet@{tw\-Tet}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{tw\-Tet}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-tw\-Tet}}\label{class_motor_unit_1_1_motor_unit_a2a466c5f2f798901c1c438f9d57c2221}
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!tw\+Tet@{tw\+Tet}}
+\index{tw\+Tet@{tw\+Tet}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{tw\+Tet}{twTet}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+tw\+Tet}\hypertarget{class_motor_unit_1_1_motor_unit_a2a466c5f2f798901c1c438f9d57c2221}{}\label{class_motor_unit_1_1_motor_unit_a2a466c5f2f798901c1c438f9d57c2221}
 
 
 Twitch-\/ tetanus relationship. 
 
 
 
-Definition at line 261 of file Motor\-Unit.\-py.
+Definition at line 266 of file Motor\+Unit.\+py.
 
-\hypertarget{class_motor_unit_1_1_motor_unit_aa8968f89250895ae2ae572e9106709f2}{\index{Motor\-Unit\-::\-Motor\-Unit@{Motor\-Unit\-::\-Motor\-Unit}!v\-\_\-m\-V@{v\-\_\-m\-V}}
-\index{v\-\_\-m\-V@{v\-\_\-m\-V}!MotorUnit::MotorUnit@{Motor\-Unit\-::\-Motor\-Unit}}
-\subsubsection[{v\-\_\-m\-V}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit.\-Motor\-Unit.\-v\-\_\-m\-V}}\label{class_motor_unit_1_1_motor_unit_aa8968f89250895ae2ae572e9106709f2}
-
-
-Vector with membrane potential,in m\-V, of all compartments. 
+\index{Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}!v\+\_\+mV@{v\+\_\+mV}}
+\index{v\+\_\+mV@{v\+\_\+mV}!Motor\+Unit\+::\+Motor\+Unit@{Motor\+Unit\+::\+Motor\+Unit}}
+\subsubsection[{\texorpdfstring{v\+\_\+mV}{v_mV}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit.\+Motor\+Unit.\+v\+\_\+mV}\hypertarget{class_motor_unit_1_1_motor_unit_aa8968f89250895ae2ae572e9106709f2}{}\label{class_motor_unit_1_1_motor_unit_aa8968f89250895ae2ae572e9106709f2}
 
 
-
-Definition at line 191 of file Motor\-Unit.\-py.
+Vector with membrane potential,in mV, of all compartments. 
 
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+Definition at line 196 of file Motor\+Unit.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{_motor_unit_8py}{Motor\-Unit.\-py}\end{DoxyCompactItemize}
+\hyperlink{_motor_unit_8py}{Motor\+Unit.\+py}\end{DoxyCompactItemize}

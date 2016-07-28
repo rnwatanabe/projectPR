@@ -1,57 +1,56 @@
-\hypertarget{namespace_point_process_generator}{\section{Point\-Process\-Generator Namespace Reference}
-\label{namespace_point_process_generator}\index{Point\-Process\-Generator@{Point\-Process\-Generator}}
-}
+\hypertarget{namespace_point_process_generator}{}\section{Point\+Process\+Generator Namespace Reference}
+\label{namespace_point_process_generator}\index{Point\+Process\+Generator@{Point\+Process\+Generator}}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{class_point_process_generator_1_1_point_process_generator}{Point\-Process\-Generator}
+class \hyperlink{class_point_process_generator_1_1_point_process_generator}{Point\+Process\+Generator}
 \begin{DoxyCompactList}\small\item\em Generator of point processes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{namespace_point_process_generator_ad591b4c4f24356425c2958ea43647ddd}{gamma\-Point}
-\begin{DoxyCompactList}\small\item\em Generates a number according to a Gamma Distribution with an integer order {\bfseries Gamma\-Order}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+def \hyperlink{namespace_point_process_generator_a01488b4f69653d1fb9653b7a8d37744e}{gamma\+Point} (Gamma\+Order, Gamma\+Order\+Inv)
+\begin{DoxyCompactList}\small\item\em Generates a number according to a Gamma Distribution with an integer order {\bfseries Gamma\+Order}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\hypertarget{namespace_point_process_generator_ad591b4c4f24356425c2958ea43647ddd}{\index{Point\-Process\-Generator@{Point\-Process\-Generator}!gamma\-Point@{gamma\-Point}}
-\index{gamma\-Point@{gamma\-Point}!PointProcessGenerator@{Point\-Process\-Generator}}
-\subsubsection[{gamma\-Point}]{\setlength{\rightskip}{0pt plus 5cm}def Point\-Process\-Generator.\-gamma\-Point (
+\index{Point\+Process\+Generator@{Point\+Process\+Generator}!gamma\+Point@{gamma\+Point}}
+\index{gamma\+Point@{gamma\+Point}!Point\+Process\+Generator@{Point\+Process\+Generator}}
+\subsubsection[{\texorpdfstring{gamma\+Point(\+Gamma\+Order, Gamma\+Order\+Inv)}{gammaPoint(GammaOrder, GammaOrderInv)}}]{\setlength{\rightskip}{0pt plus 5cm}def Point\+Process\+Generator.\+gamma\+Point (
 \begin{DoxyParamCaption}
-\item[{}]{Gamma\-Order, }
-\item[{}]{Gamma\-Order\-Inv}
+\item[{}]{Gamma\+Order, }
+\item[{}]{Gamma\+Order\+Inv}
 \end{DoxyParamCaption}
-)}}\label{namespace_point_process_generator_ad591b4c4f24356425c2958ea43647ddd}
+)}\hypertarget{namespace_point_process_generator_a01488b4f69653d1fb9653b7a8d37744e}{}\label{namespace_point_process_generator_a01488b4f69653d1fb9653b7a8d37744e}
 
 
-Generates a number according to a Gamma Distribution with an integer order {\bfseries Gamma\-Order}. 
+Generates a number according to a Gamma Distribution with an integer order {\bfseries Gamma\+Order}. 
 
 
 \begin{DoxyItemize}
-\item Inputs\-:
+\item Inputs\+:
 \begin{DoxyItemize}
-\item {\bfseries Gamma\-Order}\-: integer order of the Gamma distribution.
-\item {\bfseries Gamma\-Order\-Inv}\-: inverse of the Gamma\-Order. This is necessary for computational efficiency.
+\item {\bfseries Gamma\+Order}\+: integer order of the Gamma distribution.
+\item {\bfseries Gamma\+Order\+Inv}\+: inverse of the Gamma\+Order. This is necessary for computational efficiency.
 \end{DoxyItemize}
-\item Outputs\-:
+\item Outputs\+:
 \begin{DoxyItemize}
 \item The number generated from the Gamma distribution.
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-The number is generated according to\-:
+The number is generated according to\+:
 
 \begin{equation} \Gamma = -\frac{1}{\lambda}\ln(\limits\prod_{i=1}^{\lambda} U(0,1)) \end{equation} where $\lambda$ is the order of the Gamma distribution and U(a,b) is a uniform distribution from a to b. 
 
-Definition at line 37 of file Point\-Process\-Generator.\-py.
+Definition at line 37 of file Point\+Process\+Generator.\+py.
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespace_point_process_generator_ad591b4c4f24356425c2958ea43647ddd_icgraph}
+\includegraphics[width=350pt]{namespace_point_process_generator_a01488b4f69653d1fb9653b7a8d37744e_icgraph}
 \end{center}
 \end{figure}
 

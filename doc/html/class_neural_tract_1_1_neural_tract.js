@@ -1,8 +1,8 @@
 var class_neural_tract_1_1_neural_tract =
 [
-    [ "__init__", "class_neural_tract_1_1_neural_tract.html#a4bcd77ff91855685b0b96d3522ba7d20", null ],
-    [ "atualizePool", "class_neural_tract_1_1_neural_tract.html#a0f826ea8fadc13ea0af3bfdf5508b4f0", null ],
-    [ "listSpikes", "class_neural_tract_1_1_neural_tract.html#a600b048655026f9271cec0a812b11dc4", null ],
+    [ "__init__", "class_neural_tract_1_1_neural_tract.html#a06e60f2f98f39f21c542c108245cb937", null ],
+    [ "atualizePool", "class_neural_tract_1_1_neural_tract.html#acae726b486d80f6a60c6c2ddabadb5a7", null ],
+    [ "listSpikes", "class_neural_tract_1_1_neural_tract.html#ad0119f85114d9da23e17c90ef9638da7", null ],
     [ "FR", "class_neural_tract_1_1_neural_tract.html#aefbec14cba88a937841314d47f6056c0", null ],
     [ "kind", "class_neural_tract_1_1_neural_tract.html#af52b112c86e0c774fa204b7e2154b6aa", null ],
     [ "Number", "class_neural_tract_1_1_neural_tract.html#a9cf4c6df3fb8818e955817bb3ea9ffc4", null ],

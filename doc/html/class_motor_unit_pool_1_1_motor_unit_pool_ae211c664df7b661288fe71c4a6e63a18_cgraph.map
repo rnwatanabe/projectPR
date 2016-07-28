@@ -1,0 +1,4 @@
+<map id="MotorUnitPool.MotorUnitPool.atualizeMotorUnitPool" name="MotorUnitPool.MotorUnitPool.atualizeMotorUnitPool">
+<area shape="rect" id="node2" href="$class_motor_unit_pool_1_1_motor_unit_pool.html#a164393f9e070abb72b48d0a9685ba518" title="Update the activation signal of the motor units. " alt="" coords="295,5,536,47"/>
+<area shape="rect" id="node3" href="$namespace_motor_unit_pool.html#aacaa939935d8190221721483670a8b5e" title="Computes the muscle unit force after the nonlinear saturation. " alt="" coords="584,13,787,39"/>
+</map>

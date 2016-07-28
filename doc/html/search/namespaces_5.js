@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['pointprocessgenerator',['PointProcessGenerator',['../namespace_point_process_generator.html',1,'']]],
-  ['pulseconductancestate',['PulseConductanceState',['../namespace_pulse_conductance_state.html',1,'']]]
+  ['simulation',['simulation',['../namespacesimulation.html',1,'']]],
+  ['synapse',['Synapse',['../namespace_synapse.html',1,'']]],
+  ['synapsesfactory',['SynapsesFactory',['../namespace_synapses_factory.html',1,'']]]
 ];

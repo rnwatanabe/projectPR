@@ -1,0 +1,5 @@
+<map id="MotorUnit.MotorUnit.atualizeCompartments" name="MotorUnit.MotorUnit.atualizeCompartments">
+<area shape="rect" id="node2" href="$namespace_motor_unit.html#ab7df982e859623662808361f779572f5" title="Function to implement the fourth order Runge&#45;Kutta Method to solve numerically a differential equatio..." alt="" coords="267,5,417,32"/>
+<area shape="rect" id="node3" href="$class_motor_unit_1_1_motor_unit.html#adf30fdef09ac21cfc2a261b762a7f618" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="257,56,427,83"/>
+<area shape="rect" id="node4" href="$class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534" title="When the soma potential is above the threshold a spike is added tom the soma. " alt="" coords="243,107,441,149"/>
+</map>

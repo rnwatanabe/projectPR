@@ -17,9 +17,14 @@ class SynapsesFactory(object):
         '''
         Constructor
 
+        - Inputs:
+            + **conf**: Configuration object with the simulation parameters.
+
+            + **pools**: list of all the pools in the system.
+
         
         '''
-        
+        ## Total number of synapses in the system.
         self.numberOfSynapses = 0
         
         for poolOut in xrange(len(pools)):

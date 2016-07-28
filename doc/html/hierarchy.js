@@ -1,6 +1,6 @@
 var hierarchy =
 [
-    [ "object", null, [
+    [ "object", "classobject.html", [
       [ "AxonDelay.AxonDelay", "class_axon_delay_1_1_axon_delay.html", null ],
       [ "ChannelConductance.ChannelConductance", "class_channel_conductance_1_1_channel_conductance.html", null ],
       [ "Compartment.Compartment", "class_compartment_1_1_compartment.html", null ],

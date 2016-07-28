@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['motorunit',['MotorUnit',['../namespace_motor_unit.html',1,'']]],
-  ['motorunitpool',['MotorUnitPool',['../namespace_motor_unit_pool.html',1,'']]]
+  ['neuraltract',['NeuralTract',['../namespace_neural_tract.html',1,'']]],
+  ['neuraltractunit',['NeuralTractUnit',['../namespace_neural_tract_unit.html',1,'']]]
 ];

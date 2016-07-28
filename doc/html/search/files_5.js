@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['pointprocessgenerator_2epy',['PointProcessGenerator.py',['../_point_process_generator_8py.html',1,'']]],
-  ['pulseconductancestate_2epy',['PulseConductanceState.py',['../_pulse_conductance_state_8py.html',1,'']]]
+  ['simulation_2epy',['simulation.py',['../simulation_8py.html',1,'']]],
+  ['synapse_2epy',['Synapse.py',['../_synapse_8py.html',1,'']]],
+  ['synapsesfactory_2epy',['SynapsesFactory.py',['../_synapses_factory_8py.html',1,'']]]
 ];

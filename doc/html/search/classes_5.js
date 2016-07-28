@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['synapse',['Synapse',['../class_synapse_1_1_synapse.html',1,'Synapse']]],
-  ['synapsesfactory',['SynapsesFactory',['../class_synapses_factory_1_1_synapses_factory.html',1,'SynapsesFactory']]]
+  ['pointprocessgenerator',['PointProcessGenerator',['../class_point_process_generator_1_1_point_process_generator.html',1,'PointProcessGenerator']]],
+  ['pulseconductancestate',['PulseConductanceState',['../class_pulse_conductance_state_1_1_pulse_conductance_state.html',1,'PulseConductanceState']]]
 ];

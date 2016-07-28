@@ -1,0 +1,4 @@
+<map id="MotorUnit.MotorUnit.addSomaSpike" name="MotorUnit.MotorUnit.addSomaSpike">
+<area shape="rect" id="node2" href="$class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b" title="Atualize all neural compartments. " alt="" coords="252,5,441,47"/>
+<area shape="rect" id="node3" href="$class_motor_unit_1_1_motor_unit.html#ab57693c2f49518b08639456595e92d87" title="Atualize the dynamical and nondynamical (delay) parts of the motor unit. " alt="" coords="489,5,679,47"/>
+</map>

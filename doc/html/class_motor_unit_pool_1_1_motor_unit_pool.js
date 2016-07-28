@@ -1,10 +1,10 @@
 var class_motor_unit_pool_1_1_motor_unit_pool =
 [
-    [ "__init__", "class_motor_unit_pool_1_1_motor_unit_pool.html#a627cffa9977225e58194d63a338059dc", null ],
-    [ "atualizeActivationSignal", "class_motor_unit_pool_1_1_motor_unit_pool.html#a03b7c1202f680bd8ba3af9b0b06bd71c", null ],
-    [ "atualizeForceNoHill", "class_motor_unit_pool_1_1_motor_unit_pool.html#a8fbb182559fe08eb45800271655b711f", null ],
-    [ "atualizeMotorUnitPool", "class_motor_unit_pool_1_1_motor_unit_pool.html#ae525c6bba27837f09d2a767544780b0f", null ],
-    [ "listSpikes", "class_motor_unit_pool_1_1_motor_unit_pool.html#a156ffc40be4c7c37f79905fa58b017e5", null ],
+    [ "__init__", "class_motor_unit_pool_1_1_motor_unit_pool.html#a79dc49385a2a1c707766fd355f612088", null ],
+    [ "atualizeActivationSignal", "class_motor_unit_pool_1_1_motor_unit_pool.html#a164393f9e070abb72b48d0a9685ba518", null ],
+    [ "atualizeForceNoHill", "class_motor_unit_pool_1_1_motor_unit_pool.html#a8f8b496796becc89ddb7e9e1c8a2fb9b", null ],
+    [ "atualizeMotorUnitPool", "class_motor_unit_pool_1_1_motor_unit_pool.html#ae211c664df7b661288fe71c4a6e63a18", null ],
+    [ "listSpikes", "class_motor_unit_pool_1_1_motor_unit_pool.html#a11d81004e9bf591ac9dcce582e87b4f4", null ],
     [ "activation_nonSat", "class_motor_unit_pool_1_1_motor_unit_pool.html#a467ac7b080b79b9515d5846d75e95d1c", null ],
     [ "activation_Sat", "class_motor_unit_pool_1_1_motor_unit_pool.html#ac475d1369c38d0bc5064c7243b4e1d44", null ],
     [ "activationModel", "class_motor_unit_pool_1_1_motor_unit_pool.html#abaa7680d0691fac81f66b200dfcfd203", null ],

@@ -1,24 +1,23 @@
-\hypertarget{namespace_pulse_conductance_state}{\section{Pulse\-Conductance\-State Namespace Reference}
-\label{namespace_pulse_conductance_state}\index{Pulse\-Conductance\-State@{Pulse\-Conductance\-State}}
-}
+\hypertarget{namespace_pulse_conductance_state}{}\section{Pulse\+Conductance\+State Namespace Reference}
+\label{namespace_pulse_conductance_state}\index{Pulse\+Conductance\+State@{Pulse\+Conductance\+State}}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state}{Pulse\-Conductance\-State}
-\begin{DoxyCompactList}\small\item\em Implements the Destexhe pulse approximation of the solution of the states of the Hodgkin-\/\-Huxley neuron model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \hyperlink{class_pulse_conductance_state_1_1_pulse_conductance_state}{Pulse\+Conductance\+State}
+\begin{DoxyCompactList}\small\item\em Implements the Destexhe pulse approximation of the solution of the states of the Hodgkin-\/\+Huxley neuron model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{namespace_pulse_conductance_state_ab354e94cc78939492454ad81c2e86223}{comp\-Val\-On}
+def \hyperlink{namespace_pulse_conductance_state_acfdc241fcdde637f6df3a06e426c137d}{comp\+Val\+On} (v0, alpha, beta, t, t0)
 \begin{DoxyCompactList}\small\item\em Time course of the state during the pulse for the {\itshape inactivation} states and before and after the pulse for the {\itshape activation} states. \end{DoxyCompactList}\item 
-def \hyperlink{namespace_pulse_conductance_state_a1cd804c6d3299a3ee17a4e96628e9ec7}{comp\-Val\-Off}
+def \hyperlink{namespace_pulse_conductance_state_a9c75dc1dc214912259e3aaf30203fc1c}{comp\+Val\+Off} (v0, alpha, beta, t, t0)
 \begin{DoxyCompactList}\small\item\em Time course of the state during the pulse for the {\itshape activation} states and before and after the pulse for the {\itshape inactivation} states. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\hypertarget{namespace_pulse_conductance_state_a1cd804c6d3299a3ee17a4e96628e9ec7}{\index{Pulse\-Conductance\-State@{Pulse\-Conductance\-State}!comp\-Val\-Off@{comp\-Val\-Off}}
-\index{comp\-Val\-Off@{comp\-Val\-Off}!PulseConductanceState@{Pulse\-Conductance\-State}}
-\subsubsection[{comp\-Val\-Off}]{\setlength{\rightskip}{0pt plus 5cm}def Pulse\-Conductance\-State.\-comp\-Val\-Off (
+\index{Pulse\+Conductance\+State@{Pulse\+Conductance\+State}!comp\+Val\+Off@{comp\+Val\+Off}}
+\index{comp\+Val\+Off@{comp\+Val\+Off}!Pulse\+Conductance\+State@{Pulse\+Conductance\+State}}
+\subsubsection[{\texorpdfstring{comp\+Val\+Off(v0, alpha, beta, t, t0)}{compValOff(v0, alpha, beta, t, t0)}}]{\setlength{\rightskip}{0pt plus 5cm}def Pulse\+Conductance\+State.\+comp\+Val\+Off (
 \begin{DoxyParamCaption}
 \item[{}]{v0, }
 \item[{}]{alpha, }
@@ -26,20 +25,20 @@ def \hyperlink{namespace_pulse_conductance_state_a1cd804c6d3299a3ee17a4e96628e9e
 \item[{}]{t, }
 \item[{}]{t0}
 \end{DoxyParamCaption}
-)}}\label{namespace_pulse_conductance_state_a1cd804c6d3299a3ee17a4e96628e9ec7}
+)}\hypertarget{namespace_pulse_conductance_state_a9c75dc1dc214912259e3aaf30203fc1c}{}\label{namespace_pulse_conductance_state_a9c75dc1dc214912259e3aaf30203fc1c}
 
 
 Time course of the state during the pulse for the {\itshape activation} states and before and after the pulse for the {\itshape inactivation} states. 
 
-The value of the state $v$ is computed according to the following equation\-:
+The value of the state $v$ is computed according to the following equation\+:
 
 \begin{equation} v(t) = 1 + (v_0 - 1)\exp[-\alpha(t-t_0)] \end{equation} where $t_0$ is the time at which the pulse changed the value (on to off or off to on) and $v_0$ is value of the state at that time. 
 
-Definition at line 46 of file Pulse\-Conductance\-State.\-py.
+Definition at line 46 of file Pulse\+Conductance\+State.\+py.
 
-\hypertarget{namespace_pulse_conductance_state_ab354e94cc78939492454ad81c2e86223}{\index{Pulse\-Conductance\-State@{Pulse\-Conductance\-State}!comp\-Val\-On@{comp\-Val\-On}}
-\index{comp\-Val\-On@{comp\-Val\-On}!PulseConductanceState@{Pulse\-Conductance\-State}}
-\subsubsection[{comp\-Val\-On}]{\setlength{\rightskip}{0pt plus 5cm}def Pulse\-Conductance\-State.\-comp\-Val\-On (
+\index{Pulse\+Conductance\+State@{Pulse\+Conductance\+State}!comp\+Val\+On@{comp\+Val\+On}}
+\index{comp\+Val\+On@{comp\+Val\+On}!Pulse\+Conductance\+State@{Pulse\+Conductance\+State}}
+\subsubsection[{\texorpdfstring{comp\+Val\+On(v0, alpha, beta, t, t0)}{compValOn(v0, alpha, beta, t, t0)}}]{\setlength{\rightskip}{0pt plus 5cm}def Pulse\+Conductance\+State.\+comp\+Val\+On (
 \begin{DoxyParamCaption}
 \item[{}]{v0, }
 \item[{}]{alpha, }
@@ -47,14 +46,14 @@ Definition at line 46 of file Pulse\-Conductance\-State.\-py.
 \item[{}]{t, }
 \item[{}]{t0}
 \end{DoxyParamCaption}
-)}}\label{namespace_pulse_conductance_state_ab354e94cc78939492454ad81c2e86223}
+)}\hypertarget{namespace_pulse_conductance_state_acfdc241fcdde637f6df3a06e426c137d}{}\label{namespace_pulse_conductance_state_acfdc241fcdde637f6df3a06e426c137d}
 
 
 Time course of the state during the pulse for the {\itshape inactivation} states and before and after the pulse for the {\itshape activation} states. 
 
-The value of the state $v$ is computed according to the following equation\-:
+The value of the state $v$ is computed according to the following equation\+:
 
 \begin{equation} v(t) = v_0\exp[-\beta(t-t_0)] \end{equation} where $t_0$ is the time at which the pulse changed the value (on to off or off to on) and $v_0$ is value of the state at that time. 
 
-Definition at line 28 of file Pulse\-Conductance\-State.\-py.
+Definition at line 28 of file Pulse\+Conductance\+State.\+py.
 

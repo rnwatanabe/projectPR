@@ -297,15 +297,17 @@ class Synapse(object):
         Constructor
 
         - Input:
-            + **conf**:
+            + **conf**: Configuration object with the simulation parameters.
 
-            + **pool**:
+            + **pool**: string with identification of the pool to which 
+            the synapse belongs.
 
-            + **index**:
+            + **index**: integer identificationof the unit in the pool.
 
-            + **compartment**:
+            + **compartment**: integer identification of the compartment of the unit 
+            where the synapse is.
 
-            + **kind**:
+            + **kind**: string with the type of synapse. For now, it can be *excitatory*. 
 
             + **neuronKind**:
         '''
@@ -533,4 +535,3 @@ class Synapse(object):
         self.gmax_muS = np.append(self.gmax_muS, gmax)
         self.delay_ms = np.append(self.delay_ms, delay)
         self.dynamics.append(dynamics)
-tevec

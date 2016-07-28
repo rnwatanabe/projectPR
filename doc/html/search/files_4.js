@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['neuraltract_2epy',['NeuralTract.py',['../_neural_tract_8py.html',1,'']]],
-  ['neuraltractunit_2epy',['NeuralTractUnit.py',['../_neural_tract_unit_8py.html',1,'']]]
+  ['pointprocessgenerator_2epy',['PointProcessGenerator.py',['../_point_process_generator_8py.html',1,'']]],
+  ['pulseconductancestate_2epy',['PulseConductanceState.py',['../_pulse_conductance_state_8py.html',1,'']]]
 ];

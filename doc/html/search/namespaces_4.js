@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['neuraltract',['NeuralTract',['../namespace_neural_tract.html',1,'']]],
-  ['neuraltractunit',['NeuralTractUnit',['../namespace_neural_tract_unit.html',1,'']]]
+  ['pointprocessgenerator',['PointProcessGenerator',['../namespace_point_process_generator.html',1,'']]],
+  ['pulseconductancestate',['PulseConductanceState',['../namespace_pulse_conductance_state.html',1,'']]]
 ];

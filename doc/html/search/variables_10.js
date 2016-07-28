@@ -18,7 +18,7 @@ var searchData=
   ['tpeak_5fms',['tPeak_ms',['../class_synapse_1_1_synapse.html#a09b9b092efcb0d6745fa32fadcd46375',1,'Synapse::Synapse']]],
   ['transmitspikesthroughsynapses',['transmitSpikesThroughSynapses',['../class_neural_tract_unit_1_1_neural_tract_unit.html#ac6fa367f6ada8045919674feaed4f6ad',1,'NeuralTractUnit::NeuralTractUnit']]],
   ['tsomaspike',['tSomaSpike',['../class_motor_unit_1_1_motor_unit.html#abca82ec2c7312bb475989bb45e82ca28',1,'MotorUnit::MotorUnit']]],
-  ['twitchamp_5fn',['twitchAmp_N',['../class_motor_unit_pool_1_1_motor_unit_pool.html#a03538b06e7220f9d48c7306ed6508c05',1,'MotorUnitPool.MotorUnitPool.twitchAmp_N()'],['../class_motor_unit_1_1_motor_unit.html#ad14af870eb3dd7468041853f2c6e8cab',1,'MotorUnit.MotorUnit.TwitchAmp_N()']]],
+  ['twitchamp_5fn',['TwitchAmp_N',['../class_motor_unit_1_1_motor_unit.html#ad14af870eb3dd7468041853f2c6e8cab',1,'MotorUnit.MotorUnit.TwitchAmp_N()'],['../class_motor_unit_pool_1_1_motor_unit_pool.html#a03538b06e7220f9d48c7306ed6508c05',1,'MotorUnitPool.MotorUnitPool.twitchAmp_N()']]],
   ['twitchtc_5fms',['TwitchTc_ms',['../class_motor_unit_1_1_motor_unit.html#a083581c89ebb964e58721667307dd2bc',1,'MotorUnit::MotorUnit']]],
   ['twtet',['twTet',['../class_motor_unit_1_1_motor_unit.html#a2a466c5f2f798901c1c438f9d57c2221',1,'MotorUnit.MotorUnit.twTet()'],['../class_motor_unit_pool_1_1_motor_unit_pool.html#a785a769c5b4824603a24339e4f0d8dfe',1,'MotorUnitPool.MotorUnitPool.twTet()']]]
 ];

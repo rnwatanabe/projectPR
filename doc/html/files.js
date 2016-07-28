@@ -1,4 +1,28 @@
 var files =
 [
-    [ "projectPR", "dir_742a8708583d44ae28fbb08e01e2416f.html", "dir_742a8708583d44ae28fbb08e01e2416f" ]
+    [ "AxonDelay.py", "_axon_delay_8py.html", [
+      [ "AxonDelay", "class_axon_delay_1_1_axon_delay.html", "class_axon_delay_1_1_axon_delay" ]
+    ] ],
+    [ "ChannelConductance.py", "_channel_conductance_8py.html", [
+      [ "ChannelConductance", "class_channel_conductance_1_1_channel_conductance.html", "class_channel_conductance_1_1_channel_conductance" ]
+    ] ],
+    [ "Compartment.py", "_compartment_8py.html", "_compartment_8py" ],
+    [ "Configuration.py", "_configuration_8py.html", [
+      [ "Configuration", "class_configuration_1_1_configuration.html", "class_configuration_1_1_configuration" ]
+    ] ],
+    [ "MotorUnit.py", "_motor_unit_8py.html", "_motor_unit_8py" ],
+    [ "MotorUnitPool.py", "_motor_unit_pool_8py.html", "_motor_unit_pool_8py" ],
+    [ "NeuralTract.py", "_neural_tract_8py.html", [
+      [ "NeuralTract", "class_neural_tract_1_1_neural_tract.html", "class_neural_tract_1_1_neural_tract" ]
+    ] ],
+    [ "NeuralTractUnit.py", "_neural_tract_unit_8py.html", [
+      [ "NeuralTractUnit", "class_neural_tract_unit_1_1_neural_tract_unit.html", "class_neural_tract_unit_1_1_neural_tract_unit" ]
+    ] ],
+    [ "PointProcessGenerator.py", "_point_process_generator_8py.html", "_point_process_generator_8py" ],
+    [ "PulseConductanceState.py", "_pulse_conductance_state_8py.html", "_pulse_conductance_state_8py" ],
+    [ "simulation.py", "simulation_8py.html", "simulation_8py" ],
+    [ "Synapse.py", "_synapse_8py.html", "_synapse_8py" ],
+    [ "SynapsesFactory.py", "_synapses_factory_8py.html", [
+      [ "SynapsesFactory", "class_synapses_factory_1_1_synapses_factory.html", "class_synapses_factory_1_1_synapses_factory" ]
+    ] ]
 ];

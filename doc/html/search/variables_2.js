@@ -6,7 +6,6 @@ var searchData=
   ['compartment',['compartment',['../class_motor_unit_1_1_motor_unit.html#a6d4da7327031b3cb9c7041a4a790e524',1,'MotorUnit::MotorUnit']]],
   ['compcond',['compCond',['../class_channel_conductance_1_1_channel_conductance.html#a0a91eec3fa2b1dfc66c6379943a5907f',1,'ChannelConductance::ChannelConductance']]],
   ['compnumber',['compNumber',['../class_motor_unit_1_1_motor_unit.html#afe7281fb12c41102980b6b48d5a49713',1,'MotorUnit::MotorUnit']]],
-  ['computecurrent',['computeCurrent',['../class_synapse_1_1_synapse.html#a9f68cb297a4bc98c4cb9d5c042b5d0d6',1,'Synapse::Synapse']]],
   ['computevalueoff',['computeValueOff',['../class_pulse_conductance_state_1_1_pulse_conductance_state.html#a89e0cc154bd699aee7529574a8fe556c',1,'PulseConductanceState::PulseConductanceState']]],
   ['computevalueon',['computeValueOn',['../class_pulse_conductance_state_1_1_pulse_conductance_state.html#a7f6710b9f97ac5879888402cd5ed15d4',1,'PulseConductanceState::PulseConductanceState']]],
   ['condstate',['condState',['../class_channel_conductance_1_1_channel_conductance.html#a628553cbc1efd93b30b0a15afd4417d9',1,'ChannelConductance::ChannelConductance']]],

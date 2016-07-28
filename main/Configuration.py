@@ -151,7 +151,7 @@ class Configuration(object):
             pos = self.confArray[i][0].find('Con_' + neuralSource)
             if (pos >= 0 and float(self.confArray[i][1]) > 0):
                 posComp = self.confArray[i][0].find('__')
-                Synapses.append([self.confArray[i][0][pos+len('Con_'  + neuralSource)+1:posComp], 
+                Synapses.append([self.confArray[i][0][pos+len('Con_' + neuralSource)+1:posComp], 
                                  self.confArray[i][0][posComp+2:]])
         return Synapses       
         

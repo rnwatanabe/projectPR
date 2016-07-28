@@ -1,34 +1,33 @@
-\hypertarget{_synapse_8py}{\section{Synapse.\-py File Reference}
-\label{_synapse_8py}\index{Synapse.\-py@{Synapse.\-py}}
-}
+\hypertarget{_synapse_8py}{}\section{Synapse.\+py File Reference}
+\label{_synapse_8py}\index{Synapse.\+py@{Synapse.\+py}}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{class_synapse_1_1_synapse}{Synapse.\-Synapse}
+class \hyperlink{class_synapse_1_1_synapse}{Synapse.\+Synapse}
 \begin{DoxyCompactList}\small\item\em Implements the synapse model from Destexhe (1994) using the computational method from Lytton (1996). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{namespace_synapse}{Synapse}
+ \hyperlink{namespace_synapse}{Synapse}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{namespace_synapse_a55ffd471fbed3550b464a9862687f541}{Synapse.\-comp\-Synap\-Cond}
+def \hyperlink{namespace_synapse_a400340da82be44ca7d665a8e04cd8974}{Synapse.\+comp\+Synap\+Cond} (Gmax, Ron, Roff)
 \begin{DoxyCompactList}\small\item\em Computes the synaptic conductance. \end{DoxyCompactList}\item 
-def \hyperlink{namespace_synapse_a16fdc8aab9a394041c8b6667511a1fd7}{Synapse.\-comp\-Ron}
+def \hyperlink{namespace_synapse_a685fe07b10fd8ff53778983666836dea}{Synapse.\+comp\+Ron} (Non, r\+Inf, Ron, t0, t, tau\+On)
 \begin{DoxyCompactList}\small\item\em Computes the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that have neurotransmitters being released (during the pulse). \end{DoxyCompactList}\item 
-def \hyperlink{namespace_synapse_aadfeb939e02125a55a2b2acc6634ba41}{Synapse.\-comp\-Roff}
+def \hyperlink{namespace_synapse_a946e8e8437009fba80f7d7ead8d1eb57}{Synapse.\+comp\+Roff} (Roff, t0, t, tau\+Off)
 \begin{DoxyCompactList}\small\item\em Computes the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that do not have neurotransmitters being released (before and after the pulse). \end{DoxyCompactList}\item 
-def \hyperlink{namespace_synapse_a6d5943c0d974d992b8c9daa3ff3818d6}{Synapse.\-comp\-Ri\-Start}
+def \hyperlink{namespace_synapse_a86ce19e1d63e7071f6315234ee4cb6b6}{Synapse.\+comp\+Ri\+Start} (ri, t, ti, t\+Peak, tau\+Off)
 \begin{DoxyCompactList}\small\item\em Computes the fraction of bound postsynaptic receptors to neurotransmitters in individual synapses when the neurotransmitter begin (begin of the pulse). \end{DoxyCompactList}\item 
-def \hyperlink{namespace_synapse_a67ee3bb7abbf9608bd83c31c63634cac}{Synapse.\-comp\-Ri\-Stop}
+def \hyperlink{namespace_synapse_ad8ba0d5cb97f96cf8f68a75efc924488}{Synapse.\+comp\+Ri\+Stop} (r\+Inf, ri, exp\+Finish)
 \begin{DoxyCompactList}\small\item\em Computes the fraction of bound postsynaptic receptors to neurotransmitters in individual synapses when the neurotransmitter release stops (the pulse ends). \end{DoxyCompactList}\item 
-def \hyperlink{namespace_synapse_a3bbc4948087cc789af35085ea0423a93}{Synapse.\-comp\-Ron\-Start}
+def \hyperlink{namespace_synapse_a15925cbb893ee12094ad1861749e3240}{Synapse.\+comp\+Ron\+Start} (Ron, ri, syn\+Contrib)
 \begin{DoxyCompactList}\small\item\em Incorporates a new conductance to the set of conductances during a pulse. \end{DoxyCompactList}\item 
-def \hyperlink{namespace_synapse_a4ff37207e236e81ae7bced77172a5af5}{Synapse.\-comp\-Roff\-Start}
+def \hyperlink{namespace_synapse_a695380d931b5beeed57d872bfddc423a}{Synapse.\+comp\+Roff\+Start} (Roff, ri, syn\+Contrib)
 \begin{DoxyCompactList}\small\item\em Incorporates a new conductance to the set of conductances that are not during a pulse. \end{DoxyCompactList}\item 
-def \hyperlink{namespace_synapse_a9915f1de7bde4ece67ef45a7e7324c21}{Synapse.\-comp\-Ron\-Stop}
+def \hyperlink{namespace_synapse_a3fb4510e3284ad84eb4d3d8c39112a94}{Synapse.\+comp\+Ron\+Stop} (Ron, ri, syn\+Contrib)
 \begin{DoxyCompactList}\small\item\em Removes a conductance from the set of conductances during a pulse. \end{DoxyCompactList}\item 
-def \hyperlink{namespace_synapse_a8e85651ec0d366f191a2093a1bd2bc84}{Synapse.\-comp\-Roff\-Stop}
+def \hyperlink{namespace_synapse_afd15218d4cf7a043cd35aa37f1593f6d}{Synapse.\+comp\+Roff\+Stop} (Roff, ri, syn\+Contrib)
 \begin{DoxyCompactList}\small\item\em Removes a conductance from the set of conductances that are not during a pulse. \end{DoxyCompactList}\end{DoxyCompactItemize}

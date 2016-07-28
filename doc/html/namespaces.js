@@ -4,7 +4,6 @@ var namespaces =
     [ "ChannelConductance", "namespace_channel_conductance.html", null ],
     [ "Compartment", "namespace_compartment.html", null ],
     [ "Configuration", "namespace_configuration.html", null ],
-    [ "electroComputation", "namespaceelectro_computation.html", null ],
     [ "MotorUnit", "namespace_motor_unit.html", null ],
     [ "MotorUnitPool", "namespace_motor_unit_pool.html", null ],
     [ "NeuralTract", "namespace_neural_tract.html", null ],

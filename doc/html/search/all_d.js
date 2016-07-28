@@ -12,6 +12,5 @@ var searchData=
   ['number',['Number',['../class_neural_tract_1_1_neural_tract.html#a9cf4c6df3fb8818e955817bb3ea9ffc4',1,'NeuralTract::NeuralTract']]],
   ['numberchannels',['numberChannels',['../class_compartment_1_1_compartment.html#a0fa96147f76e7814f30610027ed425df',1,'Compartment::Compartment']]],
   ['numberofincomingsynapses',['numberOfIncomingSynapses',['../class_synapse_1_1_synapse.html#a6e55e008336cc47551669f3d77248d57',1,'Synapse::Synapse']]],
-  ['numberofmultisynapses',['numberofMultiSynapses',['../class_compartment_1_1_compartment.html#aed4deea8b0fc160f16ecb1ef39cacba4',1,'Compartment::Compartment']]],
   ['numberofsynapses',['numberOfSynapses',['../class_synapses_factory_1_1_synapses_factory.html#af83fbc27851417b677391ece9bf49a29',1,'SynapsesFactory::SynapsesFactory']]]
 ];

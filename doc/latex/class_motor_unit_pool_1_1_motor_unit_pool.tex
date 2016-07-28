@@ -1,6 +1,5 @@
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool}{\section{Motor\-Unit\-Pool.\-Motor\-Unit\-Pool Class Reference}
-\label{class_motor_unit_pool_1_1_motor_unit_pool}\index{Motor\-Unit\-Pool.\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool.\-Motor\-Unit\-Pool}}
-}
+\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool}{}\section{Motor\+Unit\+Pool.\+Motor\+Unit\+Pool Class Reference}
+\label{class_motor_unit_pool_1_1_motor_unit_pool}\index{Motor\+Unit\+Pool.\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool.\+Motor\+Unit\+Pool}}
 
 
 Class that implements a motor unit pool.  
@@ -9,16 +8,16 @@ Class that implements a motor unit pool.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a627cffa9977225e58194d63a338059dc}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+def \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a79dc49385a2a1c707766fd355f612088}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a3b2ee8f3e5500bfdc8fa731a5cb7d622}{conf}, \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a832364dc014aa8a1b2947abfe063f626}{pool})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-def \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_ae525c6bba27837f09d2a767544780b0f}{atualize\-Motor\-Unit\-Pool}
-\item 
-def \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8ba3af9b0b06bd71c}{atualize\-Activation\-Signal}
-\item 
-def \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a8fbb182559fe08eb45800271655b711f}{atualize\-Force\-No\-Hill}
+def \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_ae211c664df7b661288fe71c4a6e63a18}{atualize\+Motor\+Unit\+Pool} (self, t)
+\begin{DoxyCompactList}\small\item\em Update all parts of the Motor Unit pool. \end{DoxyCompactList}\item 
+def \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518}{atualize\+Activation\+Signal} (self, t)
+\begin{DoxyCompactList}\small\item\em Update the activation signal of the motor units. \end{DoxyCompactList}\item 
+def \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a8f8b496796becc89ddb7e9e1c8a2fb9b}{atualize\+Force\+No\+Hill} (self)
 \begin{DoxyCompactList}\small\item\em Compute the muscle force when no muscle dynamics (Hill model) is used. \end{DoxyCompactList}\item 
-def \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a156ffc40be4c7c37f79905fa58b017e5}{list\-Spikes}
-\end{DoxyCompactItemize}
+def \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a11d81004e9bf591ac9dcce582e87b4f4}{list\+Spikes} (self)
+\begin{DoxyCompactList}\small\item\em List the spikes that occurred in the soma and in the terminal of the different motor units. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,39 +27,39 @@ def \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a156ffc40be4c7c37f79905
 \begin{DoxyCompactList}\small\item\em \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters. \end{DoxyCompactList}\item 
 \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a832364dc014aa8a1b2947abfe063f626}{pool}
 \begin{DoxyCompactList}\small\item\em String with Motor unit pool to which the motor unit belongs. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_aa5884530baaa20f46007805bc574407d}{M\-Unumber}
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_aa5884530baaa20f46007805bc574407d}{M\+Unumber}
 \begin{DoxyCompactList}\small\item\em Number of motor units. \end{DoxyCompactList}\item 
 \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a1b14c831606c27efae62f1468850393b}{unit}
-\begin{DoxyCompactList}\small\item\em List of \hyperlink{namespace_motor_unit}{Motor\-Unit} objects. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a3790757a111061662ad0f98120b25e69}{pool\-Soma\-Spikes}
+\begin{DoxyCompactList}\small\item\em List of \hyperlink{namespace_motor_unit}{Motor\+Unit} objects. \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a3790757a111061662ad0f98120b25e69}{pool\+Soma\+Spikes}
 \begin{DoxyCompactList}\small\item\em Vector with the instants of spikes in the soma compartment, in ms. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a4f0b93df27eb6303fa1a3d49653d4fd3}{pool\-Terminal\-Spikes}
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a4f0b93df27eb6303fa1a3d49653d4fd3}{pool\+Terminal\+Spikes}
 \begin{DoxyCompactList}\small\item\em Vector with the instants of spikes in the terminal, in ms. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_abaa7680d0691fac81f66b200dfcfd203}{activation\-Model}
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_abaa7680d0691fac81f66b200dfcfd203}{activation\+Model}
 \begin{DoxyCompactList}\small\item\em Model of the activation signal. \end{DoxyCompactList}\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_ad03b9e215e833188060e90bc4392d42b}{Act\-Matrix}
-\item 
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_ad03b9e215e833188060e90bc4392d42b}{Act\+Matrix}
+\begin{DoxyCompactList}\small\item\em Matrix that multiplied by the vector formed as the formula below gives the activation signal at instant $n$\+: \begin{equation} \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$} \end{equation} where $a_i(n)$ is the activation signal of the motor unit $i$, $e_i(n)$ is 1/T (inverse of simulation time step, Dirac\textquotesingle{}s delta approximation) if the motor unit $i$, fired at instant $n$. \end{DoxyCompactList}\item 
 \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_ac72c67b4a1f6134965ab77e2d798b5a4}{an}
-\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a467ac7b080b79b9515d5846d75e95d1c}{activation\-\_\-non\-Sat}
-\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a4e107835e34b4f56d06b9b28c143fe40}{b\-Sat}
-\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a785a769c5b4824603a24339e4f0d8dfe}{tw\-Tet}
-\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a03538b06e7220f9d48c7306ed6508c05}{twitch\-Amp\-\_\-\-N}
-\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_ac475d1369c38d0bc5064c7243b4e1d44}{activation\-\_\-\-Sat}
-\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a48b53d4f838ca8cfe2bc41c8308f2060}{dirac\-Delta\-Value}
-\item 
+\begin{DoxyCompactList}\small\item\em Is a vector formed as\+: \begin{equation} \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$} \end{equation} It is multiplied by the matriz act\+Matrix to obtain the activation signal (see act\+Matrix explanation) \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a467ac7b080b79b9515d5846d75e95d1c}{activation\+\_\+non\+Sat}
+\begin{DoxyCompactList}\small\item\em The non-\/saturated activation signal of all motor units (see act\+Matrix explanation). \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a4e107835e34b4f56d06b9b28c143fe40}{b\+Sat}
+\begin{DoxyCompactList}\small\item\em The parameter $b$ (see twitch\+Saturation function explanation) of each motor unit. \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a785a769c5b4824603a24339e4f0d8dfe}{tw\+Tet}
+\begin{DoxyCompactList}\small\item\em Twitch-\/ tetanus relationship (see atualize\+Force\+No\+Hill function explanation) \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a03538b06e7220f9d48c7306ed6508c05}{twitch\+Amp\+\_\+N}
+\begin{DoxyCompactList}\small\item\em Amplitude of the muscle unit twitch, in N (see atualize\+Force\+No\+Hill function explanation). \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_ac475d1369c38d0bc5064c7243b4e1d44}{activation\+\_\+\+Sat}
+\begin{DoxyCompactList}\small\item\em The non-\/saturated activation signal of all motor units (see act\+Matrix explanation). \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a48b53d4f838ca8cfe2bc41c8308f2060}{dirac\+Delta\+Value}
+\begin{DoxyCompactList}\small\item\em Dirac\textquotesingle{}s delta approximation amplitude value. \end{DoxyCompactList}\item 
 \hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a97011c17140c45a42a00105279f014ad}{force}
+\begin{DoxyCompactList}\small\item\em Muscle force along time, in N. \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a963061fdcfee8f9dc33e4d6f130ea59b}{hill\+Model}
+\begin{DoxyCompactList}\small\item\em String indicating whther a Hill model is used or not. \end{DoxyCompactList}\item 
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a21f9a6a5d113b5b0f67a3557c47ebd5a}{atualize\+Force}
 \item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a963061fdcfee8f9dc33e4d6f130ea59b}{hill\-Model}
-\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_a21f9a6a5d113b5b0f67a3557c47ebd5a}{atualize\-Force}
-\item 
-\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_ab5659e1c9355ecf529d9b8be8cbf6d65}{time\-Index}
+\hyperlink{class_motor_unit_pool_1_1_motor_unit_pool_ab5659e1c9355ecf529d9b8be8cbf6d65}{time\+Index}
 \end{DoxyCompactItemize}
 
 
@@ -69,298 +68,364 @@ Class that implements a motor unit pool.
 
 Encompasses a set of motor units that controls a single muscle. 
 
-Definition at line 40 of file Motor\-Unit\-Pool.\-py.
+Definition at line 41 of file Motor\+Unit\+Pool.\+py.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a627cffa9977225e58194d63a338059dc}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
-\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-\_\-\-\_\-init\-\_\-\-\_\- (
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, conf, pool)}{__init__(self, conf, pool)}}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+\_\+\+\_\+init\+\_\+\+\_\+ (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{conf, }
 \item[{}]{pool}
 \end{DoxyParamCaption}
-)}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a627cffa9977225e58194d63a338059dc}
+)}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a79dc49385a2a1c707766fd355f612088}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a79dc49385a2a1c707766fd355f612088}
 
 
 Constructor. 
 
 
 \begin{DoxyItemize}
-\item Inputs\-:
+\item Inputs\+:
 \begin{DoxyItemize}
-\item {\bfseries conf}\-: \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters.
-\item {\bfseries pool}\-: string with Motor unit pool to which the motor unit belongs. 
+\item {\bfseries conf}\+: \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters.
+\item {\bfseries pool}\+: string with Motor unit pool to which the motor unit belongs. 
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 52 of file Motor\-Unit\-Pool.\-py.
+Definition at line 53 of file Motor\+Unit\+Pool.\+py.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8ba3af9b0b06bd71c}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!atualize\-Activation\-Signal@{atualize\-Activation\-Signal}}
-\index{atualize\-Activation\-Signal@{atualize\-Activation\-Signal}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{atualize\-Activation\-Signal}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-atualize\-Activation\-Signal (
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!atualize\+Activation\+Signal@{atualize\+Activation\+Signal}}
+\index{atualize\+Activation\+Signal@{atualize\+Activation\+Signal}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{atualize\+Activation\+Signal(self, t)}{atualizeActivationSignal(self, t)}}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+atualize\+Activation\+Signal (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{t}
 \end{DoxyParamCaption}
-)}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8ba3af9b0b06bd71c}
+)}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518}
 
 
-Definition at line 136 of file Motor\-Unit\-Pool.\-py.
+Update the activation signal of the motor units. 
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: current instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 188 of file Motor\+Unit\+Pool.\+py.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8ba3af9b0b06bd71c_cgraph}
+\includegraphics[width=350pt]{class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_motor_unit_pool_1_1_motor_unit_pool_a03b7c1202f680bd8ba3af9b0b06bd71c_icgraph}
+\includegraphics[width=350pt]{class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a8fbb182559fe08eb45800271655b711f}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!atualize\-Force\-No\-Hill@{atualize\-Force\-No\-Hill}}
-\index{atualize\-Force\-No\-Hill@{atualize\-Force\-No\-Hill}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{atualize\-Force\-No\-Hill}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-atualize\-Force\-No\-Hill (
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!atualize\+Force\+No\+Hill@{atualize\+Force\+No\+Hill}}
+\index{atualize\+Force\+No\+Hill@{atualize\+Force\+No\+Hill}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{atualize\+Force\+No\+Hill(self)}{atualizeForceNoHill(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+atualize\+Force\+No\+Hill (
 \begin{DoxyParamCaption}
 \item[{}]{self}
 \end{DoxyParamCaption}
-)}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a8fbb182559fe08eb45800271655b711f}
+)}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a8f8b496796becc89ddb7e9e1c8a2fb9b}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a8f8b496796becc89ddb7e9e1c8a2fb9b}
 
 
 Compute the muscle force when no muscle dynamics (Hill model) is used. 
 
+This operation is vectorized. Each element of the vectors correspond to one motor unit. For each motor unit, the force is computed by the following formula\+: 
 
+Definition at line 220 of file Motor\+Unit\+Pool.\+py.
 
-Definition at line 152 of file Motor\-Unit\-Pool.\-py.
-
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_ae525c6bba27837f09d2a767544780b0f}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!atualize\-Motor\-Unit\-Pool@{atualize\-Motor\-Unit\-Pool}}
-\index{atualize\-Motor\-Unit\-Pool@{atualize\-Motor\-Unit\-Pool}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{atualize\-Motor\-Unit\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-atualize\-Motor\-Unit\-Pool (
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!atualize\+Motor\+Unit\+Pool@{atualize\+Motor\+Unit\+Pool}}
+\index{atualize\+Motor\+Unit\+Pool@{atualize\+Motor\+Unit\+Pool}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{atualize\+Motor\+Unit\+Pool(self, t)}{atualizeMotorUnitPool(self, t)}}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+atualize\+Motor\+Unit\+Pool (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{t}
 \end{DoxyParamCaption}
-)}}\label{class_motor_unit_pool_1_1_motor_unit_pool_ae525c6bba27837f09d2a767544780b0f}
+)}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_ae211c664df7b661288fe71c4a6e63a18}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_ae211c664df7b661288fe71c4a6e63a18}
 
 
-Definition at line 129 of file Motor\-Unit\-Pool.\-py.
+Update all parts of the Motor Unit pool. 
+
+It consists to update all motor units, the activation signal and the muscle force.
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: current instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 173 of file Motor\+Unit\+Pool.\+py.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_motor_unit_pool_1_1_motor_unit_pool_ae525c6bba27837f09d2a767544780b0f_cgraph}
+\includegraphics[width=350pt]{class_motor_unit_pool_1_1_motor_unit_pool_ae211c664df7b661288fe71c4a6e63a18_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a156ffc40be4c7c37f79905fa58b017e5}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!list\-Spikes@{list\-Spikes}}
-\index{list\-Spikes@{list\-Spikes}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{list\-Spikes}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-list\-Spikes (
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!list\+Spikes@{list\+Spikes}}
+\index{list\+Spikes@{list\+Spikes}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{list\+Spikes(self)}{listSpikes(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+list\+Spikes (
 \begin{DoxyParamCaption}
 \item[{}]{self}
 \end{DoxyParamCaption}
-)}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a156ffc40be4c7c37f79905fa58b017e5}
+)}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a11d81004e9bf591ac9dcce582e87b4f4}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a11d81004e9bf591ac9dcce582e87b4f4}
 
 
-Definition at line 157 of file Motor\-Unit\-Pool.\-py.
+List the spikes that occurred in the soma and in the terminal of the different motor units. 
+
+
+
+Definition at line 228 of file Motor\+Unit\+Pool.\+py.
 
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a467ac7b080b79b9515d5846d75e95d1c}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!activation\-\_\-non\-Sat@{activation\-\_\-non\-Sat}}
-\index{activation\-\_\-non\-Sat@{activation\-\_\-non\-Sat}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{activation\-\_\-non\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-activation\-\_\-non\-Sat}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a467ac7b080b79b9515d5846d75e95d1c}
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!activation\+\_\+non\+Sat@{activation\+\_\+non\+Sat}}
+\index{activation\+\_\+non\+Sat@{activation\+\_\+non\+Sat}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{activation\+\_\+non\+Sat}{activation_nonSat}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+activation\+\_\+non\+Sat}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a467ac7b080b79b9515d5846d75e95d1c}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a467ac7b080b79b9515d5846d75e95d1c}
 
 
-Definition at line 105 of file Motor\-Unit\-Pool.\-py.
-
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_ac475d1369c38d0bc5064c7243b4e1d44}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!activation\-\_\-\-Sat@{activation\-\_\-\-Sat}}
-\index{activation\-\_\-\-Sat@{activation\-\_\-\-Sat}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{activation\-\_\-\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-activation\-\_\-\-Sat}}\label{class_motor_unit_pool_1_1_motor_unit_pool_ac475d1369c38d0bc5064c7243b4e1d44}
+The non-\/saturated activation signal of all motor units (see act\+Matrix explanation). 
 
 
-Definition at line 114 of file Motor\-Unit\-Pool.\-py.
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_abaa7680d0691fac81f66b200dfcfd203}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!activation\-Model@{activation\-Model}}
-\index{activation\-Model@{activation\-Model}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{activation\-Model}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-activation\-Model}}\label{class_motor_unit_pool_1_1_motor_unit_pool_abaa7680d0691fac81f66b200dfcfd203}
+Definition at line 132 of file Motor\+Unit\+Pool.\+py.
+
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!activation\+\_\+\+Sat@{activation\+\_\+\+Sat}}
+\index{activation\+\_\+\+Sat@{activation\+\_\+\+Sat}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{activation\+\_\+\+Sat}{activation_Sat}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+activation\+\_\+\+Sat}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_ac475d1369c38d0bc5064c7243b4e1d44}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_ac475d1369c38d0bc5064c7243b4e1d44}
+
+
+The non-\/saturated activation signal of all motor units (see act\+Matrix explanation). 
+
+
+
+Definition at line 146 of file Motor\+Unit\+Pool.\+py.
+
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!activation\+Model@{activation\+Model}}
+\index{activation\+Model@{activation\+Model}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{activation\+Model}{activationModel}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+activation\+Model}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_abaa7680d0691fac81f66b200dfcfd203}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_abaa7680d0691fac81f66b200dfcfd203}
 
 
 Model of the activation signal. 
 
-For now, it can be {\itshape S\-O\-C\-D\-S} (second order critically damped system). 
+For now, it can be {\itshape S\+O\+C\+DS} (second order critically damped system). 
 
-Definition at line 86 of file Motor\-Unit\-Pool.\-py.
+Definition at line 87 of file Motor\+Unit\+Pool.\+py.
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_ad03b9e215e833188060e90bc4392d42b}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!Act\-Matrix@{Act\-Matrix}}
-\index{Act\-Matrix@{Act\-Matrix}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{Act\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-Act\-Matrix}}\label{class_motor_unit_pool_1_1_motor_unit_pool_ad03b9e215e833188060e90bc4392d42b}
-
-
-Definition at line 94 of file Motor\-Unit\-Pool.\-py.
-
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_ac72c67b4a1f6134965ab77e2d798b5a4}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!an@{an}}
-\index{an@{an}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{an}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-an}}\label{class_motor_unit_pool_1_1_motor_unit_pool_ac72c67b4a1f6134965ab77e2d798b5a4}
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!Act\+Matrix@{Act\+Matrix}}
+\index{Act\+Matrix@{Act\+Matrix}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{Act\+Matrix}{ActMatrix}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+Act\+Matrix}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_ad03b9e215e833188060e90bc4392d42b}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_ad03b9e215e833188060e90bc4392d42b}
 
 
-Definition at line 103 of file Motor\-Unit\-Pool.\-py.
+Matrix that multiplied by the vector formed as the formula below gives the activation signal at instant $n$\+: \begin{equation} \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$} \end{equation} where $a_i(n)$ is the activation signal of the motor unit $i$, $e_i(n)$ is 1/T (inverse of simulation time step, Dirac\textquotesingle{}s delta approximation) if the motor unit $i$, fired at instant $n$. 
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a21f9a6a5d113b5b0f67a3557c47ebd5a}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!atualize\-Force@{atualize\-Force}}
-\index{atualize\-Force@{atualize\-Force}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{atualize\-Force}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-atualize\-Force}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a21f9a6a5d113b5b0f67a3557c47ebd5a}
+The vector $Av$ is updated every step at the function atualize\+Activation\+Signal. The activation matrix itself is formed as\+: \begin{equation} \resizebox{0.95\hsize}{!}{$\scriptstyle A = \left[\begin{array}{ccccccccccc}\scriptscriptstyle 2\exp\left(-\frac{T}{T_{c_1}}\right)&\scriptscriptstyle -\exp\left(-2\frac{T}{T_{c_1}}\right)&\scriptscriptstyle \frac{T^2}{T_{c_1}}\exp\left(1-\frac{T}{T_{c_1}} \right)&\scriptscriptstyle 0&\scriptscriptstyle ...&\scriptscriptstyle 0&\scriptscriptstyle 0& \scriptscriptstyle 0&\scriptscriptstyle 0&\scriptscriptstyle 0&\scriptscriptstyle 0\\ \scriptscriptstyle 0&\scriptscriptstyle 0&\scriptscriptstyle 0&\scriptscriptstyle \ddots&\scriptscriptstyle ...&&&&&\scriptscriptstyle ...&\scriptscriptstyle 0\\ \scriptscriptstyle 0&\scriptscriptstyle ...&&\scriptscriptstyle 0&\scriptscriptstyle 2\exp\left(-\frac{T}{T_{c_i}}\right)&\scriptscriptstyle -\exp\left(-2\frac{T}{T_{c_i}}\right)&\scriptscriptstyle \frac{T^2}{T_{c_i}}\exp\left(1-\frac{T}{T_{c_i}} \right)&\scriptscriptstyle 0&&&\scriptscriptstyle 0\\ \scriptscriptstyle0&\scriptscriptstyle0&\scriptscriptstyle...&&&\scriptscriptstyle0&\scriptscriptstyle 0&\scriptscriptstyle\ddots&\scriptscriptstyle0&\scriptscriptstyle0\\ \scriptscriptstyle0&\scriptscriptstyle0&\scriptscriptstyle0&\scriptscriptstyle...&&&&\scriptscriptstyle0&\scriptscriptstyle 2\exp\left(-\frac{T}{T_{c_{N_{MU}}}}\right)&\scriptscriptstyle -\exp\left(-2\frac{T}{T_{c_{N_{MU}}}}\right)&\scriptscriptstyle \frac{T^2}{T_{c_{{MU}}}}\exp\left(1-\frac{T}{T_{c_{N_{MU}}}} \right)\end{array}\right]$} \end{equation} The nonsaturated activation signal $a$ of all the motor units is obtained with\+: \begin{equation} a = A.Av \end{equation} where each elemement o $a$ is the activation signal of a motor unit. 
 
+Definition at line 115 of file Motor\+Unit\+Pool.\+py.
 
-Definition at line 121 of file Motor\-Unit\-Pool.\-py.
-
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a4e107835e34b4f56d06b9b28c143fe40}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!b\-Sat@{b\-Sat}}
-\index{b\-Sat@{b\-Sat}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{b\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-b\-Sat}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a4e107835e34b4f56d06b9b28c143fe40}
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!an@{an}}
+\index{an@{an}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{an}{an}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+an}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_ac72c67b4a1f6134965ab77e2d798b5a4}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_ac72c67b4a1f6134965ab77e2d798b5a4}
 
 
-Definition at line 106 of file Motor\-Unit\-Pool.\-py.
+Is a vector formed as\+: \begin{equation} \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$} \end{equation} It is multiplied by the matriz act\+Matrix to obtain the activation signal (see act\+Matrix explanation) 
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a3b2ee8f3e5500bfdc8fa731a5cb7d622}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!conf@{conf}}
-\index{conf@{conf}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{conf}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-conf}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a3b2ee8f3e5500bfdc8fa731a5cb7d622}
+
+
+Definition at line 129 of file Motor\+Unit\+Pool.\+py.
+
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!atualize\+Force@{atualize\+Force}}
+\index{atualize\+Force@{atualize\+Force}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{atualize\+Force}{atualizeForce}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+atualize\+Force}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a21f9a6a5d113b5b0f67a3557c47ebd5a}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a21f9a6a5d113b5b0f67a3557c47ebd5a}
+
+
+Definition at line 156 of file Motor\+Unit\+Pool.\+py.
+
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!b\+Sat@{b\+Sat}}
+\index{b\+Sat@{b\+Sat}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{b\+Sat}{bSat}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+b\+Sat}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a4e107835e34b4f56d06b9b28c143fe40}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a4e107835e34b4f56d06b9b28c143fe40}
+
+
+The parameter $b$ (see twitch\+Saturation function explanation) of each motor unit. 
+
+
+
+Definition at line 135 of file Motor\+Unit\+Pool.\+py.
+
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!conf@{conf}}
+\index{conf@{conf}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{conf}{conf}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+conf}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a3b2ee8f3e5500bfdc8fa731a5cb7d622}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a3b2ee8f3e5500bfdc8fa731a5cb7d622}
 
 
 \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters. 
 
 
 
-Definition at line 58 of file Motor\-Unit\-Pool.\-py.
+Definition at line 59 of file Motor\+Unit\+Pool.\+py.
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a48b53d4f838ca8cfe2bc41c8308f2060}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!dirac\-Delta\-Value@{dirac\-Delta\-Value}}
-\index{dirac\-Delta\-Value@{dirac\-Delta\-Value}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{dirac\-Delta\-Value}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-dirac\-Delta\-Value}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a48b53d4f838ca8cfe2bc41c8308f2060}
-
-
-Definition at line 116 of file Motor\-Unit\-Pool.\-py.
-
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a97011c17140c45a42a00105279f014ad}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!force@{force}}
-\index{force@{force}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{force}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-force}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a97011c17140c45a42a00105279f014ad}
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!dirac\+Delta\+Value@{dirac\+Delta\+Value}}
+\index{dirac\+Delta\+Value@{dirac\+Delta\+Value}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{dirac\+Delta\+Value}{diracDeltaValue}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+dirac\+Delta\+Value}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a48b53d4f838ca8cfe2bc41c8308f2060}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a48b53d4f838ca8cfe2bc41c8308f2060}
 
 
-Definition at line 119 of file Motor\-Unit\-Pool.\-py.
+Dirac\textquotesingle{}s delta approximation amplitude value. 
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a963061fdcfee8f9dc33e4d6f130ea59b}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!hill\-Model@{hill\-Model}}
-\index{hill\-Model@{hill\-Model}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{hill\-Model}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-hill\-Model}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a963061fdcfee8f9dc33e4d6f130ea59b}
+Is the inverse of the simulation time step ( $1/T$). 
+
+Definition at line 149 of file Motor\+Unit\+Pool.\+py.
+
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!force@{force}}
+\index{force@{force}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{force}{force}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+force}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a97011c17140c45a42a00105279f014ad}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a97011c17140c45a42a00105279f014ad}
 
 
-Definition at line 120 of file Motor\-Unit\-Pool.\-py.
+Muscle force along time, in N. 
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_aeb57d0463ad56a16b166d00dc6079b95}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!kind@{kind}}
-\index{kind@{kind}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{kind}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-kind}}\label{class_motor_unit_pool_1_1_motor_unit_pool_aeb57d0463ad56a16b166d00dc6079b95}
+
+
+Definition at line 153 of file Motor\+Unit\+Pool.\+py.
+
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!hill\+Model@{hill\+Model}}
+\index{hill\+Model@{hill\+Model}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{hill\+Model}{hillModel}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+hill\+Model}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a963061fdcfee8f9dc33e4d6f130ea59b}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a963061fdcfee8f9dc33e4d6f130ea59b}
+
+
+String indicating whther a Hill model is used or not. 
+
+For now, it can be {\itshape No}. 
+
+Definition at line 155 of file Motor\+Unit\+Pool.\+py.
+
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!kind@{kind}}
+\index{kind@{kind}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{kind}{kind}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+kind}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_aeb57d0463ad56a16b166d00dc6079b95}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_aeb57d0463ad56a16b166d00dc6079b95}
 
 
 Indicates that is Motor Unit pool. 
 
 
 
-Definition at line 55 of file Motor\-Unit\-Pool.\-py.
+Definition at line 56 of file Motor\+Unit\+Pool.\+py.
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_aa5884530baaa20f46007805bc574407d}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!M\-Unumber@{M\-Unumber}}
-\index{M\-Unumber@{M\-Unumber}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{M\-Unumber}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-M\-Unumber}}\label{class_motor_unit_pool_1_1_motor_unit_pool_aa5884530baaa20f46007805bc574407d}
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!M\+Unumber@{M\+Unumber}}
+\index{M\+Unumber@{M\+Unumber}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{M\+Unumber}{MUnumber}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+M\+Unumber}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_aa5884530baaa20f46007805bc574407d}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_aa5884530baaa20f46007805bc574407d}
 
 
 Number of motor units. 
 
 
 
-Definition at line 65 of file Motor\-Unit\-Pool.\-py.
+Definition at line 66 of file Motor\+Unit\+Pool.\+py.
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a832364dc014aa8a1b2947abfe063f626}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!pool@{pool}}
-\index{pool@{pool}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{pool}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-pool}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a832364dc014aa8a1b2947abfe063f626}
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!pool@{pool}}
+\index{pool@{pool}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{pool}{pool}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+pool}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a832364dc014aa8a1b2947abfe063f626}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a832364dc014aa8a1b2947abfe063f626}
 
 
 String with Motor unit pool to which the motor unit belongs. 
 
 
 
-Definition at line 60 of file Motor\-Unit\-Pool.\-py.
+Definition at line 61 of file Motor\+Unit\+Pool.\+py.
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a3790757a111061662ad0f98120b25e69}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!pool\-Soma\-Spikes@{pool\-Soma\-Spikes}}
-\index{pool\-Soma\-Spikes@{pool\-Soma\-Spikes}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{pool\-Soma\-Spikes}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-pool\-Soma\-Spikes}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a3790757a111061662ad0f98120b25e69}
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!pool\+Soma\+Spikes@{pool\+Soma\+Spikes}}
+\index{pool\+Soma\+Spikes@{pool\+Soma\+Spikes}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{pool\+Soma\+Spikes}{poolSomaSpikes}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+pool\+Soma\+Spikes}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a3790757a111061662ad0f98120b25e69}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a3790757a111061662ad0f98120b25e69}
 
 
 Vector with the instants of spikes in the soma compartment, in ms. 
 
 
 
-Definition at line 80 of file Motor\-Unit\-Pool.\-py.
+Definition at line 81 of file Motor\+Unit\+Pool.\+py.
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a4f0b93df27eb6303fa1a3d49653d4fd3}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!pool\-Terminal\-Spikes@{pool\-Terminal\-Spikes}}
-\index{pool\-Terminal\-Spikes@{pool\-Terminal\-Spikes}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{pool\-Terminal\-Spikes}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-pool\-Terminal\-Spikes}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a4f0b93df27eb6303fa1a3d49653d4fd3}
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!pool\+Terminal\+Spikes@{pool\+Terminal\+Spikes}}
+\index{pool\+Terminal\+Spikes@{pool\+Terminal\+Spikes}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{pool\+Terminal\+Spikes}{poolTerminalSpikes}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+pool\+Terminal\+Spikes}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a4f0b93df27eb6303fa1a3d49653d4fd3}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a4f0b93df27eb6303fa1a3d49653d4fd3}
 
 
 Vector with the instants of spikes in the terminal, in ms. 
 
 
 
-Definition at line 82 of file Motor\-Unit\-Pool.\-py.
+Definition at line 83 of file Motor\+Unit\+Pool.\+py.
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_ab5659e1c9355ecf529d9b8be8cbf6d65}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!time\-Index@{time\-Index}}
-\index{time\-Index@{time\-Index}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{time\-Index}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-time\-Index}}\label{class_motor_unit_pool_1_1_motor_unit_pool_ab5659e1c9355ecf529d9b8be8cbf6d65}
-
-
-Definition at line 123 of file Motor\-Unit\-Pool.\-py.
-
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a03538b06e7220f9d48c7306ed6508c05}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!twitch\-Amp\-\_\-\-N@{twitch\-Amp\-\_\-\-N}}
-\index{twitch\-Amp\-\_\-\-N@{twitch\-Amp\-\_\-\-N}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{twitch\-Amp\-\_\-\-N}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-twitch\-Amp\-\_\-\-N}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a03538b06e7220f9d48c7306ed6508c05}
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!time\+Index@{time\+Index}}
+\index{time\+Index@{time\+Index}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{time\+Index}{timeIndex}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+time\+Index}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_ab5659e1c9355ecf529d9b8be8cbf6d65}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_ab5659e1c9355ecf529d9b8be8cbf6d65}
 
 
-Definition at line 108 of file Motor\-Unit\-Pool.\-py.
+Definition at line 158 of file Motor\+Unit\+Pool.\+py.
 
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a785a769c5b4824603a24339e4f0d8dfe}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!tw\-Tet@{tw\-Tet}}
-\index{tw\-Tet@{tw\-Tet}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{tw\-Tet}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-tw\-Tet}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a785a769c5b4824603a24339e4f0d8dfe}
-
-
-Definition at line 107 of file Motor\-Unit\-Pool.\-py.
-
-\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a1b14c831606c27efae62f1468850393b}{\index{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}!unit@{unit}}
-\index{unit@{unit}!MotorUnitPool::MotorUnitPool@{Motor\-Unit\-Pool\-::\-Motor\-Unit\-Pool}}
-\subsubsection[{unit}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Unit\-Pool.\-Motor\-Unit\-Pool.\-unit}}\label{class_motor_unit_pool_1_1_motor_unit_pool_a1b14c831606c27efae62f1468850393b}
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!twitch\+Amp\+\_\+N@{twitch\+Amp\+\_\+N}}
+\index{twitch\+Amp\+\_\+N@{twitch\+Amp\+\_\+N}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{twitch\+Amp\+\_\+N}{twitchAmp_N}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+twitch\+Amp\+\_\+N}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a03538b06e7220f9d48c7306ed6508c05}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a03538b06e7220f9d48c7306ed6508c05}
 
 
-List of \hyperlink{namespace_motor_unit}{Motor\-Unit} objects. 
+Amplitude of the muscle unit twitch, in N (see atualize\+Force\+No\+Hill function explanation). 
 
 
 
-Definition at line 68 of file Motor\-Unit\-Pool.\-py.
+Definition at line 139 of file Motor\+Unit\+Pool.\+py.
+
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!tw\+Tet@{tw\+Tet}}
+\index{tw\+Tet@{tw\+Tet}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{tw\+Tet}{twTet}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+tw\+Tet}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a785a769c5b4824603a24339e4f0d8dfe}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a785a769c5b4824603a24339e4f0d8dfe}
+
+
+Twitch-\/ tetanus relationship (see atualize\+Force\+No\+Hill function explanation) 
 
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+Definition at line 137 of file Motor\+Unit\+Pool.\+py.
+
+\index{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}!unit@{unit}}
+\index{unit@{unit}!Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool@{Motor\+Unit\+Pool\+::\+Motor\+Unit\+Pool}}
+\subsubsection[{\texorpdfstring{unit}{unit}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+Unit\+Pool.\+Motor\+Unit\+Pool.\+unit}\hypertarget{class_motor_unit_pool_1_1_motor_unit_pool_a1b14c831606c27efae62f1468850393b}{}\label{class_motor_unit_pool_1_1_motor_unit_pool_a1b14c831606c27efae62f1468850393b}
+
+
+List of \hyperlink{namespace_motor_unit}{Motor\+Unit} objects. 
+
+
+
+Definition at line 69 of file Motor\+Unit\+Pool.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{_motor_unit_pool_8py}{Motor\-Unit\-Pool.\-py}\end{DoxyCompactItemize}
+\hyperlink{_motor_unit_pool_8py}{Motor\+Unit\+Pool.\+py}\end{DoxyCompactItemize}

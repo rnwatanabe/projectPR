@@ -4,7 +4,6 @@ var annotated =
     [ "ChannelConductance", "namespace_channel_conductance.html", "namespace_channel_conductance" ],
     [ "Compartment", "namespace_compartment.html", "namespace_compartment" ],
     [ "Configuration", "namespace_configuration.html", "namespace_configuration" ],
-    [ "electroComputation", "namespaceelectro_computation.html", null ],
     [ "MotorUnit", "namespace_motor_unit.html", "namespace_motor_unit" ],
     [ "MotorUnitPool", "namespace_motor_unit_pool.html", "namespace_motor_unit_pool" ],
     [ "NeuralTract", "namespace_neural_tract.html", "namespace_neural_tract" ],
@@ -13,5 +12,6 @@ var annotated =
     [ "PulseConductanceState", "namespace_pulse_conductance_state.html", "namespace_pulse_conductance_state" ],
     [ "simulation", "namespacesimulation.html", null ],
     [ "Synapse", "namespace_synapse.html", "namespace_synapse" ],
-    [ "SynapsesFactory", "namespace_synapses_factory.html", "namespace_synapses_factory" ]
+    [ "SynapsesFactory", "namespace_synapses_factory.html", "namespace_synapses_factory" ],
+    [ "object", "classobject.html", null ]
 ];

@@ -1,10 +1,10 @@
 var class_channel_conductance_1_1_channel_conductance =
 [
-    [ "__init__", "class_channel_conductance_1_1_channel_conductance.html#adaaf5ea399963a716dc532a060964348", null ],
-    [ "compCondKf", "class_channel_conductance_1_1_channel_conductance.html#a956928953c88e1c03c113fc98ec42cc6", null ],
-    [ "compCondKs", "class_channel_conductance_1_1_channel_conductance.html#a19cc2a71f96187c7c647855d586cecaa", null ],
-    [ "compCondNa", "class_channel_conductance_1_1_channel_conductance.html#a26e6cf970cc7a8732f590dceb1d7c993", null ],
-    [ "computeCurrent", "class_channel_conductance_1_1_channel_conductance.html#abde599b9096579b94d24295678f45b6d", null ],
+    [ "__init__", "class_channel_conductance_1_1_channel_conductance.html#a25b3a53d3d4a2926f61e1bd978e375f7", null ],
+    [ "compCondKf", "class_channel_conductance_1_1_channel_conductance.html#a9df028286b0ce594530f798f4a781d8c", null ],
+    [ "compCondKs", "class_channel_conductance_1_1_channel_conductance.html#aaffacf12bc9b5f50bfcc04f49c3254ff", null ],
+    [ "compCondNa", "class_channel_conductance_1_1_channel_conductance.html#a17d6343152d9252b6f1368b450f0dbcf", null ],
+    [ "computeCurrent", "class_channel_conductance_1_1_channel_conductance.html#af012b0816d74d6bb6a923ca79dc0a7ba", null ],
     [ "compCond", "class_channel_conductance_1_1_channel_conductance.html#a0a91eec3fa2b1dfc66c6379943a5907f", null ],
     [ "condState", "class_channel_conductance_1_1_channel_conductance.html#a628553cbc1efd93b30b0a15afd4417d9", null ],
     [ "EqPot_mV", "class_channel_conductance_1_1_channel_conductance.html#a654a73b6cd5853b509e7f7fba060572b", null ],

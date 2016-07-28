@@ -1,0 +1,4 @@
+<map id="MotorUnitPool.twitchSaturation" name="MotorUnitPool.twitchSaturation">
+<area shape="rect" id="node2" href="$class_motor_unit_pool_1_1_motor_unit_pool.html#a164393f9e070abb72b48d0a9685ba518" title="Update the activation signal of the motor units. " alt="" coords="256,5,497,47"/>
+<area shape="rect" id="node3" href="$class_motor_unit_pool_1_1_motor_unit_pool.html#ae211c664df7b661288fe71c4a6e63a18" title="Update all parts of the Motor Unit pool. " alt="" coords="545,5,787,47"/>
+</map>
