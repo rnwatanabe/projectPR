@@ -6,7 +6,7 @@ Created on Jul, 28 2015
 
 import numpy as np
 
-class Muscle(object):
+class MuscleNoHill(object):
 
     def __init__(self, conf, pool, MUnumber, MUtypeInumber, unit):
         
@@ -25,13 +25,11 @@ class Muscle(object):
             self.twTet[i] = unit[i].twTet  
         ## Muscle force along time, in N.
         self.force = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
-        ## String indicating whther a Hill model is used or not. For now, it can be *No*.
-        self.hillModel = conf.parameterSet('hillModel',pool, 0)
-        if self.hillModel == 'No': self.atualizeForce = self.atualizeForceNoHill
+        
 
         self.timeIndex = 0;
 
-    def atualizeForceNoHill(self, activation_Sat):
+    def atualizeForce(self, activation_Sat):
         '''
         Compute the muscle force when no muscle dynamics (Hill model) is used. This
         operation is vectorized. Each element of the vectors correspond to one motor
