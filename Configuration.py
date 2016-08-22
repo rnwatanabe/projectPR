@@ -60,9 +60,9 @@ class Configuration(object):
             if self.confArray[i][0] == 'simDuration':
                 ## Total length of the simulation in ms.
                 self.simDuration_ms = float(self.confArray[i][1])
-        ## The variable  timeStep divided by two, for computaional efficiency.
+        ## The variable  timeStep divided by two, for computational efficiency.
         self.timeStepByTwo_ms = self.timeStep_ms / 2.0; 
-        ## The variable  timeStep divided by six, for computaional efficiency.
+        ## The variable  timeStep divided by six, for computational efficiency.
         self.timeStepBySix_ms = self.timeStep_ms / 6.0; 
            
         

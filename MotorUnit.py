@@ -247,7 +247,7 @@ class MotorUnit(object):
         self.terminalSpikeTrain = []
                 
         
-        # contraction Data
+        # contraction DataMUnumber_S = int(conf.parameterSet('MUnumber_S_' + pool, pool, 0))
         activationModel = conf.parameterSet('activationModel', pool, 0)
         
         ## Contraction time of the twitch muscle unit, in ms.

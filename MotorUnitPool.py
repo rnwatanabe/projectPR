@@ -8,7 +8,7 @@ import numpy as np
 from MotorUnit import MotorUnit
 from MuscularActivation import MuscularActivation
 from MuscleNoHill import MuscleNoHill
-import math
+from MuscleHill import MuscleHill
 from scipy.sparse import lil_matrix
 
  
@@ -72,9 +72,8 @@ class MotorUnitPool(object):
         self.hillModel = conf.parameterSet('hillModel',pool, 0)
         if self.hillModel == 'No': 
             self.Muscle = MuscleNoHill(self.conf, self.pool, self.MUnumber, MUnumber_S, self.unit)
-        
-        
-        
+        else:
+            self.Muscle = MuscleHill(self.conf, self.pool, self.MUnumber, MUnumber_S, 0.3, self.unit)
         
         ##
         print 'Motor Unit Pool ' + pool + ' built'
@@ -90,7 +89,7 @@ class MotorUnitPool(object):
         '''
         for i in self.unit: i.atualizeMotorUnit(t)
         self.Activation.atualizeActivationSignal(t, self.unit)
-        self.Muscle.atualizeForce(self.Activation.activation_Sat)   
+        self.Muscle.atualizeForce(self.Activation.activation_Sat, 0.323)   
 
     def listSpikes(self):
         '''
