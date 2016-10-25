@@ -31,13 +31,13 @@ class MuscleNoHill(object):
         
         self.timeIndex = 0;
 
-    def atualizeForce(self, activation_Sat, musculoTendonLength):
+    def atualizeForce(self, activation_Sat):
         '''
         Compute the muscle force when no muscle dynamics (Hill model) is used. This
         operation is vectorized. Each element of the vectors correspond to one motor
         unit. For each motor unit, the force is computed by the following formula:
 
-        \f{equajamaication}{
+        \f{equation}{
             F_{MU} = a_{sat}A_{MU}R_{MU}
         }
         where \f$a_{sat}\f$ is the saturated activation signal, \f$A_{MU}\f$ is the

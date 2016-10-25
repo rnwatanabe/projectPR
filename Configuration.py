@@ -64,7 +64,6 @@ class Configuration(object):
         self.timeStepByTwo_ms = self.timeStep_ms / 2.0; 
         ## The variable  timeStep divided by six, for computational efficiency.
         self.timeStepBySix_ms = self.timeStep_ms / 6.0; 
-           
         
         
     def parameterSet(self, paramTag, pool, index):

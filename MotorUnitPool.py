@@ -73,7 +73,7 @@ class MotorUnitPool(object):
         if self.hillModel == 'No': 
             self.Muscle = MuscleNoHill(self.conf, self.pool, self.MUnumber, MUnumber_S, self.unit)
         else:
-            self.Muscle = MuscleHill(self.conf, self.pool, self.MUnumber, MUnumber_S, 0.3, self.unit)
+            self.Muscle = MuscleHill(self.conf, self.pool, self.MUnumber, MUnumber_S, self.unit)
         
         ##
         print 'Motor Unit Pool ' + pool + ' built'
@@ -86,10 +86,12 @@ class MotorUnitPool(object):
 
         - Inputs:
             + **t**: current instant, in ms.
+
+            + **musculoTendonLength**: length of the musculotendon complex, in meters.
         '''
         for i in self.unit: i.atualizeMotorUnit(t)
         self.Activation.atualizeActivationSignal(t, self.unit)
-        self.Muscle.atualizeForce(self.Activation.activation_Sat, 0.323)   
+        self.Muscle.atualizeForce(self.Activation.activation_Sat)   
 
     def listSpikes(self):
         '''

@@ -5,7 +5,7 @@ Created on Oct 23, 2015
 '''
 import numpy as np
 import math
-import random
+from numpy import random_intel
 
 
 
@@ -33,7 +33,7 @@ def  gammaPoint(GammaOrder, GammaOrderInv):
     a uniform distribution from a to b.
 
     '''
-    aux = np.prod(np.random.uniform(0.0, 1.0, GammaOrder))
+    aux = np.prod(np.random_intel.uniform(0.0, 1.0, size=GammaOrder))
 
     return - GammaOrderInv * math.log(aux)
 

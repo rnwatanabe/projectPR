@@ -10,7 +10,7 @@ import numpy as np
 
 class MuscleHill(object):
 
-    def __init__(self, conf, pool, MUnumber, MUtypeInumber, musculotendonLength, unit):
+    def __init__(self, conf, pool, MUnumber, MUtypeInumber, unit):
         
         ##
         self.conf = conf
@@ -57,6 +57,10 @@ class MuscleHill(object):
         self.activationTypeI = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         ##
         self.activationTypeII = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        ##
+        self.musculoTendonLength_m = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        ##
+        self.momentArm_m = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         ##
         self.optimalLength_m = float(self.conf.parameterSet('optimalMuscleLength_' + pool, pool, 0))
         ##
@@ -133,10 +137,31 @@ class MuscleHill(object):
         ##
         self.Vmax_TypeI = float(self.conf.parameterSet('VmaxTypeI_' + pool, pool, 0))
         ##  
-        self.Vmax_TypeII = float(self.conf.parameterSet('VmaxTypeII_' + pool, pool, 0))     
+        self.Vmax_TypeII = float(self.conf.parameterSet('VmaxTypeII_' + pool, pool, 0))
+        ##  
+        self.m0 = float(self.conf.parameterSet('m0_' + pool, pool, 0))       
+        ##  
+        self.m1 = float(self.conf.parameterSet('m1_' + pool, pool, 0))
+        ##  
+        self.m2 = float(self.conf.parameterSet('m2_' + pool, pool, 0))
+        ##  
+        self.m3 = float(self.conf.parameterSet('m3_' + pool, pool, 0))
+        ##  
+        self.m4 = float(self.conf.parameterSet('m4_' + pool, pool, 0))
+
+        ##  
+        self.n0 = float(self.conf.parameterSet('n0_' + pool, pool, 0))       
+        ##  
+        self.n1 = float(self.conf.parameterSet('n1_' + pool, pool, 0))
+        ##  
+        self.n2 = float(self.conf.parameterSet('n2_' + pool, pool, 0))
+        ##  
+        self.n3 = float(self.conf.parameterSet('n3_' + pool, pool, 0))
+        ##  
+        self.n4 = float(self.conf.parameterSet('n4_' + pool, pool, 0))
         
                                      
-    def atualizeForce(self, activation_Sat, musculoTendonLength):
+    def atualizeForce(self, activation_Sat):
         '''
         Compute the muscle force when no muscle dynamics (Hill model) is used. This
         operation is vectorized. Each element of the vectors correspond to one motor
@@ -156,11 +181,13 @@ class MuscleHill(object):
         }
         where \f$N_{MU}\f$ is the number of motor units in the pool.
         '''
+        
         self.atualizeActivation(activation_Sat)
         self.lengthNorm = self.length_m[self.timeIndex] / self.optimalLength_m
         self.velocityNorm = self.velocity_m_ms[self.timeIndex] / self.optimalLength_m
         self.pennationAngle_rad[self.timeIndex] = self.computePennationAngle()
-        self.tendonLength_m[self.timeIndex] = musculoTendonLength - self.length_m[self.timeIndex] * math.cos(self.pennationAngle_rad[self.timeIndex])
+        self.tendonLength_m[self.timeIndex] = (self.musculoTendonLength_m[self.timeIndex] - 
+                                            self.length_m[self.timeIndex] * math.cos(self.pennationAngle_rad[self.timeIndex]))
         self.tendonLengthNorm = self.tendonLength_m[self.timeIndex] / self.optimalTendonLength
 
         self.atualizeMuscleForce()
@@ -205,11 +232,12 @@ class MuscleHill(object):
         return fv
     
     def computeAcceleration(self):
-        return (self.tendonForce_N[self.timeIndex] * math.cos(self.pennationAngle_rad[self.timeIndex]) - 
-            self.force[self.timeIndex] * math.cos(self.pennationAngle_rad[self.timeIndex]) ** 2) / self.mass / 1000000
+        return ((self.tendonForce_N[self.timeIndex] - 
+            self.force[self.timeIndex] * math.cos(self.pennationAngle_rad[self.timeIndex])) / 
+            (self.mass * math.cos(self.pennationAngle_rad[self.timeIndex])) / 1000000)
 
     def dLdt(self):
-        return  np.array([self.velocity_m_ms[self.timeIndex],self.computeAcceleration()])
+        return  np.array([self.velocity_m_ms[self.timeIndex], self.computeAcceleration()])
 
     def atualizeMuscleForce(self):
         self.forceNorm  = (self.computeElasticElementForce() + self.computeViscousElementForce() + 
@@ -226,11 +254,23 @@ class MuscleHill(object):
         return self.viscosity * self.velocityNorm
 
     def computeTypeIActiveForce(self):
-        return self.activationTypeI[self.timeIndex] * self.computeForceLengthTypeI() * self.computeForceVelocityTypeI() 
+        return (self.activationTypeI[self.timeIndex] * self.computeForceLengthTypeI() * 
+                    self.computeForceVelocityTypeI()) 
 
     def computeTypeIIActiveForce(self):
-        return self.activationTypeII[self.timeIndex] * self.computeForceLengthTypeII() * self.computeForceVelocityTypeII()
+        return (self.activationTypeII[self.timeIndex] * self.computeForceLengthTypeII() * 
+                    self.computeForceVelocityTypeII())
 
     def atualizeLenghtsAndVelocity(self):
-        [self.length_m[self.timeIndex + 1],self.velocity_m_ms[self.timeIndex + 1]] = [self.length_m[self.timeIndex],self.velocity_m_ms[self.timeIndex]] + self.conf.timeStep_ms * self.dLdt()
+        [self.length_m[self.timeIndex + 1],self.velocity_m_ms[self.timeIndex + 1]] = ([self.length_m[self.timeIndex],self.velocity_m_ms[self.timeIndex]] + 
+                                                                                      self.conf.timeStep_ms * self.dLdt())
     
+    def atualizeMusculoTendonLength(self, ankleAngle):
+        self.musculoTendonLength_m[self.timeIndex] = (self.m0 + self.m1 * ankleAngle + self.m2 * (ankleAngle ** 2) + 
+                                                      self.m3 * (ankleAngle ** 3) + self.m4 * (ankleAngle ** 4))
+
+    def atualizeMomentArm(self, ankleAngle):
+        '''
+        '''
+        self.momentArm_m[self.timeIndex] = (self.n0 + self.n1 * ankleAngle + self.n2 * (ankleAngle ** 2) + 
+                                                      self.n3 * (ankleAngle ** 3) + self.n4 * (ankleAngle ** 4))
