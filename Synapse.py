@@ -315,6 +315,10 @@ class Synapse(object):
         self.kind = kind
         self.neuronKind = neuronKind
 
+        print self.pool
+        print self.neuronKind
+        print 'EqPotSyn_' + pool + '_'  + self.neuronKind + '_' + self.kind
+        print index
         self.EqPot_mV = float(conf.parameterSet('EqPotSyn_' + pool + '_'  + self.neuronKind + '_' + self.kind, pool, index))
         self.alpha_ms1 = float(conf.parameterSet('alphaSyn_' + self.kind + '_' + pool + '_'  + self.neuronKind, pool, index))
         self.beta_ms1 = float(conf.parameterSet('betaSyn_' + self.kind + '_' + pool + '_'  + self.neuronKind, pool, index))

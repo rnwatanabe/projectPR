@@ -88,9 +88,9 @@ class Compartment(object):
         
         
         if (kind == 'soma'):              
-            self.Channels.append(ChannelConductance('Kf', conf, area_cm2, pool, index))
-            self.Channels.append(ChannelConductance('Ks', conf, area_cm2, pool, index))
-            self.Channels.append(ChannelConductance('Na', conf, area_cm2, pool, index))            
+            self.Channels.append(ChannelConductance('Kf', conf, area_cm2, pool, neuronKind, index))
+            self.Channels.append(ChannelConductance('Ks', conf, area_cm2, pool, neuronKind, index))
+            self.Channels.append(ChannelConductance('Na', conf, area_cm2, pool, neuronKind, index))            
         elif (kind == 'dendrite'):
             pass      
         

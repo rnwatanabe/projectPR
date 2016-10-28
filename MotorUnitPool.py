@@ -86,8 +86,6 @@ class MotorUnitPool(object):
 
         - Inputs:
             + **t**: current instant, in ms.
-
-            + **musculoTendonLength**: length of the musculotendon complex, in meters.
         '''
         for i in self.unit: i.atualizeMotorUnit(t)
         self.Activation.atualizeActivationSignal(t, self.unit)

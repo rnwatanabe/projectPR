@@ -48,15 +48,16 @@ class PulseConductanceState(object):
     Implements the Destexhe pulse approximation of the solution of 
     the states of the Hodgkin-Huxley neuron model.
     '''
-    def __init__(self, kind, conf, pool,index):
+    def __init__(self, kind, conf, pool, neuronKind, index):
         '''
         Initializes the pulse conductance state.
 
         Variables:
-            kind - type of the state(m, h, n, q).
-            conf - an instance of the Configuration class with the functions to correctly parameterize the model. See the Configuration class.
-            pool - the pool that this state belongs.
-            index - the index of the unit that this state belongs.                    
+            *kind* - type of the state(m, h, n, q).
+            *conf* - an instance of the Configuration class with the functions to correctly parameterize the model. See the Configuration class.
+            *pool* - the pool that this state belongs.
+            *neuronKind* - 
+            *index* - the index of the unit that this state belongs.                    
         '''
         self.kind = kind
         self.value = float(0)
@@ -67,8 +68,8 @@ class PulseConductanceState(object):
         
         self.state = False
         
-        self.beta_ms1 = float(conf.parameterSet('beta_' + kind, pool, index))
-        self.alpha_ms1 = float(conf.parameterSet('alpha_' + kind, pool,index))
+        self.beta_ms1 = float(conf.parameterSet('beta_' + kind + '_' + pool + '_' + neuronKind, pool, index))
+        self.alpha_ms1 = float(conf.parameterSet('alpha_' + kind + '_' + pool + '_' + neuronKind, pool,index))
         self.PulseDur_ms = float(conf.parameterSet('PulseDur_' + kind, pool, index)) 
         
         if (self.kind == 'm'):

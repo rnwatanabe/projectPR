@@ -14,7 +14,7 @@ class ChannelConductance(object):
     '''
 
     
-    def __init__(self, kind, conf, compArea, pool, index):
+    def __init__(self, kind, conf, compArea, pool, neuronKind, index):
         '''
         Constructor
         
@@ -43,7 +43,7 @@ class ChannelConductance(object):
         ## Equilibrium Potential of the ionic channel, mV.
         self.EqPot_mV = float(conf.parameterSet('EqPot_' + kind, pool, index))
         ## Maximal conductance, in \f$\mu\f$S, of the ionic channel. 
-        self.gmax_muS = compArea * float(conf.parameterSet('gmax_' + kind, pool, index))                
+        self.gmax_muS = compArea * float(conf.parameterSet('gmax_' + kind + '_' + pool + '_' + neuronKind, pool, index))                
        
         ## String with type of dynamics of the states. For now it accepts the string pulse.
         self.stateType = conf.parameterSet('StateType', pool, index)
@@ -52,15 +52,15 @@ class ChannelConductance(object):
             ConductanceState = PulseConductanceState
            
         if(self.kind == 'Kf'):
-            self.condState.append(ConductanceState('n', conf, pool, index))
+            self.condState.append(ConductanceState('n', conf, pool, neuronKind, index))
             ## Function that computes the conductance dynamics.
             self.compCond = self.compCondKf
         if(self.kind == 'Ks'):
-            self.condState.append(ConductanceState('q', conf, pool, index))
+            self.condState.append(ConductanceState('q', conf, pool, neuronKind, index))
             self.compCond = self.compCondKs
         if(self.kind == 'Na'):
-            self.condState.append(ConductanceState('m', conf, pool, index))
-            self.condState.append(ConductanceState('h', conf, pool, index))
+            self.condState.append(ConductanceState('m', conf, pool, neuronKind, index))
+            self.condState.append(ConductanceState('h', conf, pool, neuronKind, index))
             self.compCond = self.compCondNa
         if(self.kind == 'Ca'):
             pass  # to be implemented

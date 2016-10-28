@@ -1,20 +1,24 @@
 MUnumber_S_SOL,800,
 MUnumber_FR_SOL,0,
 MUnumber_FF_SOL,0,
+number_RC,350,
 Number_CM_ext,400,
 timeStep,0.05,
 simDuration,100,
 nerveLength_PTN,0.8,
 MNSomaRefPer,5.0,
+% Model options
 activationModel,SOCDS,
 hillModel,Yes,
 StateType,pulse,
+% Inputs
 GammaOrder_CM_ext,10,
 Target_CM_ext,ISI,
 TargetFunction_CM_ext,10+0*t,
 %Stimulus
 stimDistToTerm_PTN,0.2,
 % Synapses
+%% SOL
 EqPotSyn_SOL_S_excitatory,70.0,
 EqPotSyn_SOL_FR_excitatory,70.0,
 EqPotSyn_SOL_FF_excitatory,70.0,
@@ -47,7 +51,7 @@ tPeakSyn_inhibitory_SOL_FR,0.4,
 tPeakSyn_inhibitory_SOL_FF,0.4,
 Con_CM_ext_SOL_S__dendrite,30,
 Con_CM_ext_SOL_FR__dendrite,30,
-Con_CM_ext_SOL_FF__dendrite,60,
+Con_CM_ext_SOL_FF__dendrite,30,
 gmax_CM_ext_SOL_S__dendrite,0.6,
 gmax_CM_ext_SOL_FR__dendrite,0.6,
 gmax_CM_ext_SOL_FF__dendrite,0.6,
@@ -57,26 +61,69 @@ delay_CM_ext_SOL_FF__dendrite,0.3,
 dyn_CM_ext_SOL_S__dendrite,None,
 dyn_CM_ext_SOL_FR__dendrite,None,
 dyn_CM_ext_SOL_FF__dendrite,None,
+Con_RC_SOL_S__dendrite,4,
+Con_RC_SOL_FR__dendrite,4,
+Con_RC_SOL_FF__dendrite,4,
+gmax_CM_ext_SOL_S__dendrite,0.44,
+gmax_CM_ext_SOL_FR__dendrite,0.44,
+gmax_CM_ext_SOL_FF__dendrite,0.44,
+delay_CM_ext_SOL_S__dendrite,0.3,
+delay_CM_ext_SOL_FR__dendrite,0.3,
+delay_CM_ext_SOL_FF__dendrite,0.3,
+dyn_CM_ext_SOL_S__dendrite,None,
+dyn_CM_ext_SOL_FR__dendrite,None,
+dyn_CM_ext_SOL_FF__dendrite,None,
+%% RC
+EqPotSyn_RC__excitatory,70.0,
+EqPotSyn_RC__inhibitory,-16.0,
+alphaSyn_excitatory__RC,0.5,
+betaSyn_excitatory__RC,0.07,
+alphaSyn_inhibitory__RC,0.5,
+betaSyn_inhibitory__RC,1.2,
+TmaxSyn_excitatory__RC,1.0,
+TmaxSyn_inhibitory__RC,1.0,
+tPeakSyn_excitatory__RC,3,
+tPeakSyn_inhibitory__RC,0.4,
+Con_SOL_S_RC__soma,6,
+gmax_SOL_S_RC__soma,0.15,
+delay_SOL_S_RC__soma,0.3,
+dyn_SOL_S_RC__soma,Depressing,
 %Equilibrium Potential
 EqPot_Kf,-10,
 EqPot_Ks,-10,
 EqPot_Na,120,
-gmax_Na,30000,
-gmax_Kf,4000,
-gmax_Ks,17000,
+% Conductance density
+%% SOL
+gmax_Na_SOL_S,30000,
+gmax_Kf_SOL_S,4000,
+gmax_Ks_SOL_S,17000,
+%% RC
+gmax_Na_RC,30000,
+gmax_Kf_RC,1000,
+gmax_Ks_RC,4000,
 %States
-alpha_m,22,
-alpha_h,0.5,
-alpha_n,1.5,
-alpha_q,1.5,
-beta_m,13,
-beta_h,4,
-beta_n,0.1,
-beta_q,0.025,
+%% SOL
+alpha_m_SOL_S,22,
+alpha_h_SOL_S,0.5,
+alpha_n_SOL_S,1.5,
+alpha_q_SOL_S,1.5,
+beta_m_SOL_S,13,
+beta_h_SOL_S,4,
+beta_n_SOL_S,0.1,
+beta_q_SOL_S,0.025,
 PulseDur_m,0.6,
 PulseDur_h,0.6,
 PulseDur_n,0.6,
 PulseDur_q,0.6,
+%% RC
+alpha_m_RC,22,
+alpha_h_RC,0.5,
+alpha_n_RC,1.5,
+alpha_q_RC,1.5,
+beta_m_RC,13,
+beta_h_RC,4,
+beta_n_RC,0.1,
+beta_q_RC,0.07,
 % Motoneurons
 cytR,70,
 membCapac,1,
@@ -98,6 +145,12 @@ bSatSOCDS_FF_SOL,0.3,0.23
 twTetSOCDS_S_SOL,2.97,4.08
 twTetSOCDS_FR_SOL,4.08,6.71
 twTetSOCDS_FF_SOL,6.71,8.73
+% Interneurons
+%% RC
+threshold_RC,5,15
+d_soma_RC,25,25
+l_soma_RC,242,242
+res_soma_RC,760,760
 % Muscles
 %% SOL
 Fmax_SOL,3586,

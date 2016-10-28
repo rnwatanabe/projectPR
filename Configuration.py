@@ -87,38 +87,47 @@ class Configuration(object):
     + required parameter value
         '''
         #get 
-        for i in xrange(0, len(self.confArray)):
-            if self.confArray[i][0] == 'MUnumber_S_' + pool:
-                MUnumber_S = int(self.confArray[i][1])
-            elif self.confArray[i][0] == 'MUnumber_FR_' + pool:
-                MUnumber_FR = int(self.confArray[i][1])
-            elif self.confArray[i][0] == 'MUnumber_FF_' + pool:
-                MUnumber_FF = int(self.confArray[i][1])
         
-        paramVec_S, paramVec_FR, paramVec_FF = np.array([]),np.array([]), np.array([])
+        if pool == 'SOL' or pool == 'MG' or pool == 'LG' or pool == 'TA':
+            for i in xrange(0, len(self.confArray)):
+                if self.confArray[i][0] == 'MUnumber_S_' + pool:
+                    MUnumber_S = int(self.confArray[i][1])
+                elif self.confArray[i][0] == 'MUnumber_FR_' + pool:
+                    MUnumber_FR = int(self.confArray[i][1])
+                elif self.confArray[i][0] == 'MUnumber_FF_' + pool:
+                    MUnumber_FF = int(self.confArray[i][1])
+
+        if pool == 'RC' or pool == 'IaIn' or pool == 'gII' or pool == 'IbIn':
+            for i in xrange(0, len(self.confArray)):
+                if self.confArray[i][0] == 'number_' + pool:
+                    Nnumber = int(self.confArray[i][1])
+
+        paramVec_S, paramVec_FR, paramVec_FF, paramVec = np.array([]),np.array([]), np.array([]), np.array([])
                 
         for i in xrange(0, len(self.confArray)): 
             if self.confArray[i][0] == paramTag:
                 if (self.confArray[0][2] == ''):
                     return self.confArray[i][1]
             else:
-                if (self.confArray[i][0] == paramTag + '_S_' + pool):
+                if self.confArray[i][0] == paramTag + '_S_' + pool:
                     paramVec_S = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_S)
-                elif (self.confArray[i][0] == paramTag + '_FR_' + pool):
+                    paramVec = paramVec_S
+                elif self.confArray[i][0] == paramTag + '_FR_' + pool:
                     paramVec_FR = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FR)
-                elif (self.confArray[i][0] == paramTag + '_FF_' + pool):
+                elif self.confArray[i][0] == paramTag + '_FF_' + pool:
                     paramVec_FF = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FF)
-                       
-        paramVec = paramVec_S
-        if (paramVec_FR.size > 0):
+                elif self.confArray[i][0] == paramTag + '_' + pool:
+                    paramVec = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), Nnumber)
+        
+
+        if paramVec_FR.size > 0:
             paramVec = np.concatenate(paramVec, paramVec_FR)
-            if (paramVec_FF.size > 0):
+            if paramVec_FF.size > 0:
                 paramVec = np.concatenate(paramVec, paramVec_FF)
-              
+
         return paramVec[index]
-    
-    
-    def inputFunctionGet(self, function):       
+
+    def inputFunctionGet(self, function):
         '''
         Returns a numpy array with the values of the function for the whole simulation.
         It is used to obtain before the simulation run all the values of the inputs.

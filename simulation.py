@@ -14,24 +14,26 @@ import numpy as np
 
 from Configuration import Configuration
 from MotorUnitPool import MotorUnitPool
+from InterneuronPool import InterneuronPool
 from NeuralTract import NeuralTract
 from SynapsesFactory import SynapsesFactory
 from jointAnkleForceTask import jointAnkleForceTask
 
 
-def simulador():     
+def simulador():
 
     conf = Configuration('confTest.rmto')
 
     pools = []
     pools.append(MotorUnitPool(conf, 'SOL'))
     pools.append(NeuralTract(conf, 'CM_ext'))
+    pools.append(InterneuronPool(conf, 'RC'))
     ankle = jointAnkleForceTask(conf, pools)
     Syn = SynapsesFactory(conf, pools)
     del Syn
 
     t = np.arange(0.0, conf.simDuration_ms, conf.timeStep_ms)
-    
+
     tic = time.clock()
     for i in xrange(0,len(t)-1):
         ankle.atualizeAnkle(t[i], 0)
