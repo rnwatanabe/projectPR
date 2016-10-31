@@ -23,7 +23,7 @@ from jointAnkleForceTask import jointAnkleForceTask
 def simulator():
 
     conf = Configuration('confTest.rmto')
-
+    
     pools = []
     pools.append(MotorUnitPool(conf, 'SOL'))
     pools.append(NeuralTract(conf, 'CM_ext'))
@@ -32,6 +32,8 @@ def simulator():
     Syn = SynapsesFactory(conf, pools)
     del Syn
 
+
+
     t = np.arange(0.0, conf.simDuration_ms, conf.timeStep_ms)
 
     tic = time.clock()
@@ -39,10 +41,13 @@ def simulator():
         ankle.atualizeAnkle(t[i], 0)
         pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
+        pools[2].atualizeInterneuronPool(t[i])
     toc = time.clock()
     print str(toc - tic) + ' seconds'
     
     pools[1].listSpikes()
+    pools[2].listSpikes()
+
     plt.figure()
     plt.plot(pools[1].poolTerminalSpikes[:, 0],
         pools[1].poolTerminalSpikes[:, 1]+1, '.')
@@ -52,6 +57,11 @@ def simulator():
     plt.figure()
     plt.plot(pools[0].poolTerminalSpikes[:, 0],
         pools[0].poolTerminalSpikes[:, 1]+1, '.')
+
+    plt.figure()
+    plt.plot(pools[2].poolSomaSpikes[:, 0],
+        pools[2].poolSomaSpikes[:, 1]+1, '.')
+
 
     print pools[0].Muscle.maximumActivationForce
 

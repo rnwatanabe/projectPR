@@ -63,7 +63,7 @@ class SynapsesFactory(object):
                                 else:
                                     for compartmentIn in xrange(len(pools[poolIn].unit[unitIn].compartment)):
                                         if (pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][0] == pools[poolIn].pool + '_' + pools[poolIn].unit[unitIn].kind and pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][1] == pools[poolIn].unit[unitIn].compartment[compartmentIn].kind):
-                                            if (np.random.uniform(0.0, 1.0) <= conn):
+                                            if np.random.uniform(0.0, 1.0) <= conn:
                                                 for synapse in xrange(len(pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn)): 
                                                     if pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].kind == 'excitatory':
                                                         pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].addConductance(gmax, delay, dyn)
@@ -72,8 +72,4 @@ class SynapsesFactory(object):
                                                         self.numberOfSynapses += 1
                             
         print 'All the ' + str(self.numberOfSynapses) +  ' synapses were built'                   
-        
-        
-    
-        
         

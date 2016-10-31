@@ -7,6 +7,7 @@ timeStep,0.05,
 simDuration,100,
 nerveLength_PTN,0.8,
 MNSomaRefPer,5.0,
+RCSomaRefPer,1.0,
 % Model options
 activationModel,SOCDS,
 hillModel,Yes,

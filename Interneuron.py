@@ -82,6 +82,7 @@ class Interneuron(object):
         ## Configuration object with the simulation parameters.
         self.conf = conf
 
+        self.pool = pool
         
         self.kind = ''
         # Neural compartments
@@ -98,7 +99,7 @@ class Interneuron(object):
         ## Value of the membrane potential, in mV, that is considered a spike.
         self.threshold_mV = conf.parameterSet('threshold', pool, index)
 
-        for i in compartmentsList: self.compartment.append(Compartment(i, conf, pool, index, self.kind))        
+        for i in compartmentsList: self.compartment.append(Compartment(i, self.conf, self.pool, self.index, self.kind))        
 
         ## Number of compartments.
         self.compNumber = len(self.compartment)
@@ -136,7 +137,7 @@ class Interneuron(object):
         self.somaIndex = compartmentsList.index('soma')
         
         ## Refractory period, in ms, of the motoneuron.
-        self.MNRefPer_ms = float(conf.parameterSet('MNSomaRefPer', pool, index))
+        self.RefPer_ms = float(conf.parameterSet(self.pool + 'SomaRefPer', pool, index))
        
         ## Vector with the instants of spikes at the terminal.
         self.terminalSpikeTrain = []
@@ -157,7 +158,7 @@ class Interneuron(object):
             + **t**: current instant, in ms.
         ''' 
         self.atualizeCompartments(t)
-        self.atualizeDelay(t)
+        
         
     def atualizeCompartments(self, t):
         '''
@@ -170,7 +171,7 @@ class Interneuron(object):
                             self.conf.timeStep_ms, self.conf.timeStepByTwo_ms,
                             self.conf.timeStepBySix_ms),
                 -16.0, 120.0, self.v_mV)
-        if self.v_mV[self.somaIndex] > self.threshold_mV and t-self.tSomaSpike > self.MNRefPer_ms:
+        if self.v_mV[self.somaIndex] > self.threshold_mV and t-self.tSomaSpike > self.RefPer_ms:
             self.addSomaSpike(t)
 
     def dVdt(self, t, V):
@@ -205,21 +206,10 @@ class Interneuron(object):
         '''
         self.tSomaSpike = t
         self.somaSpikeTrain.append([t, int(self.index)])
-        self.Delay.addSpinalSpike(t)
         self.transmitSpikes(t)
 
         for channel in self.compartment[self.somaIndex].Channels:
             for channelState in channel.condState: channelState.changeState(t)
-
-    def atualizeDelay(self, t):
-        '''
-        Atualize the terminal spike train, by considering the Delay of the nerve.
-
-        - Inputs:
-            + **t**: current instant, in ms.
-        '''
-        if abs(t - self.Delay.terminalSpikeTrain) < 1e-3: 
-            self.terminalSpikeTrain.append([t, self.index])
 
     def transmitSpikes(self, t):
         '''
