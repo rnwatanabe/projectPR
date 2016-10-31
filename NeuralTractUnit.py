@@ -41,7 +41,7 @@ class NeuralTractUnit(object):
         ## List of the spikes of the neural tract unit.       
         self.terminalSpikeTrain = self.spikesGenerator.points
         
-        
+        self.kind = ''
         
          
         # Build synapses       
@@ -58,7 +58,7 @@ class NeuralTractUnit(object):
         '''
 
         - Inputs:
-            + **t**:
+            + **t**: current instant, in ms.
 
             + **FR**:
         '''        
@@ -72,7 +72,7 @@ class NeuralTractUnit(object):
         '''
 
         - Inputs:
-            + **t**:
+            + **t**: current instant, in ms.
         '''
         for i in xrange(len(self.indicesOfSynapsesOnTarget)):
             self.transmitSpikesThroughSynapses[i].receiveSpike(t, self.indicesOfSynapsesOnTarget[i])

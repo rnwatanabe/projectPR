@@ -20,7 +20,7 @@ from SynapsesFactory import SynapsesFactory
 from jointAnkleForceTask import jointAnkleForceTask
 
 
-def simulador():
+def simulator():
 
     conf = Configuration('confTest.rmto')
 
@@ -59,7 +59,7 @@ def simulador():
     plt.plot(t, pools[0].Muscle.activationTypeI, '-')
 
     plt.figure()
-    plt.plot(t, pools[0].Muscle.tendonForce_N, '-')
+    plt.plot(t, pools[0].Muscle.tendonForce_N, '-') 
 
     plt.figure()
     plt.plot(t, pools[0].Muscle.force, '-')
@@ -76,4 +76,4 @@ if __name__ == '__main__':
     
     #cProfile.run('simulador()', sort = 'calls')
     np.__config__.show()
-    simulador()
+    simulator()

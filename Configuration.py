@@ -51,7 +51,7 @@ class Configuration(object):
         ## An array with all the simulation parameters.
         self.confArray = open(filename,'r') 
         # This array will store all the contents of the configuration file
-        self.confArray = np.genfromtxt(self.confArray, comments='%', dtype = ['S29', 'S60', 'S21'], delimiter = ',') 
+        self.confArray = np.genfromtxt(self.confArray, comments='%', dtype = ['S32', 'S60', 'S21'], delimiter = ',') 
         
         for i in xrange(0, len(self.confArray)):
             if self.confArray[i][0] == 'timeStep':
@@ -96,17 +96,19 @@ class Configuration(object):
                     MUnumber_FR = int(self.confArray[i][1])
                 elif self.confArray[i][0] == 'MUnumber_FF_' + pool:
                     MUnumber_FF = int(self.confArray[i][1])
-
+                    
         if pool == 'RC' or pool == 'IaIn' or pool == 'gII' or pool == 'IbIn':
             for i in xrange(0, len(self.confArray)):
                 if self.confArray[i][0] == 'number_' + pool:
                     Nnumber = int(self.confArray[i][1])
-
+                    
+                    
         paramVec_S, paramVec_FR, paramVec_FF, paramVec = np.array([]),np.array([]), np.array([]), np.array([])
-                
-        for i in xrange(0, len(self.confArray)): 
+
+                                
+        for i in xrange(0, len(self.confArray)):
             if self.confArray[i][0] == paramTag:
-                if (self.confArray[0][2] == ''):
+                if (self.confArray[0][2] == ''):                       
                     return self.confArray[i][1]
             else:
                 if self.confArray[i][0] == paramTag + '_S_' + pool:
@@ -117,7 +119,7 @@ class Configuration(object):
                 elif self.confArray[i][0] == paramTag + '_FF_' + pool:
                     paramVec_FF = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FF)
                 elif self.confArray[i][0] == paramTag + '_' + pool:
-                    paramVec = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), Nnumber)
+                    paramVec = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), Nnumber)                    
         
 
         if paramVec_FR.size > 0:
@@ -158,8 +160,8 @@ class Configuration(object):
         for i in xrange(0, len(self.confArray)):
             pos = self.confArray[i][0].find('Con_' + neuralSource)
             if (pos >= 0 and float(self.confArray[i][1]) > 0):
-                posComp = self.confArray[i][0].find('__')
+                posComp = self.confArray[i][0].find('@')
                 Synapses.append([self.confArray[i][0][pos+len('Con_' + neuralSource)+1:posComp], 
-                                 self.confArray[i][0][posComp+2:]])
+                                 self.confArray[i][0][posComp+1:]])
         return Synapses       
         

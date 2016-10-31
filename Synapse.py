@@ -302,7 +302,7 @@ class Synapse(object):
             + **pool**: string with identification of the pool to which 
             the synapse belongs.
 
-            + **index**: integer identificationof the unit in the pool.
+            + **index**: integer identification of the unit in the pool.
 
             + **compartment**: integer identification of the compartment of the unit 
             where the synapse is.
@@ -315,11 +315,7 @@ class Synapse(object):
         self.kind = kind
         self.neuronKind = neuronKind
 
-        print self.pool
-        print self.neuronKind
-        print 'EqPotSyn_' + pool + '_'  + self.neuronKind + '_' + self.kind
-        print index
-        self.EqPot_mV = float(conf.parameterSet('EqPotSyn_' + pool + '_'  + self.neuronKind + '_' + self.kind, pool, index))
+        self.EqPot_mV = float(conf.parameterSet('EqPotSyn_' + pool + '_' + self.neuronKind + '_' + self.kind, pool, index))
         self.alpha_ms1 = float(conf.parameterSet('alphaSyn_' + self.kind + '_' + pool + '_'  + self.neuronKind, pool, index))
         self.beta_ms1 = float(conf.parameterSet('betaSyn_' + self.kind + '_' + pool + '_'  + self.neuronKind, pool, index))
         self.Tmax_mM = float(conf.parameterSet('TmaxSyn_' + self.kind + '_' + pool + '_'  + self.neuronKind, pool, index))
@@ -515,7 +511,7 @@ class Synapse(object):
             + **synapseNumber**:
         '''
 
-        self.tBeginOfPulse[synapseNumber] = t+self.delay_ms[synapseNumber]
+        self.tBeginOfPulse[synapseNumber] = t + self.delay_ms[synapseNumber]
 
     def addConductance(self, gmax, delay, dynamics):
         '''

@@ -261,7 +261,11 @@ class MotorUnit(object):
         
         ## EMG data
         
-        
+        ## Build synapses       
+         
+        self.SynapsesOut = []
+        self.transmitSpikesThroughSynapses = []
+        self.indicesOfSynapsesOnTarget = []
     
     def atualizeMotorUnit(self, t):
         '''
@@ -319,6 +323,7 @@ class MotorUnit(object):
         self.tSomaSpike = t
         self.somaSpikeTrain.append([t, int(self.index)])
         self.Delay.addSpinalSpike(t)
+        self.transmitSpikes(t)
         
         for channel in self.compartment[self.somaIndex].Channels:
             for channelState in channel.condState: channelState.changeState(t)    
@@ -333,6 +338,15 @@ class MotorUnit(object):
         '''
         if abs(t - self.Delay.terminalSpikeTrain) < 1e-3: 
             self.terminalSpikeTrain.append([t, self.index])
+
+    def transmitSpikes(self, t):
+        '''
+
+        - Inputs:
+            + **t**: current instant, in ms.
+        '''
+        for i in xrange(len(self.indicesOfSynapsesOnTarget)):
+            self.transmitSpikesThroughSynapses[i].receiveSpike(t, self.indicesOfSynapsesOnTarget[i])
         
     
         

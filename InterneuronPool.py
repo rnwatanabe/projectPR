@@ -10,10 +10,6 @@ from scipy.sparse import lil_matrix
 
  
 
-
-
-
-
 class InterneuronPool(object):
     '''
     Class that implements a motor unit pool. Encompasses a set of motor
@@ -32,7 +28,7 @@ class InterneuronPool(object):
         '''
 
         ## Indicates that is Motor Unit pool.
-        self.kind = 'In'
+        self.kind = 'IN'
 
         ## Configuration object with the simulation parameters.
         self.conf = conf
@@ -62,6 +58,7 @@ class InterneuronPool(object):
             + **t**: current instant, in ms.
 
         '''
+        
         for i in self.unit: i.atualizeInterneuron(t)
 
     def listSpikes(self):

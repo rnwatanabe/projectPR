@@ -83,7 +83,7 @@ class Interneuron(object):
         self.conf = conf
 
         
-
+        self.kind = ''
         # Neural compartments
         ## The instant of the last spike of the Motor unit
         ## at the Soma compartment.
@@ -98,12 +98,14 @@ class Interneuron(object):
         ## Value of the membrane potential, in mV, that is considered a spike.
         self.threshold_mV = conf.parameterSet('threshold', pool, index)
 
-        for i in compartmentsList: self.compartment.append(Compartment(i, conf, pool, index, ''))        
+        for i in compartmentsList: self.compartment.append(Compartment(i, conf, pool, index, self.kind))        
 
         ## Number of compartments.
         self.compNumber = len(self.compartment)
         ## Vector with membrane potential,in mV, of all compartments.
         self.v_mV = np.zeros((self.compNumber), dtype = np.float64)
+
+        gLeak = np.zeros_like(self.v_mV, dtype = 'd')
 
         capacitance_nF = np.zeros_like(self.v_mV, dtype = 'd')
 
@@ -122,13 +124,12 @@ class Interneuron(object):
         self.iInjected = np.zeros_like(self.v_mV, dtype = 'd')
         #self.iInjected = np.array([0, 10.0])
 
-        GC = compGCouplingMatrix(gCoupling_MS)
 
         GL = -np.diag(gLeak)
 
         ## Matrix of the conductance of the motoneuron. Multiplied by the vector self.v_mV,
         ## results in the passive currents of each compartment.
-        self.G = np.float64(GC + GL)
+        self.G = np.float64(GL)
 
 
         ## index of the soma compartment.
@@ -141,7 +142,11 @@ class Interneuron(object):
         self.terminalSpikeTrain = []
                 
         
-        
+        ## Build synapses       
+         
+        self.SynapsesOut = []
+        self.transmitSpikesThroughSynapses = []
+        self.indicesOfSynapsesOnTarget = []
         
     
     def atualizeInterneuron(self, t):
@@ -201,6 +206,7 @@ class Interneuron(object):
         self.tSomaSpike = t
         self.somaSpikeTrain.append([t, int(self.index)])
         self.Delay.addSpinalSpike(t)
+        self.transmitSpikes(t)
 
         for channel in self.compartment[self.somaIndex].Channels:
             for channelState in channel.condState: channelState.changeState(t)
@@ -214,6 +220,15 @@ class Interneuron(object):
         '''
         if abs(t - self.Delay.terminalSpikeTrain) < 1e-3: 
             self.terminalSpikeTrain.append([t, self.index])
+
+    def transmitSpikes(self, t):
+        '''
+
+        - Inputs:
+            + **t**: current instant, in ms.
+        '''
+        for i in xrange(len(self.indicesOfSynapsesOnTarget)):
+            self.transmitSpikesThroughSynapses[i].receiveSpike(t, self.indicesOfSynapsesOnTarget[i])
         
     
         
