@@ -1,0 +1,56 @@
+number_RC,350,
+timeStep,0.05,
+simDuration,1000,
+RCSomaRefPer,1.0,
+% Model options
+StateType,pulse,
+% Inputs
+%Stimulus
+%Equilibrium Potential
+EqPot_Kf,-10,
+EqPot_Ks,-10,
+EqPot_Na,120,
+% Conductance density
+%% RC
+gmax_Na_RC_,30000,
+gmax_Kf_RC_,1000,
+gmax_Ks_RC_,4000,
+%States
+PulseDur_m,0.6,
+PulseDur_h,0.6,
+PulseDur_n,0.6,
+PulseDur_q,0.6,
+%% RC
+alpha_m_RC_,22,
+alpha_h_RC_,0.5,
+alpha_n_RC_,1.5,
+alpha_q_RC_,1.5,
+beta_m_RC_,13,
+beta_h_RC_,4,
+beta_n_RC_,0.1,
+beta_q_RC_,0.07,
+% Neurons
+cytR,70,
+membCapac,1,
+% Interneurons
+%% RC
+threshold_RC,5,15
+d_soma_RC,25,25
+l_soma_RC,242,242
+res_soma_RC,760,760
+%Synapses
+%% RC
+EqPotSyn_RC__excitatory,70.0,
+EqPotSyn_RC__inhibitory,-16.0,
+alphaSyn_excitatory_RC_,0.5,
+betaSyn_excitatory_RC_,0.07,
+alphaSyn_inhibitory_RC_,0.5,
+betaSyn_inhibitory_RC_,1.2,
+TmaxSyn_excitatory_RC_,1.0,
+TmaxSyn_inhibitory_RC_,1.0,
+tPeakSyn_excitatory_RC_,3,
+tPeakSyn_inhibitory_RC_,0.4,
+Con_SOL_S_RC_@soma,6,
+gmax_SOL_S_RC_@soma,0.15,
+delay_SOL_S_RC_@soma,0.3,
+dyn_SOL_S_RC_@soma,None,

@@ -23,7 +23,7 @@ from jointAnkleForceTask import jointAnkleForceTask
 def simulator():
 
     conf = Configuration('confTest.rmto')
-    
+
     pools = []
     pools.append(MotorUnitPool(conf, 'SOL'))
     pools.append(NeuralTract(conf, 'CM_ext'))
