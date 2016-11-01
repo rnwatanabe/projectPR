@@ -5,7 +5,7 @@ Created on Oct 23, 2015
 '''
 import numpy as np
 import math
-from numpy import random_intel
+
 
 
 
