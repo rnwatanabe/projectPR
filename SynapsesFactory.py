@@ -85,6 +85,8 @@ class SynapsesFactory(object):
                                                             neuronsDistance = np.abs(pools[poolIn].unit[unitIn].position_mm
                                                                                      - pools[poolOut].unit[unitOut].position_mm)
                                                             weight = declineFactor / (declineFactor + neuronsDistance**2)
+                                                            print 'Distance' +  str(neuronsDistance) 
+                                                            print 'Weight' + str(weight)
                                                         else:
                                                             weight = 1
                                                         pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].addConductance(gmax*weight, delay, dyn)
