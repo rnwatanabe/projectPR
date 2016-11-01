@@ -34,6 +34,7 @@ cytR,70,
 membCapac,1,
 % Interneurons
 %% RC
+position_RC,0,18
 threshold_RC,5,15
 d_soma_RC,25,25
 l_soma_RC,242,242

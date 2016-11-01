@@ -99,6 +99,10 @@ class Interneuron(object):
         ## Value of the membrane potential, in mV, that is considered a spike.
         self.threshold_mV = conf.parameterSet('threshold', pool, index)
 
+        ## Anatomical position of the neuron, in mm.
+        self.position_mm = conf.parameterSet('position', pool, index)
+        
+
         for i in compartmentsList: self.compartment.append(Compartment(i, self.conf, self.pool, self.index, self.kind))        
 
         ## Number of compartments.

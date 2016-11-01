@@ -307,7 +307,7 @@ class Synapse(object):
             + **compartment**: integer identification of the compartment of the unit 
             where the synapse is.
 
-            + **kind**: string with the type of synapse. For now, it can be *excitatory*. 
+            + **kind**: string with the type of synapse. It can be *excitatory* or *inhibitory*. 
 
             + **neuronKind**:
         '''
