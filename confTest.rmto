@@ -15,7 +15,7 @@ StateType,pulse,
 % Inputs
 GammaOrder_CM_ext,10,
 Target_CM_ext,ISI,
-TargetFunction_CM_ext,10+0*t,
+TargetFunction_CM_ext,12+0*t,
 %Stimulus
 stimDistToTerm_PTN,0.2,
 % Synapses
@@ -96,6 +96,11 @@ gmax_SOL_S_RC_@soma|excitatory,0.15,
 delay_SOL_S_RC_@soma|excitatory,0.3,
 dyn_SOL_S_RC_@soma|excitatory,None,
 dec_SOL_S_RC_@soma|excitatory,0.01,
+Con_Noise_RC_@soma|excitatory,Yes,
+gmax_Noise_RC_@soma|excitatory,0.015,
+delay_Noise_RC_@soma|excitatory,0.3,
+dyn_Noise_RC_@soma|excitatory,None,
+dec_Noise_RC_@soma|excitatory,inf,
 %Equilibrium Potential
 EqPot_Kf,-10,
 EqPot_Ks,-10,

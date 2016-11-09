@@ -7,6 +7,8 @@ Created on Oct 26, 2015
 
 import numpy as np
 
+from NeuralTract import NeuralTract
+
 class SynapsesFactory(object):
     '''
     Class to build all the synapses in the system.
@@ -26,7 +28,9 @@ class SynapsesFactory(object):
         '''
         ## Total number of synapses in the system.
         self.numberOfSynapses = 0
-        
+        #pools.append(NeuralTract(conf, 'NoiseRC'))
+
+
         for poolOut in xrange(len(pools)):
             for unitOut in xrange(len(pools[poolOut].unit)):
                 pools[poolOut].unit[unitOut].SynapsesOut = conf.determineSynapses(pools[poolOut].pool + '_' + 
@@ -85,8 +89,6 @@ class SynapsesFactory(object):
                                                             neuronsDistance = np.abs(pools[poolIn].unit[unitIn].position_mm
                                                                                      - pools[poolOut].unit[unitOut].position_mm)
                                                             weight = declineFactor / (declineFactor + neuronsDistance**2)
-                                                            print 'Distance' +  str(neuronsDistance) 
-                                                            print 'Weight' + str(weight)
                                                         else:
                                                             weight = 1
                                                         pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].addConductance(gmax*weight, delay, dyn)

@@ -32,8 +32,6 @@ def simulator():
     Syn = SynapsesFactory(conf, pools)
     del Syn
 
-
-
     t = np.arange(0.0, conf.simDuration_ms, conf.timeStep_ms)
 
     tic = time.clock()

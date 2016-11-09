@@ -6,10 +6,9 @@ Created on Oct 26, 2015
 from NeuralTractUnit import NeuralTractUnit
 import numpy as np
 
-class NeuralTract(object):
+class SynapticNoise(object):
     '''
-    Class that implements a a neural tract, composed by the descending
-    commands from the motor cortex.
+    Class that implements a synaptic noise for a pool of neurons.
     '''
     
     def __init__(self, conf, pool):
@@ -19,11 +18,11 @@ class NeuralTract(object):
         - Inputs:
             + **conf**: Configuration object with the simulation parameters.
 
-            + **pool**: string with the name of the Neural tract.
+            + **pool**: string with the name of the pool.
         '''
         ## Indicates that is a neural tract.
-        self.kind = 'NT'
-        ## String with the name of the Neural tract.
+        self.kind = 'SN'
+        ## String with the name of the pool.
         self.pool = pool
         ## The number of neural tract units.
         self.Number = int(conf.parameterSet('Number_' + pool, pool, 0))
@@ -35,7 +34,7 @@ class NeuralTract(object):
         ## Vector with the instants of spikes in the terminal, in ms.
         self.poolTerminalSpikes = np.array([]) 
         ## Indicates the measure that the TargetFunction of the
-        ## spikes follows. For now ita can be *ISI* (interspike
+        ## spikes follows. For now it can be *ISI* (interspike
         ## interval) or *FR* (firing rate).
         self.target = conf.parameterSet('Target_' + pool, pool, 0)
         if self.target == 'ISI' :       
