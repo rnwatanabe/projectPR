@@ -315,12 +315,12 @@ class Synapse(object):
         self.kind = kind
         self.neuronKind = neuronKind
 
-        self.EqPot_mV = float(conf.parameterSet('EqPotSyn_' + pool + '_' + self.neuronKind + '_' + self.kind, pool, index))
-        self.alpha_ms1 = float(conf.parameterSet('alphaSyn_' + self.kind + '_' + pool + '_'  + self.neuronKind, pool, index))
-        self.beta_ms1 = float(conf.parameterSet('betaSyn_' + self.kind + '_' + pool + '_'  + self.neuronKind, pool, index))
-        self.Tmax_mM = float(conf.parameterSet('TmaxSyn_' + self.kind + '_' + pool + '_'  + self.neuronKind, pool, index))
+        self.EqPot_mV = float(conf.parameterSet('EqPotSyn_' + pool + '-' + self.neuronKind + '|' + self.kind, pool, index))
+        self.alpha_ms1 = float(conf.parameterSet('alphaSyn_' + pool + '-'  + self.neuronKind + '|' + self.kind, pool, index))
+        self.beta_ms1 = float(conf.parameterSet('betaSyn_' + pool + '-'  + self.neuronKind + '|' + self.kind, pool, index))
+        self.Tmax_mM = float(conf.parameterSet('TmaxSyn_' + pool + '-'  + self.neuronKind + '|' + self.kind, pool, index))
         ## Pulse duration, in ms.
-        self.tPeak_ms = float(conf.parameterSet('tPeakSyn_' + self.kind + '_' + pool + '_' + self.neuronKind, pool, index))
+        self.tPeak_ms = float(conf.parameterSet('tPeakSyn_' + pool + '-' + self.neuronKind + '|' + self.kind, pool, index))
 
         self.gmax_muS = np.array([])
         self.delay_ms = np.array([])
@@ -396,11 +396,11 @@ class Synapse(object):
         '''
         if len(self.tEndOfPulse) == 0:
             self.tBeginOfPulse = np.ones_like(self.gmax_muS,
-            dtype=float) * float("-inf")
+                                              dtype=float) * float("-inf")
             self.tEndOfPulse = np.ones_like(self.gmax_muS,
-            dtype=float) * float("-inf")
+                                            dtype=float) * float("-inf")
             self.conductanceState = np.zeros_like(self.gmax_muS,
-                dtype=int)
+                                                  dtype=int)
             self.ri = np.zeros_like(self.gmax_muS, dtype=float)
             self.ti = np.zeros_like(self.gmax_muS, dtype=float)
             self.synContrib = self.gmax_muS / self.gMaxTot_muS
@@ -434,13 +434,11 @@ class Synapse(object):
             + **t**: current instant, in ms.
         '''
         self.Ron = compRon(self.Non, self.rInf, self.Ron, self.t0,
-                        t, self.tauOn)
+                           t, self.tauOn)
         self.Roff = compRoff(self.Roff, self.t0, t, self.tauOff)
 
-        self.startConductanceNone(t,
-            np.where(np.abs(t-self.tBeginOfPulse < 1e-3))[0])
-        self.stopConductanceNone(t,
-            np.where(np.abs(t-self.tEndOfPulse) < 1e-3)[0])
+        self.startConductanceNone(t, np.where(np.abs(t-self.tBeginOfPulse < 1e-3))[0])
+        self.stopConductanceNone(t, np.where(np.abs(t-self.tEndOfPulse) < 1e-3)[0])
 
         return compSynapCond(self.gMaxTot_muS, self.Ron, self.Roff)
 

@@ -4,6 +4,7 @@ Created on Oct 23, 2015
 @author: root
 '''
 import numpy as np
+import numpy.random
 import math
 
 
@@ -33,7 +34,7 @@ def  gammaPoint(GammaOrder, GammaOrderInv):
     a uniform distribution from a to b.
 
     '''
-    aux = np.prod(np.random.uniform(0.0, 1.0, size=GammaOrder))
+    aux = np.prod(numpy.random.uniform(0.0, 1.0, size=GammaOrder))
 
     return - GammaOrderInv * math.log(aux)
 

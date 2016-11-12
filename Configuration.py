@@ -100,7 +100,7 @@ class Configuration(object):
                     
         if pool == 'RC' or pool == 'IaIn' or pool == 'gII' or pool == 'IbIn':
             for i in xrange(0, len(self.confArray)):
-                if self.confArray[i][0] == 'number_' + pool:
+                if self.confArray[i][0] == 'Number_' + pool:
                     Nnumber = int(self.confArray[i][1])
                     
                     
@@ -161,9 +161,11 @@ class Configuration(object):
         for i in xrange(0, len(self.confArray)):
             pos = self.confArray[i][0].find('Con_' + neuralSource)
             if pos >= 0 and float(self.confArray[i][1]) > 0:
+                posUnitKind = self.confArray[i][0].find('-', pos+len('Con_' + neuralSource)+1)
                 posComp = self.confArray[i][0].find('@')
                 posKind = self.confArray[i][0].find('|')
-                Synapses.append([self.confArray[i][0][pos+len('Con_' + neuralSource)+1:posComp],
+                Synapses.append([self.confArray[i][0][pos+len('Con_' + neuralSource)+1:posUnitKind],
+                                 self.confArray[i][0][posUnitKind+1:posComp],
                                  self.confArray[i][0][posComp+1:posKind],
                                  self.confArray[i][0][posKind+1:]])
         return Synapses

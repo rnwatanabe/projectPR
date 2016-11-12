@@ -9,6 +9,7 @@ import cProfile
 import profile
 import time
 
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -31,7 +32,7 @@ def simulator():
     ankle = jointAnkleForceTask(conf, pools)
     Syn = SynapsesFactory(conf, pools)
     del Syn
-
+    
     t = np.arange(0.0, conf.simDuration_ms, conf.timeStep_ms)
 
     tic = time.clock()
@@ -39,26 +40,27 @@ def simulator():
         ankle.atualizeAnkle(t[i], 0)
         pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
+        pools[3].atualizePool(t[i])
         pools[2].atualizeInterneuronPool(t[i])
     toc = time.clock()
     print str(toc - tic) + ' seconds'
-    
+
     pools[1].listSpikes()
     pools[2].listSpikes()
 
     plt.figure()
     plt.plot(pools[1].poolTerminalSpikes[:, 0],
-        pools[1].poolTerminalSpikes[:, 1]+1, '.')
+             pools[1].poolTerminalSpikes[:, 1]+1, '.')
 
     pools[0].listSpikes()
-    
+
     plt.figure()
     plt.plot(pools[0].poolTerminalSpikes[:, 0],
-        pools[0].poolTerminalSpikes[:, 1]+1, '.')
+             pools[0].poolTerminalSpikes[:, 1]+1, '.')
 
     plt.figure()
     plt.plot(pools[2].poolSomaSpikes[:, 0],
-        pools[2].poolSomaSpikes[:, 1]+1, '.')
+             pools[2].poolSomaSpikes[:, 1]+1, '.')
 
 
     print pools[0].Muscle.maximumActivationForce
@@ -67,7 +69,7 @@ def simulator():
     plt.plot(t, pools[0].Muscle.activationTypeI, '-')
 
     plt.figure()
-    plt.plot(t, pools[0].Muscle.tendonForce_N, '-') 
+    plt.plot(t, pools[0].Muscle.tendonForce_N, '-')
 
     plt.figure()
     plt.plot(t, pools[0].Muscle.force, '-')
@@ -77,6 +79,8 @@ def simulator():
 
     plt.figure()
     plt.plot(t, ankle.ankleAngle_rad, '-')
+
+    
 
     plt.show()
     

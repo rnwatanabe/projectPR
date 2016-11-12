@@ -35,7 +35,7 @@ class InterneuronPool(object):
         ## String with Motor unit pool to which the motor unit belongs.
         self.pool = pool
         ## Number of Neurons.
-        self.Nnumber = int(conf.parameterSet('number_' + pool, pool, 0))
+        self.Nnumber = int(conf.parameterSet('Number_' + pool, pool, 0))
 
         ## List of Interneuron objects.
         self.unit = []

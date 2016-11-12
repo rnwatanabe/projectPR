@@ -176,6 +176,8 @@ class Interneuron(object):
                             self.conf.timeStepBySix_ms),
                 -16.0, 120.0, self.v_mV)
         if self.v_mV[self.somaIndex] > self.threshold_mV and t-self.tSomaSpike > self.RefPer_ms:
+            if self.index == 175:
+                print str(t) + ' ' + str(self.v_mV[self.somaIndex]) + ' ' + str(self.threshold_mV) + ' ' + str(t-self.tSomaSpike) + ' ' + str(self.RefPer_ms)
             self.addSomaSpike(t)
 
     def dVdt(self, t, V):

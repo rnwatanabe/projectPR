@@ -19,7 +19,7 @@ class NeuralTractUnit(object):
     '''
 
     
-    def __init__(self, conf, pool, index):
+    def __init__(self, conf, pool, GammaOrder, index):
         '''
         Constructor
 
@@ -33,7 +33,7 @@ class NeuralTractUnit(object):
         '''     
         # point process generator data
         ## Integer order of the Gamma distribution.     
-        self.GammaOrder = int(conf.parameterSet('GammaOrder_' + pool, pool, index))
+        self.GammaOrder = GammaOrder
         
         ## A PointProcessGenerator object, corresponding the generator of
         ## spikes of the neural tract unit.   
@@ -61,13 +61,12 @@ class NeuralTractUnit(object):
             + **t**: current instant, in ms.
 
             + **FR**:
-        '''        
-        
+        '''
+
         self.spikesGenerator.atualizeGenerator(t, FR)
-        if self.terminalSpikeTrain and abs(t - self.terminalSpikeTrain[-1][0]) < 1e-3: self.transmitSpikes(t)
-        
-        
-    
+        if self.terminalSpikeTrain and abs(t - self.terminalSpikeTrain[-1][0]) < 1e-3:
+            self.transmitSpikes(t)
+
     def transmitSpikes(self, t):
         '''
 

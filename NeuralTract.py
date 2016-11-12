@@ -31,20 +31,23 @@ class NeuralTract(object):
         ## List of NeuralTRactUnit objects.
         self.unit = [] 
         
-        for i in xrange(0, self.Number): self.unit.append(NeuralTractUnit(conf, pool, i))
+        self.GammaOrder = int(conf.parameterSet('GammaOrder_' + pool, pool, 0))
+
+        for i in xrange(0, self.Number): 
+            self.unit.append(NeuralTractUnit(conf, pool, self.GammaOrder, i))
         ## Vector with the instants of spikes in the terminal, in ms.
         self.poolTerminalSpikes = np.array([]) 
         ## Indicates the measure that the TargetFunction of the
         ## spikes follows. For now ita can be *ISI* (interspike
         ## interval) or *FR* (firing rate).
-        self.target = conf.parameterSet('Target_' + pool, pool, 0)
+        self.target = conf.parameterSet('DriveTarget_' + pool, pool, 0)
         if self.target == 'ISI' :       
-            exec 'def Targetfunction(t): return 1000.0/('  +  conf.parameterSet('TargetFunction_' + pool, pool, 0) + ')'
+            exec 'def DriveFunction(t): return 1000.0/('  +  conf.parameterSet('DriveFunction_' + pool, pool, 0) + ')'
         else:
-            exec 'def Targetfunction(t): return '   +  conf.parameterSet('TargetFunction_' + pool, pool, 0)
+            exec 'def DriveFunction(t): return '   +  conf.parameterSet('DriveFunction_' + pool, pool, 0)
         
         ## The  mean firing rate of the neural tract units. 
-        self.FR = conf.inputFunctionGet(Targetfunction) * conf.timeStep_ms/1000.0
+        self.FR = conf.inputFunctionGet(DriveFunction) * conf.timeStep_ms/1000.0
         
         ## 
         self.timeIndex = 0
