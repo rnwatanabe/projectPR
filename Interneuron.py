@@ -160,10 +160,9 @@ class Interneuron(object):
 
         - Inputs:
             + **t**: current instant, in ms.
-        ''' 
+        '''
         self.atualizeCompartments(t)
-        
-        
+
     def atualizeCompartments(self, t):
         '''
         Atualize all neural compartments.
@@ -176,8 +175,6 @@ class Interneuron(object):
                             self.conf.timeStepBySix_ms),
                 -16.0, 120.0, self.v_mV)
         if self.v_mV[self.somaIndex] > self.threshold_mV and t-self.tSomaSpike > self.RefPer_ms:
-            if self.index == 175:
-                print str(t) + ' ' + str(self.v_mV[self.somaIndex]) + ' ' + str(self.threshold_mV) + ' ' + str(t-self.tSomaSpike) + ' ' + str(self.RefPer_ms)
             self.addSomaSpike(t)
 
     def dVdt(self, t, V):
@@ -199,7 +196,8 @@ class Interneuron(object):
         '''
         for compartment in xrange(0, self.compNumber):
             self.iIonic.itemset(compartment,
-                                self.compartment[compartment].computeCurrent(t, V.item(compartment)))
+                                self.compartment[compartment].computeCurrent(t,
+                                                                             V.item(compartment)))
 
         return (self.iIonic + np.dot(self.G, V)  + self.iInjected) * self.capacitanceInv
 
@@ -225,6 +223,5 @@ class Interneuron(object):
         '''
         for i in xrange(len(self.indicesOfSynapsesOnTarget)):
             self.transmitSpikesThroughSynapses[i].receiveSpike(t, self.indicesOfSynapsesOnTarget[i])
-        
-    
+
         

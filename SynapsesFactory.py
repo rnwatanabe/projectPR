@@ -84,6 +84,24 @@ class SynapsesFactory(object):
                                             + '@' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][2]
                                             + '|' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][3],
                                             '', 0)
+                    if dyn != 'None':
+                        var = float(conf.parameterSet('var_' + pools[poolOut].pool + '-'
+                                                      + pools[poolOut].unit[unitOut].kind + '>'
+                                                      + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][0]
+                                                      + '-' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][1]
+                                                      + '@' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][2]
+                                                      + '|' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][3],
+                                                      '', 0))
+                        tau = float(conf.parameterSet('tau_' + pools[poolOut].pool + '-'
+                                                      + pools[poolOut].unit[unitOut].kind + '>'
+                                                      + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][0]
+                                                      + '-' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][1]
+                                                      + '@' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][2]
+                                                      + '|' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][3],
+                                                      '', 0))
+                    else:
+                        var = 0
+                        tau = 0
                     for poolIn in xrange(len(pools)):
                         if (pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][0].find(pools[poolIn].pool)>=0):
                             for unitIn in xrange(len(pools[poolIn].unit)):
@@ -98,7 +116,7 @@ class SynapsesFactory(object):
                                                         weight = declineFactor / (declineFactor + neuronsDistance**2)
                                                     else:
                                                         weight = 1
-                                                    pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].addConductance(gmax*weight, delay, dyn)
+                                                    pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].addConductance(gmax*weight, delay, dyn, var, tau)
                                                     pools[poolOut].unit[unitOut].transmitSpikesThroughSynapses.append(pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse])                                                            
                                                     pools[poolOut].unit[unitOut].indicesOfSynapsesOnTarget.append(len(pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].gmax_muS) - 1)
                                                     self.numberOfSynapses += 1
@@ -129,6 +147,20 @@ class SynapsesFactory(object):
                                     + '@' + NoiseSynapsesOut[synapseIn][2] + '|'
                                     + NoiseSynapsesOut[synapseIn][3],
                                     '', 0)
+            if dyn != 'None':
+                var = float(conf.parameterSet('var_Noise>' + NoiseSynapsesOut[synapseIn][0]
+                                              + '-' + NoiseSynapsesOut[synapseIn][1]
+                                              + '@' + NoiseSynapsesOut[synapseIn][2] + '|' 
+                                              + NoiseSynapsesOut[synapseIn][3],
+                                              '', 0))
+                tau = float(conf.parameterSet('tau_Noise>' + NoiseSynapsesOut[synapseIn][0]
+                                              + '-' + NoiseSynapsesOut[synapseIn][1]
+                                              + '@' + NoiseSynapsesOut[synapseIn][2]
+                                              + '|' + NoiseSynapsesOut[synapseIn][3],
+                                              '', 0))
+            else:
+                var = 0
+                tau = 0
             for unitOut in xrange(len(pools[poolOut].unit)):
                 for poolIn in xrange(len(pools)):
                     if NoiseSynapsesOut[synapseIn][0] == pools[poolIn].pool and pools[poolIn].kind != 'SN':
@@ -143,7 +175,7 @@ class SynapsesFactory(object):
                                                 weight = declineFactor / (declineFactor + neuronsDistance**2)
                                             else:
                                                 weight = 1
-                                            pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].addConductance(gmax*weight, delay, dyn)
+                                            pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].addConductance(gmax*weight, delay, dyn, var, tau)
                                             pools[poolOut].unit[unitOut].transmitSpikesThroughSynapses.append(pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse])                                                            
                                             pools[poolOut].unit[unitOut].indicesOfSynapsesOnTarget.append(len(pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].gmax_muS) - 1)
                                             self.numberOfSynapses += 1

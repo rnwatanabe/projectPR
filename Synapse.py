@@ -325,6 +325,8 @@ class Synapse(object):
         self.gmax_muS = np.array([])
         self.delay_ms = np.array([])
         self.dynamics = []
+        self.variation = np.array([])
+        self.timeConstant_ms = np.array([])
 
         ## The sum of individual conductances of all synapses in 
         ## the compartment, in \f$\mu\f$S (\f$G_{max} = \limits\sum_{i=1}^Ng_i\f$).
@@ -347,6 +349,8 @@ class Synapse(object):
         ## \f$\exp(T_{dur}/\tau_{on})\f$.
         self.expFinish = math.exp(- self.tPeak_ms / self.tauOn)
 
+        
+
         ## Sum of the fractions of the individual conductances that are
         ## receiving neurotransmitter (during pulse) relative to
         ## the \f$G_{max}\f$. (\f$N_{on}=\limits\sum_{i=1}g_{i_{on}}/G_{max}). 
@@ -366,6 +370,7 @@ class Synapse(object):
         self.conductanceState = np.array([])
         self.tBeginOfPulse = np.array([])
         self.tEndOfPulse = np.array([])
+        self.tLastPulse = np.array([])
         ## List with the fractions of postsynaptic receptors
         ## that are bound to neurotransmitters of the individual 
         ## synapses.
@@ -373,6 +378,8 @@ class Synapse(object):
         ## List with the instants of spike arriving at each 
         ## conductance, in ms.
         self.ti = np.array([])
+
+        self.dynamicGmax = np.array([])
         ## List of individual conductance constribution 
         ## to the global synaptic conductance
         ## (\f$S_{indCont} = \frac{g_{i_{max}}{G_{max}}\f$).
@@ -399,10 +406,13 @@ class Synapse(object):
                                               dtype=float) * float("-inf")
             self.tEndOfPulse = np.ones_like(self.gmax_muS,
                                             dtype=float) * float("-inf")
+            self.tLastPulse = np.ones_like(self.gmax_muS,
+                                              dtype=float) * float("-inf")
             self.conductanceState = np.zeros_like(self.gmax_muS,
                                                   dtype=int)
             self.ri = np.zeros_like(self.gmax_muS, dtype=float)
             self.ti = np.zeros_like(self.gmax_muS, dtype=float)
+            self.dynamicGmax = np.zeros_like(self.gmax_muS, dtype=float)
             self.synContrib = self.gmax_muS / self.gMaxTot_muS
             for dyn in xrange(len(self.dynamics)):
                 if self.dynamics[dyn] == 'None':
@@ -410,6 +420,7 @@ class Synapse(object):
                     self.stopDynamicFunction.append(self.stopConductanceNone)
                 else:
                     self.startDynamicFunction.append(self.startConductanceDynamics)
+                    self.stopDynamicFunction.append(self.stopConductanceDynamics)
             self.computeCurrent = self.computeCurrent2
 
         return self.computeConductance(t) * (self.EqPot_mV - V_mV)
@@ -437,68 +448,124 @@ class Synapse(object):
                            t, self.tauOn)
         self.Roff = compRoff(self.Roff, self.t0, t, self.tauOff)
 
-        self.startConductanceNone(t, np.where(np.abs(t-self.tBeginOfPulse < 1e-3))[0])
-        self.stopConductanceNone(t, np.where(np.abs(t-self.tEndOfPulse) < 1e-3)[0])
+        idxBeginPulse = np.where(np.abs(t-self.tBeginOfPulse < 1e-6))[0]
+        idxEndPulse = np.where(np.abs(t-self.tEndOfPulse) < 1e-6)[0]
+
+        for synapseNumber in idxBeginPulse:
+            self.startDynamicFunction[synapseNumber](t, synapseNumber)
+
+        for synapseNumber in idxEndPulse:
+            self.stopDynamicFunction[synapseNumber](t, synapseNumber)
 
         return compSynapCond(self.gMaxTot_muS, self.Ron, self.Roff)
 
-    def startConductanceNone(self, t, idxBeginPulse):
+    def startConductanceNone(self, t, synapseNumber):
         '''
         - Inputs:
             + **t**: current instant, in ms.
 
-            + **idxBeginPulse**: vector with the indices of the conductances
+            + **synapseNumber**: integer with the index of the conductance
                 that the pulse begin at time **t**.
         '''
-        for synapseNumber in idxBeginPulse:
-            if self.conductanceState[synapseNumber] == 0:
-                self.ri.itemset(synapseNumber,
-                    compRiStart(self.ri.item(synapseNumber),
-                    t, self.ti.item(synapseNumber), self.tPeak_ms, self.tauOff))
-                self.ti.itemset(synapseNumber, t)
-                self.Ron = compRonStart(self.Ron, self.ri.item(synapseNumber),
-                            self.synContrib.item(synapseNumber))
-                self.Roff = compRoffStart(self.Roff,
-                            self.ri.item(synapseNumber),
-                            self.synContrib.item(synapseNumber))
-                self.Non += self.synContrib.item(synapseNumber)
-                self.t0 = t
-                self.conductanceState.itemset(synapseNumber, 1)
 
-            self.tEndOfPulse.itemset(synapseNumber, t + self.tPeak_ms)
-            self.tBeginOfPulse.itemset(synapseNumber, -1000000)
+        if self.conductanceState[synapseNumber] == 0:
+            self.ri.itemset(synapseNumber,
+                            compRiStart(self.ri.item(synapseNumber),
+                                        t, self.ti.item(synapseNumber),
+                                        self.tPeak_ms, self.tauOff))
+            self.ti.itemset(synapseNumber, t)
+            self.Ron = compRonStart(self.Ron, self.ri.item(synapseNumber),
+                                    self.synContrib.item(synapseNumber))
+            self.Roff = compRoffStart(self.Roff,
+                                      self.ri.item(synapseNumber),
+                                      self.synContrib.item(synapseNumber))
+            self.Non += self.synContrib.item(synapseNumber)
+            self.t0 = t
+            self.conductanceState.itemset(synapseNumber, 1)
 
-    def startConductanceDynamics(self, t, synapsesNumber):
-        '''
-        '''
-        pass
+        self.tEndOfPulse.itemset(synapseNumber, t + self.tPeak_ms)
+        self.tLastPulse.itemset(synapseNumber, self.tBeginOfPulse.item(synapseNumber))
+        self.tBeginOfPulse.itemset(synapseNumber, -1000000)
 
-    def stopConductanceNone(self, t, idxEndPulse):
+    def startConductanceDynamics(self, t, synapseNumber):
         '''
         - Inputs:
             + **t**: current instant, in ms.
 
-            + **idxEndPulse**: vector with the indices of the conductances
+            + **synapseNumber**: integer with the index of the conductance
+                that the pulse begin at time **t**.
+        '''
+
+        if self.conductanceState[synapseNumber] == 0:
+            self.dynamicGmax.itemset(synapseNumber,
+                                     self.gmax_muS.item(synapseNumber) +
+                                     math.exp(-(t - self.tLastPulse.item(synapseNumber))
+                                              /self.timeConstant_ms.item(synapseNumber)) *
+                                     (self.dynamicGmax.item(synapseNumber) *
+                                      (1 + self.variation.item(synapseNumber)) -
+                                      self.gmax_muS.item(synapseNumber)))
+            self.synContrib.itemset(synapseNumber, self.dynamicGmax.item(synapseNumber)
+                                    / self.gMaxTot_muS)
+            self.ri.itemset(synapseNumber,
+                            compRiStart(self.ri.item(synapseNumber),
+                                        t, self.ti.item(synapseNumber),
+                                        self.tPeak_ms, self.tauOff))
+            self.ti.itemset(synapseNumber, t)
+            self.Ron = compRonStart(self.Ron, self.ri.item(synapseNumber),
+                                    self.synContrib.item(synapseNumber))
+            self.Roff = compRoffStart(self.Roff,
+                                      self.ri.item(synapseNumber),
+                                      self.synContrib.item(synapseNumber))
+            self.Non += self.synContrib.item(synapseNumber)
+            self.t0 = t
+            self.conductanceState.itemset(synapseNumber, 1)
+
+        self.tEndOfPulse.itemset(synapseNumber, t + self.tPeak_ms)
+        self.tLastPulse.itemset(synapseNumber, self.tBeginOfPulse.item(synapseNumber))
+        self.tBeginOfPulse.itemset(synapseNumber, -1000000)
+        
+
+    def stopConductanceNone(self, t, synapseNumber):
+        '''
+        - Inputs:
+            + **t**: current instant, in ms.
+
+            + **synapseNumber**: integer with the index of the conductance
                 that the pulse end at time **t**.
         '''
-        for synapseNumber in idxEndPulse:
-            self.ri.itemset(synapseNumber,
-                compRiStop(self.rInf, self.ri.item(synapseNumber),
-                            self.expFinish))
-            self.t0 = t
-            self.Ron = compRonStop(self.Ron, self.ri.item(synapseNumber),
-                    self.synContrib.item(synapseNumber))
-            self.Roff = compRoffStop(self.Roff, self.ri.item(synapseNumber),
-                        self.synContrib.item(synapseNumber))
-            self.Non -= self.synContrib.item(synapseNumber)
-            self.tEndOfPulse.itemset(synapseNumber, -10000)
-            self.conductanceState.itemset(synapseNumber, 0)
+
+        self.ri.itemset(synapseNumber,
+                        compRiStop(self.rInf, self.ri.item(synapseNumber),
+                                   self.expFinish))
+        self.t0 = t
+        self.Ron = compRonStop(self.Ron, self.ri.item(synapseNumber),
+                               self.synContrib.item(synapseNumber))
+        self.Roff = compRoffStop(self.Roff, self.ri.item(synapseNumber),
+                                 self.synContrib.item(synapseNumber))
+        self.Non -= self.synContrib.item(synapseNumber)
+        self.tEndOfPulse.itemset(synapseNumber, -10000)
+        self.conductanceState.itemset(synapseNumber, 0)
 
     def stopConductanceDynamics(self, t, synapseNumber):
         '''
-        
+        - Inputs:
+            + **t**: current instant, in ms.
+
+            + **synapseNumber**: integer with the index of the conductance
+                that the pulse end at time **t**.
         '''
-        pass
+
+        self.ri.itemset(synapseNumber,
+                        compRiStop(self.rInf, self.ri.item(synapseNumber),
+                                   self.expFinish))
+        self.t0 = t
+        self.Ron = compRonStop(self.Ron, self.ri.item(synapseNumber),
+                               self.synContrib.item(synapseNumber))
+        self.Roff = compRoffStop(self.Roff, self.ri.item(synapseNumber),
+                                 self.synContrib.item(synapseNumber))
+        self.Non -= self.synContrib.item(synapseNumber)
+        self.tEndOfPulse.itemset(synapseNumber, -10000)
+        self.conductanceState.itemset(synapseNumber, 0)
 
     def receiveSpike(self, t, synapseNumber):
         '''
@@ -511,7 +578,7 @@ class Synapse(object):
 
         self.tBeginOfPulse[synapseNumber] = t + self.delay_ms[synapseNumber]
 
-    def addConductance(self, gmax, delay, dynamics):
+    def addConductance(self, gmax, delay, dynamics, variation, timeConstant):
         '''
         Adds a synaptic conductance to the compartment. As the computation 
         is performed once for each compartment at each time step, the data of 
@@ -533,3 +600,8 @@ class Synapse(object):
         self.gmax_muS = np.append(self.gmax_muS, gmax)
         self.delay_ms = np.append(self.delay_ms, delay)
         self.dynamics.append(dynamics)
+        if dynamics == 'Depressing':
+            self.variation = np.append(self.variation, -variation)
+        else:
+            self.variation = np.append(self.variation, variation)
+        self.timeConstant_ms = np.append(self.timeConstant_ms, timeConstant)

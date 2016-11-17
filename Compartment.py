@@ -85,20 +85,17 @@ class Compartment(object):
         self.capacitance_nF = float(float(conf.parameterSet('membCapac',pool, index)) * area_cm2 * 1e3)
         ## Leak conductance of the compartment, in MS.
         self.gLeak = calcGLeak(area_cm2, specifRes_Ohmcm2)
-        
-        
-        if (kind == 'soma'):              
+
+        if (kind == 'soma'):
             self.Channels.append(ChannelConductance('Kf', conf, area_cm2, pool, neuronKind, index))
             self.Channels.append(ChannelConductance('Ks', conf, area_cm2, pool, neuronKind, index))
-            self.Channels.append(ChannelConductance('Na', conf, area_cm2, pool, neuronKind, index))            
+            self.Channels.append(ChannelConductance('Na', conf, area_cm2, pool, neuronKind, index))
         elif (kind == 'dendrite'):
-            pass      
+            pass
         
         ## Integer with the number of ionic channels.
         self.numberChannels = len(self.Channels)
-        
-      
-         
+
     def computeCurrent(self, t, V_mV):
         '''
         Computes the active currents of the compartment. Active currents are the currents from the ionic channels
@@ -110,9 +107,11 @@ class Compartment(object):
             + **V_mV**: membrane potential, in mV.
         '''
         I = 0
-        if (self.numberChannels != 0 ):
-            for i in xrange(0,self.numberChannels): I += self.Channels[i].computeCurrent(t, V_mV)
-        if self.SynapsesIn[0].numberOfIncomingSynapses : I += self.SynapsesIn[0].computeCurrent(t, V_mV)
-        if self.SynapsesIn[1].numberOfIncomingSynapses : I += self.SynapsesIn[1].computeCurrent(t, V_mV)
-         
-        return I             
+        if self.numberChannels != 0:
+            for i in xrange(0, self.numberChannels): I += self.Channels[i].computeCurrent(t, V_mV)
+        if self.SynapsesIn[0].numberOfIncomingSynapses:
+            I += self.SynapsesIn[0].computeCurrent(t, V_mV)
+        if self.SynapsesIn[1].numberOfIncomingSynapses:
+            I += self.SynapsesIn[1].computeCurrent(t, V_mV)
+
+        return I

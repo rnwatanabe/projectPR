@@ -36,8 +36,8 @@ def simulator():
     t = np.arange(0.0, conf.simDuration_ms, conf.timeStep_ms)
 
     tic = time.clock()
-    for i in xrange(0,len(t)-1):
-        ankle.atualizeAnkle(t[i], 0)
+    for i in xrange(0, len(t)-1):
+        #ankle.atualizeAnkle(t[i], 0)
         pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
         pools[3].atualizePool(t[i])
@@ -47,7 +47,7 @@ def simulator():
 
     pools[1].listSpikes()
     pools[2].listSpikes()
-
+    '''
     plt.figure()
     plt.plot(pools[1].poolTerminalSpikes[:, 0],
              pools[1].poolTerminalSpikes[:, 1]+1, '.')
@@ -59,33 +59,33 @@ def simulator():
              pools[0].poolTerminalSpikes[:, 1]+1, '.')
 
     plt.figure()
-    plt.plot(pools[2].poolSomaSpikes[:, 0],
+    plt.plot(pools[2].           poolSomaSpikes[:, 0],
              pools[2].poolSomaSpikes[:, 1]+1, '.')
 
-
+   
     print pools[0].Muscle.maximumActivationForce
 
     plt.figure()
     plt.plot(t, pools[0].Muscle.activationTypeI, '-')
-
+    
     plt.figure()
     plt.plot(t, pools[0].Muscle.tendonForce_N, '-')
-
+    
     plt.figure()
     plt.plot(t, pools[0].Muscle.force, '-')
 
+    
     plt.figure()
     plt.plot(t, pools[0].Muscle.length_m, '-')
 
     plt.figure()
     plt.plot(t, ankle.ankleAngle_rad, '-')
-
     
 
     plt.show()
-    
+    '''
 if __name__ == '__main__':
-    
-    #cProfile.run('simulador()', sort = 'calls')
+
+    cProfile.run('simulator()', sort = 'calls')
     np.__config__.show()
-    simulator()
+    #simulator()
