@@ -47,7 +47,7 @@ def simulator():
 
     pools[1].listSpikes()
     pools[2].listSpikes()
-    '''
+    
     plt.figure()
     plt.plot(pools[1].poolTerminalSpikes[:, 0],
              pools[1].poolTerminalSpikes[:, 1]+1, '.')
@@ -62,7 +62,7 @@ def simulator():
     plt.plot(pools[2].           poolSomaSpikes[:, 0],
              pools[2].poolSomaSpikes[:, 1]+1, '.')
 
-   
+    '''
     print pools[0].Muscle.maximumActivationForce
 
     plt.figure()
@@ -70,22 +70,22 @@ def simulator():
     
     plt.figure()
     plt.plot(t, pools[0].Muscle.tendonForce_N, '-')
-    
+    '''
     plt.figure()
     plt.plot(t, pools[0].Muscle.force, '-')
 
-    
+    '''
     plt.figure()
     plt.plot(t, pools[0].Muscle.length_m, '-')
 
     plt.figure()
     plt.plot(t, ankle.ankleAngle_rad, '-')
-    
+    '''
 
     plt.show()
-    '''
+    
 if __name__ == '__main__':
 
-    cProfile.run('simulator()', sort = 'calls')
+    #cProfile.run('simulator()', sort = 'calls')
     np.__config__.show()
-    #simulator()
+    simulator()
