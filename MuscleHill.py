@@ -187,7 +187,7 @@ class MuscleHill(object):
         self.velocityNorm = self.velocity_m_ms[self.timeIndex] / self.optimalLength_m
         self.pennationAngle_rad[self.timeIndex] = self.computePennationAngle()
         self.tendonLength_m[self.timeIndex] = (self.musculoTendonLength_m[self.timeIndex] - 
-                                            self.length_m[self.timeIndex] * math.cos(self.pennationAngle_rad[self.timeIndex]))
+                                               self.length_m[self.timeIndex] * math.cos(self.pennationAngle_rad[self.timeIndex]))
         self.tendonLengthNorm = self.tendonLength_m[self.timeIndex] / self.optimalTendonLength
 
         self.atualizeMuscleForce()

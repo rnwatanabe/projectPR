@@ -52,6 +52,8 @@ def simulator():
     plt.plot(pools[1].poolTerminalSpikes[:, 0],
              pools[1].poolTerminalSpikes[:, 1]+1, '.')
 
+    np.savetxt('neuralTract.txt', pools[1].poolTerminalSpikes)
+
     pools[0].listSpikes()
 
     plt.figure()
@@ -59,7 +61,7 @@ def simulator():
              pools[0].poolTerminalSpikes[:, 1]+1, '.')
 
     plt.figure()
-    plt.plot(pools[2].           poolSomaSpikes[:, 0],
+    plt.plot(pools[2].poolSomaSpikes[:, 0],
              pools[2].poolSomaSpikes[:, 1]+1, '.')
 
     '''

@@ -101,7 +101,7 @@ class SynapsesFactory(object):
                                                       '', 0))
                     else:
                         var = 0
-                        tau = 0
+                        tau = 100000
                     for poolIn in xrange(len(pools)):
                         if (pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][0].find(pools[poolIn].pool)>=0):
                             for unitIn in xrange(len(pools[poolIn].unit)):
@@ -160,7 +160,7 @@ class SynapsesFactory(object):
                                               '', 0))
             else:
                 var = 0
-                tau = 0
+                tau = 10000
             for unitOut in xrange(len(pools[poolOut].unit)):
                 for poolIn in xrange(len(pools)):
                     if NoiseSynapsesOut[synapseIn][0] == pools[poolIn].pool and pools[poolIn].kind != 'SN':
