@@ -29,7 +29,7 @@ def simulator():
     pools.append(MotorUnitPool(conf, 'SOL'))
     pools.append(NeuralTract(conf, 'CM_ext'))
     pools.append(InterneuronPool(conf, 'RC'))
-    ankle = jointAnkleForceTask(conf, pools)
+    #ankle = jointAnkleForceTask(conf, pools)
     Syn = SynapsesFactory(conf, pools)
     del Syn
     
