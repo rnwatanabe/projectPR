@@ -326,7 +326,7 @@ class Synapse(object):
 
             + **kind**: string with the type of synapse. It can be *excitatory* or *inhibitory*. 
 
-            + **neuronKind**:
+            + **neuronKind**: 
         '''
         self.pool = pool
         self.kind = kind

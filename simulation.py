@@ -52,7 +52,7 @@ def simulator():
     plt.plot(pools[1].poolTerminalSpikes[:, 0],
              pools[1].poolTerminalSpikes[:, 1]+1, '.')
 
-    np.savetxt('neuralTract.txt', pools[1].poolTerminalSpikes)
+    np.savetxt('../results/neuralTract.txt', pools[1].poolTerminalSpikes)
 
     pools[0].listSpikes()
 
