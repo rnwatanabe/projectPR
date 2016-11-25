@@ -55,7 +55,7 @@ def simulator():
     np.savetxt('../results/neuralTract.txt', pools[1].poolTerminalSpikes)
 
     pools[0].listSpikes()
-
+    '''
     plt.figure()
     plt.plot(pools[0].poolTerminalSpikes[:, 0],
              pools[0].poolTerminalSpikes[:, 1]+1, '.')
@@ -63,7 +63,7 @@ def simulator():
     plt.figure()
     plt.plot(pools[2].poolSomaSpikes[:, 0],
              pools[2].poolSomaSpikes[:, 1]+1, '.')
-
+    '''
     '''
     print pools[0].Muscle.maximumActivationForce
 
@@ -73,9 +73,10 @@ def simulator():
     plt.figure()
     plt.plot(t, pools[0].Muscle.tendonForce_N, '-')
     '''
+    '''
     plt.figure()
     plt.plot(t, pools[0].Muscle.force, '-')
-
+    '''
     '''
     plt.figure()
     plt.plot(t, pools[0].Muscle.length_m, '-')
@@ -84,7 +85,7 @@ def simulator():
     plt.plot(t, ankle.ankleAngle_rad, '-')
     '''
 
-    plt.show()
+    #plt.show()
     
 if __name__ == '__main__':
 
