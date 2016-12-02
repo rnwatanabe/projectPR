@@ -8,7 +8,7 @@ import math
 import numpy as np
 from numba import jit
 
-
+@jit
 def compSynapCond(Gmax, Ron, Roff):
     '''
     Computes the synaptic conductance
@@ -39,7 +39,7 @@ def compSynapCond(Gmax, Ron, Roff):
     '''
     return Gmax * (Ron + Roff)
 
-
+@jit
 def compRon(Non, rInf, Ron, t0, t, tauOn):
     '''
     Computes the fraction of postsynaptic receptors
@@ -79,6 +79,7 @@ def compRon(Non, rInf, Ron, t0, t, tauOn):
     return Non * rInf + (Ron - Non * rInf) * np.exp((t0 - t) / tauOn)
 
 
+@jit
 def compRoff(Roff, t0, t, tauOff):
     '''
     Computes the fraction of postsynaptic receptors
@@ -112,7 +113,7 @@ def compRoff(Roff, t0, t, tauOff):
     '''
     return Roff * np.exp((t0 - t) / tauOff)
 
-
+@jit
 def compRiStart(ri, t, ti, tPeak, tauOff):
     '''
     Computes the fraction of bound postsynaptic receptors
@@ -142,7 +143,7 @@ def compRiStart(ri, t, ti, tPeak, tauOff):
     '''
     return ri * np.exp((ti + tPeak - t) / tauOff)
 
-
+@jit
 def compRiStop(rInf, ri, expFinish):
     '''
     Computes the fraction of bound postsynaptic receptors
@@ -173,7 +174,7 @@ def compRiStop(rInf, ri, expFinish):
     '''
     return rInf + (ri - rInf) * expFinish
 
-
+@jit
 def compRonStart(Ron, ri, synContrib):
     '''
     Incorporates a new conductance to the set of 
@@ -203,7 +204,7 @@ def compRonStart(Ron, ri, synContrib):
     '''
     return Ron + np.sum(ri * synContrib)
 
-
+@jit
 def compRoffStart(Roff, ri, synContrib):
     '''
     Incorporates a new conductance to the set of
@@ -235,7 +236,7 @@ def compRoffStart(Roff, ri, synContrib):
     '''
     return Roff - np.sum(ri * synContrib)
 
-
+@jit
 def compRonStop(Ron, ri, synContrib):
     '''
     Removes a conductance from the set of
@@ -266,7 +267,7 @@ def compRonStop(Ron, ri, synContrib):
     
     return Ron - np.sum(ri * synContrib)
 
-
+@jit
 def compRoffStop(Roff, ri, synContrib):
     '''
     Removes a conductance from the set of
@@ -298,7 +299,7 @@ def compRoffStop(Roff, ri, synContrib):
     '''
     return Roff + np.sum(ri * synContrib)
 
-
+@jit
 def compDynamicGmax(t, gmax, lastPulse, tau, dynamicGmax, var):
     return (gmax + np.exp((lastPulse - t) / tau) *
             (dynamicGmax * (1 + var) - gmax)
@@ -326,7 +327,7 @@ class Synapse(object):
 
             + **kind**: string with the type of synapse. It can be *excitatory* or *inhibitory*. 
 
-            + **neuronKind**:
+            + **neuronKind**: 
         '''
         self.pool = pool
         self.kind = kind

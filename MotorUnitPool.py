@@ -87,6 +87,7 @@ class MotorUnitPool(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
+        
         for i in self.unit: i.atualizeMotorUnit(t)
         self.Activation.atualizeActivationSignal(t, self.unit)
         self.Muscle.atualizeForce(self.Activation.activation_Sat)   

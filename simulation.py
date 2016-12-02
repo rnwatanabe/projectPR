@@ -28,7 +28,11 @@ def simulator():
     pools = []
     pools.append(MotorUnitPool(conf, 'SOL'))
     pools.append(NeuralTract(conf, 'CM_ext'))
+<<<<<<< HEAD
     pools.append(InterneuronPool(conf, 'RC'))
+=======
+    #pools.append(InterneuronPool(conf, 'RC'))
+>>>>>>> examples
     #ankle = jointAnkleForceTask(conf, pools)
     Syn = SynapsesFactory(conf, pools)
     del Syn
@@ -40,22 +44,28 @@ def simulator():
         #ankle.atualizeAnkle(t[i], 0)
         pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
-        pools[3].atualizePool(t[i])
-        pools[2].atualizeInterneuronPool(t[i])
+        #pools[3].atualizePool(t[i])
+        #pools[2].atualizeInterneuronPool(t[i])
     toc = time.clock()
     print str(toc - tic) + ' seconds'
 
+    pools[0].listSpikes()
     pools[1].listSpikes()
-    pools[2].listSpikes()
+    #pools[2].listSpikes()
+    
+    np.savetxt('../results/MNspikes_noRC.txt', pools[0].poolTerminalSpikes)
+    np.savetxt('../results/NTspikes_noRC.txt', pools[1].poolTerminalSpikes)
+    #np.savetxt('../results/RCspikes.txt', pools[2].poolSomaSpikes)
+    np.savetxt('../results/SOLforce_noRC.txt', pools[0].Muscle.force)
+
     
     plt.figure()
     plt.plot(pools[1].poolTerminalSpikes[:, 0],
              pools[1].poolTerminalSpikes[:, 1]+1, '.')
 
-    np.savetxt('neuralTract.txt', pools[1].poolTerminalSpikes)
-
-    pools[0].listSpikes()
-
+    
+    
+    '''
     plt.figure()
     plt.plot(pools[0].poolTerminalSpikes[:, 0],
              pools[0].poolTerminalSpikes[:, 1]+1, '.')
@@ -63,7 +73,7 @@ def simulator():
     plt.figure()
     plt.plot(pools[2].poolSomaSpikes[:, 0],
              pools[2].poolSomaSpikes[:, 1]+1, '.')
-
+    '''
     '''
     print pools[0].Muscle.maximumActivationForce
 
@@ -73,9 +83,10 @@ def simulator():
     plt.figure()
     plt.plot(t, pools[0].Muscle.tendonForce_N, '-')
     '''
+    
     plt.figure()
     plt.plot(t, pools[0].Muscle.force, '-')
-
+    
     '''
     plt.figure()
     plt.plot(t, pools[0].Muscle.length_m, '-')
