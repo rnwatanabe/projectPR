@@ -149,7 +149,7 @@ class MotorUnit(object):
         - Inputs:
             + **conf**: Configuration object with the simulation parameters.
 
-            + **pool**: string with Motor unit pool to which the motor
+cyto            + **pool**: string with Motor unit pool to which the motor
             unit belongs.
 
             + **index**: integer corresponding to the motor unit order in
@@ -196,10 +196,10 @@ class MotorUnit(object):
         gCoupling_MS = np.zeros_like(self.v_mV, dtype = 'd')
         gLeak = np.zeros_like(self.v_mV, dtype = 'd')        
         for i in self.compartment[0:-1]: gCoupling_MS[self.compartment.index(i)] = calcGCoupling(float(conf.parameterSet('cytR',pool, index)), 
-                          self.compartment[self.compartment.index(i)].length_mum,
-                          self.compartment[self.compartment.index(i) + 1].length_mum,
-                          self.compartment[self.compartment.index(i)].diameter_mum,
-                          self.compartment[self.compartment.index(i) + 1].diameter_mum)
+                                                                                                 self.compartment[self.compartment.index(i)].length_mum,
+                                                                                                 self.compartment[self.compartment.index(i) + 1].length_mum,
+                                                                                                 self.compartment[self.compartment.index(i)].diameter_mum,
+                                                                                                 self.compartment[self.compartment.index(i) + 1].diameter_mum)
         
         
         capacitance_nF = np.zeros_like(self.v_mV, dtype = 'd')  

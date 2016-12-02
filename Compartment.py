@@ -82,7 +82,8 @@ class Compartment(object):
         area_cm2 = float(self.length_mum * math.pi * self.diameter_mum * 1e-8)
         specifRes_Ohmcm2 = float(conf.parameterSet('res_' + kind, pool, index))
         ## Capacitance of the compartment, in nF.
-        self.capacitance_nF = float(float(conf.parameterSet('membCapac',pool, index)) * area_cm2 * 1e3)
+        self.capacitance_nF = float(float(conf.parameterSet('membCapac', pool, index)) * area_cm2 * 1e3)
+        print self.capacitance_nF
         ## Leak conductance of the compartment, in MS.
         self.gLeak = calcGLeak(area_cm2, specifRes_Ohmcm2)
 
