@@ -93,7 +93,15 @@ class Compartment(object):
             self.Channels.append(ChannelConductance('Na', conf, area_cm2, pool, neuronKind, index))
         elif (kind == 'dendrite'):
             pass
-        
+        elif (kind == 'node'):
+            self.Channels.append(ChannelConductance('Kf', conf, area_cm2, pool, neuronKind, index))
+            self.Channels.append(ChannelConductance('KsAxon', conf, area_cm2, pool, neuronKind, index))
+        elif (kind == 'internode'):
+            self.Channels.append(ChannelConductance('Kf', conf, area_cm2, pool, neuronKind, index))
+            self.Channels.append(ChannelConductance('KsAxon', conf, area_cm2, pool, neuronKind, index))
+            self.Channels.append(ChannelConductance('H', conf, area_cm2, pool, neuronKind, index))
+            
+
         ## Integer with the number of ionic channels.
         self.numberChannels = len(self.Channels)
 

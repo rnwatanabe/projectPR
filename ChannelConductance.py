@@ -43,7 +43,8 @@ class ChannelConductance(object):
         ## Equilibrium Potential of the ionic channel, mV.
         self.EqPot_mV = float(conf.parameterSet('EqPot_' + kind, pool, index))
         ## Maximal conductance, in \f$\mu\f$S, of the ionic channel. 
-        self.gmax_muS = compArea * float(conf.parameterSet('gmax_' + kind + '_' + pool + '_' + neuronKind, pool, index))                
+        self.gmax_muS = compArea * float(conf.parameterSet('gmax_' + kind + '_' + pool + '_' + neuronKind, pool, index))
+        print self.gmax_muS                
         ## String with type of dynamics of the states. For now it accepts the string pulse.
         self.stateType = conf.parameterSet('StateType', pool, index)
         
