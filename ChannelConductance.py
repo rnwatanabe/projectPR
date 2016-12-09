@@ -71,6 +71,12 @@ class ChannelConductance(object):
             self.compCond = self.compCondNa
         if(self.kind == 'Ca'):
             pass  # to be implemented
+        if(self.kind == 'Nap'):
+            pass
+        if(self.kind == 'KsAxon'):
+            pass
+        if(self.kind == 'H'):
+            pass
           
             
         
