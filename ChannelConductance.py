@@ -14,7 +14,7 @@ class ChannelConductance(object):
     '''
 
     
-    def __init__(self, kind, conf, compArea, pool, neuronKind, index):
+    def __init__(self, kind, conf, compArea, pool, neuronKind, compKind, index):
         '''
         Constructor
         
@@ -31,6 +31,13 @@ class ChannelConductance(object):
 
             + **pool**: the pool that this state belongs.
 
+            + **neuronKind**: string with the type of the motor unit. It used for 
+            motoneurons. It can be *S* (slow), *FR* (fast and resistant), and *FF* 
+            (fast and fatigable).
+
+            + **compKind**: The kind of compartment that the Channel belongs. 
+            For now, it can be *soma*, *dendrite*, *node* or *internode*.
+
             + **index**: the index of the unit that this state belongs.          
         '''
         ## string with the type of the ionic channel. For now it 
@@ -39,12 +46,12 @@ class ChannelConductance(object):
         self.kind = str(kind)
         ## List of ConductanceState objects, representing each state of the ionic channel.
         self.condState = []
-       
+        
         ## Equilibrium Potential of the ionic channel, mV.
         self.EqPot_mV = float(conf.parameterSet('EqPot_' + kind, pool, index))
         ## Maximal conductance, in \f$\mu\f$S, of the ionic channel. 
         self.gmax_muS = compArea * float(conf.parameterSet('gmax_' + kind + '_' + pool + '_' + neuronKind, pool, index))
-        print self.gmax_muS                
+                        
         ## String with type of dynamics of the states. For now it accepts the string pulse.
         self.stateType = conf.parameterSet('StateType', pool, index)
         
@@ -52,15 +59,15 @@ class ChannelConductance(object):
             ConductanceState = PulseConductanceState
            
         if(self.kind == 'Kf'):
-            self.condState.append(ConductanceState('n', conf, pool, neuronKind, index))
+            self.condState.append(ConductanceState('n', conf, pool, neuronKind, compKind, index))
             ## Function that computes the conductance dynamics.
             self.compCond = self.compCondKf
         if(self.kind == 'Ks'):
-            self.condState.append(ConductanceState('q', conf, pool, neuronKind, index))
+            self.condState.append(ConductanceState('q', conf, pool, neuronKind, compKind, index))
             self.compCond = self.compCondKs
         if(self.kind == 'Na'):
-            self.condState.append(ConductanceState('m', conf, pool, neuronKind, index))
-            self.condState.append(ConductanceState('h', conf, pool, neuronKind, index))
+            self.condState.append(ConductanceState('m', conf, pool, neuronKind, compKind, index))
+            self.condState.append(ConductanceState('h', conf, pool, neuronKind, compKind, index))
             self.compCond = self.compCondNa
         if(self.kind == 'Ca'):
             pass  # to be implemented

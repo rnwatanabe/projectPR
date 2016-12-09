@@ -7,8 +7,10 @@ Author - Renato Naville Watanabe
 
 
 import math
+from numba import jit
+import numpy as np
 
-
+@jit
 def compValOn(v0, alpha, beta, t, t0):
     '''
     Time course of the state during the pulse for the *inactivation* states
@@ -24,8 +26,9 @@ def compValOn(v0, alpha, beta, t, t0):
     the value (on to off or off to on) and \f$v_0\f$ is value
     of the state at that time.
     '''
-    return v0 * math.exp(beta * (t0 - t))
+    return v0 * np.exp(beta * (t0 - t))
 
+@jit
 def compValOff(v0, alpha, beta, t, t0):
     '''
     Time course of the state during the pulse for the *activation* states
@@ -41,23 +44,32 @@ def compValOff(v0, alpha, beta, t, t0):
     the value (on to off or off to on) and \f$v_0\f$ is value
     of the state at that time.
     '''
-    return 1.0 + (v0 - 1.0)  *  math.exp(alpha * (t0 - t))
+    return 1.0 + (v0 - 1.0)  *  np.exp(alpha * (t0 - t))
 
 class PulseConductanceState(object):
     '''
     Implements the Destexhe pulse approximation of the solution of 
     the states of the Hodgkin-Huxley neuron model.
     '''
-    def __init__(self, kind, conf, pool, neuronKind, index):
+    def __init__(self, kind, conf, pool, neuronKind, compKind, index):
         '''
         Initializes the pulse conductance state.
 
         Variables:
-            *kind* - type of the state(m, h, n, q).
-            *conf* - an instance of the Configuration class with the functions to correctly parameterize the model. See the Configuration class.
-            *pool* - the pool that this state belongs.
-            *neuronKind* - 
-            *index* - the index of the unit that this state belongs.                    
+            + **kind**: string with type of the state (m, h, n, q).
+            
+            + **conf**:  an instance of the Configuration class with the functions to correctly parameterize the model. See the Configuration class.
+            
+            + **pool**: string with the pool that this state belongs.
+            
+            + **neuronKind**: string with the type of the motor unit. It used for 
+            motoneurons. It can be *S* (slow), *FR* (fast and resistant), and *FF* 
+            (fast and fatigable). 
+
+            + **compKind**: The kind of compartment that the Channel belongs. 
+            For now, it can be *soma*, *dendrite*, *node* or *internode*.
+
+            + **index**: the index of the unit that this state belongs.                    
         '''
         self.kind = kind
         self.value = float(0)
@@ -68,8 +80,8 @@ class PulseConductanceState(object):
         
         self.state = False
         
-        self.beta_ms1 = float(conf.parameterSet('beta_' + kind + '_' + pool + '_' + neuronKind, pool, index))
-        self.alpha_ms1 = float(conf.parameterSet('alpha_' + kind + '_' + pool + '_' + neuronKind, pool,index))
+        self.beta_ms1 = float(conf.parameterSet('beta_' + kind + '_' + pool + '-' + neuronKind + '@' + compKind, pool, index))
+        self.alpha_ms1 = float(conf.parameterSet('alpha_' + kind + '_' + pool + '-' + neuronKind + '@' + compKind, pool,index))
         self.PulseDur_ms = float(conf.parameterSet('PulseDur_' + kind, pool, index)) 
         
         if (self.kind == 'm'):

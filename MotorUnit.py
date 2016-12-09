@@ -237,9 +237,9 @@ cyto            + **pool**: string with Motor unit pool to which the motor
         # delay
         ## String with type of the nerve. It can be PTN (posterior tibial nerve) or CPN
         ## (common peroneal nerve).
-        if (pool == 'SOL' or pool == 'MG' or pool == 'LG'):
+        if pool == 'SOL' or pool == 'MG' or pool == 'LG':
             self.nerve = 'PTN'
-        else:
+        elif pool == 'TA':
             self.nerve = 'CPN'
             
         ## AxonDelay object of the motor unit.

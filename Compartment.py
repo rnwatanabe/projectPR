@@ -42,7 +42,8 @@ class Compartment(object):
         Constructor
 
         - Inputs:
-            + **kind**: The kind of compartment. For now, it can be *soma* or *dendrite*.
+            + **kind**: The kind of compartment. For now, it can be *soma*, *dendrite*, 
+            *node* or *internode*.
 
             + **conf**: Configuration object with the simulation parameters.
 
@@ -83,24 +84,26 @@ class Compartment(object):
         specifRes_Ohmcm2 = float(conf.parameterSet('res_' + kind, pool, index))
         ## Capacitance of the compartment, in nF.
         self.capacitance_nF = float(float(conf.parameterSet('membCapac', pool, index)) * area_cm2 * 1e3)
-        print self.capacitance_nF
+        
         ## Leak conductance of the compartment, in MS.
         self.gLeak = calcGLeak(area_cm2, specifRes_Ohmcm2)
 
         if (kind == 'soma'):
-            self.Channels.append(ChannelConductance('Kf', conf, area_cm2, pool, neuronKind, index))
-            self.Channels.append(ChannelConductance('Ks', conf, area_cm2, pool, neuronKind, index))
-            self.Channels.append(ChannelConductance('Na', conf, area_cm2, pool, neuronKind, index))
+            self.Channels.append(ChannelConductance('Kf', conf, area_cm2, pool, neuronKind, kind, index))
+            self.Channels.append(ChannelConductance('Ks', conf, area_cm2, pool, neuronKind, kind, index))
+            self.Channels.append(ChannelConductance('Na', conf, area_cm2, pool, neuronKind, kind, index))
         elif (kind == 'dendrite'):
             pass
         elif (kind == 'node'):
-            self.Channels.append(ChannelConductance('Kf', conf, area_cm2, pool, neuronKind, index))
-            self.Channels.append(ChannelConductance('KsAxon', conf, area_cm2, pool, neuronKind, index))
+            self.Channels.append(ChannelConductance('Na', conf, area_cm2, pool, neuronKind, kind, index))
+            self.Channels.append(ChannelConductance('Nap', conf, area_cm2, pool, neuronKind, kind, index))
+            self.Channels.append(ChannelConductance('Kf', conf, area_cm2, pool, neuronKind, kind, index))
+            self.Channels.append(ChannelConductance('KsAxon', conf, area_cm2, pool, neuronKind, kind, index))
         elif (kind == 'internode'):
-            self.Channels.append(ChannelConductance('Kf', conf, area_cm2, pool, neuronKind, index))
-            self.Channels.append(ChannelConductance('KsAxon', conf, area_cm2, pool, neuronKind, index))
-            self.Channels.append(ChannelConductance('H', conf, area_cm2, pool, neuronKind, index))
-            
+            self.Channels.append(ChannelConductance('Kf', conf, area_cm2, pool, neuronKind, kind, index))
+            self.Channels.append(ChannelConductance('KsAxon', conf, area_cm2, pool, neuronKind, kind, index))
+            self.Channels.append(ChannelConductance('H', conf, area_cm2, pool, neuronKind, kind, index))
+
 
         ## Integer with the number of ionic channels.
         self.numberChannels = len(self.Channels)
