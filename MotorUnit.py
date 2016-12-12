@@ -19,7 +19,6 @@ def calcGCoupling(cytR, lComp1, lComp2, dComp1, dComp2):
     '''
     Calculates the coupling conductance between two compartments.
 
-
     - Inputs: 
          + **cytR**: Cytoplasmatic resistivity in \f$\Omega\f$.cm.
 
@@ -194,6 +193,7 @@ cyto            + **pool**: string with Motor unit pool to which the motor
         
         
         gCoupling_MS = np.zeros_like(self.v_mV, dtype = 'd')
+        
         gLeak = np.zeros_like(self.v_mV, dtype = 'd')        
         for i in self.compartment[0:-1]: gCoupling_MS[self.compartment.index(i)] = calcGCoupling(float(conf.parameterSet('cytR',pool, index)), 
                                                                                                  self.compartment[self.compartment.index(i)].length_mum,

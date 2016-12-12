@@ -37,11 +37,16 @@ def simulator():
     
     t = np.arange(0.0, conf.simDuration_ms, conf.timeStep_ms)
 
+    dendV = np.zeros_like(t)
+    somaV = np.zeros_like(t)
+
     tic = time.clock()
     for i in xrange(0, len(t)-1):
         #ankle.atualizeAnkle(t[i], 0)
         pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
+        dendV[i] = pools[0].unit[100].v_mV[0]
+        somaV[i] = pools[0].unit[100].v_mV[1] 
         #pools[3].atualizePool(t[i])
         #pools[2].atualizeInterneuronPool(t[i])
     toc = time.clock()
@@ -63,11 +68,11 @@ def simulator():
 
     
     
-    '''
+    
     plt.figure()
     plt.plot(pools[0].poolTerminalSpikes[:, 0],
              pools[0].poolTerminalSpikes[:, 1]+1, '.')
-
+    '''         
     plt.figure()
     plt.plot(pools[2].poolSomaSpikes[:, 0],
              pools[2].poolSomaSpikes[:, 1]+1, '.')
@@ -84,6 +89,12 @@ def simulator():
     
     plt.figure()
     plt.plot(t, pools[0].Muscle.force, '-')
+
+    plt.figure()
+    plt.plot(t, dendV, '-')
+
+    plt.figure()
+    plt.plot(t, somaV, '-')
     
     '''
     plt.figure()

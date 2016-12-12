@@ -98,6 +98,7 @@ class ChannelConductance(object):
         - Outputs:
             + Ionic current, in nA
         '''        
+         
         for i in xrange(0, self.lenStates): self.condState[i].computeStateValue(t)        
                           
         return self.compCond(V_mV)

@@ -87,6 +87,7 @@ class Compartment(object):
         
         ## Leak conductance of the compartment, in MS.
         self.gLeak = calcGLeak(area_cm2, specifRes_Ohmcm2)
+        
 
         if (kind == 'soma'):
             self.Channels.append(ChannelConductance('Kf', conf, area_cm2, pool, neuronKind, kind, index))
