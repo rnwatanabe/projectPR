@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -114,14 +115,14 @@ $(document).ready(function(){initNavTree('class_neural_tract_unit_1_1_neural_tra
 </div><!--header-->
 <div class="contents">
 
-<p>classdocs  
+<p>Class that implements a neural tract unit.  
  <a href="class_neural_tract_unit_1_1_neural_tract_unit.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acd96f13aa788dc9699fed515783b6543"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#acd96f13aa788dc9699fed515783b6543">__init__</a> (self, conf, pool, index)</td></tr>
-<tr class="memdesc:acd96f13aa788dc9699fed515783b6543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#acd96f13aa788dc9699fed515783b6543">More...</a><br /></td></tr>
-<tr class="separator:acd96f13aa788dc9699fed515783b6543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a753c43210f21cae7108504a538e87268"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a753c43210f21cae7108504a538e87268">__init__</a> (self, conf, pool, <a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#aee01a134ce97127783d75757ec15f352">GammaOrder</a>, <a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#ae98dd2328b661ea541f81a8b4c259557">index</a>)</td></tr>
+<tr class="memdesc:a753c43210f21cae7108504a538e87268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a753c43210f21cae7108504a538e87268">More...</a><br /></td></tr>
+<tr class="separator:a753c43210f21cae7108504a538e87268"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30ea40e013697346cae35a342640a6e4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a30ea40e013697346cae35a342640a6e4">atualizeNeuralTractUnit</a> (self, t, FR)</td></tr>
 <tr class="separator:a30ea40e013697346cae35a342640a6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6244f11e9aae2d31066e020f9421a9d8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a6244f11e9aae2d31066e020f9421a9d8">transmitSpikes</a> (self, t)</td></tr>
@@ -130,24 +131,33 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aee01a134ce97127783d75757ec15f352"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#aee01a134ce97127783d75757ec15f352">GammaOrder</a></td></tr>
+<tr class="memdesc:aee01a134ce97127783d75757ec15f352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer order of the Gamma distribution.  <a href="#aee01a134ce97127783d75757ec15f352">More...</a><br /></td></tr>
 <tr class="separator:aee01a134ce97127783d75757ec15f352"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57cbb130e004fb3f7ee8d8a540f7dff0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a57cbb130e004fb3f7ee8d8a540f7dff0">spikesGenerator</a></td></tr>
+<tr class="memdesc:a57cbb130e004fb3f7ee8d8a540f7dff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="namespace_point_process_generator.html">PointProcessGenerator</a> object, corresponding the generator of spikes of the neural tract unit.  <a href="#a57cbb130e004fb3f7ee8d8a540f7dff0">More...</a><br /></td></tr>
 <tr class="separator:a57cbb130e004fb3f7ee8d8a540f7dff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac34c86235329e753e8cfdfcc1e24c53f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#ac34c86235329e753e8cfdfcc1e24c53f">terminalSpikeTrain</a></td></tr>
+<tr class="memdesc:ac34c86235329e753e8cfdfcc1e24c53f"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of the spikes of the neural tract unit.  <a href="#ac34c86235329e753e8cfdfcc1e24c53f">More...</a><br /></td></tr>
 <tr class="separator:ac34c86235329e753e8cfdfcc1e24c53f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29dce2584fbb4bd98199c05bdc767bf1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a29dce2584fbb4bd98199c05bdc767bf1">kind</a></td></tr>
+<tr class="separator:a29dce2584fbb4bd98199c05bdc767bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a740d2cfa17ad57c7dbd40fbafc654b95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a740d2cfa17ad57c7dbd40fbafc654b95">SynapsesOut</a></td></tr>
 <tr class="separator:a740d2cfa17ad57c7dbd40fbafc654b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6fa367f6ada8045919674feaed4f6ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#ac6fa367f6ada8045919674feaed4f6ad">transmitSpikesThroughSynapses</a></td></tr>
 <tr class="separator:ac6fa367f6ada8045919674feaed4f6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e5fa20e16e924e7f27a087e8f7a19a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a4e5fa20e16e924e7f27a087e8f7a19a7">indicesOfSynapsesOnTarget</a></td></tr>
 <tr class="separator:a4e5fa20e16e924e7f27a087e8f7a19a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae98dd2328b661ea541f81a8b4c259557"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#ae98dd2328b661ea541f81a8b4c259557">index</a></td></tr>
+<tr class="memdesc:ae98dd2328b661ea541f81a8b4c259557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer corresponding to the neural tract unit identification.  <a href="#ae98dd2328b661ea541f81a8b4c259557">More...</a><br /></td></tr>
+<tr class="separator:ae98dd2328b661ea541f81a8b4c259557"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>classdocs </p>
+<div class="textblock"><p>Class that implements a neural tract unit. </p>
+<p>It consists of a point process generator. </p>
 
-<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00020">20</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00021">21</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="acd96f13aa788dc9699fed515783b6543"></a>
+<a class="anchor" id="a753c43210f21cae7108504a538e87268"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -173,6 +183,12 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>GammaOrder</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
           <td class="paramname"><em>index</em>&#160;</td>
         </tr>
         <tr>
@@ -184,8 +200,16 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
+<ul>
+<li>Inputs:<ul>
+<li><b>conf</b>: <a class="el" href="namespace_configuration.html">Configuration</a> object with the simulation parameters.</li>
+<li><b>pool</b>: string with the name of the Neural tract.</li>
+<li><b>index</b>: integer corresponding to the neural tract unit identification. </li>
+</ul>
+</li>
+</ul>
 
-<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00027">27</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00036">36</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
 
 </div>
 </div>
@@ -219,15 +243,24 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<ul>
+<li>Inputs:<ul>
+<li><b>t</b>: current instant, in ms.</li>
+<li><b>FR</b>: </li>
+</ul>
+</li>
+</ul>
 
-<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00049">49</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00068">68</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_tract_unit_1_1_neural_tract_unit_a30ea40e013697346cae35a342640a6e4_cgraph.png" border="0" usemap="#class_neural_tract_unit_1_1_neural_tract_unit_a30ea40e013697346cae35a342640a6e4_cgraph" alt=""/></div>
 <map name="class_neural_tract_unit_1_1_neural_tract_unit_a30ea40e013697346cae35a342640a6e4_cgraph" id="class_neural_tract_unit_1_1_neural_tract_unit_a30ea40e013697346cae35a342640a6e4_cgraph">
-<area shape="rect" id="node2" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a6244f11e9aae2d31066e020f9421a9d8" title="NeuralTractUnit.NeuralTract\lUnit.transmitSpikes" alt="" coords="240,5,427,47"/>
+<area shape="rect" id="node2" href="class_interneuron_1_1_interneuron.html#a776242a1aa83a264adba968651de0226" title="Interneuron.Interneuron.transmit\lSpikes" alt="" coords="240,5,447,47"/>
+<area shape="rect" id="node3" href="class_motor_unit_1_1_motor_unit.html#ac3d3e69bf0b75eef81a015005052f5d3" title="MotorUnit.MotorUnit.transmit\lSpikes" alt="" coords="248,71,439,112"/>
+<area shape="rect" id="node4" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a6244f11e9aae2d31066e020f9421a9d8" title="NeuralTractUnit.NeuralTract\lUnit.transmitSpikes" alt="" coords="250,136,437,177"/>
 </map>
 </div>
 </p>
@@ -257,8 +290,14 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<ul>
+<li>Inputs:<ul>
+<li><b>t</b>: current instant, in ms. </li>
+</ul>
+</li>
+</ul>
 
-<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00059">59</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00080">80</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -283,7 +322,25 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00029">29</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
+<p>Integer order of the Gamma distribution. </p>
+
+<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00039">39</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae98dd2328b661ea541f81a8b4c259557"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NeuralTractUnit.NeuralTractUnit.index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Integer corresponding to the neural tract unit identification. </p>
+
+<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00057">57</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
 
 </div>
 </div>
@@ -297,7 +354,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00041">41</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00054">54</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a29dce2584fbb4bd98199c05bdc767bf1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NeuralTractUnit.NeuralTractUnit.kind</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00047">47</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
 
 </div>
 </div>
@@ -311,7 +382,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00032">32</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
+<p>A <a class="el" href="namespace_point_process_generator.html">PointProcessGenerator</a> object, corresponding the generator of spikes of the neural tract unit. </p>
+
+<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00043">43</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
 
 </div>
 </div>
@@ -325,7 +398,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00039">39</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00052">52</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
 
 </div>
 </div>
@@ -339,7 +412,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00033">33</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
+<p>List of the spikes of the neural tract unit. </p>
+
+<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00045">45</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
 
 </div>
 </div>
@@ -353,7 +428,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00040">40</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_neural_tract_unit_8py_source.html#l00053">53</a> of file <a class="el" href="_neural_tract_unit_8py_source.html">NeuralTractUnit.py</a>.</p>
 
 </div>
 </div>
@@ -366,7 +441,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_neural_tract_unit.html">NeuralTractUnit</a></li><li class="navelem"><a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html">NeuralTractUnit</a></li>
-    <li class="footer">Generated on Mon Jun 27 2016 18:05:12 for PyReMoto by
+    <li class="footer">Generated on Mon Dec 12 2016 13:43:18 for PyReMoto by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

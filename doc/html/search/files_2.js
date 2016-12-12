@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['motorunit_2epy',['MotorUnit.py',['../_motor_unit_8py.html',1,'']]],
-  ['motorunitpool_2epy',['MotorUnitPool.py',['../_motor_unit_pool_8py.html',1,'']]]
+  ['interneuron_2epy',['Interneuron.py',['../_interneuron_8py.html',1,'']]],
+  ['interneuronpool_2epy',['InterneuronPool.py',['../_interneuron_pool_8py.html',1,'']]]
 ];

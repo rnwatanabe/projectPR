@@ -1,0 +1,9 @@
+<map id="Interneuron.Interneuron.transmitSpikes" name="Interneuron.Interneuron.transmitSpikes">
+<area shape="rect" id="node2" href="$class_interneuron_1_1_interneuron.html#affb57bbf0d7eec160855d0fce26f83d5" title="When the soma potential is above the threshold a spike is added to the soma. " alt="" coords="269,5,450,47"/>
+<area shape="rect" id="node7" href="$class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534" title="When the soma potential is above the threshold a spike is added tom the soma. " alt="" coords="260,71,459,112"/>
+<area shape="rect" id="node8" href="$class_neural_tract_unit_1_1_neural_tract_unit.html#a30ea40e013697346cae35a342640a6e4" title="NeuralTractUnit.NeuralTract\lUnit.atualizeNeuralTractUnit" alt="" coords="266,136,453,177"/>
+<area shape="rect" id="node3" href="$class_interneuron_1_1_interneuron.html#aadb0a11834ebf0b9fb0fa05788da23d1" title="Atualize all neural compartments. " alt="" coords="507,5,712,47"/>
+<area shape="rect" id="node6" href="$class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b" title="Atualize all neural compartments. " alt="" coords="515,71,704,112"/>
+<area shape="rect" id="node4" href="$class_interneuron_1_1_interneuron.html#aaa557573420679f62247b6c6a3879f88" title="Atualize the dynamical and nondynamical (delay) parts of the motor unit. " alt="" coords="760,5,965,47"/>
+<area shape="rect" id="node5" href="$class_motor_unit_1_1_motor_unit.html#ab57693c2f49518b08639456595e92d87" title="Atualize the dynamical and nondynamical (delay) parts of the motor unit. " alt="" coords="768,71,957,112"/>
+</map>

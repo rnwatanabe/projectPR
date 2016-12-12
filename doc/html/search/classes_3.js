@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['neuraltract',['NeuralTract',['../class_neural_tract_1_1_neural_tract.html',1,'NeuralTract']]],
-  ['neuraltractunit',['NeuralTractUnit',['../class_neural_tract_unit_1_1_neural_tract_unit.html',1,'NeuralTractUnit']]]
+  ['jointankleforcetask',['jointAnkleForceTask',['../classjoint_ankle_force_task_1_1joint_ankle_force_task.html',1,'jointAnkleForceTask']]],
+  ['jointanklepositiontask',['jointAnklePositionTask',['../classjoint_ankle_position_task_1_1joint_ankle_position_task.html',1,'jointAnklePositionTask']]]
 ];

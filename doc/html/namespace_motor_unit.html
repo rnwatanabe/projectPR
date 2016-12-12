@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="namespaces.html"><span>Packages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -187,9 +188,9 @@ Functions</h2></td></tr>
 </ul>
 <p>The coupling conductance between compartment 1 and 2 is computed by the following equation:</p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{equation} g_c = \frac{2.10^2}{\frac{R_{cyt}l_1}{\pi r_1^2}+\frac{R_{cyt}l_2}{\pi r_2^2}} \end{equation}" src="form_19.png"/>
+<img class="formulaDsp" alt="\begin{equation} g_c = \frac{2.10^2}{\frac{R_{cyt}l_1}{\pi r_1^2}+\frac{R_{cyt}l_2}{\pi r_2^2}} \end{equation}" src="form_24.png"/>
 </p>
-<p> where <img class="formulaInl" alt="$g_c$" src="form_20.png"/> is the coupling conductance [MS], <img class="formulaInl" alt="$R_{cyt}$" src="form_21.png"/> is the cytoplasmatic resistivity [ <img class="formulaInl" alt="$\Omega$" src="form_1.png"/>.cm], <img class="formulaInl" alt="$l_1$" src="form_22.png"/> and <img class="formulaInl" alt="$l_2$" src="form_23.png"/> are the lengths [ <img class="formulaInl" alt="$\mu$" src="form_2.png"/>m] of compartments 1 and 2, respectively and <img class="formulaInl" alt="$r_1$" src="form_24.png"/> and <img class="formulaInl" alt="$r_2$" src="form_25.png"/> are the radius [ <img class="formulaInl" alt="$\mu$" src="form_2.png"/>m] of compartments 1 and 2, respectively. </p>
+<p> where <img class="formulaInl" alt="$g_c$" src="form_25.png"/> is the coupling conductance [MS], <img class="formulaInl" alt="$R_{cyt}$" src="form_26.png"/> is the cytoplasmatic resistivity [ <img class="formulaInl" alt="$\Omega$" src="form_1.png"/>.cm], <img class="formulaInl" alt="$l_1$" src="form_27.png"/> and <img class="formulaInl" alt="$l_2$" src="form_28.png"/> are the lengths [ <img class="formulaInl" alt="$\mu$" src="form_2.png"/>m] of compartments 1 and 2, respectively and <img class="formulaInl" alt="$r_1$" src="form_29.png"/> and <img class="formulaInl" alt="$r_2$" src="form_30.png"/> are the radius [ <img class="formulaInl" alt="$\mu$" src="form_2.png"/>m] of compartments 1 and 2, respectively. </p>
 
 <p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00046">46</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
@@ -222,7 +223,7 @@ Functions</h2></td></tr>
 </li>
 </ul>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{equation} GC = \left[\begin{array}{cccccccc} -g_c[0]&amp;g_c[0]&amp;0&amp;...&amp;...&amp;0&amp;0&amp;0\\ g_c[0]&amp;-g_c[0]-g_c[1]&amp;g_c[1]&amp;0&amp;...&amp;...&amp;0&amp;0\\ \vdots&amp;&amp;\ddots&amp;&amp;...&amp;&amp;0&amp;0 \\ 0&amp;...&amp;g_c[i-1]&amp;-g_c[i-1]-g_c[i]&amp;g_c[i]&amp;0&amp;...&amp;0\\ 0&amp;0&amp;0&amp;...&amp;...&amp;&amp;&amp;0\\ 0&amp;&amp;...&amp;&amp;g_c[N-2]&amp;-g_c[N-2]-g_c[N-1]&amp;g_c[N-1]&amp;0\\ 0&amp;...&amp;0&amp;&amp;&amp;0&amp;g_c[N-1]&amp;-g_c[N-1]\end{array}\right] \end{equation}" src="form_26.png"/>
+<img class="formulaDsp" alt="\begin{equation} GC = \left[\begin{array}{cccccccc} -g_c[0]&amp;g_c[0]&amp;0&amp;...&amp;...&amp;0&amp;0&amp;0\\ g_c[0]&amp;-g_c[0]-g_c[1]&amp;g_c[1]&amp;0&amp;...&amp;...&amp;0&amp;0\\ \vdots&amp;&amp;\ddots&amp;&amp;...&amp;&amp;0&amp;0 \\ 0&amp;...&amp;g_c[i-1]&amp;-g_c[i-1]-g_c[i]&amp;g_c[i]&amp;0&amp;...&amp;0\\ 0&amp;0&amp;0&amp;...&amp;...&amp;&amp;&amp;0\\ 0&amp;&amp;...&amp;&amp;g_c[N-2]&amp;-g_c[N-2]-g_c[N-1]&amp;g_c[N-1]&amp;0\\ 0&amp;...&amp;0&amp;&amp;&amp;0&amp;g_c[N-1]&amp;-g_c[N-1]\end{array}\right] \end{equation}" src="form_31.png"/>
 </p>
  
 <p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00078">78</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
@@ -291,16 +292,16 @@ Functions</h2></td></tr>
 </ul>
 <p>This method is intended to solve the following differential equation:</p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{equation} \frac{dx(t)}{dt} = f(t, x(t)) \end{equation}" src="form_27.png"/>
+<img class="formulaDsp" alt="\begin{equation} \frac{dx(t)}{dt} = f(t, x(t)) \end{equation}" src="form_19.png"/>
 </p>
 <p> First, four derivatives are computed:</p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{align} k_1 &amp;= f(t,x(t))\\ k_2 &amp;= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_1)\\ k_3 &amp;= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_2)\\ k_4 &amp;= f(t+\Delta t, x(t) + \Delta t.k_3) \end{align}" src="form_28.png"/>
+<img class="formulaDsp" alt="\begin{align} k_1 &amp;= f(t,x(t))\\ k_2 &amp;= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_1)\\ k_3 &amp;= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_2)\\ k_4 &amp;= f(t+\Delta t, x(t) + \Delta t.k_3) \end{align}" src="form_20.png"/>
 </p>
-<p> where <img class="formulaInl" alt="$\Delta t$" src="form_29.png"/> is the time step of the numerical solution of the differential equation.</p>
-<p>Then the value of <img class="formulaInl" alt="$x(t+\Delta t)$" src="form_30.png"/> is computed with:</p>
+<p> where <img class="formulaInl" alt="$\Delta t$" src="form_21.png"/> is the time step of the numerical solution of the differential equation.</p>
+<p>Then the value of <img class="formulaInl" alt="$x(t+\Delta t)$" src="form_22.png"/> is computed with:</p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{equation} x(t+\Delta t) = x(t) + \frac{\Delta t}{6}(k_1 + 2k_2 + 2k_3+k_4) \end{equation}" src="form_31.png"/>
+<img class="formulaDsp" alt="\begin{equation} x(t+\Delta t) = x(t) + \frac{\Delta t}{6}(k_1 + 2k_2 + 2k_3+k_4) \end{equation}" src="form_23.png"/>
 </p>
  
 <p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00133">133</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
@@ -324,7 +325,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_motor_unit.html">MotorUnit</a></li>
-    <li class="footer">Generated on Mon Jun 27 2016 18:05:12 for PyReMoto by
+    <li class="footer">Generated on Mon Dec 12 2016 13:43:18 for PyReMoto by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

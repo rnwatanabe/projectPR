@@ -1,0 +1,56 @@
+\hypertarget{namespace_muscular_activation}{}\section{Muscular\+Activation Namespace Reference}
+\label{namespace_muscular_activation}\index{Muscular\+Activation@{Muscular\+Activation}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_muscular_activation_1_1_muscular_activation}{Muscular\+Activation}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespace_muscular_activation_a4ba324691bfac6123a9fcd3be56a15ad}{twitch\+Saturation} (activationsat, b)
+\begin{DoxyCompactList}\small\item\em Computes the muscle unit force after the nonlinear saturation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{Muscular\+Activation@{Muscular\+Activation}!twitch\+Saturation@{twitch\+Saturation}}
+\index{twitch\+Saturation@{twitch\+Saturation}!Muscular\+Activation@{Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{twitch\+Saturation(activationsat, b)}{twitchSaturation(activationsat, b)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscular\+Activation.\+twitch\+Saturation (
+\begin{DoxyParamCaption}
+\item[{}]{activationsat, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_muscular_activation_a4ba324691bfac6123a9fcd3be56a15ad}{}\label{namespace_muscular_activation_a4ba324691bfac6123a9fcd3be56a15ad}
+
+
+Computes the muscle unit force after the nonlinear saturation. 
+
+\begin{equation} a_{sat} = \frac{1-e^{-b.a_{nSat}}}{1+e^{-b.a_{nSat}}} \end{equation}
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries activationsat}\+: activation signal before the saturation.
+\item {\bfseries b}\+: saturation function parameter.
+\end{DoxyItemize}
+\item Outputs\+:
+\begin{DoxyItemize}
+\item Saturated force. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 28 of file Muscular\+Activation.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_muscular_activation_a4ba324691bfac6123a9fcd3be56a15ad_icgraph}
+\end{center}
+\end{figure}
+
+

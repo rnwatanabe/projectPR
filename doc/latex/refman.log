@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.27)  12 DEC 2016 13:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.27)  12 DEC 2016 13:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1180,42 +1180,2479 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 22.39185pt on input line 134.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 22.39185pt on input line 134.
- (./refman.toc)
+ (./refman.toc
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 1.
+ [3
+
+] [4] [5] [6] [7]
+[8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21])
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
- [3
+ [22]
+Package hyperref Info: Option `pageanchor' set `true' on input line 137.
 
-] [4
+Chapter 1.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 18.66588pt on input line 140.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 140.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 18.66588pt on input line 140.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 18.66588pt on input line 140.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 6.29996pt on input line 140.
+(./index.tex
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 7.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+))
+[1
+
+
+] [2
 
 ]
-Package hyperref Info: Option `pageanchor' set `true' on input line 137.
- (./refman.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 150.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 150.
+Chapter 2.
+(./md__media_renato_Backup_Disk_GitRepositories_remotoPy_projectPR_README.tex)
+[3] [4
 
-(./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
+]
+Chapter 3.
+(./namespaces.tex
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
+) [5] [6
+
+]
+Chapter 4.
+(./hierarchy.tex) [7] [8
+
+]
+Chapter 5.
+(./annotated.tex [9]) [10]
+Chapter 6.
+(./files.tex) [11
+
+] [12
+
+]
+Chapter 7.
+(./namespace_axon_delay.tex
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 3.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 10.79993pt on input line 3.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
+)
+LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 6.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 7.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 7.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 7.
+)
+(./namespace_channel_conductance.tex) (./namespace_compartment.tex
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 8.99994pt on input line 23.
+LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
+(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 23.
+LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
+(Font)              scaled to size 8.99994pt on input line 23.
+LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <7> not available
+(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 23.
+LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
+(Font)              scaled to size 6.29996pt on input line 23.
+ [13])
+(./namespace_configuration.tex) (./namespace_interneuron.tex
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 6.29996pt on input line 12.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 27.
+
+[14]
+
+! LaTeX Error: Environment align undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.49 \begin{align}
+                   k_1 &= f(t,x(t))\\ k_2 &= f(t+\frac{\Delta t}{2}, x(t) + ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.49 \begin{align} k_
+                     1 &= f(t,x(t))\\ k_2 &= f(t+\frac{\Delta t}{2}, x(t) + ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.49 \begin{align} k_1 &
+                        = f(t,x(t))\\ k_2 &= f(t+\frac{\Delta t}{2}, x(t) + ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.49 \begin{align} k_1 &= f(t,x(t))\\ k_2 &
+                                           = f(t+\frac{\Delta t}{2}, x(t) + ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.49 ...2}, x(t) + \frac{\Delta t}{2}.k_1)\\ k_3 &
+                                                  = f(t+\frac{\Delta t}{2}, ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.49 ...2}, x(t) + \frac{\Delta t}{2}.k_2)\\ k_4 &
+                                                  = f(t+\Delta t, x(t) + \De...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! LaTeX Error: \begin{document} ended by \end{align}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.49 ...\Delta t, x(t) + \Delta t.k_3) \end{align}
+                                                   where $\Delta t$ is the t...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.49 ...\Delta t, x(t) + \Delta t.k_3) \end{align}
+                                                   where $\Delta t$ is the t...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+<namespace_interneuron_a3c7f009c4357310ae71cedad2abfd716_icgraph.pdf, id=3331, 
+581.17125pt x 160.6pt>
+File: namespace_interneuron_a3c7f009c4357310ae71cedad2abfd716_icgraph.pdf Graph
+ic file (type pdf)
+
+<use namespace_interneuron_a3c7f009c4357310ae71cedad2abfd716_icgraph.pdf>
+Package pdftex.def Info: namespace_interneuron_a3c7f009c4357310ae71cedad2abfd71
+6_icgraph.pdf used on input line 64.
+(pdftex.def)             Requested size: 350.0pt x 96.7185pt.
+)
+(./namespace_interneuron_pool.tex) (./namespacejoint_ankle_force_task.tex)
+(./namespacejoint_ankle_position_task.tex [15 <./namespace_interneuron_a3c7f009
+c4357310ae71cedad2abfd716_icgraph.pdf>]) (./namespace_motor_unit.tex [16]
+Overfull \hbox (92.60725pt too wide) detected at line 80
+[]\OML/cmm/m/it/10 GC \OT1/cmr/m/n/10 = [][]
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 95.
+
+
+! LaTeX Error: Environment align undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.117 \begin{align}
+                    k_1 &= f(t,x(t))\\ k_2 &= f(t+\frac{\Delta t}{2}, x(t) +...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.117 \begin{align} k_
+                      1 &= f(t,x(t))\\ k_2 &= f(t+\frac{\Delta t}{2}, x(t) +...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.117 \begin{align} k_1 &
+                         = f(t,x(t))\\ k_2 &= f(t+\frac{\Delta t}{2}, x(t) +...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.117 \begin{align} k_1 &= f(t,x(t))\\ k_2 &
+                                            = f(t+\frac{\Delta t}{2}, x(t) +...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.117 ...}, x(t) + \frac{\Delta t}{2}.k_1)\\ k_3 &
+                                                  = f(t+\frac{\Delta t}{2}, ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.117 ...}, x(t) + \frac{\Delta t}{2}.k_2)\\ k_4 &
+                                                  = f(t+\Delta t, x(t) + \De...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! LaTeX Error: \begin{document} ended by \end{align}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.117 ...Delta t, x(t) + \Delta t.k_3) \end{align}
+                                                   where $\Delta t$ is the t...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.117 ...Delta t, x(t) + \Delta t.k_3) \end{align}
+                                                   where $\Delta t$ is the t...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+<namespace_motor_unit_ab7df982e859623662808361f779572f5_icgraph.pdf, id=3371, 5
+51.05875pt x 111.41624pt>
+File: namespace_motor_unit_ab7df982e859623662808361f779572f5_icgraph.pdf Graphi
+c file (type pdf)
+
+<use namespace_motor_unit_ab7df982e859623662808361f779572f5_icgraph.pdf>
+Package pdftex.def Info: namespace_motor_unit_ab7df982e859623662808361f779572f5
+_icgraph.pdf used on input line 131.
+(pdftex.def)             Requested size: 350.0pt x 70.76723pt.
+
+[17]) (./namespace_motor_unit_pool.tex) (./namespace_muscle_hill.tex)
+(./namespace_muscle_no_hill.tex) (./namespace_muscular_activation.tex [18 <./na
+mespace_motor_unit_ab7df982e859623662808361f779572f5_icgraph.pdf>]
+<namespace_muscular_activation_a4ba324691bfac6123a9fcd3be56a15ad_icgraph.pdf, i
+d=3404, 413.545pt x 111.41624pt>
+File: namespace_muscular_activation_a4ba324691bfac6123a9fcd3be56a15ad_icgraph.p
+df Graphic file (type pdf)
+
+<use namespace_muscular_activation_a4ba324691bfac6123a9fcd3be56a15ad_icgraph.pd
+f>
+Package pdftex.def Info: namespace_muscular_activation_a4ba324691bfac6123a9fcd3
+be56a15ad_icgraph.pdf used on input line 52.
+(pdftex.def)             Requested size: 350.0pt x 94.29793pt.
+) (./namespace_neural_tract.tex) (./namespace_neural_tract_unit.tex)
+(./namespace_point_process_generator.tex
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <9> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <9> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 8.09995pt on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <7> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <7> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 6.29996pt on input line 12.
+ [19 <./namespace_muscular_activation_a4ba324691bfac6123a9fcd3be56a15ad_icgraph
+.pdf>]
+! Limit controls must follow a math operator.
+l.43 ...on} \Gamma = -\frac{1}{\lambda}\ln(\limits
+                                                  \prod_{i=1}^{\lambda} U(0,...
+I'm ignoring this misplaced \limits or \nolimits command.
+
+
+<namespace_point_process_generator_a01488b4f69653d1fb9653b7a8d37744e_icgraph.pd
+f, id=3424, 445.665pt x 111.41624pt>
+File: namespace_point_process_generator_a01488b4f69653d1fb9653b7a8d37744e_icgra
+ph.pdf Graphic file (type pdf)
+
+<use namespace_point_process_generator_a01488b4f69653d1fb9653b7a8d37744e_icgrap
+h.pdf>
+Package pdftex.def Info: namespace_point_process_generator_a01488b4f69653d1fb96
+53b7a8d37744e_icgraph.pdf used on input line 53.
+(pdftex.def)             Requested size: 350.0pt x 87.50104pt.
+) (./namespace_pulse_conductance_state.tex [20 <./namespace_point_process_gener
+ator_a01488b4f69653d1fb9653b7a8d37744e_icgraph.pdf>]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 31.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.99994pt on input line 31.
+)
+(./namespacesimulation.tex) (./namespace_synapse.tex [21] [22] [23] [24]
+! Limit controls must follow a math operator.
+l.241 ...lative to the $G_{max}$ ( $N_{on}=\limits
+                                                  \sum_{i=1}g_{i_{on}}/G_{ma...
+I'm ignoring this misplaced \limits or \nolimits command.
+
+[25] [26]) (./namespace_synapses_factory.tex) (./namespace_synaptic_noise.tex)
+[27] [28
+
+]
+Chapter 8.
+(./class_axon_delay_1_1_axon_delay.tex
+LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
+(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 21.
+LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 21.
+ [29]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 58.
+
+
+<class_axon_delay_1_1_axon_delay_a3fe989d5e27974a6c0ad9e92f3752685_cgraph.pdf, 
+id=3557, 450.68375pt x 111.41624pt>
+File: class_axon_delay_1_1_axon_delay_a3fe989d5e27974a6c0ad9e92f3752685_cgraph.
+pdf Graphic file (type pdf)
+
+<use class_axon_delay_1_1_axon_delay_a3fe989d5e27974a6c0ad9e92f3752685_cgraph.p
+df>
+Package pdftex.def Info: class_axon_delay_1_1_axon_delay_a3fe989d5e27974a6c0ad9
+e92f3752685_cgraph.pdf used on input line 107.
+(pdftex.def)             Requested size: 350.0pt x 86.5303pt.
+
+<class_axon_delay_1_1_axon_delay_a0a75705e6de98e89462381245bb4cb51_icgraph.pdf,
+ id=3559, 450.68375pt x 111.41624pt>
+File: class_axon_delay_1_1_axon_delay_a0a75705e6de98e89462381245bb4cb51_icgraph
+.pdf Graphic file (type pdf)
+
+<use class_axon_delay_1_1_axon_delay_a0a75705e6de98e89462381245bb4cb51_icgraph.
+pdf>
+Package pdftex.def Info: class_axon_delay_1_1_axon_delay_a0a75705e6de98e8946238
+1245bb4cb51_icgraph.pdf used on input line 140.
+(pdftex.def)             Requested size: 350.0pt x 86.5303pt.
+ [30 <./class_axon_delay_1_1_axon_delay_a3fe989d5e27974a6c0ad9e92f3752685_cgrap
+h.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 161.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 172.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 183.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 194.
+
+[31 <./class_axon_delay_1_1_axon_delay_a0a75705e6de98e89462381245bb4cb51_icgrap
+h.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 227.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 227.
+
+) (./class_channel_conductance_1_1_channel_conductance.tex [32]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 60.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 60.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 60.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 60.
+
+! Undefined control sequence.
+<recently read> \text 
+                      
+l.71 ...rtment that the Channel belongs, in $\text
+                                                  {cm}^2$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 88.
+
+[33]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 121.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 153.
+
+[34]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 182.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 229.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 240.
+
+[35]) (./class_compartment_1_1_compartment.tex [36]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 63.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 63.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 63.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 63.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 93.
+
+[37]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 116.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 138.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 182.
+
+[38]) (./class_configuration_1_1_configuration.tex [39]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 49.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 49.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 49.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 49.
+
+[40]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 173.
+
+[41]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 184.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 195.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 206.
+
+) (./class_interneuron_1_1_interneuron.tex [42] [43]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 89.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 89.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 89.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 89.
+
+
+<class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5_cgraph.pdf
+, id=3803, 408.52625pt x 111.41624pt>
+File: class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5_cgrap
+h.pdf Graphic file (type pdf)
+
+<use class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5_cgraph
+.pdf>
+Package pdftex.def Info: class_interneuron_1_1_interneuron_affb57bbf0d7eec16085
+5d0fce26f83d5_cgraph.pdf used on input line 138.
+(pdftex.def)             Requested size: 350.0pt x 95.45908pt.
+
+<class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5_icgraph.pd
+f, id=3804, 598.235pt x 160.6pt>
+File: class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5_icgrap
+h.pdf>
+Package pdftex.def Info: class_interneuron_1_1_interneuron_affb57bbf0d7eec16085
+5d0fce26f83d5_icgraph.pdf used on input line 150.
+(pdftex.def)             Requested size: 350.0pt x 93.96164pt.
+ [44 <./class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5_cgr
+aph.pdf> <./class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5
+_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_interneuron_1_1_interneuron_aff
+b57bbf0d7eec160855d0fce26f83d5_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+>]
+<class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1_cgraph.pdf
+, id=3822, 603.25375pt x 188.705pt>
+File: class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1_cgrap
+h.pdf Graphic file (type pdf)
+
+<use class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1_cgraph
+.pdf>
+Package pdftex.def Info: class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0
+fa05788da23d1_cgraph.pdf used on input line 184.
+(pdftex.def)             Requested size: 350.0pt x 109.48352pt.
+
+<class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1_icgraph.pd
+f, id=3823, 425.59pt x 160.6pt>
+File: class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1_icgrap
+h.pdf>
+Package pdftex.def Info: class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0
+fa05788da23d1_icgraph.pdf used on input line 196.
+(pdftex.def)             Requested size: 350.0pt x 132.08247pt.
+
+<class_interneuron_1_1_interneuron_aaa557573420679f62247b6c6a3879f88_cgraph.pdf
+, id=3824, 793.96625pt x 188.705pt>
+File: class_interneuron_1_1_interneuron_aaa557573420679f62247b6c6a3879f88_cgrap
+h.pdf Graphic file (type pdf)
+
+<use class_interneuron_1_1_interneuron_aaa557573420679f62247b6c6a3879f88_cgraph
+.pdf>
+Package pdftex.def Info: class_interneuron_1_1_interneuron_aaa557573420679f6224
+7b6c6a3879f88_cgraph.pdf used on input line 230.
+(pdftex.def)             Requested size: 350.0pt x 83.18593pt.
+ [45 <./class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1_cgr
+aph.pdf> <./class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1
+_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_interneuron_1_1_interneuron_aad
+b0a11834ebf0b9fb0fa05788da23d1_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+> <./class_interneuron_1_1_interneuron_aaa557573420679f62247b6c6a3879f88_cgraph
+.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_interneuron_1_1_interneuron_aaa
+557573420679f62247b6c6a3879f88_cgraph.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+>]
+<class_interneuron_1_1_interneuron_a5eff07c93609a66a19f8e7426204be02_icgraph.pd
+f, id=3850, 602.25pt x 160.6pt>
+File: class_interneuron_1_1_interneuron_a5eff07c93609a66a19f8e7426204be02_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_interneuron_1_1_interneuron_a5eff07c93609a66a19f8e7426204be02_icgrap
+h.pdf>
+Package pdftex.def Info: class_interneuron_1_1_interneuron_a5eff07c93609a66a19f
+8e7426204be02_icgraph.pdf used on input line 266.
+(pdftex.def)             Requested size: 350.0pt x 93.33675pt.
+
+<class_interneuron_1_1_interneuron_a776242a1aa83a264adba968651de0226_icgraph.pd
+f, id=3851, 803.0pt x 209.78375pt>
+File: class_interneuron_1_1_interneuron_a776242a1aa83a264adba968651de0226_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_interneuron_1_1_interneuron_a776242a1aa83a264adba968651de0226_icgrap
+h.pdf>
+Package pdftex.def Info: class_interneuron_1_1_interneuron_a776242a1aa83a264adb
+a968651de0226_icgraph.pdf used on input line 296.
+(pdftex.def)             Requested size: 350.0pt x 91.43764pt.
+ [46 <./class_interneuron_1_1_interneuron_a5eff07c93609a66a19f8e7426204be02_icg
+raph.pdf> <./class_interneuron_1_1_interneuron_a776242a1aa83a264adba968651de022
+6_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_interneuron_1_1_interneuron_a77
+6242a1aa83a264adba968651de0226_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 415.
+
+[47]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 426.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 481.
+
+[48]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 510.
+
+) (./class_interneuron_pool_1_1_interneuron_pool.tex [49]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 52.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 52.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 52.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 52.
+
+[50]) (./classjoint_ankle_force_task_1_1joint_ankle_force_task.tex [51]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 39.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 39.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 39.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 39.
+
+
+<classjoint_ankle_force_task_1_1joint_ankle_force_task_ad8da9793d058668f39e7c35
+16f2dc7cb_icgraph.pdf, id=3931, 415.5525pt x 111.41624pt>
+File: classjoint_ankle_force_task_1_1joint_ankle_force_task_ad8da9793d058668f39
+e7c3516f2dc7cb_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_force_task_1_1joint_ankle_force_task_ad8da9793d058668f39e
+7c3516f2dc7cb_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_force_task_1_1joint_ankle_force_task_
+ad8da9793d058668f39e7c3516f2dc7cb_icgraph.pdf used on input line 67.
+(pdftex.def)             Requested size: 350.0pt x 93.84401pt.
+
+<classjoint_ankle_force_task_1_1joint_ankle_force_task_ac56f1fed7d1cc67d92d1ed7
+ab01c11c8_cgraph.pdf, id=3932, 415.5525pt x 111.41624pt>
+File: classjoint_ankle_force_task_1_1joint_ankle_force_task_ac56f1fed7d1cc67d92
+d1ed7ab01c11c8_cgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_force_task_1_1joint_ankle_force_task_ac56f1fed7d1cc67d92d
+1ed7ab01c11c8_cgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_force_task_1_1joint_ankle_force_task_
+ac56f1fed7d1cc67d92d1ed7ab01c11c8_cgraph.pdf used on input line 92.
+(pdftex.def)             Requested size: 350.0pt x 93.84401pt.
+ [52 <./classjoint_ankle_force_task_1_1joint_ankle_force_task_ad8da9793d058668f
+39e7c3516f2dc7cb_icgraph.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 102.
+
+) (./classjoint_ankle_position_task_1_1joint_ankle_position_task.tex [53 <./cla
+ssjoint_ankle_force_task_1_1joint_ankle_force_task_ac56f1fed7d1cc67d92d1ed7ab01
+c11c8_cgraph.pdf>] [54]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 175.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 175.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 175.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 175.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 190.
+
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_ae1a5c97c4bda835c5
+42296071a4da624_icgraph.pdf, id=4111, 456.70625pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_ae1a5c97c4bda
+835c542296071a4da624_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_ae1a5c97c4bda8
+35c542296071a4da624_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_ae1a5c97c4bda835c542296071a4da624_icgraph.pdf used on input line 202.
+(pdftex.def)             Requested size: 350.0pt x 123.08159pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 215.
+
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_abe3c0546bf63fbf73
+815c59b5b86c6d5_cgraph.pdf, id=4112, 1001.7425pt x 397.485pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_abe3c0546bf63
+fbf73815c59b5b86c6d5_cgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_abe3c0546bf63f
+bf73815c59b5b86c6d5_cgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_abe3c0546bf63fbf73815c59b5b86c6d5_cgraph.pdf used on input line 231.
+(pdftex.def)             Requested size: 350.0pt x 138.87923pt.
+ [55 <./classjoint_ankle_position_task_1_1joint_ankle_position_task_ae1a5c97c4b
+da835c542296071a4da624_icgraph.pdf>]
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_ac044fc7d615fc19a0
+f90e6af4947c32e_cgraph.pdf, id=4132, 654.445pt x 122.4575pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_ac044fc7d615f
+c19a0f90e6af4947c32e_cgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_ac044fc7d615fc
+19a0f90e6af4947c32e_cgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_ac044fc7d615fc19a0f90e6af4947c32e_cgraph.pdf used on input line 254.
+(pdftex.def)             Requested size: 350.0pt x 65.49074pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_ac044fc7d615fc19a0
+f90e6af4947c32e_icgraph.pdf, id=4133, 447.6725pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_ac044fc7d615f
+c19a0f90e6af4947c32e_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_ac044fc7d615fc
+19a0f90e6af4947c32e_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_ac044fc7d615fc19a0f90e6af4947c32e_icgraph.pdf used on input line 266.
+(pdftex.def)             Requested size: 350.0pt x 125.564pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_af856343e3fce71b7d
+ebc3a538922d856_cgraph.pdf, id=4134, 788.9475pt x 351.3125pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_af856343e3fce
+71b7debc3a538922d856_cgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_af856343e3fce7
+1b7debc3a538922d856_cgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_af856343e3fce71b7debc3a538922d856_cgraph.pdf used on input line 289.
+(pdftex.def)             Requested size: 350.0pt x 155.85379pt.
+ [56 <./classjoint_ankle_position_task_1_1joint_ankle_position_task_abe3c0546bf
+63fbf73815c59b5b86c6d5_cgraph.pdf> <./classjoint_ankle_position_task_1_1joint_a
+nkle_position_task_ac044fc7d615fc19a0f90e6af4947c32e_cgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_ac044fc7d615fc19a0f90e6af4947c32e_cgraph.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+> <./classjoint_ankle_position_task_1_1joint_ankle_position_task_ac044fc7d615fc
+19a0f90e6af4947c32e_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_ac044fc7d615fc19a0f90e6af4947c32e_icgraph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>]
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_af856343e3fce71b7d
+ebc3a538922d856_icgraph.pdf, id=4158, 468.75125pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_af856343e3fce
+71b7debc3a538922d856_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_af856343e3fce7
+1b7debc3a538922d856_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_af856343e3fce71b7debc3a538922d856_icgraph.pdf used on input line 301.
+(pdftex.def)             Requested size: 350.0pt x 119.91301pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_abcd95d655b19278aa
+eccb2f56fafddaf_icgraph.pdf, id=4159, 469.755pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_abcd95d655b19
+278aaeccb2f56fafddaf_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_abcd95d655b192
+78aaeccb2f56fafddaf_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_abcd95d655b19278aaeccb2f56fafddaf_icgraph.pdf used on input line 324.
+(pdftex.def)             Requested size: 350.0pt x 119.65816pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_ad8631689c974c6786
+0cee97b7b13b25f_icgraph.pdf, id=4160, 851.18pt x 171.64125pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_ad8631689c974
+c67860cee97b7b13b25f_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_ad8631689c974c
+67860cee97b7b13b25f_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_ad8631689c974c67860cee97b7b13b25f_icgraph.pdf used on input line 347.
+(pdftex.def)             Requested size: 350.0pt x 70.57764pt.
+ [57 <./classjoint_ankle_position_task_1_1joint_ankle_position_task_af856343e3f
+ce71b7debc3a538922d856_cgraph.pdf> <./classjoint_ankle_position_task_1_1joint_a
+nkle_position_task_af856343e3fce71b7debc3a538922d856_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_af856343e3fce71b7debc3a538922d856_icgraph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+> <./classjoint_ankle_position_task_1_1joint_ankle_position_task_abcd95d655b192
+78aaeccb2f56fafddaf_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_abcd95d655b19278aaeccb2f56fafddaf_icgraph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>]
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_a2fe373956414f18b7
+4dcb4c6aaa91388_icgraph.pdf, id=4186, 674.52pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_a2fe373956414
+f18b74dcb4c6aaa91388_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_a2fe373956414f
+18b74dcb4c6aaa91388_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_a2fe373956414f18b74dcb4c6aaa91388_icgraph.pdf used on input line 370.
+(pdftex.def)             Requested size: 350.0pt x 83.33357pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_a3af92ed0247e12d7d
+bb14ce9002f1f4b_icgraph.pdf, id=4187, 976.64874pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_a3af92ed0247e
+12d7dbb14ce9002f1f4b_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_a3af92ed0247e1
+2d7dbb14ce9002f1f4b_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_a3af92ed0247e12d7dbb14ce9002f1f4b_icgraph.pdf used on input line 393.
+(pdftex.def)             Requested size: 350.0pt x 57.55374pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_ad673d482ab0488550
+70764c19714ea59_icgraph.pdf, id=4188, 954.56625pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_ad673d482ab04
+8855070764c19714ea59_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_ad673d482ab048
+855070764c19714ea59_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_ad673d482ab048855070764c19714ea59_icgraph.pdf used on input line 416.
+(pdftex.def)             Requested size: 350.0pt x 58.88438pt.
+ [58 <./classjoint_ankle_position_task_1_1joint_ankle_position_task_ad8631689c9
+74c67860cee97b7b13b25f_icgraph.pdf> <./classjoint_ankle_position_task_1_1joint_
+ankle_position_task_a2fe373956414f18b74dcb4c6aaa91388_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_a2fe373956414f18b74dcb4c6aaa91388_icgraph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+> <./classjoint_ankle_position_task_1_1joint_ankle_position_task_a3af92ed0247e1
+2d7dbb14ce9002f1f4b_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_a3af92ed0247e12d7dbb14ce9002f1f4b_icgraph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+> <./classjoint_ankle_position_task_1_1joint_ankle_position_task_ad673d482ab048
+855070764c19714ea59_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_ad673d482ab048855070764c19714ea59_icgraph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>]
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_ac818fceec418d671b
+8d5cb612497aaf2_icgraph.pdf, id=4218, 982.67125pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_ac818fceec418
+d671b8d5cb612497aaf2_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_ac818fceec418d
+671b8d5cb612497aaf2_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_ac818fceec418d671b8d5cb612497aaf2_icgraph.pdf used on input line 439.
+(pdftex.def)             Requested size: 350.0pt x 57.20085pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_adda3990fdbbabbd4d
+8a75360f04735a6_icgraph.pdf, id=4219, 960.58875pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_adda3990fdbba
+bbd4d8a75360f04735a6_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_adda3990fdbbab
+bd4d8a75360f04735a6_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_adda3990fdbbabbd4d8a75360f04735a6_icgraph.pdf used on input line 462.
+(pdftex.def)             Requested size: 350.0pt x 58.5168pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_a9e82e35f0075aceac
+a2d4d4c8e1aaa72_icgraph.pdf, id=4220, 484.81125pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_a9e82e35f0075
+aceaca2d4d4c8e1aaa72_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_a9e82e35f0075a
+ceaca2d4d4c8e1aaa72_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_a9e82e35f0075aceaca2d4d4c8e1aaa72_icgraph.pdf used on input line 485.
+(pdftex.def)             Requested size: 350.0pt x 115.94801pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_ae4566e7ea50dd5227
+9d5fdcb3aa3da5e_cgraph.pdf, id=4221, 558.085pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_ae4566e7ea50d
+d52279d5fdcb3aa3da5e_cgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_ae4566e7ea50dd
+52279d5fdcb3aa3da5e_cgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_ae4566e7ea50dd52279d5fdcb3aa3da5e_cgraph.pdf used on input line 508.
+(pdftex.def)             Requested size: 350.0pt x 100.72272pt.
+ [59 <./classjoint_ankle_position_task_1_1joint_ankle_position_task_ac818fceec4
+18d671b8d5cb612497aaf2_icgraph.pdf> <./classjoint_ankle_position_task_1_1joint_
+ankle_position_task_adda3990fdbbabbd4d8a75360f04735a6_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_adda3990fdbbabbd4d8a75360f04735a6_icgraph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+> <./classjoint_ankle_position_task_1_1joint_ankle_position_task_a9e82e35f0075a
+ceaca2d4d4c8e1aaa72_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_a9e82e35f0075aceaca2d4d4c8e1aaa72_icgraph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>]
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_ae4566e7ea50dd5227
+9d5fdcb3aa3da5e_icgraph.pdf, id=4245, 721.69624pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_ae4566e7ea50d
+d52279d5fdcb3aa3da5e_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_ae4566e7ea50dd
+52279d5fdcb3aa3da5e_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_ae4566e7ea50dd52279d5fdcb3aa3da5e_icgraph.pdf used on input line 520.
+(pdftex.def)             Requested size: 350.0pt x 77.88599pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_ac196595126ed1735a
+9ae693a5b16283f_cgraph.pdf, id=4246, 536.0025pt x 182.6825pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_ac196595126ed
+1735a9ae693a5b16283f_cgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_ac196595126ed1
+735a9ae693a5b16283f_cgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_ac196595126ed1735a9ae693a5b16283f_cgraph.pdf used on input line 543.
+(pdftex.def)             Requested size: 350.0pt x 119.28856pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_ac196595126ed1735a
+9ae693a5b16283f_icgraph.pdf, id=4247, 724.7075pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_ac196595126ed
+1735a9ae693a5b16283f_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_ac196595126ed1
+735a9ae693a5b16283f_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_ac196595126ed1735a9ae693a5b16283f_icgraph.pdf used on input line 555.
+(pdftex.def)             Requested size: 350.0pt x 77.56252pt.
+ [60 <./classjoint_ankle_position_task_1_1joint_ankle_position_task_ae4566e7ea5
+0dd52279d5fdcb3aa3da5e_cgraph.pdf> <./classjoint_ankle_position_task_1_1joint_a
+nkle_position_task_ae4566e7ea50dd52279d5fdcb3aa3da5e_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_ae4566e7ea50dd52279d5fdcb3aa3da5e_icgraph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+> <./classjoint_ankle_position_task_1_1joint_ankle_position_task_ac196595126ed1
+735a9ae693a5b16283f_cgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_ac196595126ed1735a9ae693a5b16283f_cgraph.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+> <./classjoint_ankle_position_task_1_1joint_ankle_position_task_ac196595126ed1
+735a9ae693a5b16283f_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_ac196595126ed1735a9ae693a5b16283f_icgraph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>]
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_ae2cbbf86c72289ac5
+af730e91c862925_icgraph.pdf, id=4278, 679.53876pt x 160.6pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_ae2cbbf86c722
+89ac5af730e91c862925_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_ae2cbbf86c7228
+9ac5af730e91c862925_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_ae2cbbf86c72289ac5af730e91c862925_icgraph.pdf used on input line 578.
+(pdftex.def)             Requested size: 350.0pt x 82.71849pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_af986604f62091b3f8
+2dbd6a2b888a223_cgraph.pdf, id=4279, 447.6725pt x 111.41624pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_af986604f6209
+1b3f82dbd6a2b888a223_cgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_af986604f62091
+b3f82dbd6a2b888a223_cgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_af986604f62091b3f82dbd6a2b888a223_cgraph.pdf used on input line 601.
+(pdftex.def)             Requested size: 350.0pt x 87.11002pt.
+
+<classjoint_ankle_position_task_1_1joint_ankle_position_task_af986604f62091b3f8
+2dbd6a2b888a223_icgraph.pdf, id=4280, 621.32124pt x 171.64125pt>
+File: classjoint_ankle_position_task_1_1joint_ankle_position_task_af986604f6209
+1b3f82dbd6a2b888a223_icgraph.pdf Graphic file (type pdf)
+
+<use classjoint_ankle_position_task_1_1joint_ankle_position_task_af986604f62091
+b3f82dbd6a2b888a223_icgraph.pdf>
+Package pdftex.def Info: classjoint_ankle_position_task_1_1joint_ankle_position
+_task_af986604f62091b3f82dbd6a2b888a223_icgraph.pdf used on input line 613.
+(pdftex.def)             Requested size: 350.0pt x 96.68675pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 623.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 630.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 637.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 644.
+
+[61 <./classjoint_ankle_position_task_1_1joint_ankle_position_task_ae2cbbf86c72
+289ac5af730e91c862925_icgraph.pdf> <./classjoint_ankle_position_task_1_1joint_a
+nkle_position_task_af986604f62091b3f82dbd6a2b888a223_cgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_af986604f62091b3f82dbd6a2b888a223_cgraph.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+> <./classjoint_ankle_position_task_1_1joint_ankle_position_task_af986604f62091
+b3f82dbd6a2b888a223_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./classjoint_ankle_position_task_1_1joi
+nt_ankle_position_task_af986604f62091b3f82dbd6a2b888a223_icgraph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 651.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 658.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 679.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 686.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 693.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 700.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 707.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 714.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 728.
+
+[62]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 735.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 742.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 749.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 781.
+
+[63]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 813.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 838.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 852.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 859.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 866.
+
+[64]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 908.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 922.
+
+[65]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 950.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 972.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 972.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 993.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1000.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1007.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1014.
+
+[66]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1021.
+
+) (./class_motor_unit_1_1_motor_unit.tex [67] [68]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 102.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 102.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 102.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 102.
+
+
+<class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_cgraph.pdf, 
+id=4411, 421.575pt x 160.6pt>
+File: class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_cgraph.
+pdf Graphic file (type pdf)
+
+<use class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_cgraph.p
+df>
+Package pdftex.def Info: class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec78
+43a0f97c534_cgraph.pdf used on input line 157.
+(pdftex.def)             Requested size: 350.0pt x 133.3347pt.
+
+<class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_icgraph.pdf,
+ id=4412, 587.19376pt x 111.41624pt>
+File: class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_icgraph
+.pdf Graphic file (type pdf)
+
+<use class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_icgraph.
+pdf>
+Package pdftex.def Info: class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec78
+43a0f97c534_icgraph.pdf used on input line 168.
+(pdftex.def)             Requested size: 350.0pt x 66.40994pt.
+ [69 <./class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_cgrap
+h.pdf>]
+<class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_cgraph.pdf, 
+id=4425, 600.2425pt x 276.03125pt>
+File: class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_cgraph.
+pdf Graphic file (type pdf)
+
+<use class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_cgraph.p
+df>
+Package pdftex.def Info: class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f12173
+87a5ede5b7b_cgraph.pdf used on input line 202.
+(pdftex.def)             Requested size: 350.0pt x 160.95744pt.
+
+<class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_icgraph.pdf,
+ id=4426, 401.5pt x 111.41624pt>
+File: class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_icgraph
+.pdf Graphic file (type pdf)
+
+<use class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_icgraph.
+pdf>
+Package pdftex.def Info: class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f12173
+87a5ede5b7b_icgraph.pdf used on input line 213.
+(pdftex.def)             Requested size: 350.0pt x 97.13196pt.
+
+<class_motor_unit_1_1_motor_unit_a0aa5e024003845e3f48bc0e618068edc_icgraph.pdf,
+ id=4427, 401.5pt x 111.41624pt>
+File: class_motor_unit_1_1_motor_unit_a0aa5e024003845e3f48bc0e618068edc_icgraph
+.pdf Graphic file (type pdf)
+
+<use class_motor_unit_1_1_motor_unit_a0aa5e024003845e3f48bc0e618068edc_icgraph.
+pdf>
+Package pdftex.def Info: class_motor_unit_1_1_motor_unit_a0aa5e024003845e3f48bc
+0e618068edc_icgraph.pdf used on input line 246.
+(pdftex.def)             Requested size: 350.0pt x 97.13196pt.
+ [70 <./class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_icgra
+ph.pdf> <./class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_cg
+raph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_motor_unit_1_1_motor_unit_a666f
+a3bb4b8fb00f1217387a5ede5b7b_cgraph.pdf): PDF inclusion: multiple pdfs with pag
+e group included in a single page
+> <./class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_icgraph.
+pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_motor_unit_1_1_motor_unit_a666f
+a3bb4b8fb00f1217387a5ede5b7b_icgraph.pdf): PDF inclusion: multiple pdfs with pa
+ge group included in a single page
+>]
+<class_motor_unit_1_1_motor_unit_ab57693c2f49518b08639456595e92d87_cgraph.pdf, 
+id=4451, 790.955pt x 314.17375pt>
+File: class_motor_unit_1_1_motor_unit_ab57693c2f49518b08639456595e92d87_cgraph.
+pdf Graphic file (type pdf)
+
+<use class_motor_unit_1_1_motor_unit_ab57693c2f49518b08639456595e92d87_cgraph.p
+df>
+Package pdftex.def Info: class_motor_unit_1_1_motor_unit_ab57693c2f49518b086394
+56595e92d87_cgraph.pdf used on input line 280.
+(pdftex.def)             Requested size: 350.0pt x 139.02307pt.
+
+<class_motor_unit_1_1_motor_unit_adf30fdef09ac21cfc2a261b762a7f618_icgraph.pdf,
+ id=4452, 566.115pt x 111.41624pt>
+File: class_motor_unit_1_1_motor_unit_adf30fdef09ac21cfc2a261b762a7f618_icgraph
+.pdf Graphic file (type pdf)
+
+<use class_motor_unit_1_1_motor_unit_adf30fdef09ac21cfc2a261b762a7f618_icgraph.
+pdf>
+Package pdftex.def Info: class_motor_unit_1_1_motor_unit_adf30fdef09ac21cfc2a26
+1b762a7f618_icgraph.pdf used on input line 315.
+(pdftex.def)             Requested size: 350.0pt x 68.88524pt.
+ [71 <./class_motor_unit_1_1_motor_unit_a0aa5e024003845e3f48bc0e618068edc_icgra
+ph.pdf> <./class_motor_unit_1_1_motor_unit_ab57693c2f49518b08639456595e92d87_cg
+raph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_motor_unit_1_1_motor_unit_ab576
+93c2f49518b08639456595e92d87_cgraph.pdf): PDF inclusion: multiple pdfs with pag
+e group included in a single page
+>]
+<class_motor_unit_1_1_motor_unit_ac3d3e69bf0b75eef81a015005052f5d3_icgraph.pdf,
+ id=4470, 766.865pt x 160.6pt>
+File: class_motor_unit_1_1_motor_unit_ac3d3e69bf0b75eef81a015005052f5d3_icgraph
+.pdf Graphic file (type pdf)
+
+<use class_motor_unit_1_1_motor_unit_ac3d3e69bf0b75eef81a015005052f5d3_icgraph.
+pdf>
+Package pdftex.def Info: class_motor_unit_1_1_motor_unit_ac3d3e69bf0b75eef81a01
+5005052f5d3_icgraph.pdf used on input line 345.
+(pdftex.def)             Requested size: 350.0pt x 73.29855pt.
+ [72 <./class_motor_unit_1_1_motor_unit_adf30fdef09ac21cfc2a261b762a7f618_icgra
+ph.pdf> <./class_motor_unit_1_1_motor_unit_ac3d3e69bf0b75eef81a015005052f5d3_ic
+graph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_motor_unit_1_1_motor_unit_ac3d3
+e69bf0b75eef81a015005052f5d3_icgraph.pdf): PDF inclusion: multiple pdfs with pa
+ge group included in a single page
+>] [73]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 483.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 505.
+
+[74]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 589.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 600.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 622.
+
+[75]) (./class_motor_unit_pool_1_1_motor_unit_pool.tex [76]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 60.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 60.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 60.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 60.
+
+[77]) (./class_muscle_hill_1_1_muscle_hill.tex [78] [79] [80]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 202.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 202.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 202.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 202.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 217.
+
+
+<class_muscle_hill_1_1_muscle_hill_a81d25a2541478817c39a6e2d720ac460_icgraph.pd
+f, id=4736, 413.545pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_a81d25a2541478817c39a6e2d720ac460_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_a81d25a2541478817c39a6e2d720ac460_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_a81d25a2541478817c39
+a6e2d720ac460_icgraph.pdf used on input line 229.
+(pdftex.def)             Requested size: 350.0pt x 94.29793pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 241.
+
+
+<class_muscle_hill_1_1_muscle_hill_aa07ad41150b7f082dc49226650e705cb_cgraph.pdf
+, id=4737, 989.6975pt x 642.4pt>
+File: class_muscle_hill_1_1_muscle_hill_aa07ad41150b7f082dc49226650e705cb_cgrap
+h.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_aa07ad41150b7f082dc49226650e705cb_cgraph
+.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_aa07ad41150b7f082dc4
+9226650e705cb_cgraph.pdf used on input line 257.
+(pdftex.def)             Requested size: 350.0pt x 227.1763pt.
+ [81 <./class_muscle_hill_1_1_muscle_hill_a81d25a2541478817c39a6e2d720ac460_icg
+raph.pdf>]
+<class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78_cgraph.pdf
+, id=4756, 632.3625pt x 160.6pt>
+File: class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78_cgrap
+h.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78_cgraph
+.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd7
+95426bf097e78_cgraph.pdf used on input line 280.
+(pdftex.def)             Requested size: 350.0pt x 88.88899pt.
+
+<class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78_icgraph.pd
+f, id=4757, 413.545pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd7
+95426bf097e78_icgraph.pdf used on input line 292.
+(pdftex.def)             Requested size: 350.0pt x 94.29793pt.
+ [82 <./class_muscle_hill_1_1_muscle_hill_aa07ad41150b7f082dc49226650e705cb_cgr
+aph.pdf> <./class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78
+_cgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_a71
+ea33f1c30bdbe7cd795426bf097e78_cgraph.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+> <./class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78_icgrap
+h.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_a71
+ea33f1c30bdbe7cd795426bf097e78_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+>]
+<class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5_cgraph.pdf
+, id=4781, 745.78625pt x 645.41125pt>
+File: class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5_cgrap
+h.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5_cgraph
+.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbc
+cb6d50f1da8b5_cgraph.pdf used on input line 327.
+(pdftex.def)             Requested size: 350.0pt x 302.89032pt.
+
+<class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5_icgraph.pd
+f, id=4782, 413.545pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbc
+cb6d50f1da8b5_icgraph.pdf used on input line 339.
+(pdftex.def)             Requested size: 350.0pt x 94.29793pt.
+
+<class_muscle_hill_1_1_muscle_hill_ac40dbbdc08aa96669fe09f03bdffb2f2_icgraph.pd
+f, id=4783, 413.545pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_ac40dbbdc08aa96669fe09f03bdffb2f2_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_ac40dbbdc08aa96669fe09f03bdffb2f2_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_ac40dbbdc08aa96669fe
+09f03bdffb2f2_icgraph.pdf used on input line 374.
+(pdftex.def)             Requested size: 350.0pt x 94.29793pt.
+ [83 <./class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5_cgr
+aph.pdf> <./class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5
+_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_ab3
+9eb3b82b6299bbfbccb6d50f1da8b5_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+>]
+<class_muscle_hill_1_1_muscle_hill_aa29337f26cdc1d67d65658fab8e0cc41_icgraph.pd
+f, id=4801, 771.88374pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_aa29337f26cdc1d67d65658fab8e0cc41_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_aa29337f26cdc1d67d65658fab8e0cc41_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_aa29337f26cdc1d67d65
+658fab8e0cc41_icgraph.pdf used on input line 397.
+(pdftex.def)             Requested size: 350.0pt x 50.51935pt.
+
+<class_muscle_hill_1_1_muscle_hill_adf383b3c1665a6be27791644d67e3c44_icgraph.pd
+f, id=4802, 602.25pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_adf383b3c1665a6be27791644d67e3c44_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_adf383b3c1665a6be27791644d67e3c44_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_adf383b3c1665a6be277
+91644d67e3c44_icgraph.pdf used on input line 420.
+(pdftex.def)             Requested size: 350.0pt x 64.75237pt.
+
+<class_muscle_hill_1_1_muscle_hill_ab24d0c9566cf2a9a309debd1a1a63ee0_icgraph.pd
+f, id=4803, 790.955pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_ab24d0c9566cf2a9a309debd1a1a63ee0_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_ab24d0c9566cf2a9a309debd1a1a63ee0_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_ab24d0c9566cf2a9a309
+debd1a1a63ee0_icgraph.pdf used on input line 443.
+(pdftex.def)             Requested size: 350.0pt x 49.30211pt.
+ [84 <./class_muscle_hill_1_1_muscle_hill_ac40dbbdc08aa96669fe09f03bdffb2f2_icg
+raph.pdf> <./class_muscle_hill_1_1_muscle_hill_aa29337f26cdc1d67d65658fab8e0cc4
+1_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_aa2
+9337f26cdc1d67d65658fab8e0cc41_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+> <./class_muscle_hill_1_1_muscle_hill_adf383b3c1665a6be27791644d67e3c44_icgrap
+h.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_adf
+383b3c1665a6be27791644d67e3c44_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+> <./class_muscle_hill_1_1_muscle_hill_ab24d0c9566cf2a9a309debd1a1a63ee0_icgrap
+h.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_ab2
+4d0c9566cf2a9a309debd1a1a63ee0_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+>]
+<class_muscle_hill_1_1_muscle_hill_a99f5d396aeb1bb0b85def721c9b0bc25_icgraph.pd
+f, id=4833, 790.955pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_a99f5d396aeb1bb0b85def721c9b0bc25_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_a99f5d396aeb1bb0b85def721c9b0bc25_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_a99f5d396aeb1bb0b85d
+ef721c9b0bc25_icgraph.pdf used on input line 466.
+(pdftex.def)             Requested size: 350.0pt x 49.30211pt.
+
+<class_muscle_hill_1_1_muscle_hill_a5669a0ba569c4ab1acd31ac8bdf68b9f_icgraph.pd
+f, id=4834, 790.955pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_a5669a0ba569c4ab1acd31ac8bdf68b9f_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_a5669a0ba569c4ab1acd31ac8bdf68b9f_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_a5669a0ba569c4ab1acd
+31ac8bdf68b9f_icgraph.pdf used on input line 489.
+(pdftex.def)             Requested size: 350.0pt x 49.30211pt.
+
+<class_muscle_hill_1_1_muscle_hill_ad6797f63b21b6b753cc5362dd066cc02_icgraph.pd
+f, id=4835, 790.955pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_ad6797f63b21b6b753cc5362dd066cc02_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_ad6797f63b21b6b753cc5362dd066cc02_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_ad6797f63b21b6b753cc
+5362dd066cc02_icgraph.pdf used on input line 512.
+(pdftex.def)             Requested size: 350.0pt x 49.30211pt.
+
+<class_muscle_hill_1_1_muscle_hill_a5c3dfd4a663d327319335773c4908eef_icgraph.pd
+f, id=4836, 417.56pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_a5c3dfd4a663d327319335773c4908eef_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_a5c3dfd4a663d327319335773c4908eef_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_a5c3dfd4a663d3273193
+35773c4908eef_icgraph.pdf used on input line 535.
+(pdftex.def)             Requested size: 350.0pt x 93.39519pt.
+
+<class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141_cgraph.pdf
+, id=4837, 493.845pt x 258.9675pt>
+File: class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141_cgrap
+h.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141_cgraph
+.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e9
+92cefa2491141_cgraph.pdf used on input line 558.
+(pdftex.def)             Requested size: 350.0pt x 183.53625pt.
+ [85 <./class_muscle_hill_1_1_muscle_hill_a99f5d396aeb1bb0b85def721c9b0bc25_icg
+raph.pdf> <./class_muscle_hill_1_1_muscle_hill_a5669a0ba569c4ab1acd31ac8bdf68b9
+f_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_a56
+69a0ba569c4ab1acd31ac8bdf68b9f_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+> <./class_muscle_hill_1_1_muscle_hill_ad6797f63b21b6b753cc5362dd066cc02_icgrap
+h.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_ad6
+797f63b21b6b753cc5362dd066cc02_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+> <./class_muscle_hill_1_1_muscle_hill_a5c3dfd4a663d327319335773c4908eef_icgrap
+h.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_a5c
+3dfd4a663d327319335773c4908eef_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+>]
+<class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141_icgraph.pd
+f, id=4868, 602.25pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e9
+92cefa2491141_icgraph.pdf used on input line 570.
+(pdftex.def)             Requested size: 350.0pt x 64.75237pt.
+
+<class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146_cgraph.pdf
+, id=4869, 468.75125pt x 280.04625pt>
+File: class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146_cgrap
+h.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146_cgraph
+.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc60
+2a48efe95b146_cgraph.pdf used on input line 593.
+(pdftex.def)             Requested size: 350.0pt x 209.09833pt.
+
+<class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146_icgraph.pd
+f, id=4870, 602.25pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc60
+2a48efe95b146_icgraph.pdf used on input line 605.
+(pdftex.def)             Requested size: 350.0pt x 64.75237pt.
+ [86 <./class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141_cgr
+aph.pdf> <./class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141
+_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_a0a
+f765b39293ebf39e992cefa2491141_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+> <./class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146_cgraph
+.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_a31
+11f5bea9b94e9bc602a48efe95b146_cgraph.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+>]
+<class_muscle_hill_1_1_muscle_hill_ab4181e0db8cb650fd5b448fe58eefd33_icgraph.pd
+f, id=4894, 602.25pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_ab4181e0db8cb650fd5b448fe58eefd33_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_ab4181e0db8cb650fd5b448fe58eefd33_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_ab4181e0db8cb650fd5b
+448fe58eefd33_icgraph.pdf used on input line 628.
+(pdftex.def)             Requested size: 350.0pt x 64.75237pt.
+
+<class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c_cgraph.pdf
+, id=4895, 443.6575pt x 160.6pt>
+File: class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c_cgrap
+h.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c_cgraph
+.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1
+d498db8b6f95c_cgraph.pdf used on input line 651.
+(pdftex.def)             Requested size: 350.0pt x 126.69615pt.
+
+<class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c_icgraph.pd
+f, id=4896, 583.17876pt x 111.41624pt>
+File: class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c_icgra
+ph.pdf Graphic file (type pdf)
+
+<use class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c_icgrap
+h.pdf>
+Package pdftex.def Info: class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1
+d498db8b6f95c_icgraph.pdf used on input line 663.
+(pdftex.def)             Requested size: 350.0pt x 66.86896pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 673.
+
+[87 <./class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146_icgr
+aph.pdf> <./class_muscle_hill_1_1_muscle_hill_ab4181e0db8cb650fd5b448fe58eefd33
+_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_ab4
+181e0db8cb650fd5b448fe58eefd33_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+> <./class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c_cgraph
+.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_afb
+cb208bf18110d5fe1d498db8b6f95c_cgraph.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+> <./class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c_icgrap
+h.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_muscle_hill_1_1_muscle_hill_afb
+cb208bf18110d5fe1d498db8b6f95c_icgraph.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 680.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 687.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 694.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 701.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 708.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 729.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 736.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 743.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 750.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 757.
+
+[88]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 764.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 778.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 785.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 792.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 799.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 831.
+
+[89]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 898.
+
+[90]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 909.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 923.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 972.
+
+[91]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 986.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 993.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1000.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1042.
+
+[92]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1056.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1084.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1106.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1106.
+
+[93]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1127.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1134.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1141.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1148.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1155.
+
+) (./class_muscle_no_hill_1_1_muscle_no_hill.tex [94]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 52.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 52.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 52.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 52.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 67.
+
+[95]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 138.
+
+) (./class_muscular_activation_1_1_muscular_activation.tex
+! Missing { inserted.
+<to be read again> 
+                   _
+l.22 ...n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} where $a_i...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.22 ...n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} where $a_i...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.22 ...n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} where $a_i...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.22 ...n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} where $a_i...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+
+Overfull \hbox (16.46532pt too wide) detected at line 22
+[][][]
+ []
+
+[96]
+! Missing { inserted.
+<to be read again> 
+                   _
+l.24 ...n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} It is mult...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.24 ...n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} It is mult...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.24 ...n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} It is mult...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.24 ...n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} It is mult...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+
+Overfull \hbox (16.46532pt too wide) detected at line 24
+[][][]
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 53.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 53.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 53.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 53.
+
+
+<class_muscular_activation_1_1_muscular_activation_a426e8eca6ca1f9ed3999a07764c
+cb8fb_cgraph.pdf, id=5017, 413.545pt x 111.41624pt>
+File: class_muscular_activation_1_1_muscular_activation_a426e8eca6ca1f9ed3999a0
+7764ccb8fb_cgraph.pdf Graphic file (type pdf)
+
+<use class_muscular_activation_1_1_muscular_activation_a426e8eca6ca1f9ed3999a07
+764ccb8fb_cgraph.pdf>
+Package pdftex.def Info: class_muscular_activation_1_1_muscular_activation_a426
+e8eca6ca1f9ed3999a07764ccb8fb_cgraph.pdf used on input line 91.
+(pdftex.def)             Requested size: 350.0pt x 94.29793pt.
+ [97]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 101.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 112.
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.137 ...-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} where $a_i...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.137 ...-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} where $a_i...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.137 ...-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} where $a_i...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.137 ...-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} where $a_i...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.148 ...-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} It is mult...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.148 ...-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} It is mult...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.148 ...-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} It is mult...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.148 ...-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}
+                                                   \end{equation} It is mult...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+[98 <./class_muscular_activation_1_1_muscular_activation_a426e8eca6ca1f9ed3999a
+07764ccb8fb_cgraph.pdf>]) (./class_neural_tract_1_1_neural_tract.tex [99]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 56.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 56.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 56.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 56.
+
+[100] [101]) (./class_neural_tract_unit_1_1_neural_tract_unit.tex [102]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 58.
+
+
+<class_neural_tract_unit_1_1_neural_tract_unit_a30ea40e013697346cae35a342640a6e
+4_cgraph.pdf, id=5125, 412.54124pt x 209.78375pt>
+File: class_neural_tract_unit_1_1_neural_tract_unit_a30ea40e013697346cae35a3426
+40a6e4_cgraph.pdf Graphic file (type pdf)
+
+<use class_neural_tract_unit_1_1_neural_tract_unit_a30ea40e013697346cae35a34264
+0a6e4_cgraph.pdf>
+Package pdftex.def Info: class_neural_tract_unit_1_1_neural_tract_unit_a30ea40e
+013697346cae35a342640a6e4_cgraph.pdf used on input line 105.
+(pdftex.def)             Requested size: 350.0pt x 177.9841pt.
+ [103]
+<class_neural_tract_unit_1_1_neural_tract_unit_a6244f11e9aae2d31066e020f9421a9d
+8_icgraph.pdf, id=5137, 397.485pt x 111.41624pt>
+File: class_neural_tract_unit_1_1_neural_tract_unit_a6244f11e9aae2d31066e020f94
+21a9d8_icgraph.pdf Graphic file (type pdf)
+
+<use class_neural_tract_unit_1_1_neural_tract_unit_a6244f11e9aae2d31066e020f942
+1a9d8_icgraph.pdf>
+Package pdftex.def Info: class_neural_tract_unit_1_1_neural_tract_unit_a6244f11
+e9aae2d31066e020f9421a9d8_icgraph.pdf used on input line 134.
+(pdftex.def)             Requested size: 350.0pt x 98.1095pt.
+ [104 <./class_neural_tract_unit_1_1_neural_tract_unit_a30ea40e013697346cae35a3
+42640a6e4_cgraph.pdf> <./class_neural_tract_unit_1_1_neural_tract_unit_a6244f11
+e9aae2d31066e020f9421a9d8_icgraph.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./class_neural_tract_unit_1_1_neural_tr
+act_unit_a6244f11e9aae2d31066e020f9421a9d8_icgraph.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>]) (./classobject.tex)
+(./class_point_process_generator_1_1_point_process_generator.tex [105]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 48.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 48.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 48.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 48.
+
+[106]
+<class_point_process_generator_1_1_point_process_generator_a744e7d5fc7850ddb785
+d2fafdc04e587_cgraph.pdf, id=5188, 445.665pt x 111.41624pt>
+File: class_point_process_generator_1_1_point_process_generator_a744e7d5fc7850d
+db785d2fafdc04e587_cgraph.pdf Graphic file (type pdf)
+
+<use class_point_process_generator_1_1_point_process_generator_a744e7d5fc7850dd
+b785d2fafdc04e587_cgraph.pdf>
+Package pdftex.def Info: class_point_process_generator_1_1_point_process_genera
+tor_a744e7d5fc7850ddb785d2fafdc04e587_cgraph.pdf used on input line 93.
+(pdftex.def)             Requested size: 350.0pt x 87.50104pt.
+ [107 <./class_point_process_generator_1_1_point_process_generator_a744e7d5fc78
+50ddb785d2fafdc04e587_cgraph.pdf>])
+(./class_pulse_conductance_state_1_1_pulse_conductance_state.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 63.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 63.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 63.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 63.
+
+[108]
+<class_pulse_conductance_state_1_1_pulse_conductance_state_aefa0c1896447406edf3
+9420111e19a82_icgraph.pdf, id=5238, 458.71375pt x 111.41624pt>
+File: class_pulse_conductance_state_1_1_pulse_conductance_state_aefa0c189644740
+6edf39420111e19a82_icgraph.pdf Graphic file (type pdf)
+
+<use class_pulse_conductance_state_1_1_pulse_conductance_state_aefa0c1896447406
+edf39420111e19a82_icgraph.pdf>
+Package pdftex.def Info: class_pulse_conductance_state_1_1_pulse_conductance_st
+ate_aefa0c1896447406edf39420111e19a82_icgraph.pdf used on input line 103.
+(pdftex.def)             Requested size: 350.0pt x 85.01553pt.
+
+<class_pulse_conductance_state_1_1_pulse_conductance_state_ac4fa668247190566ffc
+9bccda61dcd81_cgraph.pdf, id=5239, 458.71375pt x 111.41624pt>
+File: class_pulse_conductance_state_1_1_pulse_conductance_state_ac4fa6682471905
+66ffc9bccda61dcd81_cgraph.pdf Graphic file (type pdf)
+
+<use class_pulse_conductance_state_1_1_pulse_conductance_state_ac4fa66824719056
+6ffc9bccda61dcd81_cgraph.pdf>
+Package pdftex.def Info: class_pulse_conductance_state_1_1_pulse_conductance_st
+ate_ac4fa668247190566ffc9bccda61dcd81_cgraph.pdf used on input line 136.
+(pdftex.def)             Requested size: 350.0pt x 85.01553pt.
+ [109 <./class_pulse_conductance_state_1_1_pulse_conductance_state_aefa0c189644
+7406edf39420111e19a82_icgraph.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 153.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 160.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 188.
+
+[110 <./class_pulse_conductance_state_1_1_pulse_conductance_state_ac4fa66824719
+0566ffc9bccda61dcd81_cgraph.pdf>]) (./class_synapse_1_1_synapse.tex
+! Limit controls must follow a math operator.
+l.43 ...ompartment, in $\mu$S ( $G_{max} = \limits
+                                                  \sum_{i=1}^Ng_i$). \end{Do...
+I'm ignoring this misplaced \limits or \nolimits command.
+
+[111]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 98.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 98.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 98.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 98.
+
+[112]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 123.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 130.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 144.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 183.
+
+[113]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 190.
+
+! Limit controls must follow a math operator.
+l.193 ...mpartment, in $\mu$S ( $G_{max} = \limits
+                                                  \sum_{i=1}^Ng_i$).
+I'm ignoring this misplaced \limits or \nolimits command.
+
+[114] [115]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 342.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 356.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 363.
+
+) (./class_synapses_factory_1_1_synapses_factory.tex [116]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 36.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 36.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 36.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 36.
+
+) (./class_synaptic_noise_1_1_synaptic_noise.tex [117]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 56.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 56.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 56.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 56.
+
+[118] [119]) [120]
+Chapter 9.
+(./_axon_delay_8py.tex) (./_channel_conductance_8py.tex)
+(./_compartment_8py.tex) (./_configuration_8py.tex [121
+
+])
+(./_interneuron_8py.tex) (./_interneuron_pool_8py.tex)
+(./joint_ankle_force_task_8py.tex [122]) (./joint_ankle_position_task_8py.tex)
+(./_motor_unit_8py.tex) (./_motor_unit_pool_8py.tex) (./_muscle_hill_8py.tex
+[123]) (./_muscle_no_hill_8py.tex) (./_muscular_activation_8py.tex)
+(./_neural_tract_8py.tex [124]) (./_neural_tract_unit_8py.tex)
+(./_point_process_generator_8py.tex) (./_pulse_conductance_state_8py.tex
+[125]) (./_r_e_a_d_m_e_8md.tex) (./simulation_8py.tex) (./_synapse_8py.tex
+[126]) (./_synapses_factory_8py.tex) (./_synaptic_noise_8py.tex) [127] [128
+
+]
+(./refman.ind)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
+ (./refman.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
+(rerunfilecheck)             Checksum: 9FF3F3389F4AD12D85F33CA6E88F3BFF;125481.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
  ) 
 Here is how much of TeX's memory you used:
- 14602 strings out of 494415
- 206447 string characters out of 6169723
- 292861 words of memory out of 5000000
- 17826 multiletter control sequences out of 15000+600000
- 21474 words of font info for 33 fonts, out of 8000000 for 9000
+ 17757 strings out of 494415
+ 341103 string characters out of 6169723
+ 348664 words of memory out of 5000000
+ 19304 multiletter control sequences out of 15000+600000
+ 72867 words of font info for 86 fonts, out of 8000000 for 9000
  288 hyphenation exceptions out of 8191
- 53i,11n,92p,314b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,16n,92p,1872b,631s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on refman.pdf (4 pages, 12941 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/u
+crr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (150 pages, 699173 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5945 PDF objects out of 6186 (max. 8388607)
+ 5570 compressed objects within 56 object streams
+ 1424 named destinations out of 1440 (max. 500000)
+ 5052 words of extra memory for PDF output out of 10000 (max. 10000000)
 

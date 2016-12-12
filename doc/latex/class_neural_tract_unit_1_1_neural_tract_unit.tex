@@ -2,13 +2,13 @@
 \label{class_neural_tract_unit_1_1_neural_tract_unit}\index{Neural\+Tract\+Unit.\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit.\+Neural\+Tract\+Unit}}
 
 
-classdocs  
+Class that implements a neural tract unit.  
 
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_acd96f13aa788dc9699fed515783b6543}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, conf, pool, index)
+def \hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_a753c43210f21cae7108504a538e87268}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, conf, pool, \hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_aee01a134ce97127783d75757ec15f352}{Gamma\+Order}, \hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_ae98dd2328b661ea541f81a8b4c259557}{index})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 def \hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_a30ea40e013697346cae35a342640a6e4}{atualize\+Neural\+Tract\+Unit} (self, t, FR)
 \item 
@@ -18,44 +18,59 @@ def \hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_a6244f11e9aae2d3106
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_aee01a134ce97127783d75757ec15f352}{Gamma\+Order}
-\item 
+\begin{DoxyCompactList}\small\item\em Integer order of the Gamma distribution. \end{DoxyCompactList}\item 
 \hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_a57cbb130e004fb3f7ee8d8a540f7dff0}{spikes\+Generator}
-\item 
+\begin{DoxyCompactList}\small\item\em A \hyperlink{namespace_point_process_generator}{Point\+Process\+Generator} object, corresponding the generator of spikes of the neural tract unit. \end{DoxyCompactList}\item 
 \hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_ac34c86235329e753e8cfdfcc1e24c53f}{terminal\+Spike\+Train}
+\begin{DoxyCompactList}\small\item\em List of the spikes of the neural tract unit. \end{DoxyCompactList}\item 
+\hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_a29dce2584fbb4bd98199c05bdc767bf1}{kind}
 \item 
 \hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_a740d2cfa17ad57c7dbd40fbafc654b95}{Synapses\+Out}
 \item 
 \hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_ac6fa367f6ada8045919674feaed4f6ad}{transmit\+Spikes\+Through\+Synapses}
 \item 
 \hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_a4e5fa20e16e924e7f27a087e8f7a19a7}{indices\+Of\+Synapses\+On\+Target}
-\end{DoxyCompactItemize}
+\item 
+\hyperlink{class_neural_tract_unit_1_1_neural_tract_unit_ae98dd2328b661ea541f81a8b4c259557}{index}
+\begin{DoxyCompactList}\small\item\em Integer corresponding to the neural tract unit identification. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-classdocs 
+Class that implements a neural tract unit. 
 
-Definition at line 20 of file Neural\+Tract\+Unit.\+py.
+It consists of a point process generator. 
+
+Definition at line 21 of file Neural\+Tract\+Unit.\+py.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
 \index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}}
-\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, conf, pool, index)}{__init__(self, conf, pool, index)}}]{\setlength{\rightskip}{0pt plus 5cm}def Neural\+Tract\+Unit.\+Neural\+Tract\+Unit.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, conf, pool, Gamma\+Order, index)}{__init__(self, conf, pool, GammaOrder, index)}}]{\setlength{\rightskip}{0pt plus 5cm}def Neural\+Tract\+Unit.\+Neural\+Tract\+Unit.\+\_\+\+\_\+init\+\_\+\+\_\+ (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{conf, }
 \item[{}]{pool, }
+\item[{}]{Gamma\+Order, }
 \item[{}]{index}
 \end{DoxyParamCaption}
-)}\hypertarget{class_neural_tract_unit_1_1_neural_tract_unit_acd96f13aa788dc9699fed515783b6543}{}\label{class_neural_tract_unit_1_1_neural_tract_unit_acd96f13aa788dc9699fed515783b6543}
+)}\hypertarget{class_neural_tract_unit_1_1_neural_tract_unit_a753c43210f21cae7108504a538e87268}{}\label{class_neural_tract_unit_1_1_neural_tract_unit_a753c43210f21cae7108504a538e87268}
 
 
 Constructor. 
 
 
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries conf}\+: \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters.
+\item {\bfseries pool}\+: string with the name of the Neural tract.
+\item {\bfseries index}\+: integer corresponding to the neural tract unit identification. 
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Definition at line 27 of file Neural\+Tract\+Unit.\+py.
+Definition at line 36 of file Neural\+Tract\+Unit.\+py.
 
 
 
@@ -70,12 +85,20 @@ Definition at line 27 of file Neural\+Tract\+Unit.\+py.
 \end{DoxyParamCaption}
 )}\hypertarget{class_neural_tract_unit_1_1_neural_tract_unit_a30ea40e013697346cae35a342640a6e4}{}\label{class_neural_tract_unit_1_1_neural_tract_unit_a30ea40e013697346cae35a342640a6e4}
 
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: current instant, in ms.
+\item {\bfseries FR}\+: 
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Definition at line 49 of file Neural\+Tract\+Unit.\+py.
+Definition at line 68 of file Neural\+Tract\+Unit.\+py.
 
 
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -93,8 +116,14 @@ Here is the call graph for this function\+:\nopagebreak
 \end{DoxyParamCaption}
 )}\hypertarget{class_neural_tract_unit_1_1_neural_tract_unit_a6244f11e9aae2d31066e020f9421a9d8}{}\label{class_neural_tract_unit_1_1_neural_tract_unit_a6244f11e9aae2d31066e020f9421a9d8}
 
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: current instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-Definition at line 59 of file Neural\+Tract\+Unit.\+py.
+Definition at line 80 of file Neural\+Tract\+Unit.\+py.
 
 
 
@@ -115,42 +144,72 @@ Here is the caller graph for this function\+:\nopagebreak
 \subsubsection[{\texorpdfstring{Gamma\+Order}{GammaOrder}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract\+Unit.\+Neural\+Tract\+Unit.\+Gamma\+Order}\hypertarget{class_neural_tract_unit_1_1_neural_tract_unit_aee01a134ce97127783d75757ec15f352}{}\label{class_neural_tract_unit_1_1_neural_tract_unit_aee01a134ce97127783d75757ec15f352}
 
 
-Definition at line 29 of file Neural\+Tract\+Unit.\+py.
+Integer order of the Gamma distribution. 
+
+
+
+Definition at line 39 of file Neural\+Tract\+Unit.\+py.
+
+\index{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}!index@{index}}
+\index{index@{index}!Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}}
+\subsubsection[{\texorpdfstring{index}{index}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract\+Unit.\+Neural\+Tract\+Unit.\+index}\hypertarget{class_neural_tract_unit_1_1_neural_tract_unit_ae98dd2328b661ea541f81a8b4c259557}{}\label{class_neural_tract_unit_1_1_neural_tract_unit_ae98dd2328b661ea541f81a8b4c259557}
+
+
+Integer corresponding to the neural tract unit identification. 
+
+
+
+Definition at line 57 of file Neural\+Tract\+Unit.\+py.
 
 \index{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}!indices\+Of\+Synapses\+On\+Target@{indices\+Of\+Synapses\+On\+Target}}
 \index{indices\+Of\+Synapses\+On\+Target@{indices\+Of\+Synapses\+On\+Target}!Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}}
 \subsubsection[{\texorpdfstring{indices\+Of\+Synapses\+On\+Target}{indicesOfSynapsesOnTarget}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract\+Unit.\+Neural\+Tract\+Unit.\+indices\+Of\+Synapses\+On\+Target}\hypertarget{class_neural_tract_unit_1_1_neural_tract_unit_a4e5fa20e16e924e7f27a087e8f7a19a7}{}\label{class_neural_tract_unit_1_1_neural_tract_unit_a4e5fa20e16e924e7f27a087e8f7a19a7}
 
 
-Definition at line 41 of file Neural\+Tract\+Unit.\+py.
+Definition at line 54 of file Neural\+Tract\+Unit.\+py.
+
+\index{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}!kind@{kind}}
+\index{kind@{kind}!Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}}
+\subsubsection[{\texorpdfstring{kind}{kind}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract\+Unit.\+Neural\+Tract\+Unit.\+kind}\hypertarget{class_neural_tract_unit_1_1_neural_tract_unit_a29dce2584fbb4bd98199c05bdc767bf1}{}\label{class_neural_tract_unit_1_1_neural_tract_unit_a29dce2584fbb4bd98199c05bdc767bf1}
+
+
+Definition at line 47 of file Neural\+Tract\+Unit.\+py.
 
 \index{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}!spikes\+Generator@{spikes\+Generator}}
 \index{spikes\+Generator@{spikes\+Generator}!Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}}
 \subsubsection[{\texorpdfstring{spikes\+Generator}{spikesGenerator}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract\+Unit.\+Neural\+Tract\+Unit.\+spikes\+Generator}\hypertarget{class_neural_tract_unit_1_1_neural_tract_unit_a57cbb130e004fb3f7ee8d8a540f7dff0}{}\label{class_neural_tract_unit_1_1_neural_tract_unit_a57cbb130e004fb3f7ee8d8a540f7dff0}
 
 
-Definition at line 32 of file Neural\+Tract\+Unit.\+py.
+A \hyperlink{namespace_point_process_generator}{Point\+Process\+Generator} object, corresponding the generator of spikes of the neural tract unit. 
+
+
+
+Definition at line 43 of file Neural\+Tract\+Unit.\+py.
 
 \index{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}!Synapses\+Out@{Synapses\+Out}}
 \index{Synapses\+Out@{Synapses\+Out}!Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}}
 \subsubsection[{\texorpdfstring{Synapses\+Out}{SynapsesOut}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract\+Unit.\+Neural\+Tract\+Unit.\+Synapses\+Out}\hypertarget{class_neural_tract_unit_1_1_neural_tract_unit_a740d2cfa17ad57c7dbd40fbafc654b95}{}\label{class_neural_tract_unit_1_1_neural_tract_unit_a740d2cfa17ad57c7dbd40fbafc654b95}
 
 
-Definition at line 39 of file Neural\+Tract\+Unit.\+py.
+Definition at line 52 of file Neural\+Tract\+Unit.\+py.
 
 \index{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}!terminal\+Spike\+Train@{terminal\+Spike\+Train}}
 \index{terminal\+Spike\+Train@{terminal\+Spike\+Train}!Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}}
 \subsubsection[{\texorpdfstring{terminal\+Spike\+Train}{terminalSpikeTrain}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract\+Unit.\+Neural\+Tract\+Unit.\+terminal\+Spike\+Train}\hypertarget{class_neural_tract_unit_1_1_neural_tract_unit_ac34c86235329e753e8cfdfcc1e24c53f}{}\label{class_neural_tract_unit_1_1_neural_tract_unit_ac34c86235329e753e8cfdfcc1e24c53f}
 
 
-Definition at line 33 of file Neural\+Tract\+Unit.\+py.
+List of the spikes of the neural tract unit. 
+
+
+
+Definition at line 45 of file Neural\+Tract\+Unit.\+py.
 
 \index{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}!transmit\+Spikes\+Through\+Synapses@{transmit\+Spikes\+Through\+Synapses}}
 \index{transmit\+Spikes\+Through\+Synapses@{transmit\+Spikes\+Through\+Synapses}!Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit@{Neural\+Tract\+Unit\+::\+Neural\+Tract\+Unit}}
 \subsubsection[{\texorpdfstring{transmit\+Spikes\+Through\+Synapses}{transmitSpikesThroughSynapses}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract\+Unit.\+Neural\+Tract\+Unit.\+transmit\+Spikes\+Through\+Synapses}\hypertarget{class_neural_tract_unit_1_1_neural_tract_unit_ac6fa367f6ada8045919674feaed4f6ad}{}\label{class_neural_tract_unit_1_1_neural_tract_unit_ac6fa367f6ada8045919674feaed4f6ad}
 
 
-Definition at line 40 of file Neural\+Tract\+Unit.\+py.
+Definition at line 53 of file Neural\+Tract\+Unit.\+py.
 
 
 

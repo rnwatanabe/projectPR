@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -129,24 +130,33 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
 <li>__init__()
 : <a class="el" href="class_axon_delay_1_1_axon_delay.html#a6f4173dddb3ecf46988a32cbbd118ba8">AxonDelay.AxonDelay</a>
-, <a class="el" href="class_channel_conductance_1_1_channel_conductance.html#a25b3a53d3d4a2926f61e1bd978e375f7">ChannelConductance.ChannelConductance</a>
+, <a class="el" href="class_channel_conductance_1_1_channel_conductance.html#acc92870743a2af7d3839857183ca3bb6">ChannelConductance.ChannelConductance</a>
 , <a class="el" href="class_compartment_1_1_compartment.html#a207d311a27cc1d027abb021c70a30509">Compartment.Compartment</a>
 , <a class="el" href="class_configuration_1_1_configuration.html#a2ba2e2fc97989c9d24632e4c403449c6">Configuration.Configuration</a>
+, <a class="el" href="class_interneuron_1_1_interneuron.html#a9550e1a9e62f415679fc7710db5c2a65">Interneuron.Interneuron</a>
+, <a class="el" href="class_interneuron_pool_1_1_interneuron_pool.html#a5de3519e16062bee1550d1ce8190fce5">InterneuronPool.InterneuronPool</a>
+, <a class="el" href="classjoint_ankle_force_task_1_1joint_ankle_force_task.html#ac7953dac49e9ab0e2a2101d5d100bc56">jointAnkleForceTask.jointAnkleForceTask</a>
+, <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ad07924061f34c215bc35a46ceea5cf6b">jointAnklePositionTask.jointAnklePositionTask</a>
 , <a class="el" href="class_motor_unit_1_1_motor_unit.html#ac5228576ec1287f06debf92067c7402b">MotorUnit.MotorUnit</a>
 , <a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a79dc49385a2a1c707766fd355f612088">MotorUnitPool.MotorUnitPool</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#a850e338ee568e9956ca134d806c2b7c6">MuscleHill.MuscleHill</a>
+, <a class="el" href="class_muscle_no_hill_1_1_muscle_no_hill.html#a5070624c6605f34e4c3829f927adaa95">MuscleNoHill.MuscleNoHill</a>
+, <a class="el" href="class_muscular_activation_1_1_muscular_activation.html#aad217ef6c3d6d7318ea3530a814b3738">MuscularActivation.MuscularActivation</a>
 , <a class="el" href="class_neural_tract_1_1_neural_tract.html#a06e60f2f98f39f21c542c108245cb937">NeuralTract.NeuralTract</a>
-, <a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#acd96f13aa788dc9699fed515783b6543">NeuralTractUnit.NeuralTractUnit</a>
+, <a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a753c43210f21cae7108504a538e87268">NeuralTractUnit.NeuralTractUnit</a>
 , <a class="el" href="class_point_process_generator_1_1_point_process_generator.html#aa68db702aedaee038800dfe10422de6a">PointProcessGenerator.PointProcessGenerator</a>
-, <a class="el" href="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a8105133dfad3442af4c6996aa21a4776">PulseConductanceState.PulseConductanceState</a>
+, <a class="el" href="class_pulse_conductance_state_1_1_pulse_conductance_state.html#af313a2dfe2617230969fa4db3cce45d1">PulseConductanceState.PulseConductanceState</a>
 , <a class="el" href="class_synapse_1_1_synapse.html#a07d8bf346901e5db0ba72d5397057bd2">Synapse.Synapse</a>
 , <a class="el" href="class_synapses_factory_1_1_synapses_factory.html#a4de86ef35a3945787df975afe33733fe">SynapsesFactory.SynapsesFactory</a>
+, <a class="el" href="class_synaptic_noise_1_1_synaptic_noise.html#a1f6c03281f2569156552c043e5d81db1">SynapticNoise.SynapticNoise</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>addSomaSpike()
-: <a class="el" href="class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534">MotorUnit.MotorUnit</a>
+: <a class="el" href="class_interneuron_1_1_interneuron.html#affb57bbf0d7eec160855d0fce26f83d5">Interneuron.Interneuron</a>
+, <a class="el" href="class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534">MotorUnit.MotorUnit</a>
 </li>
 <li>addSpinalSpike()
 : <a class="el" href="class_axon_delay_1_1_axon_delay.html#a3fe989d5e27974a6c0ad9e92f3752685">AxonDelay.AxonDelay</a>
@@ -154,20 +164,46 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>addTerminalSpike()
 : <a class="el" href="class_axon_delay_1_1_axon_delay.html#a0a75705e6de98e89462381245bb4cb51">AxonDelay.AxonDelay</a>
 </li>
+<li>atualizeActivation()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ae1a5c97c4bda835c542296071a4da624">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#a81d25a2541478817c39a6e2d720ac460">MuscleHill.MuscleHill</a>
+</li>
 <li>atualizeActivationSignal()
-: <a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a164393f9e070abb72b48d0a9685ba518">MotorUnitPool.MotorUnitPool</a>
+: <a class="el" href="class_muscular_activation_1_1_muscular_activation.html#a426e8eca6ca1f9ed3999a07764ccb8fb">MuscularActivation.MuscularActivation</a>
+</li>
+<li>atualizeAngle()
+: <a class="el" href="classjoint_ankle_force_task_1_1joint_ankle_force_task.html#ad8da9793d058668f39e7c3516f2dc7cb">jointAnkleForceTask.jointAnkleForceTask</a>
+</li>
+<li>atualizeAnkle()
+: <a class="el" href="classjoint_ankle_force_task_1_1joint_ankle_force_task.html#ac56f1fed7d1cc67d92d1ed7ab01c11c8">jointAnkleForceTask.jointAnkleForceTask</a>
 </li>
 <li>atualizeCompartments()
-: <a class="el" href="class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b">MotorUnit.MotorUnit</a>
+: <a class="el" href="class_interneuron_1_1_interneuron.html#aadb0a11834ebf0b9fb0fa05788da23d1">Interneuron.Interneuron</a>
+, <a class="el" href="class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b">MotorUnit.MotorUnit</a>
 </li>
 <li>atualizeDelay()
 : <a class="el" href="class_motor_unit_1_1_motor_unit.html#a0aa5e024003845e3f48bc0e618068edc">MotorUnit.MotorUnit</a>
 </li>
-<li>atualizeForceNoHill()
-: <a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a8f8b496796becc89ddb7e9e1c8a2fb9b">MotorUnitPool.MotorUnitPool</a>
+<li>atualizeForce()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#abe3c0546bf63fbf73815c59b5b86c6d5">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#aa07ad41150b7f082dc49226650e705cb">MuscleHill.MuscleHill</a>
+, <a class="el" href="class_muscle_no_hill_1_1_muscle_no_hill.html#abc25f980400ce3aa3a087161147da997">MuscleNoHill.MuscleNoHill</a>
 </li>
 <li>atualizeGenerator()
 : <a class="el" href="class_point_process_generator_1_1_point_process_generator.html#a744e7d5fc7850ddb785d2fafdc04e587">PointProcessGenerator.PointProcessGenerator</a>
+</li>
+<li>atualizeInterneuron()
+: <a class="el" href="class_interneuron_1_1_interneuron.html#aaa557573420679f62247b6c6a3879f88">Interneuron.Interneuron</a>
+</li>
+<li>atualizeInterneuronPool()
+: <a class="el" href="class_interneuron_pool_1_1_interneuron_pool.html#a2beb714ccc631317a8a7854d42c6cf01">InterneuronPool.InterneuronPool</a>
+</li>
+<li>atualizeLenghtsAndVelocity()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ac044fc7d615fc19a0f90e6af4947c32e">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#a71ea33f1c30bdbe7cd795426bf097e78">MuscleHill.MuscleHill</a>
+</li>
+<li>atualizeMomentArm()
+: <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#a1ddbb0455341626ea43181a47a3fb322">MuscleHill.MuscleHill</a>
 </li>
 <li>atualizeMotorUnit()
 : <a class="el" href="class_motor_unit_1_1_motor_unit.html#ab57693c2f49518b08639456595e92d87">MotorUnit.MotorUnit</a>
@@ -175,11 +211,23 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>atualizeMotorUnitPool()
 : <a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#ae211c664df7b661288fe71c4a6e63a18">MotorUnitPool.MotorUnitPool</a>
 </li>
+<li>atualizeMuscleForce()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#af856343e3fce71b7debc3a538922d856">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#ab39eb3b82b6299bbfbccb6d50f1da8b5">MuscleHill.MuscleHill</a>
+</li>
+<li>atualizeMusculoTendonLength()
+: <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#aef0260788a88702d48827323e04aa2a7">MuscleHill.MuscleHill</a>
+</li>
 <li>atualizeNeuralTractUnit()
 : <a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a30ea40e013697346cae35a342640a6e4">NeuralTractUnit.NeuralTractUnit</a>
 </li>
 <li>atualizePool()
 : <a class="el" href="class_neural_tract_1_1_neural_tract.html#acae726b486d80f6a60c6c2ddabadb5a7">NeuralTract.NeuralTract</a>
+, <a class="el" href="class_synaptic_noise_1_1_synaptic_noise.html#a00fa2c0d5b1b4d5fafc219e32bb4cd42">SynapticNoise.SynapticNoise</a>
+</li>
+<li>atualizeTendonForce()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#abcd95d655b19278aaeccb2f56fafddaf">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#ac40dbbdc08aa96669fe09f03bdffb2f2">MuscleHill.MuscleHill</a>
 </li>
 </ul>
 
@@ -197,12 +245,52 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>compCondNa()
 : <a class="el" href="class_channel_conductance_1_1_channel_conductance.html#a17d6343152d9252b6f1368b450f0dbcf">ChannelConductance.ChannelConductance</a>
 </li>
+<li>computeAcceleration()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ad8631689c974c67860cee97b7b13b25f">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#aa29337f26cdc1d67d65658fab8e0cc41">MuscleHill.MuscleHill</a>
+</li>
 <li>computeCurrent()
 : <a class="el" href="class_channel_conductance_1_1_channel_conductance.html#af012b0816d74d6bb6a923ca79dc0a7ba">ChannelConductance.ChannelConductance</a>
 , <a class="el" href="class_compartment_1_1_compartment.html#a31d23a4d2dba419ac4d0e9b8e296a734">Compartment.Compartment</a>
 </li>
+<li>computeElasticElementForce()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#a2fe373956414f18b74dcb4c6aaa91388">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#adf383b3c1665a6be27791644d67e3c44">MuscleHill.MuscleHill</a>
+</li>
+<li>computeForceLengthTypeI()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#a3af92ed0247e12d7dbb14ce9002f1f4b">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#ab24d0c9566cf2a9a309debd1a1a63ee0">MuscleHill.MuscleHill</a>
+</li>
+<li>computeForceLengthTypeII()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ad673d482ab048855070764c19714ea59">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#a99f5d396aeb1bb0b85def721c9b0bc25">MuscleHill.MuscleHill</a>
+</li>
+<li>computeForceVelocityTypeI()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ac818fceec418d671b8d5cb612497aaf2">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#a5669a0ba569c4ab1acd31ac8bdf68b9f">MuscleHill.MuscleHill</a>
+</li>
+<li>computeForceVelocityTypeII()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#adda3990fdbbabbd4d8a75360f04735a6">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#ad6797f63b21b6b753cc5362dd066cc02">MuscleHill.MuscleHill</a>
+</li>
+<li>computePennationAngle()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#a9e82e35f0075aceaca2d4d4c8e1aaa72">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#a5c3dfd4a663d327319335773c4908eef">MuscleHill.MuscleHill</a>
+</li>
 <li>computeStateValue()
 : <a class="el" href="class_pulse_conductance_state_1_1_pulse_conductance_state.html#ac4fa668247190566ffc9bccda61dcd81">PulseConductanceState.PulseConductanceState</a>
+</li>
+<li>computeTypeIActiveForce()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ae4566e7ea50dd52279d5fdcb3aa3da5e">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#a0af765b39293ebf39e992cefa2491141">MuscleHill.MuscleHill</a>
+</li>
+<li>computeTypeIIActiveForce()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ac196595126ed1735a9ae693a5b16283f">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#a3111f5bea9b94e9bc602a48efe95b146">MuscleHill.MuscleHill</a>
+</li>
+<li>computeViscousElementForce()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ae2cbbf86c72289ac5af730e91c862925">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#ab4181e0db8cb650fd5b448fe58eefd33">MuscleHill.MuscleHill</a>
 </li>
 </ul>
 
@@ -211,8 +299,13 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>determineSynapses()
 : <a class="el" href="class_configuration_1_1_configuration.html#ac2160d0341a793aa0fc1211757f08a73">Configuration.Configuration</a>
 </li>
+<li>dLdt()
+: <a class="el" href="classjoint_ankle_position_task_1_1joint_ankle_position_task.html#af986604f62091b3f82dbd6a2b888a223">jointAnklePositionTask.jointAnklePositionTask</a>
+, <a class="el" href="class_muscle_hill_1_1_muscle_hill.html#afbcb208bf18110d5fe1d498db8b6f95c">MuscleHill.MuscleHill</a>
+</li>
 <li>dVdt()
-: <a class="el" href="class_motor_unit_1_1_motor_unit.html#adf30fdef09ac21cfc2a261b762a7f618">MotorUnit.MotorUnit</a>
+: <a class="el" href="class_interneuron_1_1_interneuron.html#a5eff07c93609a66a19f8e7426204be02">Interneuron.Interneuron</a>
+, <a class="el" href="class_motor_unit_1_1_motor_unit.html#adf30fdef09ac21cfc2a261b762a7f618">MotorUnit.MotorUnit</a>
 </li>
 </ul>
 
@@ -226,8 +319,10 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>listSpikes()
-: <a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a11d81004e9bf591ac9dcce582e87b4f4">MotorUnitPool.MotorUnitPool</a>
+: <a class="el" href="class_interneuron_pool_1_1_interneuron_pool.html#a510f7df22d1f5bd07cefa04455f4a189">InterneuronPool.InterneuronPool</a>
+, <a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a11d81004e9bf591ac9dcce582e87b4f4">MotorUnitPool.MotorUnitPool</a>
 , <a class="el" href="class_neural_tract_1_1_neural_tract.html#ad0119f85114d9da23e17c90ef9638da7">NeuralTract.NeuralTract</a>
+, <a class="el" href="class_synaptic_noise_1_1_synaptic_noise.html#a8937077070b4e13f4b29ee0c443d3ace">SynapticNoise.SynapticNoise</a>
 </li>
 </ul>
 
@@ -241,7 +336,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
 <li>transmitSpikes()
-: <a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a6244f11e9aae2d31066e020f9421a9d8">NeuralTractUnit.NeuralTractUnit</a>
+: <a class="el" href="class_interneuron_1_1_interneuron.html#a776242a1aa83a264adba968651de0226">Interneuron.Interneuron</a>
+, <a class="el" href="class_motor_unit_1_1_motor_unit.html#ac3d3e69bf0b75eef81a015005052f5d3">MotorUnit.MotorUnit</a>
+, <a class="el" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a6244f11e9aae2d31066e020f9421a9d8">NeuralTractUnit.NeuralTractUnit</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -249,7 +346,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 27 2016 18:05:13 for PyReMoto by
+    <li class="footer">Generated on Mon Dec 12 2016 13:43:18 for PyReMoto by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

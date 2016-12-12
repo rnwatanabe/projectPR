@@ -1,0 +1,5 @@
+<map id="Interneuron.runge_kutta" name="Interneuron.runge_kutta">
+<area shape="rect" id="node2" href="$class_interneuron_1_1_interneuron.html#aadb0a11834ebf0b9fb0fa05788da23d1" title="Atualize all neural compartments. " alt="" coords="212,39,417,80"/>
+<area shape="rect" id="node3" href="$class_interneuron_1_1_interneuron.html#aaa557573420679f62247b6c6a3879f88" title="Atualize the dynamical and nondynamical (delay) parts of the motor unit. " alt="" coords="465,5,671,47"/>
+<area shape="rect" id="node4" href="$class_motor_unit_1_1_motor_unit.html#ab57693c2f49518b08639456595e92d87" title="Atualize the dynamical and nondynamical (delay) parts of the motor unit. " alt="" coords="473,71,663,112"/>
+</map>

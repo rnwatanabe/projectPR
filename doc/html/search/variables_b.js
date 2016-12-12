@@ -1,5 +1,18 @@
 var searchData=
 [
+  ['m0',['m0',['../class_muscle_hill_1_1_muscle_hill.html#a971c1c9595bfe6364f779eec7f8d7f9b',1,'MuscleHill::MuscleHill']]],
+  ['m1',['m1',['../class_muscle_hill_1_1_muscle_hill.html#a2a7ec03b2d3290a4e29b2c6d32e5f7ba',1,'MuscleHill::MuscleHill']]],
+  ['m2',['m2',['../class_muscle_hill_1_1_muscle_hill.html#a31d135b0938cab341e7bbf069bd8a83f',1,'MuscleHill::MuscleHill']]],
+  ['m3',['m3',['../class_muscle_hill_1_1_muscle_hill.html#a99cd4e42b58f62f0868b45cb2fff34e5',1,'MuscleHill::MuscleHill']]],
+  ['m4',['m4',['../class_muscle_hill_1_1_muscle_hill.html#ad72ce2dfd21979a469ea11a2cd721527',1,'MuscleHill::MuscleHill']]],
+  ['mass',['mass',['../classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ae83e115a31e460e3d4292658331c4ff0',1,'jointAnklePositionTask.jointAnklePositionTask.mass()'],['../class_muscle_hill_1_1_muscle_hill.html#a5eab770f1108fc15db3effef9d0e58a6',1,'MuscleHill.MuscleHill.mass()']]],
+  ['maximumactivationforce',['maximumActivationForce',['../classjoint_ankle_position_task_1_1joint_ankle_position_task.html#a4f36a115acf205a4fe25d29f3e7a4196',1,'jointAnklePositionTask.jointAnklePositionTask.maximumActivationForce()'],['../class_muscle_hill_1_1_muscle_hill.html#af77dc4d25fcba310c45da4e6731cfd19',1,'MuscleHill.MuscleHill.maximumActivationForce()'],['../class_muscle_no_hill_1_1_muscle_no_hill.html#aab0ae54c579e456837c8b149a212ee5f',1,'MuscleNoHill.MuscleNoHill.maximumActivationForce()']]],
+  ['maximumforce_5fn',['maximumForce_N',['../classjoint_ankle_position_task_1_1joint_ankle_position_task.html#a77b2e15699b1101d7ed9a2dc2ac4bff9',1,'jointAnklePositionTask.jointAnklePositionTask.maximumForce_N()'],['../class_muscle_hill_1_1_muscle_hill.html#aae70340f27634c6246b6e58940e37590',1,'MuscleHill.MuscleHill.maximumForce_N()']]],
   ['mnrefper_5fms',['MNRefPer_ms',['../class_motor_unit_1_1_motor_unit.html#abbdaa195ac00926d96d509ae01dcda05',1,'MotorUnit::MotorUnit']]],
-  ['munumber',['MUnumber',['../class_motor_unit_pool_1_1_motor_unit_pool.html#aa5884530baaa20f46007805bc574407d',1,'MotorUnitPool::MotorUnitPool']]]
+  ['momentarm_5fm',['momentArm_m',['../class_muscle_hill_1_1_muscle_hill.html#af8d3e20d106fb65cb984644c8d6df418',1,'MuscleHill::MuscleHill']]],
+  ['munumber',['MUnumber',['../classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ac1b0fcb61f40d743f316a80553cad3f4',1,'jointAnklePositionTask.jointAnklePositionTask.MUnumber()'],['../class_motor_unit_pool_1_1_motor_unit_pool.html#aa5884530baaa20f46007805bc574407d',1,'MotorUnitPool.MotorUnitPool.MUnumber()'],['../class_muscle_hill_1_1_muscle_hill.html#aad139563902bc26e0c69637ddc85c6b7',1,'MuscleHill.MuscleHill.MUnumber()'],['../class_muscle_no_hill_1_1_muscle_no_hill.html#ae2a6a4b782c8abea0bb581b2d133f064',1,'MuscleNoHill.MuscleNoHill.MUnumber()'],['../class_muscular_activation_1_1_muscular_activation.html#a1b30292b1cf102fa82bf4a511d151f0b',1,'MuscularActivation.MuscularActivation.MUnumber()']]],
+  ['muscle',['Muscle',['../class_motor_unit_pool_1_1_motor_unit_pool.html#a69b76b7748d3fd22f7367be8dd82d6cf',1,'MotorUnitPool::MotorUnitPool']]],
+  ['muscles',['muscles',['../classjoint_ankle_force_task_1_1joint_ankle_force_task.html#a4f6481ccda853f0660ffb08cda3e31c1',1,'jointAnkleForceTask::jointAnkleForceTask']]],
+  ['musculotendonlength_5fm',['musculoTendonLength_m',['../class_muscle_hill_1_1_muscle_hill.html#a6b615b78ce60501d8231974115ad7d9c',1,'MuscleHill::MuscleHill']]],
+  ['mutypeinumber',['MUtypeInumber',['../classjoint_ankle_position_task_1_1joint_ankle_position_task.html#a242bf5621b3cf0cd557f985a7b13bbc2',1,'jointAnklePositionTask.jointAnklePositionTask.MUtypeInumber()'],['../class_muscle_hill_1_1_muscle_hill.html#ae7e7a4fe4112e6a88b04cfd8705e1374',1,'MuscleHill.MuscleHill.MUtypeInumber()'],['../class_muscle_no_hill_1_1_muscle_no_hill.html#ab69c47ef7b07407562fc0b9fa65bacf0',1,'MuscleNoHill.MuscleNoHill.MUtypeInumber()']]]
 ];

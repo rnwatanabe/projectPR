@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pointprocessgenerator',['PointProcessGenerator',['../class_point_process_generator_1_1_point_process_generator.html',1,'PointProcessGenerator']]],
-  ['pulseconductancestate',['PulseConductanceState',['../class_pulse_conductance_state_1_1_pulse_conductance_state.html',1,'PulseConductanceState']]]
+  ['neuraltract',['NeuralTract',['../class_neural_tract_1_1_neural_tract.html',1,'NeuralTract']]],
+  ['neuraltractunit',['NeuralTractUnit',['../class_neural_tract_unit_1_1_neural_tract_unit.html',1,'NeuralTractUnit']]]
 ];

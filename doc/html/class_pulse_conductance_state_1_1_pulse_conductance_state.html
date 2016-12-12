@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -119,9 +120,9 @@ $(document).ready(function(){initNavTree('class_pulse_conductance_state_1_1_puls
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8105133dfad3442af4c6996aa21a4776"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a8105133dfad3442af4c6996aa21a4776">__init__</a> (self, <a class="el" href="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a53d237daaa4815ad375e2377da89845e">kind</a>, conf, pool, index)</td></tr>
-<tr class="memdesc:a8105133dfad3442af4c6996aa21a4776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the pulse conductance state.  <a href="#a8105133dfad3442af4c6996aa21a4776">More...</a><br /></td></tr>
-<tr class="separator:a8105133dfad3442af4c6996aa21a4776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af313a2dfe2617230969fa4db3cce45d1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pulse_conductance_state_1_1_pulse_conductance_state.html#af313a2dfe2617230969fa4db3cce45d1">__init__</a> (self, <a class="el" href="class_pulse_conductance_state_1_1_pulse_conductance_state.html#a53d237daaa4815ad375e2377da89845e">kind</a>, conf, pool, neuronKind, index)</td></tr>
+<tr class="memdesc:af313a2dfe2617230969fa4db3cce45d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the pulse conductance state.  <a href="#af313a2dfe2617230969fa4db3cce45d1">More...</a><br /></td></tr>
+<tr class="separator:af313a2dfe2617230969fa4db3cce45d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefa0c1896447406edf39420111e19a82"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pulse_conductance_state_1_1_pulse_conductance_state.html#aefa0c1896447406edf39420111e19a82">changeState</a> (self, t)</td></tr>
 <tr class="memdesc:aefa0c1896447406edf39420111e19a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Void function that modify the current situation (true/false) of the state.  <a href="#aefa0c1896447406edf39420111e19a82">More...</a><br /></td></tr>
 <tr class="separator:aefa0c1896447406edf39420111e19a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,7 +160,7 @@ Public Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00054">54</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a8105133dfad3442af4c6996aa21a4776"></a>
+<a class="anchor" id="af313a2dfe2617230969fa4db3cce45d1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -191,6 +192,12 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>neuronKind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
           <td class="paramname"><em>index</em>&#160;</td>
         </tr>
         <tr>
@@ -202,9 +209,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes the pulse conductance state. </p>
-<p>Variables: kind - type of the state(m, h, n, q). conf - an instance of the <a class="el" href="namespace_configuration.html">Configuration</a> class with the functions to correctly parameterize the model. See the <a class="el" href="namespace_configuration.html">Configuration</a> class. pool - the pool that this state belongs. index - the index of the unit that this state belongs. </p>
+<p>Variables: <em>kind</em> - type of the state(m, h, n, q). <em>conf</em> - an instance of the <a class="el" href="namespace_configuration.html">Configuration</a> class with the functions to correctly parameterize the model. See the <a class="el" href="namespace_configuration.html">Configuration</a> class. <em>pool</em> - the pool that this state belongs. <em>neuronKind</em> - <em>index</em> - the index of the unit that this state belongs. </p>
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00065">65</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00066">66</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 </div>
 </div>
@@ -241,7 +248,7 @@ Public Attributes</h2></td></tr>
 </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00104">104</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00105">105</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -287,7 +294,7 @@ Here is the caller graph for this function:</div>
 </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00116">116</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00117">117</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -312,7 +319,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00080">80</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00081">81</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 </div>
 </div>
@@ -326,7 +333,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00076">76</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00077">77</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 </div>
 </div>
@@ -340,7 +347,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00075">75</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00076">76</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 </div>
 </div>
@@ -354,7 +361,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00090">90</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00091">91</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 </div>
 </div>
@@ -368,7 +375,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00089">89</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00090">90</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 </div>
 </div>
@@ -382,7 +389,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00066">66</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00067">67</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 </div>
 </div>
@@ -396,7 +403,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00077">77</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00078">78</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 </div>
 </div>
@@ -410,7 +417,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00073">73</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00074">74</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 </div>
 </div>
@@ -424,7 +431,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00071">71</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00072">72</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 </div>
 </div>
@@ -438,7 +445,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00070">70</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00071">71</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 </div>
 </div>
@@ -452,7 +459,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00067">67</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
+<p>Definition at line <a class="el" href="_pulse_conductance_state_8py_source.html#l00068">68</a> of file <a class="el" href="_pulse_conductance_state_8py_source.html">PulseConductanceState.py</a>.</p>
 
 </div>
 </div>
@@ -465,7 +472,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_pulse_conductance_state.html">PulseConductanceState</a></li><li class="navelem"><a class="el" href="class_pulse_conductance_state_1_1_pulse_conductance_state.html">PulseConductanceState</a></li>
-    <li class="footer">Generated on Mon Jun 27 2016 18:05:12 for PyReMoto by
+    <li class="footer">Generated on Mon Dec 12 2016 13:43:18 for PyReMoto by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

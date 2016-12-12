@@ -2,7 +2,7 @@
 \label{class_neural_tract_1_1_neural_tract}\index{Neural\+Tract.\+Neural\+Tract@{Neural\+Tract.\+Neural\+Tract}}
 
 
-classdocs  
+Class that implements a a neural tract, composed by the descending commands from the motor cortex.  
 
 
 \subsection*{Public Member Functions}
@@ -11,34 +11,36 @@ classdocs
 def \hyperlink{class_neural_tract_1_1_neural_tract_a06e60f2f98f39f21c542c108245cb937}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, conf, \hyperlink{class_neural_tract_1_1_neural_tract_af0d232b9b86f3bae802b32777d0405d0}{pool})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 def \hyperlink{class_neural_tract_1_1_neural_tract_acae726b486d80f6a60c6c2ddabadb5a7}{atualize\+Pool} (self, t)
-\item 
+\begin{DoxyCompactList}\small\item\em Update all neural tract units from the neural tract. \end{DoxyCompactList}\item 
 def \hyperlink{class_neural_tract_1_1_neural_tract_ad0119f85114d9da23e17c90ef9638da7}{list\+Spikes} (self)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em List the spikes that occurred in neural tract units. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_neural_tract_1_1_neural_tract_af52b112c86e0c774fa204b7e2154b6aa}{kind}
-\item 
+\begin{DoxyCompactList}\small\item\em Indicates that is a neural tract. \end{DoxyCompactList}\item 
 \hyperlink{class_neural_tract_1_1_neural_tract_af0d232b9b86f3bae802b32777d0405d0}{pool}
-\item 
+\begin{DoxyCompactList}\small\item\em String with the name of the Neural tract. \end{DoxyCompactList}\item 
 \hyperlink{class_neural_tract_1_1_neural_tract_a9cf4c6df3fb8818e955817bb3ea9ffc4}{Number}
-\item 
+\begin{DoxyCompactList}\small\item\em The number of neural tract units. \end{DoxyCompactList}\item 
 \hyperlink{class_neural_tract_1_1_neural_tract_a95db7d0720ec12f091758968476ba240}{unit}
+\begin{DoxyCompactList}\small\item\em List of Neural\+T\+Ract\+Unit objects. \end{DoxyCompactList}\item 
+\hyperlink{class_neural_tract_1_1_neural_tract_aba5eca22ebc757b1ea009e97c1bd6e36}{Gamma\+Order}
 \item 
 \hyperlink{class_neural_tract_1_1_neural_tract_a1d104906ff30028e44e377a9e1ed5a3d}{pool\+Terminal\+Spikes}
-\item 
+\begin{DoxyCompactList}\small\item\em Vector with the instants of spikes in the terminal, in ms. \end{DoxyCompactList}\item 
 \hyperlink{class_neural_tract_1_1_neural_tract_a637995fcac5bdd80ab1a9d4ea3de7f40}{target}
-\item 
+\begin{DoxyCompactList}\small\item\em Indicates the measure that the Target\+Function of the spikes follows. \end{DoxyCompactList}\item 
 \hyperlink{class_neural_tract_1_1_neural_tract_aefbec14cba88a937841314d47f6056c0}{FR}
-\item 
+\begin{DoxyCompactList}\small\item\em The mean firing rate of the neural tract units. \end{DoxyCompactList}\item 
 \hyperlink{class_neural_tract_1_1_neural_tract_adcda2b95aa86d4e7eebcc2557aee58cf}{time\+Index}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-classdocs 
+Class that implements a a neural tract, composed by the descending commands from the motor cortex. 
 
-Definition at line 14 of file Neural\+Tract.\+py.
+Definition at line 15 of file Neural\+Tract.\+py.
 
 
 
@@ -60,8 +62,8 @@ Constructor.
 \begin{DoxyItemize}
 \item Inputs\+:
 \begin{DoxyItemize}
-\item {\bfseries conf}\+:
-\item {\bfseries pool}\+: 
+\item {\bfseries conf}\+: \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters.
+\item {\bfseries pool}\+: string with the name of the Neural tract. 
 \end{DoxyItemize}
 \end{DoxyItemize}
 
@@ -80,7 +82,17 @@ Definition at line 26 of file Neural\+Tract.\+py.
 )}\hypertarget{class_neural_tract_1_1_neural_tract_acae726b486d80f6a60c6c2ddabadb5a7}{}\label{class_neural_tract_1_1_neural_tract_acae726b486d80f6a60c6c2ddabadb5a7}
 
 
-Definition at line 50 of file Neural\+Tract.\+py.
+Update all neural tract units from the neural tract. 
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: cuurent instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 67 of file Neural\+Tract.\+py.
 
 \index{Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}!list\+Spikes@{list\+Spikes}}
 \index{list\+Spikes@{list\+Spikes}!Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}}
@@ -91,7 +103,11 @@ Definition at line 50 of file Neural\+Tract.\+py.
 )}\hypertarget{class_neural_tract_1_1_neural_tract_ad0119f85114d9da23e17c90ef9638da7}{}\label{class_neural_tract_1_1_neural_tract_ad0119f85114d9da23e17c90ef9638da7}
 
 
-Definition at line 55 of file Neural\+Tract.\+py.
+List the spikes that occurred in neural tract units. 
+
+
+
+Definition at line 75 of file Neural\+Tract.\+py.
 
 
 
@@ -101,56 +117,91 @@ Definition at line 55 of file Neural\+Tract.\+py.
 \subsubsection[{\texorpdfstring{FR}{FR}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract.\+Neural\+Tract.\+FR}\hypertarget{class_neural_tract_1_1_neural_tract_aefbec14cba88a937841314d47f6056c0}{}\label{class_neural_tract_1_1_neural_tract_aefbec14cba88a937841314d47f6056c0}
 
 
-Definition at line 43 of file Neural\+Tract.\+py.
+The mean firing rate of the neural tract units. 
+
+
+
+Definition at line 53 of file Neural\+Tract.\+py.
+
+\index{Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}!Gamma\+Order@{Gamma\+Order}}
+\index{Gamma\+Order@{Gamma\+Order}!Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}}
+\subsubsection[{\texorpdfstring{Gamma\+Order}{GammaOrder}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract.\+Neural\+Tract.\+Gamma\+Order}\hypertarget{class_neural_tract_1_1_neural_tract_aba5eca22ebc757b1ea009e97c1bd6e36}{}\label{class_neural_tract_1_1_neural_tract_aba5eca22ebc757b1ea009e97c1bd6e36}
+
+
+Definition at line 37 of file Neural\+Tract.\+py.
 
 \index{Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}!kind@{kind}}
 \index{kind@{kind}!Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}}
 \subsubsection[{\texorpdfstring{kind}{kind}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract.\+Neural\+Tract.\+kind}\hypertarget{class_neural_tract_1_1_neural_tract_af52b112c86e0c774fa204b7e2154b6aa}{}\label{class_neural_tract_1_1_neural_tract_af52b112c86e0c774fa204b7e2154b6aa}
 
 
-Definition at line 27 of file Neural\+Tract.\+py.
+Indicates that is a neural tract. 
+
+
+
+Definition at line 28 of file Neural\+Tract.\+py.
 
 \index{Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}!Number@{Number}}
 \index{Number@{Number}!Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}}
 \subsubsection[{\texorpdfstring{Number}{Number}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract.\+Neural\+Tract.\+Number}\hypertarget{class_neural_tract_1_1_neural_tract_a9cf4c6df3fb8818e955817bb3ea9ffc4}{}\label{class_neural_tract_1_1_neural_tract_a9cf4c6df3fb8818e955817bb3ea9ffc4}
 
 
-Definition at line 29 of file Neural\+Tract.\+py.
+The number of neural tract units. 
+
+
+
+Definition at line 32 of file Neural\+Tract.\+py.
 
 \index{Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}!pool@{pool}}
 \index{pool@{pool}!Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}}
 \subsubsection[{\texorpdfstring{pool}{pool}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract.\+Neural\+Tract.\+pool}\hypertarget{class_neural_tract_1_1_neural_tract_af0d232b9b86f3bae802b32777d0405d0}{}\label{class_neural_tract_1_1_neural_tract_af0d232b9b86f3bae802b32777d0405d0}
 
 
-Definition at line 28 of file Neural\+Tract.\+py.
+String with the name of the Neural tract. 
+
+
+
+Definition at line 30 of file Neural\+Tract.\+py.
 
 \index{Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}!pool\+Terminal\+Spikes@{pool\+Terminal\+Spikes}}
 \index{pool\+Terminal\+Spikes@{pool\+Terminal\+Spikes}!Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}}
 \subsubsection[{\texorpdfstring{pool\+Terminal\+Spikes}{poolTerminalSpikes}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract.\+Neural\+Tract.\+pool\+Terminal\+Spikes}\hypertarget{class_neural_tract_1_1_neural_tract_a1d104906ff30028e44e377a9e1ed5a3d}{}\label{class_neural_tract_1_1_neural_tract_a1d104906ff30028e44e377a9e1ed5a3d}
 
 
-Definition at line 34 of file Neural\+Tract.\+py.
+Vector with the instants of spikes in the terminal, in ms. 
+
+
+
+Definition at line 42 of file Neural\+Tract.\+py.
 
 \index{Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}!target@{target}}
 \index{target@{target}!Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}}
 \subsubsection[{\texorpdfstring{target}{target}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract.\+Neural\+Tract.\+target}\hypertarget{class_neural_tract_1_1_neural_tract_a637995fcac5bdd80ab1a9d4ea3de7f40}{}\label{class_neural_tract_1_1_neural_tract_a637995fcac5bdd80ab1a9d4ea3de7f40}
 
 
-Definition at line 36 of file Neural\+Tract.\+py.
+Indicates the measure that the Target\+Function of the spikes follows. 
+
+For now ita can be {\itshape I\+SI} (interspike interval) or {\itshape FR} (firing rate). 
+
+Definition at line 46 of file Neural\+Tract.\+py.
 
 \index{Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}!time\+Index@{time\+Index}}
 \index{time\+Index@{time\+Index}!Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}}
 \subsubsection[{\texorpdfstring{time\+Index}{timeIndex}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract.\+Neural\+Tract.\+time\+Index}\hypertarget{class_neural_tract_1_1_neural_tract_adcda2b95aa86d4e7eebcc2557aee58cf}{}\label{class_neural_tract_1_1_neural_tract_adcda2b95aa86d4e7eebcc2557aee58cf}
 
 
-Definition at line 46 of file Neural\+Tract.\+py.
+Definition at line 56 of file Neural\+Tract.\+py.
 
 \index{Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}!unit@{unit}}
 \index{unit@{unit}!Neural\+Tract\+::\+Neural\+Tract@{Neural\+Tract\+::\+Neural\+Tract}}
 \subsubsection[{\texorpdfstring{unit}{unit}}]{\setlength{\rightskip}{0pt plus 5cm}Neural\+Tract.\+Neural\+Tract.\+unit}\hypertarget{class_neural_tract_1_1_neural_tract_a95db7d0720ec12f091758968476ba240}{}\label{class_neural_tract_1_1_neural_tract_a95db7d0720ec12f091758968476ba240}
 
 
-Definition at line 31 of file Neural\+Tract.\+py.
+List of Neural\+T\+Ract\+Unit objects. 
+
+
+
+Definition at line 35 of file Neural\+Tract.\+py.
 
 
 

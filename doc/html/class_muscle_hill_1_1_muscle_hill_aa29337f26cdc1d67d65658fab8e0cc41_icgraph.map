@@ -1,0 +1,5 @@
+<map id="MuscleHill.MuscleHill.computeAcceleration" name="MuscleHill.MuscleHill.computeAcceleration">
+<area shape="rect" id="node2" href="$class_muscle_hill_1_1_muscle_hill.html#afbcb208bf18110d5fe1d498db8b6f95c" title="MuscleHill.MuscleHill.dLdt" alt="" coords="256,13,433,39"/>
+<area shape="rect" id="node3" href="$class_muscle_hill_1_1_muscle_hill.html#a71ea33f1c30bdbe7cd795426bf097e78" title="MuscleHill.MuscleHill.atualize\lLenghtsAndVelocity" alt="" coords="481,5,679,47"/>
+<area shape="rect" id="node4" href="$class_muscle_hill_1_1_muscle_hill.html#aa07ad41150b7f082dc49226650e705cb" title="Compute the muscle force when no muscle dynamics (Hill model) is used. " alt="" coords="727,5,924,47"/>
+</map>

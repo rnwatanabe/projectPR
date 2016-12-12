@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -119,9 +120,9 @@ $(document).ready(function(){initNavTree('class_channel_conductance_1_1_channel_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a25b3a53d3d4a2926f61e1bd978e375f7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_conductance_1_1_channel_conductance.html#a25b3a53d3d4a2926f61e1bd978e375f7">__init__</a> (self, <a class="el" href="class_channel_conductance_1_1_channel_conductance.html#a7bf3e28aab2160014358cde589f2ec39">kind</a>, conf, compArea, pool, index)</td></tr>
-<tr class="memdesc:a25b3a53d3d4a2926f61e1bd978e375f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a25b3a53d3d4a2926f61e1bd978e375f7">More...</a><br /></td></tr>
-<tr class="separator:a25b3a53d3d4a2926f61e1bd978e375f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc92870743a2af7d3839857183ca3bb6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_conductance_1_1_channel_conductance.html#acc92870743a2af7d3839857183ca3bb6">__init__</a> (self, <a class="el" href="class_channel_conductance_1_1_channel_conductance.html#a7bf3e28aab2160014358cde589f2ec39">kind</a>, conf, compArea, pool, neuronKind, index)</td></tr>
+<tr class="memdesc:acc92870743a2af7d3839857183ca3bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#acc92870743a2af7d3839857183ca3bb6">More...</a><br /></td></tr>
+<tr class="separator:acc92870743a2af7d3839857183ca3bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af012b0816d74d6bb6a923ca79dc0a7ba"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_conductance_1_1_channel_conductance.html#af012b0816d74d6bb6a923ca79dc0a7ba">computeCurrent</a> (self, t, V_mV)</td></tr>
 <tr class="memdesc:af012b0816d74d6bb6a923ca79dc0a7ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the current genrated by the ionic Channel.  <a href="#af012b0816d74d6bb6a923ca79dc0a7ba">More...</a><br /></td></tr>
 <tr class="separator:af012b0816d74d6bb6a923ca79dc0a7ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,7 +165,7 @@ Public Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00016">16</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a25b3a53d3d4a2926f61e1bd978e375f7"></a>
+<a class="anchor" id="acc92870743a2af7d3839857183ca3bb6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -197,6 +198,12 @@ Public Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>pool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>neuronKind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -268,7 +275,7 @@ Public Attributes</h2></td></tr>
 </p>
 <p> where <img class="formulaInl" alt="$E_0$" src="form_6.png"/> is the equilibrium potential of the compartment, V is the membrane potential and <img class="formulaInl" alt="$n$" src="form_7.png"/> is the state of a fast potassium channel.. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00115">115</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00114">114</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -314,7 +321,7 @@ Public Attributes</h2></td></tr>
 </p>
 <p> where <img class="formulaInl" alt="$E_0$" src="form_6.png"/> is the equilibrium potential of the compartment, <img class="formulaInl" alt="$V$" src="form_9.png"/> is the membrane potential and <img class="formulaInl" alt="$q$" src="form_10.png"/> is the state of a slow potassium channel. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00138">138</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00137">137</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -355,7 +362,7 @@ Public Attributes</h2></td></tr>
 </p>
 <p> where <img class="formulaInl" alt="$E_0$" src="form_6.png"/> is the equilibrium potential of the compartment, V is the membrane potential and <img class="formulaInl" alt="$m$" src="form_12.png"/> and <img class="formulaInl" alt="$h$" src="form_13.png"/> are the states of a sodium channel.. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00159">159</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00158">158</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -402,7 +409,7 @@ Public Attributes</h2></td></tr>
 </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00091">91</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00090">90</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -419,7 +426,7 @@ Public Attributes</h2></td></tr>
 
 <p>Function that computes the conductance dynamics. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00060">60</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00059">59</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -500,7 +507,7 @@ Public Attributes</h2></td></tr>
 
 <p>Integer with the number of states in the ionic channel. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00074">74</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00073">73</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -517,7 +524,7 @@ Public Attributes</h2></td></tr>
 <p>String with type of dynamics of the states. </p>
 <p>For now it accepts the string pulse. </p>
 
-<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00052">52</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
+<p>Definition at line <a class="el" href="_channel_conductance_8py_source.html#l00051">51</a> of file <a class="el" href="_channel_conductance_8py_source.html">ChannelConductance.py</a>.</p>
 
 </div>
 </div>
@@ -530,7 +537,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_channel_conductance.html">ChannelConductance</a></li><li class="navelem"><a class="el" href="class_channel_conductance_1_1_channel_conductance.html">ChannelConductance</a></li>
-    <li class="footer">Generated on Mon Jun 27 2016 18:05:12 for PyReMoto by
+    <li class="footer">Generated on Mon Dec 12 2016 13:43:18 for PyReMoto by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

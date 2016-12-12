@@ -1,0 +1,68 @@
+\hypertarget{namespace_interneuron}{}\section{Interneuron Namespace Reference}
+\label{namespace_interneuron}\index{Interneuron@{Interneuron}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_interneuron_1_1_interneuron}{Interneuron}
+\begin{DoxyCompactList}\small\item\em Class that implements a motor unit model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespace_interneuron_a3c7f009c4357310ae71cedad2abfd716}{runge\+\_\+kutta} (derivative\+Function, t, x, time\+Step, time\+Step\+By\+Two, time\+Step\+By\+Six)
+\begin{DoxyCompactList}\small\item\em Function to implement the fourth order Runge-\/\+Kutta Method to solve numerically a differential equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{Interneuron@{Interneuron}!runge\+\_\+kutta@{runge\+\_\+kutta}}
+\index{runge\+\_\+kutta@{runge\+\_\+kutta}!Interneuron@{Interneuron}}
+\subsubsection[{\texorpdfstring{runge\+\_\+kutta(derivative\+Function, t, x, time\+Step, time\+Step\+By\+Two, time\+Step\+By\+Six)}{runge_kutta(derivativeFunction, t, x, timeStep, timeStepByTwo, timeStepBySix)}}]{\setlength{\rightskip}{0pt plus 5cm}def Interneuron.\+runge\+\_\+kutta (
+\begin{DoxyParamCaption}
+\item[{}]{derivative\+Function, }
+\item[{}]{t, }
+\item[{}]{x, }
+\item[{}]{time\+Step, }
+\item[{}]{time\+Step\+By\+Two, }
+\item[{}]{time\+Step\+By\+Six}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_interneuron_a3c7f009c4357310ae71cedad2abfd716}{}\label{namespace_interneuron_a3c7f009c4357310ae71cedad2abfd716}
+
+
+Function to implement the fourth order Runge-\/\+Kutta Method to solve numerically a differential equation. 
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries derivative\+Function}\+: function that corresponds to the derivative of the differential equation.
+\item {\bfseries t}\+: current instant.
+\item {\bfseries x}\+: current state value.
+\item {\bfseries time\+Step}\+: time step of the solution of the differential equation, in the same unit of t.
+\item {\bfseries time\+Step\+By\+Two}\+: time\+Step divided by two, for computational efficiency.
+\item {\bfseries time\+Step\+By\+Six}\+: time\+Step divided by six, for computational efficiency.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+This method is intended to solve the following differential equation\+:
+
+\begin{equation} \frac{dx(t)}{dt} = f(t, x(t)) \end{equation} First, four derivatives are computed\+:
+
+\begin{align} k_1 &= f(t,x(t))\\ k_2 &= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_1)\\ k_3 &= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_2)\\ k_4 &= f(t+\Delta t, x(t) + \Delta t.k_3) \end{align} where $\Delta t$ is the time step of the numerical solution of the differential equation.
+
+Then the value of $x(t+\Delta t)$ is computed with\+:
+
+\begin{equation} x(t+\Delta t) = x(t) + \frac{\Delta t}{6}(k_1 + 2k_2 + 2k_3+k_4) \end{equation} 
+
+Definition at line 51 of file Interneuron.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_interneuron_a3c7f009c4357310ae71cedad2abfd716_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,7 @@
+<map id="Interneuron.Interneuron.atualizeInterneuron" name="Interneuron.Interneuron.atualizeInterneuron">
+<area shape="rect" id="node2" href="$class_interneuron_1_1_interneuron.html#aadb0a11834ebf0b9fb0fa05788da23d1" title="Atualize all neural compartments. " alt="" coords="259,49,464,90"/>
+<area shape="rect" id="node3" href="$namespace_interneuron.html#a3c7f009c4357310ae71cedad2abfd716" title="Function to implement the fourth order Runge&#45;Kutta Method to solve numerically a differential equatio..." alt="" coords="526,5,685,32"/>
+<area shape="rect" id="node4" href="$class_interneuron_1_1_interneuron.html#a5eff07c93609a66a19f8e7426204be02" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="512,56,699,83"/>
+<area shape="rect" id="node5" href="$class_interneuron_1_1_interneuron.html#affb57bbf0d7eec160855d0fce26f83d5" title="When the soma potential is above the threshold a spike is added to the soma. " alt="" coords="515,107,696,149"/>
+<area shape="rect" id="node6" href="$class_interneuron_1_1_interneuron.html#a776242a1aa83a264adba968651de0226" title="Interneuron.Interneuron.transmit\lSpikes" alt="" coords="747,107,953,149"/>
+</map>
