@@ -1,7 +1,21 @@
 '''
-Created on Jul, 28 2015
+    Neuromuscular simulator in Python.
+    Copyright (C) 2016  Renato Naville Watanabe
 
-@author: root
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    Contact: renato.watanabe@usp.br
 '''
 
 import numpy as np
@@ -11,18 +25,11 @@ from MuscleNoHill import MuscleNoHill
 from MuscleHill import MuscleHill
 from scipy.sparse import lil_matrix
 
- 
-
-
-
-
-
 class MotorUnitPool(object):
     '''
     Class that implements a motor unit pool. Encompasses a set of motor
     units that controls a single  muscle.
     '''
-
 
     def __init__(self, conf, pool):
         '''
@@ -41,9 +48,9 @@ class MotorUnitPool(object):
         self.conf = conf
         ## String with Motor unit pool to which the motor unit belongs.
         self.pool = pool
-        MUnumber_S = int(conf.parameterSet('MUnumber_S_' + pool, pool, 0))
-        MUnumber_FR = int(conf.parameterSet('MUnumber_FR_' + pool, pool, 0))
-        MUnumber_FF = int(conf.parameterSet('MUnumber_FF_' + pool, pool, 0))
+        MUnumber_S = int(conf.parameterSet('MUnumber_' + pool + '-S', pool, 0))
+        MUnumber_FR = int(conf.parameterSet('MUnumber_' + pool + '-FR', pool, 0))
+        MUnumber_FF = int(conf.parameterSet('MUnumber_' + pool + '-FF', pool, 0))
         ## Number of motor units.
         self.MUnumber = MUnumber_S + MUnumber_FR + MUnumber_FF
         

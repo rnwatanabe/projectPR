@@ -1,9 +1,22 @@
 '''
-Created on Oct 6, 2015
+    Neuromuscular simulator in Python.
+    Copyright (C) 2016  Renato Naville Watanabe
 
-@author: root
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    Contact: renato.watanabe@usp.br
 '''
-
 
 
 
@@ -302,7 +315,7 @@ class MotorUnit(object):
 
         '''
         
-        np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.conf.timeStep_ms, self.conf.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -16.0, 120.0, self.v_mV)
+        np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.conf.timeStep_ms, self.conf.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -30.0, 120.0, self.v_mV)
         if (self.v_mV[self.somaIndex] > self.threshold_mV and t-self.tSomaSpike > self.MNRefPer_ms): self.addSomaSpike(t)    
      
        
@@ -317,7 +330,7 @@ class MotorUnit(object):
             compartments of the motor unit.
         
         \f{equation}{
-            \frac{dV}{dt} = (I_{active} + GV+ I_{inj})C_inv   
+            \frac{dV}{dt} = (I_{active} + GV+ I_{inj} + I_{eq})C_inv   
         }
         where all the variables are vectors with the number of elements equal
         to the number of compartments and \f$G\f$ is the conductance matrix built

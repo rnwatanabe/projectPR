@@ -27,7 +27,7 @@ def simulator():
 
     pools = []
     pools.append(MotorUnitPool(conf, 'SOL'))
-    pools.append(NeuralTract(conf, 'CM_ext'))
+    pools.append(NeuralTract(conf, 'CMExt'))
 
     #pools.append(InterneuronPool(conf, 'RC'))
 
@@ -110,7 +110,8 @@ if __name__ == '__main__':
 
     #cProfile.run('simulator()', sort = 'calls')
     np.__config__.show()
-    for i in xrange(0, 10):
-        simulator()
+    #for i in xrange(0, 10):
+    simulator()
+
 
     plt.show()

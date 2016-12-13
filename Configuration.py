@@ -1,4 +1,24 @@
 '''
+    Neuromuscular simulator in Python.
+    Copyright (C) 2016  Renato Naville Watanabe
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    Contact: renato.watanabe@usp.br
+'''
+
+'''
 \mainpage ReMoto in Python
 
 This program is a neuronal simulation system, intended for studying spinal cord neuronal 
@@ -90,11 +110,11 @@ class Configuration(object):
         
         if pool == 'SOL' or pool == 'MG' or pool == 'LG' or pool == 'TA':
             for i in xrange(0, len(self.confArray)):
-                if self.confArray[i][0] == 'MUnumber_S_' + pool:
+                if self.confArray[i][0] == 'MUnumber_' + pool + '-S':
                     MUnumber_S = int(self.confArray[i][1])
-                elif self.confArray[i][0] == 'MUnumber_FR_' + pool:
+                elif self.confArray[i][0] == 'MUnumber_' + pool + '-FR':
                     MUnumber_FR = int(self.confArray[i][1])
-                elif self.confArray[i][0] == 'MUnumber_FF_' + pool:
+                elif self.confArray[i][0] == 'MUnumber_' + pool + '-FF':
                     MUnumber_FF = int(self.confArray[i][1])
             Nnumber = MUnumber_S + MUnumber_FR + MUnumber_FF 
                     

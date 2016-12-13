@@ -1,14 +1,28 @@
 '''
-Class that uses the formalism of Destexhe(1997) to compute the Hodgkin-Huxley states of an ionic channel.
+    Neuromuscular simulator in Python.
+    Copyright (C) 2016  Renato Naville Watanabe
 
-Author - Renato Naville Watanabe
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    Contact: renato.watanabe@usp.br
 '''
-
 
 
 import math
 from numba import jit
 import numpy as np
+
 
 @jit
 def compValOn(v0, alpha, beta, t, t0):

@@ -1,17 +1,35 @@
 '''
-Created on Oct 23, 2015
+    Neuromuscular simulator in Python.
+    Copyright (C) 2016  Renato Naville Watanabe
 
-@author: root
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    Contact: renato.watanabe@usp.br
 '''
+
+
 import numpy as np
 import numpy.random
 import math
+from numba import jit
 
 
 
 
 
 
+@jit
 def  gammaPoint(GammaOrder, GammaOrderInv):
     '''
     Generates a number according to a Gamma Distribution with an integer order **GammaOrder**.
@@ -36,7 +54,7 @@ def  gammaPoint(GammaOrder, GammaOrderInv):
     '''
     aux = np.prod(numpy.random.uniform(0.0, 1.0, size=GammaOrder))
 
-    return - GammaOrderInv * math.log(aux)
+    return - GammaOrderInv * np.log(aux)
 
 class PointProcessGenerator(object):
     '''
