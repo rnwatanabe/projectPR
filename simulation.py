@@ -45,8 +45,8 @@ def simulator():
         #ankle.atualizeAnkle(t[i], 0)
         pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
-        dendV[i] = pools[0].unit[100].v_mV[0]
-        somaV[i] = pools[0].unit[100].v_mV[1] 
+        dendV[i] = pools[0].unit[2].v_mV[0]
+        somaV[i] = pools[0].unit[2].v_mV[1] 
         #pools[3].atualizePool(t[i])
         #pools[2].atualizeInterneuronPool(t[i])
     toc = time.clock()
@@ -104,10 +104,13 @@ def simulator():
     plt.plot(t, ankle.ankleAngle_rad, '-')
     '''
 
-    plt.show()
+    
     
 if __name__ == '__main__':
 
     #cProfile.run('simulator()', sort = 'calls')
     np.__config__.show()
-    simulator()
+    for i in xrange(0, 10):
+        simulator()
+
+    plt.show()

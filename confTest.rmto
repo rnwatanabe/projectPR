@@ -1,8 +1,9 @@
-MUnumber_S_SOL,800,
+MUnumber_S_SOL,10,
 MUnumber_FR_SOL,0,
 MUnumber_FF_SOL,0,
 Number_RC,350,
 Number_CM_ext,400,
+NumberAxonNodes,0,
 timeStep,0.05,
 simDuration,100,
 nerveLength_PTN,0.8,
@@ -107,9 +108,9 @@ NoiseGammaOrder_RC,10,
 NoiseTarget_RC,FR,
 NoiseFunction_RC,7 + 0*t,
 %Equilibrium Potential
-EqPot_Kf,-10,
-EqPot_Ks,-10,
-EqPot_Na,120,
+EqPot_Kf@soma,-10,
+EqPot_Ks@soma,-10,
+EqPot_Na@soma,120,
 % Conductance density
 %% SOL
 gmax_Na_SOL_S,30000,
@@ -147,30 +148,38 @@ cytR,70,
 membCapac,1,
 %% SOL
 %%% S
-position_SOL,0,18
-threshold_S_SOL,12.35,16.45
-d_dendrite_S_SOL,41.5,62.5
-d_soma_S_SOL,77.5,82.5
-l_dendrite_S_SOL,5519,6789
-l_soma_S_SOL,77.5,82.5
-res_dendrite_S_SOL,14350,10650
-res_soma_S_SOL,1150,1050
-axonCondVel_S_SOL,44,51
-twitchTimePeak_S_SOL,170.0,132.5
-twitchPeak_S_SOL,0.03,1.9
-bSatSOCDS_S_SOL,0.7,0.5
-bSatSOCDS_FR_SOL,0.5,0.3
-bSatSOCDS_FF_SOL,0.3,0.23
-twTetSOCDS_S_SOL,2.97,4.08
-twTetSOCDS_FR_SOL,4.08,6.71
-twTetSOCDS_FF_SOL,6.71,8.73
+position_SOL-,0,18
+threshold_SOL-S,12.35,16.45
+d@dendrite_SOL-S,41.5,62.5
+d@soma_SOL-S,77.5,82.5
+d@node_SOL-S,5,5
+d@internode_SOL-S,12.5,12.5
+l@dendrite_SOL-S,5519,6789
+l@soma_SOL-S,77.5,82.5
+l@node_SOL-S,1.5,1.5
+l@internode_SOL-S,1400,1400
+res@dendrite_SOL-S,14350,10650
+res@soma_SOL-S,1150,1050
+res@node_SOL-S,120,120
+res@node_SOL-S,280000,280000
+EqPot@dendrite,0,
+EqPot@soma,0,
+axonCondVel_SOL-S,44,51
+twitchTimePeak_SOL-S,170.0,132.5
+twitchPeak_SOL-S,0.03,1.9
+bSatSOCDS_SOL-S,0.7,0.5
+bSatSOCDS_SOL-FR,0.5,0.3
+bSatSOCDS_SOL-FF,0.3,0.23
+twTetSOCDS_SOL-S,2.97,4.08
+twTetSOCDS_SOL-FR,4.08,6.71
+twTetSOCDS_SOL-FF,6.71,8.73
 % Interneurons
 %% RC
-position_RC,0,18
-threshold_RC,5,15
-d_soma_RC,25,25
-l_soma_RC,242,242
-res_soma_RC,760,760
+position_RC-,0,18
+threshold_RC-,5,15
+d@soma_RC-,25,25
+l@soma_RC-,242,242
+res@soma_RC-,760,760
 % Muscles
 %% SOL
 Fmax_SOL,3586,

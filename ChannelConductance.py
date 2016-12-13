@@ -48,7 +48,7 @@ class ChannelConductance(object):
         self.condState = []
         
         ## Equilibrium Potential of the ionic channel, mV.
-        self.EqPot_mV = float(conf.parameterSet('EqPot_' + kind, pool, index))
+        self.EqPot_mV = float(conf.parameterSet('EqPot_' + kind + '@' + compKind, pool, index))
         ## Maximal conductance, in \f$\mu\f$S, of the ionic channel. 
         self.gmax_muS = compArea * float(conf.parameterSet('gmax_' + kind + '_' + pool + '_' + neuronKind, pool, index))
                         

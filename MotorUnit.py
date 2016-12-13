@@ -27,7 +27,7 @@ def calcGCoupling(cytR, lComp1, lComp2, dComp1, dComp2):
          + **dComp1, dComp2**: diameter of the compartments in \f$\mu\f$m.
 
     - Output:
-         + coupling conductance in MS.
+         + coupling conductance in \f$\mu\f$S.
 
     The coupling conductance between compartment 1 and 2 is
     computed by the following equation:
@@ -35,7 +35,7 @@ def calcGCoupling(cytR, lComp1, lComp2, dComp1, dComp2):
     \f{equation}{
         g_c = \frac{2.10^2}{\frac{R_{cyt}l_1}{\pi r_1^2}+\frac{R_{cyt}l_2}{\pi r_2^2}}
     \f}
-    where \f$g_c\f$ is the coupling conductance [MS], \f$R_{cyt}\f$ is the
+    where \f$g_c\f$ is the coupling conductance [\f$\mu\f$S], \f$R_{cyt}\f$ is the
     cytoplasmatic resistivity [\f$\Omega\f$.cm], \f$l_1\f$ and \f$l_2\f$
     are the lengths [\f$\mu\f$m] of compartments 1 and 2, respectively and
     \f$r_1\f$ and \f$r_2\f$ are the radius [\f$\mu\f$m] of compartments 1 and
@@ -148,7 +148,7 @@ class MotorUnit(object):
         - Inputs:
             + **conf**: Configuration object with the simulation parameters.
 
-cyto            + **pool**: string with Motor unit pool to which the motor
+            + **pool**: string with Motor unit pool to which the motor
             unit belongs.
 
             + **index**: integer corresponding to the motor unit order in
@@ -171,7 +171,17 @@ cyto            + **pool**: string with Motor unit pool to which the motor
         ## The instant of the last spike of the Motor unit
         ## at the Soma compartment.
         self.tSomaSpike = float("-inf")
+
+        NumberOfAxonNodes = int(conf.parameterSet('NumberAxonNodes', pool, index))
+        
+
         compartmentsList = ['dendrite', 'soma']
+        for i in xrange(0, NumberOfAxonNodes):
+              compartmentsList.append('internode')
+              compartmentsList.append('node')
+              compartmentsList.append('internode')
+
+
         ## Vector with the instants of spikes at the soma.
         self.somaSpikeTrain = []
         ## Integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle).
@@ -192,25 +202,27 @@ cyto            + **pool**: string with Motor unit pool to which the motor
         self.v_mV = np.zeros((self.compNumber), dtype = np.float64)
         
         
-        gCoupling_MS = np.zeros_like(self.v_mV, dtype = 'd')
+        gCoupling_muS = np.zeros_like(self.v_mV, dtype = 'd')
         
-        gLeak = np.zeros_like(self.v_mV, dtype = 'd')        
-        for i in self.compartment[0:-1]: gCoupling_MS[self.compartment.index(i)] = calcGCoupling(float(conf.parameterSet('cytR',pool, index)), 
+            
+        for i in self.compartment[0:-1]: gCoupling_muS[self.compartment.index(i)] = calcGCoupling(float(conf.parameterSet('cytR',pool, index)), 
                                                                                                  self.compartment[self.compartment.index(i)].length_mum,
                                                                                                  self.compartment[self.compartment.index(i) + 1].length_mum,
                                                                                                  self.compartment[self.compartment.index(i)].diameter_mum,
                                                                                                  self.compartment[self.compartment.index(i) + 1].diameter_mum)
         
         
-        capacitance_nF = np.zeros_like(self.v_mV, dtype = 'd')  
+        gLeak = np.zeros_like(self.v_mV, dtype = 'd')    
+        capacitance_nF = np.zeros_like(self.v_mV, dtype = 'd')
+        EqPot = np.zeros_like(self.v_mV, dtype = 'd')    
         
         for i in self.compartment:                                                              
             capacitance_nF[self.compartment.index(i)] = i.capacitance_nF
-            gLeak[self.compartment.index(i)] = i.gLeak
-            
+            gLeak[self.compartment.index(i)] = i.gLeak_muS
+            EqPot[self.compartment.index(i)] = i.EqPot_mV
 
         ## Vector with  the inverse of the capacitance of all compartments. 
-        self.capacitanceInv = 1 / capacitance_nF
+        self.capacitanceInv = 1.0 / capacitance_nF
 
         ## Vector with current, in nA,  of each compartment coming from other elements of the model. For example 
         ## from ionic channels and synapses.       
@@ -219,7 +231,7 @@ cyto            + **pool**: string with Motor unit pool to which the motor
         self.iInjected = np.zeros_like(self.v_mV, dtype = 'd')
         #self.iInjected = np.array([0, 10.0])
         
-        GC = compGCouplingMatrix(gCoupling_MS)
+        GC = compGCouplingMatrix(gCoupling_muS)
         
         GL = -np.diag(gLeak)
         
@@ -227,6 +239,7 @@ cyto            + **pool**: string with Motor unit pool to which the motor
         ## results in the passive currents of each compartment.
         self.G = np.float64(GC + GL)
 
+        self.EqCurrent_nA = np.dot(-GL, EqPot) 
 
         ## index of the soma compartment.
         self.somaIndex = compartmentsList.index('soma')
@@ -313,7 +326,7 @@ cyto            + **pool**: string with Motor unit pool to which the motor
         for compartment in xrange(0, self.compNumber):  
             self.iIonic.itemset(compartment, self.compartment[compartment].computeCurrent(t, V.item(compartment)))
               
-        return (self.iIonic + np.dot(self.G, V)  + self.iInjected) * self.capacitanceInv
+        return (self.iIonic + np.dot(self.G, V)  + self.iInjected + self.EqCurrent_nA) * self.capacitanceInv
     
     
     def addSomaSpike(self, t):

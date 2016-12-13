@@ -112,14 +112,14 @@ class Configuration(object):
                 if (self.confArray[0][2] == ''):                       
                     return self.confArray[i][1]
             else:
-                if self.confArray[i][0] == paramTag + '_S_' + pool:
+                if self.confArray[i][0] == paramTag + '_' + pool + '-S':
                     paramVec_S = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_S)
                     paramVec = paramVec_S
-                elif self.confArray[i][0] == paramTag + '_FR_' + pool:
+                elif self.confArray[i][0] == paramTag + '_' + pool + '-FR':
                     paramVec_FR = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FR)
-                elif self.confArray[i][0] == paramTag + '_FF_' + pool:
+                elif self.confArray[i][0] == paramTag + '_' + pool + '-FF':
                     paramVec_FF = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FF)
-                elif self.confArray[i][0] == paramTag + '_' + pool:
+                elif self.confArray[i][0] == paramTag + '_' + pool + '-':
                     paramVec = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), Nnumber)                    
         
 

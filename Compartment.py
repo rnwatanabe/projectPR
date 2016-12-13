@@ -17,7 +17,7 @@ def calcGLeak(area, specificRes):
         in \f$\Omega.cm^2\f$.
 
     - Output:
-        + Leak conductance in MS.
+        + Leak conductance in \f$\mu\f$S.
 
     It is compute according to the following formula:
 
@@ -26,7 +26,7 @@ def calcGLeak(area, specificRes):
     \f}
     where \f$A\f$ is the compartment area [cm\f$^2\f$], \f$\rho\f$ is
     the specific resistance [\f$\Omega.cm^2\f$] and \f$g\f$ is the
-    compartment conductance [MS].
+    compartment conductance [\muS].
     '''
     return (1e6 * area) / specificRes
 
@@ -77,16 +77,19 @@ class Compartment(object):
         self.index = index
         
         ## Length of the compartment, in \f$\mu\f$m.
-        self.length_mum = float(conf.parameterSet('l_' + kind, pool, index))
+        self.length_mum = float(conf.parameterSet('l@' + kind, pool, index))
         ## Diameter of the compartment, in \f$\mu\f$m.
-        self.diameter_mum = float(conf.parameterSet('d_' + kind, pool, index))
+        self.diameter_mum = float(conf.parameterSet('d@' + kind, pool, index))
         area_cm2 = float(self.length_mum * math.pi * self.diameter_mum * 1e-8)
-        specifRes_Ohmcm2 = float(conf.parameterSet('res_' + kind, pool, index))
+        specifRes_Ohmcm2 = float(conf.parameterSet('res@' + kind, pool, index))
         ## Capacitance of the compartment, in nF.
-        self.capacitance_nF = float(float(conf.parameterSet('membCapac', pool, index)) * area_cm2 * 1e3)
+        self.capacitance_nF = float(conf.parameterSet('membCapac', pool, index)) * area_cm2 * 1e3
         
-        ## Leak conductance of the compartment, in MS.
-        self.gLeak = calcGLeak(area_cm2, specifRes_Ohmcm2)
+        ## Equilibrium potential, in mV.
+        self.EqPot_mV = float(conf.parameterSet('EqPot@' + self.kind, pool, index))
+
+        ## Leak conductance of the compartment, in \f$\mu\f$S.
+        self.gLeak_muS = calcGLeak(area_cm2, specifRes_Ohmcm2)
         
 
         if (kind == 'soma'):
