@@ -7,55 +7,64 @@ StateType,pulse,
 % Inputs
 %Stimulus
 %Equilibrium Potential
-EqPot_Kf,-10,
-EqPot_Ks,-10,
-EqPot_Na,120,
+EqPot_Kf@soma,-10,
+EqPot_Ks@soma,-10,
+EqPot_Na@soma,120,
 % Conductance density
 %% RC
-gmax_Na_RC_,30000,
-gmax_Kf_RC_,1000,
-gmax_Ks_RC_,4000,
+gmax_Na:RC-@soma,30000,
+gmax_Kf:RC-@soma,1000,
+gmax_Ks:RC-@soma,4000,
 %States
 PulseDur_m,0.6,
 PulseDur_h,0.6,
 PulseDur_n,0.6,
 PulseDur_q,0.6,
 %% RC
-alpha_m_RC_,22,
-alpha_h_RC_,0.5,
-alpha_n_RC_,1.5,
-alpha_q_RC_,1.5,
-beta_m_RC_,13,
-beta_h_RC_,4,
-beta_n_RC_,0.1,
-beta_q_RC_,0.07,
+alpha_m:RC-@soma,22,
+alpha_h:RC-@soma,0.5,
+alpha_n:RC-@soma,1.5,
+alpha_q:RC-@soma,1.5,
+beta_m:RC-@soma,13,
+beta_h:RC-@soma,4,
+beta_n:RC-@soma,0.1,
+beta_q:RC-@soma,0.07,
 % Neurons
 cytR,70,
 membCapac,1,
 % Interneurons
 %% RC
-position_RC,0,18
-threshold_RC,5,15
-d_soma_RC,25,25
-l_soma_RC,242,242
-res_soma_RC,760,760
+position:RC-,0,18
+threshold:RC-,5,15
+d@soma:RC-,25,25
+l@soma:RC-,242,242
+res@soma:RC-,760,760
+EqPot@dendrite,0,
+EqPot@soma,0,
 %Synapses
 %% RC
-EqPotSyn_RC-|excitatory,70.0,
-EqPotSyn_RC-|inhibitory,-16.0,
-alphaSyn_RC-|excitatory,0.5,
-betaSyn_RC-|excitatory,0.07,
-alphaSyn_RC-|inhibitory,0.5,
-betaSyn_RC-|inhibitory,1.2,
-TmaxSyn_RC-|excitatory,1.0,
-TmaxSyn_RC-|inhibitory,1.0,
-tPeakSyn_RC-|excitatory,3,
-tPeakSyn_RC-|inhibitory,0.4,
-Con_Noise>RC-@soma|excitatory,100,
-gmax_Noise>RC-@soma|excitatory,0.015,
-delay_Noise>RC-@soma|excitatory,0.3,
-dyn_Noise>RC-@soma|excitatory,None,
-dec_Noise>RC-@soma|excitatory,inf,
+EqPotSyn:RC-|excitatory,70.0,
+EqPotSyn:RC-|inhibitory,-16.0,
+alphaSyn:RC-|excitatory,0.5,
+betaSyn:RC-|excitatory,0.07,
+alphaSyn:RC-|inhibitory,0.5,
+betaSyn:RC-|inhibitory,1.2,
+TmaxSyn:RC-|excitatory,1.0,
+TmaxSyn:RC-|inhibitory,1.0,
+tPeakSyn:RC-|excitatory,3,
+tPeakSyn:RC-|inhibitory,0.4,
+Con:SOL-S>RC-@soma|excitatory,6,
+gmax:SOL-S>RC-@soma|excitatory,0.15,
+delay:SOL-S>RC-@soma|excitatory,0.3,
+dyn:SOL-S>RC-@soma|excitatory,Depressing,
+dec:SOL-S>RC-@soma|excitatory,0.01,
+var:SOL-S>RC-@soma|excitatory,0.5,
+tau:SOL-S>RC-@soma|excitatory,200,
+Con:Noise>RC-@soma|excitatory,100,
+gmax:Noise>RC-@soma|excitatory,0.015,
+delay:Noise>RC-@soma|excitatory,0.3,
+dyn:Noise>RC-@soma|excitatory,None,
+dec:Noise>RC-@soma|excitatory,inf,
 NoiseGammaOrder_RC,10,
 NoiseTarget_RC,FR,
 NoiseFunction_RC,7 + 0*t,

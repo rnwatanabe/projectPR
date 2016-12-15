@@ -44,6 +44,28 @@ def compCondKs(V_mV, gmax, state, EqPot):
         '''
         return gmax * (state[0].value ** 2) * (EqPot - V_mV)
 
+def compCondKsaxon(V_mV, gmax, state, EqPot):
+        '''
+        Computes the conductance of a slow potassium Channel. 
+        This function is assigned as self.compCond to a Ks Channel in the axons
+        at the class constructor.
+        
+        - Input:
+            + **V_mV**: membrane potential of the compartment in mV.
+        
+        - Output:
+            + Conductance in \f$\mu\f$S.
+        
+        It is computed as:
+
+        \f{equation}{
+            g = g_{max}s(E_0-V)
+        \f}
+        where \f$E_0\f$ is the equilibrium potential of the compartment, \f$V\f$ is the membrane potential
+        and \f$q\f$ is the state of a slow potassium channel.
+        '''
+        return gmax * state[0].value * (EqPot - V_mV)
+
 def compCondNa(V_mV, gmax, state, EqPot):
         '''
         Computes the conductance of a Na Channel. This function is assigned as self.compCond to a Na Channel at the class constructor.
@@ -62,6 +84,25 @@ def compCondNa(V_mV, gmax, state, EqPot):
         and \f$m\f$ and \f$h\f$ are the states of a sodium channel..
         '''
         return gmax * (state[0].value ** 3) * state[1].value * (EqPot - V_mV)
+
+def compCondNap(V_mV, gmax, state, EqPot):
+        '''
+        Computes the conductance of a Na persistent Channel. This function is assigned as self.compCond to a Na Channel at the class constructor.
+        -Input:
+            + **V_mV**: membrane potential of the compartment in mV.
+        
+        - Output:
+            + Conductance in \f$\mu\f$S.
+
+        It is computed as:
+
+        \f{equation}{
+            g = g_{max}m_p^3(E_0-V)
+        \f}
+        where \f$E_0\f$ is the equilibrium potential of the compartment, V is the membrane potential
+        and \f$m\f$ and \f$h\f$ are the states of a persistent sodium channel.
+        '''
+        return gmax * (state[0].value ** 3) * (EqPot - V_mV)
 
 def compCondKf(V_mV, gmax, state, EqPot):
         '''
@@ -83,6 +124,28 @@ def compCondKf(V_mV, gmax, state, EqPot):
         and \f$n\f$ is the state of a fast potassium channel..
         '''
         return gmax * (state[0].value ** 4) * (EqPot - V_mV)
+
+def compCondH(V_mV, gmax, state, EqPot):
+        '''
+        Computes the conductance of a HCN Channel. 
+        This function is assigned as self.compCond to a HCF Channel at 
+        the class constructor.
+        
+        - Input:
+            + **V_mV**: membrane potential of the compartment in mV.
+        
+        Output:
+            + Conductance in \f$\mu\f$S.
+
+        It is computed as:
+
+        \f{equation}{
+            g = g_{max}q_h(E_0-V)
+        \f}
+        where \f$E_0\f$ is the equilibrium potential of the compartment, V is the membrane potential
+        and \f$n\f$ is the state of an HCN channel..
+        '''
+        return gmax * state[0].value * (EqPot - V_mV)
 
 class ChannelConductance(object):
     '''
@@ -126,34 +189,37 @@ class ChannelConductance(object):
         ## Equilibrium Potential of the ionic channel, mV.
         self.EqPot_mV = float(conf.parameterSet('EqPot_' + kind + '@' + compKind, pool, index))
         ## Maximal conductance, in \f$\mu\f$S, of the ionic channel. 
-        self.gmax_muS = compArea * float(conf.parameterSet('gmax_' + kind + '_' + pool + '-' + neuronKind + '@' + compKind, pool, index))
+        self.gmax_muS = compArea * float(conf.parameterSet('gmax_' + kind + ':' + pool + '-' + neuronKind + '@' + compKind, pool, index))
                         
         ## String with type of dynamics of the states. For now it accepts the string pulse.
         self.stateType = conf.parameterSet('StateType', pool, index)
         
         if self.stateType == 'pulse':
             ConductanceState = PulseConductanceState
-           
-        if (self.kind == 'Kf'):
+        
+        if self.kind == 'Kf':
             self.condState.append(ConductanceState('n', conf, pool, neuronKind, compKind, index))
             ## Function that computes the conductance dynamics.
             self.compCond = compCondKf
-        if (self.kind == 'Ks'):
+        if self.kind == 'Ks':
             self.condState.append(ConductanceState('q', conf, pool, neuronKind, compKind, index))
             self.compCond = compCondKs
-        if (self.kind == 'Na'):
+        if self.kind == 'Na':
             self.condState.append(ConductanceState('m', conf, pool, neuronKind, compKind, index))
             self.condState.append(ConductanceState('h', conf, pool, neuronKind, compKind, index))
             self.compCond = compCondNa
-        if (self.kind == 'Ca'):
+        if self.kind == 'Ca':
             pass  # to be implemented
-        if (self.kind == 'Nap'):
+        if self.kind == 'Nap':
             self.condState.append(ConductanceState('mp', conf, pool, neuronKind, compKind, index))
-        if (self.kind == 'KsAxon'):
-            pass
-        if (self.kind == 'H'):
-            pass
-          
+            self.compCond = compCondNap
+        if self.kind == 'KsAxon':
+            self.condState.append(ConductanceState('s', conf, pool, neuronKind, compKind, index))
+            self.compCond = compCondKsaxon
+        if self.kind == 'H':
+            self.condState.append(ConductanceState('qh', conf, pool, neuronKind, compKind, index))
+            self.compCond = compCondH
+
             
         
         ## Integer with the number of states in the ionic channel.    

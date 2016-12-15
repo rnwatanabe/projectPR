@@ -140,12 +140,12 @@ def runge_kutta(derivativeFunction, t, x, timeStep, timeStepByTwo,  timeStepBySi
     \f}
     '''       
     k1 = derivativeFunction(t, x)
-    k2 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k1)
-    k3 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k2)
-    k4 = derivativeFunction(t + timeStep, x + timeStep * k3)
+    #k2 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k1)
+    #k3 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k2)
+    #k4 = derivativeFunction(t + timeStep, x + timeStep * k3)
     
-    return x + timeStepBySix * (k1 + k2 + k2 + k3 + k3 + k4)
-
+    #return x + timeStepBySix * (k1 + k2 + k2 + k3 + k3 + k4)
+    return x + timeStep * (k1)
 
 
 class MotorUnit(object):
@@ -195,8 +195,7 @@ class MotorUnit(object):
               compartmentsList.append('internode')
 
 
-        ## Vector with the instants of spikes at the soma.
-        self.somaSpikeTrain = []
+        
         ## Integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle).
         self.index = int(index)
         ## Vector of Compartment of the Motor Unit.
@@ -213,6 +212,8 @@ class MotorUnit(object):
         self.compNumber = len(self.compartment)
         ## Vector with membrane potential,in mV, of all compartments. 
         self.v_mV = np.zeros((self.compNumber), dtype = np.float64)
+        ## Vector with the last instant of spike of all compartments. 
+        self.tSpikes = np.zeros((self.compNumber), dtype = np.float64)
         
         
         gCoupling_muS = np.zeros_like(self.v_mV, dtype = 'd')
@@ -227,16 +228,23 @@ class MotorUnit(object):
         
         gLeak = np.zeros_like(self.v_mV, dtype = 'd')    
         capacitance_nF = np.zeros_like(self.v_mV, dtype = 'd')
-        EqPot = np.zeros_like(self.v_mV, dtype = 'd')    
+        EqPot = np.zeros_like(self.v_mV, dtype = 'd')
+        IPump = np.zeros_like(self.v_mV, dtype = 'd')
+        compLength = np.zeros_like(self.v_mV, dtype = 'd')        
         
         for i in self.compartment:                                                              
             capacitance_nF[self.compartment.index(i)] = i.capacitance_nF
             gLeak[self.compartment.index(i)] = i.gLeak_muS
             EqPot[self.compartment.index(i)] = i.EqPot_mV
-
+            IPump[self.compartment.index(i)] = i.IPump_nA
+            compLength[self.compartment.index(i)] = i.length_mum
+            self.v_mV[self.compartment.index(i)] = i.EqPot_mV
+        
+        
         ## Vector with  the inverse of the capacitance of all compartments. 
         self.capacitanceInv = 1.0 / capacitance_nF
 
+        
         ## Vector with current, in nA,  of each compartment coming from other elements of the model. For example 
         ## from ionic channels and synapses.       
         self.iIonic = np.full_like(self.v_mV, 0.0)
@@ -252,10 +260,17 @@ class MotorUnit(object):
         ## results in the passive currents of each compartment.
         self.G = np.float64(GC + GL)
 
-        self.EqCurrent_nA = np.dot(-GL, EqPot) 
+        
+        
 
+        self.EqCurrent_nA = np.dot(-GL, EqPot) + IPump 
+
+        
         ## index of the soma compartment.
         self.somaIndex = compartmentsList.index('soma')
+
+        ## index of the last compartment.
+        self.lastCompIndex = self.compNumber - 1
         
         ## Refractory period, in ms, of the motoneuron.
         self.MNRefPer_ms = float(conf.parameterSet('MNSomaRefPer', pool, index))
@@ -269,9 +284,18 @@ class MotorUnit(object):
             self.nerve = 'CPN'
             
         ## AxonDelay object of the motor unit.
-        self.Delay = AxonDelay(conf, self.nerve, pool, index)
+        if NumberOfAxonNodes == 0:
+            dynamicNerveLength = 0
+        else:
+            dynamicNerveLength = np.sum(compLength[2:-1]) * 1e-6
+        
+        delayLength = float(conf.parameterSet('nerveLength_' + self.nerve, pool, index)) - dynamicNerveLength
+        self.Delay = AxonDelay(conf, self.nerve, pool, delayLength, index)
 
-
+        ## Vector with the instants of spikes at the soma.
+        self.somaSpikeTrain = []
+        ## Vector with the instants of spikes at the last compartment.
+        self.lastCompSpikeTrain = []
         ## Vector with the instants of spikes at the terminal.
         self.terminalSpikeTrain = []
                 
@@ -295,6 +319,8 @@ class MotorUnit(object):
         self.SynapsesOut = []
         self.transmitSpikesThroughSynapses = []
         self.indicesOfSynapsesOnTarget = []
+
+         
     
     def atualizeMotorUnit(self, t):
         '''
@@ -316,7 +342,9 @@ class MotorUnit(object):
         '''
         
         np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.conf.timeStep_ms, self.conf.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -30.0, 120.0, self.v_mV)
-        if (self.v_mV[self.somaIndex] > self.threshold_mV and t-self.tSomaSpike > self.MNRefPer_ms): self.addSomaSpike(t)    
+        for i in xrange(self.somaIndex, self.compNumber):
+            if self.v_mV[i] > self.threshold_mV and t-self.tSpikes[i] > self.MNRefPer_ms: 
+                self.addCompartmentSpike(t, i)    
      
        
     def dVdt(self, t, V): 
@@ -338,23 +366,29 @@ class MotorUnit(object):
         '''
         for compartment in xrange(0, self.compNumber):  
             self.iIonic.itemset(compartment, self.compartment[compartment].computeCurrent(t, V.item(compartment)))
+
               
         return (self.iIonic + np.dot(self.G, V)  + self.iInjected + self.EqCurrent_nA) * self.capacitanceInv
     
     
-    def addSomaSpike(self, t):
+    def addCompartmentSpike(self, t, comp):
         '''
         When the soma potential is above the threshold a spike is added tom the soma.
 
         - Inputs:
             + **t**: current instant, in ms.
+
+            + **comp**: integer with the compartment index.
         '''
-        self.tSomaSpike = t
-        self.somaSpikeTrain.append([t, int(self.index)])
-        self.Delay.addSpinalSpike(t)
-        self.transmitSpikes(t)
+        self.tSpikes[comp] = t
+        if comp == self.somaIndex:
+            self.somaSpikeTrain.append([t, int(self.index)])
+            self.transmitSpikes(t)
+        if comp == self.lastCompIndex:     
+            self.lastCompSpikeTrain.append([t, int(self.index)])
+            self.Delay.addSpinalSpike(t)
         
-        for channel in self.compartment[self.somaIndex].Channels:
+        for channel in self.compartment[comp].Channels:
             for channelState in channel.condState: channelState.changeState(t)    
               
               

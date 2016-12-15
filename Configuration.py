@@ -132,14 +132,14 @@ class Configuration(object):
                 if (self.confArray[0][2] == ''):                       
                     return self.confArray[i][1]
             else:
-                if self.confArray[i][0] == paramTag + '_' + pool + '-S':
+                if self.confArray[i][0] == paramTag + ':' + pool + '-S':
                     paramVec_S = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_S)
                     paramVec = paramVec_S
-                elif self.confArray[i][0] == paramTag + '_' + pool + '-FR':
+                elif self.confArray[i][0] == paramTag + ':' + pool + '-FR':
                     paramVec_FR = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FR)
-                elif self.confArray[i][0] == paramTag + '_' + pool + '-FF':
+                elif self.confArray[i][0] == paramTag + ':' + pool + '-FF':
                     paramVec_FF = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FF)
-                elif self.confArray[i][0] == paramTag + '_' + pool + '-':
+                elif self.confArray[i][0] == paramTag + ':' + pool + '-':
                     paramVec = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), Nnumber)                    
         
 
@@ -179,12 +179,12 @@ class Configuration(object):
         Synapses = []
 
         for i in xrange(0, len(self.confArray)):
-            pos = self.confArray[i][0].find('Con_' + neuralSource)
+            pos = self.confArray[i][0].find('Con:' + neuralSource)
             if pos >= 0 and float(self.confArray[i][1]) > 0:
-                posUnitKind = self.confArray[i][0].find('-', pos+len('Con_' + neuralSource)+1)
+                posUnitKind = self.confArray[i][0].find('-', pos+len('Con:' + neuralSource)+1)
                 posComp = self.confArray[i][0].find('@')
                 posKind = self.confArray[i][0].find('|')
-                Synapses.append([self.confArray[i][0][pos+len('Con_' + neuralSource)+1:posUnitKind],
+                Synapses.append([self.confArray[i][0][pos+len('Con:' + neuralSource)+1:posUnitKind],
                                  self.confArray[i][0][posUnitKind+1:posComp],
                                  self.confArray[i][0][posComp+1:posKind],
                                  self.confArray[i][0][posKind+1:]])

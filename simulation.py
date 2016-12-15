@@ -27,7 +27,7 @@ def simulator():
 
     pools = []
     pools.append(MotorUnitPool(conf, 'SOL'))
-    pools.append(NeuralTract(conf, 'CMExt'))
+    #pools.append(NeuralTract(conf, 'CMExt'))
 
     #pools.append(InterneuronPool(conf, 'RC'))
 
@@ -39,39 +39,53 @@ def simulator():
 
     dendV = np.zeros_like(t)
     somaV = np.zeros_like(t)
+    internodeV = np.zeros_like(t)
+    nodeV = np.zeros_like(t)
 
     tic = time.clock()
-    for i in xrange(0, len(t)-1):
+    for i in xrange(1, len(t)):
         #ankle.atualizeAnkle(t[i], 0)
-        pools[1].atualizePool(t[i])
+        for j in pools[0].unit:
+            j.iInjected[1] = 10
+        #pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
         dendV[i] = pools[0].unit[2].v_mV[0]
         somaV[i] = pools[0].unit[2].v_mV[1] 
+        internodeV[i] = pools[0].unit[2].v_mV[2]
+        nodeV[i] = pools[0].unit[2].v_mV[3]
         #pools[3].atualizePool(t[i])
         #pools[2].atualizeInterneuronPool(t[i])
     toc = time.clock()
     print str(toc - tic) + ' seconds'
 
     pools[0].listSpikes()
-    pools[1].listSpikes()
+    #pools[1].listSpikes()
     #pools[2].listSpikes()
     
     np.savetxt('../results/MNspikes_noRC.txt', pools[0].poolTerminalSpikes)
-    np.savetxt('../results/NTspikes_noRC.txt', pools[1].poolTerminalSpikes)
+    #np.savetxt('../results/NTspikes_noRC.txt', pools[1].poolTerminalSpikes)
     #np.savetxt('../results/RCspikes.txt', pools[2].poolSomaSpikes)
     np.savetxt('../results/SOLforce_noRC.txt', pools[0].Muscle.force)
 
-    
+    '''
     plt.figure()
     plt.plot(pools[1].poolTerminalSpikes[:, 0],
              pools[1].poolTerminalSpikes[:, 1]+1, '.')
-
+    '''
     
     
     
     plt.figure()
+    plt.plot(pools[0].poolSomaSpikes[:, 0],
+             pools[0].poolSomaSpikes[:, 1]+1, '.')
+
+    plt.figure()
+    plt.plot(pools[0].poolLastCompSpikes[:, 0],
+             pools[0].poolLastCompSpikes[:, 1]+1, '.')        
+
+    plt.figure()
     plt.plot(pools[0].poolTerminalSpikes[:, 0],
-             pools[0].poolTerminalSpikes[:, 1]+1, '.')
+             pools[0].poolTerminalSpikes[:, 1]+1, '.')         
     '''         
     plt.figure()
     plt.plot(pools[2].poolSomaSpikes[:, 0],
@@ -95,6 +109,13 @@ def simulator():
 
     plt.figure()
     plt.plot(t, somaV, '-')
+    
+
+    plt.figure()
+    plt.plot(t, internodeV, '-')
+
+    plt.figure()
+    plt.plot(t, nodeV, '-')
     
     '''
     plt.figure()

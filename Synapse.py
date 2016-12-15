@@ -347,12 +347,12 @@ class Synapse(object):
         self.kind = kind
         self.neuronKind = neuronKind
 
-        self.EqPot_mV = float(conf.parameterSet('EqPotSyn_' + pool + '-' + self.neuronKind + '|' + self.kind, pool, index))
-        self.alpha_ms1 = float(conf.parameterSet('alphaSyn_' + pool + '-'  + self.neuronKind + '|' + self.kind, pool, index))
-        self.beta_ms1 = float(conf.parameterSet('betaSyn_' + pool + '-'  + self.neuronKind + '|' + self.kind, pool, index))
-        self.Tmax_mM = float(conf.parameterSet('TmaxSyn_' + pool + '-'  + self.neuronKind + '|' + self.kind, pool, index))
+        self.EqPot_mV = float(conf.parameterSet('EqPotSyn:' + pool + '-' + self.neuronKind + '|' + self.kind, pool, index))
+        self.alpha_ms1 = float(conf.parameterSet('alphaSyn:' + pool + '-'  + self.neuronKind + '|' + self.kind, pool, index))
+        self.beta_ms1 = float(conf.parameterSet('betaSyn:' + pool + '-'  + self.neuronKind + '|' + self.kind, pool, index))
+        self.Tmax_mM = float(conf.parameterSet('TmaxSyn:' + pool + '-'  + self.neuronKind + '|' + self.kind, pool, index))
         ## Pulse duration, in ms.
-        self.tPeak_ms = float(conf.parameterSet('tPeakSyn_' + pool + '-' + self.neuronKind + '|' + self.kind, pool, index))
+        self.tPeak_ms = float(conf.parameterSet('tPeakSyn:' + pool + '-' + self.neuronKind + '|' + self.kind, pool, index))
 
         self.gmax_muS = np.array([])
         self.delay_ms = np.array([])

@@ -1,14 +1,12 @@
-MUnumber_SOL-S,10,
+MUnumber_SOL-S,800,
 MUnumber_SOL-FR,0,
 MUnumber_SOL-FF,0,
-Number_RC,350,
 Number_CMExt,400,
 NumberAxonNodes,0,
 timeStep,0.05,
 simDuration,100,
 nerveLength_PTN,0.8,
 MNSomaRefPer,5.0,
-RCSomaRefPer,1.0,
 % Model options
 activationModel,SOCDS,
 hillModel,No,
@@ -66,47 +64,6 @@ dyn:CMExt->SOL-FF@dendrite|excitatory,None,
 dec:CMExt->SOL-S@dendrite|excitatory,inf,
 dec:CMExt->SOL-FR@dendrite|excitatory,inf,
 dec:CMExt->SOL-FF@dendrite|excitatory,inf,
-Con:RC->SOL-S@soma|inhibitory,4,
-Con:RC->SOL-FR@soma|inhibitory,4,
-Con:RC->SOL-FF@soma|inhibitory,4,
-gmax:RC->SOL-S@soma|inhibitory,0.44,
-gmax:RC->SOL-FR@soma|inhibitory,0.44,
-gmax:RC->SOL-FF@soma|inhibitory,0.44,
-delay:RC->SOL-S@soma|inhibitory,0.3,
-delay:RC->SOL-FR@soma|inhibitory,0.3,
-delay:RC->SOL-FF@soma|inhibitory,0.3,
-dyn:RC->SOL-S@soma|inhibitory,None,
-dyn:RC->SOL-FR@soma|inhibitory,None,
-dyn:RC->SOL-FF@soma|inhibitory,None,
-dec:RC->SOL-S@soma|inhibitory,0.22,
-dec:RC->SOL-FR@soma|inhibitory,0.22,
-dec:RC->SOL-FF@soma|inhibitory,0.22,
-%% RC
-EqPotSyn:RC-|excitatory,70.0,
-EqPotSyn:RC-|inhibitory,-16.0,
-alphaSyn:RC-|excitatory,0.5,
-betaSyn:RC-|excitatory,0.07,
-alphaSyn:RC-|inhibitory,0.5,
-betaSyn:RC-|inhibitory,1.2,
-TmaxSyn:RC-|excitatory,1.0,
-TmaxSyn:RC-|inhibitory,1.0,
-tPeakSyn:RC-|excitatory,3,
-tPeakSyn:RC-|inhibitory,0.4,
-Con:SOL-S>RC-@soma|excitatory,6,
-gmax:SOL-S>RC-@soma|excitatory,0.15,
-delay:SOL-S>RC-@soma|excitatory,0.3,
-dyn:SOL-S>RC-@soma|excitatory,Depressing,
-dec:SOL-S>RC-@soma|excitatory,0.01,
-var:SOL-S>RC-@soma|excitatory,0.5,
-tau:SOL-S>RC-@soma|excitatory,200,
-Con:Noise>RC-@soma|excitatory,100,
-gmax:Noise>RC-@soma|excitatory,0.015,
-delay:Noise>RC-@soma|excitatory,0.3,
-dyn:Noise>RC-@soma|excitatory,None,
-dec:Noise>RC-@soma|excitatory,inf,
-NoiseGammaOrder_RC,10,
-NoiseTarget_RC,FR,
-NoiseFunction_RC,7 + 0*t,
 % Channel conductance
 %% Equilibrium Potential
 EqPot_Kf@soma,-10,
@@ -117,10 +74,6 @@ EqPot_Na@soma,120,
 gmax_Na:SOL-S@soma,30000,
 gmax_Kf:SOL-S@soma,4000,
 gmax_Ks:SOL-S@soma,17000,
-%%% RC
-gmax_Na:RC-@soma,30000,
-gmax_Kf:RC-@soma,1000,
-gmax_Ks:RC-@soma,4000,
 %States
 PulseDur_m,0.6,
 PulseDur_h,0.6,
@@ -153,8 +106,12 @@ position:SOL-,0,18
 threshold:SOL-S,12.35,16.45
 d@dendrite:SOL-S,41.5,62.5
 d@soma:SOL-S,77.5,82.5
+d@node:SOL-S,5,5
+d@internode:SOL-S,12.5,12.5
 l@dendrite:SOL-S,5519,6789
 l@soma:SOL-S,77.5,82.5
+l@node:SOL-S,1.5,1.5
+l@internode:SOL-S,1400,1400
 res@dendrite:SOL-S,14350,10650
 res@soma:SOL-S,1150,1050
 EqPot@dendrite,0,
@@ -168,10 +125,3 @@ bSatSOCDS:SOL-FF,0.3,0.23
 twTetSOCDS:SOL-S,2.97,4.08
 twTetSOCDS:SOL-FR,4.08,6.71
 twTetSOCDS:SOL-FF,6.71,8.73
-% Interneurons
-%% RC
-position:RC-,0,18
-threshold:RC-,5,15
-d@soma:RC-,25,25
-l@soma:RC-,242,242
-res@soma:RC-,760,760

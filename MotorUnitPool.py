@@ -67,7 +67,9 @@ class MotorUnitPool(object):
                 self.unit.append(MotorUnit(conf, pool, i, 'FF'))
 
         ## Vector with the instants of spikes in the soma compartment, in ms.            
-        self.poolSomaSpikes = np.array([])    
+        self.poolSomaSpikes = np.array([])
+        ## Vector with the instants of spikes in the last dynamical compartment, in ms.
+        self.poolLastCompSpikes = np.array([])    
         ## Vector with the instants of spikes in the terminal, in ms.
         self.poolTerminalSpikes = np.array([])
         
@@ -94,10 +96,10 @@ class MotorUnitPool(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
-        
+
         for i in self.unit: i.atualizeMotorUnit(t)
         self.Activation.atualizeActivationSignal(t, self.unit)
-        self.Muscle.atualizeForce(self.Activation.activation_Sat)   
+        self.Muscle.atualizeForce(self.Activation.activation_Sat)
 
     def listSpikes(self):
         '''
@@ -107,15 +109,16 @@ class MotorUnitPool(object):
         for i in xrange(0,self.MUnumber):
             if i == 0:
                 somaSpikeTrain = np.array(self.unit[i].somaSpikeTrain)
+                lastCompSpikeTrain = np.array(self.unit[i].lastCompSpikeTrain)
                 terminalSpikeTrain = np.array(self.unit[i].terminalSpikeTrain)
             else:
                 somaSpikeTrain = np.append(somaSpikeTrain, np.array(self.unit[i].somaSpikeTrain))
+                lastCompSpikeTrain = np.append(lastCompSpikeTrain, np.array(self.unit[i].lastCompSpikeTrain))
                 terminalSpikeTrain = np.append(terminalSpikeTrain, np.array(self.unit[i].terminalSpikeTrain))
-        self.poolSomaSpikes = somaSpikeTrain
-        self.poolTerminalSpikes = terminalSpikeTrain
-            
-        self.poolSomaSpikes = np.reshape(self.poolSomaSpikes, (-1, 2))
-        self.poolTerminalSpikes = np.reshape(self.poolTerminalSpikes, (-1, 2))
+                
+        self.poolSomaSpikes = np.reshape(somaSpikeTrain, (-1, 2))
+        self.poolLastCompSpikes = np.reshape(lastCompSpikeTrain, (-1, 2))
+        self.poolTerminalSpikes = np.reshape(terminalSpikeTrain, (-1, 2))
         
     
         

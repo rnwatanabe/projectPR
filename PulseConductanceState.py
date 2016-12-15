@@ -94,8 +94,8 @@ class PulseConductanceState(object):
         
         self.state = False
         
-        self.beta_ms1 = float(conf.parameterSet('beta_' + kind + '_' + pool + '-' + neuronKind + '@' + compKind, pool, index))
-        self.alpha_ms1 = float(conf.parameterSet('alpha_' + kind + '_' + pool + '-' + neuronKind + '@' + compKind, pool,index))
+        self.beta_ms1 = float(conf.parameterSet('beta_' + kind + ':' + pool + '-' + neuronKind + '@' + compKind, pool, index))
+        self.alpha_ms1 = float(conf.parameterSet('alpha_' + kind + ':' + pool + '-' + neuronKind + '@' + compKind, pool,index))
         self.PulseDur_ms = float(conf.parameterSet('PulseDur_' + kind, pool, index)) 
         
         if (self.kind == 'm'):
@@ -106,6 +106,13 @@ class PulseConductanceState(object):
             self.actType = 'activation'
         if (self.kind == 'q'):
             self.actType = 'activation'
+        if (self.kind == 'mp'):
+            self.actType = 'activation'
+        if (self.kind == 's'):
+            self.actType = 'activation'
+        if (self.kind == 'qh'):
+            self.actType = 'inactivation'
+
 
         if (self.actType == 'activation'):
             self.computeValueOn = compValOn

@@ -51,7 +51,7 @@ class SynapsesFactory(object):
                 pools[poolOut].unit[unitOut].SynapsesOut = conf.determineSynapses(pools[poolOut].pool + '-' + 
                                                                                   pools[poolOut].unit[unitOut].kind)
                 for synapseIn in xrange(len(pools[poolOut].unit[unitOut].SynapsesOut)):
-                    conn = float(conf.parameterSet('Con_' + pools[poolOut].pool + '-' 
+                    conn = float(conf.parameterSet('Con:' + pools[poolOut].pool + '-' 
                                                    + pools[poolOut].unit[unitOut].kind + '>'
                                                    + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][0]
                                                    + '-'
@@ -61,7 +61,7 @@ class SynapsesFactory(object):
                                                    + '|'
                                                    + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][3],
                                                    '', 0)) / 100.0
-                    gmax = float(conf.parameterSet('gmax_' + pools[poolOut].pool + '-'
+                    gmax = float(conf.parameterSet('gmax:' + pools[poolOut].pool + '-'
                                                    + pools[poolOut].unit[unitOut].kind + '>'
                                                    + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][0]
                                                    + '-'
@@ -71,7 +71,7 @@ class SynapsesFactory(object):
                                                    + '|'
                                                    + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][3],
                                                    '', 0))
-                    delay = float(conf.parameterSet('delay_' + pools[poolOut].pool + '-'
+                    delay = float(conf.parameterSet('delay:' + pools[poolOut].pool + '-'
                                                     + pools[poolOut].unit[unitOut].kind + '>'
                                                     + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][0]
                                                     + '-'
@@ -81,7 +81,7 @@ class SynapsesFactory(object):
                                                     + '|'
                                                     + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][3],
                                                     '', 0))
-                    declineFactor = float(conf.parameterSet('dec_' + pools[poolOut].pool + '-'
+                    declineFactor = float(conf.parameterSet('dec:' + pools[poolOut].pool + '-'
                                                     + pools[poolOut].unit[unitOut].kind + '>'
                                                     + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][0]
                                                     + '-'
@@ -91,7 +91,7 @@ class SynapsesFactory(object):
                                                     + '|'
                                                     + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][3],
                                                     '', 0))
-                    dyn = conf.parameterSet('dyn_' + pools[poolOut].pool + '-'
+                    dyn = conf.parameterSet('dyn:' + pools[poolOut].pool + '-'
                                             + pools[poolOut].unit[unitOut].kind + '>'
                                             + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][0]
                                             + '-' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][1]
@@ -99,14 +99,14 @@ class SynapsesFactory(object):
                                             + '|' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][3],
                                             '', 0)
                     if dyn != 'None':
-                        var = float(conf.parameterSet('var_' + pools[poolOut].pool + '-'
+                        var = float(conf.parameterSet('var:' + pools[poolOut].pool + '-'
                                                       + pools[poolOut].unit[unitOut].kind + '>'
                                                       + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][0]
                                                       + '-' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][1]
                                                       + '@' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][2]
                                                       + '|' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][3],
                                                       '', 0))
-                        tau = float(conf.parameterSet('tau_' + pools[poolOut].pool + '-'
+                        tau = float(conf.parameterSet('tau:' + pools[poolOut].pool + '-'
                                                       + pools[poolOut].unit[unitOut].kind + '>'
                                                       + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][0]
                                                       + '-' + pools[poolOut].unit[unitOut].SynapsesOut[synapseIn][1]
@@ -141,33 +141,33 @@ class SynapsesFactory(object):
         for synapseIn in xrange(len(NoiseSynapsesOut)):
             pools.append(SynapticNoise(conf, NoiseSynapsesOut[synapseIn][0]))
             poolOut = len(pools) - 1
-            gmax = float(conf.parameterSet('gmax_Noise>' + NoiseSynapsesOut[synapseIn][0] 
+            gmax = float(conf.parameterSet('gmax:Noise>' + NoiseSynapsesOut[synapseIn][0] 
                                            + '-' + NoiseSynapsesOut[synapseIn][1]
                                            + '@' + NoiseSynapsesOut[synapseIn][2] + '|'
                                            + NoiseSynapsesOut[synapseIn][3],
                                            '', 0))
-            delay = float(conf.parameterSet('delay_Noise>' + NoiseSynapsesOut[synapseIn][0]
+            delay = float(conf.parameterSet('delay:Noise>' + NoiseSynapsesOut[synapseIn][0]
                                             + '-' + NoiseSynapsesOut[synapseIn][1]
                                             + '@' + NoiseSynapsesOut[synapseIn][2] + '|'
                                             + NoiseSynapsesOut[synapseIn][3],
                                             '', 0))
-            declineFactor = float(conf.parameterSet('dec_Noise>' + NoiseSynapsesOut[synapseIn][0]
+            declineFactor = float(conf.parameterSet('dec:Noise>' + NoiseSynapsesOut[synapseIn][0]
                                                     + '-' + NoiseSynapsesOut[synapseIn][1]
                                                     + '@' + NoiseSynapsesOut[synapseIn][2] + '|'
                                                     + NoiseSynapsesOut[synapseIn][3],
                                                     '', 0))
-            dyn = conf.parameterSet('dyn_Noise>' + NoiseSynapsesOut[synapseIn][0] 
+            dyn = conf.parameterSet('dyn:Noise>' + NoiseSynapsesOut[synapseIn][0] 
                                     + '-' + NoiseSynapsesOut[synapseIn][1]
                                     + '@' + NoiseSynapsesOut[synapseIn][2] + '|'
                                     + NoiseSynapsesOut[synapseIn][3],
                                     '', 0)
             if dyn != 'None':
-                var = float(conf.parameterSet('var_Noise>' + NoiseSynapsesOut[synapseIn][0]
+                var = float(conf.parameterSet('var:Noise>' + NoiseSynapsesOut[synapseIn][0]
                                               + '-' + NoiseSynapsesOut[synapseIn][1]
                                               + '@' + NoiseSynapsesOut[synapseIn][2] + '|' 
                                               + NoiseSynapsesOut[synapseIn][3],
                                               '', 0))
-                tau = float(conf.parameterSet('tau_Noise>' + NoiseSynapsesOut[synapseIn][0]
+                tau = float(conf.parameterSet('tau:Noise>' + NoiseSynapsesOut[synapseIn][0]
                                               + '-' + NoiseSynapsesOut[synapseIn][1]
                                               + '@' + NoiseSynapsesOut[synapseIn][2]
                                               + '|' + NoiseSynapsesOut[synapseIn][3],

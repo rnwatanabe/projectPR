@@ -28,7 +28,7 @@ class AxonDelay(object):
     '''
 
     
-    def __init__(self, conf, nerve, pool, index):
+    def __init__(self, conf, nerve, pool, length, index):
         '''
         Constructor
 
@@ -41,6 +41,9 @@ class AxonDelay(object):
 
             + **pool**: string with Motor unit pool to which the motor unit belongs.
 
+            + **length**: ## float, length of the part of the nerve that is
+            modelled as a delay, in m.
+
             + **index**: integer corresponding to the motor unit order in the pool, according to 
             the Henneman's principle (size principle).
         '''
@@ -49,8 +52,8 @@ class AxonDelay(object):
         ## the Henneman's principle (size principle).
         self.index = int(index)
         
-        ## Length, in m, of the part of the nerve that is not modelled as a delay.
-        self.length_m = float(conf.parameterSet('nerveLength_' + nerve, pool, index))
+        ## Length, in m, of the part of the nerve that is modelled as a delay.
+        self.length_m = length
         ## Velocity of conduction, in m/s, of the part of the nerve that is not modelled as a delay.     
         self.velocity_m_s = float(conf.parameterSet('axonCondVel',pool, index))
         ## Distance, in m, of the stimulus position to the terminal. 

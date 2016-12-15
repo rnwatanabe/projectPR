@@ -106,6 +106,9 @@ class Compartment(object):
         ## Equilibrium potential, in mV.
         self.EqPot_mV = float(conf.parameterSet('EqPot@' + self.kind, pool, index))
 
+        ## Pump current in the compartment, in nA.
+        self.IPump_nA = float(conf.parameterSet('IPump@' + self.kind, pool, index))
+
         ## Leak conductance of the compartment, in \f$\mu\f$S.
         self.gLeak_muS = calcGLeak(area_cm2, specifRes_Ohmcm2)
         

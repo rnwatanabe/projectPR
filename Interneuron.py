@@ -134,10 +134,12 @@ class Interneuron(object):
         gLeak = np.zeros_like(self.v_mV, dtype = 'd')
 
         capacitance_nF = np.zeros_like(self.v_mV, dtype = 'd')
+        EqPot = np.zeros_like(self.v_mV, dtype = 'd') 
 
         for i in self.compartment:
             capacitance_nF[self.compartment.index(i)] = i.capacitance_nF
-            gLeak[self.compartment.index(i)] = i.gLeak
+            gLeak[self.compartment.index(i)] = i.gLeak_muS
+            EqPot[self.compartment.index(i)] = i.EqPot_mV
 
 
         ## Vector with  the inverse of the capacitance of all compartments.
@@ -157,6 +159,7 @@ class Interneuron(object):
         ## results in the passive currents of each compartment.
         self.G = np.float64(GL)
 
+        self.EqCurrent_nA = np.dot(-GL, EqPot)
 
         ## index of the soma compartment.
         self.somaIndex = compartmentsList.index('soma')
@@ -220,7 +223,7 @@ class Interneuron(object):
                                 self.compartment[compartment].computeCurrent(t,
                                                                              V.item(compartment)))
 
-        return (self.iIonic + np.dot(self.G, V)  + self.iInjected) * self.capacitanceInv
+        return (self.iIonic + np.dot(self.G, V)  + self.iInjected + self.EqCurrent_nA) * self.capacitanceInv
 
     def addSomaSpike(self, t):
         '''
