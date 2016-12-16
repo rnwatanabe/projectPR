@@ -21,7 +21,9 @@
 import numpy as np
 import math
 from scipy.sparse import lil_matrix
+from numba import jit
 
+@jit
 def twitchSaturation(activationsat, b):
     '''
     Computes the muscle unit force after the nonlinear saturation. 
@@ -118,11 +120,15 @@ class MuscularActivation(object):
         - Inputs:
             + **t**: current instant, in ms.        
         '''
+        diracValue = self.diracDeltaValue
+        actNonSat = self.activation_nonSat
+        
+
         for i in xrange(self.MUnumber):
             self.an[3*i+1] = self.an[3*i]
-            self.an[3*i] = self.activation_nonSat[i]
+            self.an[3*i] = actNonSat[i]
             if unit[i].terminalSpikeTrain and abs(t - self.conf.timeStep_ms - unit[i].terminalSpikeTrain[-1][0]) < 1e-6: 
-                self.an[3*i+2] = self.diracDeltaValue
+                self.an[3*i+2] = diracValue
             else: self.an[3*i+2] =  0.0
         
         self.activation_nonSat = self.ActMatrix.dot(self.an)        

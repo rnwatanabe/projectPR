@@ -23,6 +23,7 @@ import math
 from PulseConductanceState import PulseConductanceState
 from numba import jit
 
+
 def compCondKs(V_mV, gmax, state, EqPot):
         '''
         Computes the conductance of a slow potassium Channel. 
@@ -43,6 +44,7 @@ def compCondKs(V_mV, gmax, state, EqPot):
         and \f$q\f$ is the state of a slow potassium channel.
         '''
         return gmax * (state[0].value ** 2) * (EqPot - V_mV)
+
 
 def compCondKsaxon(V_mV, gmax, state, EqPot):
         '''
@@ -183,8 +185,7 @@ class ChannelConductance(object):
         ## can be *Na* (Sodium), *Ks* (slow Potassium), *Kf* (fast Potassium) or 
         ## *Ca* (Calcium).
         self.kind = str(kind)
-        ## List of ConductanceState objects, representing each state of the ionic channel.
-        self.condState = []
+       
         
         ## Equilibrium Potential of the ionic channel, mV.
         self.EqPot_mV = float(conf.parameterSet('EqPot_' + kind + '@' + compKind, pool, index))
@@ -196,6 +197,9 @@ class ChannelConductance(object):
         
         if self.stateType == 'pulse':
             ConductanceState = PulseConductanceState
+
+        ## List of ConductanceState objects, representing each state of the ionic channel.
+        self.condState = []
         
         if self.kind == 'Kf':
             self.condState.append(ConductanceState('n', conf, pool, neuronKind, compKind, index))

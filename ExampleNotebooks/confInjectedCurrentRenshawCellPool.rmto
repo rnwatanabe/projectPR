@@ -41,6 +41,8 @@ l@soma:RC-,242,242
 res@soma:RC-,760,760
 EqPot@dendrite,0,
 EqPot@soma,0,
+IPump@dendrite,0,
+IPump@soma,0,
 %Synapses
 %% RC
 EqPotSyn:RC-|excitatory,70.0,

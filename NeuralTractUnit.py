@@ -78,7 +78,7 @@ class NeuralTractUnit(object):
         '''
 
         self.spikesGenerator.atualizeGenerator(t, FR)
-        if self.terminalSpikeTrain and abs(t - self.terminalSpikeTrain[-1][0]) < 1e-3:
+        if self.terminalSpikeTrain and -1e-3 < (t - self.terminalSpikeTrain[-1][0]) < 1e-3:
             self.transmitSpikes(t)
 
     def transmitSpikes(self, t):

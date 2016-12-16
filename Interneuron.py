@@ -116,7 +116,7 @@ class Interneuron(object):
         ## Integer corresponding to the Interneuron order in the pool.
         self.index = int(index)
         ## Vector of Compartment of the Motor Unit.
-        self.compartment = []
+        self.compartment = dict()
         ## Value of the membrane potential, in mV, that is considered a spike.
         self.threshold_mV = conf.parameterSet('threshold', pool, index)
 
@@ -124,7 +124,8 @@ class Interneuron(object):
         self.position_mm = conf.parameterSet('position', pool, index)
         
 
-        for i in compartmentsList: self.compartment.append(Compartment(i, self.conf, self.pool, self.index, self.kind))        
+        for i in xrange(len(compartmentsList)): 
+            self.compartment[i] = Compartment(compartmentsList[i], self.conf, self.pool, self.index, self.kind)
 
         ## Number of compartments.
         self.compNumber = len(self.compartment)
@@ -136,10 +137,10 @@ class Interneuron(object):
         capacitance_nF = np.zeros_like(self.v_mV, dtype = 'd')
         EqPot = np.zeros_like(self.v_mV, dtype = 'd') 
 
-        for i in self.compartment:
-            capacitance_nF[self.compartment.index(i)] = i.capacitance_nF
-            gLeak[self.compartment.index(i)] = i.gLeak_muS
-            EqPot[self.compartment.index(i)] = i.EqPot_mV
+        for i in xrange(len(self.compartment)):
+            capacitance_nF[i] = self.compartment[i].capacitance_nF
+            gLeak[i] = self.compartment[i].gLeak_muS
+            EqPot[i] = self.compartment[i].EqPot_mV
 
 
         ## Vector with  the inverse of the capacitance of all compartments.

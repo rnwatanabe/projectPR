@@ -23,6 +23,7 @@ from ChannelConductance import ChannelConductance
 
 from Synapse import Synapse
 import math
+import numpy as np
 
 
 def calcGLeak(area, specificRes):
@@ -133,6 +134,8 @@ class Compartment(object):
         ## Integer with the number of ionic channels.
         self.numberChannels = len(self.Channels)
 
+        
+
     def computeCurrent(self, t, V_mV):
         '''
         Computes the active currents of the compartment. Active currents are the currents from the ionic channels
@@ -143,12 +146,14 @@ class Compartment(object):
 
             + **V_mV**: membrane potential, in mV.
         '''
-        I = 0
-        if self.numberChannels != 0:
-            for i in xrange(0, self.numberChannels): I += self.Channels[i].computeCurrent(t, V_mV)
+        
+        I = 0.0
+
         if self.SynapsesIn[0].numberOfIncomingSynapses:
-            I += self.SynapsesIn[0].computeCurrent(t, V_mV)
+            I = self.SynapsesIn[0].computeCurrent(t, V_mV)
         if self.SynapsesIn[1].numberOfIncomingSynapses:
             I += self.SynapsesIn[1].computeCurrent(t, V_mV)
-
+        if self.numberChannels != 0:
+            for i in xrange(0, self.numberChannels): I += self.Channels[i].computeCurrent(t, V_mV)
+        
         return I

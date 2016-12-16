@@ -54,10 +54,10 @@ def calcGCoupling(cytR, lComp1, lComp2, dComp1, dComp2):
     \f$r_1\f$ and \f$r_2\f$ are the radius [\f$\mu\f$m] of compartments 1 and
     2, respectively.
     '''
-    rAxis1 = (cytR * lComp1) / (math.pi * math.pow(dComp1/2, 2))
-    rAxis2 = (cytR * lComp2) / (math.pi * math.pow(dComp2/2, 2))
+    rAxis1 = (cytR * lComp1) / (math.pi * math.pow(dComp1/2.0, 2))
+    rAxis2 = (cytR * lComp2) / (math.pi * math.pow(dComp2/2.0, 2))
     
-    return (1e2 * 2) / (rAxis1 + rAxis2)
+    return 200 / (rAxis1 + rAxis2)
 
 
 
@@ -140,12 +140,12 @@ def runge_kutta(derivativeFunction, t, x, timeStep, timeStepByTwo,  timeStepBySi
     \f}
     '''       
     k1 = derivativeFunction(t, x)
-    #k2 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k1)
-    #k3 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k2)
-    #k4 = derivativeFunction(t + timeStep, x + timeStep * k3)
+    k2 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k1)
+    k3 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k2)
+    k4 = derivativeFunction(t + timeStep, x + timeStep * k3)
     
-    #return x + timeStepBySix * (k1 + k2 + k2 + k3 + k3 + k4)
-    return x + timeStep * (k1)
+    return x + timeStepBySix * (k1 + k2 + k2 + k3 + k3 + k4)
+    #return x + timeStep * (k1)
 
 
 class MotorUnit(object):
@@ -198,15 +198,16 @@ class MotorUnit(object):
         
         ## Integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle).
         self.index = int(index)
-        ## Vector of Compartment of the Motor Unit.
-        self.compartment = []
+        ## Dictionary of Compartment of the Motor Unit.
+        self.compartment = dict()
         ## Value of the membrane potential, in mV, that is considered a spike.
         self.threshold_mV = conf.parameterSet('threshold', pool, index)
                 
         ## Anatomical position of the neuron, in mm.
         self.position_mm = conf.parameterSet('position', pool, index)
         
-        for i in compartmentsList: self.compartment.append(Compartment(i, conf, pool, index, self.kind))        
+        for i in xrange(len(compartmentsList)): 
+            self.compartment[i] = Compartment(compartmentsList[i], conf, pool, index, self.kind)
         
         ## Number of compartments.
         self.compNumber = len(self.compartment)
@@ -219,11 +220,12 @@ class MotorUnit(object):
         gCoupling_muS = np.zeros_like(self.v_mV, dtype = 'd')
         
             
-        for i in self.compartment[0:-1]: gCoupling_muS[self.compartment.index(i)] = calcGCoupling(float(conf.parameterSet('cytR',pool, index)), 
-                                                                                                 self.compartment[self.compartment.index(i)].length_mum,
-                                                                                                 self.compartment[self.compartment.index(i) + 1].length_mum,
-                                                                                                 self.compartment[self.compartment.index(i)].diameter_mum,
-                                                                                                 self.compartment[self.compartment.index(i) + 1].diameter_mum)
+        for i in xrange(len(self.compartment)-1): 
+            gCoupling_muS[i] = calcGCoupling(float(conf.parameterSet('cytR',pool, index)), 
+                                             self.compartment[i].length_mum,
+                                             self.compartment[i + 1].length_mum,
+                                             self.compartment[i].diameter_mum,
+                                             self.compartment[i + 1].diameter_mum)
         
         
         gLeak = np.zeros_like(self.v_mV, dtype = 'd')    
@@ -232,13 +234,13 @@ class MotorUnit(object):
         IPump = np.zeros_like(self.v_mV, dtype = 'd')
         compLength = np.zeros_like(self.v_mV, dtype = 'd')        
         
-        for i in self.compartment:                                                              
-            capacitance_nF[self.compartment.index(i)] = i.capacitance_nF
-            gLeak[self.compartment.index(i)] = i.gLeak_muS
-            EqPot[self.compartment.index(i)] = i.EqPot_mV
-            IPump[self.compartment.index(i)] = i.IPump_nA
-            compLength[self.compartment.index(i)] = i.length_mum
-            self.v_mV[self.compartment.index(i)] = i.EqPot_mV
+        for i in xrange(len(self.compartment)):                                                              
+            capacitance_nF[i] = self.compartment[i].capacitance_nF
+            gLeak[i] = self.compartment[i].gLeak_muS
+            EqPot[i] = self.compartment[i].EqPot_mV
+            IPump[i] = self.compartment[i].IPump_nA
+            compLength[i] = self.compartment[i].length_mum
+            self.v_mV[i] = self.compartment[i].EqPot_mV
         
         
         ## Vector with  the inverse of the capacitance of all compartments. 
@@ -364,8 +366,8 @@ class MotorUnit(object):
         to the number of compartments and \f$G\f$ is the conductance matrix built
         in the compGCouplingMatrix function.
         '''
-        for compartment in xrange(0, self.compNumber):  
-            self.iIonic.itemset(compartment, self.compartment[compartment].computeCurrent(t, V.item(compartment)))
+        for i in xrange(self.compNumber):  
+            self.iIonic.itemset(i, self.compartment[i].computeCurrent(t, V.item(i)))
 
               
         return (self.iIonic + np.dot(self.G, V)  + self.iInjected + self.EqCurrent_nA) * self.capacitanceInv

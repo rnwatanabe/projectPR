@@ -54,17 +54,17 @@ class MotorUnitPool(object):
         ## Number of motor units.
         self.MUnumber = MUnumber_S + MUnumber_FR + MUnumber_FF
         
-        ## List of MotorUnit objects.
-        self.unit = []
+        ## Dictionary of MotorUnit objects.
+        self.unit = dict()
         
         
         for i in xrange(0, self.MUnumber): 
             if i < MUnumber_S:
-                self.unit.append(MotorUnit(conf, pool, i, 'S'))
+                self.unit[i] = MotorUnit(conf, pool, i, 'S')
             elif i < MUnumber_S + MUnumber_FR:
-                self.unit.append(MotorUnit(conf, pool, i, 'FR'))
+                self.unit[i] = MotorUnit(conf, pool, i, 'FR')
             else:
-                self.unit.append(MotorUnit(conf, pool, i, 'FF'))
+                self.unit[i] = MotorUnit(conf, pool, i, 'FF')
 
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
@@ -97,8 +97,9 @@ class MotorUnitPool(object):
             + **t**: current instant, in ms.
         '''
 
-        for i in self.unit: i.atualizeMotorUnit(t)
-        self.Activation.atualizeActivationSignal(t, self.unit)
+        units = self.unit
+        for i in xrange(len(units)): units[i].atualizeMotorUnit(t)
+        self.Activation.atualizeActivationSignal(t, units)
         self.Muscle.atualizeForce(self.Activation.activation_Sat)
 
     def listSpikes(self):

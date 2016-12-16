@@ -82,11 +82,9 @@ class PointProcessGenerator(object):
 
         ## Auxiliary variable cummulating a value that indicates
         ## whether there will be a new spike or not.
-        self.y = 0.0
-
-        ## Spike threshold. When the auxiliary variable y reaches the value
-        ## of threshold, there is a new spike.
         self.threshold = gammaPoint(self.GammaOrder, self.GammaOrderInv)
+
+        
         ## List of spike instants of the generator.
         self.points = []
 
@@ -98,8 +96,8 @@ class PointProcessGenerator(object):
 
             + **firingRate**: instant firing rate, in spikes/s.
         '''
-        self.y += firingRate
-        if self.y >= self.threshold and t != 0:
+        self.threshold -= firingRate
+        if self.threshold <= 0 and t != 0:
             self.points.append([t, self.index])
-            self.y = 0.0
             self.threshold = gammaPoint(self.GammaOrder, self.GammaOrderInv)
+            

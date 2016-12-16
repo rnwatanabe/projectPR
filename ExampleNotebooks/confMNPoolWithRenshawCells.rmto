@@ -1,4 +1,4 @@
-MUnumber_SOL-S,10,
+MUnumber_SOL-S,800,
 MUnumber_SOL-FR,0,
 MUnumber_SOL-FF,0,
 Number_RC,350,
@@ -159,6 +159,8 @@ res@dendrite:SOL-S,14350,10650
 res@soma:SOL-S,1150,1050
 EqPot@dendrite,0,
 EqPot@soma,0,
+IPump@dendrite,0,
+IPump@soma,0,
 axonCondVel:SOL-S,44,51
 twitchTimePeak:SOL-S,170.0,132.5
 twitchPeak:SOL-S,0.03,1.9

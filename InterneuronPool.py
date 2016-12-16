@@ -52,10 +52,10 @@ class InterneuronPool(object):
         self.Nnumber = int(conf.parameterSet('Number_' + pool, pool, 0))
 
         ## List of Interneuron objects.
-        self.unit = []
+        self.unit = dict()
 
         for i in xrange(0, self.Nnumber):
-            self.unit.append(Interneuron(conf, pool, i))
+            self.unit[i] = Interneuron(conf, pool, i)
 
         ## Vector with the instants of spikes in the soma compartment, in ms.
         self.poolSomaSpikes = np.array([])
@@ -73,7 +73,7 @@ class InterneuronPool(object):
 
         '''
         
-        for i in self.unit: i.atualizeInterneuron(t)
+        for i in xrange(len(self.unit)): self.unit[i].atualizeInterneuron(t)
 
     def listSpikes(self):
         '''

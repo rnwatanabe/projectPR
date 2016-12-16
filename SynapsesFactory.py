@@ -139,7 +139,7 @@ class SynapsesFactory(object):
 
         NoiseSynapsesOut = conf.determineSynapses('Noise')
         for synapseIn in xrange(len(NoiseSynapsesOut)):
-            pools.append(SynapticNoise(conf, NoiseSynapsesOut[synapseIn][0]))
+            pools[len(pools)] = SynapticNoise(conf, NoiseSynapsesOut[synapseIn][0])
             poolOut = len(pools) - 1
             gmax = float(conf.parameterSet('gmax:Noise>' + NoiseSynapsesOut[synapseIn][0] 
                                            + '-' + NoiseSynapsesOut[synapseIn][1]

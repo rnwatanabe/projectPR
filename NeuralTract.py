@@ -43,12 +43,12 @@ class NeuralTract(object):
         self.Number = int(conf.parameterSet('Number_' + pool, pool, 0))
         
         ## List of NeuralTRactUnit objects.
-        self.unit = [] 
+        self.unit = dict() 
         
         self.GammaOrder = int(conf.parameterSet('GammaOrder_' + pool, pool, 0))
 
         for i in xrange(0, self.Number): 
-            self.unit.append(NeuralTractUnit(conf, pool, self.GammaOrder, i))
+            self.unit[i] = NeuralTractUnit(conf, pool, self.GammaOrder, i)
         ## Vector with the instants of spikes in the terminal, in ms.
         self.poolTerminalSpikes = np.array([]) 
         ## Indicates the measure that the TargetFunction of the
@@ -75,7 +75,7 @@ class NeuralTract(object):
         - Inputs:
             + **t**: cuurent instant, in ms.
         '''    
-        for i in self.unit: i.atualizeNeuralTractUnit(t, self.FR[self.timeIndex])
+        for i in xrange(len(self.unit)): self.unit[i].atualizeNeuralTractUnit(t, self.FR[self.timeIndex])
         self.timeIndex +=1        
         
     def listSpikes(self):
