@@ -75,7 +75,7 @@ class NeuralTract(object):
         - Inputs:
             + **t**: cuurent instant, in ms.
         '''    
-        for i in xrange(len(self.unit)): self.unit[i].atualizeNeuralTractUnit(t, self.FR[self.timeIndex])
+        for i in xrange(self.Number): self.unit[i].atualizeNeuralTractUnit(t, self.FR[self.timeIndex])
         self.timeIndex +=1        
         
     def listSpikes(self):

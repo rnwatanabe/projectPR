@@ -120,16 +120,20 @@ class MuscularActivation(object):
         - Inputs:
             + **t**: current instant, in ms.        
         '''
-        diracValue = self.diracDeltaValue
-        actNonSat = self.activation_nonSat
         
+        
+        MUindices = np.arange(0, self.MUnumber)
+        MUspike = np.array([],dtype = 'int')
+        self.an[3*MUindices+1] = self.an[3*MUindices]
+        self.an[3*MUindices] = self.activation_nonSat[MUindices]
+        self.an[3*MUindices+2] =  0
 
         for i in xrange(self.MUnumber):
-            self.an[3*i+1] = self.an[3*i]
-            self.an[3*i] = actNonSat[i]
-            if unit[i].terminalSpikeTrain and abs(t - self.conf.timeStep_ms - unit[i].terminalSpikeTrain[-1][0]) < 1e-6: 
-                self.an[3*i+2] = diracValue
-            else: self.an[3*i+2] =  0.0
+            if unit[i].terminalSpikeTrain and -1e-6 < (t - self.conf.timeStep_ms - unit[i].terminalSpikeTrain[-1][0]) < 1e-6: 
+                MUspike = np.append(MUspike,i)
+               
+        self.an[3*MUspike+2] = self.diracDeltaValue
+            
         
         self.activation_nonSat = self.ActMatrix.dot(self.an)        
         self.activation_Sat = twitchSaturation(self.activation_nonSat, self.bSat)

@@ -175,6 +175,9 @@ class MotorUnit(object):
         ## Configuration object with the simulation parameters.
         self.conf = conf
 
+        self.timeStep_ms = self.conf.timeStep_ms
+        self.timeStepByTwo_ms = self.conf.timeStepByTwo_ms
+        self.timeStepBySix_ms = self.conf.timeStepBySix_ms
         ## String with the type of the motor unit. It can be
         ## *S* (slow), *FR* (fast and resistant) and
         ## *FF** (fast and fatigable).
@@ -343,7 +346,7 @@ class MotorUnit(object):
 
         '''
         
-        np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.conf.timeStep_ms, self.conf.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -30.0, 120.0, self.v_mV)
+        np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.timeStep_ms, self.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -30.0, 120.0, self.v_mV)
         for i in xrange(self.somaIndex, self.compNumber):
             if self.v_mV[i] > self.threshold_mV and t-self.tSpikes[i] > self.MNRefPer_ms: 
                 self.addCompartmentSpike(t, i)    
@@ -366,8 +369,8 @@ class MotorUnit(object):
         to the number of compartments and \f$G\f$ is the conductance matrix built
         in the compGCouplingMatrix function.
         '''
-        for i in xrange(self.compNumber):  
-            self.iIonic.itemset(i, self.compartment[i].computeCurrent(t, V.item(i)))
+        
+        for i in xrange(self.compNumber): self.iIonic.itemset(i, self.compartment[i].computeCurrent(t, V.item(i)))
 
               
         return (self.iIonic + np.dot(self.G, V)  + self.iInjected + self.EqCurrent_nA) * self.capacitanceInv
@@ -401,7 +404,7 @@ class MotorUnit(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
-        if abs(t - self.Delay.terminalSpikeTrain) < 1e-3: 
+        if -1e-3 < (t - self.Delay.terminalSpikeTrain) < 1e-3: 
             self.terminalSpikeTrain.append([t, self.index])
 
     def transmitSpikes(self, t):

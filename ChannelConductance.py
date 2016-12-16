@@ -43,7 +43,7 @@ def compCondKs(V_mV, gmax, state, EqPot):
         where \f$E_0\f$ is the equilibrium potential of the compartment, \f$V\f$ is the membrane potential
         and \f$q\f$ is the state of a slow potassium channel.
         '''
-        return gmax * (state[0].value ** 2) * (EqPot - V_mV)
+        return gmax * (state[0].value * state[0].value) * (EqPot - V_mV)
 
 
 def compCondKsaxon(V_mV, gmax, state, EqPot):
@@ -85,7 +85,7 @@ def compCondNa(V_mV, gmax, state, EqPot):
         where \f$E_0\f$ is the equilibrium potential of the compartment, V is the membrane potential
         and \f$m\f$ and \f$h\f$ are the states of a sodium channel..
         '''
-        return gmax * (state[0].value ** 3) * state[1].value * (EqPot - V_mV)
+        return gmax * (state[0].value * state[0].value * state[0].value) * state[1].value * (EqPot - V_mV)
 
 def compCondNap(V_mV, gmax, state, EqPot):
         '''
@@ -104,7 +104,7 @@ def compCondNap(V_mV, gmax, state, EqPot):
         where \f$E_0\f$ is the equilibrium potential of the compartment, V is the membrane potential
         and \f$m\f$ and \f$h\f$ are the states of a persistent sodium channel.
         '''
-        return gmax * (state[0].value ** 3) * (EqPot - V_mV)
+        return gmax * (state[0].value * state[0].value * state[0].value) * (EqPot - V_mV)
 
 def compCondKf(V_mV, gmax, state, EqPot):
         '''
@@ -125,7 +125,7 @@ def compCondKf(V_mV, gmax, state, EqPot):
         where \f$E_0\f$ is the equilibrium potential of the compartment, V is the membrane potential
         and \f$n\f$ is the state of a fast potassium channel..
         '''
-        return gmax * (state[0].value ** 4) * (EqPot - V_mV)
+        return gmax * (state[0].value * state[0].value * state[0].value * state[0].value) * (EqPot - V_mV)
 
 def compCondH(V_mV, gmax, state, EqPot):
         '''
@@ -245,7 +245,7 @@ class ChannelConductance(object):
             + Ionic current, in nA
         '''        
          
-        for i in xrange(0, self.lenStates): self.condState[i].computeStateValue(t)        
+        for i in xrange(self.lenStates): self.condState[i].computeStateValue(t)        
                           
         return self.compCond(V_mV, self.gmax_muS, self.condState, self.EqPot_mV)
    

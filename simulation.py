@@ -133,10 +133,10 @@ def simulator():
     
 if __name__ == '__main__':
 
-    cProfile.run('simulator()', sort = 'calls')
+    #cProfile.run('simulator()', sort = 'calls')
     np.__config__.show()
     #for i in xrange(0, 10):
-    #simulator()
+    simulator()
 
 
-    #plt.show()
+    plt.show()

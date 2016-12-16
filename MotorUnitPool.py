@@ -98,7 +98,7 @@ class MotorUnitPool(object):
         '''
 
         units = self.unit
-        for i in xrange(len(units)): units[i].atualizeMotorUnit(t)
+        for i in xrange(self.MUnumber): units[i].atualizeMotorUnit(t)
         self.Activation.atualizeActivationSignal(t, units)
         self.Muscle.atualizeForce(self.Activation.activation_Sat)
 

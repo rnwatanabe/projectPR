@@ -23,37 +23,6 @@ import numpy as np
 from numba import jit
 
 @jit
-def compSynapCond(Gmax, Ron, Roff):
-    '''
-    Computes the synaptic conductance
-
-    - Input:
-        + **Gmax**: the sum of individual conductances of all synapses in 
-        the compartment, in \f$\mu\f$S.
-
-        + **Ron**: sum of the fraction of postsynaptic receptors
-        that are bound to neurotransmitters of all the individual synapses
-        that have neurotransmitters being released (during the pulse).
-
-        + **Roff**: sum of the fraction of postsynaptic receptors
-        that are bound to neurotransmitters of all the individual synapses
-        that do not have neurotransmitters being released (before and after
-        the pulse).
-
-    - Output:
-        + the synaptic conductance of all synapses in the compartment,
-        in \f$\mu\f$S.
-
-    It is computed by the following formula:
-
-    \f{equation}{
-        G = G_{max}(R_{on} + R_{off})
-    \f}
-    where \f$G\f$ is the synaptic conductance of all synapses in the compartment.
-    '''
-    return Gmax * (Ron + Roff)
-
-@jit
 def compRon(Non, rInf, Ron, t0, t, tauOn):
     '''
     Computes the fraction of postsynaptic receptors
@@ -469,20 +438,21 @@ class Synapse(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
-        self.Ron = compRon(self.Non, self.rInf, self.Ron, self.t0,
-                           t, self.tauOn)
-        self.Roff = compRoff(self.Roff, self.t0, t, self.tauOff)
+        
+        self.Ron = self.Non * self.rInf + (self.Ron - self.Non * self.rInf) * math.exp((self.t0 - t) / self.tauOn) 
+        self.Roff = self.Roff * math.exp((self.t0 - t) / self.tauOff)
+        
 
-        idxBeginPulse = np.where(np.abs(t-self.tBeginOfPulse < 1e-6))[0]
+        idxBeginPulse = np.where(np.abs(t-self.tBeginOfPulse) < 1e-6)[0]
         idxEndPulse = np.where(np.abs(t-self.tEndOfPulse) < 1e-6)[0]
 
-        if idxBeginPulse.size != 0:
+        if idxBeginPulse.size:
             self.startConductance(t, idxBeginPulse)
 
-        if idxEndPulse.size != 0:
+        if idxEndPulse.size:
             self.stopConductance(t, idxEndPulse)
 
-        return compSynapCond(self.gMaxTot_muS, self.Ron, self.Roff)
+        return self.gMaxTot_muS * (self.Ron + self.Roff)
 
 
     def startConductance(self, t, idxBeginPulse):
@@ -504,7 +474,7 @@ class Synapse(object):
         self.synContrib[idxBeginPulse] = self.dynamicGmax[idxBeginPulse] / self.gMaxTot_muS
 
         idxTurningOnCond = idxBeginPulse[np.where(self.conductanceState[idxBeginPulse] == 0)[0]]
-        if idxTurningOnCond.size != 0:
+        if idxTurningOnCond.size:
             self.conductanceState[idxTurningOnCond] = 1
             self.t0 = t
             self.ri[idxTurningOnCond] = compRiStart(self.ri[idxTurningOnCond],

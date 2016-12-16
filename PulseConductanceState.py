@@ -119,11 +119,9 @@ class PulseConductanceState(object):
 
 
         if (self.actType == 'activation'):
-            self.computeValueOn = compValOn
-            self.computeValueOff = compValOff            
+            self.computeStateValue = self.computeStateValueActivation            
         else:
-            self.computeValueOn = compValOff
-            self.computeValueOff = compValOn         
+            self.computeStateValue = self.computeStateValueInactivation
 
 
     def changeState(self, t):
@@ -139,8 +137,8 @@ class PulseConductanceState(object):
         self.state = not self.state
         self.endOfPulse_ms = self.PulseDur_ms + self.t0
 
-
-    def computeStateValue(self, t):
+    
+    def computeStateValueActivation(self, t):
         '''
         Compute the state value by using the approximation of Destexhe (1997) to
         compute the Hodgkin-Huxley states.
@@ -152,10 +150,25 @@ class PulseConductanceState(object):
         if self.state:
             if t > self.endOfPulse_ms:
                 self.changeState(t)
-                self.value = self.computeValueOn(self.v0, self.alpha_ms1, self.beta_ms1, t, self.t0)
-            else: self.value = self.computeValueOff(self.v0, self.alpha_ms1, self.beta_ms1, t, self.t0)
-        else: self.value = self.computeValueOn(self.v0, self.alpha_ms1, self.beta_ms1, t, self.t0)
+                self.value = self.v0 * math.exp(self.beta_ms1  * (self.t0 - t))                 
+            else: self.value = 1.0 + (self.v0 - 1.0)  *  math.exp(self.alpha_ms1 * (self.t0 - t))
+        else: self.value = self.v0 * math.exp(self.beta_ms1  * (self.t0 - t))
 
+    def computeStateValueInactivation(self, t):
+        '''
+        Compute the state value by using the approximation of Destexhe (1997) to
+        compute the Hodgkin-Huxley states.
+
+        - Input:
+            + **t**: current instant, in ms.
+        '''
+
+        if self.state:
+            if t > self.endOfPulse_ms:
+                self.changeState(t)
+                self.value = 1.0 + (self.v0 - 1.0)  *  math.exp(self.alpha_ms1 * (self.t0 - t))
+            else: self.value = self.v0 * math.exp(self.beta_ms1  * (self.t0 - t))                 
+        else: self.value = 1.0 + (self.v0 - 1.0)  *  math.exp(self.alpha_ms1 * (self.t0 - t))
         
-    
-    
+        
+        
