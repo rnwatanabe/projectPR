@@ -285,7 +285,7 @@ def compRoffStop(Roff, ri, synContrib):
 @jit
 def compDynamicGmax(t, gmax, lastPulse, tau, dynamicGmax, var):
     return (gmax + np.exp((lastPulse - t) / tau) *
-            (dynamicGmax * (1 + var) - gmax)
+            (dynamicGmax * (1.0 + var) - gmax)
            )
 
 class Synapse(object):
@@ -431,7 +431,8 @@ class Synapse(object):
             synapse belongs, in mV.
         '''
         return self.computeConductance(t) * (self.EqPot_mV - V_mV)
-
+    
+    @profile    
     def computeConductance(self, t):
         '''
 
@@ -439,18 +440,17 @@ class Synapse(object):
             + **t**: current instant, in ms.
         '''
         
-        self.Ron = self.Non * self.rInf + (self.Ron - self.Non * self.rInf) * math.exp((self.t0 - t) / self.tauOn) 
+        NonInf = self.Non * self.rInf
+        self.Ron = NonInf + (self.Ron - NonInf) * math.exp((self.t0 - t) / self.tauOn) 
         self.Roff = self.Roff * math.exp((self.t0 - t) / self.tauOff)
         
 
         idxBeginPulse = np.where(np.abs(t-self.tBeginOfPulse) < 1e-6)[0]
         idxEndPulse = np.where(np.abs(t-self.tEndOfPulse) < 1e-6)[0]
 
-        if idxBeginPulse.size:
-            self.startConductance(t, idxBeginPulse)
+        if idxBeginPulse.size: self.startConductance(t, idxBeginPulse)
 
-        if idxEndPulse.size:
-            self.stopConductance(t, idxEndPulse)
+        if idxEndPulse.size: self.stopConductance(t, idxEndPulse)
 
         return self.gMaxTot_muS * (self.Ron + self.Roff)
 
@@ -464,32 +464,35 @@ class Synapse(object):
                 that the pulse begin at time **t**.
         '''
 
-        self.dynamicGmax[idxBeginPulse] = compDynamicGmax(t,
-                                                          self.gmax_muS[idxBeginPulse],
-                                                          self.tLastPulse[idxBeginPulse],
-                                                          self.timeConstant_ms[idxBeginPulse],
-                                                          self.dynamicGmax[idxBeginPulse],
-                                                          self.variation[idxBeginPulse]
-                                                         )
-        self.synContrib[idxBeginPulse] = self.dynamicGmax[idxBeginPulse] / self.gMaxTot_muS
+        gmax = self.gmax_muS
+        lastPulse = self.tLastPulse
+        timeConstant = self.timeConstant_ms
+        dynG = self.dynamicGmax
+        var = self.variation
+        condState = self.conductanceState
+        ri = self.ri
+        tPeak = self.tPeak_ms
+        ti = self.ti
+        synCont = self.synContrib
 
-        idxTurningOnCond = idxBeginPulse[np.where(self.conductanceState[idxBeginPulse] == 0)[0]]
+        dynG[idxBeginPulse] = compDynamicGmax(t,
+                                              gmax[idxBeginPulse],
+                                              lastPulse[idxBeginPulse],
+                                              timeConstant[idxBeginPulse],
+                                              dynG[idxBeginPulse],
+                                              var[idxBeginPulse]
+                                             )
+        synCont[idxBeginPulse] = dynG[idxBeginPulse] / self.gMaxTot_muS
+
+        idxTurningOnCond = idxBeginPulse[np.where(condState[idxBeginPulse] == 0)[0]]
         if idxTurningOnCond.size:
-            self.conductanceState[idxTurningOnCond] = 1
+            condState[idxTurningOnCond] = 1
             self.t0 = t
-            self.ri[idxTurningOnCond] = compRiStart(self.ri[idxTurningOnCond],
-                                                    t, self.ti[idxTurningOnCond],
-                                                    self.tPeak_ms, self.tauOff
-                                                   )
-            self.Non += np.sum(self.synContrib[idxTurningOnCond])
-            self.ti[idxTurningOnCond] = t
-            self.Ron = compRonStart(self.Ron, self.ri[idxTurningOnCond],
-                                    self.synContrib[idxTurningOnCond]
-                                   )
-            self.Roff = compRoffStart(self.Roff,
-                                      self.ri[idxTurningOnCond],
-                                      self.synContrib[idxTurningOnCond]
-                                     )
+            ri[idxTurningOnCond] *= np.exp((ti[idxTurningOnCond] + tPeak - t) / self.tauOff) 
+            self.Non += np.sum(synCont[idxTurningOnCond])
+            ti[idxTurningOnCond] = t
+            self.Ron += np.sum(ri[idxTurningOnCond] * synCont[idxTurningOnCond])
+            self.Roff -= np.sum(ri[idxTurningOnCond] * synCont[idxTurningOnCond])
         
         self.tEndOfPulse[idxBeginPulse] = t + self.tPeak_ms
         self.tLastPulse[idxBeginPulse] = self.tBeginOfPulse[idxBeginPulse]

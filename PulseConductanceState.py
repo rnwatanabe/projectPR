@@ -132,19 +132,36 @@ class PulseConductanceState(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
+
         self.t0 = t 
         self.v0 = self.value
         self.state = not self.state
-        self.endOfPulse_ms = self.PulseDur_ms + self.t0
+        self.endOfPulse_ms = self.PulseDur_ms + t
 
     
     def computeStateValueActivation(self, t):
         '''
         Compute the state value by using the approximation of Destexhe (1997) to
-        compute the Hodgkin-Huxley states.
+        compute the Hodgkin-Huxley states of *activation* type.
 
         - Input:
             + **t**: current instant, in ms.
+
+        The value of the state \f$v\f$ is computed according to the following
+        equation before and after the pulse:
+
+        \f{equation}{
+            v(t) = v_0\exp[-\beta(t-t_0)]
+        \f} 
+
+        and according to the following equation during the pulse:
+
+        \f{equation}{
+            v(t) = 1 + (v_0 - 1)\exp[-\alpha(t-t_0)]
+        \f} 
+        where \f$t_0\f$ is the time at which the pulse changed
+        the value (on to off or off to on) and \f$v_0\f$ is value
+        of the state at that time.
         '''
 
         if self.state:
@@ -152,15 +169,31 @@ class PulseConductanceState(object):
                 self.changeState(t)
                 self.value = self.v0 * math.exp(self.beta_ms1  * (self.t0 - t))                 
             else: self.value = 1.0 + (self.v0 - 1.0)  *  math.exp(self.alpha_ms1 * (self.t0 - t))
-        else: self.value = self.v0 * math.exp(self.beta_ms1  * (self.t0 - t))
+        else: self.value = self.v0 * math.exp(self.beta_ms1 * (self.t0 - t))
 
     def computeStateValueInactivation(self, t):
         '''
         Compute the state value by using the approximation of Destexhe (1997) to
-        compute the Hodgkin-Huxley states.
+        compute the Hodgkin-Huxley states of *inactivation* type.
 
         - Input:
             + **t**: current instant, in ms.
+
+        The value of the state \f$v\f$ is computed according to the following
+        equation before and after the pulse:
+
+        \f{equation}{
+            v(t) = v_0\exp[-\beta(t-t_0)]
+        \f} 
+
+        and according to the following equation during the pulse:
+
+        \f{equation}{
+            v(t) = 1 + (v_0 - 1)\exp[-\alpha(t-t_0)]
+        \f} 
+        where \f$t_0\f$ is the time at which the pulse changed
+        the value (on to off or off to on) and \f$v_0\f$ is value
+        of the state at that time.
         '''
 
         if self.state:

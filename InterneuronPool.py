@@ -81,12 +81,9 @@ class InterneuronPool(object):
         the terminal of the different motor units.
         '''
         for i in xrange(0,self.Nnumber):
-            if i == 0:
-                somaSpikeTrain = np.array(self.unit[i].somaSpikeTrain)
-            else:
-                somaSpikeTrain = np.append(somaSpikeTrain, np.array(self.unit[i].somaSpikeTrain))
+            if i == 0: somaSpikeTrain = np.array(self.unit[i].somaSpikeTrain)
+            else: somaSpikeTrain = np.append(somaSpikeTrain, np.array(self.unit[i].somaSpikeTrain))
         self.poolSomaSpikes = somaSpikeTrain
-                    
         self.poolSomaSpikes = np.reshape(self.poolSomaSpikes, (-1, 2))
         
 

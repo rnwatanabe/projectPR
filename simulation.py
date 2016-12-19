@@ -43,7 +43,7 @@ def simulator():
     nodeV = np.zeros_like(t)
 
     tic = time.clock()
-    for i in xrange(1, len(t)):
+    for i in xrange(0, len(t)):
         #ankle.atualizeAnkle(t[i], 0)
         #for j in xrange(len(pools[0].unit)):
         #    pools[0].unit[j].iInjected[1] = 10
@@ -133,10 +133,9 @@ def simulator():
     
 if __name__ == '__main__':
 
-    #cProfile.run('simulator()', sort = 'calls')
+    #cProfile.run('simulator()', sort = 'tottime')
     np.__config__.show()
     #for i in xrange(0, 10):
     simulator()
 
-
-    plt.show()
+    #plt.show()
