@@ -100,7 +100,7 @@ class MuscularActivation(object):
         self.activation_nonSat = np.zeros((self.MUnumber, 1), dtype = float)
         ## The parameter \f$b\f$ (see twitchSaturation function explanation) of 
         ## each motor unit.
-        self.bSat = np.zeros((self.MUnumber, 1), dtype = float)
+        self.bSat = np.zeros((self.MUnumber,1), dtype = float)
        
         
         for i in xrange(0, self.MUnumber):
@@ -108,7 +108,7 @@ class MuscularActivation(object):
             
         
         ## The non-saturated activation signal of all motor units (see actMatrix explanation).
-        self.activation_Sat = np.zeros((self.MUnumber, 1), dtype = float)    
+        self.activation_Sat = np.zeros((self.MUnumber,1), dtype = float)    
         ## Dirac's delta approximation amplitude value. Is the inverse
         ## of the simulation time step (\f$1/T\f$). 
         self.diracDeltaValue = 1.0 / conf.timeStep_ms

@@ -315,6 +315,7 @@ class Synapse(object):
         self.pool = pool
         self.kind = kind
         self.neuronKind = neuronKind
+        self.index = index
 
         self.EqPot_mV = float(conf.parameterSet('EqPotSyn:' + pool + '-' + self.neuronKind + '|' + self.kind, pool, index))
         self.alpha_ms1 = float(conf.parameterSet('alphaSyn:' + pool + '-'  + self.neuronKind + '|' + self.kind, pool, index))
@@ -432,7 +433,7 @@ class Synapse(object):
         '''
         return self.computeConductance(t) * (self.EqPot_mV - V_mV)
     
-    @profile    
+    #@profile    
     def computeConductance(self, t):
         '''
 
@@ -440,21 +441,25 @@ class Synapse(object):
             + **t**: current instant, in ms.
         '''
         
+        
         NonInf = self.Non * self.rInf
         self.Ron = NonInf + (self.Ron - NonInf) * math.exp((self.t0 - t) / self.tauOn) 
-        self.Roff = self.Roff * math.exp((self.t0 - t) / self.tauOff)
+        self.Roff *= math.exp((self.t0 - t) / self.tauOff)
         
-
+        
         idxBeginPulse = np.where(np.abs(t-self.tBeginOfPulse) < 1e-6)[0]
+        
         idxEndPulse = np.where(np.abs(t-self.tEndOfPulse) < 1e-6)[0]
 
-        if idxBeginPulse.size: self.startConductance(t, idxBeginPulse)
+        if len(idxBeginPulse): 
+            self.startConductance(t, idxBeginPulse)
 
-        if idxEndPulse.size: self.stopConductance(t, idxEndPulse)
+        if len(idxEndPulse): 
+            self.stopConductance(t, idxEndPulse)
 
         return self.gMaxTot_muS * (self.Ron + self.Roff)
 
-
+    #@profile    
     def startConductance(self, t, idxBeginPulse):
         '''
         - Inputs:
@@ -491,8 +496,8 @@ class Synapse(object):
             ri[idxTurningOnCond] *= np.exp((ti[idxTurningOnCond] + tPeak - t) / self.tauOff) 
             self.Non += np.sum(synCont[idxTurningOnCond])
             ti[idxTurningOnCond] = t
-            self.Ron += np.sum(ri[idxTurningOnCond] * synCont[idxTurningOnCond])
-            self.Roff -= np.sum(ri[idxTurningOnCond] * synCont[idxTurningOnCond])
+            self.Ron += np.dot(ri[idxTurningOnCond],synCont[idxTurningOnCond])
+            self.Roff -= np.dot(ri[idxTurningOnCond], synCont[idxTurningOnCond])
         
         self.tEndOfPulse[idxBeginPulse] = t + self.tPeak_ms
         self.tLastPulse[idxBeginPulse] = self.tBeginOfPulse[idxBeginPulse]
@@ -507,17 +512,9 @@ class Synapse(object):
                 that the pulse end at time **t**.
         '''
         self.t0 = t
-        self.ri[idxEndPulse] = compRiStop(self.rInf,
-                                          self.ri[idxEndPulse],
-                                          self.expFinish
-                                         )
-        
-        self.Ron = compRonStop(self.Ron, self.ri[idxEndPulse],
-                               self.synContrib[idxEndPulse]
-                              )
-        self.Roff = compRoffStop(self.Roff, self.ri[idxEndPulse],
-                                 self.synContrib[idxEndPulse]
-                                )
+        self.ri[idxEndPulse] = self.rInf + (self.ri[idxEndPulse] - self.rInf) * self.expFinish
+        self.Ron -=np.dot(self.ri[idxEndPulse],self.synContrib[idxEndPulse])
+        self.Roff += np.dot(self.ri[idxEndPulse],self.synContrib[idxEndPulse])
         self.Non -= np.sum(self.synContrib[idxEndPulse])
 
         self.tEndOfPulse[idxEndPulse] = -10000
