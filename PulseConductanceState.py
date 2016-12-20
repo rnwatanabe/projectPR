@@ -91,6 +91,7 @@ class PulseConductanceState(object):
         self.value = float(0)
         
         
+        
         self.v0 = 0.0
         self.t0 = float(0)
         
@@ -99,8 +100,11 @@ class PulseConductanceState(object):
         self.beta_ms1 = float(conf.parameterSet('beta_' + kind + ':' + pool + '-' + neuronKind + '@' + compKind, pool, index))
         self.alpha_ms1 = float(conf.parameterSet('alpha_' + kind + ':' + pool + '-' + neuronKind + '@' + compKind, pool,index))
         self.PulseDur_ms = float(conf.parameterSet('PulseDur_' + kind, pool, index)) 
-        
-        self.endOfPulse_ms = self.PulseDur_ms + self.t0
+
+        self.AlphaExp = math.exp(-self.alpha_ms1 * conf.timeStep_ms)
+        self.BetaExp = math.exp(-self.beta_ms1 * conf.timeStep_ms)
+
+        self.endOfPulse_ms = self.PulseDur_ms
 
         if (self.kind == 'm'):
             self.actType = 'activation'
@@ -133,12 +137,10 @@ class PulseConductanceState(object):
             + **t**: current instant, in ms.
         '''
 
-        self.t0 = t 
-        self.v0 = self.value
         self.state = not self.state
         self.endOfPulse_ms = self.PulseDur_ms + t
 
-    
+    #@profile
     def computeStateValueActivation(self, t):
         '''
         Compute the state value by using the approximation of Destexhe (1997) to
@@ -167,10 +169,12 @@ class PulseConductanceState(object):
         if self.state:
             if t > self.endOfPulse_ms:
                 self.changeState(t)
-                self.value = self.v0 * math.exp(self.beta_ms1  * (self.t0 - t))                 
-            else: self.value = 1.0 + (self.v0 - 1.0)  *  math.exp(self.alpha_ms1 * (self.t0 - t))
-        else: self.value = self.v0 * math.exp(self.beta_ms1 * (self.t0 - t))
-
+                self.value *= self.BetaExp                 
+            else: 
+                self.value = (self.value - 1) * self.AlphaExp + 1                
+        else: self.value *= self.BetaExp
+    
+    #@profile
     def computeStateValueInactivation(self, t):
         '''
         Compute the state value by using the approximation of Destexhe (1997) to
@@ -199,9 +203,11 @@ class PulseConductanceState(object):
         if self.state:
             if t > self.endOfPulse_ms:
                 self.changeState(t)
-                self.value = 1.0 + (self.v0 - 1.0)  *  math.exp(self.alpha_ms1 * (self.t0 - t))
-            else: self.value = self.v0 * math.exp(self.beta_ms1  * (self.t0 - t))                 
-        else: self.value = 1.0 + (self.v0 - 1.0)  *  math.exp(self.alpha_ms1 * (self.t0 - t))
+                self.value = (self.value - 1) * self.AlphaExp + 1
+            else: self.value *= self.BetaExp              
+        else:
+            self.value = (self.value - 1) * self.AlphaExp + 1
+            
         
         
         

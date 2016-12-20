@@ -282,10 +282,11 @@ def compRoffStop(Roff, ri, synContrib):
     '''
     return Roff + np.sum(ri * synContrib)
 
+#@profile
 @jit
 def compDynamicGmax(t, gmax, lastPulse, tau, dynamicGmax, var):
     return (gmax + np.exp((lastPulse - t) / tau) *
-            (dynamicGmax * (1.0 + var) - gmax)
+            (dynamicGmax * var - gmax)
            )
 
 class Synapse(object):
@@ -316,6 +317,8 @@ class Synapse(object):
         self.kind = kind
         self.neuronKind = neuronKind
         self.index = index
+
+        self.timeStep_ms = conf.timeStep_ms
 
         self.EqPot_mV = float(conf.parameterSet('EqPotSyn:' + pool + '-' + self.neuronKind + '|' + self.kind, pool, index))
         self.alpha_ms1 = float(conf.parameterSet('alphaSyn:' + pool + '-'  + self.neuronKind + '|' + self.kind, pool, index))
@@ -351,7 +354,9 @@ class Synapse(object):
         ## \f$\exp(T_{dur}/\tau_{on})\f$.
         self.expFinish = math.exp(- self.tPeak_ms / self.tauOn)
 
-        
+        self.ExpOn = math.exp(-self.timeStep_ms / self.tauOn)
+
+        self.ExpOff = math.exp(-self.timeStep_ms / self.tauOff)
 
         ## Sum of the fractions of the individual conductances that are
         ## receiving neurotransmitter (during pulse) relative to
@@ -441,21 +446,23 @@ class Synapse(object):
             + **t**: current instant, in ms.
         '''
         
-        
         NonInf = self.Non * self.rInf
-        self.Ron = NonInf + (self.Ron - NonInf) * math.exp((self.t0 - t) / self.tauOn) 
-        self.Roff *= math.exp((self.t0 - t) / self.tauOff)
+        self.Ron = NonInf + (self.Ron - NonInf) * self.ExpOn
+        self.Roff *= self.ExpOff
         
         
-        idxBeginPulse = np.where(np.abs(t-self.tBeginOfPulse) < 1e-6)[0]
         
-        idxEndPulse = np.where(np.abs(t-self.tEndOfPulse) < 1e-6)[0]
+        idxBeginPulse = np.nonzero(np.abs(t - self.tBeginOfPulse) < 1e-3)[0]
+        
+        idxEndPulse = np.nonzero(np.abs(t - self.tEndOfPulse) < 1e-3)[0]
 
-        if len(idxBeginPulse): 
+        if idxBeginPulse.size: 
             self.startConductance(t, idxBeginPulse)
 
-        if len(idxEndPulse): 
+        if idxEndPulse.size: 
             self.stopConductance(t, idxEndPulse)
+
+        
 
         return self.gMaxTot_muS * (self.Ron + self.Roff)
 
@@ -489,20 +496,21 @@ class Synapse(object):
                                              )
         synCont[idxBeginPulse] = dynG[idxBeginPulse] / self.gMaxTot_muS
 
-        idxTurningOnCond = idxBeginPulse[np.where(condState[idxBeginPulse] == 0)[0]]
+        idxTurningOnCond = idxBeginPulse[np.where(np.logical_not(condState[idxBeginPulse]))[0]]
         if idxTurningOnCond.size:
-            condState[idxTurningOnCond] = 1
-            self.t0 = t
+            condState[idxTurningOnCond] = 1            
             ri[idxTurningOnCond] *= np.exp((ti[idxTurningOnCond] + tPeak - t) / self.tauOff) 
             self.Non += np.sum(synCont[idxTurningOnCond])
             ti[idxTurningOnCond] = t
-            self.Ron += np.dot(ri[idxTurningOnCond],synCont[idxTurningOnCond])
-            self.Roff -= np.dot(ri[idxTurningOnCond], synCont[idxTurningOnCond])
+            synGain = np.dot(ri[idxTurningOnCond],synCont[idxTurningOnCond])
+            self.Ron += synGain
+            self.Roff -= synGain
         
         self.tEndOfPulse[idxBeginPulse] = t + self.tPeak_ms
         self.tLastPulse[idxBeginPulse] = self.tBeginOfPulse[idxBeginPulse]
         self.tBeginOfPulse[idxBeginPulse] = -1000000
-
+    
+    #@profile    
     def stopConductance(self, t, idxEndPulse):
         '''
         - Inputs:
@@ -511,12 +519,12 @@ class Synapse(object):
             + **idxEndPulse**: integer with the index of the conductance
                 that the pulse end at time **t**.
         '''
-        self.t0 = t
+        
         self.ri[idxEndPulse] = self.rInf + (self.ri[idxEndPulse] - self.rInf) * self.expFinish
-        self.Ron -=np.dot(self.ri[idxEndPulse],self.synContrib[idxEndPulse])
-        self.Roff += np.dot(self.ri[idxEndPulse],self.synContrib[idxEndPulse])
+        synLost = np.dot(self.ri[idxEndPulse],self.synContrib[idxEndPulse])
+        self.Ron -= synLost
+        self.Roff += synLost
         self.Non -= np.sum(self.synContrib[idxEndPulse])
-
         self.tEndOfPulse[idxEndPulse] = -10000
         self.conductanceState[idxEndPulse] = 0
 
@@ -530,7 +538,8 @@ class Synapse(object):
         '''
 
         self.tBeginOfPulse[synapseNumber] = t + self.delay_ms[synapseNumber]
-
+        
+    
     def addConductance(self, gmax, delay, dynamics, variation, timeConstant):
         '''
         Adds a synaptic conductance to the compartment. As the computation 
@@ -554,7 +563,7 @@ class Synapse(object):
         self.delay_ms = np.append(self.delay_ms, delay)
         self.dynamics.append(dynamics)
         if dynamics == 'Depressing':
-            self.variation = np.append(self.variation, -variation)
+            self.variation = np.append(self.variation, 1.0 - variation)
         else:
-            self.variation = np.append(self.variation, variation)
+            self.variation = np.append(self.variation, 1.0 + variation)
         self.timeConstant_ms = np.append(self.timeConstant_ms, timeConstant)

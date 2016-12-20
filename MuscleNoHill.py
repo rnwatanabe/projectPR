@@ -44,7 +44,7 @@ class MuscleNoHill(object):
         self.force = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         
         self.timeIndex = 0;
-
+    #@profile    
     def atualizeForce(self, activation_Sat):
         '''
         Compute the muscle force when no muscle dynamics (Hill model) is used. This
@@ -65,6 +65,6 @@ class MuscleNoHill(object):
         }
         where \f$N_{MU}\f$ is the number of motor units in the pool.
         '''
-        self.force[self.timeIndex] = np.sum(activation_Sat * self.maximumActivationForce)
+        self.force[self.timeIndex] = np.vdot(activation_Sat, self.maximumActivationForce)
         self.timeIndex += 1
         

@@ -123,7 +123,7 @@ class MuscularActivation(object):
         
         
         MUindices = np.arange(0, self.MUnumber)
-        MUspike = np.array([],dtype = 'int')
+        MUspike = np.array([], dtype = 'int')
         self.an[3*MUindices+1] = self.an[3*MUindices]
         self.an[3*MUindices] = self.activation_nonSat[MUindices]
         self.an[3*MUindices+2] =  0

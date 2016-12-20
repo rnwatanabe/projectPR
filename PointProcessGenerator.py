@@ -28,7 +28,6 @@ from numba import jit
 
 
 
-
 @jit
 def  gammaPoint(GammaOrder, GammaOrderInv):
     '''
@@ -52,9 +51,10 @@ def  gammaPoint(GammaOrder, GammaOrderInv):
     a uniform distribution from a to b.
 
     '''
-    aux = np.prod(numpy.random.uniform(0.0, 1.0, size=GammaOrder))
+     
+     
 
-    return - GammaOrderInv * np.log(aux)
+    return - GammaOrderInv * np.log(np.prod(numpy.random.uniform(0.0, 1.0, size=GammaOrder)))
 
 class PointProcessGenerator(object):
     '''

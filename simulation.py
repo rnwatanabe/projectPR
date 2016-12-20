@@ -20,7 +20,6 @@ from NeuralTract import NeuralTract
 from SynapsesFactory import SynapsesFactory
 from jointAnkleForceTask import jointAnkleForceTask
 
-
 def simulator():
 
     conf = Configuration('confTest.rmto')
@@ -134,9 +133,10 @@ def simulator():
 if __name__ == '__main__':
 
     #cProfile.run('simulator()', sort = 'tottime')
-    #kernprof.run(simulator())
+    
     np.__config__.show()
-    #for i in xrange(0, 10):
+    
+    
     simulator()
-
-    plt.show()
+    
+    #plt.show()
