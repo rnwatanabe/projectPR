@@ -166,13 +166,15 @@ class PulseConductanceState(object):
         of the state at that time.
         '''
 
-        if self.state:
+        if not self.state:
+            self.value *= self.BetaExp
+        else:
             if t > self.endOfPulse_ms:
                 self.changeState(t)
                 self.value *= self.BetaExp                 
             else: 
                 self.value = (self.value - 1) * self.AlphaExp + 1                
-        else: self.value *= self.BetaExp
+        
     
     #@profile
     def computeStateValueInactivation(self, t):
@@ -200,13 +202,15 @@ class PulseConductanceState(object):
         of the state at that time.
         '''
 
-        if self.state:
+        if not self.state:
+            self.value = (self.value - 1) * self.AlphaExp + 1
+        else:
             if t > self.endOfPulse_ms:
                 self.changeState(t)
                 self.value = (self.value - 1) * self.AlphaExp + 1
             else: self.value *= self.BetaExp              
-        else:
-            self.value = (self.value - 1) * self.AlphaExp + 1
+        
+            
             
         
         

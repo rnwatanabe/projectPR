@@ -338,7 +338,7 @@ class MotorUnit(object):
         self.atualizeCompartments(t)
         self.atualizeDelay(t)
 
-    @profile    
+    #@profile    
     def atualizeCompartments(self, t):
         '''
         Atualize all neural compartments.
@@ -353,7 +353,7 @@ class MotorUnit(object):
             if self.v_mV[i] > self.threshold_mV and t-self.tSpikes[i] > self.MNRefPer_ms: 
                 self.addCompartmentSpike(t, i)    
      
-    @profile   
+    #@profile   
     def dVdt(self, t, V): 
         '''
         Compute the potential derivative of all compartments of the motor unit.
@@ -376,9 +376,9 @@ class MotorUnit(object):
             self.iIonic.itemset(i, self.compartment[i].computeCurrent(t, V.item(i)))
 
               
-        return (self.iIonic + np.dot(self.G, V)  + self.iInjected + self.EqCurrent_nA) * self.capacitanceInv
+        return (self.iIonic + self.G.dot(V)  + self.iInjected + self.EqCurrent_nA) * self.capacitanceInv
     
-    @profile
+    #@profile
     def addCompartmentSpike(self, t, comp):
         '''
         When the soma potential is above the threshold a spike is added tom the soma.

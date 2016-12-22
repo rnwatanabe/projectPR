@@ -22,6 +22,8 @@ import math
 import numpy as np
 from numba import jit
 
+
+
 @jit
 def compRon(Non, rInf, Ron, t0, t, tauOn):
     '''
@@ -438,7 +440,7 @@ class Synapse(object):
         '''
         return self.computeConductance(t) * (self.EqPot_mV - V_mV)
     
-    #@profile    
+    @profile    
     def computeConductance(self, t):
         '''
 
@@ -446,23 +448,21 @@ class Synapse(object):
             + **t**: current instant, in ms.
         '''
         
-        NonInf = self.Non * self.rInf
-        self.Ron = NonInf + (self.Ron - NonInf) * self.ExpOn
+        
+        
+        self.Ron = self.Ron * self.ExpOn + self.Non * self.rInf * (1 - self.ExpOn)
         self.Roff *= self.ExpOff
         
         
         
         idxBeginPulse = np.nonzero(np.abs(t - self.tBeginOfPulse) < 1e-3)[0]
-        
         idxEndPulse = np.nonzero(np.abs(t - self.tEndOfPulse) < 1e-3)[0]
 
-        if idxBeginPulse.size: 
+        if idxBeginPulse.size:
             self.startConductance(t, idxBeginPulse)
 
-        if idxEndPulse.size: 
+        if idxEndPulse.size:
             self.stopConductance(t, idxEndPulse)
-
-        
 
         return self.gMaxTot_muS * (self.Ron + self.Roff)
 
@@ -538,8 +538,7 @@ class Synapse(object):
         '''
 
         self.tBeginOfPulse[synapseNumber] = t + self.delay_ms[synapseNumber]
-        
-    
+
     def addConductance(self, gmax, delay, dynamics, variation, timeConstant):
         '''
         Adds a synaptic conductance to the compartment. As the computation 

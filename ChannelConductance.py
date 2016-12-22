@@ -232,7 +232,7 @@ class ChannelConductance(object):
         
           
     
-    
+    #@profile
     def computeCurrent(self, t, V_mV): 
         '''
         Computes the current genrated by the ionic Channel
@@ -245,7 +245,8 @@ class ChannelConductance(object):
             + Ionic current, in nA
         '''        
          
-        for i in xrange(self.lenStates): self.condState[i].computeStateValue(t)        
+        for i in xrange(0, self.lenStates): 
+            self.condState[i].computeStateValue(t)        
                           
         return self.compCond(V_mV, self.gmax_muS, self.condState, self.EqPot_mV)
    

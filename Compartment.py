@@ -135,7 +135,7 @@ class Compartment(object):
         self.numberChannels = len(self.Channels)
 
         
-
+    #@profile    
     def computeCurrent(self, t, V_mV):
         '''
         Computes the active currents of the compartment. Active currents are the currents from the ionic channels
@@ -149,9 +149,8 @@ class Compartment(object):
         
         I = 0.0
 
-        if self.SynapsesIn[0].numberOfIncomingSynapses: I = self.SynapsesIn[0].computeCurrent(t, V_mV)
+        if self.SynapsesIn[0].numberOfIncomingSynapses: I += self.SynapsesIn[0].computeCurrent(t, V_mV)
         if self.SynapsesIn[1].numberOfIncomingSynapses: I += self.SynapsesIn[1].computeCurrent(t, V_mV)
-        if self.numberChannels: 
-            for i in xrange(0, self.numberChannels): I += self.Channels[i].computeCurrent(t, V_mV)
+        for i in xrange(0, self.numberChannels): I += self.Channels[i].computeCurrent(t, V_mV)
         
         return I
