@@ -440,7 +440,7 @@ class Synapse(object):
         '''
         return self.computeConductance(t) * (self.EqPot_mV - V_mV)
     
-    @profile    
+    #@profile    
     def computeConductance(self, t):
         '''
 
