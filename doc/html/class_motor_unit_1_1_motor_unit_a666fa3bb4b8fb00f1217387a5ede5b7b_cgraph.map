@@ -1,5 +1,9 @@
 <map id="MotorUnit.MotorUnit.atualizeCompartments" name="MotorUnit.MotorUnit.atualizeCompartments">
 <area shape="rect" id="node2" href="$namespace_motor_unit.html#ab7df982e859623662808361f779572f5" title="Function to implement the fourth order Runge&#45;Kutta Method to solve numerically a differential equatio..." alt="" coords="267,5,417,32"/>
-<area shape="rect" id="node3" href="$class_motor_unit_1_1_motor_unit.html#adf30fdef09ac21cfc2a261b762a7f618" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="257,56,427,83"/>
-<area shape="rect" id="node4" href="$class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534" title="When the soma potential is above the threshold a spike is added tom the soma. " alt="" coords="243,107,441,149"/>
+<area shape="rect" id="node3" href="$class_interneuron_1_1_interneuron.html#a5eff07c93609a66a19f8e7426204be02" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="249,56,435,83"/>
+<area shape="rect" id="node4" href="$class_motor_unit_1_1_motor_unit.html#adf30fdef09ac21cfc2a261b762a7f618" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="257,107,427,133"/>
+<area shape="rect" id="node5" href="$class_interneuron_1_1_interneuron.html#affb57bbf0d7eec160855d0fce26f83d5" title="When the soma potential is above the threshold a spike is added to the soma. " alt="" coords="251,158,433,199"/>
+<area shape="rect" id="node7" href="$class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534" title="When the soma potential is above the threshold a spike is added tom the soma. " alt="" coords="243,223,441,265"/>
+<area shape="rect" id="node6" href="$class_interneuron_1_1_interneuron.html#a776242a1aa83a264adba968651de0226" title="Interneuron.Interneuron.transmit\lSpikes" alt="" coords="489,158,696,199"/>
+<area shape="rect" id="node8" href="$class_motor_unit_1_1_motor_unit.html#ac3d3e69bf0b75eef81a015005052f5d3" title="MotorUnit.MotorUnit.transmit\lSpikes" alt="" coords="497,223,688,265"/>
 </map>

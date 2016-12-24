@@ -1,6 +1,7 @@
 var _synapse_8py =
 [
     [ "Synapse", "class_synapse_1_1_synapse.html", "class_synapse_1_1_synapse" ],
+    [ "compDynamicGmax", "_synapse_8py.html#a8bf27e583af5778833e20c4468c6e71e", null ],
     [ "compRiStart", "_synapse_8py.html#a86ce19e1d63e7071f6315234ee4cb6b6", null ],
     [ "compRiStop", "_synapse_8py.html#ad8ba0d5cb97f96cf8f68a75efc924488", null ],
     [ "compRoff", "_synapse_8py.html#a946e8e8437009fba80f7d7ead8d1eb57", null ],

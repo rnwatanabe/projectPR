@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -137,6 +138,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0aa5e024003845e3f48bc0e618068edc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_1_1_motor_unit.html#a0aa5e024003845e3f48bc0e618068edc">atualizeDelay</a> (self, t)</td></tr>
 <tr class="memdesc:a0aa5e024003845e3f48bc0e618068edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualize the terminal spike train, by considering the Delay of the nerve.  <a href="#a0aa5e024003845e3f48bc0e618068edc">More...</a><br /></td></tr>
 <tr class="separator:a0aa5e024003845e3f48bc0e618068edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d3e69bf0b75eef81a015005052f5d3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_1_1_motor_unit.html#ac3d3e69bf0b75eef81a015005052f5d3">transmitSpikes</a> (self, t)</td></tr>
+<tr class="separator:ac3d3e69bf0b75eef81a015005052f5d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -161,6 +164,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:affbd0b90f1dce6a0f929775e54f8c212"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_1_1_motor_unit.html#affbd0b90f1dce6a0f929775e54f8c212">threshold_mV</a></td></tr>
 <tr class="memdesc:affbd0b90f1dce6a0f929775e54f8c212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value of the membrane potential, in mV, that is considered a spike.  <a href="#affbd0b90f1dce6a0f929775e54f8c212">More...</a><br /></td></tr>
 <tr class="separator:affbd0b90f1dce6a0f929775e54f8c212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b1938bcbaa8c89ef47e0b915ab4cd39"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_1_1_motor_unit.html#a9b1938bcbaa8c89ef47e0b915ab4cd39">position_mm</a></td></tr>
+<tr class="memdesc:a9b1938bcbaa8c89ef47e0b915ab4cd39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anatomical position of the neuron, in mm.  <a href="#a9b1938bcbaa8c89ef47e0b915ab4cd39">More...</a><br /></td></tr>
+<tr class="separator:a9b1938bcbaa8c89ef47e0b915ab4cd39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe7281fb12c41102980b6b48d5a49713"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_1_1_motor_unit.html#afe7281fb12c41102980b6b48d5a49713">compNumber</a></td></tr>
 <tr class="memdesc:afe7281fb12c41102980b6b48d5a49713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of compartments.  <a href="#afe7281fb12c41102980b6b48d5a49713">More...</a><br /></td></tr>
 <tr class="separator:afe7281fb12c41102980b6b48d5a49713"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,6 +212,13 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a2a466c5f2f798901c1c438f9d57c2221"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_1_1_motor_unit.html#a2a466c5f2f798901c1c438f9d57c2221">twTet</a></td></tr>
 <tr class="memdesc:a2a466c5f2f798901c1c438f9d57c2221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Twitch- tetanus relationship.  <a href="#a2a466c5f2f798901c1c438f9d57c2221">More...</a><br /></td></tr>
 <tr class="separator:a2a466c5f2f798901c1c438f9d57c2221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a898cd628506c666bf326b02436be0750"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_1_1_motor_unit.html#a898cd628506c666bf326b02436be0750">SynapsesOut</a></td></tr>
+<tr class="memdesc:a898cd628506c666bf326b02436be0750"><td class="mdescLeft">&#160;</td><td class="mdescRight">EMG data.  <a href="#a898cd628506c666bf326b02436be0750">More...</a><br /></td></tr>
+<tr class="separator:a898cd628506c666bf326b02436be0750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30fc94e8b9f24b75770bb903e20f1961"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_1_1_motor_unit.html#a30fc94e8b9f24b75770bb903e20f1961">transmitSpikesThroughSynapses</a></td></tr>
+<tr class="separator:a30fc94e8b9f24b75770bb903e20f1961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b53efb19f9b1a050ef1c21af4316755"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_1_1_motor_unit.html#a9b53efb19f9b1a050ef1c21af4316755">indicesOfSynapsesOnTarget</a></td></tr>
+<tr class="separator:a9b53efb19f9b1a050ef1c21af4316755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that implements a motor unit model. </p>
@@ -259,11 +272,13 @@ Public Attributes</h2></td></tr>
 <ul>
 <li>Inputs:<ul>
 <li><b>conf</b>: <a class="el" href="namespace_configuration.html">Configuration</a> object with the simulation parameters.</li>
-<li><b>pool</b>: string with Motor unit pool to which the motor unit belongs.</li>
-<li><b>index</b>: integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle).</li>
-<li><b>kind</b>: string with the type of the motor unit. It can be <em>S</em> (slow), <em>FR</em> (fast and resistant), and <em>FF</em> (fast and fatigable). </li>
 </ul>
 </li>
+</ul>
+<p>cyto + <b>pool</b>: string with Motor unit pool to which the motor unit belongs.</p>
+<ul>
+<li><b>index</b>: integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle).</li>
+<li><b>kind</b>: string with the type of the motor unit. It can be <em>S</em> (slow), <em>FR</em> (fast and resistant), and <em>FF</em> (fast and fatigable). </li>
 </ul>
 
 <p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00167">167</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
@@ -303,7 +318,18 @@ Public Attributes</h2></td></tr>
 </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00328">328</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00335">335</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_cgraph.png" border="0" usemap="#class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_cgraph" alt=""/></div>
+<map name="class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_cgraph" id="class_motor_unit_1_1_motor_unit_a6d597c703b3b469fbec7843a0f97c534_cgraph">
+<area shape="rect" id="node2" href="class_interneuron_1_1_interneuron.html#a776242a1aa83a264adba968651de0226" title="Interneuron.Interneuron.transmit\lSpikes" alt="" coords="252,5,459,47"/>
+<area shape="rect" id="node3" href="class_motor_unit_1_1_motor_unit.html#ac3d3e69bf0b75eef81a015005052f5d3" title="MotorUnit.MotorUnit.transmit\lSpikes" alt="" coords="260,71,451,112"/>
+</map>
+</div>
+</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -350,7 +376,7 @@ Here is the caller graph for this function:</div>
 </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00291">291</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00298">298</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -358,8 +384,12 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_cgraph.png" border="0" usemap="#class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_cgraph" alt=""/></div>
 <map name="class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_cgraph" id="class_motor_unit_1_1_motor_unit_a666fa3bb4b8fb00f1217387a5ede5b7b_cgraph">
 <area shape="rect" id="node2" href="namespace_motor_unit.html#ab7df982e859623662808361f779572f5" title="Function to implement the fourth order Runge&#45;Kutta Method to solve numerically a differential equatio..." alt="" coords="267,5,417,32"/>
-<area shape="rect" id="node3" href="class_motor_unit_1_1_motor_unit.html#adf30fdef09ac21cfc2a261b762a7f618" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="257,56,427,83"/>
-<area shape="rect" id="node4" href="class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534" title="When the soma potential is above the threshold a spike is added tom the soma. " alt="" coords="243,107,441,149"/>
+<area shape="rect" id="node3" href="class_interneuron_1_1_interneuron.html#a5eff07c93609a66a19f8e7426204be02" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="249,56,435,83"/>
+<area shape="rect" id="node4" href="class_motor_unit_1_1_motor_unit.html#adf30fdef09ac21cfc2a261b762a7f618" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="257,107,427,133"/>
+<area shape="rect" id="node5" href="class_interneuron_1_1_interneuron.html#affb57bbf0d7eec160855d0fce26f83d5" title="When the soma potential is above the threshold a spike is added to the soma. " alt="" coords="251,158,433,199"/>
+<area shape="rect" id="node7" href="class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534" title="When the soma potential is above the threshold a spike is added tom the soma. " alt="" coords="243,223,441,265"/>
+<area shape="rect" id="node6" href="class_interneuron_1_1_interneuron.html#a776242a1aa83a264adba968651de0226" title="Interneuron.Interneuron.transmit\lSpikes" alt="" coords="489,158,696,199"/>
+<area shape="rect" id="node8" href="class_motor_unit_1_1_motor_unit.html#ac3d3e69bf0b75eef81a015005052f5d3" title="MotorUnit.MotorUnit.transmit\lSpikes" alt="" coords="497,223,688,265"/>
 </map>
 </div>
 </p>
@@ -408,7 +438,7 @@ Here is the caller graph for this function:</div>
 </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00344">344</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00352">352</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -454,18 +484,24 @@ Here is the caller graph for this function:</div>
 </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00279">279</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00286">286</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_motor_unit_1_1_motor_unit_ab57693c2f49518b08639456595e92d87_cgraph.png" border="0" usemap="#class_motor_unit_1_1_motor_unit_ab57693c2f49518b08639456595e92d87_cgraph" alt=""/></div>
 <map name="class_motor_unit_1_1_motor_unit_ab57693c2f49518b08639456595e92d87_cgraph" id="class_motor_unit_1_1_motor_unit_ab57693c2f49518b08639456595e92d87_cgraph">
-<area shape="rect" id="node2" href="class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b" title="Atualize all neural compartments. " alt="" coords="243,49,432,90"/>
-<area shape="rect" id="node6" href="class_motor_unit_1_1_motor_unit.html#a0aa5e024003845e3f48bc0e618068edc" title="Atualize the terminal spike train, by considering the Delay of the nerve. " alt="" coords="243,114,432,155"/>
-<area shape="rect" id="node3" href="namespace_motor_unit.html#ab7df982e859623662808361f779572f5" title="Function to implement the fourth order Runge&#45;Kutta Method to solve numerically a differential equatio..." alt="" coords="504,5,655,32"/>
-<area shape="rect" id="node4" href="class_motor_unit_1_1_motor_unit.html#adf30fdef09ac21cfc2a261b762a7f618" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="494,56,665,83"/>
-<area shape="rect" id="node5" href="class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534" title="When the soma potential is above the threshold a spike is added tom the soma. " alt="" coords="480,107,679,149"/>
+<area shape="rect" id="node2" href="class_interneuron_1_1_interneuron.html#aadb0a11834ebf0b9fb0fa05788da23d1" title="Atualize all neural compartments. " alt="" coords="243,63,448,105"/>
+<area shape="rect" id="node7" href="class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b" title="Atualize all neural compartments. " alt="" coords="251,158,440,199"/>
+<area shape="rect" id="node12" href="class_motor_unit_1_1_motor_unit.html#a0aa5e024003845e3f48bc0e618068edc" title="Atualize the terminal spike train, by considering the Delay of the nerve. " alt="" coords="251,223,440,265"/>
+<area shape="rect" id="node3" href="namespace_interneuron.html#a3c7f009c4357310ae71cedad2abfd716" title="Function to implement the fourth order Runge&#45;Kutta Method to solve numerically a differential equatio..." alt="" coords="516,5,675,32"/>
+<area shape="rect" id="node4" href="class_interneuron_1_1_interneuron.html#a5eff07c93609a66a19f8e7426204be02" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="502,56,689,83"/>
+<area shape="rect" id="node5" href="class_interneuron_1_1_interneuron.html#affb57bbf0d7eec160855d0fce26f83d5" title="When the soma potential is above the threshold a spike is added to the soma. " alt="" coords="505,107,686,149"/>
+<area shape="rect" id="node6" href="class_interneuron_1_1_interneuron.html#a776242a1aa83a264adba968651de0226" title="Interneuron.Interneuron.transmit\lSpikes" alt="" coords="743,107,949,149"/>
+<area shape="rect" id="node8" href="namespace_motor_unit.html#ab7df982e859623662808361f779572f5" title="Function to implement the fourth order Runge&#45;Kutta Method to solve numerically a differential equatio..." alt="" coords="520,239,671,265"/>
+<area shape="rect" id="node9" href="class_motor_unit_1_1_motor_unit.html#adf30fdef09ac21cfc2a261b762a7f618" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="510,289,681,316"/>
+<area shape="rect" id="node10" href="class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534" title="When the soma potential is above the threshold a spike is added tom the soma. " alt="" coords="496,173,695,214"/>
+<area shape="rect" id="node11" href="class_motor_unit_1_1_motor_unit.html#ac3d3e69bf0b75eef81a015005052f5d3" title="MotorUnit.MotorUnit.transmit\lSpikes" alt="" coords="751,173,941,214"/>
 </map>
 </div>
 </p>
@@ -511,7 +547,7 @@ Here is the call graph for this function:</div>
 </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00314">314</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00321">321</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -520,6 +556,53 @@ Here is the caller graph for this function:</div>
 <map name="class_motor_unit_1_1_motor_unit_adf30fdef09ac21cfc2a261b762a7f618_icgraph" id="class_motor_unit_1_1_motor_unit_adf30fdef09ac21cfc2a261b762a7f618_icgraph">
 <area shape="rect" id="node2" href="class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b" title="Atualize all neural compartments. " alt="" coords="224,5,413,47"/>
 <area shape="rect" id="node3" href="class_motor_unit_1_1_motor_unit.html#ab57693c2f49518b08639456595e92d87" title="Atualize the dynamical and nondynamical (delay) parts of the motor unit. " alt="" coords="461,5,651,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3d3e69bf0b75eef81a015005052f5d3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def MotorUnit.MotorUnit.transmitSpikes </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<ul>
+<li>Inputs:<ul>
+<li><b>t</b>: current instant, in ms. </li>
+</ul>
+</li>
+</ul>
+
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00362">362</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_motor_unit_1_1_motor_unit_ac3d3e69bf0b75eef81a015005052f5d3_icgraph.png" border="0" usemap="#class_motor_unit_1_1_motor_unit_ac3d3e69bf0b75eef81a015005052f5d3_icgraph" alt=""/></div>
+<map name="class_motor_unit_1_1_motor_unit_ac3d3e69bf0b75eef81a015005052f5d3_icgraph" id="class_motor_unit_1_1_motor_unit_ac3d3e69bf0b75eef81a015005052f5d3_icgraph">
+<area shape="rect" id="node2" href="class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534" title="When the soma potential is above the threshold a spike is added tom the soma. " alt="" coords="244,5,443,47"/>
+<area shape="rect" id="node5" href="class_neural_tract_unit_1_1_neural_tract_unit.html#a30ea40e013697346cae35a342640a6e4" title="NeuralTractUnit.NeuralTract\lUnit.atualizeNeuralTractUnit" alt="" coords="250,71,437,112"/>
+<area shape="rect" id="node3" href="class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b" title="Atualize all neural compartments. " alt="" coords="491,5,680,47"/>
+<area shape="rect" id="node4" href="class_motor_unit_1_1_motor_unit.html#ab57693c2f49518b08639456595e92d87" title="Atualize the dynamical and nondynamical (delay) parts of the motor unit. " alt="" coords="728,5,917,47"/>
 </map>
 </div>
 </p>
@@ -539,7 +622,7 @@ Here is the caller graph for this function:</div>
 
 <p>Parameter of the saturation. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00264">264</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00267">267</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -555,7 +638,7 @@ Here is the caller graph for this function:</div>
 
 <p>Vector with the inverse of the capacitance of all compartments. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00216">216</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00219">219</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -587,7 +670,7 @@ Here is the caller graph for this function:</div>
 
 <p>Number of compartments. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00194">194</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00197">197</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -619,7 +702,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="namespace_axon_delay.html">AxonDelay</a> object of the motor unit. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00249">249</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00252">252</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -636,7 +719,7 @@ Here is the caller graph for this function:</div>
 <p>Matrix of the conductance of the motoneuron. </p>
 <p>Multiplied by the vector self.v_mV, results in the passive currents of each compartment. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00231">231</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00234">234</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -652,7 +735,7 @@ Here is the caller graph for this function:</div>
 
 <p>Vector with the current, in nA, injected in each compartment. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00222">222</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00225">225</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -669,7 +752,7 @@ Here is the caller graph for this function:</div>
 <p>Vector with current, in nA, of each compartment coming from other elements of the model. </p>
 <p>For example from ionic channels and synapses. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00220">220</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00223">223</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -686,6 +769,20 @@ Here is the caller graph for this function:</div>
 <p>Integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle). </p>
 
 <p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00185">185</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b53efb19f9b1a050ef1c21af4316755"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MotorUnit.MotorUnit.indicesOfSynapsesOnTarget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00277">277</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -718,7 +815,7 @@ Here is the caller graph for this function:</div>
 
 <p>Refractory period, in ms, of the motoneuron. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00238">238</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00241">241</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -735,7 +832,23 @@ Here is the caller graph for this function:</div>
 <p>String with type of the nerve. </p>
 <p>It can be PTN (posterior tibial nerve) or CPN (common peroneal nerve). </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00244">244</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00247">247</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b1938bcbaa8c89ef47e0b915ab4cd39"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MotorUnit.MotorUnit.position_mm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Anatomical position of the neuron, in mm. </p>
+
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00192">192</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -751,7 +864,7 @@ Here is the caller graph for this function:</div>
 
 <p>index of the soma compartment. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00235">235</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00238">238</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -771,6 +884,23 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="a898cd628506c666bf326b02436be0750"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MotorUnit.MotorUnit.SynapsesOut</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>EMG data. </p>
+<p>Build synapses </p>
+
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00275">275</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a2e33990aaab69454943aa00db6b8d2eb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -783,7 +913,7 @@ Here is the caller graph for this function:</div>
 
 <p>Vector with the instants of spikes at the terminal. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00253">253</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00256">256</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -800,6 +930,20 @@ Here is the caller graph for this function:</div>
 <p>Value of the membrane potential, in mV, that is considered a spike. </p>
 
 <p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00189">189</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a30fc94e8b9f24b75770bb903e20f1961"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MotorUnit.MotorUnit.transmitSpikesThroughSynapses</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00276">276</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -831,7 +975,7 @@ Here is the caller graph for this function:</div>
 
 <p>Amplitude of the muscle unit twitch, in N. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00262">262</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00265">265</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -847,7 +991,7 @@ Here is the caller graph for this function:</div>
 
 <p>Contraction time of the twitch muscle unit, in ms. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00260">260</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00263">263</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -863,7 +1007,7 @@ Here is the caller graph for this function:</div>
 
 <p>Twitch- tetanus relationship. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00266">266</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00269">269</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -879,7 +1023,7 @@ Here is the caller graph for this function:</div>
 
 <p>Vector with membrane potential,in mV, of all compartments. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00196">196</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_8py_source.html#l00199">199</a> of file <a class="el" href="_motor_unit_8py_source.html">MotorUnit.py</a>.</p>
 
 </div>
 </div>
@@ -892,7 +1036,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_motor_unit.html">MotorUnit</a></li><li class="navelem"><a class="el" href="class_motor_unit_1_1_motor_unit.html">MotorUnit</a></li>
-    <li class="footer">Generated on Mon Jun 27 2016 18:05:12 for PyReMoto by
+    <li class="footer">Generated on Mon Dec 12 2016 13:43:18 for PyReMoto by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

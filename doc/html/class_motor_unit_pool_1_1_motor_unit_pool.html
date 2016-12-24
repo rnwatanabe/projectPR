@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -125,12 +126,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae211c664df7b661288fe71c4a6e63a18"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#ae211c664df7b661288fe71c4a6e63a18">atualizeMotorUnitPool</a> (self, t)</td></tr>
 <tr class="memdesc:ae211c664df7b661288fe71c4a6e63a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update all parts of the Motor Unit pool.  <a href="#ae211c664df7b661288fe71c4a6e63a18">More...</a><br /></td></tr>
 <tr class="separator:ae211c664df7b661288fe71c4a6e63a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a164393f9e070abb72b48d0a9685ba518"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a164393f9e070abb72b48d0a9685ba518">atualizeActivationSignal</a> (self, t)</td></tr>
-<tr class="memdesc:a164393f9e070abb72b48d0a9685ba518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the activation signal of the motor units.  <a href="#a164393f9e070abb72b48d0a9685ba518">More...</a><br /></td></tr>
-<tr class="separator:a164393f9e070abb72b48d0a9685ba518"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f8b496796becc89ddb7e9e1c8a2fb9b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a8f8b496796becc89ddb7e9e1c8a2fb9b">atualizeForceNoHill</a> (self)</td></tr>
-<tr class="memdesc:a8f8b496796becc89ddb7e9e1c8a2fb9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the muscle force when no muscle dynamics (Hill model) is used.  <a href="#a8f8b496796becc89ddb7e9e1c8a2fb9b">More...</a><br /></td></tr>
-<tr class="separator:a8f8b496796becc89ddb7e9e1c8a2fb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11d81004e9bf591ac9dcce582e87b4f4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a11d81004e9bf591ac9dcce582e87b4f4">listSpikes</a> (self)</td></tr>
 <tr class="memdesc:a11d81004e9bf591ac9dcce582e87b4f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">List the spikes that occurred in the soma and in the terminal of the different motor units.  <a href="#a11d81004e9bf591ac9dcce582e87b4f4">More...</a><br /></td></tr>
 <tr class="separator:a11d81004e9bf591ac9dcce582e87b4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,55 +153,19 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a4f0b93df27eb6303fa1a3d49653d4fd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a4f0b93df27eb6303fa1a3d49653d4fd3">poolTerminalSpikes</a></td></tr>
 <tr class="memdesc:a4f0b93df27eb6303fa1a3d49653d4fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector with the instants of spikes in the terminal, in ms.  <a href="#a4f0b93df27eb6303fa1a3d49653d4fd3">More...</a><br /></td></tr>
 <tr class="separator:a4f0b93df27eb6303fa1a3d49653d4fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaa7680d0691fac81f66b200dfcfd203"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#abaa7680d0691fac81f66b200dfcfd203">activationModel</a></td></tr>
-<tr class="memdesc:abaa7680d0691fac81f66b200dfcfd203"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model of the activation signal.  <a href="#abaa7680d0691fac81f66b200dfcfd203">More...</a><br /></td></tr>
-<tr class="separator:abaa7680d0691fac81f66b200dfcfd203"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad03b9e215e833188060e90bc4392d42b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#ad03b9e215e833188060e90bc4392d42b">ActMatrix</a></td></tr>
-<tr class="memdesc:ad03b9e215e833188060e90bc4392d42b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix that multiplied by the vector formed as the formula below gives the activation signal at instant <img class="formulaInl" alt="$n$" src="form_7.png"/>: </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{equation} \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&amp;a_1(n-2)&amp;e_1(n-1)&amp;...&amp;a_i(n-i)&amp;a_i(n-2)&amp;e_i(n-1)&amp;...&amp;a__{N_{MU}}(n-1)&amp;a__{N_{MU}}(n-2)&amp;e_{N_{MU}}(n-1)\end{array}\right]^T$} \end{equation}" src="form_33.png"/>
-</p>
-<p> where <img class="formulaInl" alt="$a_i(n)$" src="form_34.png"/> is the activation signal of the motor unit <img class="formulaInl" alt="$i$" src="form_35.png"/>, <img class="formulaInl" alt="$e_i(n)$" src="form_36.png"/> is 1/T (inverse of simulation time step, Dirac's delta approximation) if the motor unit <img class="formulaInl" alt="$i$" src="form_35.png"/>, fired at instant <img class="formulaInl" alt="$n$" src="form_7.png"/>.  <a href="#ad03b9e215e833188060e90bc4392d42b">More...</a><br /></td></tr>
-<tr class="separator:ad03b9e215e833188060e90bc4392d42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac72c67b4a1f6134965ab77e2d798b5a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#ac72c67b4a1f6134965ab77e2d798b5a4">an</a></td></tr>
-<tr class="memdesc:ac72c67b4a1f6134965ab77e2d798b5a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is a vector formed as: </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{equation} \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&amp;a_1(n-2)&amp;e_1(n-1)&amp;...&amp;a_i(n-i)&amp;a_i(n-2)&amp;e_i(n-1)&amp;...&amp;a__{N_{MU}}(n-1)&amp;a__{N_{MU}}(n-2)&amp;e_{N_{MU}}(n-1)\end{array}\right]^T$} \end{equation}" src="form_33.png"/>
-</p>
-<p> It is multiplied by the matriz actMatrix to obtain the activation signal (see actMatrix explanation)  <a href="#ac72c67b4a1f6134965ab77e2d798b5a4">More...</a><br /></td></tr>
-<tr class="separator:ac72c67b4a1f6134965ab77e2d798b5a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a467ac7b080b79b9515d5846d75e95d1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a467ac7b080b79b9515d5846d75e95d1c">activation_nonSat</a></td></tr>
-<tr class="memdesc:a467ac7b080b79b9515d5846d75e95d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The non-saturated activation signal of all motor units (see actMatrix explanation).  <a href="#a467ac7b080b79b9515d5846d75e95d1c">More...</a><br /></td></tr>
-<tr class="separator:a467ac7b080b79b9515d5846d75e95d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e107835e34b4f56d06b9b28c143fe40"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a4e107835e34b4f56d06b9b28c143fe40">bSat</a></td></tr>
-<tr class="memdesc:a4e107835e34b4f56d06b9b28c143fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">The parameter <img class="formulaInl" alt="$b$" src="form_41.png"/> (see twitchSaturation function explanation) of each motor unit.  <a href="#a4e107835e34b4f56d06b9b28c143fe40">More...</a><br /></td></tr>
-<tr class="separator:a4e107835e34b4f56d06b9b28c143fe40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a785a769c5b4824603a24339e4f0d8dfe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a785a769c5b4824603a24339e4f0d8dfe">twTet</a></td></tr>
-<tr class="memdesc:a785a769c5b4824603a24339e4f0d8dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Twitch- tetanus relationship (see atualizeForceNoHill function explanation)  <a href="#a785a769c5b4824603a24339e4f0d8dfe">More...</a><br /></td></tr>
-<tr class="separator:a785a769c5b4824603a24339e4f0d8dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03538b06e7220f9d48c7306ed6508c05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a03538b06e7220f9d48c7306ed6508c05">twitchAmp_N</a></td></tr>
-<tr class="memdesc:a03538b06e7220f9d48c7306ed6508c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amplitude of the muscle unit twitch, in N (see atualizeForceNoHill function explanation).  <a href="#a03538b06e7220f9d48c7306ed6508c05">More...</a><br /></td></tr>
-<tr class="separator:a03538b06e7220f9d48c7306ed6508c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac475d1369c38d0bc5064c7243b4e1d44"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#ac475d1369c38d0bc5064c7243b4e1d44">activation_Sat</a></td></tr>
-<tr class="memdesc:ac475d1369c38d0bc5064c7243b4e1d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">The non-saturated activation signal of all motor units (see actMatrix explanation).  <a href="#ac475d1369c38d0bc5064c7243b4e1d44">More...</a><br /></td></tr>
-<tr class="separator:ac475d1369c38d0bc5064c7243b4e1d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48b53d4f838ca8cfe2bc41c8308f2060"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a48b53d4f838ca8cfe2bc41c8308f2060">diracDeltaValue</a></td></tr>
-<tr class="memdesc:a48b53d4f838ca8cfe2bc41c8308f2060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirac's delta approximation amplitude value.  <a href="#a48b53d4f838ca8cfe2bc41c8308f2060">More...</a><br /></td></tr>
-<tr class="separator:a48b53d4f838ca8cfe2bc41c8308f2060"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97011c17140c45a42a00105279f014ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a97011c17140c45a42a00105279f014ad">force</a></td></tr>
-<tr class="memdesc:a97011c17140c45a42a00105279f014ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muscle force along time, in N.  <a href="#a97011c17140c45a42a00105279f014ad">More...</a><br /></td></tr>
-<tr class="separator:a97011c17140c45a42a00105279f014ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a592dab3971b181b7cc7bb4b99b0bd09d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a592dab3971b181b7cc7bb4b99b0bd09d">Activation</a></td></tr>
+<tr class="separator:a592dab3971b181b7cc7bb4b99b0bd09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a963061fdcfee8f9dc33e4d6f130ea59b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a963061fdcfee8f9dc33e4d6f130ea59b">hillModel</a></td></tr>
 <tr class="memdesc:a963061fdcfee8f9dc33e4d6f130ea59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">String indicating whther a Hill model is used or not.  <a href="#a963061fdcfee8f9dc33e4d6f130ea59b">More...</a><br /></td></tr>
 <tr class="separator:a963061fdcfee8f9dc33e4d6f130ea59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21f9a6a5d113b5b0f67a3557c47ebd5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a21f9a6a5d113b5b0f67a3557c47ebd5a">atualizeForce</a></td></tr>
-<tr class="separator:a21f9a6a5d113b5b0f67a3557c47ebd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5659e1c9355ecf529d9b8be8cbf6d65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#ab5659e1c9355ecf529d9b8be8cbf6d65">timeIndex</a></td></tr>
-<tr class="separator:ab5659e1c9355ecf529d9b8be8cbf6d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b76b7748d3fd22f7367be8dd82d6cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a69b76b7748d3fd22f7367be8dd82d6cf">Muscle</a></td></tr>
+<tr class="separator:a69b76b7748d3fd22f7367be8dd82d6cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that implements a motor unit pool. </p>
 <p>Encompasses a set of motor units that controls a single muscle. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00041">41</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00026">26</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a79dc49385a2a1c707766fd355f612088"></a>
 <div class="memitem">
@@ -247,88 +206,11 @@ Public Attributes</h2></td></tr>
 </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00053">53</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00038">38</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a164393f9e070abb72b48d0a9685ba518"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def MotorUnitPool.MotorUnitPool.atualizeActivationSignal </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Update the activation signal of the motor units. </p>
-<ul>
-<li>Inputs:<ul>
-<li><b>t</b>: current instant, in ms. </li>
-</ul>
-</li>
-</ul>
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00188">188</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518_cgraph.png" border="0" usemap="#class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518_cgraph" alt=""/></div>
-<map name="class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518_cgraph" id="class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518_cgraph">
-<area shape="rect" id="node2" href="namespace_motor_unit_pool.html#aacaa939935d8190221721483670a8b5e" title="Computes the muscle unit force after the nonlinear saturation. " alt="" coords="295,13,497,39"/>
-</map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518_icgraph.png" border="0" usemap="#class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518_icgraph" alt=""/></div>
-<map name="class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518_icgraph" id="class_motor_unit_pool_1_1_motor_unit_pool_a164393f9e070abb72b48d0a9685ba518_icgraph">
-<area shape="rect" id="node2" href="class_motor_unit_pool_1_1_motor_unit_pool.html#ae211c664df7b661288fe71c4a6e63a18" title="Update all parts of the Motor Unit pool. " alt="" coords="295,5,536,47"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a8f8b496796becc89ddb7e9e1c8a2fb9b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def MotorUnitPool.MotorUnitPool.atualizeForceNoHill </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compute the muscle force when no muscle dynamics (Hill model) is used. </p>
-<p>This operation is vectorized. Each element of the vectors correspond to one motor unit. For each motor unit, the force is computed by the following formula: </p>
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00220">220</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="ae211c664df7b661288fe71c4a6e63a18"></a>
 <div class="memitem">
 <div class="memproto">
@@ -362,18 +244,7 @@ Here is the caller graph for this function:</div>
 </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00173">173</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_motor_unit_pool_1_1_motor_unit_pool_ae211c664df7b661288fe71c4a6e63a18_cgraph.png" border="0" usemap="#class_motor_unit_pool_1_1_motor_unit_pool_ae211c664df7b661288fe71c4a6e63a18_cgraph" alt=""/></div>
-<map name="class_motor_unit_pool_1_1_motor_unit_pool_ae211c664df7b661288fe71c4a6e63a18_cgraph" id="class_motor_unit_pool_1_1_motor_unit_pool_ae211c664df7b661288fe71c4a6e63a18_cgraph">
-<area shape="rect" id="node2" href="class_motor_unit_pool_1_1_motor_unit_pool.html#a164393f9e070abb72b48d0a9685ba518" title="Update the activation signal of the motor units. " alt="" coords="295,5,536,47"/>
-<area shape="rect" id="node3" href="namespace_motor_unit_pool.html#aacaa939935d8190221721483670a8b5e" title="Computes the muscle unit force after the nonlinear saturation. " alt="" coords="584,13,787,39"/>
-</map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00093">93</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 
 </div>
 </div>
@@ -393,132 +264,22 @@ Here is the call graph for this function:</div>
 
 <p>List the spikes that occurred in the soma and in the terminal of the different motor units. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00228">228</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00104">104</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a467ac7b080b79b9515d5846d75e95d1c"></a>
+<a class="anchor" id="a592dab3971b181b7cc7bb4b99b0bd09d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MotorUnitPool.MotorUnitPool.activation_nonSat</td>
+          <td class="memname">MotorUnitPool.MotorUnitPool.Activation</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The non-saturated activation signal of all motor units (see actMatrix explanation). </p>
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00132">132</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac475d1369c38d0bc5064c7243b4e1d44"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MotorUnitPool.MotorUnitPool.activation_Sat</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The non-saturated activation signal of all motor units (see actMatrix explanation). </p>
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00146">146</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abaa7680d0691fac81f66b200dfcfd203"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MotorUnitPool.MotorUnitPool.activationModel</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Model of the activation signal. </p>
-<p>For now, it can be <em>SOCDS</em> (second order critically damped system). </p>
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00087">87</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad03b9e215e833188060e90bc4392d42b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MotorUnitPool.MotorUnitPool.ActMatrix</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Matrix that multiplied by the vector formed as the formula below gives the activation signal at instant <img class="formulaInl" alt="$n$" src="form_7.png"/>: </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{equation} \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&amp;a_1(n-2)&amp;e_1(n-1)&amp;...&amp;a_i(n-i)&amp;a_i(n-2)&amp;e_i(n-1)&amp;...&amp;a__{N_{MU}}(n-1)&amp;a__{N_{MU}}(n-2)&amp;e_{N_{MU}}(n-1)\end{array}\right]^T$} \end{equation}" src="form_33.png"/>
-</p>
-<p> where <img class="formulaInl" alt="$a_i(n)$" src="form_34.png"/> is the activation signal of the motor unit <img class="formulaInl" alt="$i$" src="form_35.png"/>, <img class="formulaInl" alt="$e_i(n)$" src="form_36.png"/> is 1/T (inverse of simulation time step, Dirac's delta approximation) if the motor unit <img class="formulaInl" alt="$i$" src="form_35.png"/>, fired at instant <img class="formulaInl" alt="$n$" src="form_7.png"/>. </p>
-<p>The vector <img class="formulaInl" alt="$Av$" src="form_37.png"/> is updated every step at the function atualizeActivationSignal. The activation matrix itself is formed as: </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{equation} \resizebox{0.95\hsize}{!}{$\scriptstyle A = \left[\begin{array}{ccccccccccc}\scriptscriptstyle 2\exp\left(-\frac{T}{T_{c_1}}\right)&amp;\scriptscriptstyle -\exp\left(-2\frac{T}{T_{c_1}}\right)&amp;\scriptscriptstyle \frac{T^2}{T_{c_1}}\exp\left(1-\frac{T}{T_{c_1}} \right)&amp;\scriptscriptstyle 0&amp;\scriptscriptstyle ...&amp;\scriptscriptstyle 0&amp;\scriptscriptstyle 0&amp; \scriptscriptstyle 0&amp;\scriptscriptstyle 0&amp;\scriptscriptstyle 0&amp;\scriptscriptstyle 0\\ \scriptscriptstyle 0&amp;\scriptscriptstyle 0&amp;\scriptscriptstyle 0&amp;\scriptscriptstyle \ddots&amp;\scriptscriptstyle ...&amp;&amp;&amp;&amp;&amp;\scriptscriptstyle ...&amp;\scriptscriptstyle 0\\ \scriptscriptstyle 0&amp;\scriptscriptstyle ...&amp;&amp;\scriptscriptstyle 0&amp;\scriptscriptstyle 2\exp\left(-\frac{T}{T_{c_i}}\right)&amp;\scriptscriptstyle -\exp\left(-2\frac{T}{T_{c_i}}\right)&amp;\scriptscriptstyle \frac{T^2}{T_{c_i}}\exp\left(1-\frac{T}{T_{c_i}} \right)&amp;\scriptscriptstyle 0&amp;&amp;&amp;\scriptscriptstyle 0\\ \scriptscriptstyle0&amp;\scriptscriptstyle0&amp;\scriptscriptstyle...&amp;&amp;&amp;\scriptscriptstyle0&amp;\scriptscriptstyle 0&amp;\scriptscriptstyle\ddots&amp;\scriptscriptstyle0&amp;\scriptscriptstyle0\\ \scriptscriptstyle0&amp;\scriptscriptstyle0&amp;\scriptscriptstyle0&amp;\scriptscriptstyle...&amp;&amp;&amp;&amp;\scriptscriptstyle0&amp;\scriptscriptstyle 2\exp\left(-\frac{T}{T_{c_{N_{MU}}}}\right)&amp;\scriptscriptstyle -\exp\left(-2\frac{T}{T_{c_{N_{MU}}}}\right)&amp;\scriptscriptstyle \frac{T^2}{T_{c_{{MU}}}}\exp\left(1-\frac{T}{T_{c_{N_{MU}}}} \right)\end{array}\right]$} \end{equation}" src="form_38.png"/>
-</p>
-<p> The nonsaturated activation signal <img class="formulaInl" alt="$a$" src="form_39.png"/> of all the motor units is obtained with: </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{equation} a = A.Av \end{equation}" src="form_40.png"/>
-</p>
-<p> where each elemement o <img class="formulaInl" alt="$a$" src="form_39.png"/> is the activation signal of a motor unit. </p>
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00115">115</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac72c67b4a1f6134965ab77e2d798b5a4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MotorUnitPool.MotorUnitPool.an</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Is a vector formed as: </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{equation} \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&amp;a_1(n-2)&amp;e_1(n-1)&amp;...&amp;a_i(n-i)&amp;a_i(n-2)&amp;e_i(n-1)&amp;...&amp;a__{N_{MU}}(n-1)&amp;a__{N_{MU}}(n-2)&amp;e_{N_{MU}}(n-1)\end{array}\right]^T$} \end{equation}" src="form_33.png"/>
-</p>
-<p> It is multiplied by the matriz actMatrix to obtain the activation signal (see actMatrix explanation) </p>
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00129">129</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a21f9a6a5d113b5b0f67a3557c47ebd5a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MotorUnitPool.MotorUnitPool.atualizeForce</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00156">156</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4e107835e34b4f56d06b9b28c143fe40"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MotorUnitPool.MotorUnitPool.bSat</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The parameter <img class="formulaInl" alt="$b$" src="form_41.png"/> (see twitchSaturation function explanation) of each motor unit. </p>
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00135">135</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00071">71</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 
 </div>
 </div>
@@ -534,40 +295,7 @@ Here is the call graph for this function:</div>
 
 <p><a class="el" href="namespace_configuration.html">Configuration</a> object with the simulation parameters. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00059">59</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a48b53d4f838ca8cfe2bc41c8308f2060"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MotorUnitPool.MotorUnitPool.diracDeltaValue</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Dirac's delta approximation amplitude value. </p>
-<p>Is the inverse of the simulation time step ( <img class="formulaInl" alt="$1/T$" src="form_42.png"/>). </p>
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00149">149</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a97011c17140c45a42a00105279f014ad"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MotorUnitPool.MotorUnitPool.force</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Muscle force along time, in N. </p>
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00153">153</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00044">44</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 
 </div>
 </div>
@@ -584,7 +312,7 @@ Here is the call graph for this function:</div>
 <p>String indicating whther a Hill model is used or not. </p>
 <p>For now, it can be <em>No</em>. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00155">155</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00075">75</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 
 </div>
 </div>
@@ -600,7 +328,7 @@ Here is the call graph for this function:</div>
 
 <p>Indicates that is Motor Unit pool. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00056">56</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00041">41</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 
 </div>
 </div>
@@ -616,7 +344,21 @@ Here is the call graph for this function:</div>
 
 <p>Number of motor units. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00066">66</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00051">51</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a69b76b7748d3fd22f7367be8dd82d6cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MotorUnitPool.MotorUnitPool.Muscle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00077">77</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 
 </div>
 </div>
@@ -632,7 +374,7 @@ Here is the call graph for this function:</div>
 
 <p>String with Motor unit pool to which the motor unit belongs. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00061">61</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00046">46</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 
 </div>
 </div>
@@ -648,7 +390,7 @@ Here is the call graph for this function:</div>
 
 <p>Vector with the instants of spikes in the soma compartment, in ms. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00081">81</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00066">66</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 
 </div>
 </div>
@@ -664,53 +406,7 @@ Here is the call graph for this function:</div>
 
 <p>Vector with the instants of spikes in the terminal, in ms. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00083">83</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab5659e1c9355ecf529d9b8be8cbf6d65"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MotorUnitPool.MotorUnitPool.timeIndex</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00158">158</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a03538b06e7220f9d48c7306ed6508c05"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MotorUnitPool.MotorUnitPool.twitchAmp_N</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Amplitude of the muscle unit twitch, in N (see atualizeForceNoHill function explanation). </p>
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00139">139</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a785a769c5b4824603a24339e4f0d8dfe"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MotorUnitPool.MotorUnitPool.twTet</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Twitch- tetanus relationship (see atualizeForceNoHill function explanation) </p>
-
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00137">137</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00068">68</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 
 </div>
 </div>
@@ -726,7 +422,7 @@ Here is the call graph for this function:</div>
 
 <p>List of <a class="el" href="namespace_motor_unit.html">MotorUnit</a> objects. </p>
 
-<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00069">69</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
+<p>Definition at line <a class="el" href="_motor_unit_pool_8py_source.html#l00054">54</a> of file <a class="el" href="_motor_unit_pool_8py_source.html">MotorUnitPool.py</a>.</p>
 
 </div>
 </div>
@@ -739,7 +435,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_motor_unit_pool.html">MotorUnitPool</a></li><li class="navelem"><a class="el" href="class_motor_unit_pool_1_1_motor_unit_pool.html">MotorUnitPool</a></li>
-    <li class="footer">Generated on Mon Jun 27 2016 18:05:12 for PyReMoto by
+    <li class="footer">Generated on Mon Dec 12 2016 13:43:18 for PyReMoto by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

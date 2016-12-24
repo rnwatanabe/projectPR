@@ -1,7 +1,13 @@
 <map id="MotorUnit.MotorUnit.atualizeMotorUnit" name="MotorUnit.MotorUnit.atualizeMotorUnit">
-<area shape="rect" id="node2" href="$class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b" title="Atualize all neural compartments. " alt="" coords="243,49,432,90"/>
-<area shape="rect" id="node6" href="$class_motor_unit_1_1_motor_unit.html#a0aa5e024003845e3f48bc0e618068edc" title="Atualize the terminal spike train, by considering the Delay of the nerve. " alt="" coords="243,114,432,155"/>
-<area shape="rect" id="node3" href="$namespace_motor_unit.html#ab7df982e859623662808361f779572f5" title="Function to implement the fourth order Runge&#45;Kutta Method to solve numerically a differential equatio..." alt="" coords="504,5,655,32"/>
-<area shape="rect" id="node4" href="$class_motor_unit_1_1_motor_unit.html#adf30fdef09ac21cfc2a261b762a7f618" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="494,56,665,83"/>
-<area shape="rect" id="node5" href="$class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534" title="When the soma potential is above the threshold a spike is added tom the soma. " alt="" coords="480,107,679,149"/>
+<area shape="rect" id="node2" href="$class_interneuron_1_1_interneuron.html#aadb0a11834ebf0b9fb0fa05788da23d1" title="Atualize all neural compartments. " alt="" coords="243,63,448,105"/>
+<area shape="rect" id="node7" href="$class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b" title="Atualize all neural compartments. " alt="" coords="251,158,440,199"/>
+<area shape="rect" id="node12" href="$class_motor_unit_1_1_motor_unit.html#a0aa5e024003845e3f48bc0e618068edc" title="Atualize the terminal spike train, by considering the Delay of the nerve. " alt="" coords="251,223,440,265"/>
+<area shape="rect" id="node3" href="$namespace_interneuron.html#a3c7f009c4357310ae71cedad2abfd716" title="Function to implement the fourth order Runge&#45;Kutta Method to solve numerically a differential equatio..." alt="" coords="516,5,675,32"/>
+<area shape="rect" id="node4" href="$class_interneuron_1_1_interneuron.html#a5eff07c93609a66a19f8e7426204be02" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="502,56,689,83"/>
+<area shape="rect" id="node5" href="$class_interneuron_1_1_interneuron.html#affb57bbf0d7eec160855d0fce26f83d5" title="When the soma potential is above the threshold a spike is added to the soma. " alt="" coords="505,107,686,149"/>
+<area shape="rect" id="node6" href="$class_interneuron_1_1_interneuron.html#a776242a1aa83a264adba968651de0226" title="Interneuron.Interneuron.transmit\lSpikes" alt="" coords="743,107,949,149"/>
+<area shape="rect" id="node8" href="$namespace_motor_unit.html#ab7df982e859623662808361f779572f5" title="Function to implement the fourth order Runge&#45;Kutta Method to solve numerically a differential equatio..." alt="" coords="520,239,671,265"/>
+<area shape="rect" id="node9" href="$class_motor_unit_1_1_motor_unit.html#adf30fdef09ac21cfc2a261b762a7f618" title="Compute the potential derivative of all compartments of the motor unit. " alt="" coords="510,289,681,316"/>
+<area shape="rect" id="node10" href="$class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534" title="When the soma potential is above the threshold a spike is added tom the soma. " alt="" coords="496,173,695,214"/>
+<area shape="rect" id="node11" href="$class_motor_unit_1_1_motor_unit.html#ac3d3e69bf0b75eef81a015005052f5d3" title="MotorUnit.MotorUnit.transmit\lSpikes" alt="" coords="751,173,941,214"/>
 </map>

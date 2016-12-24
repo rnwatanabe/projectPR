@@ -1,0 +1,162 @@
+\hypertarget{class_muscle_no_hill_1_1_muscle_no_hill}{}\section{Muscle\+No\+Hill.\+Muscle\+No\+Hill Class Reference}
+\label{class_muscle_no_hill_1_1_muscle_no_hill}\index{Muscle\+No\+Hill.\+Muscle\+No\+Hill@{Muscle\+No\+Hill.\+Muscle\+No\+Hill}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_a5070624c6605f34e4c3829f927adaa95}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_a766382d5bd77328ab5c39eec6eb163f4}{conf}, \hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_a93bd043a0b802af9268873b1d2a4cc57}{pool}, \hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_ae2a6a4b782c8abea0bb581b2d133f064}{M\+Unumber}, \hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_ab69c47ef7b07407562fc0b9fa65bacf0}{M\+Utype\+Inumber}, unit)
+\item 
+def \hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_abc25f980400ce3aa3a087161147da997}{atualize\+Force} (self, activation\+\_\+\+Sat)
+\begin{DoxyCompactList}\small\item\em Compute the muscle force when no muscle dynamics (Hill model) is used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_a766382d5bd77328ab5c39eec6eb163f4}{conf}
+\item 
+\hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_a93bd043a0b802af9268873b1d2a4cc57}{pool}
+\item 
+\hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_ae2a6a4b782c8abea0bb581b2d133f064}{M\+Unumber}
+\item 
+\hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_ab69c47ef7b07407562fc0b9fa65bacf0}{M\+Utype\+Inumber}
+\item 
+\hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_a29798f6bca2f69e68f1421847d5327d8}{tw\+Tet}
+\begin{DoxyCompactList}\small\item\em Twitch-\/ tetanus relationship (see atualize\+Force\+No\+Hill function explanation) \end{DoxyCompactList}\item 
+\hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_aeb5782fa0602e372c6fa6d42abdd9ee6}{twitch\+Amp\+\_\+N}
+\begin{DoxyCompactList}\small\item\em Amplitude of the muscle unit twitch, in N (see atualize\+Force\+No\+Hill function explanation). \end{DoxyCompactList}\item 
+\hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_aab0ae54c579e456837c8b149a212ee5f}{maximum\+Activation\+Force}
+\begin{DoxyCompactList}\small\item\em This is used for normalization purposes. \end{DoxyCompactList}\item 
+\hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_a544fe8a564e9b28395206ee6bd9eda9a}{force}
+\begin{DoxyCompactList}\small\item\em Muscle force along time, in N. \end{DoxyCompactList}\item 
+\hyperlink{class_muscle_no_hill_1_1_muscle_no_hill_a8dc677d638584602a8de38305dd631ef}{time\+Index}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file Muscle\+No\+Hill.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, conf, pool, M\+Unumber, M\+Utype\+Inumber, unit)}{__init__(self, conf, pool, MUnumber, MUtypeInumber, unit)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+No\+Hill.\+Muscle\+No\+Hill.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{conf, }
+\item[{}]{pool, }
+\item[{}]{M\+Unumber, }
+\item[{}]{M\+Utype\+Inumber, }
+\item[{}]{unit}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_no_hill_1_1_muscle_no_hill_a5070624c6605f34e4c3829f927adaa95}{}\label{class_muscle_no_hill_1_1_muscle_no_hill_a5070624c6605f34e4c3829f927adaa95}
+
+
+Definition at line 12 of file Muscle\+No\+Hill.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\index{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}!atualize\+Force@{atualize\+Force}}
+\index{atualize\+Force@{atualize\+Force}!Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}}
+\subsubsection[{\texorpdfstring{atualize\+Force(self, activation\+\_\+\+Sat)}{atualizeForce(self, activation_Sat)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+No\+Hill.\+Muscle\+No\+Hill.\+atualize\+Force (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{activation\+\_\+\+Sat}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_no_hill_1_1_muscle_no_hill_abc25f980400ce3aa3a087161147da997}{}\label{class_muscle_no_hill_1_1_muscle_no_hill_abc25f980400ce3aa3a087161147da997}
+
+
+Compute the muscle force when no muscle dynamics (Hill model) is used. 
+
+This operation is vectorized. Each element of the vectors correspond to one motor unit. For each motor unit, the force is computed by the following formula\+: 
+
+Definition at line 55 of file Muscle\+No\+Hill.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\index{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}!conf@{conf}}
+\index{conf@{conf}!Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}}
+\subsubsection[{\texorpdfstring{conf}{conf}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+No\+Hill.\+Muscle\+No\+Hill.\+conf}\hypertarget{class_muscle_no_hill_1_1_muscle_no_hill_a766382d5bd77328ab5c39eec6eb163f4}{}\label{class_muscle_no_hill_1_1_muscle_no_hill_a766382d5bd77328ab5c39eec6eb163f4}
+
+
+Definition at line 14 of file Muscle\+No\+Hill.\+py.
+
+\index{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}!force@{force}}
+\index{force@{force}!Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}}
+\subsubsection[{\texorpdfstring{force}{force}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+No\+Hill.\+Muscle\+No\+Hill.\+force}\hypertarget{class_muscle_no_hill_1_1_muscle_no_hill_a544fe8a564e9b28395206ee6bd9eda9a}{}\label{class_muscle_no_hill_1_1_muscle_no_hill_a544fe8a564e9b28395206ee6bd9eda9a}
+
+
+Muscle force along time, in N. 
+
+
+
+Definition at line 31 of file Muscle\+No\+Hill.\+py.
+
+\index{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}!maximum\+Activation\+Force@{maximum\+Activation\+Force}}
+\index{maximum\+Activation\+Force@{maximum\+Activation\+Force}!Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}}
+\subsubsection[{\texorpdfstring{maximum\+Activation\+Force}{maximumActivationForce}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+No\+Hill.\+Muscle\+No\+Hill.\+maximum\+Activation\+Force}\hypertarget{class_muscle_no_hill_1_1_muscle_no_hill_aab0ae54c579e456837c8b149a212ee5f}{}\label{class_muscle_no_hill_1_1_muscle_no_hill_aab0ae54c579e456837c8b149a212ee5f}
+
+
+This is used for normalization purposes. 
+
+It is the maximum force that the muscle reach when the Hill model is not used. 
+
+Definition at line 29 of file Muscle\+No\+Hill.\+py.
+
+\index{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}!M\+Unumber@{M\+Unumber}}
+\index{M\+Unumber@{M\+Unumber}!Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}}
+\subsubsection[{\texorpdfstring{M\+Unumber}{MUnumber}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+No\+Hill.\+Muscle\+No\+Hill.\+M\+Unumber}\hypertarget{class_muscle_no_hill_1_1_muscle_no_hill_ae2a6a4b782c8abea0bb581b2d133f064}{}\label{class_muscle_no_hill_1_1_muscle_no_hill_ae2a6a4b782c8abea0bb581b2d133f064}
+
+
+Definition at line 16 of file Muscle\+No\+Hill.\+py.
+
+\index{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}!M\+Utype\+Inumber@{M\+Utype\+Inumber}}
+\index{M\+Utype\+Inumber@{M\+Utype\+Inumber}!Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}}
+\subsubsection[{\texorpdfstring{M\+Utype\+Inumber}{MUtypeInumber}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+No\+Hill.\+Muscle\+No\+Hill.\+M\+Utype\+Inumber}\hypertarget{class_muscle_no_hill_1_1_muscle_no_hill_ab69c47ef7b07407562fc0b9fa65bacf0}{}\label{class_muscle_no_hill_1_1_muscle_no_hill_ab69c47ef7b07407562fc0b9fa65bacf0}
+
+
+Definition at line 17 of file Muscle\+No\+Hill.\+py.
+
+\index{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}!pool@{pool}}
+\index{pool@{pool}!Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}}
+\subsubsection[{\texorpdfstring{pool}{pool}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+No\+Hill.\+Muscle\+No\+Hill.\+pool}\hypertarget{class_muscle_no_hill_1_1_muscle_no_hill_a93bd043a0b802af9268873b1d2a4cc57}{}\label{class_muscle_no_hill_1_1_muscle_no_hill_a93bd043a0b802af9268873b1d2a4cc57}
+
+
+Definition at line 15 of file Muscle\+No\+Hill.\+py.
+
+\index{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}!time\+Index@{time\+Index}}
+\index{time\+Index@{time\+Index}!Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}}
+\subsubsection[{\texorpdfstring{time\+Index}{timeIndex}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+No\+Hill.\+Muscle\+No\+Hill.\+time\+Index}\hypertarget{class_muscle_no_hill_1_1_muscle_no_hill_a8dc677d638584602a8de38305dd631ef}{}\label{class_muscle_no_hill_1_1_muscle_no_hill_a8dc677d638584602a8de38305dd631ef}
+
+
+Definition at line 33 of file Muscle\+No\+Hill.\+py.
+
+\index{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}!twitch\+Amp\+\_\+N@{twitch\+Amp\+\_\+N}}
+\index{twitch\+Amp\+\_\+N@{twitch\+Amp\+\_\+N}!Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}}
+\subsubsection[{\texorpdfstring{twitch\+Amp\+\_\+N}{twitchAmp_N}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+No\+Hill.\+Muscle\+No\+Hill.\+twitch\+Amp\+\_\+N}\hypertarget{class_muscle_no_hill_1_1_muscle_no_hill_aeb5782fa0602e372c6fa6d42abdd9ee6}{}\label{class_muscle_no_hill_1_1_muscle_no_hill_aeb5782fa0602e372c6fa6d42abdd9ee6}
+
+
+Amplitude of the muscle unit twitch, in N (see atualize\+Force\+No\+Hill function explanation). 
+
+
+
+Definition at line 22 of file Muscle\+No\+Hill.\+py.
+
+\index{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}!tw\+Tet@{tw\+Tet}}
+\index{tw\+Tet@{tw\+Tet}!Muscle\+No\+Hill\+::\+Muscle\+No\+Hill@{Muscle\+No\+Hill\+::\+Muscle\+No\+Hill}}
+\subsubsection[{\texorpdfstring{tw\+Tet}{twTet}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+No\+Hill.\+Muscle\+No\+Hill.\+tw\+Tet}\hypertarget{class_muscle_no_hill_1_1_muscle_no_hill_a29798f6bca2f69e68f1421847d5327d8}{}\label{class_muscle_no_hill_1_1_muscle_no_hill_a29798f6bca2f69e68f1421847d5327d8}
+
+
+Twitch-\/ tetanus relationship (see atualize\+Force\+No\+Hill function explanation) 
+
+
+
+Definition at line 20 of file Muscle\+No\+Hill.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_muscle_no_hill_8py}{Muscle\+No\+Hill.\+py}\end{DoxyCompactItemize}

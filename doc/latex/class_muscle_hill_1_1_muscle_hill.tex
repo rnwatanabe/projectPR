@@ -1,0 +1,1164 @@
+\hypertarget{class_muscle_hill_1_1_muscle_hill}{}\section{Muscle\+Hill.\+Muscle\+Hill Class Reference}
+\label{class_muscle_hill_1_1_muscle_hill}\index{Muscle\+Hill.\+Muscle\+Hill@{Muscle\+Hill.\+Muscle\+Hill}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_a850e338ee568e9956ca134d806c2b7c6}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{class_muscle_hill_1_1_muscle_hill_a081599e4b3b4faf450f8c09e654ea188}{conf}, \hyperlink{class_muscle_hill_1_1_muscle_hill_ada7b7fe30c416aa6b7d957875ad81804}{pool}, \hyperlink{class_muscle_hill_1_1_muscle_hill_aad139563902bc26e0c69637ddc85c6b7}{M\+Unumber}, \hyperlink{class_muscle_hill_1_1_muscle_hill_ae7e7a4fe4112e6a88b04cfd8705e1374}{M\+Utype\+Inumber}, unit)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_aa07ad41150b7f082dc49226650e705cb}{atualize\+Force} (self, activation\+\_\+\+Sat)
+\begin{DoxyCompactList}\small\item\em Compute the muscle force when no muscle dynamics (Hill model) is used. \end{DoxyCompactList}\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_a81d25a2541478817c39a6e2d720ac460}{atualize\+Activation} (self, activation\+\_\+\+Sat)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_a5c3dfd4a663d327319335773c4908eef}{compute\+Pennation\+Angle} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_ab24d0c9566cf2a9a309debd1a1a63ee0}{compute\+Force\+Length\+TypeI} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_a99f5d396aeb1bb0b85def721c9b0bc25}{compute\+Force\+Length\+Type\+II} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_a5669a0ba569c4ab1acd31ac8bdf68b9f}{compute\+Force\+Velocity\+TypeI} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_ad6797f63b21b6b753cc5362dd066cc02}{compute\+Force\+Velocity\+Type\+II} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_aa29337f26cdc1d67d65658fab8e0cc41}{compute\+Acceleration} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c}{d\+Ldt} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5}{atualize\+Muscle\+Force} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_ac40dbbdc08aa96669fe09f03bdffb2f2}{atualize\+Tendon\+Force} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_adf383b3c1665a6be27791644d67e3c44}{compute\+Elastic\+Element\+Force} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_ab4181e0db8cb650fd5b448fe58eefd33}{compute\+Viscous\+Element\+Force} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141}{compute\+Type\+I\+Active\+Force} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146}{compute\+Type\+I\+I\+Active\+Force} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78}{atualize\+Lenghts\+And\+Velocity} (self)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_aef0260788a88702d48827323e04aa2a7}{atualize\+Musculo\+Tendon\+Length} (self, ankle\+Angle)
+\item 
+def \hyperlink{class_muscle_hill_1_1_muscle_hill_a1ddbb0455341626ea43181a47a3fb322}{atualize\+Moment\+Arm} (self, ankle\+Angle)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a081599e4b3b4faf450f8c09e654ea188}{conf}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ada7b7fe30c416aa6b7d957875ad81804}{pool}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_aad139563902bc26e0c69637ddc85c6b7}{M\+Unumber}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ae7e7a4fe4112e6a88b04cfd8705e1374}{M\+Utype\+Inumber}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ab4e1bd36001e334113d42cb8628b2b1d}{time\+Index}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a9a5c6c65e918348944a07659d0ca8c98}{tw\+Tet}
+\begin{DoxyCompactList}\small\item\em Twitch-\/tetanus relationship (see atualize\+Force function explanation) \end{DoxyCompactList}\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ae53fd1d4eec68f1de4285211b73e1a13}{twitch\+Amp\+\_\+N}
+\begin{DoxyCompactList}\small\item\em Amplitude of the muscle unit twitch, in N (see atualize\+Force function explanation). \end{DoxyCompactList}\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_af77dc4d25fcba310c45da4e6731cfd19}{maximum\+Activation\+Force}
+\begin{DoxyCompactList}\small\item\em This is used for normalization purposes. \end{DoxyCompactList}\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a033b2a780ba29f043a0a2ec03aeb079d}{force}
+\begin{DoxyCompactList}\small\item\em Muscle force along time, in N. \end{DoxyCompactList}\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a5a205c14ad64c72855c93bfe0abfcd15}{tendon\+Force\+\_\+N}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a8a1d022609680dff9b3efae94eba8f38}{contractile\+Force\+\_\+N}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a9ea6475af661c041ccb08fb864aa6ec9}{elastic\+Force\+\_\+N}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ab348f7ba65edad4ff12f2a7ab762efba}{viscous\+Force\+\_\+N}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a191b0ea955fc961f744be53c4e815d40}{length\+\_\+m}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a76789511bcadf11f1aa14d33a6338461}{velocity\+\_\+m\+\_\+ms}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ad9b98e7edcdd9baeab4eab970b8c15f0}{tendon\+Length\+\_\+m}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ae1b3664f0f24c6859d437afcb69dab5f}{pennation\+Angle\+\_\+rad}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ae97a1150112bf957c9c40a1f6acb5fe3}{activation\+TypeI}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_af8804528feb82183f9dc36be3f8add31}{activation\+Type\+II}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a6b615b78ce60501d8231974115ad7d9c}{musculo\+Tendon\+Length\+\_\+m}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_af8d3e20d106fb65cb984644c8d6df418}{moment\+Arm\+\_\+m}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a36f410007232d947d44cd7dc7b5369eb}{optimal\+Length\+\_\+m}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a22986f7a2c23975ebeffe7b8c3679187}{pennation\+Angle\+At\+Optimal\+Length\+Sin}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_aae70340f27634c6246b6e58940e37590}{maximum\+Force\+\_\+N}
+\begin{DoxyCompactList}\small\item\em Maximum force of the Hill model, in N. \end{DoxyCompactList}\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a1fa2820c80232c80b9438cabd85919ed}{elasticity}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a785b8df0d6830e6be1f00e69cac4058e}{strain}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a7b471e4abf19f0d47902e1c48f8e729d}{viscosity}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a5eab770f1108fc15db3effef9d0e58a6}{mass}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a3dfc61515409b4e89bd52511d0ba0aa7}{tendon\+Elasticity}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_aa3fa7eedbc4569454c1c1afe95a13088}{tendon\+Linear\+Onset\+Length}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a02595e2fd5a3aec4a4bb704d8d68a191}{tendon\+Curvature\+Constant}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ae78df3a4cbb5899d12be637b75213ddc}{optimal\+Tendon\+Length}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_adabb54ae9958adea2ec9d22ac0c667ac}{length\+Norm}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ab9fa9373e5e62179c06babb8f975c744}{velocity\+Norm}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a7e43dbfcf2ffc57b2f8cbb2c01f7b3c3}{tendon\+Length\+Norm}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ae7345d2c79095032fd7bcb3662f14cb0}{force\+Norm}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a6d0b5deac8be35f8c5ac9fd55f7ff6f7}{tendon\+Force\+Norm}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_aa45e2e6c2b941c36567a60c9f866df04}{b\+\_\+\+TypeI}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_adcd92aefe2e17e4bcbfe73503f39087f}{b\+\_\+\+Type\+II}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_adcb089ccf7175739f980997d3d8fadb4}{p\+\_\+\+TypeI}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a6f4b5ceaea19db29f7cd1b98e3750624}{p\+\_\+\+Type\+II}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a9090fed9dd51dcd21e4440e78b7e19e6}{w\+\_\+\+TypeI}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a9a0066f990fa6f90dd7f0b1eedef9d0c}{w\+\_\+\+Type\+II}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a1ce553195461ab7f5d82f1cc6fdc444c}{d\+\_\+\+TypeI}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a786451e915dace5fe3ca4c0615409675}{d\+\_\+\+Type\+II}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ae0bd0dd6f69feabc6559f99de4dfc872}{a0\+\_\+\+TypeI}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a72509cfa26f990d482ba77ef8eba423a}{a0\+\_\+\+Type\+II}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ac55b9ce0491fe829d2f64cb847b4110a}{a1\+\_\+\+TypeI}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a313136179506fa556c51bacca9598f7f}{a1\+\_\+\+Type\+II}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a2e83f3a4b6a6386613254139d1d8069a}{a2\+\_\+\+TypeI}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a6f5a82f77a196aeec525162c99835069}{a2\+\_\+\+Type\+II}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a4b227cd9fe8856c692999c856539804c}{c0\+\_\+\+TypeI}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a218bec08c433b5ee106a7f272fd3d0c8}{c0\+\_\+\+Type\+II}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a2bcca6990f44c8a6c143d2b70ead5cae}{c1\+\_\+\+TypeI}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_aa191f691eede884be74a2e5db86da504}{c1\+\_\+\+Type\+II}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a8e9ac9cc4baa53a7d92d6d70ae1e21b8}{Vmax\+\_\+\+TypeI}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ab5a1774d46cec18a9b0447c5b7c8c4d9}{Vmax\+\_\+\+Type\+II}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a971c1c9595bfe6364f779eec7f8d7f9b}{m0}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a2a7ec03b2d3290a4e29b2c6d32e5f7ba}{m1}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a31d135b0938cab341e7bbf069bd8a83f}{m2}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a99cd4e42b58f62f0868b45cb2fff34e5}{m3}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ad72ce2dfd21979a469ea11a2cd721527}{m4}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a5498b7d71259c2a9202f48d5f528641b}{n0}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_a133d3b6371ec1fb6e62785c4d2ab2756}{n1}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ae8bf668dd3e664a39f7a8b519d2cc927}{n2}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ac601bdfd9f54ec7d552c683a4f6eaa9a}{n3}
+\item 
+\hyperlink{class_muscle_hill_1_1_muscle_hill_ada54af7982a50e8b5463c474d9cdaee1}{n4}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file Muscle\+Hill.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, conf, pool, M\+Unumber, M\+Utype\+Inumber, unit)}{__init__(self, conf, pool, MUnumber, MUtypeInumber, unit)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{conf, }
+\item[{}]{pool, }
+\item[{}]{M\+Unumber, }
+\item[{}]{M\+Utype\+Inumber, }
+\item[{}]{unit}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_a850e338ee568e9956ca134d806c2b7c6}{}\label{class_muscle_hill_1_1_muscle_hill_a850e338ee568e9956ca134d806c2b7c6}
+
+
+Definition at line 14 of file Muscle\+Hill.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!atualize\+Activation@{atualize\+Activation}}
+\index{atualize\+Activation@{atualize\+Activation}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{atualize\+Activation(self, activation\+\_\+\+Sat)}{atualizeActivation(self, activation_Sat)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+atualize\+Activation (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{activation\+\_\+\+Sat}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_a81d25a2541478817c39a6e2d720ac460}{}\label{class_muscle_hill_1_1_muscle_hill_a81d25a2541478817c39a6e2d720ac460}
+
+
+Definition at line 205 of file Muscle\+Hill.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_a81d25a2541478817c39a6e2d720ac460_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!atualize\+Force@{atualize\+Force}}
+\index{atualize\+Force@{atualize\+Force}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{atualize\+Force(self, activation\+\_\+\+Sat)}{atualizeForce(self, activation_Sat)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+atualize\+Force (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{activation\+\_\+\+Sat}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_aa07ad41150b7f082dc49226650e705cb}{}\label{class_muscle_hill_1_1_muscle_hill_aa07ad41150b7f082dc49226650e705cb}
+
+
+Compute the muscle force when no muscle dynamics (Hill model) is used. 
+
+This operation is vectorized. Each element of the vectors correspond to one motor unit. For each motor unit, the force is computed by the following formula\+: 
+
+Definition at line 185 of file Muscle\+Hill.\+py.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_aa07ad41150b7f082dc49226650e705cb_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!atualize\+Lenghts\+And\+Velocity@{atualize\+Lenghts\+And\+Velocity}}
+\index{atualize\+Lenghts\+And\+Velocity@{atualize\+Lenghts\+And\+Velocity}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{atualize\+Lenghts\+And\+Velocity(self)}{atualizeLenghtsAndVelocity(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+atualize\+Lenghts\+And\+Velocity (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78}{}\label{class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78}
+
+
+Definition at line 266 of file Muscle\+Hill.\+py.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_a71ea33f1c30bdbe7cd795426bf097e78_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!atualize\+Moment\+Arm@{atualize\+Moment\+Arm}}
+\index{atualize\+Moment\+Arm@{atualize\+Moment\+Arm}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{atualize\+Moment\+Arm(self, ankle\+Angle)}{atualizeMomentArm(self, ankleAngle)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+atualize\+Moment\+Arm (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{ankle\+Angle}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_a1ddbb0455341626ea43181a47a3fb322}{}\label{class_muscle_hill_1_1_muscle_hill_a1ddbb0455341626ea43181a47a3fb322}
+
+
+Definition at line 277 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!atualize\+Muscle\+Force@{atualize\+Muscle\+Force}}
+\index{atualize\+Muscle\+Force@{atualize\+Muscle\+Force}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{atualize\+Muscle\+Force(self)}{atualizeMuscleForce(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+atualize\+Muscle\+Force (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5}{}\label{class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5}
+
+
+Definition at line 244 of file Muscle\+Hill.\+py.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_ab39eb3b82b6299bbfbccb6d50f1da8b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!atualize\+Musculo\+Tendon\+Length@{atualize\+Musculo\+Tendon\+Length}}
+\index{atualize\+Musculo\+Tendon\+Length@{atualize\+Musculo\+Tendon\+Length}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{atualize\+Musculo\+Tendon\+Length(self, ankle\+Angle)}{atualizeMusculoTendonLength(self, ankleAngle)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+atualize\+Musculo\+Tendon\+Length (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{ankle\+Angle}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_aef0260788a88702d48827323e04aa2a7}{}\label{class_muscle_hill_1_1_muscle_hill_aef0260788a88702d48827323e04aa2a7}
+
+
+Definition at line 270 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!atualize\+Tendon\+Force@{atualize\+Tendon\+Force}}
+\index{atualize\+Tendon\+Force@{atualize\+Tendon\+Force}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{atualize\+Tendon\+Force(self)}{atualizeTendonForce(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+atualize\+Tendon\+Force (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_ac40dbbdc08aa96669fe09f03bdffb2f2}{}\label{class_muscle_hill_1_1_muscle_hill_ac40dbbdc08aa96669fe09f03bdffb2f2}
+
+
+Definition at line 248 of file Muscle\+Hill.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_ac40dbbdc08aa96669fe09f03bdffb2f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!compute\+Acceleration@{compute\+Acceleration}}
+\index{compute\+Acceleration@{compute\+Acceleration}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{compute\+Acceleration(self)}{computeAcceleration(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+compute\+Acceleration (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_aa29337f26cdc1d67d65658fab8e0cc41}{}\label{class_muscle_hill_1_1_muscle_hill_aa29337f26cdc1d67d65658fab8e0cc41}
+
+
+Definition at line 236 of file Muscle\+Hill.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_aa29337f26cdc1d67d65658fab8e0cc41_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!compute\+Elastic\+Element\+Force@{compute\+Elastic\+Element\+Force}}
+\index{compute\+Elastic\+Element\+Force@{compute\+Elastic\+Element\+Force}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{compute\+Elastic\+Element\+Force(self)}{computeElasticElementForce(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+compute\+Elastic\+Element\+Force (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_adf383b3c1665a6be27791644d67e3c44}{}\label{class_muscle_hill_1_1_muscle_hill_adf383b3c1665a6be27791644d67e3c44}
+
+
+Definition at line 252 of file Muscle\+Hill.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_adf383b3c1665a6be27791644d67e3c44_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!compute\+Force\+Length\+TypeI@{compute\+Force\+Length\+TypeI}}
+\index{compute\+Force\+Length\+TypeI@{compute\+Force\+Length\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{compute\+Force\+Length\+Type\+I(self)}{computeForceLengthTypeI(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+compute\+Force\+Length\+TypeI (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_ab24d0c9566cf2a9a309debd1a1a63ee0}{}\label{class_muscle_hill_1_1_muscle_hill_ab24d0c9566cf2a9a309debd1a1a63ee0}
+
+
+Definition at line 216 of file Muscle\+Hill.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_ab24d0c9566cf2a9a309debd1a1a63ee0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!compute\+Force\+Length\+Type\+II@{compute\+Force\+Length\+Type\+II}}
+\index{compute\+Force\+Length\+Type\+II@{compute\+Force\+Length\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{compute\+Force\+Length\+Type\+I\+I(self)}{computeForceLengthTypeII(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+compute\+Force\+Length\+Type\+II (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_a99f5d396aeb1bb0b85def721c9b0bc25}{}\label{class_muscle_hill_1_1_muscle_hill_a99f5d396aeb1bb0b85def721c9b0bc25}
+
+
+Definition at line 219 of file Muscle\+Hill.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_a99f5d396aeb1bb0b85def721c9b0bc25_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!compute\+Force\+Velocity\+TypeI@{compute\+Force\+Velocity\+TypeI}}
+\index{compute\+Force\+Velocity\+TypeI@{compute\+Force\+Velocity\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{compute\+Force\+Velocity\+Type\+I(self)}{computeForceVelocityTypeI(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+compute\+Force\+Velocity\+TypeI (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_a5669a0ba569c4ab1acd31ac8bdf68b9f}{}\label{class_muscle_hill_1_1_muscle_hill_a5669a0ba569c4ab1acd31ac8bdf68b9f}
+
+
+Definition at line 222 of file Muscle\+Hill.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_a5669a0ba569c4ab1acd31ac8bdf68b9f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!compute\+Force\+Velocity\+Type\+II@{compute\+Force\+Velocity\+Type\+II}}
+\index{compute\+Force\+Velocity\+Type\+II@{compute\+Force\+Velocity\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{compute\+Force\+Velocity\+Type\+I\+I(self)}{computeForceVelocityTypeII(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+compute\+Force\+Velocity\+Type\+II (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_ad6797f63b21b6b753cc5362dd066cc02}{}\label{class_muscle_hill_1_1_muscle_hill_ad6797f63b21b6b753cc5362dd066cc02}
+
+
+Definition at line 229 of file Muscle\+Hill.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_ad6797f63b21b6b753cc5362dd066cc02_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!compute\+Pennation\+Angle@{compute\+Pennation\+Angle}}
+\index{compute\+Pennation\+Angle@{compute\+Pennation\+Angle}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{compute\+Pennation\+Angle(self)}{computePennationAngle(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+compute\+Pennation\+Angle (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_a5c3dfd4a663d327319335773c4908eef}{}\label{class_muscle_hill_1_1_muscle_hill_a5c3dfd4a663d327319335773c4908eef}
+
+
+Definition at line 213 of file Muscle\+Hill.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_a5c3dfd4a663d327319335773c4908eef_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!compute\+Type\+I\+Active\+Force@{compute\+Type\+I\+Active\+Force}}
+\index{compute\+Type\+I\+Active\+Force@{compute\+Type\+I\+Active\+Force}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{compute\+Type\+I\+Active\+Force(self)}{computeTypeIActiveForce(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+compute\+Type\+I\+Active\+Force (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141}{}\label{class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141}
+
+
+Definition at line 258 of file Muscle\+Hill.\+py.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_a0af765b39293ebf39e992cefa2491141_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!compute\+Type\+I\+I\+Active\+Force@{compute\+Type\+I\+I\+Active\+Force}}
+\index{compute\+Type\+I\+I\+Active\+Force@{compute\+Type\+I\+I\+Active\+Force}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{compute\+Type\+I\+I\+Active\+Force(self)}{computeTypeIIActiveForce(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+compute\+Type\+I\+I\+Active\+Force (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146}{}\label{class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146}
+
+
+Definition at line 262 of file Muscle\+Hill.\+py.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_a3111f5bea9b94e9bc602a48efe95b146_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!compute\+Viscous\+Element\+Force@{compute\+Viscous\+Element\+Force}}
+\index{compute\+Viscous\+Element\+Force@{compute\+Viscous\+Element\+Force}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{compute\+Viscous\+Element\+Force(self)}{computeViscousElementForce(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+compute\+Viscous\+Element\+Force (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_ab4181e0db8cb650fd5b448fe58eefd33}{}\label{class_muscle_hill_1_1_muscle_hill_ab4181e0db8cb650fd5b448fe58eefd33}
+
+
+Definition at line 255 of file Muscle\+Hill.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_ab4181e0db8cb650fd5b448fe58eefd33_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!d\+Ldt@{d\+Ldt}}
+\index{d\+Ldt@{d\+Ldt}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{d\+Ldt(self)}{dLdt(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscle\+Hill.\+Muscle\+Hill.\+d\+Ldt (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c}{}\label{class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c}
+
+
+Definition at line 241 of file Muscle\+Hill.\+py.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscle_hill_1_1_muscle_hill_afbcb208bf18110d5fe1d498db8b6f95c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!a0\+\_\+\+TypeI@{a0\+\_\+\+TypeI}}
+\index{a0\+\_\+\+TypeI@{a0\+\_\+\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{a0\+\_\+\+TypeI}{a0_TypeI}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+a0\+\_\+\+TypeI}\hypertarget{class_muscle_hill_1_1_muscle_hill_ae0bd0dd6f69feabc6559f99de4dfc872}{}\label{class_muscle_hill_1_1_muscle_hill_ae0bd0dd6f69feabc6559f99de4dfc872}
+
+
+Definition at line 93 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!a0\+\_\+\+Type\+II@{a0\+\_\+\+Type\+II}}
+\index{a0\+\_\+\+Type\+II@{a0\+\_\+\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{a0\+\_\+\+Type\+II}{a0_TypeII}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+a0\+\_\+\+Type\+II}\hypertarget{class_muscle_hill_1_1_muscle_hill_a72509cfa26f990d482ba77ef8eba423a}{}\label{class_muscle_hill_1_1_muscle_hill_a72509cfa26f990d482ba77ef8eba423a}
+
+
+Definition at line 95 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!a1\+\_\+\+TypeI@{a1\+\_\+\+TypeI}}
+\index{a1\+\_\+\+TypeI@{a1\+\_\+\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{a1\+\_\+\+TypeI}{a1_TypeI}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+a1\+\_\+\+TypeI}\hypertarget{class_muscle_hill_1_1_muscle_hill_ac55b9ce0491fe829d2f64cb847b4110a}{}\label{class_muscle_hill_1_1_muscle_hill_ac55b9ce0491fe829d2f64cb847b4110a}
+
+
+Definition at line 96 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!a1\+\_\+\+Type\+II@{a1\+\_\+\+Type\+II}}
+\index{a1\+\_\+\+Type\+II@{a1\+\_\+\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{a1\+\_\+\+Type\+II}{a1_TypeII}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+a1\+\_\+\+Type\+II}\hypertarget{class_muscle_hill_1_1_muscle_hill_a313136179506fa556c51bacca9598f7f}{}\label{class_muscle_hill_1_1_muscle_hill_a313136179506fa556c51bacca9598f7f}
+
+
+Definition at line 98 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!a2\+\_\+\+TypeI@{a2\+\_\+\+TypeI}}
+\index{a2\+\_\+\+TypeI@{a2\+\_\+\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{a2\+\_\+\+TypeI}{a2_TypeI}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+a2\+\_\+\+TypeI}\hypertarget{class_muscle_hill_1_1_muscle_hill_a2e83f3a4b6a6386613254139d1d8069a}{}\label{class_muscle_hill_1_1_muscle_hill_a2e83f3a4b6a6386613254139d1d8069a}
+
+
+Definition at line 99 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!a2\+\_\+\+Type\+II@{a2\+\_\+\+Type\+II}}
+\index{a2\+\_\+\+Type\+II@{a2\+\_\+\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{a2\+\_\+\+Type\+II}{a2_TypeII}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+a2\+\_\+\+Type\+II}\hypertarget{class_muscle_hill_1_1_muscle_hill_a6f5a82f77a196aeec525162c99835069}{}\label{class_muscle_hill_1_1_muscle_hill_a6f5a82f77a196aeec525162c99835069}
+
+
+Definition at line 101 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!activation\+TypeI@{activation\+TypeI}}
+\index{activation\+TypeI@{activation\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{activation\+TypeI}{activationTypeI}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+activation\+TypeI}\hypertarget{class_muscle_hill_1_1_muscle_hill_ae97a1150112bf957c9c40a1f6acb5fe3}{}\label{class_muscle_hill_1_1_muscle_hill_ae97a1150112bf957c9c40a1f6acb5fe3}
+
+
+Definition at line 45 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!activation\+Type\+II@{activation\+Type\+II}}
+\index{activation\+Type\+II@{activation\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{activation\+Type\+II}{activationTypeII}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+activation\+Type\+II}\hypertarget{class_muscle_hill_1_1_muscle_hill_af8804528feb82183f9dc36be3f8add31}{}\label{class_muscle_hill_1_1_muscle_hill_af8804528feb82183f9dc36be3f8add31}
+
+
+Definition at line 46 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!b\+\_\+\+TypeI@{b\+\_\+\+TypeI}}
+\index{b\+\_\+\+TypeI@{b\+\_\+\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{b\+\_\+\+TypeI}{b_TypeI}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+b\+\_\+\+TypeI}\hypertarget{class_muscle_hill_1_1_muscle_hill_aa45e2e6c2b941c36567a60c9f866df04}{}\label{class_muscle_hill_1_1_muscle_hill_aa45e2e6c2b941c36567a60c9f866df04}
+
+
+Definition at line 79 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!b\+\_\+\+Type\+II@{b\+\_\+\+Type\+II}}
+\index{b\+\_\+\+Type\+II@{b\+\_\+\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{b\+\_\+\+Type\+II}{b_TypeII}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+b\+\_\+\+Type\+II}\hypertarget{class_muscle_hill_1_1_muscle_hill_adcd92aefe2e17e4bcbfe73503f39087f}{}\label{class_muscle_hill_1_1_muscle_hill_adcd92aefe2e17e4bcbfe73503f39087f}
+
+
+Definition at line 81 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!c0\+\_\+\+TypeI@{c0\+\_\+\+TypeI}}
+\index{c0\+\_\+\+TypeI@{c0\+\_\+\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{c0\+\_\+\+TypeI}{c0_TypeI}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+c0\+\_\+\+TypeI}\hypertarget{class_muscle_hill_1_1_muscle_hill_a4b227cd9fe8856c692999c856539804c}{}\label{class_muscle_hill_1_1_muscle_hill_a4b227cd9fe8856c692999c856539804c}
+
+
+Definition at line 102 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!c0\+\_\+\+Type\+II@{c0\+\_\+\+Type\+II}}
+\index{c0\+\_\+\+Type\+II@{c0\+\_\+\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{c0\+\_\+\+Type\+II}{c0_TypeII}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+c0\+\_\+\+Type\+II}\hypertarget{class_muscle_hill_1_1_muscle_hill_a218bec08c433b5ee106a7f272fd3d0c8}{}\label{class_muscle_hill_1_1_muscle_hill_a218bec08c433b5ee106a7f272fd3d0c8}
+
+
+Definition at line 104 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!c1\+\_\+\+TypeI@{c1\+\_\+\+TypeI}}
+\index{c1\+\_\+\+TypeI@{c1\+\_\+\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{c1\+\_\+\+TypeI}{c1_TypeI}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+c1\+\_\+\+TypeI}\hypertarget{class_muscle_hill_1_1_muscle_hill_a2bcca6990f44c8a6c143d2b70ead5cae}{}\label{class_muscle_hill_1_1_muscle_hill_a2bcca6990f44c8a6c143d2b70ead5cae}
+
+
+Definition at line 105 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!c1\+\_\+\+Type\+II@{c1\+\_\+\+Type\+II}}
+\index{c1\+\_\+\+Type\+II@{c1\+\_\+\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{c1\+\_\+\+Type\+II}{c1_TypeII}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+c1\+\_\+\+Type\+II}\hypertarget{class_muscle_hill_1_1_muscle_hill_aa191f691eede884be74a2e5db86da504}{}\label{class_muscle_hill_1_1_muscle_hill_aa191f691eede884be74a2e5db86da504}
+
+
+Definition at line 107 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!conf@{conf}}
+\index{conf@{conf}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{conf}{conf}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+conf}\hypertarget{class_muscle_hill_1_1_muscle_hill_a081599e4b3b4faf450f8c09e654ea188}{}\label{class_muscle_hill_1_1_muscle_hill_a081599e4b3b4faf450f8c09e654ea188}
+
+
+Definition at line 16 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!contractile\+Force\+\_\+N@{contractile\+Force\+\_\+N}}
+\index{contractile\+Force\+\_\+N@{contractile\+Force\+\_\+N}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{contractile\+Force\+\_\+N}{contractileForce_N}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+contractile\+Force\+\_\+N}\hypertarget{class_muscle_hill_1_1_muscle_hill_a8a1d022609680dff9b3efae94eba8f38}{}\label{class_muscle_hill_1_1_muscle_hill_a8a1d022609680dff9b3efae94eba8f38}
+
+
+Definition at line 38 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!d\+\_\+\+TypeI@{d\+\_\+\+TypeI}}
+\index{d\+\_\+\+TypeI@{d\+\_\+\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{d\+\_\+\+TypeI}{d_TypeI}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+d\+\_\+\+TypeI}\hypertarget{class_muscle_hill_1_1_muscle_hill_a1ce553195461ab7f5d82f1cc6fdc444c}{}\label{class_muscle_hill_1_1_muscle_hill_a1ce553195461ab7f5d82f1cc6fdc444c}
+
+
+Definition at line 90 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!d\+\_\+\+Type\+II@{d\+\_\+\+Type\+II}}
+\index{d\+\_\+\+Type\+II@{d\+\_\+\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{d\+\_\+\+Type\+II}{d_TypeII}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+d\+\_\+\+Type\+II}\hypertarget{class_muscle_hill_1_1_muscle_hill_a786451e915dace5fe3ca4c0615409675}{}\label{class_muscle_hill_1_1_muscle_hill_a786451e915dace5fe3ca4c0615409675}
+
+
+Definition at line 92 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!elastic\+Force\+\_\+N@{elastic\+Force\+\_\+N}}
+\index{elastic\+Force\+\_\+N@{elastic\+Force\+\_\+N}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{elastic\+Force\+\_\+N}{elasticForce_N}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+elastic\+Force\+\_\+N}\hypertarget{class_muscle_hill_1_1_muscle_hill_a9ea6475af661c041ccb08fb864aa6ec9}{}\label{class_muscle_hill_1_1_muscle_hill_a9ea6475af661c041ccb08fb864aa6ec9}
+
+
+Definition at line 39 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!elasticity@{elasticity}}
+\index{elasticity@{elasticity}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{elasticity}{elasticity}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+elasticity}\hypertarget{class_muscle_hill_1_1_muscle_hill_a1fa2820c80232c80b9438cabd85919ed}{}\label{class_muscle_hill_1_1_muscle_hill_a1fa2820c80232c80b9438cabd85919ed}
+
+
+Definition at line 55 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!force@{force}}
+\index{force@{force}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{force}{force}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+force}\hypertarget{class_muscle_hill_1_1_muscle_hill_a033b2a780ba29f043a0a2ec03aeb079d}{}\label{class_muscle_hill_1_1_muscle_hill_a033b2a780ba29f043a0a2ec03aeb079d}
+
+
+Muscle force along time, in N. 
+
+
+
+Definition at line 36 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!force\+Norm@{force\+Norm}}
+\index{force\+Norm@{force\+Norm}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{force\+Norm}{forceNorm}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+force\+Norm}\hypertarget{class_muscle_hill_1_1_muscle_hill_ae7345d2c79095032fd7bcb3662f14cb0}{}\label{class_muscle_hill_1_1_muscle_hill_ae7345d2c79095032fd7bcb3662f14cb0}
+
+
+Definition at line 75 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!length\+\_\+m@{length\+\_\+m}}
+\index{length\+\_\+m@{length\+\_\+m}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{length\+\_\+m}{length_m}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+length\+\_\+m}\hypertarget{class_muscle_hill_1_1_muscle_hill_a191b0ea955fc961f744be53c4e815d40}{}\label{class_muscle_hill_1_1_muscle_hill_a191b0ea955fc961f744be53c4e815d40}
+
+
+Definition at line 41 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!length\+Norm@{length\+Norm}}
+\index{length\+Norm@{length\+Norm}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{length\+Norm}{lengthNorm}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+length\+Norm}\hypertarget{class_muscle_hill_1_1_muscle_hill_adabb54ae9958adea2ec9d22ac0c667ac}{}\label{class_muscle_hill_1_1_muscle_hill_adabb54ae9958adea2ec9d22ac0c667ac}
+
+
+Definition at line 70 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!m0@{m0}}
+\index{m0@{m0}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{m0}{m0}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+m0}\hypertarget{class_muscle_hill_1_1_muscle_hill_a971c1c9595bfe6364f779eec7f8d7f9b}{}\label{class_muscle_hill_1_1_muscle_hill_a971c1c9595bfe6364f779eec7f8d7f9b}
+
+
+Definition at line 112 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!m1@{m1}}
+\index{m1@{m1}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{m1}{m1}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+m1}\hypertarget{class_muscle_hill_1_1_muscle_hill_a2a7ec03b2d3290a4e29b2c6d32e5f7ba}{}\label{class_muscle_hill_1_1_muscle_hill_a2a7ec03b2d3290a4e29b2c6d32e5f7ba}
+
+
+Definition at line 114 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!m2@{m2}}
+\index{m2@{m2}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{m2}{m2}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+m2}\hypertarget{class_muscle_hill_1_1_muscle_hill_a31d135b0938cab341e7bbf069bd8a83f}{}\label{class_muscle_hill_1_1_muscle_hill_a31d135b0938cab341e7bbf069bd8a83f}
+
+
+Definition at line 116 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!m3@{m3}}
+\index{m3@{m3}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{m3}{m3}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+m3}\hypertarget{class_muscle_hill_1_1_muscle_hill_a99cd4e42b58f62f0868b45cb2fff34e5}{}\label{class_muscle_hill_1_1_muscle_hill_a99cd4e42b58f62f0868b45cb2fff34e5}
+
+
+Definition at line 118 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!m4@{m4}}
+\index{m4@{m4}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{m4}{m4}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+m4}\hypertarget{class_muscle_hill_1_1_muscle_hill_ad72ce2dfd21979a469ea11a2cd721527}{}\label{class_muscle_hill_1_1_muscle_hill_ad72ce2dfd21979a469ea11a2cd721527}
+
+
+Definition at line 120 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!mass@{mass}}
+\index{mass@{mass}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{mass}{mass}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+mass}\hypertarget{class_muscle_hill_1_1_muscle_hill_a5eab770f1108fc15db3effef9d0e58a6}{}\label{class_muscle_hill_1_1_muscle_hill_a5eab770f1108fc15db3effef9d0e58a6}
+
+
+Definition at line 61 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!maximum\+Activation\+Force@{maximum\+Activation\+Force}}
+\index{maximum\+Activation\+Force@{maximum\+Activation\+Force}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{maximum\+Activation\+Force}{maximumActivationForce}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+maximum\+Activation\+Force}\hypertarget{class_muscle_hill_1_1_muscle_hill_af77dc4d25fcba310c45da4e6731cfd19}{}\label{class_muscle_hill_1_1_muscle_hill_af77dc4d25fcba310c45da4e6731cfd19}
+
+
+This is used for normalization purposes. 
+
+It is the maximum force that the muscle reach when the Hill model is not used. 
+
+Definition at line 34 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!maximum\+Force\+\_\+N@{maximum\+Force\+\_\+N}}
+\index{maximum\+Force\+\_\+N@{maximum\+Force\+\_\+N}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{maximum\+Force\+\_\+N}{maximumForce_N}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+maximum\+Force\+\_\+N}\hypertarget{class_muscle_hill_1_1_muscle_hill_aae70340f27634c6246b6e58940e37590}{}\label{class_muscle_hill_1_1_muscle_hill_aae70340f27634c6246b6e58940e37590}
+
+
+Maximum force of the Hill model, in N. 
+
+
+
+Definition at line 52 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!moment\+Arm\+\_\+m@{moment\+Arm\+\_\+m}}
+\index{moment\+Arm\+\_\+m@{moment\+Arm\+\_\+m}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{moment\+Arm\+\_\+m}{momentArm_m}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+moment\+Arm\+\_\+m}\hypertarget{class_muscle_hill_1_1_muscle_hill_af8d3e20d106fb65cb984644c8d6df418}{}\label{class_muscle_hill_1_1_muscle_hill_af8d3e20d106fb65cb984644c8d6df418}
+
+
+Definition at line 48 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!M\+Unumber@{M\+Unumber}}
+\index{M\+Unumber@{M\+Unumber}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{M\+Unumber}{MUnumber}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+M\+Unumber}\hypertarget{class_muscle_hill_1_1_muscle_hill_aad139563902bc26e0c69637ddc85c6b7}{}\label{class_muscle_hill_1_1_muscle_hill_aad139563902bc26e0c69637ddc85c6b7}
+
+
+Definition at line 18 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!musculo\+Tendon\+Length\+\_\+m@{musculo\+Tendon\+Length\+\_\+m}}
+\index{musculo\+Tendon\+Length\+\_\+m@{musculo\+Tendon\+Length\+\_\+m}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{musculo\+Tendon\+Length\+\_\+m}{musculoTendonLength_m}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+musculo\+Tendon\+Length\+\_\+m}\hypertarget{class_muscle_hill_1_1_muscle_hill_a6b615b78ce60501d8231974115ad7d9c}{}\label{class_muscle_hill_1_1_muscle_hill_a6b615b78ce60501d8231974115ad7d9c}
+
+
+Definition at line 47 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!M\+Utype\+Inumber@{M\+Utype\+Inumber}}
+\index{M\+Utype\+Inumber@{M\+Utype\+Inumber}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{M\+Utype\+Inumber}{MUtypeInumber}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+M\+Utype\+Inumber}\hypertarget{class_muscle_hill_1_1_muscle_hill_ae7e7a4fe4112e6a88b04cfd8705e1374}{}\label{class_muscle_hill_1_1_muscle_hill_ae7e7a4fe4112e6a88b04cfd8705e1374}
+
+
+Definition at line 19 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!n0@{n0}}
+\index{n0@{n0}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{n0}{n0}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+n0}\hypertarget{class_muscle_hill_1_1_muscle_hill_a5498b7d71259c2a9202f48d5f528641b}{}\label{class_muscle_hill_1_1_muscle_hill_a5498b7d71259c2a9202f48d5f528641b}
+
+
+Definition at line 123 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!n1@{n1}}
+\index{n1@{n1}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{n1}{n1}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+n1}\hypertarget{class_muscle_hill_1_1_muscle_hill_a133d3b6371ec1fb6e62785c4d2ab2756}{}\label{class_muscle_hill_1_1_muscle_hill_a133d3b6371ec1fb6e62785c4d2ab2756}
+
+
+Definition at line 125 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!n2@{n2}}
+\index{n2@{n2}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{n2}{n2}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+n2}\hypertarget{class_muscle_hill_1_1_muscle_hill_ae8bf668dd3e664a39f7a8b519d2cc927}{}\label{class_muscle_hill_1_1_muscle_hill_ae8bf668dd3e664a39f7a8b519d2cc927}
+
+
+Definition at line 127 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!n3@{n3}}
+\index{n3@{n3}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{n3}{n3}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+n3}\hypertarget{class_muscle_hill_1_1_muscle_hill_ac601bdfd9f54ec7d552c683a4f6eaa9a}{}\label{class_muscle_hill_1_1_muscle_hill_ac601bdfd9f54ec7d552c683a4f6eaa9a}
+
+
+Definition at line 129 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!n4@{n4}}
+\index{n4@{n4}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{n4}{n4}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+n4}\hypertarget{class_muscle_hill_1_1_muscle_hill_ada54af7982a50e8b5463c474d9cdaee1}{}\label{class_muscle_hill_1_1_muscle_hill_ada54af7982a50e8b5463c474d9cdaee1}
+
+
+Definition at line 131 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!optimal\+Length\+\_\+m@{optimal\+Length\+\_\+m}}
+\index{optimal\+Length\+\_\+m@{optimal\+Length\+\_\+m}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{optimal\+Length\+\_\+m}{optimalLength_m}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+optimal\+Length\+\_\+m}\hypertarget{class_muscle_hill_1_1_muscle_hill_a36f410007232d947d44cd7dc7b5369eb}{}\label{class_muscle_hill_1_1_muscle_hill_a36f410007232d947d44cd7dc7b5369eb}
+
+
+Definition at line 49 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!optimal\+Tendon\+Length@{optimal\+Tendon\+Length}}
+\index{optimal\+Tendon\+Length@{optimal\+Tendon\+Length}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{optimal\+Tendon\+Length}{optimalTendonLength}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+optimal\+Tendon\+Length}\hypertarget{class_muscle_hill_1_1_muscle_hill_ae78df3a4cbb5899d12be637b75213ddc}{}\label{class_muscle_hill_1_1_muscle_hill_ae78df3a4cbb5899d12be637b75213ddc}
+
+
+Definition at line 67 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!p\+\_\+\+TypeI@{p\+\_\+\+TypeI}}
+\index{p\+\_\+\+TypeI@{p\+\_\+\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{p\+\_\+\+TypeI}{p_TypeI}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+p\+\_\+\+TypeI}\hypertarget{class_muscle_hill_1_1_muscle_hill_adcb089ccf7175739f980997d3d8fadb4}{}\label{class_muscle_hill_1_1_muscle_hill_adcb089ccf7175739f980997d3d8fadb4}
+
+
+Definition at line 83 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!p\+\_\+\+Type\+II@{p\+\_\+\+Type\+II}}
+\index{p\+\_\+\+Type\+II@{p\+\_\+\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{p\+\_\+\+Type\+II}{p_TypeII}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+p\+\_\+\+Type\+II}\hypertarget{class_muscle_hill_1_1_muscle_hill_a6f4b5ceaea19db29f7cd1b98e3750624}{}\label{class_muscle_hill_1_1_muscle_hill_a6f4b5ceaea19db29f7cd1b98e3750624}
+
+
+Definition at line 85 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!pennation\+Angle\+\_\+rad@{pennation\+Angle\+\_\+rad}}
+\index{pennation\+Angle\+\_\+rad@{pennation\+Angle\+\_\+rad}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{pennation\+Angle\+\_\+rad}{pennationAngle_rad}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+pennation\+Angle\+\_\+rad}\hypertarget{class_muscle_hill_1_1_muscle_hill_ae1b3664f0f24c6859d437afcb69dab5f}{}\label{class_muscle_hill_1_1_muscle_hill_ae1b3664f0f24c6859d437afcb69dab5f}
+
+
+Definition at line 44 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!pennation\+Angle\+At\+Optimal\+Length\+Sin@{pennation\+Angle\+At\+Optimal\+Length\+Sin}}
+\index{pennation\+Angle\+At\+Optimal\+Length\+Sin@{pennation\+Angle\+At\+Optimal\+Length\+Sin}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{pennation\+Angle\+At\+Optimal\+Length\+Sin}{pennationAngleAtOptimalLengthSin}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+pennation\+Angle\+At\+Optimal\+Length\+Sin}\hypertarget{class_muscle_hill_1_1_muscle_hill_a22986f7a2c23975ebeffe7b8c3679187}{}\label{class_muscle_hill_1_1_muscle_hill_a22986f7a2c23975ebeffe7b8c3679187}
+
+
+Definition at line 50 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!pool@{pool}}
+\index{pool@{pool}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{pool}{pool}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+pool}\hypertarget{class_muscle_hill_1_1_muscle_hill_ada7b7fe30c416aa6b7d957875ad81804}{}\label{class_muscle_hill_1_1_muscle_hill_ada7b7fe30c416aa6b7d957875ad81804}
+
+
+Definition at line 17 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!strain@{strain}}
+\index{strain@{strain}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{strain}{strain}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+strain}\hypertarget{class_muscle_hill_1_1_muscle_hill_a785b8df0d6830e6be1f00e69cac4058e}{}\label{class_muscle_hill_1_1_muscle_hill_a785b8df0d6830e6be1f00e69cac4058e}
+
+
+Definition at line 57 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!tendon\+Curvature\+Constant@{tendon\+Curvature\+Constant}}
+\index{tendon\+Curvature\+Constant@{tendon\+Curvature\+Constant}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{tendon\+Curvature\+Constant}{tendonCurvatureConstant}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+tendon\+Curvature\+Constant}\hypertarget{class_muscle_hill_1_1_muscle_hill_a02595e2fd5a3aec4a4bb704d8d68a191}{}\label{class_muscle_hill_1_1_muscle_hill_a02595e2fd5a3aec4a4bb704d8d68a191}
+
+
+Definition at line 66 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!tendon\+Elasticity@{tendon\+Elasticity}}
+\index{tendon\+Elasticity@{tendon\+Elasticity}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{tendon\+Elasticity}{tendonElasticity}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+tendon\+Elasticity}\hypertarget{class_muscle_hill_1_1_muscle_hill_a3dfc61515409b4e89bd52511d0ba0aa7}{}\label{class_muscle_hill_1_1_muscle_hill_a3dfc61515409b4e89bd52511d0ba0aa7}
+
+
+Definition at line 64 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!tendon\+Force\+\_\+N@{tendon\+Force\+\_\+N}}
+\index{tendon\+Force\+\_\+N@{tendon\+Force\+\_\+N}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{tendon\+Force\+\_\+N}{tendonForce_N}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+tendon\+Force\+\_\+N}\hypertarget{class_muscle_hill_1_1_muscle_hill_a5a205c14ad64c72855c93bfe0abfcd15}{}\label{class_muscle_hill_1_1_muscle_hill_a5a205c14ad64c72855c93bfe0abfcd15}
+
+
+Definition at line 37 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!tendon\+Force\+Norm@{tendon\+Force\+Norm}}
+\index{tendon\+Force\+Norm@{tendon\+Force\+Norm}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{tendon\+Force\+Norm}{tendonForceNorm}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+tendon\+Force\+Norm}\hypertarget{class_muscle_hill_1_1_muscle_hill_a6d0b5deac8be35f8c5ac9fd55f7ff6f7}{}\label{class_muscle_hill_1_1_muscle_hill_a6d0b5deac8be35f8c5ac9fd55f7ff6f7}
+
+
+Definition at line 76 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!tendon\+Length\+\_\+m@{tendon\+Length\+\_\+m}}
+\index{tendon\+Length\+\_\+m@{tendon\+Length\+\_\+m}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{tendon\+Length\+\_\+m}{tendonLength_m}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+tendon\+Length\+\_\+m}\hypertarget{class_muscle_hill_1_1_muscle_hill_ad9b98e7edcdd9baeab4eab970b8c15f0}{}\label{class_muscle_hill_1_1_muscle_hill_ad9b98e7edcdd9baeab4eab970b8c15f0}
+
+
+Definition at line 43 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!tendon\+Length\+Norm@{tendon\+Length\+Norm}}
+\index{tendon\+Length\+Norm@{tendon\+Length\+Norm}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{tendon\+Length\+Norm}{tendonLengthNorm}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+tendon\+Length\+Norm}\hypertarget{class_muscle_hill_1_1_muscle_hill_a7e43dbfcf2ffc57b2f8cbb2c01f7b3c3}{}\label{class_muscle_hill_1_1_muscle_hill_a7e43dbfcf2ffc57b2f8cbb2c01f7b3c3}
+
+
+Definition at line 74 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!tendon\+Linear\+Onset\+Length@{tendon\+Linear\+Onset\+Length}}
+\index{tendon\+Linear\+Onset\+Length@{tendon\+Linear\+Onset\+Length}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{tendon\+Linear\+Onset\+Length}{tendonLinearOnsetLength}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+tendon\+Linear\+Onset\+Length}\hypertarget{class_muscle_hill_1_1_muscle_hill_aa3fa7eedbc4569454c1c1afe95a13088}{}\label{class_muscle_hill_1_1_muscle_hill_aa3fa7eedbc4569454c1c1afe95a13088}
+
+
+Definition at line 65 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!time\+Index@{time\+Index}}
+\index{time\+Index@{time\+Index}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{time\+Index}{timeIndex}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+time\+Index}\hypertarget{class_muscle_hill_1_1_muscle_hill_ab4e1bd36001e334113d42cb8628b2b1d}{}\label{class_muscle_hill_1_1_muscle_hill_ab4e1bd36001e334113d42cb8628b2b1d}
+
+
+Definition at line 21 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!twitch\+Amp\+\_\+N@{twitch\+Amp\+\_\+N}}
+\index{twitch\+Amp\+\_\+N@{twitch\+Amp\+\_\+N}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{twitch\+Amp\+\_\+N}{twitchAmp_N}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+twitch\+Amp\+\_\+N}\hypertarget{class_muscle_hill_1_1_muscle_hill_ae53fd1d4eec68f1de4285211b73e1a13}{}\label{class_muscle_hill_1_1_muscle_hill_ae53fd1d4eec68f1de4285211b73e1a13}
+
+
+Amplitude of the muscle unit twitch, in N (see atualize\+Force function explanation). 
+
+
+
+Definition at line 26 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!tw\+Tet@{tw\+Tet}}
+\index{tw\+Tet@{tw\+Tet}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{tw\+Tet}{twTet}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+tw\+Tet}\hypertarget{class_muscle_hill_1_1_muscle_hill_a9a5c6c65e918348944a07659d0ca8c98}{}\label{class_muscle_hill_1_1_muscle_hill_a9a5c6c65e918348944a07659d0ca8c98}
+
+
+Twitch-\/tetanus relationship (see atualize\+Force function explanation) 
+
+
+
+Definition at line 24 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!velocity\+\_\+m\+\_\+ms@{velocity\+\_\+m\+\_\+ms}}
+\index{velocity\+\_\+m\+\_\+ms@{velocity\+\_\+m\+\_\+ms}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{velocity\+\_\+m\+\_\+ms}{velocity_m_ms}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+velocity\+\_\+m\+\_\+ms}\hypertarget{class_muscle_hill_1_1_muscle_hill_a76789511bcadf11f1aa14d33a6338461}{}\label{class_muscle_hill_1_1_muscle_hill_a76789511bcadf11f1aa14d33a6338461}
+
+
+Definition at line 42 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!velocity\+Norm@{velocity\+Norm}}
+\index{velocity\+Norm@{velocity\+Norm}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{velocity\+Norm}{velocityNorm}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+velocity\+Norm}\hypertarget{class_muscle_hill_1_1_muscle_hill_ab9fa9373e5e62179c06babb8f975c744}{}\label{class_muscle_hill_1_1_muscle_hill_ab9fa9373e5e62179c06babb8f975c744}
+
+
+Definition at line 72 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!viscosity@{viscosity}}
+\index{viscosity@{viscosity}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{viscosity}{viscosity}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+viscosity}\hypertarget{class_muscle_hill_1_1_muscle_hill_a7b471e4abf19f0d47902e1c48f8e729d}{}\label{class_muscle_hill_1_1_muscle_hill_a7b471e4abf19f0d47902e1c48f8e729d}
+
+
+Definition at line 59 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!viscous\+Force\+\_\+N@{viscous\+Force\+\_\+N}}
+\index{viscous\+Force\+\_\+N@{viscous\+Force\+\_\+N}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{viscous\+Force\+\_\+N}{viscousForce_N}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+viscous\+Force\+\_\+N}\hypertarget{class_muscle_hill_1_1_muscle_hill_ab348f7ba65edad4ff12f2a7ab762efba}{}\label{class_muscle_hill_1_1_muscle_hill_ab348f7ba65edad4ff12f2a7ab762efba}
+
+
+Definition at line 40 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!Vmax\+\_\+\+TypeI@{Vmax\+\_\+\+TypeI}}
+\index{Vmax\+\_\+\+TypeI@{Vmax\+\_\+\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{Vmax\+\_\+\+TypeI}{Vmax_TypeI}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+Vmax\+\_\+\+TypeI}\hypertarget{class_muscle_hill_1_1_muscle_hill_a8e9ac9cc4baa53a7d92d6d70ae1e21b8}{}\label{class_muscle_hill_1_1_muscle_hill_a8e9ac9cc4baa53a7d92d6d70ae1e21b8}
+
+
+Definition at line 108 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!Vmax\+\_\+\+Type\+II@{Vmax\+\_\+\+Type\+II}}
+\index{Vmax\+\_\+\+Type\+II@{Vmax\+\_\+\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{Vmax\+\_\+\+Type\+II}{Vmax_TypeII}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+Vmax\+\_\+\+Type\+II}\hypertarget{class_muscle_hill_1_1_muscle_hill_ab5a1774d46cec18a9b0447c5b7c8c4d9}{}\label{class_muscle_hill_1_1_muscle_hill_ab5a1774d46cec18a9b0447c5b7c8c4d9}
+
+
+Definition at line 110 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!w\+\_\+\+TypeI@{w\+\_\+\+TypeI}}
+\index{w\+\_\+\+TypeI@{w\+\_\+\+TypeI}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{w\+\_\+\+TypeI}{w_TypeI}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+w\+\_\+\+TypeI}\hypertarget{class_muscle_hill_1_1_muscle_hill_a9090fed9dd51dcd21e4440e78b7e19e6}{}\label{class_muscle_hill_1_1_muscle_hill_a9090fed9dd51dcd21e4440e78b7e19e6}
+
+
+Definition at line 87 of file Muscle\+Hill.\+py.
+
+\index{Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}!w\+\_\+\+Type\+II@{w\+\_\+\+Type\+II}}
+\index{w\+\_\+\+Type\+II@{w\+\_\+\+Type\+II}!Muscle\+Hill\+::\+Muscle\+Hill@{Muscle\+Hill\+::\+Muscle\+Hill}}
+\subsubsection[{\texorpdfstring{w\+\_\+\+Type\+II}{w_TypeII}}]{\setlength{\rightskip}{0pt plus 5cm}Muscle\+Hill.\+Muscle\+Hill.\+w\+\_\+\+Type\+II}\hypertarget{class_muscle_hill_1_1_muscle_hill_a9a0066f990fa6f90dd7f0b1eedef9d0c}{}\label{class_muscle_hill_1_1_muscle_hill_a9a0066f990fa6f90dd7f0b1eedef9d0c}
+
+
+Definition at line 89 of file Muscle\+Hill.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_muscle_hill_8py}{Muscle\+Hill.\+py}\end{DoxyCompactItemize}

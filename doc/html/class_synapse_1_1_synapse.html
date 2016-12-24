@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -148,6 +149,10 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a14adfda48133bd314f4dcd65fc9a2366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67a1454de1ef2f08ffa3a10bf8466158"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_synapse_1_1_synapse.html#a67a1454de1ef2f08ffa3a10bf8466158">dynamics</a></td></tr>
 <tr class="separator:a67a1454de1ef2f08ffa3a10bf8466158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa37e9a9bbac9358b50ba5280439ad319"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_synapse_1_1_synapse.html#aa37e9a9bbac9358b50ba5280439ad319">variation</a></td></tr>
+<tr class="separator:aa37e9a9bbac9358b50ba5280439ad319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a875adea3ef112a9750532b5e21d47e93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_synapse_1_1_synapse.html#a875adea3ef112a9750532b5e21d47e93">timeConstant_ms</a></td></tr>
+<tr class="separator:a875adea3ef112a9750532b5e21d47e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a470750725ecb176e048a973b9dc23ea3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_synapse_1_1_synapse.html#a470750725ecb176e048a973b9dc23ea3">gMaxTot_muS</a></td></tr>
 <tr class="memdesc:a470750725ecb176e048a973b9dc23ea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sum of individual conductances of all synapses in the compartment, in <img class="formulaInl" alt="$\mu$" src="form_2.png"/>S ( <img class="formulaInl" alt="$G_{max} = \limits\sum_{i=1}^Ng_i$" src="form_64.png"/>).  <a href="#a470750725ecb176e048a973b9dc23ea3">More...</a><br /></td></tr>
 <tr class="separator:a470750725ecb176e048a973b9dc23ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,17 +188,21 @@ Public Attributes</h2></td></tr>
 <tr class="separator:acdc426c52a2a13183d5f8c54a830bfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfd02fa815d45efd0cb1bc0124fe2c90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_synapse_1_1_synapse.html#adfd02fa815d45efd0cb1bc0124fe2c90">tEndOfPulse</a></td></tr>
 <tr class="separator:adfd02fa815d45efd0cb1bc0124fe2c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7df1cc4e7b014e7286b0bbb99079abcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_synapse_1_1_synapse.html#a7df1cc4e7b014e7286b0bbb99079abcf">tLastPulse</a></td></tr>
+<tr class="separator:a7df1cc4e7b014e7286b0bbb99079abcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc85234a081ad18bf19473be530dcf78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_synapse_1_1_synapse.html#adc85234a081ad18bf19473be530dcf78">ri</a></td></tr>
 <tr class="memdesc:adc85234a081ad18bf19473be530dcf78"><td class="mdescLeft">&#160;</td><td class="mdescRight">List with the fractions of postsynaptic receptors that are bound to neurotransmitters of the individual synapses.  <a href="#adc85234a081ad18bf19473be530dcf78">More...</a><br /></td></tr>
 <tr class="separator:adc85234a081ad18bf19473be530dcf78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a714c95723607acad52af96ad55b6c575"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_synapse_1_1_synapse.html#a714c95723607acad52af96ad55b6c575">ti</a></td></tr>
 <tr class="memdesc:a714c95723607acad52af96ad55b6c575"><td class="mdescLeft">&#160;</td><td class="mdescRight">List with the instants of spike arriving at each conductance, in ms.  <a href="#a714c95723607acad52af96ad55b6c575">More...</a><br /></td></tr>
 <tr class="separator:a714c95723607acad52af96ad55b6c575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab987766ddedc7dc1cda9602eef6cb017"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_synapse_1_1_synapse.html#ab987766ddedc7dc1cda9602eef6cb017">dynamicGmax</a></td></tr>
+<tr class="separator:ab987766ddedc7dc1cda9602eef6cb017"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements the synapse model from Destexhe (1994) using the computational method from Lytton (1996). </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00305">305</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00323">323</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a07d8bf346901e5db0ba72d5397057bd2"></a>
 <div class="memitem">
@@ -252,17 +261,17 @@ Public Attributes</h2></td></tr>
 <p>Constructor. </p>
 <ul>
 <li>Input:<ul>
-<li><b>conf</b>:</li>
-<li><b>pool</b>:</li>
-<li><b>index</b>:</li>
-<li><b>compartment</b>:</li>
-<li><b>kind</b>:</li>
+<li><b>conf</b>: <a class="el" href="namespace_configuration.html">Configuration</a> object with the simulation parameters.</li>
+<li><b>pool</b>: string with identification of the pool to which the synapse belongs.</li>
+<li><b>index</b>: integer identification of the unit in the pool.</li>
+<li><b>compartment</b>: integer identification of the compartment of the unit where the synapse is.</li>
+<li><b>kind</b>: string with the type of synapse. It can be <em>excitatory</em> or <em>inhibitory</em>.</li>
 <li><b>neuronKind</b>: </li>
 </ul>
 </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00323">323</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00343">343</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -277,7 +286,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00329">329</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00349">349</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -291,7 +300,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00330">330</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00350">350</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -305,7 +314,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00376">376</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00400">400</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -319,7 +328,21 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00336">336</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00356">356</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab987766ddedc7dc1cda9602eef6cb017"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Synapse.Synapse.dynamicGmax</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00412">412</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -333,7 +356,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00337">337</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00357">357</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -347,7 +370,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00328">328</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00348">348</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -364,7 +387,7 @@ Public Attributes</h2></td></tr>
 <p>Is the value of the exponential at the end of the pulse. </p>
 <p>It is computed as <img class="formulaInl" alt="$\exp(T_{dur}/\tau_{on})$" src="form_58.png"/>. </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00358">358</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00380">380</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -378,7 +401,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00335">335</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00355">355</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -394,7 +417,7 @@ Public Attributes</h2></td></tr>
 
 <p>The sum of individual conductances of all synapses in the compartment, in <img class="formulaInl" alt="$\mu$" src="form_2.png"/>S ( <img class="formulaInl" alt="$G_{max} = \limits\sum_{i=1}^Ng_i$" src="form_64.png"/>). </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00341">341</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00363">363</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -408,7 +431,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00325">325</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00345">345</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -422,7 +445,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00326">326</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00346">346</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -439,7 +462,7 @@ Public Attributes</h2></td></tr>
 <p>Sum of the fractions of the individual conductances that are receiving neurotransmitter (during pulse) relative to the <img class="formulaInl" alt="$G_{max}$" src="form_52.png"/>. </p>
 <p>( </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00363">363</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00387">387</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -453,7 +476,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00342">342</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00364">364</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -467,7 +490,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00324">324</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00344">344</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -483,7 +506,7 @@ Public Attributes</h2></td></tr>
 
 <p>List with the fractions of postsynaptic receptors that are bound to neurotransmitters of the individual synapses. </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00382">382</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00407">407</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -499,7 +522,7 @@ Public Attributes</h2></td></tr>
 
 <p>The fraction of postsynaptic receptors that would be bound to neurotransmitters after an infinite amount of time with neurotransmitter being released. </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00348">348</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00370">370</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -515,7 +538,7 @@ Public Attributes</h2></td></tr>
 
 <p>Sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that do not have neurotransmitters being released (before and after the pulse). </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00372">372</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00396">396</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -531,7 +554,7 @@ Public Attributes</h2></td></tr>
 
 <p>Sum of the fraction of postsynaptic receptors that are bound to neurotransmitters of all the individual synapses that have neurotransmitters being released (during the pulse). </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00367">367</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00391">391</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -547,7 +570,7 @@ Public Attributes</h2></td></tr>
 
 <p>Instant that the last spike arrived to the compartment. </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00374">374</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00398">398</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -564,7 +587,7 @@ Public Attributes</h2></td></tr>
 <p>Time constant after a pulse, in ms. </p>
 <p><img class="formulaInl" alt="$\tau_{off}=\frac{1}{\beta}$" src="form_65.png"/> </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00354">354</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00376">376</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -581,7 +604,7 @@ Public Attributes</h2></td></tr>
 <p>Time constant during a pulse, in ms. </p>
 <p><img class="formulaInl" alt="$\tau_{on}=\frac{1}{\alpha.T_{max} +\beta}$" src="form_54.png"/> </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00351">351</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00373">373</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -595,7 +618,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00377">377</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00401">401</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -609,7 +632,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00378">378</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00402">402</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -625,7 +648,35 @@ Public Attributes</h2></td></tr>
 
 <p>List with the instants of spike arriving at each conductance, in ms. </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00385">385</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00410">410</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a875adea3ef112a9750532b5e21d47e93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Synapse.Synapse.timeConstant_ms</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00359">359</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7df1cc4e7b014e7286b0bbb99079abcf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Synapse.Synapse.tLastPulse</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00403">403</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -639,7 +690,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00331">331</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00351">351</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -655,7 +706,21 @@ Public Attributes</h2></td></tr>
 
 <p>Pulse duration, in ms. </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00333">333</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00353">353</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa37e9a9bbac9358b50ba5280439ad319"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Synapse.Synapse.variation</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00358">358</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -668,7 +733,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_synapse.html">Synapse</a></li><li class="navelem"><a class="el" href="class_synapse_1_1_synapse.html">Synapse</a></li>
-    <li class="footer">Generated on Mon Jun 27 2016 18:05:12 for PyReMoto by
+    <li class="footer">Generated on Mon Dec 12 2016 13:43:18 for PyReMoto by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

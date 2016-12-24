@@ -1,0 +1,523 @@
+\hypertarget{class_interneuron_1_1_interneuron}{}\section{Interneuron.\+Interneuron Class Reference}
+\label{class_interneuron_1_1_interneuron}\index{Interneuron.\+Interneuron@{Interneuron.\+Interneuron}}
+
+
+Class that implements a motor unit model.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_interneuron_1_1_interneuron_a9550e1a9e62f415679fc7710db5c2a65}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{class_interneuron_1_1_interneuron_a20078e4de62213b832ce7f1cf2c587c7}{conf}, \hyperlink{class_interneuron_1_1_interneuron_acc2d5c89c20fc2db87f7af1839069127}{pool}, \hyperlink{class_interneuron_1_1_interneuron_ab8834528a49b8be56d59e0afc97019c2}{index})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+def \hyperlink{class_interneuron_1_1_interneuron_aaa557573420679f62247b6c6a3879f88}{atualize\+Interneuron} (self, t)
+\begin{DoxyCompactList}\small\item\em Atualize the dynamical and nondynamical (delay) parts of the motor unit. \end{DoxyCompactList}\item 
+def \hyperlink{class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1}{atualize\+Compartments} (self, t)
+\begin{DoxyCompactList}\small\item\em Atualize all neural compartments. \end{DoxyCompactList}\item 
+def \hyperlink{class_interneuron_1_1_interneuron_a5eff07c93609a66a19f8e7426204be02}{d\+Vdt} (self, t, V)
+\begin{DoxyCompactList}\small\item\em Compute the potential derivative of all compartments of the motor unit. \end{DoxyCompactList}\item 
+def \hyperlink{class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5}{add\+Soma\+Spike} (self, t)
+\begin{DoxyCompactList}\small\item\em When the soma potential is above the threshold a spike is added to the soma. \end{DoxyCompactList}\item 
+def \hyperlink{class_interneuron_1_1_interneuron_a776242a1aa83a264adba968651de0226}{transmit\+Spikes} (self, t)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_interneuron_1_1_interneuron_a20078e4de62213b832ce7f1cf2c587c7}{conf}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_acc2d5c89c20fc2db87f7af1839069127}{pool}
+\item 
+\hyperlink{class_interneuron_1_1_interneuron_ac4582711b06d64164ea51789ee2e2558}{kind}
+\item 
+\hyperlink{class_interneuron_1_1_interneuron_a3fabf689dfda7199c84e44bbf216f90c}{t\+Soma\+Spike}
+\begin{DoxyCompactList}\small\item\em The instant of the last spike of the Motor unit at the Soma compartment. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_abd4d1f53989f0cb098a92112df37ed8a}{soma\+Spike\+Train}
+\begin{DoxyCompactList}\small\item\em Vector with the instants of spikes at the soma. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_ab8834528a49b8be56d59e0afc97019c2}{index}
+\begin{DoxyCompactList}\small\item\em Integer corresponding to the \hyperlink{class_interneuron_1_1_interneuron}{Interneuron} order in the pool. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_a950d7c9a49f86305bc5d456fd924efa9}{compartment}
+\begin{DoxyCompactList}\small\item\em Vector of \hyperlink{namespace_compartment}{Compartment} of the Motor Unit. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_a0e69e0be9f68e8099f5cde10e0b1bea1}{threshold\+\_\+mV}
+\begin{DoxyCompactList}\small\item\em Value of the membrane potential, in mV, that is considered a spike. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_a3cc482741f09e4230c9e0365de494433}{position\+\_\+mm}
+\begin{DoxyCompactList}\small\item\em Anatomical position of the neuron, in mm. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_a932bf948613265453822e7dd6fdac4a8}{comp\+Number}
+\begin{DoxyCompactList}\small\item\em Number of compartments. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_a55cb57e83adad5560b6e6134ad868219}{v\+\_\+mV}
+\begin{DoxyCompactList}\small\item\em Vector with membrane potential,in mV, of all compartments. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_a6c5e0b83da3c1a4323699b81034692c9}{capacitance\+Inv}
+\begin{DoxyCompactList}\small\item\em Vector with the inverse of the capacitance of all compartments. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_a3fb131eadbe0e3f7efecfb2fdc5a707b}{i\+Ionic}
+\begin{DoxyCompactList}\small\item\em Vector with current, in nA, of each compartment coming from other elements of the model. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_ab9a0874ea1e099b07a66ed9eaf3ff14b}{i\+Injected}
+\begin{DoxyCompactList}\small\item\em Vector with the current, in nA, injected in each compartment. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_a1c2c1b2f13cd69c09923e684a0b54171}{G}
+\begin{DoxyCompactList}\small\item\em Matrix of the conductance of the motoneuron. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_aee67796d78acb7bea5aa67ec3df379a8}{soma\+Index}
+\begin{DoxyCompactList}\small\item\em index of the soma compartment. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_a4e036434222711a311d3299516795dd5}{Ref\+Per\+\_\+ms}
+\begin{DoxyCompactList}\small\item\em Refractory period, in ms, of the motoneuron. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_aa345954910a8c7b304d0c18b53f20480}{terminal\+Spike\+Train}
+\begin{DoxyCompactList}\small\item\em Vector with the instants of spikes at the terminal. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_acf20c20262841403db13c5d69e4cb840}{Synapses\+Out}
+\begin{DoxyCompactList}\small\item\em Build synapses. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_1_1_interneuron_a045e133d9975922a3f6865c01cfd6dbb}{transmit\+Spikes\+Through\+Synapses}
+\item 
+\hyperlink{class_interneuron_1_1_interneuron_aae8e79cf5c696fb7e7cae3e8f93db55b}{indices\+Of\+Synapses\+On\+Target}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that implements a motor unit model. 
+
+Encompasses a motoneuron and a muscle unit. 
+
+Definition at line 66 of file Interneuron.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, conf, pool, index)}{__init__(self, conf, pool, index)}}]{\setlength{\rightskip}{0pt plus 5cm}def Interneuron.\+Interneuron.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{conf, }
+\item[{}]{pool, }
+\item[{}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interneuron_1_1_interneuron_a9550e1a9e62f415679fc7710db5c2a65}{}\label{class_interneuron_1_1_interneuron_a9550e1a9e62f415679fc7710db5c2a65}
+
+
+Constructor. 
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries conf}\+: \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters.
+\item {\bfseries pool}\+: string with \hyperlink{class_interneuron_1_1_interneuron}{Interneuron} pool to which the motor unit belongs. It can be {\itshape RC} (Renshaw cell), {\itshape Ia\+In} (Ia \hyperlink{class_interneuron_1_1_interneuron}{Interneuron}), {\itshape Ib\+In} (Ib \hyperlink{class_interneuron_1_1_interneuron}{Interneuron}) and {\itshape g\+II}.
+\item {\bfseries index}\+: integer corresponding to the motor unit order in the pool, according to the Henneman\textquotesingle{}s principle (size principle). 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 83 of file Interneuron.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!add\+Soma\+Spike@{add\+Soma\+Spike}}
+\index{add\+Soma\+Spike@{add\+Soma\+Spike}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{add\+Soma\+Spike(self, t)}{addSomaSpike(self, t)}}]{\setlength{\rightskip}{0pt plus 5cm}def Interneuron.\+Interneuron.\+add\+Soma\+Spike (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5}{}\label{class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5}
+
+
+When the soma potential is above the threshold a spike is added to the soma. 
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: current instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 217 of file Interneuron.\+py.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interneuron_1_1_interneuron_affb57bbf0d7eec160855d0fce26f83d5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!atualize\+Compartments@{atualize\+Compartments}}
+\index{atualize\+Compartments@{atualize\+Compartments}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{atualize\+Compartments(self, t)}{atualizeCompartments(self, t)}}]{\setlength{\rightskip}{0pt plus 5cm}def Interneuron.\+Interneuron.\+atualize\+Compartments (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1}{}\label{class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1}
+
+
+Atualize all neural compartments. 
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: current instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 177 of file Interneuron.\+py.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interneuron_1_1_interneuron_aadb0a11834ebf0b9fb0fa05788da23d1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!atualize\+Interneuron@{atualize\+Interneuron}}
+\index{atualize\+Interneuron@{atualize\+Interneuron}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{atualize\+Interneuron(self, t)}{atualizeInterneuron(self, t)}}]{\setlength{\rightskip}{0pt plus 5cm}def Interneuron.\+Interneuron.\+atualize\+Interneuron (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interneuron_1_1_interneuron_aaa557573420679f62247b6c6a3879f88}{}\label{class_interneuron_1_1_interneuron_aaa557573420679f62247b6c6a3879f88}
+
+
+Atualize the dynamical and nondynamical (delay) parts of the motor unit. 
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: current instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 167 of file Interneuron.\+py.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interneuron_1_1_interneuron_aaa557573420679f62247b6c6a3879f88_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!d\+Vdt@{d\+Vdt}}
+\index{d\+Vdt@{d\+Vdt}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{d\+Vdt(self, t, V)}{dVdt(self, t, V)}}]{\setlength{\rightskip}{0pt plus 5cm}def Interneuron.\+Interneuron.\+d\+Vdt (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{t, }
+\item[{}]{V}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interneuron_1_1_interneuron_a5eff07c93609a66a19f8e7426204be02}{}\label{class_interneuron_1_1_interneuron_a5eff07c93609a66a19f8e7426204be02}
+
+
+Compute the potential derivative of all compartments of the motor unit. 
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: current instant, in ms.
+\item {\bfseries V}\+: Vector with the current potential value of all neural compartments of the motor unit. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 202 of file Interneuron.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interneuron_1_1_interneuron_a5eff07c93609a66a19f8e7426204be02_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!transmit\+Spikes@{transmit\+Spikes}}
+\index{transmit\+Spikes@{transmit\+Spikes}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{transmit\+Spikes(self, t)}{transmitSpikes(self, t)}}]{\setlength{\rightskip}{0pt plus 5cm}def Interneuron.\+Interneuron.\+transmit\+Spikes (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interneuron_1_1_interneuron_a776242a1aa83a264adba968651de0226}{}\label{class_interneuron_1_1_interneuron_a776242a1aa83a264adba968651de0226}
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: current instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 231 of file Interneuron.\+py.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interneuron_1_1_interneuron_a776242a1aa83a264adba968651de0226_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!capacitance\+Inv@{capacitance\+Inv}}
+\index{capacitance\+Inv@{capacitance\+Inv}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{capacitance\+Inv}{capacitanceInv}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+capacitance\+Inv}\hypertarget{class_interneuron_1_1_interneuron_a6c5e0b83da3c1a4323699b81034692c9}{}\label{class_interneuron_1_1_interneuron_a6c5e0b83da3c1a4323699b81034692c9}
+
+
+Vector with the inverse of the capacitance of all compartments. 
+
+
+
+Definition at line 126 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!compartment@{compartment}}
+\index{compartment@{compartment}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{compartment}{compartment}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+compartment}\hypertarget{class_interneuron_1_1_interneuron_a950d7c9a49f86305bc5d456fd924efa9}{}\label{class_interneuron_1_1_interneuron_a950d7c9a49f86305bc5d456fd924efa9}
+
+
+Vector of \hyperlink{namespace_compartment}{Compartment} of the Motor Unit. 
+
+
+
+Definition at line 101 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!comp\+Number@{comp\+Number}}
+\index{comp\+Number@{comp\+Number}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{comp\+Number}{compNumber}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+comp\+Number}\hypertarget{class_interneuron_1_1_interneuron_a932bf948613265453822e7dd6fdac4a8}{}\label{class_interneuron_1_1_interneuron_a932bf948613265453822e7dd6fdac4a8}
+
+
+Number of compartments. 
+
+
+
+Definition at line 112 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!conf@{conf}}
+\index{conf@{conf}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{conf}{conf}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+conf}\hypertarget{class_interneuron_1_1_interneuron_a20078e4de62213b832ce7f1cf2c587c7}{}\label{class_interneuron_1_1_interneuron_a20078e4de62213b832ce7f1cf2c587c7}
+
+
+\hyperlink{namespace_configuration}{Configuration} object with the simulation parameters. 
+
+
+
+Definition at line 86 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!G@{G}}
+\index{G@{G}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{G}{G}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+G}\hypertarget{class_interneuron_1_1_interneuron_a1c2c1b2f13cd69c09923e684a0b54171}{}\label{class_interneuron_1_1_interneuron_a1c2c1b2f13cd69c09923e684a0b54171}
+
+
+Matrix of the conductance of the motoneuron. 
+
+Multiplied by the vector self.\+v\+\_\+mV, results in the passive currents of each compartment. 
+
+Definition at line 140 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!i\+Injected@{i\+Injected}}
+\index{i\+Injected@{i\+Injected}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{i\+Injected}{iInjected}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+i\+Injected}\hypertarget{class_interneuron_1_1_interneuron_ab9a0874ea1e099b07a66ed9eaf3ff14b}{}\label{class_interneuron_1_1_interneuron_ab9a0874ea1e099b07a66ed9eaf3ff14b}
+
+
+Vector with the current, in nA, injected in each compartment. 
+
+
+
+Definition at line 132 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!i\+Ionic@{i\+Ionic}}
+\index{i\+Ionic@{i\+Ionic}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{i\+Ionic}{iIonic}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+i\+Ionic}\hypertarget{class_interneuron_1_1_interneuron_a3fb131eadbe0e3f7efecfb2fdc5a707b}{}\label{class_interneuron_1_1_interneuron_a3fb131eadbe0e3f7efecfb2fdc5a707b}
+
+
+Vector with current, in nA, of each compartment coming from other elements of the model. 
+
+For example from ionic channels and synapses. 
+
+Definition at line 130 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!index@{index}}
+\index{index@{index}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{index}{index}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+index}\hypertarget{class_interneuron_1_1_interneuron_ab8834528a49b8be56d59e0afc97019c2}{}\label{class_interneuron_1_1_interneuron_ab8834528a49b8be56d59e0afc97019c2}
+
+
+Integer corresponding to the \hyperlink{class_interneuron_1_1_interneuron}{Interneuron} order in the pool. 
+
+
+
+Definition at line 99 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!indices\+Of\+Synapses\+On\+Target@{indices\+Of\+Synapses\+On\+Target}}
+\index{indices\+Of\+Synapses\+On\+Target@{indices\+Of\+Synapses\+On\+Target}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{indices\+Of\+Synapses\+On\+Target}{indicesOfSynapsesOnTarget}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+indices\+Of\+Synapses\+On\+Target}\hypertarget{class_interneuron_1_1_interneuron_aae8e79cf5c696fb7e7cae3e8f93db55b}{}\label{class_interneuron_1_1_interneuron_aae8e79cf5c696fb7e7cae3e8f93db55b}
+
+
+Definition at line 157 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!kind@{kind}}
+\index{kind@{kind}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{kind}{kind}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+kind}\hypertarget{class_interneuron_1_1_interneuron_ac4582711b06d64164ea51789ee2e2558}{}\label{class_interneuron_1_1_interneuron_ac4582711b06d64164ea51789ee2e2558}
+
+
+Definition at line 90 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!pool@{pool}}
+\index{pool@{pool}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{pool}{pool}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+pool}\hypertarget{class_interneuron_1_1_interneuron_acc2d5c89c20fc2db87f7af1839069127}{}\label{class_interneuron_1_1_interneuron_acc2d5c89c20fc2db87f7af1839069127}
+
+
+Definition at line 88 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!position\+\_\+mm@{position\+\_\+mm}}
+\index{position\+\_\+mm@{position\+\_\+mm}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{position\+\_\+mm}{position_mm}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+position\+\_\+mm}\hypertarget{class_interneuron_1_1_interneuron_a3cc482741f09e4230c9e0365de494433}{}\label{class_interneuron_1_1_interneuron_a3cc482741f09e4230c9e0365de494433}
+
+
+Anatomical position of the neuron, in mm. 
+
+
+
+Definition at line 106 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!Ref\+Per\+\_\+ms@{Ref\+Per\+\_\+ms}}
+\index{Ref\+Per\+\_\+ms@{Ref\+Per\+\_\+ms}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{Ref\+Per\+\_\+ms}{RefPer_ms}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+Ref\+Per\+\_\+ms}\hypertarget{class_interneuron_1_1_interneuron_a4e036434222711a311d3299516795dd5}{}\label{class_interneuron_1_1_interneuron_a4e036434222711a311d3299516795dd5}
+
+
+Refractory period, in ms, of the motoneuron. 
+
+
+
+Definition at line 147 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!soma\+Index@{soma\+Index}}
+\index{soma\+Index@{soma\+Index}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{soma\+Index}{somaIndex}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+soma\+Index}\hypertarget{class_interneuron_1_1_interneuron_aee67796d78acb7bea5aa67ec3df379a8}{}\label{class_interneuron_1_1_interneuron_aee67796d78acb7bea5aa67ec3df379a8}
+
+
+index of the soma compartment. 
+
+
+
+Definition at line 144 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!soma\+Spike\+Train@{soma\+Spike\+Train}}
+\index{soma\+Spike\+Train@{soma\+Spike\+Train}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{soma\+Spike\+Train}{somaSpikeTrain}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+soma\+Spike\+Train}\hypertarget{class_interneuron_1_1_interneuron_abd4d1f53989f0cb098a92112df37ed8a}{}\label{class_interneuron_1_1_interneuron_abd4d1f53989f0cb098a92112df37ed8a}
+
+
+Vector with the instants of spikes at the soma. 
+
+
+
+Definition at line 97 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!Synapses\+Out@{Synapses\+Out}}
+\index{Synapses\+Out@{Synapses\+Out}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{Synapses\+Out}{SynapsesOut}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+Synapses\+Out}\hypertarget{class_interneuron_1_1_interneuron_acf20c20262841403db13c5d69e4cb840}{}\label{class_interneuron_1_1_interneuron_acf20c20262841403db13c5d69e4cb840}
+
+
+Build synapses. 
+
+
+
+Definition at line 155 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!terminal\+Spike\+Train@{terminal\+Spike\+Train}}
+\index{terminal\+Spike\+Train@{terminal\+Spike\+Train}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{terminal\+Spike\+Train}{terminalSpikeTrain}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+terminal\+Spike\+Train}\hypertarget{class_interneuron_1_1_interneuron_aa345954910a8c7b304d0c18b53f20480}{}\label{class_interneuron_1_1_interneuron_aa345954910a8c7b304d0c18b53f20480}
+
+
+Vector with the instants of spikes at the terminal. 
+
+
+
+Definition at line 150 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!threshold\+\_\+mV@{threshold\+\_\+mV}}
+\index{threshold\+\_\+mV@{threshold\+\_\+mV}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{threshold\+\_\+mV}{threshold_mV}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+threshold\+\_\+mV}\hypertarget{class_interneuron_1_1_interneuron_a0e69e0be9f68e8099f5cde10e0b1bea1}{}\label{class_interneuron_1_1_interneuron_a0e69e0be9f68e8099f5cde10e0b1bea1}
+
+
+Value of the membrane potential, in mV, that is considered a spike. 
+
+
+
+Definition at line 103 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!transmit\+Spikes\+Through\+Synapses@{transmit\+Spikes\+Through\+Synapses}}
+\index{transmit\+Spikes\+Through\+Synapses@{transmit\+Spikes\+Through\+Synapses}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{transmit\+Spikes\+Through\+Synapses}{transmitSpikesThroughSynapses}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+transmit\+Spikes\+Through\+Synapses}\hypertarget{class_interneuron_1_1_interneuron_a045e133d9975922a3f6865c01cfd6dbb}{}\label{class_interneuron_1_1_interneuron_a045e133d9975922a3f6865c01cfd6dbb}
+
+
+Definition at line 156 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!t\+Soma\+Spike@{t\+Soma\+Spike}}
+\index{t\+Soma\+Spike@{t\+Soma\+Spike}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{t\+Soma\+Spike}{tSomaSpike}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+t\+Soma\+Spike}\hypertarget{class_interneuron_1_1_interneuron_a3fabf689dfda7199c84e44bbf216f90c}{}\label{class_interneuron_1_1_interneuron_a3fabf689dfda7199c84e44bbf216f90c}
+
+
+The instant of the last spike of the Motor unit at the Soma compartment. 
+
+
+
+Definition at line 94 of file Interneuron.\+py.
+
+\index{Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}!v\+\_\+mV@{v\+\_\+mV}}
+\index{v\+\_\+mV@{v\+\_\+mV}!Interneuron\+::\+Interneuron@{Interneuron\+::\+Interneuron}}
+\subsubsection[{\texorpdfstring{v\+\_\+mV}{v_mV}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron.\+Interneuron.\+v\+\_\+mV}\hypertarget{class_interneuron_1_1_interneuron_a55cb57e83adad5560b6e6134ad868219}{}\label{class_interneuron_1_1_interneuron_a55cb57e83adad5560b6e6134ad868219}
+
+
+Vector with membrane potential,in mV, of all compartments. 
+
+
+
+Definition at line 114 of file Interneuron.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_interneuron_8py}{Interneuron.\+py}\end{DoxyCompactItemize}

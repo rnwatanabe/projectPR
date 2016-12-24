@@ -1,0 +1,6 @@
+<map id="jointAnklePositionTask.jointAnklePositionTask.dLdt" name="jointAnklePositionTask.jointAnklePositionTask.dLdt">
+<area shape="rect" id="node2" href="$classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ac044fc7d615fc19a0f90e6af4947c32e" title="jointAnklePositionTask.joint\lAnklePositionTask.atualizeLenghts\lAndVelocity" alt="" coords="236,5,463,61"/>
+<area shape="rect" id="node5" href="$class_muscle_hill_1_1_muscle_hill.html#a71ea33f1c30bdbe7cd795426bf097e78" title="MuscleHill.MuscleHill.atualize\lLenghtsAndVelocity" alt="" coords="251,85,448,126"/>
+<area shape="rect" id="node3" href="$classjoint_ankle_position_task_1_1joint_ankle_position_task.html#abe3c0546bf63fbf73815c59b5b86c6d5" title="Compute the muscle force when no muscle dynamics (Hill model) is used. " alt="" coords="511,13,724,54"/>
+<area shape="rect" id="node4" href="$class_muscle_hill_1_1_muscle_hill.html#aa07ad41150b7f082dc49226650e705cb" title="Compute the muscle force when no muscle dynamics (Hill model) is used. " alt="" coords="519,81,716,122"/>
+</map>

@@ -25,10 +25,28 @@ def \hyperlink{namespace_synapse_a695380d931b5beeed57d872bfddc423a}{comp\+Roff\+
 def \hyperlink{namespace_synapse_a3fb4510e3284ad84eb4d3d8c39112a94}{comp\+Ron\+Stop} (Ron, ri, syn\+Contrib)
 \begin{DoxyCompactList}\small\item\em Removes a conductance from the set of conductances during a pulse. \end{DoxyCompactList}\item 
 def \hyperlink{namespace_synapse_afd15218d4cf7a043cd35aa37f1593f6d}{comp\+Roff\+Stop} (Roff, ri, syn\+Contrib)
-\begin{DoxyCompactList}\small\item\em Removes a conductance from the set of conductances that are not during a pulse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Removes a conductance from the set of conductances that are not during a pulse. \end{DoxyCompactList}\item 
+def \hyperlink{namespace_synapse_a8bf27e583af5778833e20c4468c6e71e}{comp\+Dynamic\+Gmax} (t, gmax, last\+Pulse, tau, dynamic\+Gmax, var)
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
+\index{Synapse@{Synapse}!comp\+Dynamic\+Gmax@{comp\+Dynamic\+Gmax}}
+\index{comp\+Dynamic\+Gmax@{comp\+Dynamic\+Gmax}!Synapse@{Synapse}}
+\subsubsection[{\texorpdfstring{comp\+Dynamic\+Gmax(t, gmax, last\+Pulse, tau, dynamic\+Gmax, var)}{compDynamicGmax(t, gmax, lastPulse, tau, dynamicGmax, var)}}]{\setlength{\rightskip}{0pt plus 5cm}def Synapse.\+comp\+Dynamic\+Gmax (
+\begin{DoxyParamCaption}
+\item[{}]{t, }
+\item[{}]{gmax, }
+\item[{}]{last\+Pulse, }
+\item[{}]{tau, }
+\item[{}]{dynamic\+Gmax, }
+\item[{}]{var}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_synapse_a8bf27e583af5778833e20c4468c6e71e}{}\label{namespace_synapse_a8bf27e583af5778833e20c4468c6e71e}
+
+
+Definition at line 313 of file Synapse.\+py.
+
 \index{Synapse@{Synapse}!comp\+Ri\+Start@{comp\+Ri\+Start}}
 \index{comp\+Ri\+Start@{comp\+Ri\+Start}!Synapse@{Synapse}}
 \subsubsection[{\texorpdfstring{comp\+Ri\+Start(ri, t, ti, t\+Peak, tau\+Off)}{compRiStart(ri, t, ti, tPeak, tauOff)}}]{\setlength{\rightskip}{0pt plus 5cm}def Synapse.\+comp\+Ri\+Start (
@@ -64,7 +82,7 @@ It is computed by the following equation\+:
 
 \begin{equation} r_{i_{newValue}} = r_{i_{oldValue}} \exp\left(\frac{t_i+T_{dur}-t}{\tau_{off}}\right) \end{equation} 
 
-Definition at line 142 of file Synapse.\+py.
+Definition at line 148 of file Synapse.\+py.
 
 \index{Synapse@{Synapse}!comp\+Ri\+Stop@{comp\+Ri\+Stop}}
 \index{comp\+Ri\+Stop@{comp\+Ri\+Stop}!Synapse@{Synapse}}
@@ -97,7 +115,7 @@ It is computed by the following equation\+:
 
 \begin{equation} r_{i_{newValue}} = r_{\infty} + (r_{i_{oldValue}} - r_{\infty}) \exp\left(\frac{T_{dur}}{\tau_{on}}\right) \end{equation} 
 
-Definition at line 173 of file Synapse.\+py.
+Definition at line 180 of file Synapse.\+py.
 
 \index{Synapse@{Synapse}!comp\+Roff@{comp\+Roff}}
 \index{comp\+Roff@{comp\+Roff}!Synapse@{Synapse}}
@@ -132,7 +150,7 @@ It is computed by the following formula\+:
 
 \begin{equation} R_{off_{newValue}} = R_{off_{oldValue}}\exp\left(-\frac{t - t0}{\tau_{off}} \right) \end{equation} 
 
-Definition at line 112 of file Synapse.\+py.
+Definition at line 117 of file Synapse.\+py.
 
 \index{Synapse@{Synapse}!comp\+Roff\+Start@{comp\+Roff\+Start}}
 \index{comp\+Roff\+Start@{comp\+Roff\+Start}!Synapse@{Synapse}}
@@ -165,7 +183,7 @@ It is computed as\+:
 
 \begin{equation} R_{off_{newValue}} = R_{off_{oldValue}} - r_iS_{indCont} \end{equation} 
 
-Definition at line 235 of file Synapse.\+py.
+Definition at line 244 of file Synapse.\+py.
 
 \index{Synapse@{Synapse}!comp\+Roff\+Stop@{comp\+Roff\+Stop}}
 \index{comp\+Roff\+Stop@{comp\+Roff\+Stop}!Synapse@{Synapse}}
@@ -198,7 +216,7 @@ It is computed as\+:
 
 \begin{equation} R_{off_{newValue}} = R_{off_{oldValue}} + r_iS_{indCont} \end{equation} 
 
-Definition at line 297 of file Synapse.\+py.
+Definition at line 309 of file Synapse.\+py.
 
 \index{Synapse@{Synapse}!comp\+Ron@{comp\+Ron}}
 \index{comp\+Ron@{comp\+Ron}!Synapse@{Synapse}}
@@ -237,7 +255,7 @@ It is computed by the following equation\+:
 
 \begin{equation} R_{on_{newValue}} = N_{on}r_{\infty}\Bigg[1-\exp\left(-\frac{t-t_0}{\tau_{on}}\right)\Bigg] + R_{on_{oldValue}}\exp\left(-\frac{t-t_0}{\tau_{on}}\right) \end{equation} 
 
-Definition at line 78 of file Synapse.\+py.
+Definition at line 81 of file Synapse.\+py.
 
 \index{Synapse@{Synapse}!comp\+Ron\+Start@{comp\+Ron\+Start}}
 \index{comp\+Ron\+Start@{comp\+Ron\+Start}!Synapse@{Synapse}}
@@ -270,7 +288,7 @@ It is computed as\+:
 
 \begin{equation} R_{on_{newValue}} = R_{on_{oldValue}} + r_iS_{indCont} \end{equation} 
 
-Definition at line 203 of file Synapse.\+py.
+Definition at line 211 of file Synapse.\+py.
 
 \index{Synapse@{Synapse}!comp\+Ron\+Stop@{comp\+Ron\+Stop}}
 \index{comp\+Ron\+Stop@{comp\+Ron\+Stop}!Synapse@{Synapse}}
@@ -303,7 +321,7 @@ It is computed as\+:
 
 \begin{equation} R_{on_{newValue}} = R_{on_{oldValue}} - r_iS_{indCont} \end{equation} 
 
-Definition at line 265 of file Synapse.\+py.
+Definition at line 275 of file Synapse.\+py.
 
 \index{Synapse@{Synapse}!comp\+Synap\+Cond@{comp\+Synap\+Cond}}
 \index{comp\+Synap\+Cond@{comp\+Synap\+Cond}!Synapse@{Synapse}}
@@ -336,5 +354,5 @@ It is computed by the following formula\+:
 
 \begin{equation} G = G_{max}(R_{on} + R_{off}) \end{equation} where $G$ is the synaptic conductance of all synapses in the compartment. 
 
-Definition at line 39 of file Synapse.\+py.
+Definition at line 41 of file Synapse.\+py.
 

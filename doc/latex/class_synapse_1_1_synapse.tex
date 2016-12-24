@@ -35,6 +35,10 @@ def \hyperlink{class_synapse_1_1_synapse_a07d8bf346901e5db0ba72d5397057bd2}{\+\_
 \item 
 \hyperlink{class_synapse_1_1_synapse_a67a1454de1ef2f08ffa3a10bf8466158}{dynamics}
 \item 
+\hyperlink{class_synapse_1_1_synapse_aa37e9a9bbac9358b50ba5280439ad319}{variation}
+\item 
+\hyperlink{class_synapse_1_1_synapse_a875adea3ef112a9750532b5e21d47e93}{time\+Constant\+\_\+ms}
+\item 
 \hyperlink{class_synapse_1_1_synapse_a470750725ecb176e048a973b9dc23ea3}{g\+Max\+Tot\+\_\+muS}
 \begin{DoxyCompactList}\small\item\em The sum of individual conductances of all synapses in the compartment, in $\mu$S ( $G_{max} = \limits\sum_{i=1}^Ng_i$). \end{DoxyCompactList}\item 
 \hyperlink{class_synapse_1_1_synapse_a6e55e008336cc47551669f3d77248d57}{number\+Of\+Incoming\+Synapses}
@@ -61,16 +65,20 @@ def \hyperlink{class_synapse_1_1_synapse_a07d8bf346901e5db0ba72d5397057bd2}{\+\_
 \item 
 \hyperlink{class_synapse_1_1_synapse_adfd02fa815d45efd0cb1bc0124fe2c90}{t\+End\+Of\+Pulse}
 \item 
+\hyperlink{class_synapse_1_1_synapse_a7df1cc4e7b014e7286b0bbb99079abcf}{t\+Last\+Pulse}
+\item 
 \hyperlink{class_synapse_1_1_synapse_adc85234a081ad18bf19473be530dcf78}{ri}
 \begin{DoxyCompactList}\small\item\em List with the fractions of postsynaptic receptors that are bound to neurotransmitters of the individual synapses. \end{DoxyCompactList}\item 
 \hyperlink{class_synapse_1_1_synapse_a714c95723607acad52af96ad55b6c575}{ti}
-\begin{DoxyCompactList}\small\item\em List with the instants of spike arriving at each conductance, in ms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em List with the instants of spike arriving at each conductance, in ms. \end{DoxyCompactList}\item 
+\hyperlink{class_synapse_1_1_synapse_ab987766ddedc7dc1cda9602eef6cb017}{dynamic\+Gmax}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Implements the synapse model from Destexhe (1994) using the computational method from Lytton (1996). 
 
-Definition at line 305 of file Synapse.\+py.
+Definition at line 323 of file Synapse.\+py.
 
 
 
@@ -96,16 +104,16 @@ Constructor.
 \begin{DoxyItemize}
 \item Input\+:
 \begin{DoxyItemize}
-\item {\bfseries conf}\+:
-\item {\bfseries pool}\+:
-\item {\bfseries index}\+:
-\item {\bfseries compartment}\+:
-\item {\bfseries kind}\+:
+\item {\bfseries conf}\+: \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters.
+\item {\bfseries pool}\+: string with identification of the pool to which the synapse belongs.
+\item {\bfseries index}\+: integer identification of the unit in the pool.
+\item {\bfseries compartment}\+: integer identification of the compartment of the unit where the synapse is.
+\item {\bfseries kind}\+: string with the type of synapse. It can be {\itshape excitatory} or {\itshape inhibitory}.
 \item {\bfseries neuron\+Kind}\+: 
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 323 of file Synapse.\+py.
+Definition at line 343 of file Synapse.\+py.
 
 
 
@@ -115,42 +123,49 @@ Definition at line 323 of file Synapse.\+py.
 \subsubsection[{\texorpdfstring{alpha\+\_\+ms1}{alpha_ms1}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+alpha\+\_\+ms1}\hypertarget{class_synapse_1_1_synapse_ae15502cd5d5604d38328b2b1432477d7}{}\label{class_synapse_1_1_synapse_ae15502cd5d5604d38328b2b1432477d7}
 
 
-Definition at line 329 of file Synapse.\+py.
+Definition at line 349 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!beta\+\_\+ms1@{beta\+\_\+ms1}}
 \index{beta\+\_\+ms1@{beta\+\_\+ms1}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{beta\+\_\+ms1}{beta_ms1}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+beta\+\_\+ms1}\hypertarget{class_synapse_1_1_synapse_ab59f413cbd21555531be209dee307a97}{}\label{class_synapse_1_1_synapse_ab59f413cbd21555531be209dee307a97}
 
 
-Definition at line 330 of file Synapse.\+py.
+Definition at line 350 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!conductance\+State@{conductance\+State}}
 \index{conductance\+State@{conductance\+State}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{conductance\+State}{conductanceState}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+conductance\+State}\hypertarget{class_synapse_1_1_synapse_a89d3762daa9c60be63403a5ce9fd9a84}{}\label{class_synapse_1_1_synapse_a89d3762daa9c60be63403a5ce9fd9a84}
 
 
-Definition at line 376 of file Synapse.\+py.
+Definition at line 400 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!delay\+\_\+ms@{delay\+\_\+ms}}
 \index{delay\+\_\+ms@{delay\+\_\+ms}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{delay\+\_\+ms}{delay_ms}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+delay\+\_\+ms}\hypertarget{class_synapse_1_1_synapse_a14adfda48133bd314f4dcd65fc9a2366}{}\label{class_synapse_1_1_synapse_a14adfda48133bd314f4dcd65fc9a2366}
 
 
-Definition at line 336 of file Synapse.\+py.
+Definition at line 356 of file Synapse.\+py.
+
+\index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!dynamic\+Gmax@{dynamic\+Gmax}}
+\index{dynamic\+Gmax@{dynamic\+Gmax}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
+\subsubsection[{\texorpdfstring{dynamic\+Gmax}{dynamicGmax}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+dynamic\+Gmax}\hypertarget{class_synapse_1_1_synapse_ab987766ddedc7dc1cda9602eef6cb017}{}\label{class_synapse_1_1_synapse_ab987766ddedc7dc1cda9602eef6cb017}
+
+
+Definition at line 412 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!dynamics@{dynamics}}
 \index{dynamics@{dynamics}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{dynamics}{dynamics}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+dynamics}\hypertarget{class_synapse_1_1_synapse_a67a1454de1ef2f08ffa3a10bf8466158}{}\label{class_synapse_1_1_synapse_a67a1454de1ef2f08ffa3a10bf8466158}
 
 
-Definition at line 337 of file Synapse.\+py.
+Definition at line 357 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!Eq\+Pot\+\_\+mV@{Eq\+Pot\+\_\+mV}}
 \index{Eq\+Pot\+\_\+mV@{Eq\+Pot\+\_\+mV}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{Eq\+Pot\+\_\+mV}{EqPot_mV}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+Eq\+Pot\+\_\+mV}\hypertarget{class_synapse_1_1_synapse_adc80e9a62c17b29a92c2e7a0413e572d}{}\label{class_synapse_1_1_synapse_adc80e9a62c17b29a92c2e7a0413e572d}
 
 
-Definition at line 328 of file Synapse.\+py.
+Definition at line 348 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!exp\+Finish@{exp\+Finish}}
 \index{exp\+Finish@{exp\+Finish}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
@@ -161,14 +176,14 @@ Is the value of the exponential at the end of the pulse.
 
 It is computed as $\exp(T_{dur}/\tau_{on})$. 
 
-Definition at line 358 of file Synapse.\+py.
+Definition at line 380 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!gmax\+\_\+muS@{gmax\+\_\+muS}}
 \index{gmax\+\_\+muS@{gmax\+\_\+muS}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{gmax\+\_\+muS}{gmax_muS}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+gmax\+\_\+muS}\hypertarget{class_synapse_1_1_synapse_a7922dac4765183cb6052905cc0d251cb}{}\label{class_synapse_1_1_synapse_a7922dac4765183cb6052905cc0d251cb}
 
 
-Definition at line 335 of file Synapse.\+py.
+Definition at line 355 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!g\+Max\+Tot\+\_\+muS@{g\+Max\+Tot\+\_\+muS}}
 \index{g\+Max\+Tot\+\_\+muS@{g\+Max\+Tot\+\_\+muS}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
@@ -179,21 +194,21 @@ The sum of individual conductances of all synapses in the compartment, in $\mu$S
 
 
 
-Definition at line 341 of file Synapse.\+py.
+Definition at line 363 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!kind@{kind}}
 \index{kind@{kind}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{kind}{kind}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+kind}\hypertarget{class_synapse_1_1_synapse_aa2ea45450a3ad13cfefcae9fabe6ce15}{}\label{class_synapse_1_1_synapse_aa2ea45450a3ad13cfefcae9fabe6ce15}
 
 
-Definition at line 325 of file Synapse.\+py.
+Definition at line 345 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!neuron\+Kind@{neuron\+Kind}}
 \index{neuron\+Kind@{neuron\+Kind}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{neuron\+Kind}{neuronKind}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+neuron\+Kind}\hypertarget{class_synapse_1_1_synapse_a031af2fe7be76f9b5f69c087228a1b9a}{}\label{class_synapse_1_1_synapse_a031af2fe7be76f9b5f69c087228a1b9a}
 
 
-Definition at line 326 of file Synapse.\+py.
+Definition at line 346 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!Non@{Non}}
 \index{Non@{Non}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
@@ -204,21 +219,21 @@ Sum of the fractions of the individual conductances that are receiving neurotran
 
 ( 
 
-Definition at line 363 of file Synapse.\+py.
+Definition at line 387 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!number\+Of\+Incoming\+Synapses@{number\+Of\+Incoming\+Synapses}}
 \index{number\+Of\+Incoming\+Synapses@{number\+Of\+Incoming\+Synapses}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{number\+Of\+Incoming\+Synapses}{numberOfIncomingSynapses}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+number\+Of\+Incoming\+Synapses}\hypertarget{class_synapse_1_1_synapse_a6e55e008336cc47551669f3d77248d57}{}\label{class_synapse_1_1_synapse_a6e55e008336cc47551669f3d77248d57}
 
 
-Definition at line 342 of file Synapse.\+py.
+Definition at line 364 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!pool@{pool}}
 \index{pool@{pool}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{pool}{pool}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+pool}\hypertarget{class_synapse_1_1_synapse_a133990bf3ab7f1efa8b416be73d07a11}{}\label{class_synapse_1_1_synapse_a133990bf3ab7f1efa8b416be73d07a11}
 
 
-Definition at line 324 of file Synapse.\+py.
+Definition at line 344 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!ri@{ri}}
 \index{ri@{ri}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
@@ -229,7 +244,7 @@ List with the fractions of postsynaptic receptors that are bound to neurotransmi
 
 
 
-Definition at line 382 of file Synapse.\+py.
+Definition at line 407 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!r\+Inf@{r\+Inf}}
 \index{r\+Inf@{r\+Inf}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
@@ -240,7 +255,7 @@ The fraction of postsynaptic receptors that would be bound to neurotransmitters 
 
 
 
-Definition at line 348 of file Synapse.\+py.
+Definition at line 370 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!Roff@{Roff}}
 \index{Roff@{Roff}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
@@ -251,7 +266,7 @@ Sum of the fraction of postsynaptic receptors that are bound to neurotransmitter
 
 
 
-Definition at line 372 of file Synapse.\+py.
+Definition at line 396 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!Ron@{Ron}}
 \index{Ron@{Ron}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
@@ -262,7 +277,7 @@ Sum of the fraction of postsynaptic receptors that are bound to neurotransmitter
 
 
 
-Definition at line 367 of file Synapse.\+py.
+Definition at line 391 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!t0@{t0}}
 \index{t0@{t0}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
@@ -273,7 +288,7 @@ Instant that the last spike arrived to the compartment.
 
 
 
-Definition at line 374 of file Synapse.\+py.
+Definition at line 398 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!tau\+Off@{tau\+Off}}
 \index{tau\+Off@{tau\+Off}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
@@ -284,7 +299,7 @@ Time constant after a pulse, in ms.
 
 $\tau_{off}=\frac{1}{\beta}$ 
 
-Definition at line 354 of file Synapse.\+py.
+Definition at line 376 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!tau\+On@{tau\+On}}
 \index{tau\+On@{tau\+On}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
@@ -295,21 +310,21 @@ Time constant during a pulse, in ms.
 
 $\tau_{on}=\frac{1}{\alpha.T_{max} +\beta}$ 
 
-Definition at line 351 of file Synapse.\+py.
+Definition at line 373 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!t\+Begin\+Of\+Pulse@{t\+Begin\+Of\+Pulse}}
 \index{t\+Begin\+Of\+Pulse@{t\+Begin\+Of\+Pulse}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{t\+Begin\+Of\+Pulse}{tBeginOfPulse}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+t\+Begin\+Of\+Pulse}\hypertarget{class_synapse_1_1_synapse_acdc426c52a2a13183d5f8c54a830bfa2}{}\label{class_synapse_1_1_synapse_acdc426c52a2a13183d5f8c54a830bfa2}
 
 
-Definition at line 377 of file Synapse.\+py.
+Definition at line 401 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!t\+End\+Of\+Pulse@{t\+End\+Of\+Pulse}}
 \index{t\+End\+Of\+Pulse@{t\+End\+Of\+Pulse}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{t\+End\+Of\+Pulse}{tEndOfPulse}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+t\+End\+Of\+Pulse}\hypertarget{class_synapse_1_1_synapse_adfd02fa815d45efd0cb1bc0124fe2c90}{}\label{class_synapse_1_1_synapse_adfd02fa815d45efd0cb1bc0124fe2c90}
 
 
-Definition at line 378 of file Synapse.\+py.
+Definition at line 402 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!ti@{ti}}
 \index{ti@{ti}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
@@ -320,14 +335,28 @@ List with the instants of spike arriving at each conductance, in ms.
 
 
 
-Definition at line 385 of file Synapse.\+py.
+Definition at line 410 of file Synapse.\+py.
+
+\index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!time\+Constant\+\_\+ms@{time\+Constant\+\_\+ms}}
+\index{time\+Constant\+\_\+ms@{time\+Constant\+\_\+ms}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
+\subsubsection[{\texorpdfstring{time\+Constant\+\_\+ms}{timeConstant_ms}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+time\+Constant\+\_\+ms}\hypertarget{class_synapse_1_1_synapse_a875adea3ef112a9750532b5e21d47e93}{}\label{class_synapse_1_1_synapse_a875adea3ef112a9750532b5e21d47e93}
+
+
+Definition at line 359 of file Synapse.\+py.
+
+\index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!t\+Last\+Pulse@{t\+Last\+Pulse}}
+\index{t\+Last\+Pulse@{t\+Last\+Pulse}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
+\subsubsection[{\texorpdfstring{t\+Last\+Pulse}{tLastPulse}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+t\+Last\+Pulse}\hypertarget{class_synapse_1_1_synapse_a7df1cc4e7b014e7286b0bbb99079abcf}{}\label{class_synapse_1_1_synapse_a7df1cc4e7b014e7286b0bbb99079abcf}
+
+
+Definition at line 403 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!Tmax\+\_\+mM@{Tmax\+\_\+mM}}
 \index{Tmax\+\_\+mM@{Tmax\+\_\+mM}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
 \subsubsection[{\texorpdfstring{Tmax\+\_\+mM}{Tmax_mM}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+Tmax\+\_\+mM}\hypertarget{class_synapse_1_1_synapse_ae4bcd698c5be77c2a6629d511d75f046}{}\label{class_synapse_1_1_synapse_ae4bcd698c5be77c2a6629d511d75f046}
 
 
-Definition at line 331 of file Synapse.\+py.
+Definition at line 351 of file Synapse.\+py.
 
 \index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!t\+Peak\+\_\+ms@{t\+Peak\+\_\+ms}}
 \index{t\+Peak\+\_\+ms@{t\+Peak\+\_\+ms}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
@@ -338,7 +367,14 @@ Pulse duration, in ms.
 
 
 
-Definition at line 333 of file Synapse.\+py.
+Definition at line 353 of file Synapse.\+py.
+
+\index{Synapse\+::\+Synapse@{Synapse\+::\+Synapse}!variation@{variation}}
+\index{variation@{variation}!Synapse\+::\+Synapse@{Synapse\+::\+Synapse}}
+\subsubsection[{\texorpdfstring{variation}{variation}}]{\setlength{\rightskip}{0pt plus 5cm}Synapse.\+Synapse.\+variation}\hypertarget{class_synapse_1_1_synapse_aa37e9a9bbac9358b50ba5280439ad319}{}\label{class_synapse_1_1_synapse_aa37e9a9bbac9358b50ba5280439ad319}
+
+
+Definition at line 358 of file Synapse.\+py.
 
 
 

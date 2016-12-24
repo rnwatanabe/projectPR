@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['simulation_2epy',['simulation.py',['../simulation_8py.html',1,'']]],
-  ['synapse_2epy',['Synapse.py',['../_synapse_8py.html',1,'']]],
-  ['synapsesfactory_2epy',['SynapsesFactory.py',['../_synapses_factory_8py.html',1,'']]]
+  ['neuraltract_2epy',['NeuralTract.py',['../_neural_tract_8py.html',1,'']]],
+  ['neuraltractunit_2epy',['NeuralTractUnit.py',['../_neural_tract_unit_8py.html',1,'']]]
 ];

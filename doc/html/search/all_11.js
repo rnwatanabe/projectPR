@@ -1,21 +1,11 @@
 var searchData=
 [
-  ['simduration_5fms',['simDuration_ms',['../class_configuration_1_1_configuration.html#aea238884fe3daa1287aa069f35d4ad3e',1,'Configuration::Configuration']]],
-  ['simulador',['simulador',['../namespacesimulation.html#a101c76f9f16b1461054d496a63ca8aa6',1,'simulation']]],
-  ['simulation',['simulation',['../namespacesimulation.html',1,'']]],
-  ['simulation_2epy',['simulation.py',['../simulation_8py.html',1,'']]],
-  ['somaindex',['somaIndex',['../class_motor_unit_1_1_motor_unit.html#a7cd2be92814b5892bdd18dafd824da9f',1,'MotorUnit::MotorUnit']]],
-  ['somaspiketrain',['somaSpikeTrain',['../class_motor_unit_1_1_motor_unit.html#a8c86d98daa6c509e226ab165fa92515f',1,'MotorUnit::MotorUnit']]],
-  ['spikesgenerator',['spikesGenerator',['../class_neural_tract_unit_1_1_neural_tract_unit.html#a57cbb130e004fb3f7ee8d8a540f7dff0',1,'NeuralTractUnit::NeuralTractUnit']]],
-  ['state',['state',['../class_pulse_conductance_state_1_1_pulse_conductance_state.html#ac85aa714a187088e1b31fa2369ed4bca',1,'PulseConductanceState::PulseConductanceState']]],
-  ['statetype',['stateType',['../class_channel_conductance_1_1_channel_conductance.html#aa3c889bb4528c3abe7b69862cf87119d',1,'ChannelConductance::ChannelConductance']]],
-  ['stimuluspositiontoterminal',['stimulusPositiontoTerminal',['../class_axon_delay_1_1_axon_delay.html#a3f6bb8f38c4474806544d01fbe9c0361',1,'AxonDelay::AxonDelay']]],
-  ['synapse',['Synapse',['../namespace_synapse.html',1,'']]],
-  ['synapse',['Synapse',['../class_synapse_1_1_synapse.html',1,'Synapse']]],
-  ['synapse_2epy',['Synapse.py',['../_synapse_8py.html',1,'']]],
-  ['synapsesfactory',['SynapsesFactory',['../namespace_synapses_factory.html',1,'']]],
-  ['synapsesfactory',['SynapsesFactory',['../class_synapses_factory_1_1_synapses_factory.html',1,'SynapsesFactory']]],
-  ['synapsesfactory_2epy',['SynapsesFactory.py',['../_synapses_factory_8py.html',1,'']]],
-  ['synapsesin',['SynapsesIn',['../class_compartment_1_1_compartment.html#abe41aff3bffed80f4b848bd14763d506',1,'Compartment::Compartment']]],
-  ['synapsesout',['SynapsesOut',['../class_compartment_1_1_compartment.html#a85d64ebf548276c873501d2dc3489ceb',1,'Compartment.Compartment.SynapsesOut()'],['../class_neural_tract_unit_1_1_neural_tract_unit.html#a740d2cfa17ad57c7dbd40fbafc654b95',1,'NeuralTractUnit.NeuralTractUnit.SynapsesOut()']]]
+  ['remoto_20in_20python',['ReMoto in Python',['../index.html',1,'']]],
+  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['refper_5fms',['RefPer_ms',['../class_interneuron_1_1_interneuron.html#a4e036434222711a311d3299516795dd5',1,'Interneuron::Interneuron']]],
+  ['ri',['ri',['../class_synapse_1_1_synapse.html#adc85234a081ad18bf19473be530dcf78',1,'Synapse::Synapse']]],
+  ['rinf',['rInf',['../class_synapse_1_1_synapse.html#afd263d49a97910efd8955a2aadef50e0',1,'Synapse::Synapse']]],
+  ['roff',['Roff',['../class_synapse_1_1_synapse.html#ae67ffbbd23cd9c56f20bda9e8e040663',1,'Synapse::Synapse']]],
+  ['ron',['Ron',['../class_synapse_1_1_synapse.html#ae759c51a7196995510fe3eb086050c76',1,'Synapse::Synapse']]],
+  ['runge_5fkutta',['runge_kutta',['../namespace_interneuron.html#a3c7f009c4357310ae71cedad2abfd716',1,'Interneuron.runge_kutta()'],['../namespace_motor_unit.html#ab7df982e859623662808361f779572f5',1,'MotorUnit.runge_kutta()']]]
 ];

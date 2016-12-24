@@ -1,0 +1,6 @@
+<map id="MotorUnit.MotorUnit.transmitSpikes" name="MotorUnit.MotorUnit.transmitSpikes">
+<area shape="rect" id="node2" href="$class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534" title="When the soma potential is above the threshold a spike is added tom the soma. " alt="" coords="244,5,443,47"/>
+<area shape="rect" id="node5" href="$class_neural_tract_unit_1_1_neural_tract_unit.html#a30ea40e013697346cae35a342640a6e4" title="NeuralTractUnit.NeuralTract\lUnit.atualizeNeuralTractUnit" alt="" coords="250,71,437,112"/>
+<area shape="rect" id="node3" href="$class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b" title="Atualize all neural compartments. " alt="" coords="491,5,680,47"/>
+<area shape="rect" id="node4" href="$class_motor_unit_1_1_motor_unit.html#ab57693c2f49518b08639456595e92d87" title="Atualize the dynamical and nondynamical (delay) parts of the motor unit. " alt="" coords="728,5,917,47"/>
+</map>

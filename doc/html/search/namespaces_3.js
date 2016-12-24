@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['neuraltract',['NeuralTract',['../namespace_neural_tract.html',1,'']]],
-  ['neuraltractunit',['NeuralTractUnit',['../namespace_neural_tract_unit.html',1,'']]]
+  ['jointankleforcetask',['jointAnkleForceTask',['../namespacejoint_ankle_force_task.html',1,'']]],
+  ['jointanklepositiontask',['jointAnklePositionTask',['../namespacejoint_ankle_position_task.html',1,'']]]
 ];

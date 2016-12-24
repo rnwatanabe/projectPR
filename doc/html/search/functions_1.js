@@ -1,15 +1,25 @@
 var searchData=
 [
-  ['addsomaspike',['addSomaSpike',['../class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534',1,'MotorUnit::MotorUnit']]],
+  ['addsomaspike',['addSomaSpike',['../class_interneuron_1_1_interneuron.html#affb57bbf0d7eec160855d0fce26f83d5',1,'Interneuron.Interneuron.addSomaSpike()'],['../class_motor_unit_1_1_motor_unit.html#a6d597c703b3b469fbec7843a0f97c534',1,'MotorUnit.MotorUnit.addSomaSpike()']]],
   ['addspinalspike',['addSpinalSpike',['../class_axon_delay_1_1_axon_delay.html#a3fe989d5e27974a6c0ad9e92f3752685',1,'AxonDelay::AxonDelay']]],
   ['addterminalspike',['addTerminalSpike',['../class_axon_delay_1_1_axon_delay.html#a0a75705e6de98e89462381245bb4cb51',1,'AxonDelay::AxonDelay']]],
-  ['atualizeactivationsignal',['atualizeActivationSignal',['../class_motor_unit_pool_1_1_motor_unit_pool.html#a164393f9e070abb72b48d0a9685ba518',1,'MotorUnitPool::MotorUnitPool']]],
-  ['atualizecompartments',['atualizeCompartments',['../class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b',1,'MotorUnit::MotorUnit']]],
+  ['atualizeactivation',['atualizeActivation',['../classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ae1a5c97c4bda835c542296071a4da624',1,'jointAnklePositionTask.jointAnklePositionTask.atualizeActivation()'],['../class_muscle_hill_1_1_muscle_hill.html#a81d25a2541478817c39a6e2d720ac460',1,'MuscleHill.MuscleHill.atualizeActivation()']]],
+  ['atualizeactivationsignal',['atualizeActivationSignal',['../class_muscular_activation_1_1_muscular_activation.html#a426e8eca6ca1f9ed3999a07764ccb8fb',1,'MuscularActivation::MuscularActivation']]],
+  ['atualizeangle',['atualizeAngle',['../classjoint_ankle_force_task_1_1joint_ankle_force_task.html#ad8da9793d058668f39e7c3516f2dc7cb',1,'jointAnkleForceTask::jointAnkleForceTask']]],
+  ['atualizeankle',['atualizeAnkle',['../classjoint_ankle_force_task_1_1joint_ankle_force_task.html#ac56f1fed7d1cc67d92d1ed7ab01c11c8',1,'jointAnkleForceTask::jointAnkleForceTask']]],
+  ['atualizecompartments',['atualizeCompartments',['../class_interneuron_1_1_interneuron.html#aadb0a11834ebf0b9fb0fa05788da23d1',1,'Interneuron.Interneuron.atualizeCompartments()'],['../class_motor_unit_1_1_motor_unit.html#a666fa3bb4b8fb00f1217387a5ede5b7b',1,'MotorUnit.MotorUnit.atualizeCompartments()']]],
   ['atualizedelay',['atualizeDelay',['../class_motor_unit_1_1_motor_unit.html#a0aa5e024003845e3f48bc0e618068edc',1,'MotorUnit::MotorUnit']]],
-  ['atualizeforcenohill',['atualizeForceNoHill',['../class_motor_unit_pool_1_1_motor_unit_pool.html#a8f8b496796becc89ddb7e9e1c8a2fb9b',1,'MotorUnitPool::MotorUnitPool']]],
+  ['atualizeforce',['atualizeForce',['../classjoint_ankle_position_task_1_1joint_ankle_position_task.html#abe3c0546bf63fbf73815c59b5b86c6d5',1,'jointAnklePositionTask.jointAnklePositionTask.atualizeForce()'],['../class_muscle_hill_1_1_muscle_hill.html#aa07ad41150b7f082dc49226650e705cb',1,'MuscleHill.MuscleHill.atualizeForce()'],['../class_muscle_no_hill_1_1_muscle_no_hill.html#abc25f980400ce3aa3a087161147da997',1,'MuscleNoHill.MuscleNoHill.atualizeForce()']]],
   ['atualizegenerator',['atualizeGenerator',['../class_point_process_generator_1_1_point_process_generator.html#a744e7d5fc7850ddb785d2fafdc04e587',1,'PointProcessGenerator::PointProcessGenerator']]],
+  ['atualizeinterneuron',['atualizeInterneuron',['../class_interneuron_1_1_interneuron.html#aaa557573420679f62247b6c6a3879f88',1,'Interneuron::Interneuron']]],
+  ['atualizeinterneuronpool',['atualizeInterneuronPool',['../class_interneuron_pool_1_1_interneuron_pool.html#a2beb714ccc631317a8a7854d42c6cf01',1,'InterneuronPool::InterneuronPool']]],
+  ['atualizelenghtsandvelocity',['atualizeLenghtsAndVelocity',['../classjoint_ankle_position_task_1_1joint_ankle_position_task.html#ac044fc7d615fc19a0f90e6af4947c32e',1,'jointAnklePositionTask.jointAnklePositionTask.atualizeLenghtsAndVelocity()'],['../class_muscle_hill_1_1_muscle_hill.html#a71ea33f1c30bdbe7cd795426bf097e78',1,'MuscleHill.MuscleHill.atualizeLenghtsAndVelocity()']]],
+  ['atualizemomentarm',['atualizeMomentArm',['../class_muscle_hill_1_1_muscle_hill.html#a1ddbb0455341626ea43181a47a3fb322',1,'MuscleHill::MuscleHill']]],
   ['atualizemotorunit',['atualizeMotorUnit',['../class_motor_unit_1_1_motor_unit.html#ab57693c2f49518b08639456595e92d87',1,'MotorUnit::MotorUnit']]],
   ['atualizemotorunitpool',['atualizeMotorUnitPool',['../class_motor_unit_pool_1_1_motor_unit_pool.html#ae211c664df7b661288fe71c4a6e63a18',1,'MotorUnitPool::MotorUnitPool']]],
+  ['atualizemuscleforce',['atualizeMuscleForce',['../classjoint_ankle_position_task_1_1joint_ankle_position_task.html#af856343e3fce71b7debc3a538922d856',1,'jointAnklePositionTask.jointAnklePositionTask.atualizeMuscleForce()'],['../class_muscle_hill_1_1_muscle_hill.html#ab39eb3b82b6299bbfbccb6d50f1da8b5',1,'MuscleHill.MuscleHill.atualizeMuscleForce()']]],
+  ['atualizemusculotendonlength',['atualizeMusculoTendonLength',['../class_muscle_hill_1_1_muscle_hill.html#aef0260788a88702d48827323e04aa2a7',1,'MuscleHill::MuscleHill']]],
   ['atualizeneuraltractunit',['atualizeNeuralTractUnit',['../class_neural_tract_unit_1_1_neural_tract_unit.html#a30ea40e013697346cae35a342640a6e4',1,'NeuralTractUnit::NeuralTractUnit']]],
-  ['atualizepool',['atualizePool',['../class_neural_tract_1_1_neural_tract.html#acae726b486d80f6a60c6c2ddabadb5a7',1,'NeuralTract::NeuralTract']]]
+  ['atualizepool',['atualizePool',['../class_neural_tract_1_1_neural_tract.html#acae726b486d80f6a60c6c2ddabadb5a7',1,'NeuralTract.NeuralTract.atualizePool()'],['../class_synaptic_noise_1_1_synaptic_noise.html#a00fa2c0d5b1b4d5fafc219e32bb4cd42',1,'SynapticNoise.SynapticNoise.atualizePool()']]],
+  ['atualizetendonforce',['atualizeTendonForce',['../classjoint_ankle_position_task_1_1joint_ankle_position_task.html#abcd95d655b19278aaeccb2f56fafddaf',1,'jointAnklePositionTask.jointAnklePositionTask.atualizeTendonForce()'],['../class_muscle_hill_1_1_muscle_hill.html#ac40dbbdc08aa96669fe09f03bdffb2f2',1,'MuscleHill.MuscleHill.atualizeTendonForce()']]]
 ];

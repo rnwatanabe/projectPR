@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="namespaces.html"><span>Packages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -146,8 +147,62 @@ Functions</h2></td></tr>
 <tr class="memitem:afd15218d4cf7a043cd35aa37f1593f6d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_synapse.html#afd15218d4cf7a043cd35aa37f1593f6d">compRoffStop</a> (Roff, ri, synContrib)</td></tr>
 <tr class="memdesc:afd15218d4cf7a043cd35aa37f1593f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a conductance from the set of conductances that are not during a pulse.  <a href="#afd15218d4cf7a043cd35aa37f1593f6d">More...</a><br /></td></tr>
 <tr class="separator:afd15218d4cf7a043cd35aa37f1593f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf27e583af5778833e20c4468c6e71e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_synapse.html#a8bf27e583af5778833e20c4468c6e71e">compDynamicGmax</a> (t, gmax, lastPulse, tau, dynamicGmax, var)</td></tr>
+<tr class="separator:a8bf27e583af5778833e20c4468c6e71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a8bf27e583af5778833e20c4468c6e71e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def Synapse.compDynamicGmax </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>gmax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>lastPulse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dynamicGmax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>var</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00313">313</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a86ce19e1d63e7071f6315234ee4cb6b6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +265,7 @@ Functions</h2></td></tr>
 <img class="formulaDsp" alt="\begin{equation} r_{i_{newValue}} = r_{i_{oldValue}} \exp\left(\frac{t_i+T_{dur}-t}{\tau_{off}}\right) \end{equation}" src="form_57.png"/>
 </p>
  
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00142">142</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00148">148</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -262,7 +317,7 @@ Functions</h2></td></tr>
 <img class="formulaDsp" alt="\begin{equation} r_{i_{newValue}} = r_{\infty} + (r_{i_{oldValue}} - r_{\infty}) \exp\left(\frac{T_{dur}}{\tau_{on}}\right) \end{equation}" src="form_59.png"/>
 </p>
  
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00173">173</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00180">180</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -321,7 +376,7 @@ Functions</h2></td></tr>
 <img class="formulaDsp" alt="\begin{equation} R_{off_{newValue}} = R_{off_{oldValue}}\exp\left(-\frac{t - t0}{\tau_{off}} \right) \end{equation}" src="form_56.png"/>
 </p>
  
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00112">112</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00117">117</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -373,7 +428,7 @@ Functions</h2></td></tr>
 <img class="formulaDsp" alt="\begin{equation} R_{off_{newValue}} = R_{off_{oldValue}} - r_iS_{indCont} \end{equation}" src="form_61.png"/>
 </p>
  
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00235">235</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00244">244</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -425,7 +480,7 @@ Functions</h2></td></tr>
 <img class="formulaDsp" alt="\begin{equation} R_{off_{newValue}} = R_{off_{oldValue}} + r_iS_{indCont} \end{equation}" src="form_63.png"/>
 </p>
  
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00297">297</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00309">309</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -498,7 +553,7 @@ Functions</h2></td></tr>
 <img class="formulaDsp" alt="\begin{equation} R_{on_{newValue}} = N_{on}r_{\infty}\Bigg[1-\exp\left(-\frac{t-t_0}{\tau_{on}}\right)\Bigg] + R_{on_{oldValue}}\exp\left(-\frac{t-t_0}{\tau_{on}}\right) \end{equation}" src="form_55.png"/>
 </p>
  
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00078">78</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00081">81</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -550,7 +605,7 @@ Functions</h2></td></tr>
 <img class="formulaDsp" alt="\begin{equation} R_{on_{newValue}} = R_{on_{oldValue}} + r_iS_{indCont} \end{equation}" src="form_60.png"/>
 </p>
  
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00203">203</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00211">211</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -602,7 +657,7 @@ Functions</h2></td></tr>
 <img class="formulaDsp" alt="\begin{equation} R_{on_{newValue}} = R_{on_{oldValue}} - r_iS_{indCont} \end{equation}" src="form_62.png"/>
 </p>
  
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00265">265</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00275">275</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -655,7 +710,7 @@ Functions</h2></td></tr>
 </p>
 <p> where <img class="formulaInl" alt="$G$" src="form_51.png"/> is the synaptic conductance of all synapses in the compartment. </p>
 
-<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00039">39</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
+<p>Definition at line <a class="el" href="_synapse_8py_source.html#l00041">41</a> of file <a class="el" href="_synapse_8py_source.html">Synapse.py</a>.</p>
 
 </div>
 </div>
@@ -665,7 +720,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_synapse.html">Synapse</a></li>
-    <li class="footer">Generated on Mon Jun 27 2016 18:05:12 for PyReMoto by
+    <li class="footer">Generated on Mon Dec 12 2016 13:43:18 for PyReMoto by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

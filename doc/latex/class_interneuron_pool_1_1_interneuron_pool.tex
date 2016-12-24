@@ -1,0 +1,183 @@
+\hypertarget{class_interneuron_pool_1_1_interneuron_pool}{}\section{Interneuron\+Pool.\+Interneuron\+Pool Class Reference}
+\label{class_interneuron_pool_1_1_interneuron_pool}\index{Interneuron\+Pool.\+Interneuron\+Pool@{Interneuron\+Pool.\+Interneuron\+Pool}}
+
+
+Class that implements a motor unit pool.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_interneuron_pool_1_1_interneuron_pool_a5de3519e16062bee1550d1ce8190fce5}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{class_interneuron_pool_1_1_interneuron_pool_a2418c4def3edaa2e5cd7514df52499d5}{conf}, \hyperlink{class_interneuron_pool_1_1_interneuron_pool_a08c57ed586708a120335dfe72c2d6460}{pool})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+def \hyperlink{class_interneuron_pool_1_1_interneuron_pool_a2beb714ccc631317a8a7854d42c6cf01}{atualize\+Interneuron\+Pool} (self, t)
+\begin{DoxyCompactList}\small\item\em Update all parts of the Motor Unit pool. \end{DoxyCompactList}\item 
+def \hyperlink{class_interneuron_pool_1_1_interneuron_pool_a510f7df22d1f5bd07cefa04455f4a189}{list\+Spikes} (self)
+\begin{DoxyCompactList}\small\item\em List the spikes that occurred in the soma and in the terminal of the different motor units. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_interneuron_pool_1_1_interneuron_pool_a55b3665ce98a5d6f3937dac3df5afa40}{kind}
+\begin{DoxyCompactList}\small\item\em Indicates that is Motor Unit pool. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_pool_1_1_interneuron_pool_a2418c4def3edaa2e5cd7514df52499d5}{conf}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_pool_1_1_interneuron_pool_a08c57ed586708a120335dfe72c2d6460}{pool}
+\begin{DoxyCompactList}\small\item\em String with Motor unit pool to which the motor unit belongs. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_pool_1_1_interneuron_pool_a9cbb51ebce056563dee531b2a3de16ad}{Nnumber}
+\begin{DoxyCompactList}\small\item\em Number of Neurons. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_pool_1_1_interneuron_pool_ac685ab8eaf9a18627c61431b987874e6}{unit}
+\begin{DoxyCompactList}\small\item\em List of \hyperlink{namespace_interneuron}{Interneuron} objects. \end{DoxyCompactList}\item 
+\hyperlink{class_interneuron_pool_1_1_interneuron_pool_a9f887f427350168a5415b7a2918be778}{pool\+Soma\+Spikes}
+\begin{DoxyCompactList}\small\item\em Vector with the instants of spikes in the soma compartment, in ms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that implements a motor unit pool. 
+
+Encompasses a set of motor units that controls a single muscle. 
+
+Definition at line 19 of file Interneuron\+Pool.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, conf, pool)}{__init__(self, conf, pool)}}]{\setlength{\rightskip}{0pt plus 5cm}def Interneuron\+Pool.\+Interneuron\+Pool.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{conf, }
+\item[{}]{pool}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interneuron_pool_1_1_interneuron_pool_a5de3519e16062bee1550d1ce8190fce5}{}\label{class_interneuron_pool_1_1_interneuron_pool_a5de3519e16062bee1550d1ce8190fce5}
+
+
+Constructor. 
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries conf}\+: \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters.
+\item {\bfseries pool}\+: string with \hyperlink{namespace_interneuron}{Interneuron} pool to which the motor unit belongs. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 31 of file Interneuron\+Pool.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\index{Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}!atualize\+Interneuron\+Pool@{atualize\+Interneuron\+Pool}}
+\index{atualize\+Interneuron\+Pool@{atualize\+Interneuron\+Pool}!Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}}
+\subsubsection[{\texorpdfstring{atualize\+Interneuron\+Pool(self, t)}{atualizeInterneuronPool(self, t)}}]{\setlength{\rightskip}{0pt plus 5cm}def Interneuron\+Pool.\+Interneuron\+Pool.\+atualize\+Interneuron\+Pool (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interneuron_pool_1_1_interneuron_pool_a2beb714ccc631317a8a7854d42c6cf01}{}\label{class_interneuron_pool_1_1_interneuron_pool_a2beb714ccc631317a8a7854d42c6cf01}
+
+
+Update all parts of the Motor Unit pool. 
+
+It consists to update all motor units, the activation signal and the muscle force.
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: current instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 64 of file Interneuron\+Pool.\+py.
+
+\index{Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}!list\+Spikes@{list\+Spikes}}
+\index{list\+Spikes@{list\+Spikes}!Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}}
+\subsubsection[{\texorpdfstring{list\+Spikes(self)}{listSpikes(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Interneuron\+Pool.\+Interneuron\+Pool.\+list\+Spikes (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interneuron_pool_1_1_interneuron_pool_a510f7df22d1f5bd07cefa04455f4a189}{}\label{class_interneuron_pool_1_1_interneuron_pool_a510f7df22d1f5bd07cefa04455f4a189}
+
+
+List the spikes that occurred in the soma and in the terminal of the different motor units. 
+
+
+
+Definition at line 73 of file Interneuron\+Pool.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\index{Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}!conf@{conf}}
+\index{conf@{conf}!Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}}
+\subsubsection[{\texorpdfstring{conf}{conf}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron\+Pool.\+Interneuron\+Pool.\+conf}\hypertarget{class_interneuron_pool_1_1_interneuron_pool_a2418c4def3edaa2e5cd7514df52499d5}{}\label{class_interneuron_pool_1_1_interneuron_pool_a2418c4def3edaa2e5cd7514df52499d5}
+
+
+\hyperlink{namespace_configuration}{Configuration} object with the simulation parameters. 
+
+
+
+Definition at line 37 of file Interneuron\+Pool.\+py.
+
+\index{Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}!kind@{kind}}
+\index{kind@{kind}!Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}}
+\subsubsection[{\texorpdfstring{kind}{kind}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron\+Pool.\+Interneuron\+Pool.\+kind}\hypertarget{class_interneuron_pool_1_1_interneuron_pool_a55b3665ce98a5d6f3937dac3df5afa40}{}\label{class_interneuron_pool_1_1_interneuron_pool_a55b3665ce98a5d6f3937dac3df5afa40}
+
+
+Indicates that is Motor Unit pool. 
+
+
+
+Definition at line 34 of file Interneuron\+Pool.\+py.
+
+\index{Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}!Nnumber@{Nnumber}}
+\index{Nnumber@{Nnumber}!Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}}
+\subsubsection[{\texorpdfstring{Nnumber}{Nnumber}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron\+Pool.\+Interneuron\+Pool.\+Nnumber}\hypertarget{class_interneuron_pool_1_1_interneuron_pool_a9cbb51ebce056563dee531b2a3de16ad}{}\label{class_interneuron_pool_1_1_interneuron_pool_a9cbb51ebce056563dee531b2a3de16ad}
+
+
+Number of Neurons. 
+
+
+
+Definition at line 41 of file Interneuron\+Pool.\+py.
+
+\index{Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}!pool@{pool}}
+\index{pool@{pool}!Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}}
+\subsubsection[{\texorpdfstring{pool}{pool}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron\+Pool.\+Interneuron\+Pool.\+pool}\hypertarget{class_interneuron_pool_1_1_interneuron_pool_a08c57ed586708a120335dfe72c2d6460}{}\label{class_interneuron_pool_1_1_interneuron_pool_a08c57ed586708a120335dfe72c2d6460}
+
+
+String with Motor unit pool to which the motor unit belongs. 
+
+
+
+Definition at line 39 of file Interneuron\+Pool.\+py.
+
+\index{Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}!pool\+Soma\+Spikes@{pool\+Soma\+Spikes}}
+\index{pool\+Soma\+Spikes@{pool\+Soma\+Spikes}!Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}}
+\subsubsection[{\texorpdfstring{pool\+Soma\+Spikes}{poolSomaSpikes}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron\+Pool.\+Interneuron\+Pool.\+pool\+Soma\+Spikes}\hypertarget{class_interneuron_pool_1_1_interneuron_pool_a9f887f427350168a5415b7a2918be778}{}\label{class_interneuron_pool_1_1_interneuron_pool_a9f887f427350168a5415b7a2918be778}
+
+
+Vector with the instants of spikes in the soma compartment, in ms. 
+
+
+
+Definition at line 50 of file Interneuron\+Pool.\+py.
+
+\index{Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}!unit@{unit}}
+\index{unit@{unit}!Interneuron\+Pool\+::\+Interneuron\+Pool@{Interneuron\+Pool\+::\+Interneuron\+Pool}}
+\subsubsection[{\texorpdfstring{unit}{unit}}]{\setlength{\rightskip}{0pt plus 5cm}Interneuron\+Pool.\+Interneuron\+Pool.\+unit}\hypertarget{class_interneuron_pool_1_1_interneuron_pool_ac685ab8eaf9a18627c61431b987874e6}{}\label{class_interneuron_pool_1_1_interneuron_pool_ac685ab8eaf9a18627c61431b987874e6}
+
+
+List of \hyperlink{namespace_interneuron}{Interneuron} objects. 
+
+
+
+Definition at line 44 of file Interneuron\+Pool.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_interneuron_pool_8py}{Interneuron\+Pool.\+py}\end{DoxyCompactItemize}

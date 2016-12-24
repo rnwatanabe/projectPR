@@ -8,7 +8,7 @@ Class that implements a model of the ionic Channels in a compartment.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{class_channel_conductance_1_1_channel_conductance_a25b3a53d3d4a2926f61e1bd978e375f7}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{class_channel_conductance_1_1_channel_conductance_a7bf3e28aab2160014358cde589f2ec39}{kind}, conf, comp\+Area, pool, index)
+def \hyperlink{class_channel_conductance_1_1_channel_conductance_acc92870743a2af7d3839857183ca3bb6}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{class_channel_conductance_1_1_channel_conductance_a7bf3e28aab2160014358cde589f2ec39}{kind}, conf, comp\+Area, pool, neuron\+Kind, index)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 def \hyperlink{class_channel_conductance_1_1_channel_conductance_af012b0816d74d6bb6a923ca79dc0a7ba}{compute\+Current} (self, t, V\+\_\+mV)
 \begin{DoxyCompactList}\small\item\em Computes the current genrated by the ionic Channel. \end{DoxyCompactList}\item 
@@ -47,16 +47,17 @@ Definition at line 16 of file Channel\+Conductance.\+py.
 \subsection{Constructor \& Destructor Documentation}
 \index{Channel\+Conductance\+::\+Channel\+Conductance@{Channel\+Conductance\+::\+Channel\+Conductance}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
 \index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Channel\+Conductance\+::\+Channel\+Conductance@{Channel\+Conductance\+::\+Channel\+Conductance}}
-\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, kind, conf, comp\+Area, pool, index)}{__init__(self, kind, conf, compArea, pool, index)}}]{\setlength{\rightskip}{0pt plus 5cm}def Channel\+Conductance.\+Channel\+Conductance.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, kind, conf, comp\+Area, pool, neuron\+Kind, index)}{__init__(self, kind, conf, compArea, pool, neuronKind, index)}}]{\setlength{\rightskip}{0pt plus 5cm}def Channel\+Conductance.\+Channel\+Conductance.\+\_\+\+\_\+init\+\_\+\+\_\+ (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{kind, }
 \item[{}]{conf, }
 \item[{}]{comp\+Area, }
 \item[{}]{pool, }
+\item[{}]{neuron\+Kind, }
 \item[{}]{index}
 \end{DoxyParamCaption}
-)}\hypertarget{class_channel_conductance_1_1_channel_conductance_a25b3a53d3d4a2926f61e1bd978e375f7}{}\label{class_channel_conductance_1_1_channel_conductance_a25b3a53d3d4a2926f61e1bd978e375f7}
+)}\hypertarget{class_channel_conductance_1_1_channel_conductance_acc92870743a2af7d3839857183ca3bb6}{}\label{class_channel_conductance_1_1_channel_conductance_acc92870743a2af7d3839857183ca3bb6}
 
 
 Constructor. 
@@ -108,7 +109,7 @@ It is computed as\+:
 
 \begin{equation} g = g_{max}n^4(E_0-V) \end{equation} where $E_0$ is the equilibrium potential of the compartment, V is the membrane potential and $n$ is the state of a fast potassium channel.. 
 
-Definition at line 115 of file Channel\+Conductance.\+py.
+Definition at line 114 of file Channel\+Conductance.\+py.
 
 \index{Channel\+Conductance\+::\+Channel\+Conductance@{Channel\+Conductance\+::\+Channel\+Conductance}!comp\+Cond\+Ks@{comp\+Cond\+Ks}}
 \index{comp\+Cond\+Ks@{comp\+Cond\+Ks}!Channel\+Conductance\+::\+Channel\+Conductance@{Channel\+Conductance\+::\+Channel\+Conductance}}
@@ -140,7 +141,7 @@ It is computed as\+:
 
 \begin{equation} g = g_{max}q^2(E_0-V) \end{equation} where $E_0$ is the equilibrium potential of the compartment, $V$ is the membrane potential and $q$ is the state of a slow potassium channel. 
 
-Definition at line 138 of file Channel\+Conductance.\+py.
+Definition at line 137 of file Channel\+Conductance.\+py.
 
 \index{Channel\+Conductance\+::\+Channel\+Conductance@{Channel\+Conductance\+::\+Channel\+Conductance}!comp\+Cond\+Na@{comp\+Cond\+Na}}
 \index{comp\+Cond\+Na@{comp\+Cond\+Na}!Channel\+Conductance\+::\+Channel\+Conductance@{Channel\+Conductance\+::\+Channel\+Conductance}}
@@ -168,7 +169,7 @@ It is computed as\+:
 
 \begin{equation} g = g_{max}m^3h(E_0-V) \end{equation} where $E_0$ is the equilibrium potential of the compartment, V is the membrane potential and $m$ and $h$ are the states of a sodium channel.. 
 
-Definition at line 159 of file Channel\+Conductance.\+py.
+Definition at line 158 of file Channel\+Conductance.\+py.
 
 \index{Channel\+Conductance\+::\+Channel\+Conductance@{Channel\+Conductance\+::\+Channel\+Conductance}!compute\+Current@{compute\+Current}}
 \index{compute\+Current@{compute\+Current}!Channel\+Conductance\+::\+Channel\+Conductance@{Channel\+Conductance\+::\+Channel\+Conductance}}
@@ -196,7 +197,7 @@ Computes the current genrated by the ionic Channel.
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line 91 of file Channel\+Conductance.\+py.
+Definition at line 90 of file Channel\+Conductance.\+py.
 
 
 
@@ -210,7 +211,7 @@ Function that computes the conductance dynamics.
 
 
 
-Definition at line 60 of file Channel\+Conductance.\+py.
+Definition at line 59 of file Channel\+Conductance.\+py.
 
 \index{Channel\+Conductance\+::\+Channel\+Conductance@{Channel\+Conductance\+::\+Channel\+Conductance}!cond\+State@{cond\+State}}
 \index{cond\+State@{cond\+State}!Channel\+Conductance\+::\+Channel\+Conductance@{Channel\+Conductance\+::\+Channel\+Conductance}}
@@ -265,7 +266,7 @@ Integer with the number of states in the ionic channel.
 
 
 
-Definition at line 74 of file Channel\+Conductance.\+py.
+Definition at line 73 of file Channel\+Conductance.\+py.
 
 \index{Channel\+Conductance\+::\+Channel\+Conductance@{Channel\+Conductance\+::\+Channel\+Conductance}!state\+Type@{state\+Type}}
 \index{state\+Type@{state\+Type}!Channel\+Conductance\+::\+Channel\+Conductance@{Channel\+Conductance\+::\+Channel\+Conductance}}
@@ -276,7 +277,7 @@ String with type of dynamics of the states.
 
 For now it accepts the string pulse. 
 
-Definition at line 52 of file Channel\+Conductance.\+py.
+Definition at line 51 of file Channel\+Conductance.\+py.
 
 
 

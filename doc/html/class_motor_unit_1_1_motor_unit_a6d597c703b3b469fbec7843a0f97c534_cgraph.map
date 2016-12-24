@@ -1,0 +1,4 @@
+<map id="MotorUnit.MotorUnit.addSomaSpike" name="MotorUnit.MotorUnit.addSomaSpike">
+<area shape="rect" id="node2" href="$class_interneuron_1_1_interneuron.html#a776242a1aa83a264adba968651de0226" title="Interneuron.Interneuron.transmit\lSpikes" alt="" coords="252,5,459,47"/>
+<area shape="rect" id="node3" href="$class_motor_unit_1_1_motor_unit.html#ac3d3e69bf0b75eef81a015005052f5d3" title="MotorUnit.MotorUnit.transmit\lSpikes" alt="" coords="260,71,451,112"/>
+</map>

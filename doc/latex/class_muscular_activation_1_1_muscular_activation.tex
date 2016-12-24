@@ -1,0 +1,201 @@
+\hypertarget{class_muscular_activation_1_1_muscular_activation}{}\section{Muscular\+Activation.\+Muscular\+Activation Class Reference}
+\label{class_muscular_activation_1_1_muscular_activation}\index{Muscular\+Activation.\+Muscular\+Activation@{Muscular\+Activation.\+Muscular\+Activation}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_muscular_activation_1_1_muscular_activation_aad217ef6c3d6d7318ea3530a814b3738}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{class_muscular_activation_1_1_muscular_activation_ab2eab8fb62d5338707e3921e26560a3f}{conf}, \hyperlink{class_muscular_activation_1_1_muscular_activation_aeed87c16618be36ed95f44d38a988f1f}{pool}, \hyperlink{class_muscular_activation_1_1_muscular_activation_a1b30292b1cf102fa82bf4a511d151f0b}{M\+Unumber}, unit)
+\item 
+def \hyperlink{class_muscular_activation_1_1_muscular_activation_a426e8eca6ca1f9ed3999a07764ccb8fb}{atualize\+Activation\+Signal} (self, t, unit)
+\begin{DoxyCompactList}\small\item\em Update the activation signal of the motor units. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_muscular_activation_1_1_muscular_activation_ab2eab8fb62d5338707e3921e26560a3f}{conf}
+\item 
+\hyperlink{class_muscular_activation_1_1_muscular_activation_aeed87c16618be36ed95f44d38a988f1f}{pool}
+\item 
+\hyperlink{class_muscular_activation_1_1_muscular_activation_a1b30292b1cf102fa82bf4a511d151f0b}{M\+Unumber}
+\item 
+\hyperlink{class_muscular_activation_1_1_muscular_activation_ab4f37563ac079f439a4bc78cf401588c}{activation\+Model}
+\begin{DoxyCompactList}\small\item\em Model of the activation signal. \end{DoxyCompactList}\item 
+\hyperlink{class_muscular_activation_1_1_muscular_activation_a504e646ccae5df11dea3675ce7d18da3}{Act\+Matrix}
+\begin{DoxyCompactList}\small\item\em Matrix that multiplied by the vector formed as the formula below gives the activation signal at instant $n$\+: \begin{equation} \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$} \end{equation} where $a_i(n)$ is the activation signal of the motor unit $i$, $e_i(n)$ is 1/T (inverse of simulation time step, Dirac\textquotesingle{}s delta approximation) if the motor unit $i$, fired at instant $n$. \end{DoxyCompactList}\item 
+\hyperlink{class_muscular_activation_1_1_muscular_activation_a95b93fee93d650995b077d1852bf987c}{an}
+\begin{DoxyCompactList}\small\item\em Is a vector formed as\+: \begin{equation} \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$} \end{equation} It is multiplied by the matriz act\+Matrix to obtain the activation signal (see act\+Matrix explanation) \end{DoxyCompactList}\item 
+\hyperlink{class_muscular_activation_1_1_muscular_activation_ae0b34b99d9fdd1d309ff086512d299dd}{activation\+\_\+non\+Sat}
+\begin{DoxyCompactList}\small\item\em The non-\/saturated activation signal of all motor units (see act\+Matrix explanation). \end{DoxyCompactList}\item 
+\hyperlink{class_muscular_activation_1_1_muscular_activation_a7dc6db96d1ac7a6bbef7dfa631215756}{b\+Sat}
+\begin{DoxyCompactList}\small\item\em The parameter $b$ (see twitch\+Saturation function explanation) of each motor unit. \end{DoxyCompactList}\item 
+\hyperlink{class_muscular_activation_1_1_muscular_activation_aab99ef4f19e7af03fccc71d7dc3571d1}{activation\+\_\+\+Sat}
+\begin{DoxyCompactList}\small\item\em The non-\/saturated activation signal of all motor units (see act\+Matrix explanation). \end{DoxyCompactList}\item 
+\hyperlink{class_muscular_activation_1_1_muscular_activation_afd716e50c9182ca4676c4b84a0f3dd49}{dirac\+Delta\+Value}
+\begin{DoxyCompactList}\small\item\em Dirac\textquotesingle{}s delta approximation amplitude value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 31 of file Muscular\+Activation.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, conf, pool, M\+Unumber, unit)}{__init__(self, conf, pool, MUnumber, unit)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscular\+Activation.\+Muscular\+Activation.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{conf, }
+\item[{}]{pool, }
+\item[{}]{M\+Unumber, }
+\item[{}]{unit}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscular_activation_1_1_muscular_activation_aad217ef6c3d6d7318ea3530a814b3738}{}\label{class_muscular_activation_1_1_muscular_activation_aad217ef6c3d6d7318ea3530a814b3738}
+
+
+Definition at line 34 of file Muscular\+Activation.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\index{Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}!atualize\+Activation\+Signal@{atualize\+Activation\+Signal}}
+\index{atualize\+Activation\+Signal@{atualize\+Activation\+Signal}!Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{atualize\+Activation\+Signal(self, t, unit)}{atualizeActivationSignal(self, t, unit)}}]{\setlength{\rightskip}{0pt plus 5cm}def Muscular\+Activation.\+Muscular\+Activation.\+atualize\+Activation\+Signal (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{t, }
+\item[{}]{unit}
+\end{DoxyParamCaption}
+)}\hypertarget{class_muscular_activation_1_1_muscular_activation_a426e8eca6ca1f9ed3999a07764ccb8fb}{}\label{class_muscular_activation_1_1_muscular_activation_a426e8eca6ca1f9ed3999a07764ccb8fb}
+
+
+Update the activation signal of the motor units. 
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: current instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 109 of file Muscular\+Activation.\+py.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_muscular_activation_1_1_muscular_activation_a426e8eca6ca1f9ed3999a07764ccb8fb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}!activation\+\_\+non\+Sat@{activation\+\_\+non\+Sat}}
+\index{activation\+\_\+non\+Sat@{activation\+\_\+non\+Sat}!Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{activation\+\_\+non\+Sat}{activation_nonSat}}]{\setlength{\rightskip}{0pt plus 5cm}Muscular\+Activation.\+Muscular\+Activation.\+activation\+\_\+non\+Sat}\hypertarget{class_muscular_activation_1_1_muscular_activation_ae0b34b99d9fdd1d309ff086512d299dd}{}\label{class_muscular_activation_1_1_muscular_activation_ae0b34b99d9fdd1d309ff086512d299dd}
+
+
+The non-\/saturated activation signal of all motor units (see act\+Matrix explanation). 
+
+
+
+Definition at line 86 of file Muscular\+Activation.\+py.
+
+\index{Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}!activation\+\_\+\+Sat@{activation\+\_\+\+Sat}}
+\index{activation\+\_\+\+Sat@{activation\+\_\+\+Sat}!Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{activation\+\_\+\+Sat}{activation_Sat}}]{\setlength{\rightskip}{0pt plus 5cm}Muscular\+Activation.\+Muscular\+Activation.\+activation\+\_\+\+Sat}\hypertarget{class_muscular_activation_1_1_muscular_activation_aab99ef4f19e7af03fccc71d7dc3571d1}{}\label{class_muscular_activation_1_1_muscular_activation_aab99ef4f19e7af03fccc71d7dc3571d1}
+
+
+The non-\/saturated activation signal of all motor units (see act\+Matrix explanation). 
+
+
+
+Definition at line 97 of file Muscular\+Activation.\+py.
+
+\index{Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}!activation\+Model@{activation\+Model}}
+\index{activation\+Model@{activation\+Model}!Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{activation\+Model}{activationModel}}]{\setlength{\rightskip}{0pt plus 5cm}Muscular\+Activation.\+Muscular\+Activation.\+activation\+Model}\hypertarget{class_muscular_activation_1_1_muscular_activation_ab4f37563ac079f439a4bc78cf401588c}{}\label{class_muscular_activation_1_1_muscular_activation_ab4f37563ac079f439a4bc78cf401588c}
+
+
+Model of the activation signal. 
+
+For now, it can be {\itshape S\+O\+C\+DS} (second order critically damped system). 
+
+Definition at line 41 of file Muscular\+Activation.\+py.
+
+\index{Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}!Act\+Matrix@{Act\+Matrix}}
+\index{Act\+Matrix@{Act\+Matrix}!Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{Act\+Matrix}{ActMatrix}}]{\setlength{\rightskip}{0pt plus 5cm}Muscular\+Activation.\+Muscular\+Activation.\+Act\+Matrix}\hypertarget{class_muscular_activation_1_1_muscular_activation_a504e646ccae5df11dea3675ce7d18da3}{}\label{class_muscular_activation_1_1_muscular_activation_a504e646ccae5df11dea3675ce7d18da3}
+
+
+Matrix that multiplied by the vector formed as the formula below gives the activation signal at instant $n$\+: \begin{equation} \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$} \end{equation} where $a_i(n)$ is the activation signal of the motor unit $i$, $e_i(n)$ is 1/T (inverse of simulation time step, Dirac\textquotesingle{}s delta approximation) if the motor unit $i$, fired at instant $n$. 
+
+The vector $Av$ is updated every step at the function atualize\+Activation\+Signal. The activation matrix itself is formed as\+: \begin{equation} \resizebox{0.95\hsize}{!}{$\scriptstyle A = \left[\begin{array}{ccccccccccc}\scriptscriptstyle 2\exp\left(-\frac{T}{T_{c_1}}\right)&\scriptscriptstyle -\exp\left(-2\frac{T}{T_{c_1}}\right)&\scriptscriptstyle \frac{T^2}{T_{c_1}}\exp\left(1-\frac{T}{T_{c_1}} \right)&\scriptscriptstyle 0&\scriptscriptstyle ...&\scriptscriptstyle 0&\scriptscriptstyle 0& \scriptscriptstyle 0&\scriptscriptstyle 0&\scriptscriptstyle 0&\scriptscriptstyle 0\\ \scriptscriptstyle 0&\scriptscriptstyle 0&\scriptscriptstyle 0&\scriptscriptstyle \ddots&\scriptscriptstyle ...&&&&&\scriptscriptstyle ...&\scriptscriptstyle 0\\ \scriptscriptstyle 0&\scriptscriptstyle ...&&\scriptscriptstyle 0&\scriptscriptstyle 2\exp\left(-\frac{T}{T_{c_i}}\right)&\scriptscriptstyle -\exp\left(-2\frac{T}{T_{c_i}}\right)&\scriptscriptstyle \frac{T^2}{T_{c_i}}\exp\left(1-\frac{T}{T_{c_i}} \right)&\scriptscriptstyle 0&&&\scriptscriptstyle 0\\ \scriptscriptstyle0&\scriptscriptstyle0&\scriptscriptstyle...&&&\scriptscriptstyle0&\scriptscriptstyle 0&\scriptscriptstyle\ddots&\scriptscriptstyle0&\scriptscriptstyle0\\ \scriptscriptstyle0&\scriptscriptstyle0&\scriptscriptstyle0&\scriptscriptstyle...&&&&\scriptscriptstyle0&\scriptscriptstyle 2\exp\left(-\frac{T}{T_{c_{N_{MU}}}}\right)&\scriptscriptstyle -\exp\left(-2\frac{T}{T_{c_{N_{MU}}}}\right)&\scriptscriptstyle \frac{T^2}{T_{c_{{MU}}}}\exp\left(1-\frac{T}{T_{c_{N_{MU}}}} \right)\end{array}\right]$} \end{equation} The nonsaturated activation signal $a$ of all the motor units is obtained with\+: \begin{equation} a = A.Av \end{equation} where each elemement o $a$ is the activation signal of a motor unit. 
+
+Definition at line 69 of file Muscular\+Activation.\+py.
+
+\index{Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}!an@{an}}
+\index{an@{an}!Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{an}{an}}]{\setlength{\rightskip}{0pt plus 5cm}Muscular\+Activation.\+Muscular\+Activation.\+an}\hypertarget{class_muscular_activation_1_1_muscular_activation_a95b93fee93d650995b077d1852bf987c}{}\label{class_muscular_activation_1_1_muscular_activation_a95b93fee93d650995b077d1852bf987c}
+
+
+Is a vector formed as\+: \begin{equation} \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$} \end{equation} It is multiplied by the matriz act\+Matrix to obtain the activation signal (see act\+Matrix explanation) 
+
+
+
+Definition at line 83 of file Muscular\+Activation.\+py.
+
+\index{Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}!b\+Sat@{b\+Sat}}
+\index{b\+Sat@{b\+Sat}!Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{b\+Sat}{bSat}}]{\setlength{\rightskip}{0pt plus 5cm}Muscular\+Activation.\+Muscular\+Activation.\+b\+Sat}\hypertarget{class_muscular_activation_1_1_muscular_activation_a7dc6db96d1ac7a6bbef7dfa631215756}{}\label{class_muscular_activation_1_1_muscular_activation_a7dc6db96d1ac7a6bbef7dfa631215756}
+
+
+The parameter $b$ (see twitch\+Saturation function explanation) of each motor unit. 
+
+
+
+Definition at line 89 of file Muscular\+Activation.\+py.
+
+\index{Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}!conf@{conf}}
+\index{conf@{conf}!Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{conf}{conf}}]{\setlength{\rightskip}{0pt plus 5cm}Muscular\+Activation.\+Muscular\+Activation.\+conf}\hypertarget{class_muscular_activation_1_1_muscular_activation_ab2eab8fb62d5338707e3921e26560a3f}{}\label{class_muscular_activation_1_1_muscular_activation_ab2eab8fb62d5338707e3921e26560a3f}
+
+
+Definition at line 36 of file Muscular\+Activation.\+py.
+
+\index{Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}!dirac\+Delta\+Value@{dirac\+Delta\+Value}}
+\index{dirac\+Delta\+Value@{dirac\+Delta\+Value}!Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{dirac\+Delta\+Value}{diracDeltaValue}}]{\setlength{\rightskip}{0pt plus 5cm}Muscular\+Activation.\+Muscular\+Activation.\+dirac\+Delta\+Value}\hypertarget{class_muscular_activation_1_1_muscular_activation_afd716e50c9182ca4676c4b84a0f3dd49}{}\label{class_muscular_activation_1_1_muscular_activation_afd716e50c9182ca4676c4b84a0f3dd49}
+
+
+Dirac\textquotesingle{}s delta approximation amplitude value. 
+
+Is the inverse of the simulation time step ( $1/T$). 
+
+Definition at line 100 of file Muscular\+Activation.\+py.
+
+\index{Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}!M\+Unumber@{M\+Unumber}}
+\index{M\+Unumber@{M\+Unumber}!Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{M\+Unumber}{MUnumber}}]{\setlength{\rightskip}{0pt plus 5cm}Muscular\+Activation.\+Muscular\+Activation.\+M\+Unumber}\hypertarget{class_muscular_activation_1_1_muscular_activation_a1b30292b1cf102fa82bf4a511d151f0b}{}\label{class_muscular_activation_1_1_muscular_activation_a1b30292b1cf102fa82bf4a511d151f0b}
+
+
+Definition at line 38 of file Muscular\+Activation.\+py.
+
+\index{Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}!pool@{pool}}
+\index{pool@{pool}!Muscular\+Activation\+::\+Muscular\+Activation@{Muscular\+Activation\+::\+Muscular\+Activation}}
+\subsubsection[{\texorpdfstring{pool}{pool}}]{\setlength{\rightskip}{0pt plus 5cm}Muscular\+Activation.\+Muscular\+Activation.\+pool}\hypertarget{class_muscular_activation_1_1_muscular_activation_aeed87c16618be36ed95f44d38a988f1f}{}\label{class_muscular_activation_1_1_muscular_activation_aeed87c16618be36ed95f44d38a988f1f}
+
+
+Definition at line 37 of file Muscular\+Activation.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_muscular_activation_8py}{Muscular\+Activation.\+py}\end{DoxyCompactItemize}

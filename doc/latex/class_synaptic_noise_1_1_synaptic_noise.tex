@@ -1,0 +1,210 @@
+\hypertarget{class_synaptic_noise_1_1_synaptic_noise}{}\section{Synaptic\+Noise.\+Synaptic\+Noise Class Reference}
+\label{class_synaptic_noise_1_1_synaptic_noise}\index{Synaptic\+Noise.\+Synaptic\+Noise@{Synaptic\+Noise.\+Synaptic\+Noise}}
+
+
+Class that implements a synaptic noise for a pool of neurons.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_synaptic_noise_1_1_synaptic_noise_a1f6c03281f2569156552c043e5d81db1}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, conf, \hyperlink{class_synaptic_noise_1_1_synaptic_noise_a7b3350e537e1fcadbf486e851f7f3077}{pool})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+def \hyperlink{class_synaptic_noise_1_1_synaptic_noise_a00fa2c0d5b1b4d5fafc219e32bb4cd42}{atualize\+Pool} (self, t)
+\begin{DoxyCompactList}\small\item\em Update all neural tract units from the neural tract. \end{DoxyCompactList}\item 
+def \hyperlink{class_synaptic_noise_1_1_synaptic_noise_a8937077070b4e13f4b29ee0c443d3ace}{list\+Spikes} (self)
+\begin{DoxyCompactList}\small\item\em List the spikes that occurred in neural tract units. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_synaptic_noise_1_1_synaptic_noise_a06c7bc38c4b3794340171dfa91edf5d8}{kind}
+\begin{DoxyCompactList}\small\item\em Indicates that is a neural tract. \end{DoxyCompactList}\item 
+\hyperlink{class_synaptic_noise_1_1_synaptic_noise_a7b3350e537e1fcadbf486e851f7f3077}{pool}
+\begin{DoxyCompactList}\small\item\em String with the name of the pool. \end{DoxyCompactList}\item 
+\hyperlink{class_synaptic_noise_1_1_synaptic_noise_a9f419a5de8bbf318fac8c6c57c58bc77}{Number}
+\begin{DoxyCompactList}\small\item\em The number of neural tract units. \end{DoxyCompactList}\item 
+\hyperlink{class_synaptic_noise_1_1_synaptic_noise_ac29255d1f6d1d7e1a86fb18de3c3ab4b}{unit}
+\begin{DoxyCompactList}\small\item\em List of \hyperlink{namespace_neural_tract_unit}{Neural\+Tract\+Unit} objects. \end{DoxyCompactList}\item 
+\hyperlink{class_synaptic_noise_1_1_synaptic_noise_ade79c5746b21fe7702e5f29a7f7b2894}{Gamma\+Order}
+\item 
+\hyperlink{class_synaptic_noise_1_1_synaptic_noise_a4c2f941b15dc789e984620e8aa6ca5c3}{pool\+Terminal\+Spikes}
+\begin{DoxyCompactList}\small\item\em Vector with the instants of spikes in the terminal, in ms. \end{DoxyCompactList}\item 
+\hyperlink{class_synaptic_noise_1_1_synaptic_noise_a682fd860345b62be1d93bedb0a02c436}{target}
+\begin{DoxyCompactList}\small\item\em Indicates the measure that the Target\+Function of the spikes follows. \end{DoxyCompactList}\item 
+\hyperlink{class_synaptic_noise_1_1_synaptic_noise_af74066a527ea667c2e6cdd771391b29c}{FR}
+\begin{DoxyCompactList}\small\item\em The mean firing rate of the neural tract units. \end{DoxyCompactList}\item 
+\hyperlink{class_synaptic_noise_1_1_synaptic_noise_a064f195dbf5eadb3bbe43e6a6d8d6cec}{time\+Index}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that implements a synaptic noise for a pool of neurons. 
+
+Definition at line 14 of file Synaptic\+Noise.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, conf, pool)}{__init__(self, conf, pool)}}]{\setlength{\rightskip}{0pt plus 5cm}def Synaptic\+Noise.\+Synaptic\+Noise.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{conf, }
+\item[{}]{pool}
+\end{DoxyParamCaption}
+)}\hypertarget{class_synaptic_noise_1_1_synaptic_noise_a1f6c03281f2569156552c043e5d81db1}{}\label{class_synaptic_noise_1_1_synaptic_noise_a1f6c03281f2569156552c043e5d81db1}
+
+
+Constructor. 
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries conf}\+: \hyperlink{namespace_configuration}{Configuration} object with the simulation parameters.
+\item {\bfseries pool}\+: string with the name of the pool. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 25 of file Synaptic\+Noise.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\index{Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}!atualize\+Pool@{atualize\+Pool}}
+\index{atualize\+Pool@{atualize\+Pool}!Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}}
+\subsubsection[{\texorpdfstring{atualize\+Pool(self, t)}{atualizePool(self, t)}}]{\setlength{\rightskip}{0pt plus 5cm}def Synaptic\+Noise.\+Synaptic\+Noise.\+atualize\+Pool (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{class_synaptic_noise_1_1_synaptic_noise_a00fa2c0d5b1b4d5fafc219e32bb4cd42}{}\label{class_synaptic_noise_1_1_synaptic_noise_a00fa2c0d5b1b4d5fafc219e32bb4cd42}
+
+
+Update all neural tract units from the neural tract. 
+
+
+\begin{DoxyItemize}
+\item Inputs\+:
+\begin{DoxyItemize}
+\item {\bfseries t}\+: current instant, in ms. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 67 of file Synaptic\+Noise.\+py.
+
+\index{Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}!list\+Spikes@{list\+Spikes}}
+\index{list\+Spikes@{list\+Spikes}!Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}}
+\subsubsection[{\texorpdfstring{list\+Spikes(self)}{listSpikes(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def Synaptic\+Noise.\+Synaptic\+Noise.\+list\+Spikes (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{class_synaptic_noise_1_1_synaptic_noise_a8937077070b4e13f4b29ee0c443d3ace}{}\label{class_synaptic_noise_1_1_synaptic_noise_a8937077070b4e13f4b29ee0c443d3ace}
+
+
+List the spikes that occurred in neural tract units. 
+
+
+
+Definition at line 77 of file Synaptic\+Noise.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\index{Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}!FR@{FR}}
+\index{FR@{FR}!Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}}
+\subsubsection[{\texorpdfstring{FR}{FR}}]{\setlength{\rightskip}{0pt plus 5cm}Synaptic\+Noise.\+Synaptic\+Noise.\+FR}\hypertarget{class_synaptic_noise_1_1_synaptic_noise_af74066a527ea667c2e6cdd771391b29c}{}\label{class_synaptic_noise_1_1_synaptic_noise_af74066a527ea667c2e6cdd771391b29c}
+
+
+The mean firing rate of the neural tract units. 
+
+
+
+Definition at line 52 of file Synaptic\+Noise.\+py.
+
+\index{Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}!Gamma\+Order@{Gamma\+Order}}
+\index{Gamma\+Order@{Gamma\+Order}!Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}}
+\subsubsection[{\texorpdfstring{Gamma\+Order}{GammaOrder}}]{\setlength{\rightskip}{0pt plus 5cm}Synaptic\+Noise.\+Synaptic\+Noise.\+Gamma\+Order}\hypertarget{class_synaptic_noise_1_1_synaptic_noise_ade79c5746b21fe7702e5f29a7f7b2894}{}\label{class_synaptic_noise_1_1_synaptic_noise_ade79c5746b21fe7702e5f29a7f7b2894}
+
+
+Definition at line 36 of file Synaptic\+Noise.\+py.
+
+\index{Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}!kind@{kind}}
+\index{kind@{kind}!Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}}
+\subsubsection[{\texorpdfstring{kind}{kind}}]{\setlength{\rightskip}{0pt plus 5cm}Synaptic\+Noise.\+Synaptic\+Noise.\+kind}\hypertarget{class_synaptic_noise_1_1_synaptic_noise_a06c7bc38c4b3794340171dfa91edf5d8}{}\label{class_synaptic_noise_1_1_synaptic_noise_a06c7bc38c4b3794340171dfa91edf5d8}
+
+
+Indicates that is a neural tract. 
+
+
+
+Definition at line 27 of file Synaptic\+Noise.\+py.
+
+\index{Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}!Number@{Number}}
+\index{Number@{Number}!Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}}
+\subsubsection[{\texorpdfstring{Number}{Number}}]{\setlength{\rightskip}{0pt plus 5cm}Synaptic\+Noise.\+Synaptic\+Noise.\+Number}\hypertarget{class_synaptic_noise_1_1_synaptic_noise_a9f419a5de8bbf318fac8c6c57c58bc77}{}\label{class_synaptic_noise_1_1_synaptic_noise_a9f419a5de8bbf318fac8c6c57c58bc77}
+
+
+The number of neural tract units. 
+
+
+
+Definition at line 31 of file Synaptic\+Noise.\+py.
+
+\index{Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}!pool@{pool}}
+\index{pool@{pool}!Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}}
+\subsubsection[{\texorpdfstring{pool}{pool}}]{\setlength{\rightskip}{0pt plus 5cm}Synaptic\+Noise.\+Synaptic\+Noise.\+pool}\hypertarget{class_synaptic_noise_1_1_synaptic_noise_a7b3350e537e1fcadbf486e851f7f3077}{}\label{class_synaptic_noise_1_1_synaptic_noise_a7b3350e537e1fcadbf486e851f7f3077}
+
+
+String with the name of the pool. 
+
+
+
+Definition at line 29 of file Synaptic\+Noise.\+py.
+
+\index{Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}!pool\+Terminal\+Spikes@{pool\+Terminal\+Spikes}}
+\index{pool\+Terminal\+Spikes@{pool\+Terminal\+Spikes}!Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}}
+\subsubsection[{\texorpdfstring{pool\+Terminal\+Spikes}{poolTerminalSpikes}}]{\setlength{\rightskip}{0pt plus 5cm}Synaptic\+Noise.\+Synaptic\+Noise.\+pool\+Terminal\+Spikes}\hypertarget{class_synaptic_noise_1_1_synaptic_noise_a4c2f941b15dc789e984620e8aa6ca5c3}{}\label{class_synaptic_noise_1_1_synaptic_noise_a4c2f941b15dc789e984620e8aa6ca5c3}
+
+
+Vector with the instants of spikes in the terminal, in ms. 
+
+
+
+Definition at line 41 of file Synaptic\+Noise.\+py.
+
+\index{Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}!target@{target}}
+\index{target@{target}!Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}}
+\subsubsection[{\texorpdfstring{target}{target}}]{\setlength{\rightskip}{0pt plus 5cm}Synaptic\+Noise.\+Synaptic\+Noise.\+target}\hypertarget{class_synaptic_noise_1_1_synaptic_noise_a682fd860345b62be1d93bedb0a02c436}{}\label{class_synaptic_noise_1_1_synaptic_noise_a682fd860345b62be1d93bedb0a02c436}
+
+
+Indicates the measure that the Target\+Function of the spikes follows. 
+
+For now it can be {\itshape I\+SI} (interspike interval) or {\itshape FR} (firing rate). 
+
+Definition at line 45 of file Synaptic\+Noise.\+py.
+
+\index{Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}!time\+Index@{time\+Index}}
+\index{time\+Index@{time\+Index}!Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}}
+\subsubsection[{\texorpdfstring{time\+Index}{timeIndex}}]{\setlength{\rightskip}{0pt plus 5cm}Synaptic\+Noise.\+Synaptic\+Noise.\+time\+Index}\hypertarget{class_synaptic_noise_1_1_synaptic_noise_a064f195dbf5eadb3bbe43e6a6d8d6cec}{}\label{class_synaptic_noise_1_1_synaptic_noise_a064f195dbf5eadb3bbe43e6a6d8d6cec}
+
+
+Definition at line 55 of file Synaptic\+Noise.\+py.
+
+\index{Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}!unit@{unit}}
+\index{unit@{unit}!Synaptic\+Noise\+::\+Synaptic\+Noise@{Synaptic\+Noise\+::\+Synaptic\+Noise}}
+\subsubsection[{\texorpdfstring{unit}{unit}}]{\setlength{\rightskip}{0pt plus 5cm}Synaptic\+Noise.\+Synaptic\+Noise.\+unit}\hypertarget{class_synaptic_noise_1_1_synaptic_noise_ac29255d1f6d1d7e1a86fb18de3c3ab4b}{}\label{class_synaptic_noise_1_1_synaptic_noise_ac29255d1f6d1d7e1a86fb18de3c3ab4b}
+
+
+List of \hyperlink{namespace_neural_tract_unit}{Neural\+Tract\+Unit} objects. 
+
+
+
+Definition at line 34 of file Synaptic\+Noise.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_synaptic_noise_8py}{Synaptic\+Noise.\+py}\end{DoxyCompactItemize}

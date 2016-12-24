@@ -1,6 +1,6 @@
 var class_channel_conductance_1_1_channel_conductance =
 [
-    [ "__init__", "class_channel_conductance_1_1_channel_conductance.html#a25b3a53d3d4a2926f61e1bd978e375f7", null ],
+    [ "__init__", "class_channel_conductance_1_1_channel_conductance.html#acc92870743a2af7d3839857183ca3bb6", null ],
     [ "compCondKf", "class_channel_conductance_1_1_channel_conductance.html#a9df028286b0ce594530f798f4a781d8c", null ],
     [ "compCondKs", "class_channel_conductance_1_1_channel_conductance.html#aaffacf12bc9b5f50bfcc04f49c3254ff", null ],
     [ "compCondNa", "class_channel_conductance_1_1_channel_conductance.html#a17d6343152d9252b6f1368b450f0dbcf", null ],

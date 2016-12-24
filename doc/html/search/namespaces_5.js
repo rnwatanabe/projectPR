@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['simulation',['simulation',['../namespacesimulation.html',1,'']]],
-  ['synapse',['Synapse',['../namespace_synapse.html',1,'']]],
-  ['synapsesfactory',['SynapsesFactory',['../namespace_synapses_factory.html',1,'']]]
+  ['neuraltract',['NeuralTract',['../namespace_neural_tract.html',1,'']]],
+  ['neuraltractunit',['NeuralTractUnit',['../namespace_neural_tract_unit.html',1,'']]]
 ];
