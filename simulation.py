@@ -132,11 +132,11 @@ def simulator():
     
 if __name__ == '__main__':
 
-    #cProfile.run('simulator()', sort = 'tottime')
+    cProfile.run('simulator()', sort = 'tottime')
     
     np.__config__.show()
     
     
-    simulator()
+    #simulator()
     
     #plt.show()

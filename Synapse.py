@@ -21,6 +21,7 @@
 import math
 import numpy as np
 from numba import jit
+from collections import deque
 
 
 
@@ -388,6 +389,10 @@ class Synapse(object):
         ## conductance, in ms.
         self.ti = np.array([])
 
+
+        self.inQueue = deque([])
+        self.outQueue = deque([])
+
         self.dynamicGmax = np.array([])
         ## List of individual conductance constribution 
         ## to the global synaptic conductance
@@ -455,13 +460,24 @@ class Synapse(object):
         
         
         
-        idxBeginPulse = np.nonzero(np.abs(t - self.tBeginOfPulse) < 1e-3)[0]
-        idxEndPulse = np.nonzero(np.abs(t - self.tEndOfPulse) < 1e-3)[0]
+        idxBeginPulse = []
+        
+        while len(self.inQueue) and  -1e-3 < t - self.tBeginOfPulse[self.inQueue[0]] < 1e-3:
+            idxBeginPulse.append(self.inQueue.popleft())
+            
 
-        if idxBeginPulse.size:
+        idxEndPulse = []
+                
+        while len(self.outQueue) and -1e-3 < t - self.tEndOfPulse[self.outQueue[0]] < 1e-3:
+            idxEndPulse.append(self.outQueue.popleft())
+            
+
+        
+
+        if len(idxBeginPulse):
             self.startConductance(t, idxBeginPulse)
 
-        if idxEndPulse.size:
+        if len(idxEndPulse):
             self.stopConductance(t, idxEndPulse)
 
         return self.gMaxTot_muS * (self.Ron + self.Roff)
@@ -495,17 +511,19 @@ class Synapse(object):
                                               var[idxBeginPulse]
                                              )
         synCont[idxBeginPulse] = dynG[idxBeginPulse] / self.gMaxTot_muS
-
-        idxTurningOnCond = idxBeginPulse[np.where(np.logical_not(condState[idxBeginPulse]))[0]]
-        if idxTurningOnCond.size:
-            condState[idxTurningOnCond] = 1            
-            ri[idxTurningOnCond] *= np.exp((ti[idxTurningOnCond] + tPeak - t) / self.tauOff) 
+        for i in np.where(condState[idxBeginPulse])[0]: self.outQueue.remove(idxBeginPulse[i])
+        self.outQueue.extend(idxBeginPulse)
+        idxTurningOnCond = np.array(idxBeginPulse)[np.where(np.logical_not(condState[idxBeginPulse]))[0]]
+        if len(idxTurningOnCond):
+            condState[idxTurningOnCond] = 1
+            ri[idxTurningOnCond] *= np.exp((ti[idxTurningOnCond] + tPeak - t) / self.tauOff)
             self.Non += np.sum(synCont[idxTurningOnCond])
             ti[idxTurningOnCond] = t
-            synGain = np.dot(ri[idxTurningOnCond],synCont[idxTurningOnCond])
+            synGain = np.dot(ri[idxTurningOnCond], synCont[idxTurningOnCond])
             self.Ron += synGain
             self.Roff -= synGain
-        
+
+
         self.tEndOfPulse[idxBeginPulse] = t + self.tPeak_ms
         self.tLastPulse[idxBeginPulse] = self.tBeginOfPulse[idxBeginPulse]
         self.tBeginOfPulse[idxBeginPulse] = -1000000
@@ -527,7 +545,9 @@ class Synapse(object):
         self.Non -= np.sum(self.synContrib[idxEndPulse])
         self.tEndOfPulse[idxEndPulse] = -10000
         self.conductanceState[idxEndPulse] = 0
-
+    
+    
+    #@profile    
     def receiveSpike(self, t, synapseNumber):
         '''
 
@@ -538,6 +558,7 @@ class Synapse(object):
         '''
 
         self.tBeginOfPulse[synapseNumber] = t + self.delay_ms[synapseNumber]
+        self.inQueue.append(synapseNumber)
 
     def addConductance(self, gmax, delay, dynamics, variation, timeConstant):
         '''
