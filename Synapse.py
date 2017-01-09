@@ -415,6 +415,7 @@ class Synapse(object):
         - Output:
             + The current on the compartment due to the synapse.
         '''
+        
         if len(self.tEndOfPulse) == 0:
             self.tBeginOfPulse = np.ones_like(self.gmax_muS,
                                               dtype=float) * float("-inf")
@@ -430,6 +431,7 @@ class Synapse(object):
             self.synContrib = self.gmax_muS / self.gMaxTot_muS
             self.computeCurrent = self.computeCurrent2
 
+        print 'lenght synapse of the unit ' + str(self.index) + ' at ' + self.pool + ' = ' + str(len(self.tBeginOfPulse)) + ' id ' + str(id(self))      
         return self.computeConductance(t) * (self.EqPot_mV - V_mV)
 
     def computeCurrent2(self, t, V_mV):
@@ -443,6 +445,8 @@ class Synapse(object):
             + **V_mV**: membrane potential of the compartment that the
             synapse belongs, in mV.
         '''
+        if len(self.tBeginOfPulse) == 0:
+            print 'lenght synapse of the unit ' + str(self.index) + ' at ' + self.pool + ' = ' + str(len(self.tBeginOfPulse)) + ' id ' + str(id(self))   
         return self.computeConductance(t) * (self.EqPot_mV - V_mV)
     
     #@profile    
@@ -557,6 +561,7 @@ class Synapse(object):
             + **synapseNumber**:
         '''
 
+        print 'synapse ' + str(synapseNumber) + ' at unit ' + str(self.index) + ' of ' + self.pool + ' id ' + str(id(self))
         self.tBeginOfPulse[synapseNumber] = t + self.delay_ms[synapseNumber]
         self.inQueue.append(synapseNumber)
 

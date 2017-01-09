@@ -17,6 +17,7 @@ import dill
 from mpi4py import MPI
 MPI.pickle.dumps = dill.dumps
 MPI.pickle.loads = dill.loads 
+import sys
 import copy
 import itertools
 
@@ -81,16 +82,17 @@ class MotorUnitPool(object):
         ##
         #print 'Motor Unit Pool ' + pool + ' built'
 
-        # MPI
-        self.comm = MPI.COMM_WORLD
-        self.size = self.comm.Get_size ()
-        self.rank = self.comm.Get_rank ()
-        self.procSize = self.MUnumber / self.size
-        self.unitSlice=[]
-
-        print 'size ' + str(self.size)
-        print 'rank ' + str(self.rank)
-        print 'procSize ' + str(self.procSize)
+        # MP
+        # Spawn de dois processos no codigo cprc.py 
+        self.comm=MPI.COMM_SELF.Spawn(sys.executable,args=['cprc.py'],maxprocs=2)
+        # Merge para juntar todos processos em um so grupo
+        self.common_comm=self.comm.Merge(False)
+        # Numero de processos (tamanho do comunicador)
+        self.size = self.common_comm.Get_size ()
+        print 'size = ' + str(self.size)
+        # Porcao que cada processo recebe
+        # Processo pai nao participa (por isso - 1)
+        self.procSize = len (self.unit) / (self.size - 1)
         
     def atualizeMotorUnitPool(self, t):
         '''
@@ -101,63 +103,18 @@ class MotorUnitPool(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
-        #### Primeira tentativa a falhar
-        #self.unitSlice = copy.deepcopy(self.unit[self.rank * self.procSize:(self.rank + 1) * self.procSize])
-        #for i in self.unitSlice: i.atualizeMotorUnit(t)
-        #self.aux = self.comm.allgather (self.unitSlice)
-        #self.unit = copy.deepcopy(list(itertools.chain.from_iterable(self.aux)))
-        ####
+        t = self.common_comm.bcast (t, root = 0)
+        print t
+        for rank in xrange(1, self.size):
+            self.common_comm.send(self.unit[(rank - 1) * self.procSize:rank * self.procSize], dest=rank, tag=rank)
+        for rank in xrange(1, self.size):
+            self.unit[(rank - 1) * self.procSize:rank * self.procSize]=self.common_comm.recv(source=rank,tag=rank)
 
-        ####
-        # Forma original de se atualizar as unidades
         # Forma original
         #for i in self.unit: i.atualizeMotorUnit(t)
-        # Forma levemente alterada
-        #for i in xrange(self.rank * self.procSize,(self.rank + 1) * self.procSize):
-        #    self.unit[i].atualizeMotorUnit(t)
-        ####
-
-        #### Alteracoes principais
-        # Cada processo usa um pedaco de self.unit
-        unittest = []
-        for i in xrange(self.rank * self.procSize, (self.rank + 1) * self.procSize):
-            self.unitSlice.append(self.unit[i])
-        for i in self.unitSlice:
-            i.atualizeMotorUnit(t)
-        # Fazer atualize MotorUnit normalmente e entao usar allgather reproduz
-        # o erro
-        aux = self.comm.allgather (self.unitSlice)
-        # Flattening, pois allgather retorna lista de listas
-        for i in xrange(len(aux)):
-            for j in xrange(len(aux[i])):
-                unittest.append((aux[i])[j])
-        # alternativa ao metodo acima
-        #self.unittest=list(itertools.chain.from_iterable(self.aux)) 
-
-        # Para checar se sao iguais
-        #if self.rank==0:
-        #    print self.unittest[0]==self.unit[0]
-        #    print vars(self.unittest[0])
-        #    print vars(self.unit[0])
-
-        # Retornando valores para self.unit
-        self.unit=[]
-        for i in xrange(len(unittest)):
-            #self.unit.append(copy.copy(self.unittest[i])) # alternativa
-            self.unit.append(unittest[i])
-
-        # Checando os objetos synapses
-        #if self.rank==0:
-        #    print vars(self.unit[0].transmitSpikesThroughSynapses[0]), '1'
-        #    print vars(self.unit[0].transmitSpikesThroughSynapses[1]), '2'
-        
-        self.unitSlice = []
-        ## O valor dessa variavel e sempre zero qnd o erro ocorre
-        #print self.unit[0].iIonic
-        ####
 
         self.Activation.atualizeActivationSignal(t, self.unit)
-        self.Muscle.atualizeForce(self.Activation.activation_Sat)
+        self.Muscle.atualizeForce(self.Activation.activation_Sat)   
 
     def listSpikes(self):
         '''

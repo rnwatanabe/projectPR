@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env /home/intel/intelpython27/bin/python
 import sys
 sys.path.insert(0, '..')
 import time
@@ -7,15 +7,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from Configuration import Configuration
-from MotorUnitPool1 import MotorUnitPool
+from MotorUnitPool2 import MotorUnitPool
 from InterneuronPool import InterneuronPool
 from NeuralTract import NeuralTract
 from SynapsesFactory import SynapsesFactory
 
 # Initialze MPI part
 # Failed first try
-from mpi4py import MPI
-comm = MPI.COMM_WORLD
 #size = comm.Get_size ()
 #rank = comm.Get_rank ()
 
