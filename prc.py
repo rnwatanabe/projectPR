@@ -33,18 +33,20 @@ somaV = np.zeros_like(t)
 
 pools = dict()
 pools[0] = MotorUnitPool(conf, 'SOL')
-pools[1] = NeuralTract(conf, 'CMExt')
-pools[2] = InterneuronPool(conf, 'RC')
+#pools[1] = NeuralTract(conf, 'CMExt')
+#pools[2] = InterneuronPool(conf, 'RC')
 Syn = SynapsesFactory(conf, pools)
 
 tic = time.clock()
 for i in xrange(0, len(t)-1):
-    pools[1].atualizePool(t[i]) # NeuralTract
+    for j in xrange(len(pools[0].unit)):
+        pools[0].unit[j].iInjected[1] = 10
+    #pools[1].atualizePool(t[i]) # NeuralTract
     pools[0].atualizeMotorUnitPool(t[i]) # MN pool
     dendV[i] = pools[0].unit[2].v_mV[0]
     somaV[i] = pools[0].unit[2].v_mV[1]
-    pools[3].atualizePool(t[i]) # RC synaptic Noise
-    pools[2].atualizeInterneuronPool(t[i]) # RC pool
+    #pools[3].atualizePool(t[i]) # RC synaptic Noise
+    #pools[2].atualizeInterneuronPool(t[i]) # RC pool
 toc = time.clock()
 print str(toc - tic) + ' seconds'
 

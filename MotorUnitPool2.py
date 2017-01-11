@@ -84,15 +84,15 @@ class MotorUnitPool(object):
 
         # MP
         # Spawn de dois processos no codigo cprc.py 
-        self.comm=MPI.COMM_SELF.Spawn(sys.executable,args=['cprc.py'],maxprocs=2)
+        self.comm = MPI.COMM_SELF.Spawn(sys.executable, args=['cprc.py'], maxprocs=7)
         # Merge para juntar todos processos em um so grupo
-        self.common_comm=self.comm.Merge(False)
+        self.common_comm = self.comm.Merge(False)
         # Numero de processos (tamanho do comunicador)
-        self.size = self.common_comm.Get_size ()
+        self.size = self.common_comm.Get_size()
         print 'size = ' + str(self.size)
         # Porcao que cada processo recebe
         # Processo pai nao participa (por isso - 1)
-        self.procSize = len (self.unit) / (self.size - 1)
+        self.procSize = len(self.unit) / (self.size - 1)
         
     def atualizeMotorUnitPool(self, t):
         '''
@@ -103,8 +103,10 @@ class MotorUnitPool(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
+        
+
         t = self.common_comm.bcast (t, root = 0)
-        print t
+        
         for rank in xrange(1, self.size):
             self.common_comm.send(self.unit[(rank - 1) * self.procSize:rank * self.procSize], dest=rank, tag=rank)
         for rank in xrange(1, self.size):
