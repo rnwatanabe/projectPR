@@ -196,7 +196,7 @@ class MotorUnit(object):
         for i in xrange(0, NumberOfAxonNodes):
               compartmentsList.append('internode')
               compartmentsList.append('node')
-              compartmentsList.append('internode')
+              
 
 
         

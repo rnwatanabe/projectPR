@@ -92,8 +92,7 @@ class PulseConductanceState(object):
         
         
         
-        self.v0 = 0.0
-        self.t0 = float(0)
+       
         
         self.state = False
         

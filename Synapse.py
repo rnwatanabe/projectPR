@@ -431,7 +431,7 @@ class Synapse(object):
             self.synContrib = self.gmax_muS / self.gMaxTot_muS
             self.computeCurrent = self.computeCurrent2
 
-        print 'lenght synapse of the unit ' + str(self.index) + ' at ' + self.pool + ' = ' + str(len(self.tBeginOfPulse)) + ' id ' + str(id(self))      
+        
         return self.computeConductance(t) * (self.EqPot_mV - V_mV)
 
     def computeCurrent2(self, t, V_mV):
@@ -561,7 +561,7 @@ class Synapse(object):
             + **synapseNumber**:
         '''
 
-        print 'synapse ' + str(synapseNumber) + ' at unit ' + str(self.index) + ' of ' + self.pool + ' id ' + str(id(self))
+        
         self.tBeginOfPulse[synapseNumber] = t + self.delay_ms[synapseNumber]
         self.inQueue.append(synapseNumber)
 

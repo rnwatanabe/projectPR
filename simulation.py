@@ -26,7 +26,7 @@ def simulator():
 
     pools = dict()
     pools[0] = MotorUnitPool(conf, 'SOL')
-    #pools[1] = NeuralTract(conf, 'CMExt')
+    pools[1] = NeuralTract(conf, 'CMExt')
 
     #pools.append(InterneuronPool(conf, 'RC'))
 
@@ -38,20 +38,20 @@ def simulator():
 
     dendV = np.zeros_like(t)
     somaV = np.zeros_like(t)
-    internodeV = np.zeros_like(t)
-    nodeV = np.zeros_like(t)
+    nodeV1 = np.zeros_like(t)
+    nodeV2 = np.zeros_like(t)
 
     tic = time.clock()
     for i in xrange(0, len(t)):
         #ankle.atualizeAnkle(t[i], 0)
-        for j in xrange(len(pools[0].unit)):
-            pools[0].unit[j].iInjected[1] = 10
-        #pools[1].atualizePool(t[i])
+        #for j in xrange(len(pools[0].unit)):
+        #    pools[0].unit[j].iInjected[1] = 10
+        pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
         dendV[i] = pools[0].unit[2].v_mV[0]
         somaV[i] = pools[0].unit[2].v_mV[1] 
-        #internodeV[i] = pools[0].unit[2].v_mV[2]
-        #nodeV[i] = pools[0].unit[2].v_mV[3]
+        #nodeV1[i] = pools[0].unit[2].v_mV[3]
+        #nodeV2[i] = pools[0].unit[2].v_mV[31]
         #pools[3].atualizePool(t[i])
         #pools[2].atualizeInterneuronPool(t[i])
     toc = time.clock()
@@ -112,13 +112,14 @@ def simulator():
 
     plt.figure()
     plt.plot(t, somaV, '-')
+
     
 
     plt.figure()
-    plt.plot(t, internodeV, '-')
+    plt.plot(t, nodeV1, '-')
 
     plt.figure()
-    plt.plot(t, nodeV, '-')
+    plt.plot(t, nodeV2, '-')
     
     '''
     plt.figure()
