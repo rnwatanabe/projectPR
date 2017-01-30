@@ -157,7 +157,7 @@
     \def\gt{>}
     \def\lt{<}
     % Document parameters
-    \title{NeuralTractSpikes}
+    \title{MuscleHillExample}
     
     
     
@@ -287,7 +287,7 @@
     \begin{document}
     
     
-    \author{Julius C. F. Schulz}\title{NeuralTractSpikes}
+    \author{Julius C. F. Schulz}\title{MuscleHillExample}
 
 \date{\today}
 \maketitle
@@ -296,8 +296,9 @@
     
 
     
-    Simulation of 10000 ms of 400 independent descending commands following
-a gamma distribution with mean of 142 ms and order 10
+    This notebook presents a simulation of 5000 ms of 400 descending
+commands and 800 motoneurons from soleus. The force is prduced by a
+Hill-type muscle model.
 \newline\textbf{Input \#{}1}\begin{verbatim}
 import sys
 sys.path.insert(0, '..')
@@ -305,140 +306,150 @@ import time
 import matplotlib.pyplot as plt
 %matplotlib inline  
 import numpy as np
-import scipy.stats
 
 from Configuration import Configuration
+from MotorUnitPool import MotorUnitPool
 from NeuralTract import NeuralTract
+from SynapsesFactory import SynapsesFactory
+from jointAnkleForceTask import jointAnkleForceTask
 \end{verbatim}\newline\textbf{Input \#{}2}\begin{verbatim}
-conf = Configuration('confNeuralTractSpikes.rmto')
+conf = Configuration('confMuscleHillExample.rmto')
+conf.simDuration_ms = 5000 # Here I change simulation duration without changing the Configuration file.
 \end{verbatim}\newline\textbf{Input \#{}3}\begin{verbatim}
-t = np.arange(0.0, conf.simDuration_ms, conf.timeStep_ms)
-\end{verbatim}\newline\textbf{Input \#{}4}\begin{verbatim}
 pools = dict()
-pools[0] = NeuralTract(conf, 'CMExt')
+pools[0] = MotorUnitPool(conf, 'SOL')
+pools[1] = NeuralTract(conf, 'CMExt')
+ankle = jointAnkleForceTask(conf, pools)
+Syn = SynapsesFactory(conf, pools)
+del Syn
+\end{verbatim}\textbf{Output \#{}3}
+    \begin{Verbatim}[commandchars=\\\{\}]
+3586.0
+Motor Unit Pool SOL built
+Descending Command CMExt built
+All the 95753 synapses were built
 
+    \end{Verbatim}
+\newline\textbf{Input \#{}4}\begin{verbatim}
+t = np.arange(0.0, conf.simDuration_ms, conf.timeStep_ms)
+conf.simDuration_ms = 5000 # Here I change simulation duration without changing the Configuration file.
+\end{verbatim}\newline\textbf{Input \#{}5}\begin{verbatim}
 tic = time.clock()
-for i in xrange(0,len(t)-1):
-    pools[0].atualizePool(t[i])
+for i in xrange(0,len(t)-1): 
+    ankle.atualizeAnkle(t[i], np.sin(2*np.pi*t[i]/1000.0))
+    pools[1].atualizePool(t[i])
+    pools[0].atualizeMotorUnitPool(t[i])
 toc = time.clock()
 print str(toc - tic) + ' seconds'
-\end{verbatim}\textbf{Output \#{}4}
+\end{verbatim}\textbf{Output \#{}5}
     \begin{Verbatim}[commandchars=\\\{\}]
-Descending Command CMExt built
-114.326818 seconds
+10393.867636 seconds
 
     \end{Verbatim}
-\newline\textbf{Input \#{}5}\begin{verbatim}
+\newline\textbf{Input \#{}6}\begin{verbatim}
 pools[0].listSpikes()
+pools[1].listSpikes()
 \end{verbatim}
-    The spike times of all descending commands along the 10000 ms of
-simulation is shown in Fig. \ref{fig:spikesDesc}.
-\newline\textbf{Input \#{}17}\begin{verbatim}
-plt.figure()
-plt.plot(pools[0].poolTerminalSpikes[:, 0],
-         pools[0].poolTerminalSpikes[:, 1]+1, '.')
-plt.xlabel('t (ms)')
-plt.ylabel('Descending Command index')
-\end{verbatim}\textbf{Output \#{}17}
-            \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}17}]:} <matplotlib.text.Text at 0x7f2a4944db10>
-\end{Verbatim}
-        
-    \begin{figure}
-        \begin{center}
-        \includegraphics{NeuralTractSpikes_files/NeuralTractSpikes_7_1.png}
-        \end{center}
-        \caption{Spike times of all descending commands along the 10000 ms of simulation.}
-        \label{fig:spikesDesc}
-    \end{figure}
-    
-    The spike times of all descending commands during the last 1000 ms of
-the simulation is shown in Fig. \ref{fig:spikesDescLast}.
+    The spike times of the MNs along the 5000 ms of simulation are shown in
+Fig. \ref{fig:spikesMNHill}.
 \newline\textbf{Input \#{}7}\begin{verbatim}
 plt.figure()
-plt.plot(pools[0].poolTerminalSpikes[pools[0].poolTerminalSpikes[:, 0]>9000, 0],
-         pools[0].poolTerminalSpikes[pools[0].poolTerminalSpikes[:, 0]>9000, 1]+1, '.')
+plt.plot(pools[0].poolTerminalSpikes[:, 0],
+    pools[0].poolTerminalSpikes[:, 1]+1, '.')
 plt.xlabel('t (ms)')
-plt.ylabel('Descending Command index')
+plt.ylabel('Motor Unit index')
 \end{verbatim}\textbf{Output \#{}7}
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} <matplotlib.text.Text at 0x7f2a49606150>
+{\color{outcolor}Out[{\color{outcolor}7}]:} <matplotlib.text.Text at 0x7f46bee56350>
 \end{Verbatim}
         
     \begin{figure}
         \begin{center}
-        \includegraphics{NeuralTractSpikes_files/NeuralTractSpikes_9_1.png}
+        \includegraphics{MuscleHillExample_files/MuscleHillExample_8_1.png}
         \end{center}
-        \caption{Spike times of all descending commands along the last 1000 ms of simulation.}
-        \label{fig:spikesDescLast}
+        \caption{Spike times of all motoneurons along the 5000 ms of simulation.}
+        \label{fig:spikesMNHill}
     \end{figure}
     
-    The histogram of the interspike intevals of all the descending commands
-is shown in Fig. \ref{fig:hist}. Note that the peak is in the specified
-ISI at the beginning of the simulation.
+    The muscle force produced by the Hill-type model is shown in
+Fig.\ref{fig:forceHill}.
 \newline\textbf{Input \#{}8}\begin{verbatim}
-ISI = np.array([])
-for i in xrange(0,len(pools[0].unit)):
-    ISI = np.append(ISI, np.diff(np.reshape(np.array(pools[0].unit[i].terminalSpikeTrain), (-1,2))[:,0]))
-    
-\end{verbatim}\newline\textbf{Input \#{}9}\begin{verbatim}
 plt.figure()
-plt.hist(ISI)
-plt.xlabel('ISI (ms)')
-plt.ylabel('Counts')
+plt.plot(t, pools[0].Muscle.force, '-')
+plt.xlabel('t (ms)')
+plt.ylabel('Muscle Force (N)')
+\end{verbatim}\textbf{Output \#{}8}
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}8}]:} <matplotlib.text.Text at 0x7f46bf0da490>
+\end{Verbatim}
+        
+    \begin{figure}
+        \begin{center}
+        \includegraphics{MuscleHillExample_files/MuscleHillExample_10_1.png}
+        \end{center}
+        \caption{Muscle force during the simulation.}
+        \label{fig:forceHill}
+    \end{figure}
+    
+    The muscle length computed with the Hill-type model is shown in
+Fig.\ref{fig:lengthHill}.
+\newline\textbf{Input \#{}9}\begin{verbatim}
+plt.figure()
+plt.plot(t, pools[0].Muscle.length_m, '-')
+plt.xlabel('t (ms)')
+plt.ylabel('Muscle Length (m)')
 \end{verbatim}\textbf{Output \#{}9}
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} <matplotlib.text.Text at 0x7f2a495fa190>
+{\color{outcolor}Out[{\color{outcolor}9}]:} <matplotlib.text.Text at 0x7f46befd9f50>
 \end{Verbatim}
         
     \begin{figure}
         \begin{center}
-        \includegraphics{NeuralTractSpikes_files/NeuralTractSpikes_12_1.png}
+        \includegraphics{MuscleHillExample_files/MuscleHillExample_12_1.png}
         \end{center}
-        \caption{Histogram of the interspike intervals durin g the simulation.}
-        \label{fig:hist}
+        \caption{Muscle length along the 5000 ms of simulation.}
+        \label{fig:lengthHill}
     \end{figure}
     
-    Below different statistics of the interspike intervals and firing rate
-are obtained.
-\newline\textbf{Input \#{}13}\begin{verbatim}
-SD = np.std(ISI)
-M = np.mean(ISI)
-SK = scipy.stats.skew(ISI)
-CV = SD / M
-
-print 'ISI Mean = ' + str(M) + ' ms'
-print 'ISI Standard deviation = ' + str(SD) + ' ms'
-print 'ISI CV = ' + str(CV)
-\end{verbatim}\textbf{Output \#{}13}
-    \begin{Verbatim}[commandchars=\\\{\}]
-ISI Mean = 143.121468017 ms
-ISI Standard deviation = 45.4032545914 ms
-ISI CV = 0.317235808299
-
-    \end{Verbatim}
-\newline\textbf{Input \#{}14}\begin{verbatim}
-M_FR = 1000.0 / M
-SD_FR = np.sqrt((SD**2) * 1000 / (M**3) + 1/6.0 + (SD**4) / (2*M**4) - SK/(3*M**3))
-
-
-print 'Firing rate mean = ' + str(M_FR) + ' Hz'
-print 'Firing rate standard deviation = ' + str(SD_FR) + ' Hz'
-\end{verbatim}\textbf{Output \#{}14}
-    \begin{Verbatim}[commandchars=\\\{\}]
-Firing rate mean = 6.98707198754 Hz
-Firing rate standard deviation = 0.935360627226 Hz
-
-    \end{Verbatim}
-\newline\textbf{Input \#{}15}\begin{verbatim}
-CV_FR = SD_FR / M_FR
-print 'CV of Firing rate = ' + str(CV_FR)
-\end{verbatim}\textbf{Output \#{}15}
-    \begin{Verbatim}[commandchars=\\\{\}]
-CV of Firing rate = 0.133870186094
-
-    \end{Verbatim}
-\newline\textbf{Input \#{}None}\begin{verbatim}
+    The muscle velocity, computed by the Hill-type muscle model, is in
+Fig.\ref{fig:velocityHill}.
+\newline\textbf{Input \#{}10}\begin{verbatim}
+plt.figure()
+plt.plot(t, pools[0].Muscle.velocity_m_ms, '-')
+plt.xlabel('t (ms)')
+plt.ylabel('Muscle Velocity (m/ms)')
+\end{verbatim}\textbf{Output \#{}10}
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:} <matplotlib.text.Text at 0x7f46bedae3d0>
+\end{Verbatim}
+        
+    \begin{figure}
+        \begin{center}
+        \includegraphics{MuscleHillExample_files/MuscleHillExample_14_1.png}
+        \end{center}
+        \caption{Velocity os muscle length variation during the simulation.}
+        \label{fig:VelocityHill}
+    \end{figure}
+    
+    The ankle joint angle is shown in Fig. \ref{fig:ankleAngleHill}.
+\newline\textbf{Input \#{}11}\begin{verbatim}
+plt.figure()
+plt.plot(t, ankle.ankleAngle_rad*180.0/np.pi, '-')
+plt.xlabel('t (ms)')
+plt.ylabel('Ankle angle (degree)')
+\end{verbatim}\textbf{Output \#{}11}
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}11}]:} <matplotlib.text.Text at 0x7f46bce32210>
+\end{Verbatim}
+        
+    \begin{figure}
+        \begin{center}
+        \includegraphics{MuscleHillExample_files/MuscleHillExample_16_1.png}
+        \end{center}
+        \caption{Ankle angle during the 5000 ms of simulation.}
+        \label{fig:ankleAngleHill}
+    \end{figure}
+    \newline\textbf{Input \#{}None}\begin{verbatim}
 
 \end{verbatim}
 

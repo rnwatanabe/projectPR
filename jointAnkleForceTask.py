@@ -28,16 +28,22 @@ class jointAnkleForceTask(object):
         self.conf = conf
         self.muscles = []
 
-        for i in pools:
-            if i.pool == 'SOL' or i.pool == 'MG' or i.pool == 'LG' or i.pool == 'TA':
-                self.muscles.append(i)
-
-
+        for i in xrange(0,len(pools)):
+            if pools[i].pool == 'SOL' or pools[i].pool == 'MG' or pools[i].pool == 'LG' or pools[i].pool == 'TA':
+                self.muscles.append(pools[i])
 
         ##
         self.ankleAngle_rad = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
 
     def atualizeAnkle(self, t, ankleAngle):
+        '''
+        Update the ankle joint.
+        
+        - Inputs:
+            + **t**: current instant, in ms.
+
+            + **ankleAngle**: ankle angle, in rad. 
+        '''
         self.atualizeAngle(t, ankleAngle)
         for muscle in self.muscles:
             muscle.Muscle.atualizeMusculoTendonLength(ankleAngle)
