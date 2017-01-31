@@ -110,7 +110,7 @@
 ((*- block figure scoped -*))
     \begin{figure}
         \begin{center}
-        \includegraphics{((( filename )))}
+        \includegraphics[width=\textwidth]{((( filename )))}
         \end{center}
         \caption{((( caption )))}
         \label{((( label )))}
@@ -124,7 +124,7 @@
 ((*- block figure_wide scoped -*))
     \begin{figure}
         \begin{center}
-        \includegraphics{((( filename )))}
+        \includegraphics[width=\textwidth]{((( filename )))}
         \end{center}
         \caption{((( caption )))}
         \label{((( label )))}

@@ -4,7 +4,7 @@ MUnumber_SOL-FF,0,
 Number_RC,350,
 Number_CMExt,400,
 NumberAxonNodes,50,
-timeStep,0.05,
+timeStep,0.005,
 simDuration,100,
 nerveLength_PTN,0.8,
 MNSomaRefPer,5.0,
@@ -190,7 +190,7 @@ d@node:SOL-S,6,6
 d@internode:SOL-S,12.5,12.5
 l@dendrite:SOL-S,5519,6789
 l@soma:SOL-S,77.5,82.5
-l@node:SOL-S,75,75
+l@node:SOL-S,30,30
 l@internode:SOL-S,1700,1700
 res@dendrite:SOL-S,14350,10650
 res@soma:SOL-S,1150,1050

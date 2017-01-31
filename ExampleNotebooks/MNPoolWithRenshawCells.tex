@@ -295,7 +295,13 @@
     
     
 
-    \newline\textbf{Input \#{}1}\begin{verbatim}
+    
+    This notebook is a simulation of 5000 ms of 400 independent descending
+commands following a gamma distribution with mean of 12 ms and order 10
+and the Soleus muscle (800 motoneurons). Each descending command
+connects to approximately 30 \% of the motor units. Also, a pool of 350
+Renshaw cells is present.
+\newline\textbf{Input \#{}1}\begin{verbatim}
 import sys
 sys.path.insert(0, '..')
 import time
@@ -347,7 +353,7 @@ Motor Unit Pool SOL built
 Descending Command CMExt built
 Interneuron Pool of RC built
 Synaptic Noise on RC built
-All the 124633 synapses were built
+All the 123980 synapses were built
 
     \end{Verbatim}
 \newline\textbf{Input \#{}5}\begin{verbatim}
@@ -361,14 +367,17 @@ toc = time.clock()
 print str(toc - tic) + ' seconds'
 \end{verbatim}\textbf{Output \#{}5}
     \begin{Verbatim}[commandchars=\\\{\}]
-13950.211544 seconds
+16035.459765 seconds
 
     \end{Verbatim}
 \newline\textbf{Input \#{}6}\begin{verbatim}
 pools[0].listSpikes()
 pools[1].listSpikes()
 pools[2].listSpikes()
-\end{verbatim}\newline\textbf{Input \#{}7}\begin{verbatim}
+\end{verbatim}
+    The spike times of all descending commands along the 5000 ms of
+simulation is shown in Fig. \ref{fig:spikesDescRenshaw}.
+\newline\textbf{Input \#{}7}\begin{verbatim}
 plt.figure()
 plt.plot(pools[1].poolTerminalSpikes[:, 0],
          pools[1].poolTerminalSpikes[:, 1]+1, '.')
@@ -376,17 +385,20 @@ plt.xlabel('t (ms)')
 plt.ylabel('Descending Command index')
 \end{verbatim}\textbf{Output \#{}7}
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} <matplotlib.text.Text at 0x7f8acffe98d0>
+{\color{outcolor}Out[{\color{outcolor}7}]:} <matplotlib.text.Text at 0x7f5bca842790>
 \end{Verbatim}
         
     \begin{figure}
         \begin{center}
-        \includegraphics{MNPoolWithRenshawCells_files/MNPoolWithRenshawCells_6_1.pdf}
+        \includegraphics[width=\textwidth]{MNPoolWithRenshawCells_files/MNPoolWithRenshawCells_8_1.pdf}
         \end{center}
-        \caption{}
-        \label{}
+        \caption{Spike times of all descending commands along the 5000 ms of simulation.}
+        \label{fig:spikesDescRenshaw}
     \end{figure}
-    \newline\textbf{Input \#{}8}\begin{verbatim}
+    
+    The spike times of the MNs along the 5000 ms of simulation is shown in
+Fig. \ref{fig:spikesMNRenshaw}.
+\newline\textbf{Input \#{}8}\begin{verbatim}
 plt.figure()
 plt.plot(pools[0].poolTerminalSpikes[:, 0],
          pools[0].poolTerminalSpikes[:, 1]+1, '.')
@@ -394,17 +406,20 @@ plt.xlabel('t (ms)')
 plt.ylabel('Motor Unit index')
 \end{verbatim}\textbf{Output \#{}8}
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} <matplotlib.text.Text at 0x7f8ac7405e50>
+{\color{outcolor}Out[{\color{outcolor}8}]:} <matplotlib.text.Text at 0x7f5bb97868d0>
 \end{Verbatim}
         
     \begin{figure}
         \begin{center}
-        \includegraphics{MNPoolWithRenshawCells_files/MNPoolWithRenshawCells_7_1.pdf}
+        \includegraphics[width=\textwidth]{MNPoolWithRenshawCells_files/MNPoolWithRenshawCells_10_1.pdf}
         \end{center}
-        \caption{}
-        \label{}
+        \caption{Spike times of all motoneurons along the 5000 ms of simulation.}
+        \label{fig:spikesMNRenshaw}
     \end{figure}
-    \newline\textbf{Input \#{}9}\begin{verbatim}
+    
+    The spike times of the Renshaw cells along the 5000 ms of simulation is
+shown in Fig. \ref{fig:spikesRenshawRenshaw}.
+\newline\textbf{Input \#{}9}\begin{verbatim}
 plt.figure()
 plt.plot(pools[2].poolSomaSpikes[:, 0],
          pools[2].poolSomaSpikes[:, 1]+1, '.')
@@ -412,32 +427,34 @@ plt.xlabel('t (ms)')
 plt.ylabel('Renshaw cell index')
 \end{verbatim}\textbf{Output \#{}9}
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} <matplotlib.text.Text at 0x7f8acd423e50>
+{\color{outcolor}Out[{\color{outcolor}9}]:} <matplotlib.text.Text at 0x7f5bbba05dd0>
 \end{Verbatim}
         
     \begin{figure}
         \begin{center}
-        \includegraphics{MNPoolWithRenshawCells_files/MNPoolWithRenshawCells_8_1.pdf}
+        \includegraphics[width=\textwidth]{MNPoolWithRenshawCells_files/MNPoolWithRenshawCells_12_1.pdf}
         \end{center}
-        \caption{}
-        \label{}
+        \caption{Spike times of all Renshaw cells along the 5000 ms of simulation.}
+        \label{fig:spikesRenshawRenshaw}
     \end{figure}
-    \newline\textbf{Input \#{}10}\begin{verbatim}
+    
+    The muscle force during the simulation \ref{fig:forceRenshaw}.
+\newline\textbf{Input \#{}10}\begin{verbatim}
 plt.figure()
 plt.plot(t, pools[0].Muscle.force, '-')
 plt.xlabel('t (ms)')
 plt.ylabel('Muscle force (N)')
 \end{verbatim}\textbf{Output \#{}10}
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:} <matplotlib.text.Text at 0x7f8aba60ba50>
+{\color{outcolor}Out[{\color{outcolor}10}]:} <matplotlib.text.Text at 0x7f5bacda78d0>
 \end{Verbatim}
         
     \begin{figure}
         \begin{center}
-        \includegraphics{MNPoolWithRenshawCells_files/MNPoolWithRenshawCells_9_1.pdf}
+        \includegraphics[width=\textwidth]{MNPoolWithRenshawCells_files/MNPoolWithRenshawCells_14_1.pdf}
         \end{center}
-        \caption{}
-        \label{}
+        \caption{Muscle force during the simulation}
+        \label{fig:forceRenshaw}
     \end{figure}
     \newline\textbf{Input \#{}None}\begin{verbatim}
 

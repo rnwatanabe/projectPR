@@ -305,6 +305,25 @@ sys.path.insert(0, '..')
 import time
 import matplotlib.pyplot as plt
 %matplotlib inline  
+from IPython.display import set_matplotlib_formats
+set_matplotlib_formats('pdf', 'png')
+plt.rcParams['savefig.dpi'] = 75
+
+plt.rcParams['figure.autolayout'] = False
+plt.rcParams['figure.figsize'] = 10, 6
+plt.rcParams['axes.labelsize'] = 18
+plt.rcParams['axes.titlesize'] = 20
+plt.rcParams['font.size'] = 16
+plt.rcParams['lines.linewidth'] = 2.0
+plt.rcParams['lines.markersize'] = 8
+plt.rcParams['legend.fontsize'] = 14
+
+plt.rcParams['text.usetex'] = True
+plt.rcParams['font.family'] = "serif"
+plt.rcParams['font.serif'] = "cm"
+plt.rcParams['text.latex.preamble'] = "\usepackage{subdepth}, \usepackage{type1cm}"
+
+
 import numpy as np
 
 from Configuration import Configuration
@@ -327,7 +346,7 @@ del Syn
 3586.0
 Motor Unit Pool SOL built
 Descending Command CMExt built
-All the 95753 synapses were built
+All the 96161 synapses were built
 
     \end{Verbatim}
 \newline\textbf{Input \#{}4}\begin{verbatim}
@@ -343,7 +362,7 @@ toc = time.clock()
 print str(toc - tic) + ' seconds'
 \end{verbatim}\textbf{Output \#{}5}
     \begin{Verbatim}[commandchars=\\\{\}]
-10393.867636 seconds
+10792.244275 seconds
 
     \end{Verbatim}
 \newline\textbf{Input \#{}6}\begin{verbatim}
@@ -360,12 +379,12 @@ plt.xlabel('t (ms)')
 plt.ylabel('Motor Unit index')
 \end{verbatim}\textbf{Output \#{}7}
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} <matplotlib.text.Text at 0x7f46bee56350>
+{\color{outcolor}Out[{\color{outcolor}7}]:} <matplotlib.text.Text at 0x7fdc27d86750>
 \end{Verbatim}
         
     \begin{figure}
         \begin{center}
-        \includegraphics{MuscleHillExample_files/MuscleHillExample_8_1.png}
+        \includegraphics[width=\textwidth]{MuscleHillExample_files/MuscleHillExample_8_1.pdf}
         \end{center}
         \caption{Spike times of all motoneurons along the 5000 ms of simulation.}
         \label{fig:spikesMNHill}
@@ -380,12 +399,12 @@ plt.xlabel('t (ms)')
 plt.ylabel('Muscle Force (N)')
 \end{verbatim}\textbf{Output \#{}8}
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} <matplotlib.text.Text at 0x7f46bf0da490>
+{\color{outcolor}Out[{\color{outcolor}8}]:} <matplotlib.text.Text at 0x7fdc1f811dd0>
 \end{Verbatim}
         
     \begin{figure}
         \begin{center}
-        \includegraphics{MuscleHillExample_files/MuscleHillExample_10_1.png}
+        \includegraphics[width=\textwidth]{MuscleHillExample_files/MuscleHillExample_10_1.pdf}
         \end{center}
         \caption{Muscle force during the simulation.}
         \label{fig:forceHill}
@@ -400,12 +419,12 @@ plt.xlabel('t (ms)')
 plt.ylabel('Muscle Length (m)')
 \end{verbatim}\textbf{Output \#{}9}
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} <matplotlib.text.Text at 0x7f46befd9f50>
+{\color{outcolor}Out[{\color{outcolor}9}]:} <matplotlib.text.Text at 0x7fdc13a46a90>
 \end{Verbatim}
         
     \begin{figure}
         \begin{center}
-        \includegraphics{MuscleHillExample_files/MuscleHillExample_12_1.png}
+        \includegraphics[width=\textwidth]{MuscleHillExample_files/MuscleHillExample_12_1.pdf}
         \end{center}
         \caption{Muscle length along the 5000 ms of simulation.}
         \label{fig:lengthHill}
@@ -420,12 +439,12 @@ plt.xlabel('t (ms)')
 plt.ylabel('Muscle Velocity (m/ms)')
 \end{verbatim}\textbf{Output \#{}10}
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:} <matplotlib.text.Text at 0x7f46bedae3d0>
+{\color{outcolor}Out[{\color{outcolor}10}]:} <matplotlib.text.Text at 0x7fdc1d2f5f90>
 \end{Verbatim}
         
     \begin{figure}
         \begin{center}
-        \includegraphics{MuscleHillExample_files/MuscleHillExample_14_1.png}
+        \includegraphics[width=\textwidth]{MuscleHillExample_files/MuscleHillExample_14_1.pdf}
         \end{center}
         \caption{Velocity os muscle length variation during the simulation.}
         \label{fig:VelocityHill}
@@ -439,12 +458,12 @@ plt.xlabel('t (ms)')
 plt.ylabel('Ankle angle (degree)')
 \end{verbatim}\textbf{Output \#{}11}
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}11}]:} <matplotlib.text.Text at 0x7f46bce32210>
+{\color{outcolor}Out[{\color{outcolor}11}]:} <matplotlib.text.Text at 0x7fdc13695110>
 \end{Verbatim}
         
     \begin{figure}
         \begin{center}
-        \includegraphics{MuscleHillExample_files/MuscleHillExample_16_1.png}
+        \includegraphics[width=\textwidth]{MuscleHillExample_files/MuscleHillExample_16_1.pdf}
         \end{center}
         \caption{Ankle angle during the 5000 ms of simulation.}
         \label{fig:ankleAngleHill}
