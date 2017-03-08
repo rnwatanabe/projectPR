@@ -101,3 +101,5 @@ ENV/
 .ropeproject
 
 *.txt
+*.data
+*.data.old
