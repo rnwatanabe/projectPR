@@ -76,30 +76,30 @@ class MuscleHill(object):
         ##
         self.momentArm_m = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         ##
-        self.optimalLength_m = float(self.conf.parameterSet('optimalMuscleLength_' + pool, pool, 0))
+        self.optimalLength_m = float(self.conf.parameterSet('optimalMuscleLength:' + pool, pool, 0))
         ##
-        self.pennationAngleAtOptimalLengthSin = math.sin(float(self.conf.parameterSet('optimalPennationAngle_' + pool, pool, 0)))
+        self.pennationAngleAtOptimalLengthSin = math.sin(float(self.conf.parameterSet('optimalPennationAngle:' + pool, pool, 0)))
         ## Maximum force of the Hill model, in N.
-        self.maximumForce_N = float(self.conf.parameterSet('Fmax_' + pool, pool, 0))
-        print self.maximumForce_N       
+        self.maximumForce_N = float(self.conf.parameterSet('Fmax:' + pool, pool, 0))
+        print self.maximumForce_N
         ##  
-        self.elasticity = float(self.conf.parameterSet('muscleElasticity_' + pool, pool, 0))
+        self.elasticity = float(self.conf.parameterSet('muscleElasticity:' + pool, pool, 0))
         ##  
-        self.strain = float(self.conf.parameterSet('muscleStrain_' + pool, pool, 0))
+        self.strain = float(self.conf.parameterSet('muscleStrain:' + pool, pool, 0))
         ##  
-        self.viscosity = float(self.conf.parameterSet('muscleViscosity_' + pool, pool, 0))
+        self.viscosity = float(self.conf.parameterSet('muscleViscosity:' + pool, pool, 0))
         ##  
-        self.mass = float(self.conf.parameterSet('muscleMass_' + pool, pool, 0))
+        self.mass = float(self.conf.parameterSet('muscleMass:' + pool, pool, 0))
         ##  
-        self.length_m[0] = float(self.conf.parameterSet('initialMuscleLength_' + pool, pool, 0))
+        self.length_m[0] = float(self.conf.parameterSet('initialMuscleLength:' + pool, pool, 0))
         ##
-        self.tendonElasticity = float(self.conf.parameterSet('tendonElasticity_' + pool, pool, 0))
+        self.tendonElasticity = float(self.conf.parameterSet('tendonElasticity:' + pool, pool, 0))
         ##
-        self.tendonLinearOnsetLength = float(self.conf.parameterSet('tendonLinearOnsetLength_' + pool, pool, 0))
+        self.tendonLinearOnsetLength = float(self.conf.parameterSet('tendonLinearOnsetLength:' + pool, pool, 0))
         ##
-        self.tendonCurvatureConstant = float(self.conf.parameterSet('tendonCurvatureConstant_' + pool, pool, 0))
+        self.tendonCurvatureConstant = float(self.conf.parameterSet('tendonCurvatureConstant:' + pool, pool, 0))
         ##
-        self.optimalTendonLength = float(self.conf.parameterSet('optimalTendonLength_' + pool, pool, 0))
+        self.optimalTendonLength = float(self.conf.parameterSet('optimalTendonLength:' + pool, pool, 0))
 
         ##  
         self.lengthNorm = 0
@@ -113,66 +113,66 @@ class MuscleHill(object):
         self.tendonForceNorm = 0
         
         ##  
-        self.b_TypeI = float(self.conf.parameterSet('bTypeI_' + pool, pool, 0))
+        self.b_TypeI = float(self.conf.parameterSet('bTypeI:' + pool, pool, 0))
         ##  
-        self.b_TypeII = float(self.conf.parameterSet('bTypeII_' + pool, pool, 0))
+        self.b_TypeII = float(self.conf.parameterSet('bTypeII:' + pool, pool, 0))
         ##  
-        self.p_TypeI = float(self.conf.parameterSet('pTypeI_' + pool, pool, 0))
+        self.p_TypeI = float(self.conf.parameterSet('pTypeI:' + pool, pool, 0))
         ##  
-        self.p_TypeII = float(self.conf.parameterSet('pTypeII_' + pool, pool, 0))
+        self.p_TypeII = float(self.conf.parameterSet('pTypeII:' + pool, pool, 0))
         ##  
-        self.w_TypeI = float(self.conf.parameterSet('wTypeI_' + pool, pool, 0))
+        self.w_TypeI = float(self.conf.parameterSet('wTypeI:' + pool, pool, 0))
         ##  
-        self.w_TypeII = float(self.conf.parameterSet('wTypeII_' + pool, pool, 0))
+        self.w_TypeII = float(self.conf.parameterSet('wTypeII:' + pool, pool, 0))
         ##
-        self.d_TypeI = float(self.conf.parameterSet('dTypeI_' + pool, pool, 0))
+        self.d_TypeI = float(self.conf.parameterSet('dTypeI:' + pool, pool, 0))
         ##  
-        self.d_TypeII = float(self.conf.parameterSet('dTypeII_' + pool, pool, 0))
+        self.d_TypeII = float(self.conf.parameterSet('dTypeII:' + pool, pool, 0))
         ##
-        self.a0_TypeI = float(self.conf.parameterSet('a0TypeI_' + pool, pool, 0))
+        self.a0_TypeI = float(self.conf.parameterSet('a0TypeI:' + pool, pool, 0))
         ##  
-        self.a0_TypeII = float(self.conf.parameterSet('a0TypeII_' + pool, pool, 0))       
+        self.a0_TypeII = float(self.conf.parameterSet('a0TypeII:' + pool, pool, 0))       
         ##
-        self.a1_TypeI = float(self.conf.parameterSet('a1TypeI_' + pool, pool, 0))
+        self.a1_TypeI = float(self.conf.parameterSet('a1TypeI:' + pool, pool, 0))
         ##  
-        self.a1_TypeII = float(self.conf.parameterSet('a1TypeII_' + pool, pool, 0))
+        self.a1_TypeII = float(self.conf.parameterSet('a1TypeII:' + pool, pool, 0))
         ##
-        self.a2_TypeI = float(self.conf.parameterSet('a2TypeI_' + pool, pool, 0))
+        self.a2_TypeI = float(self.conf.parameterSet('a2TypeI:' + pool, pool, 0))
         ##  
-        self.a2_TypeII = float(self.conf.parameterSet('a2TypeII_' + pool, pool, 0))
+        self.a2_TypeII = float(self.conf.parameterSet('a2TypeII:' + pool, pool, 0))
         ##
-        self.c0_TypeI = float(self.conf.parameterSet('c0TypeI_' + pool, pool, 0))
+        self.c0_TypeI = float(self.conf.parameterSet('c0TypeI:' + pool, pool, 0))
         ##  
-        self.c0_TypeII = float(self.conf.parameterSet('c0TypeII_' + pool, pool, 0))       
+        self.c0_TypeII = float(self.conf.parameterSet('c0TypeII:' + pool, pool, 0))       
         ##
-        self.c1_TypeI = float(self.conf.parameterSet('c1TypeI_' + pool, pool, 0))
+        self.c1_TypeI = float(self.conf.parameterSet('c1TypeI:' + pool, pool, 0))
         ##  
-        self.c1_TypeII = float(self.conf.parameterSet('c1TypeII_' + pool, pool, 0))
+        self.c1_TypeII = float(self.conf.parameterSet('c1TypeII:' + pool, pool, 0))
         ##
-        self.Vmax_TypeI = float(self.conf.parameterSet('VmaxTypeI_' + pool, pool, 0))
+        self.Vmax_TypeI = float(self.conf.parameterSet('VmaxTypeI:' + pool, pool, 0))
         ##  
-        self.Vmax_TypeII = float(self.conf.parameterSet('VmaxTypeII_' + pool, pool, 0))
+        self.Vmax_TypeII = float(self.conf.parameterSet('VmaxTypeII:' + pool, pool, 0))
         ##  
-        self.m0 = float(self.conf.parameterSet('m0_' + pool, pool, 0))       
+        self.m0 = float(self.conf.parameterSet('m0:' + pool, pool, 0))       
         ##  
-        self.m1 = float(self.conf.parameterSet('m1_' + pool, pool, 0))
+        self.m1 = float(self.conf.parameterSet('m1:' + pool, pool, 0))
         ##  
-        self.m2 = float(self.conf.parameterSet('m2_' + pool, pool, 0))
+        self.m2 = float(self.conf.parameterSet('m2:' + pool, pool, 0))
         ##  
-        self.m3 = float(self.conf.parameterSet('m3_' + pool, pool, 0))
+        self.m3 = float(self.conf.parameterSet('m3:' + pool, pool, 0))
         ##  
-        self.m4 = float(self.conf.parameterSet('m4_' + pool, pool, 0))
+        self.m4 = float(self.conf.parameterSet('m4:' + pool, pool, 0))
 
         ##  
-        self.n0 = float(self.conf.parameterSet('n0_' + pool, pool, 0))       
+        self.n0 = float(self.conf.parameterSet('n0:' + pool, pool, 0))       
         ##  
-        self.n1 = float(self.conf.parameterSet('n1_' + pool, pool, 0))
+        self.n1 = float(self.conf.parameterSet('n1:' + pool, pool, 0))
         ##  
-        self.n2 = float(self.conf.parameterSet('n2_' + pool, pool, 0))
+        self.n2 = float(self.conf.parameterSet('n2:' + pool, pool, 0))
         ##  
-        self.n3 = float(self.conf.parameterSet('n3_' + pool, pool, 0))
+        self.n3 = float(self.conf.parameterSet('n3:' + pool, pool, 0))
         ##  
-        self.n4 = float(self.conf.parameterSet('n4_' + pool, pool, 0))
+        self.n4 = float(self.conf.parameterSet('n4:' + pool, pool, 0))
         
                                      
     def atualizeForce(self, activation_Sat):

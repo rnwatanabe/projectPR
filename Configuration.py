@@ -80,6 +80,18 @@ class Configuration(object):
             if self.confArray[i][0] == 'simDuration':
                 ## Total length of the simulation in ms.
                 self.simDuration_ms = float(self.confArray[i][1])
+            if self.confArray[i][0] == 'skinThickness':
+                ## skin thickness, in mm.
+                self.skinThickness_mm = float(self.confArray[i][1])
+            if self.confArray[i][0] == 'EMGAttenuationFactor':
+                ## EMG attenuation factor, in 1/mm.
+                self.EMGAttenuation_mm1 = float(self.confArray[i][1])
+            if self.confArray[i][0] == 'EMGWideningFactor':
+                ## EMG widening factor, in 1/mm.
+                self.EMGWidening_mm1 = float(self.confArray[i][1])
+            if self.confArray[i][0] == 'EMGNoiseEMG':
+                ## EMG widening factor.
+                self.EMGNoiseEMG = float(self.confArray[i][1])    
         ## The variable  timeStep divided by two, for computational efficiency.
         self.timeStepByTwo_ms = self.timeStep_ms / 2.0; 
         ## The variable  timeStep divided by six, for computational efficiency.

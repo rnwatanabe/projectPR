@@ -155,7 +155,7 @@ class MotorUnit(object):
     and a muscle unit.
     '''
 
-    def __init__(self, conf, pool, index, kind):
+    def __init__(self, conf, pool, index, kind, muscleThickness, skinThickness):
         '''
         Constructor
 
@@ -206,13 +206,36 @@ class MotorUnit(object):
         self.compartment = dict()
         ## Value of the membrane potential, in mV, that is considered a spike.
         self.threshold_mV = conf.parameterSet('threshold', pool, index)
-                
+
+        
+
         ## Anatomical position of the neuron, in mm.
         self.position_mm = conf.parameterSet('position', pool, index)
         
-        for i in xrange(len(compartmentsList)): 
-            self.compartment[i] = Compartment(compartmentsList[i], conf, pool, index, self.kind)
+        # EMG data
+        self.MUSpatialDistribution = conf.parameterSet('MUSpatialDistribution',pool, 0)       
+        if self.MUSpatialDistribution == 'random':
+            radius = (muscleThickness/2) * np.random.uniform(0.0, 1.0)
+            angle = 2.0 * math.pi * np.random.uniform(0.0, 1.0)
+		
+        x = radius * math.sin(angle)
+        y = radius * math.cos(angle)
+        ## Anatomical coordinate of the muscle unit in a muscle section, in (mm,mm).
+        self.muSectionPosition_mm = [x,y]
+
+        ## Distance of the MU to the EMG elctrode, in mm.
+        self.distance_mm = math.sqrt((x + muscleThickness/2.0 +
+                                      skinThickness)**2 + y**2)
+
+        ## Attenuation of the MUAP amplitude, as measured in the electrode.
+        self.attenuationToSkin = math.exp(-self.distance_mm / conf.EMGAttenuation_mm1)
+
+        ## Widening of the MUAP duration, as measured in the electrode.
+        self.timeWidening = 1 + conf.EMGWidening_mm1 * self.distance_mm
         
+        for i in xrange(len(compartmentsList)):
+            self.compartment[i] = Compartment(compartmentsList[i], conf, pool, index, self.kind)
+
         ## Number of compartments.
         self.compNumber = len(self.compartment)
         ## Vector with membrane potential,in mV, of all compartments. 

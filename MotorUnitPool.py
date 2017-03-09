@@ -53,18 +53,20 @@ class MotorUnitPool(object):
         MUnumber_FF = int(conf.parameterSet('MUnumber_' + pool + '-FF', pool, 0))
         ## Number of motor units.
         self.MUnumber = MUnumber_S + MUnumber_FR + MUnumber_FF
-        
+        ## Muscle thickness, in mm.
+        self.muscleThickness_mm = float(self.conf.parameterSet('thickness:' + pool, pool, 0))
+
         ## Dictionary of MotorUnit objects.
         self.unit = dict()
         
         
         for i in xrange(0, self.MUnumber): 
             if i < MUnumber_S:
-                self.unit[i] = MotorUnit(conf, pool, i, 'S')
+                self.unit[i] = MotorUnit(conf, pool, i, 'S', self.muscleThickness_mm, conf.skinThickness_mm)
             elif i < MUnumber_S + MUnumber_FR:
-                self.unit[i] = MotorUnit(conf, pool, i, 'FR')
+                self.unit[i] = MotorUnit(conf, pool, i, 'FR', self.muscleThickness_mm, conf.skinThickness_mm)
             else:
-                self.unit[i] = MotorUnit(conf, pool, i, 'FF')
+                self.unit[i] = MotorUnit(conf, pool, i, 'FF', self.muscleThickness_mm, conf.skinThickness_mm)
 
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
@@ -84,6 +86,10 @@ class MotorUnitPool(object):
         else:
             self.Muscle = MuscleHill(self.conf, self.pool, self.MUnumber, MUnumber_S, self.unit)
         
+        # EMG 
+
+        
+
         ##
         print 'Motor Unit Pool ' + pool + ' built'
         
