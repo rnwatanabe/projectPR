@@ -128,7 +128,7 @@ def simulator():
     plt.figure()
     plt.plot(t, ankle.ankleAngle_rad, '-')
     '''
-
+    pools[0].unit[0].getEMG(80)
     
     
 if __name__ == '__main__':

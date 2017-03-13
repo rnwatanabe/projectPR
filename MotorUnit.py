@@ -233,6 +233,20 @@ class MotorUnit(object):
         ## Widening of the MUAP duration, as measured in the electrode.
         self.timeWidening = 1 + conf.EMGWidening_mm1 * self.distance_mm
         
+        ## Type of the Hermitez-Rodiguez curve. It can be 1 or 2.
+        self.hrType = np.random.random_integers(1,2)
+        
+        ## MUAP amplitude in mV.
+        self.ampEMG_mV = conf.parameterSet('EMGAmplitude', pool, index)
+        self.ampEMG_mV = self.ampEMG_mV * self.attenuationToSkin
+
+        ## MUAP time constant, in ms.
+        self.timeCteEMG_ms = conf.parameterSet('EMGDuration', pool, index)
+        self.timeCteEMG_ms = self.timeCteEMG_ms * self.timeWidening
+        
+        print self.ampEMG_mV
+        print self.timeCteEMG_ms
+
         for i in xrange(len(compartmentsList)):
             self.compartment[i] = Compartment(compartmentsList[i], conf, pool, index, self.kind)
 
@@ -435,12 +449,35 @@ class MotorUnit(object):
 
     def transmitSpikes(self, t):
         '''
-
         - Inputs:
             + **t**: current instant, in ms.
         '''
         for i in xrange(len(self.indicesOfSynapsesOnTarget)):
             self.transmitSpikesThroughSynapses[i].receiveSpike(t, self.indicesOfSynapsesOnTarget[i])
+
+    def getEMG(self, t):
+        '''
+
+        '''
+        emg = 0
+        numberOfSpikesUntilt = []
+
         
-    
+
+        if (len(self.terminalSpikeTrain) == 0):
+            emg = 0
+        else:
+            for spike in self.terminalSpikeTrain:
+                if spike[0] < t:
+                    numberOfSpikesUntilt.append(spike[0])
+
+        for spikeInstant in numberOfSpikesUntilt:
+            tA = t - spikeInstant - 3 * self.timeCteEMG_ms
+            if (ta < 6 * self.timeCteEMG_ms):
+                
         
+        
+        return emg
+
+
+
