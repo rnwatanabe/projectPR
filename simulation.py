@@ -75,8 +75,8 @@ def simulator():
     
     
     plt.figure()
-    plt.plot(pools[0].poolSomaSpikes[:, 0],
-             pools[0].poolSomaSpikes[:, 1]+1, '.')
+    plt.plot(pools[0].poolTerminalSpikes[:, 0],
+             pools[0].poolTerminalSpikes[:, 1]+1, '.')
     '''
     plt.figure()
     plt.plot(pools[0].poolLastCompSpikes[:, 0],
@@ -128,8 +128,11 @@ def simulator():
     plt.figure()
     plt.plot(t, ankle.ankleAngle_rad, '-')
     '''
-    pools[0].unit[0].getEMG(80)
-    
+    pools[0].getMotorUnitPoolEMG()
+
+    plt.figure()
+    plt.plot(t, pools[0].emg, '-')
+
     
 if __name__ == '__main__':
 

@@ -244,8 +244,7 @@ class MotorUnit(object):
         self.timeCteEMG_ms = conf.parameterSet('EMGDuration', pool, index)
         self.timeCteEMG_ms = self.timeCteEMG_ms * self.timeWidening
         
-        print self.ampEMG_mV
-        print self.timeCteEMG_ms
+        
 
         for i in xrange(len(compartmentsList)):
             self.compartment[i] = Compartment(compartmentsList[i], conf, pool, index, self.kind)
@@ -461,6 +460,7 @@ class MotorUnit(object):
         '''
         emg = 0
         numberOfSpikesUntilt = []
+        ta = 0
 
         
 
@@ -472,9 +472,13 @@ class MotorUnit(object):
                     numberOfSpikesUntilt.append(spike[0])
 
         for spikeInstant in numberOfSpikesUntilt:
-            tA = t - spikeInstant - 3 * self.timeCteEMG_ms
-            if (ta < 6 * self.timeCteEMG_ms):
+            ta = t - spikeInstant - 3 * self.timeCteEMG_ms
+            if (ta <= 6 * self.timeCteEMG_ms):
                 
+                if (self.hrType == 1):
+                    emg += self.ampEMG_mV * ta * math.exp(-(ta/self.timeCteEMG_ms)**2)
+                elif (self.hrType == 2):
+                    emg += self.ampEMG_mV * (1 - 2*((ta / self.timeCteEMG_ms)**2)) * math.exp(-(ta/self.timeCteEMG_ms)**2)
         
         
         return emg

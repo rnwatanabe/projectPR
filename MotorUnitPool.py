@@ -87,7 +87,8 @@ class MotorUnitPool(object):
             self.Muscle = MuscleHill(self.conf, self.pool, self.MUnumber, MUnumber_S, self.unit)
         
         # EMG 
-
+        ## EMG along time, in mV.
+        self.emg = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         
 
         ##
@@ -126,10 +127,21 @@ class MotorUnitPool(object):
         self.poolSomaSpikes = np.reshape(somaSpikeTrain, (-1, 2))
         self.poolLastCompSpikes = np.reshape(lastCompSpikeTrain, (-1, 2))
         self.poolTerminalSpikes = np.reshape(terminalSpikeTrain, (-1, 2))
-        
-    
-        
-        
-    
-        
-          
+
+    def getMotorUnitPoolInstantEMG(self, t):
+        '''
+
+        '''
+        emg = 0
+        for i in xrange(self.MUnumber): emg += self.unit[i].getEMG(t)
+
+        return emg
+
+    def getMotorUnitPoolEMG(self):
+        '''
+
+        '''
+        for i in xrange(0, len(self.emg)):
+            self.emg[i] = self.getMotorUnitPoolInstantEMG(i * self.conf.timeStep_ms)
+
+
