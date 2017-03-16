@@ -25,6 +25,11 @@ DriveTarget_CMExt,ISI,
 DriveFunction_CMExt,12+0*t,
 %Stimulus
 stimDistToTerm_PTN,0.2,
+stimStart_PTN,0,
+stimStop_PTN,0.0,
+stimIntensity_PTN,0.0,
+stimFrequency_PTN,0,
+stimModulation_PTN,0*t,
 % Synapses
 %% SOL
 EqPotSyn:SOL-S|excitatory,70.0,
@@ -210,7 +215,6 @@ IPump@dendrite,0,
 IPump@soma,0,
 IPump@internode,0.00786,
 IPump@node,0.0333,
-axonCondVel:SOL-S,44,51
 twitchTimePeak:SOL-S,170.0,132.5
 twitchPeak:SOL-S,0.03,1.9
 bSatSOCDS:SOL-S,0.7,0.5
@@ -225,6 +229,12 @@ EMGAmplitude:SOL-FF,0.25,0.3
 EMGDuration:SOL-S,0.8,0.7
 EMGDuration:SOL-FR,0.7,0.6
 EMGDuration:SOL-FF,0.6,0.5
+axonDelayThreshold:SOL-S,18,12.4
+axonDelayThreshold:SOL-FR,12.4,12.2
+axonDelayThreshold:SOL-FR,12.2,12.0
+axonDelayCondVel:SOL-S,44,51
+axonDelayCondVel:SOL-FR,51,52
+axonDelayCondVel:SOL-FF,52,53
 % Interneurons
 %% RC
 position:RC-,0,18

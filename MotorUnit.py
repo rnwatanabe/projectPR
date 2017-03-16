@@ -324,6 +324,8 @@ class MotorUnit(object):
             self.nerve = 'PTN'
         elif pool == 'TA':
             self.nerve = 'CPN'
+
+        exec 'def AxonStimFunction(t): return '   +  conf.parameterSet('stimModulation_' + nerve, pool, 0)
             
         ## AxonDelay object of the motor unit.
         if NumberOfAxonNodes == 0:
@@ -443,6 +445,8 @@ class MotorUnit(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
+
+
         if -1e-3 < (t - self.Delay.terminalSpikeTrain) < 1e-3: 
             self.terminalSpikeTrain.append([t, self.index])
 

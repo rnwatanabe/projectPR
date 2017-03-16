@@ -55,7 +55,7 @@ class AxonDelay(object):
         ## Length, in m, of the part of the nerve that is modelled as a delay.
         self.length_m = length
         ## Velocity of conduction, in m/s, of the part of the nerve that is not modelled as a delay.     
-        self.velocity_m_s = float(conf.parameterSet('axonCondVel',pool, index))
+        self.velocity_m_s = float(conf.parameterSet('axonDelayCondVel',pool, index))
         ## Distance, in m, of the stimulus position to the terminal. 
         self.stimulusPositiontoTerminal = float(conf.parameterSet('stimDistToTerm_'+nerve, pool, index))   
         ## time, in ms, that the signal takes to travel between the stimulus and the spinal cord.        
@@ -74,14 +74,14 @@ class AxonDelay(object):
         Indicates to the AxonDelay object that a spike has occurred in the Terminal.
 
         - Inputs:
-            + **t**: current instant, in ms.    
+            + **t**: current instant, in ms.
         '''
-        self.terminalSpikeTrain = t+self.latencySpinalTerminal_ms
-        
-    
+        self.terminalSpikeTrain = t + self.latencySpinalTerminal_ms
+
     def addSpinalSpike(self, t):
         '''
-        Indicates to the AxonDelay object that a spike has occurred in the soma.
+        Indicates to the AxonDelay object that a spike has occurred in the last 
+        dynamical compartment of the motor unit.
 
         - Inputs:
             + **t**: current instant, in ms.    
