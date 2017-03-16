@@ -460,9 +460,7 @@ class MotorUnit(object):
         '''
         emg = 0
         numberOfSpikesUntilt = []
-        ta = 0
-
-        
+        ta = 0       
 
         if (len(self.terminalSpikeTrain) == 0):
             emg = 0
@@ -473,14 +471,13 @@ class MotorUnit(object):
 
         for spikeInstant in numberOfSpikesUntilt:
             ta = t - spikeInstant - 3 * self.timeCteEMG_ms
-            if (ta <= 6 * self.timeCteEMG_ms):
-                
+            if (ta <= 6 * self.timeCteEMG_ms):                
                 if (self.hrType == 1):
                     emg += self.ampEMG_mV * ta * math.exp(-(ta/self.timeCteEMG_ms)**2)
                 elif (self.hrType == 2):
-                    emg += self.ampEMG_mV * (1 - 2*((ta / self.timeCteEMG_ms)**2)) * math.exp(-(ta/self.timeCteEMG_ms)**2)
-        
-        
+                    emg += self.ampEMG_mV * (1 - 
+                                             2*((ta / self.timeCteEMG_ms)**2)
+                                            ) * math.exp(-(ta/self.timeCteEMG_ms)**2)        
         return emg
 
 

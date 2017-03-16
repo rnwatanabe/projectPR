@@ -113,8 +113,6 @@ def simulator():
     plt.figure()
     plt.plot(t, somaV, '-')
 
-    
-
     plt.figure()
     plt.plot(t, nodeV1, '-')
 
