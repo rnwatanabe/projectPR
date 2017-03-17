@@ -68,6 +68,15 @@ class AxonDelay(object):
         ## Float with instant, in ms, of the last spike in the terminal. 
         self.terminalSpikeTrain = float("-inf")
 
+        self.stimulusFrequency_Hz = conf.parameterSet('stimFrequency_' + self.nerve, pool, 0)
+        self.stimulusIntensity_mA = conf.parameterSet('stimIntensity_' + self.nerve, pool, 0)
+        self.stimulusStart_ms = conf.parameterSet('stimStart_' + self.nerve, pool, 0)
+        self.stimulusStop_ms = conf.parameterSet('stimStop_' + self.nerve, pool, 0)
+
+        self.threshold_mA = conf.parameterSet('axonDelayThreshold', pool, 0)
+        exec 'def AxonStimFunction(t): return '   +  conf.parameterSet('stimModulation_' + self.nerve, pool, 0)
+            
+
  
     def addTerminalSpike(self, t):
         '''

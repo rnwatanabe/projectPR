@@ -325,8 +325,7 @@ class MotorUnit(object):
         elif pool == 'TA':
             self.nerve = 'CPN'
 
-        exec 'def AxonStimFunction(t): return '   +  conf.parameterSet('stimModulation_' + nerve, pool, 0)
-            
+        
         ## AxonDelay object of the motor unit.
         if NumberOfAxonNodes == 0:
             dynamicNerveLength = 0

@@ -3,7 +3,7 @@
 
 ### VisualStudioCode ###
 .vscode/*
-
+*.json
 
 
 ### Python ###

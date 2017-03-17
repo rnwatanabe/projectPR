@@ -52,7 +52,7 @@ class NeuralTract(object):
         ## Vector with the instants of spikes in the terminal, in ms.
         self.poolTerminalSpikes = np.array([]) 
         ## Indicates the measure that the TargetFunction of the
-        ## spikes follows. For now ita can be *ISI* (interspike
+        ## spikes follows. For now it can be *ISI* (interspike
         ## interval) or *FR* (firing rate).
         self.target = conf.parameterSet('DriveTarget_' + pool, pool, 0)
         if self.target == 'ISI' :       
