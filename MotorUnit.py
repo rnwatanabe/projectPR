@@ -325,16 +325,49 @@ class MotorUnit(object):
         elif pool == 'TA':
             self.nerve = 'CPN'
 
-        
+        ## Distance, in m, of the stimulus position to the terminal. 
+        self.stimulusPositiontoTerminal = float(conf.parameterSet('stimDistToTerm_' + self.nerve, pool, index))   
         ## AxonDelay object of the motor unit.
         if NumberOfAxonNodes == 0:
             dynamicNerveLength = 0
         else:
             dynamicNerveLength = np.sum(compLength[2:-1]) * 1e-6
         
-        delayLength = float(conf.parameterSet('nerveLength_' + self.nerve, pool, index)) - dynamicNerveLength
-        self.Delay = AxonDelay(conf, self.nerve, pool, delayLength, index)
+        self.nerveLength = float(conf.parameterSet('nerveLength_' + self.nerve, pool, index))    
 
+        delayLength =  self.nerveLength - dynamicNerveLength
+
+        if self.stimulusPositiontoTerminal < delayLength:
+            self.Delay = AxonDelay(conf, self.nerve, pool, delayLength, self.stimulusPositiontoTerminal, index)
+            self.stimulusCompartment = 'delay'
+        else:
+            self.Delay = AxonDelay(conf, self.nerve, pool, delayLength, -1, index)
+            self.stimulusCompartment = -1    
+        # Nerve stimulus function    
+        self.stimulusMeanFrequency_Hz = float(conf.parameterSet('stimFrequency_' + self.nerve, pool, 0))
+        self.stimulusIntensity_mA = float(conf.parameterSet('stimIntensity_' + self.nerve, pool, 0))
+        self.stimulusStart_ms = float(conf.parameterSet('stimStart_' + self.nerve, pool, 0))
+        self.stimulusStop_ms = float(conf.parameterSet('stimStop_' + self.nerve, pool, 0))
+        self.stimulusModulationStart_ms = float(conf.parameterSet('stimModulationStart_' + self.nerve, pool, 0))
+        self.stimulusModulationStop_ms = float(conf.parameterSet('stimModulationStop_' + self.nerve, pool, 0))
+
+        exec 'def axonStimModulation(t): return '   +  conf.parameterSet('stimModulation_' + self.nerve, pool, 0)
+        
+        ## Vector with the nerve stimulus, in mA.
+        self.nerveStimulus_mA = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        for i in xrange(len(self.nerveStimulus_mA)):
+            if (i*conf.timeStep_ms >= self.stimulusStart_ms and  i*conf.timeStep_ms <= self.stimulusStop_ms):
+                if (i*conf.timeStep_ms > self.stimulusModulationStart_ms and  i*conf.timeStep_ms < self.stimulusModulationStop_ms):
+                    stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz + axonStimModulation(i*conf.timeStep_ms)
+                else:
+                    stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz
+                if stimulusFrequency_Hz > 0:
+                    stimulusPeriod_ms = 1000.0 / stimulusFrequency_Hz
+                    numberOfSteps = int(np.rint(stimulusPeriod_ms/conf.timeStep_ms))
+                    if (i % numberOfSteps == 0):
+                        self.nerveStimulus_mA[i:int(np.rint(i+1.0/conf.timeStep_ms))] = self.stimulusIntensity_mA
+
+        # 
         ## Vector with the instants of spikes at the soma.
         self.somaSpikeTrain = []
         ## Vector with the instants of spikes at the last compartment.
@@ -445,9 +478,11 @@ class MotorUnit(object):
             + **t**: current instant, in ms.
         '''
 
-
         if -1e-3 < (t - self.Delay.terminalSpikeTrain) < 1e-3: 
             self.terminalSpikeTrain.append([t, self.index])
+        
+        if self.stimulusCompartment == 'delay':
+            self.Delay.atualizeStimulus(t, self.nerveStimulus_mA[int(np.rint(t/self.conf.timeStep_ms))])
 
     def transmitSpikes(self, t):
         '''

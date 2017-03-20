@@ -28,7 +28,7 @@ class AxonDelay(object):
     '''
 
     
-    def __init__(self, conf, nerve, pool, length, index):
+    def __init__(self, conf, nerve, pool, length, stimulusPositiontoTerminal, index):
         '''
         Constructor
 
@@ -41,8 +41,11 @@ class AxonDelay(object):
 
             + **pool**: string with Motor unit pool to which the motor unit belongs.
 
-            + **length**: ## float, length of the part of the nerve that is
+            + **length**:  float, length of the part of the nerve that is
             modelled as a delay, in m.
+
+            + **stimulusPositiontoTerminal**: float, distance, in m, of the stimulus
+            position to the terminal, in m. If -1, indicates it is not in the Delay.
 
             + **index**: integer corresponding to the motor unit order in the pool, according to 
             the Henneman's principle (size principle).
@@ -56,36 +59,33 @@ class AxonDelay(object):
         self.length_m = length
         ## Velocity of conduction, in m/s, of the part of the nerve that is not modelled as a delay.     
         self.velocity_m_s = float(conf.parameterSet('axonDelayCondVel',pool, index))
-        ## Distance, in m, of the stimulus position to the terminal. 
-        self.stimulusPositiontoTerminal = float(conf.parameterSet('stimDistToTerm_'+nerve, pool, index))   
+        
         ## time, in ms, that the signal takes to travel between the stimulus and the spinal cord.        
-        self.latencyStimulusSpinal_ms = round((self.length_m - self.stimulusPositiontoTerminal)/self.velocity_m_s*1000/conf.timeStep_ms, 0) * conf.timeStep_ms
+        self.latencyStimulusSpinal_ms = round((self.length_m - stimulusPositiontoTerminal)/self.velocity_m_s*1000/conf.timeStep_ms, 0) * conf.timeStep_ms
         ## time, in ms, that the signal takes to travel between the spinal cord and the terminal.
         self.latencySpinalTerminal_ms = round((self.length_m)/self.velocity_m_s*1000/conf.timeStep_ms, 0) * conf.timeStep_ms
         ## time, in ms, tat the signal takes to travel between the stimulus and the terminal.
-        self.latencyStimulusTerminal_ms = round((self.stimulusPositiontoTerminal)/self.velocity_m_s*1000/conf.timeStep_ms, 0) * conf.timeStep_ms
+        self.latencyStimulusTerminal_ms = round((stimulusPositiontoTerminal)/self.velocity_m_s*1000/conf.timeStep_ms, 0) * conf.timeStep_ms
         
         ## Float with instant, in ms, of the last spike in the terminal. 
         self.terminalSpikeTrain = float("-inf")
 
-        self.stimulusFrequency_Hz = conf.parameterSet('stimFrequency_' + self.nerve, pool, 0)
-        self.stimulusIntensity_mA = conf.parameterSet('stimIntensity_' + self.nerve, pool, 0)
-        self.stimulusStart_ms = conf.parameterSet('stimStart_' + self.nerve, pool, 0)
-        self.stimulusStop_ms = conf.parameterSet('stimStop_' + self.nerve, pool, 0)
-
-        self.threshold_mA = conf.parameterSet('axonDelayThreshold', pool, 0)
-        exec 'def AxonStimFunction(t): return '   +  conf.parameterSet('stimModulation_' + self.nerve, pool, 0)
+        
+        self.threshold_mA = conf.parameterSet('axonDelayThreshold', pool, index)
+        
             
 
  
-    def addTerminalSpike(self, t):
+    def addTerminalSpike(self, t, latency):
         '''
         Indicates to the AxonDelay object that a spike has occurred in the Terminal.
 
         - Inputs:
             + **t**: current instant, in ms.
+
+            + **latency**: time elapsed until the spike take effect, in ms.
         '''
-        self.terminalSpikeTrain = t + self.latencySpinalTerminal_ms
+        self.terminalSpikeTrain = t + latency
 
     def addSpinalSpike(self, t):
         '''
@@ -95,4 +95,11 @@ class AxonDelay(object):
         - Inputs:
             + **t**: current instant, in ms.    
         '''    
-        self.addTerminalSpike(t)
+        self.addTerminalSpike(t, self.latencySpinalTerminal_ms)
+    
+    def atualizeStimulus(self, t, stimulus):
+
+        
+        if stimulus >= self.threshold_mA:
+            self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
+
