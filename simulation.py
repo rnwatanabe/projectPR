@@ -26,7 +26,7 @@ def simulator():
     
     pools = dict()
     pools[0] = MotorUnitPool(conf, 'SOL')
-    #pools[1] = NeuralTract(conf, 'CMExt')
+    pools[1] = NeuralTract(conf, 'CMExt')
 
     #pools.append(InterneuronPool(conf, 'RC'))
 
@@ -46,7 +46,7 @@ def simulator():
         #ankle.atualizeAnkle(t[i], 0)
         #for j in xrange(len(pools[0].unit)):
         #    pools[0].unit[j].iInjected[1] = 10
-        #pools[1].atualizePool(t[i])
+        pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
         dendV[i] = pools[0].unit[2].v_mV[0]
         somaV[i] = pools[0].unit[2].v_mV[1] 
@@ -66,7 +66,7 @@ def simulator():
     #np.savetxt('../results/RCspikes.txt', pools[2].poolSomaSpikes)
     np.savetxt('../results/SOLforce_noRC.txt', pools[0].Muscle.force)
 
-    
+
     plt.figure()
     plt.plot(pools[1].poolTerminalSpikes[:, 0],
              pools[1].poolTerminalSpikes[:, 1]+1, '.')

@@ -237,6 +237,7 @@ axonDelayThreshold:SOL-FR,12.2,12.0
 axonDelayCondVel:SOL-S,44,51
 axonDelayCondVel:SOL-FR,51,52
 axonDelayCondVel:SOL-FF,52,53
+axonDelayRefPeriod_PTN,5,
 % Interneurons
 %% RC
 position:RC-,0,18

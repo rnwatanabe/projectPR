@@ -69,11 +69,11 @@ class AxonDelay(object):
         
         ## Float with instant, in ms, of the last spike in the terminal. 
         self.terminalSpikeTrain = float("-inf")
-
+        self.axonSpikeTrain = float("-inf")
         
-        self.threshold_mA = conf.parameterSet('axonDelayThreshold', pool, index)
+        self.threshold_mA = float(conf.parameterSet('axonDelayThreshold', pool, index))
         
-            
+        self.refractaryPeriod_ms = float(conf.parameterSet('axonDelayRefPeriod_' + nerve, pool, index))   
 
  
     def addTerminalSpike(self, t, latency):
@@ -100,6 +100,7 @@ class AxonDelay(object):
     def atualizeStimulus(self, t, stimulus):
 
         
-        if stimulus >= self.threshold_mA:
+        if stimulus >= self.threshold_mA and t - self.axonSpikeTrain > self.refractaryPeriod_ms:
             self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
+            self.axonSpikeTrain = t
 
