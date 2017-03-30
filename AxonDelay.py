@@ -66,16 +66,19 @@ class AxonDelay(object):
         self.latencySpinalTerminal_ms = round((self.length_m)/self.velocity_m_s*1000/conf.timeStep_ms, 0) * conf.timeStep_ms
         ## time, in ms, tat the signal takes to travel between the stimulus and the terminal.
         self.latencyStimulusTerminal_ms = round((stimulusPositiontoTerminal)/self.velocity_m_s*1000/conf.timeStep_ms, 0) * conf.timeStep_ms
-        
+
         ## Float with instant, in ms, of the last spike in the terminal. 
         self.terminalSpikeTrain = float("-inf")
         self.axonSpikeTrain = float("-inf")
-        
-        self.threshold_mA = float(conf.parameterSet('axonDelayThreshold', pool, index))
-        
-        self.refractaryPeriod_ms = float(conf.parameterSet('axonDelayRefPeriod_' + nerve, pool, index))   
 
- 
+        self.orthodromicSpikeTrain = []
+        self.antidromicSpikeTrain = []
+        self.indexOrthodromicSpike = 0
+
+        self.threshold_mA = float(conf.parameterSet('axonDelayThreshold', pool, index))
+
+        self.refractaryPeriod_ms = float(conf.parameterSet('axonDelayRefPeriod_' + nerve, pool, index))
+
     def addTerminalSpike(self, t, latency):
         '''
         Indicates to the AxonDelay object that a spike has occurred in the Terminal.
@@ -89,18 +92,26 @@ class AxonDelay(object):
 
     def addSpinalSpike(self, t):
         '''
-        Indicates to the AxonDelay object that a spike has occurred in the last 
+        Indicates to the AxonDelay object that a spike has occurred in the last
         dynamical compartment of the motor unit.
 
         - Inputs:
-            + **t**: current instant, in ms.    
-        '''    
+            + **t**: current instant, in ms.
+        '''
+        self.orthodromicSpikeTrain.append(t + self.latencyStimulusSpinal_ms)
         self.addTerminalSpike(t, self.latencySpinalTerminal_ms)
-    
+
     def atualizeStimulus(self, t, stimulus):
 
-        
-        if stimulus >= self.threshold_mA and t - self.axonSpikeTrain > self.refractaryPeriod_ms:
-            self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
-            self.axonSpikeTrain = t
+        if t - self.axonSpikeTrain > self.refractaryPeriod_ms:
+            if stimulus >= self.threshold_mA:
+                self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
+                self.axonSpikeTrain = t
+            if self.indexOrthodromicSpike < len(self.orthodromicSpikeTrain):
+                if t > self.orthodromicSpikeTrain[self.indexOrthodromicSpike]:
+                    self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
+                    self.axonSpikeTrain = t
+                    self.indexOrthodromicSpike += 1
+
+
 

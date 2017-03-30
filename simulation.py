@@ -70,10 +70,7 @@ def simulator():
     plt.figure()
     plt.plot(pools[1].poolTerminalSpikes[:, 0],
              pools[1].poolTerminalSpikes[:, 1]+1, '.')
-    
-    
-    
-    
+
     plt.figure()
     plt.plot(pools[0].poolTerminalSpikes[:, 0],
              pools[0].poolTerminalSpikes[:, 1]+1, '.')
