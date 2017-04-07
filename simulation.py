@@ -60,12 +60,11 @@ def simulator():
     pools[0].listSpikes()
     pools[1].listSpikes()
     #pools[2].listSpikes()
-    
+      
     np.savetxt('../results/MNspikes_noRC.txt', pools[0].poolTerminalSpikes)
     #np.savetxt('../results/NTspikes_noRC.txt', pools[1].poolTerminalSpikes)
     #np.savetxt('../results/RCspikes.txt', pools[2].poolSomaSpikes)
     np.savetxt('../results/SOLforce_noRC.txt', pools[0].Muscle.force)
-
 
     plt.figure()
     plt.plot(pools[1].poolTerminalSpikes[:, 0],

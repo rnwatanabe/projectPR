@@ -153,12 +153,12 @@ class Configuration(object):
                     paramVec_FF = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FF)
                 elif self.confArray[i][0] == paramTag + ':' + pool + '-':
                     paramVec = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), Nnumber)                    
-        
 
+        
         if paramVec_FR.size > 0:
-            paramVec = np.concatenate(paramVec, paramVec_FR)
+            paramVec = np.hstack((paramVec, paramVec_FR))
             if paramVec_FF.size > 0:
-                paramVec = np.concatenate(paramVec, paramVec_FF)
+                paramVec = np.hstack((paramVec, paramVec_FF))
 
         return paramVec[index]
 

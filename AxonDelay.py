@@ -102,7 +102,9 @@ class AxonDelay(object):
         self.addTerminalSpike(t, self.latencySpinalTerminal_ms)
 
     def atualizeStimulus(self, t, stimulus):
-
+        '''
+        
+        '''
         if t - self.axonSpikeTrain > self.refractaryPeriod_ms:
             if stimulus >= self.threshold_mA:
                 self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)

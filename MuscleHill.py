@@ -215,6 +215,8 @@ class MuscleHill(object):
         self.timeIndex += 1
 
     def atualizeActivation(self, activation_Sat):
+        '''
+        '''
         self.activationTypeI[self.timeIndex] = (np.sum(activation_Sat[0:self.MUtypeInumber:1] * 
             self.twitchAmp_N[0:self.MUtypeInumber:1] * self.twTet[0:self.MUtypeInumber:1]) / 
             self.maximumActivationForce)
@@ -223,15 +225,23 @@ class MuscleHill(object):
             self.maximumActivationForce)
 
     def computePennationAngle(self):
+        '''
+        '''
         return math.asin(self.pennationAngleAtOptimalLengthSin / self.lengthNorm)
 
     def computeForceLengthTypeI(self):
+        '''
+        '''
         return math.exp(-(math.fabs(self.lengthNorm ** self.b_TypeI - 1) / self.w_TypeI) ** self.p_TypeI)
 
-    def computeForceLengthTypeII(self):    
+    def computeForceLengthTypeII(self):
+        '''
+        '''    
         return math.exp(-(math.fabs(self.lengthNorm ** self.b_TypeII - 1) / self.w_TypeII) ** self.p_TypeII)
 
     def computeForceVelocityTypeI(self):
+        '''
+        '''
         if self.velocityNorm > 0.1:
             fv = (self.d_TypeI - (self.a0_TypeI+self.a1_TypeI * self.lengthNorm + self.a2_TypeI * self.lengthNorm ** 2)) / (self.d_TypeI + self.velocityNorm)
         else:
@@ -239,6 +249,8 @@ class MuscleHill(object):
         return fv
 
     def computeForceVelocityTypeII(self):
+        '''
+        '''
         if self.velocityNorm > 0.1:
             fv = (self.d_TypeII - (self.a0_TypeII + self.a1_TypeII * self.lengthNorm + self.a2_TypeII * self.lengthNorm**2)) / (self.d_TypeII + self.velocityNorm)
         else:
@@ -246,40 +258,60 @@ class MuscleHill(object):
         return fv
     
     def computeAcceleration(self):
+        '''
+        '''
         return ((self.tendonForce_N[self.timeIndex] - 
             self.force[self.timeIndex] * math.cos(self.pennationAngle_rad[self.timeIndex])) / 
             (self.mass * math.cos(self.pennationAngle_rad[self.timeIndex])) / 1000000)
 
     def dLdt(self):
+        '''
+        '''
         return  np.array([self.velocity_m_ms[self.timeIndex], self.computeAcceleration()])
 
     def atualizeMuscleForce(self):
+        '''
+        '''
         self.forceNorm  = (self.computeElasticElementForce() + self.computeViscousElementForce() + 
             self.computeTypeIActiveForce() + self.computeTypeIIActiveForce())
 
     def atualizeTendonForce(self):
+        '''
+        '''
         self.tendonForceNorm = (self.tendonCurvatureConstant * self.tendonElasticity * 
                 math.log(math.exp((self.tendonLengthNorm - self.tendonLinearOnsetLength) / self.tendonCurvatureConstant) + 1))
 
     def computeElasticElementForce(self):
+        '''
+        '''
         return math.exp(self.elasticity / self.strain * (self.lengthNorm - self.strain - 1))
 
     def computeViscousElementForce(self):
+        '''
+        '''
         return self.viscosity * self.velocityNorm
 
     def computeTypeIActiveForce(self):
+        '''
+        '''
         return (self.activationTypeI[self.timeIndex] * self.computeForceLengthTypeI() * 
                     self.computeForceVelocityTypeI()) 
 
     def computeTypeIIActiveForce(self):
+        '''
+        '''
         return (self.activationTypeII[self.timeIndex] * self.computeForceLengthTypeII() * 
                     self.computeForceVelocityTypeII())
 
     def atualizeLenghtsAndVelocity(self):
+        '''
+        '''
         [self.length_m[self.timeIndex + 1],self.velocity_m_ms[self.timeIndex + 1]] = ([self.length_m[self.timeIndex],self.velocity_m_ms[self.timeIndex]] + 
                                                                                       self.conf.timeStep_ms * self.dLdt())
     
     def atualizeMusculoTendonLength(self, ankleAngle):
+        '''
+        '''
         self.musculoTendonLength_m[self.timeIndex] = (self.m0 + self.m1 * ankleAngle + self.m2 * (ankleAngle ** 2) + 
                                                       self.m3 * (ankleAngle ** 3) + self.m4 * (ankleAngle ** 4))
 
