@@ -514,9 +514,9 @@ class MotorUnit(object):
             if (ta <= 6 * self.timeCteEMG_ms):
                 
                 if (self.hrType == 1):
-                    emg += self.ampEMG_mV * ta * math.exp(-(ta/self.timeCteEMG_ms)**2)
+                    emg += 1.19 * self.ampEMG_mV * ta * math.exp(-(ta/self.timeCteEMG_ms)**2) / self.timeCteEMG_ms
                 elif (self.hrType == 2):
-                    emg += self.ampEMG_mV * (1 - 2*((ta / self.timeCteEMG_ms)**2)) * math.exp(-(ta/self.timeCteEMG_ms)**2)
+                    emg += 0.69 * self.ampEMG_mV * (1 - 2*((ta / self.timeCteEMG_ms)**2)) * math.exp(-(ta/self.timeCteEMG_ms)**2)
         
         
         return emg
