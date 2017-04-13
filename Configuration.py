@@ -129,8 +129,7 @@ class Configuration(object):
                 elif self.confArray[i][0] == 'MUnumber_' + pool + '-FF':
                     MUnumber_FF = int(self.confArray[i][1])
             Nnumber = MUnumber_S + MUnumber_FR + MUnumber_FF 
-                    
-        if pool == 'RC' or pool == 'IaIn' or pool == 'gII' or pool == 'IbIn':
+        else:
             for i in xrange(0, len(self.confArray)):
                 if self.confArray[i][0] == 'Number_' + pool:
                     Nnumber = int(self.confArray[i][1])

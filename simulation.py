@@ -16,6 +16,7 @@ import numpy as np
 from Configuration import Configuration
 from MotorUnitPool import MotorUnitPool
 from InterneuronPool import InterneuronPool
+from AfferentPool import AfferentPool
 from NeuralTract import NeuralTract
 from SynapsesFactory import SynapsesFactory
 from jointAnkleForceTask import jointAnkleForceTask
@@ -27,6 +28,7 @@ def simulator():
     pools = dict()
     pools[0] = MotorUnitPool(conf, 'SOL')
     pools[1] = NeuralTract(conf, 'CMExt')
+    pools[2] = AfferentPool(conf, 'Ia','SOL')
 
     #pools.append(InterneuronPool(conf, 'RC'))
 
@@ -46,8 +48,9 @@ def simulator():
         #ankle.atualizeAnkle(t[i], 0)
         #for j in xrange(len(pools[0].unit)):
         #    pools[0].unit[j].iInjected[1] = 10
-        pools[1].atualizePool(t[i])
+        #pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
+        pools[2].atualizeAfferentPool(t[i])
         dendV[i] = pools[0].unit[2].v_mV[0]
         somaV[i] = pools[0].unit[2].v_mV[1] 
         #nodeV1[i] = pools[0].unit[2].v_mV[3]
@@ -73,11 +76,11 @@ def simulator():
     plt.figure()
     plt.plot(pools[0].poolTerminalSpikes[:, 0],
              pools[0].poolTerminalSpikes[:, 1]+1, '.')
-    '''
+    
     plt.figure()
     plt.plot(pools[0].poolLastCompSpikes[:, 0],
              pools[0].poolLastCompSpikes[:, 1]+1, '.')        
-
+    '''         
     plt.figure()
     plt.plot(pools[0].poolTerminalSpikes[:, 0],
              pools[0].poolTerminalSpikes[:, 1]+1, '.')         
@@ -102,13 +105,13 @@ def simulator():
 
     #print 'M = ' + str(np.mean(pools[0].Muscle.force[int(1000/conf.timeStep_ms):-1]))
     #print 'SD = ' + str(np.std(pools[0].Muscle.force[int(1000/conf.timeStep_ms):-1]))
-
+    '''
     plt.figure()
     plt.plot(t, dendV, '-')
 
     plt.figure()
     plt.plot(t, somaV, '-')
-
+    
     
 
     plt.figure()
@@ -116,7 +119,7 @@ def simulator():
 
     plt.figure()
     plt.plot(t, nodeV2, '-')
-    
+    '''
     '''
     plt.figure()
     plt.plot(t, pools[0].Muscle.length_m, '-')
@@ -129,7 +132,6 @@ def simulator():
 
     plt.figure()
     plt.plot(t, pools[0].emg, '-')
-
 
     plt.figure()
     plt.plot(t, pools[0].unit[0].nerveStimulus_mA, '-')

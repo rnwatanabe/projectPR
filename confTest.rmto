@@ -3,12 +3,14 @@ MUnumber_SOL-FR,50,
 MUnumber_SOL-FF,50,
 Number_RC,350,
 Number_CMExt,400,
+Number_Ia-SOL,400,
 NumberAxonNodes,0,
 timeStep,0.05,
-simDuration,3000,
+simDuration,100,
 nerveLength_PTN,0.8,
 MNSomaRefPer,5.0,
 RCSomaRefPer,1.0,
+AFRefPer,5.0,
 skinThickness,1.5,
 MUSpatialDistribution,random,
 EMGAttenuationFactor,5,
@@ -26,8 +28,8 @@ DriveFunction_CMExt,12+0*t,
 %Stimulus
 stimDistToTerm_PTN,0.2,
 stimStart_PTN,0,
-stimStop_PTN,500,
-stimIntensity_PTN,0,
+stimStop_PTN,3000,
+stimIntensity_PTN,11.5,
 stimFrequency_PTN,10,
 stimModulation_PTN,5+0*t,
 stimModulationStart_PTN,200,
@@ -94,6 +96,21 @@ dyn:RC->SOL-FF@soma|inhibitory,None,
 dec:RC->SOL-S@soma|inhibitory,0.22,
 dec:RC->SOL-FR@soma|inhibitory,0.22,
 dec:RC->SOL-FF@soma|inhibitory,0.22,
+Con:Ia-SOL>SOL-S@dendrite|excitatory,90,
+Con:Ia-SOL>SOL-FR@dendrite|excitatory,90,
+Con:Ia-SOL>SOL-FF@dendrite|excitatory,90,
+gmax:Ia-SOL>SOL-S@dendrite|excitatory,0.6,
+gmax:Ia-SOL>SOL-FR@dendrite|excitatory,0.6,
+gmax:Ia-SOL>SOL-FF@dendrite|excitatory,0.6,
+delay:Ia-SOL>SOL-S@dendrite|excitatory,0.3,
+delay:Ia-SOL>SOL-FR@dendrite|excitatory,0.3,
+delay:Ia-SOL>SOL-FF@dendrite|excitatory,0.3,
+dyn:Ia-SOL>SOL-S@dendrite|excitatory,None,
+dyn:Ia-SOL>SOL-FR@dendrite|excitatory,None,
+dyn:Ia-SOL>SOL-FF@dendrite|excitatory,None,
+dec:Ia-SOL>SOL-S@dendrite|excitatory,inf,
+dec:Ia-SOL>SOL-FR@dendrite|excitatory,inf,
+dec:Ia-SOL>SOL-FF@dendrite|excitatory,inf,
 %% RC
 EqPotSyn:RC-|excitatory,70.0,
 EqPotSyn:RC-|inhibitory,-16.0,
@@ -285,6 +302,10 @@ threshold:RC-,5,15
 d@soma:RC-,25,25
 l@soma:RC-,242,242
 res@soma:RC-,760,760
+% Afferents
+axonDelayCondVel:Ia-SOL-,55,66
+axonDelayThreshold:Ia-SOL-,18,9
+threshold:Ia-SOL,12.35,19
 % Muscles
 %% SOL
 Fmax:SOL,3586,

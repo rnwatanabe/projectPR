@@ -149,13 +149,13 @@ def runge_kutta(derivativeFunction, t, x, timeStep, timeStepByTwo,  timeStepBySi
     #return x + timeStep * (k1)
 
 
-class MotorUnit(object):
+class AfferentUnit(object):
     '''
     Class that implements a motor unit model. Encompasses a motoneuron
     and a muscle unit.
     '''
 
-    def __init__(self, conf, pool, index, kind, muscleThickness, skinThickness):
+    def __init__(self, conf, pool, muscle, index, muscleThickness, skinThickness):
         '''
         Constructor
 
@@ -165,12 +165,14 @@ class MotorUnit(object):
             + **pool**: string with Motor unit pool to which the motor
             unit belongs.
 
+            + **muscle**:
+
             + **index**: integer corresponding to the motor unit order in
             the pool, according to the Henneman's principle (size principle).
 
-            + **kind**: string with the type of the motor unit. It can
-            be *S* (slow), *FR* (fast and resistant), and
-            *FF* (fast and fatigable).
+            + **muscleThickness**: 
+
+            + **skinThickness**:
         '''
 
         ## Configuration object with the simulation parameters.
@@ -179,20 +181,17 @@ class MotorUnit(object):
         self.timeStep_ms = self.conf.timeStep_ms
         self.timeStepByTwo_ms = self.conf.timeStepByTwo_ms
         self.timeStepBySix_ms = self.conf.timeStepBySix_ms
-        ## String with the type of the motor unit. It can be
-        ## *S* (slow), *FR* (fast and resistant) and
-        ## *FF** (fast and fatigable).
-        self.kind = kind
         
+        self.kind = muscle
+
+        self.muscle = muscle
         # Neural compartments
-        ## The instant of the last spike of the Motor unit
-        ## at the Soma compartment.
-        self.tSomaSpike = float("-inf")
+        
 
         NumberOfAxonNodes = int(conf.parameterSet('NumberAxonNodes', pool, index))
         
 
-        compartmentsList = ['dendrite', 'soma']
+        compartmentsList = []
         for i in xrange(0, NumberOfAxonNodes):
               compartmentsList.append('internode')
               compartmentsList.append('node')
@@ -204,59 +203,28 @@ class MotorUnit(object):
         self.index = int(index)
         ## Dictionary of Compartment of the Motor Unit.
         self.compartment = dict()
-        ## Value of the membrane potential, in mV, that is considered a spike.
-        self.threshold_mV = conf.parameterSet('threshold', pool, index)
-
-        
-
-        ## Anatomical position of the neuron, in mm.
-        self.position_mm = conf.parameterSet('position', pool, index)
-        
-        # EMG data
-        self.MUSpatialDistribution = conf.parameterSet('MUSpatialDistribution',pool, 0)       
-        if self.MUSpatialDistribution == 'random':
-            radius = (muscleThickness/2) * np.random.uniform(0.0, 1.0)
-            angle = 2.0 * math.pi * np.random.uniform(0.0, 1.0)
-		
-        x = radius * math.sin(angle)
-        y = radius * math.cos(angle)
-        ## Anatomical coordinate of the muscle unit in a muscle section, in (mm,mm).
-        self.muSectionPosition_mm = [x,y]
-
-        ## Distance of the MU to the EMG elctrode, in mm.
-        self.distance_mm = math.sqrt((x + muscleThickness/2.0 +
-                                      skinThickness)**2 + y**2)
-
-        ## Attenuation of the MUAP amplitude, as measured in the electrode.
-        self.attenuationToSkin = math.exp(-self.distance_mm / conf.EMGAttenuation_mm1)
-
-        ## Widening of the MUAP duration, as measured in the electrode.
-        self.timeWidening = 1 + conf.EMGWidening_mm1 * self.distance_mm
-        
-        ## Type of the Hermitez-Rodiguez curve. It can be 1 or 2.
-        self.hrType = np.random.random_integers(1,2)
-        
-        ## MUAP amplitude in mV.
-        self.ampEMG_mV = conf.parameterSet('EMGAmplitude', pool, index)
-        self.ampEMG_mV = self.ampEMG_mV * self.attenuationToSkin
-
-        ## MUAP time constant, in ms.
-        self.timeCteEMG_ms = conf.parameterSet('EMGDuration', pool, index)
-        self.timeCteEMG_ms = self.timeCteEMG_ms * self.timeWidening
         
         
+        
+
+       
 
         for i in xrange(len(compartmentsList)):
             self.compartment[i] = Compartment(compartmentsList[i], conf, pool, index, self.kind)
 
         ## Number of compartments.
         self.compNumber = len(self.compartment)
+        ## Value of the membrane potential, in mV, that is considered a spike.
+        if self.compNumber:
+            self.threshold_mV  = conf.parameterSet('threshold', pool + '-' + muscle, index)
+        else:
+            self.threshold_mV = 0
         ## Vector with membrane potential,in mV, of all compartments. 
         self.v_mV = np.zeros((self.compNumber), dtype = np.float64)
         ## Vector with the last instant of spike of all compartments. 
         self.tSpikes = np.zeros((self.compNumber), dtype = np.float64)
-        
-        
+
+
         gCoupling_muS = np.zeros_like(self.v_mV, dtype = 'd')
         
             
@@ -308,25 +276,22 @@ class MotorUnit(object):
         self.EqCurrent_nA = np.dot(-GL, EqPot) + IPump 
 
         
-        ## index of the soma compartment.
-        self.somaIndex = compartmentsList.index('soma')
-
+        
         ## index of the last compartment.
         self.lastCompIndex = self.compNumber - 1
         
         ## Refractory period, in ms, of the motoneuron.
-        self.MNRefPer_ms = float(conf.parameterSet('MNSomaRefPer', pool, index))
+        self.AFRefPer_ms = float(conf.parameterSet('AFRefPer', pool, index))
         
         # delay
         ## String with type of the nerve. It can be PTN (posterior tibial nerve) or CPN
         ## (common peroneal nerve).
-        if pool == 'SOL' or pool == 'MG' or pool == 'LG':
+        if self.muscle == 'SOL' or self.muscle == 'MG' or self.muscle == 'LG':
             self.nerve = 'PTN'
-        elif pool == 'TA':
+        elif self.muscle == 'TA':
             self.nerve = 'CPN'
 
-        ## Distance, in m, of the stimulus position to the terminal. 
-        self.stimulusPositiontoTerminal = float(conf.parameterSet('stimDistToTerm_' + self.nerve, pool, index))   
+       
         ## AxonDelay object of the motor unit.
         if NumberOfAxonNodes == 0:
             dynamicNerveLength = 0
@@ -335,13 +300,16 @@ class MotorUnit(object):
         
         self.nerveLength = float(conf.parameterSet('nerveLength_' + self.nerve, pool, index))    
 
+         ## Distance, in m, of the stimulus position to the terminal. 
+        self.stimulusPositiontoTerminal = self.nerveLength - float(conf.parameterSet('stimDistToTerm_' + self.nerve, pool, index))   
+
         delayLength =  self.nerveLength - dynamicNerveLength
 
         if self.stimulusPositiontoTerminal < delayLength:
-            self.Delay = AxonDelay(conf, self.nerve, pool, delayLength, self.stimulusPositiontoTerminal, index)
+            self.Delay = AxonDelay(conf, self.nerve, pool + '-' + self.muscle, delayLength, self.stimulusPositiontoTerminal, index)
             self.stimulusCompartment = 'delay'
         else:
-            self.Delay = AxonDelay(conf, self.nerve, pool, delayLength, -1, index)
+            self.Delay = AxonDelay(conf, self.nerve, pool + '-' + self.muscle, delayLength, -1, index)
             self.stimulusCompartment = -1    
         # Nerve stimulus function    
         self.stimulusMeanFrequency_Hz = float(conf.parameterSet('stimFrequency_' + self.nerve, pool, 0))
@@ -368,27 +336,11 @@ class MotorUnit(object):
                         self.nerveStimulus_mA[i:int(np.rint(i+1.0/conf.timeStep_ms))] = self.stimulusIntensity_mA
 
         # 
-        ## Vector with the instants of spikes at the soma.
-        self.somaSpikeTrain = []
         ## Vector with the instants of spikes at the last compartment.
         self.lastCompSpikeTrain = []
         ## Vector with the instants of spikes at the terminal.
         self.terminalSpikeTrain = []
                 
-        
-        # contraction DataMUnumber_S = int(conf.parameterSet('MUnumber_S_' + pool, pool, 0))
-        activationModel = conf.parameterSet('activationModel', pool, 0)
-        
-        ## Contraction time of the twitch muscle unit, in ms.
-        self.TwitchTc_ms = conf.parameterSet('twitchTimePeak', pool, index)
-        ## Amplitude of the muscle unit twitch, in N.
-        self.TwitchAmp_N = conf.parameterSet('twitchPeak', pool, index)
-        ## Parameter of the saturation.
-        self.bSat = conf.parameterSet('bSat'+ activationModel,pool,index)
-        ## Twitch- tetanus relationship
-        self.twTet = conf.parameterSet('twTet' + activationModel,pool,index)
-        
-        ## EMG data
         
         ## Build synapses       
          
@@ -398,14 +350,15 @@ class MotorUnit(object):
 
          
     
-    def atualizeMotorUnit(self, t):
+    def atualizeAfferentUnit(self, t):
         '''
         Atualize the dynamical and nondynamical (delay) parts of the motor unit.
 
         - Inputs:
             + **t**: current instant, in ms.
         ''' 
-        self.atualizeCompartments(t)
+        if self.compNumber: 
+            self.atualizeCompartments(t)
         self.atualizeDelay(t)
 
     #@profile    
@@ -480,6 +433,7 @@ class MotorUnit(object):
 
         if -1e-3 < (t - self.Delay.terminalSpikeTrain) < 1e-3: 
             self.terminalSpikeTrain.append([t, self.index])
+            self.transmitSpikes(t)
         
         if self.stimulusCompartment == 'delay':
             self.Delay.atualizeStimulus(t, self.nerveStimulus_mA[int(np.rint(t/self.conf.timeStep_ms))])
@@ -515,7 +469,8 @@ class MotorUnit(object):
                     emg += 1.19 * self.ampEMG_mV * ta * math.exp(-(ta/self.timeCteEMG_ms)**2) / self.timeCteEMG_ms
                 elif (self.hrType == 2):
                     emg += 0.69 * self.ampEMG_mV * (1 - 2*((ta / self.timeCteEMG_ms)**2)) * math.exp(-(ta/self.timeCteEMG_ms)**2)
-               
+        
+        
         return emg
 
 
