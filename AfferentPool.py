@@ -94,3 +94,11 @@ class AfferentPool(object):
         self.poolSomaSpikes = np.reshape(somaSpikeTrain, (-1, 2))
         self.poolLastCompSpikes = np.reshape(lastCompSpikeTrain, (-1, 2))
         self.poolTerminalSpikes = np.reshape(terminalSpikeTrain, (-1, 2))
+
+    def reset(self):
+        '''
+
+        '''
+        self.poolLastCompSpikes = np.array([])
+        self.poolTerminalSpikes = np.array([])
+        for i in xrange(self.AFnumber): self.unit[i].reset()

@@ -35,7 +35,7 @@ class MuscleHill(object):
         ##
         self.MUtypeInumber = MUtypeInumber
         ##       
-        self.timeIndex = 0; 
+        self.timeIndex = 0
         
         ## Twitch-tetanus relationship (see atualizeForce function explanation)
         self.twTet = np.zeros((self.MUnumber, 1), dtype = float)
@@ -320,3 +320,27 @@ class MuscleHill(object):
         '''
         self.momentArm_m[self.timeIndex] = (self.n0 + self.n1 * ankleAngle + self.n2 * (ankleAngle ** 2) + 
                                                       self.n3 * (ankleAngle ** 3) + self.n4 * (ankleAngle ** 4))
+
+    def reset(self):
+        '''
+
+        '''
+        self.timeIndex = 0
+        self.tendonForce_N = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.contractileForce_N = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.elasticForce_N = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.viscousForce_N = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.length_m = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.velocity_m_ms = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.tendonLength_m = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.pennationAngle_rad = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.activationTypeI = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.activationTypeII = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.musculoTendonLength_m = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.momentArm_m = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.optimalLength_m = float(self.conf.parameterSet('optimalMuscleLength:' + pool, pool, 0))
+        self.lengthNorm = 0
+        self.velocityNorm = 0
+        self.tendonLengthNorm = 0
+        self.forceNorm = 0
+        self.tendonForceNorm = 0

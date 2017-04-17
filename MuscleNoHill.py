@@ -43,7 +43,7 @@ class MuscleNoHill(object):
         ## Muscle force along time, in N.
         self.force = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         
-        self.timeIndex = 0;
+        self.timeIndex = 0
     #@profile    
     def atualizeForce(self, activation_Sat):
         '''
@@ -67,4 +67,11 @@ class MuscleNoHill(object):
         '''
         self.force[self.timeIndex] = np.vdot(activation_Sat, self.maximumActivationForce)
         self.timeIndex += 1
+
+    def reset(self):
+        '''
+
+        '''
+        self.force = np.zeros((int(np.rint(self.conf.simDuration_ms/self.conf.timeStep_ms)), 1), dtype = float)        
+        self.timeIndex = 0
         

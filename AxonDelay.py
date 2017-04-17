@@ -134,5 +134,16 @@ class AxonDelay(object):
                         self.axonSpikeTrain = t
                         self.indexOrthodromicSpike += 1
 
+    def reset(self):
+        '''
+
+        '''
+        self.terminalSpikeTrain = float("-inf")
+        self.axonSpikeTrain = float("-inf")
+        
+        self.orthodromicSpikeTrain = []
+        self.antidromicSpikeTrain = []
+        self.indexOrthodromicSpike = 0
+        self.indexAntidromicSpike = 0
 
 

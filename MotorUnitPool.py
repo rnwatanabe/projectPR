@@ -145,3 +145,17 @@ class MotorUnitPool(object):
             self.emg[i] = self.getMotorUnitPoolInstantEMG(i * self.conf.timeStep_ms)
 
 
+    def reset(self):
+        '''
+
+        '''
+
+                   
+        self.poolSomaSpikes = np.array([])
+        self.poolLastCompSpikes = np.array([])    
+        self.poolTerminalSpikes = np.array([])
+        self.emg = np.zeros((int(np.rint(self.conf.simDuration_ms/self.conf.timeStep_ms)), 1), dtype=float)
+
+        for i in xrange(self.MUnumber): self.unit[i].reset()
+        self.Activation.reset()
+        self.Muscle.reset()

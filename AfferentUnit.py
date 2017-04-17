@@ -165,14 +165,10 @@ class AfferentUnit(object):
             + **pool**: string with Motor unit pool to which the motor
             unit belongs.
 
-            + **muscle**:
+            + **muscle**: 
 
             + **index**: integer corresponding to the motor unit order in
             the pool, according to the Henneman's principle (size principle).
-
-            + **muscleThickness**: 
-
-            + **skinThickness**:
         '''
 
         ## Configuration object with the simulation parameters.
@@ -186,28 +182,21 @@ class AfferentUnit(object):
 
         self.muscle = muscle
         # Neural compartments
-        
+
+        self.pool = pool
 
         NumberOfAxonNodes = int(conf.parameterSet('NumberAxonNodes', pool, index))
-        
+
 
         compartmentsList = []
         for i in xrange(0, NumberOfAxonNodes):
               compartmentsList.append('internode')
               compartmentsList.append('node')
-              
 
-
-        
         ## Integer corresponding to the motor unit order in the pool, according to the Henneman's principle (size principle).
         self.index = int(index)
         ## Dictionary of Compartment of the Motor Unit.
         self.compartment = dict()
-        
-        
-        
-
-       
 
         for i in xrange(len(compartmentsList)):
             self.compartment[i] = Compartment(compartmentsList[i], conf, pool, index, self.kind)
@@ -323,18 +312,7 @@ class AfferentUnit(object):
         
         ## Vector with the nerve stimulus, in mA.
         self.nerveStimulus_mA = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
-        for i in xrange(len(self.nerveStimulus_mA)):
-            if (i*conf.timeStep_ms >= self.stimulusStart_ms and  i*conf.timeStep_ms <= self.stimulusStop_ms):
-                if (i*conf.timeStep_ms > self.stimulusModulationStart_ms and  i*conf.timeStep_ms < self.stimulusModulationStop_ms):
-                    stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz + axonStimModulation(i*conf.timeStep_ms)
-                else:
-                    stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz
-                if stimulusFrequency_Hz > 0:
-                    stimulusPeriod_ms = 1000.0 / stimulusFrequency_Hz
-                    numberOfSteps = int(np.rint(stimulusPeriod_ms/conf.timeStep_ms))
-                    if (i % numberOfSteps == 0):
-                        self.nerveStimulus_mA[i:int(np.rint(i+1.0/conf.timeStep_ms))] = self.stimulusIntensity_mA
-
+        self.createStimulus()
         # 
         ## Vector with the instants of spikes at the last compartment.
         self.lastCompSpikeTrain = []
@@ -446,32 +424,44 @@ class AfferentUnit(object):
         for i in xrange(len(self.indicesOfSynapsesOnTarget)):
             self.transmitSpikesThroughSynapses[i].receiveSpike(t, self.indicesOfSynapsesOnTarget[i])
 
-    def getEMG(self, t):
+    def createStimulus(self):
+        '''
+        '''
+        self.stimulusMeanFrequency_Hz = float(self.conf.parameterSet('stimFrequency_' + self.nerve, self.pool, 0))
+        self.stimulusIntensity_mA = float(self.conf.parameterSet('stimIntensity_' + self.nerve, self.pool, 0))
+        self.stimulusStart_ms = float(self.conf.parameterSet('stimStart_' + self.nerve, self.pool, 0))
+        self.stimulusStop_ms = float(self.conf.parameterSet('stimStop_' + self.nerve, self.pool, 0))
+        self.stimulusModulationStart_ms = float(self.conf.parameterSet('stimModulationStart_' + self.nerve, self.pool, 0))
+        self.stimulusModulationStop_ms = float(self.conf.parameterSet('stimModulationStop_' + self.nerve, self.pool, 0))
+
+        
+        
+        ## Vector with the nerve stimulus, in mA.
+        self.nerveStimulus_mA = np.zeros((int(np.rint(self.conf.simDuration_ms/self.conf.timeStep_ms)), 1), dtype = float)
+        for i in xrange(len(self.nerveStimulus_mA)):
+            if (i * self.conf.timeStep_ms >= self.stimulusStart_ms and  i * self.conf.timeStep_ms <= self.stimulusStop_ms):
+                if (i * self.conf.timeStep_ms > self.stimulusModulationStart_ms and  i * self.conf.timeStep_ms < self.stimulusModulationStop_ms):
+                    stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz + axonStimModulation(i * self.conf.timeStep_ms)
+                else:
+                    stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz
+                if stimulusFrequency_Hz > 0:
+                    stimulusPeriod_ms = 1000.0 / stimulusFrequency_Hz
+                    numberOfSteps = int(np.rint(stimulusPeriod_ms / self.conf.timeStep_ms))
+                    if (i % numberOfSteps == 0):
+                        self.nerveStimulus_mA[i:int(np.rint(i+1.0 / self.conf.timeStep_ms))] = self.stimulusIntensity_mA
+
+
+    def reset(self):
         '''
 
         '''
-        emg = 0
-        numberOfSpikesUntilt = []
-        ta = 0        
-
-        if (len(self.terminalSpikeTrain) == 0):
-            emg = 0
-        else:
-            for spike in self.terminalSpikeTrain:
-                if spike[0] < t:
-                    numberOfSpikesUntilt.append(spike[0])
-
-        for spikeInstant in numberOfSpikesUntilt:
-            ta = t - spikeInstant - 3 * self.timeCteEMG_ms
-            if (ta <= 6 * self.timeCteEMG_ms):
-                
-                if (self.hrType == 1):
-                    emg += 1.19 * self.ampEMG_mV * ta * math.exp(-(ta/self.timeCteEMG_ms)**2) / self.timeCteEMG_ms
-                elif (self.hrType == 2):
-                    emg += 0.69 * self.ampEMG_mV * (1 - 2*((ta / self.timeCteEMG_ms)**2)) * math.exp(-(ta/self.timeCteEMG_ms)**2)
-        
-        
-        return emg
+        self.v_mV = np.zeros((self.compNumber), dtype = np.float64)
+        for i in xrange(len(self.compartment)):                                                              
+            self.v_mV[i] = self.compartment[i].EqPot_mV
+        self.tSpikes = np.zeros((self.compNumber), dtype = np.float64)
+        self.lastCompSpikeTrain = []
+        ## Vector with the instants of spikes at the terminal.
+        self.terminalSpikeTrain = []
 
 
 
