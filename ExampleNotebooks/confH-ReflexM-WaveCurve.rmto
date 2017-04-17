@@ -201,7 +201,7 @@ axonDelayRefPeriod_PTN,5,
 %% RC
 % Afferents
 axonDelayCondVel:Ia-SOL-,55,66
-axonDelayThreshold:Ia-SOL-,17,8
+axonDelayThreshold:Ia-SOL-,17,6
 threshold:Ia-SOL,12.35,19
 axonDelayCondVel:Ia-LG-,55,66
 axonDelayThreshold:Ia-LG-,18,9
