@@ -200,4 +200,12 @@ class Configuration(object):
                                  self.confArray[i][0][posComp+1:posKind],
                                  self.confArray[i][0][posKind+1:]])
         return Synapses
+    
+    def changeConfigurationParameter(self, parameter, value1, value2):
+        '''
+        '''
+        for i in xrange(0, len(self.confArray)):
+            if self.confArray[i][0] == parameter:
+                self.confArray[i][1] = value1
+                self.confArray[i][2] = value2
         

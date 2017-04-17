@@ -155,7 +155,7 @@ class AfferentUnit(object):
     and a muscle unit.
     '''
 
-    def __init__(self, conf, pool, muscle, index, muscleThickness, skinThickness):
+    def __init__(self, conf, pool, muscle, index):
         '''
         Constructor
 

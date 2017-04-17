@@ -48,14 +48,12 @@ class AfferentPool(object):
         self.muscle = muscle
         self.AFnumber = int(conf.parameterSet('Number_' + pool + '-' + muscle, pool, 0))
         
-        ## Muscle thickness, in mm.
-        self.muscleThickness_mm = float(self.conf.parameterSet('thickness:' + muscle, muscle, 0))
-
+        
         ## Dictionary of Axon objects.
         self.unit = dict()
 
         for i in xrange(0, self.AFnumber):
-            self.unit[i] = AfferentUnit(conf, pool, muscle, i, self.muscleThickness_mm, conf.skinThickness_mm)
+            self.unit[i] = AfferentUnit(conf, pool, muscle, i)
 
         ## Vector with the instants of spikes in the last dynamical compartment, in ms.
         self.poolLastCompSpikes = np.array([])

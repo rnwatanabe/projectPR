@@ -19,6 +19,7 @@
 '''
 
 from Configuration import Configuration
+import math
 
 class AxonDelay(object):
     '''
@@ -74,6 +75,8 @@ class AxonDelay(object):
         self.orthodromicSpikeTrain = []
         self.antidromicSpikeTrain = []
         self.indexOrthodromicSpike = 0
+        self.indexAntidromicSpike = 0
+
 
         self.threshold_mA = float(conf.parameterSet('axonDelayThreshold', pool, index))
 
@@ -99,6 +102,16 @@ class AxonDelay(object):
             + **t**: current instant, in ms.
         '''
         self.orthodromicSpikeTrain.append(t + self.latencyStimulusSpinal_ms)
+
+    def addAntidromicSpike(self, t):
+        '''
+        Indicates to the AxonDelay object that a spike has occurred in the last
+        dynamical compartment of the motor unit.
+
+        - Inputs:
+            + **t**: current instant, in ms.
+        '''
+        self.antidromicSpikeTrain.append(t + self.latencyStimulusSpinal_ms)
         
 
     def atualizeStimulus(self, t, stimulus):
@@ -108,12 +121,18 @@ class AxonDelay(object):
         if t - self.axonSpikeTrain > self.refractoryPeriod_ms:
             if stimulus >= self.threshold_mA:
                 self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
+                self.addAntidromicSpike(t)
                 self.axonSpikeTrain = t
             if self.indexOrthodromicSpike < len(self.orthodromicSpikeTrain):
                 if t > self.orthodromicSpikeTrain[self.indexOrthodromicSpike]:
-                    self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
-                    self.axonSpikeTrain = t
-                    self.indexOrthodromicSpike += 1
+                    if self.indexAntidromicSpike < len(self.antidromicSpikeTrain):
+                        if math.fabs(self.orthodromicSpikeTrain[self.indexOrthodromicSpike] - self.antidromicSpikeTrain[self.indexAntidromicSpike]) < self.latencyStimulusSpinal_ms:
+                            self.indexOrthodromicSpike += 1
+                            self.indexAntidromicSpike += 1
+                    else:
+                        self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
+                        self.axonSpikeTrain = t
+                        self.indexOrthodromicSpike += 1
 
 
 
