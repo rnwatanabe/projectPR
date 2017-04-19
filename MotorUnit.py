@@ -348,6 +348,7 @@ class MotorUnit(object):
             self.stimulusCompartment = -1    
         # Nerve stimulus function    
         self.stimulusMeanFrequency_Hz = float(conf.parameterSet('stimFrequency_' + self.nerve, pool, 0))
+        self.stimulusPulseDuration_ms = float(conf.parameterSet('stimPulseDuration_' + self.nerve, pool, 0))
         self.stimulusIntensity_mA = float(conf.parameterSet('stimIntensity_' + self.nerve, pool, 0))
         self.stimulusStart_ms = float(conf.parameterSet('stimStart_' + self.nerve, pool, 0))
         self.stimulusStop_ms = float(conf.parameterSet('stimStop_' + self.nerve, pool, 0))
@@ -368,7 +369,7 @@ class MotorUnit(object):
                         stimulusPeriod_ms = 1000.0 / stimulusFrequency_Hz
                         numberOfSteps = int(np.rint(stimulusPeriod_ms / self.conf.timeStep_ms))
                         if (i % numberOfSteps == 0):
-                            self.nerveStimulus_mA[i:int(np.rint(i+1.0 / self.conf.timeStep_ms))] = self.stimulusIntensity_mA
+                            self.nerveStimulus_mA[i:int(np.rint(i+self.stimulusPulseDuration_ms / self.conf.timeStep_ms))] = self.stimulusIntensity_mA
         
         # 
         ## Vector with the instants of spikes at the soma.
@@ -526,12 +527,14 @@ class MotorUnit(object):
 
         '''
         self.stimulusMeanFrequency_Hz = float(self.conf.parameterSet('stimFrequency_' + self.nerve, self.pool, 0))
+        self.stimulusPulseDuration_ms = float(self.conf.parameterSet('stimPulseDuration_' + self.nerve, self.pool, 0))
         self.stimulusIntensity_mA = float(self.conf.parameterSet('stimIntensity_' + self.nerve, self.pool, 0))
         self.stimulusStart_ms = float(self.conf.parameterSet('stimStart_' + self.nerve, self.pool, 0))
         self.stimulusStop_ms = float(self.conf.parameterSet('stimStop_' + self.nerve, self.pool, 0))
         self.stimulusModulationStart_ms = float(self.conf.parameterSet('stimModulationStart_' + self.nerve, self.pool, 0))
         self.stimulusModulationStop_ms = float(self.conf.parameterSet('stimModulationStop_' + self.nerve, self.pool, 0))
 
+        startStep = int(np.rint(self.stimulusStart_ms / self.conf.timeStep_ms))
         for i in xrange(len(self.nerveStimulus_mA)):
             if (i * self.conf.timeStep_ms >= self.stimulusStart_ms and  i * self.conf.timeStep_ms <= self.stimulusStop_ms):
                 if (i * self.conf.timeStep_ms > self.stimulusModulationStart_ms and  i * self.conf.timeStep_ms < self.stimulusModulationStop_ms):
@@ -541,7 +544,7 @@ class MotorUnit(object):
                 if stimulusFrequency_Hz > 0:
                     stimulusPeriod_ms = 1000.0 / stimulusFrequency_Hz
                     numberOfSteps = int(np.rint(stimulusPeriod_ms / self.conf.timeStep_ms))
-                    if (i % numberOfSteps == 0):
+                    if ((i - startStep) % numberOfSteps == 0):
                         self.nerveStimulus_mA[i:int(np.rint(i+1.0 / self.conf.timeStep_ms))] = self.stimulusIntensity_mA
 
 

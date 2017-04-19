@@ -25,6 +25,7 @@ StateType,pulse,
 stimDistToTerm_PTN,0.2,
 stimStart_PTN,0,
 stimStop_PTN,3000,
+stimPulseDuration_PTN,1,
 stimIntensity_PTN,10,
 stimFrequency_PTN,5,
 stimModulation_PTN,0*t,
@@ -196,15 +197,20 @@ axonDelayThreshold:SOL-FF,12.2,12.0
 axonDelayCondVel:SOL-S,44,51
 axonDelayCondVel:SOL-FR,51,52
 axonDelayCondVel:SOL-FF,52,53
+axonDelayLeakTimeConstant:SOL-S,10,10
+axonDelayLeakTimeConstant:SOL-FR,10,10
+axonDelayLeakTimeConstant:SOL-FF,10,10
 axonDelayRefPeriod_PTN,5,
 % Interneurons
 %% RC
 % Afferents
 axonDelayCondVel:Ia-SOL-,55,66
-axonDelayThreshold:Ia-SOL-,17,6
+axonDelayThreshold:Ia-SOL-,18,8
+axonDelayLeakTimeConstant:Ia-SOL-,10,10
 threshold:Ia-SOL,12.35,19
 axonDelayCondVel:Ia-LG-,55,66
-axonDelayThreshold:Ia-LG-,18,9
+axonDelayThreshold:Ia-LG-,18,8
+axonDelayLeakTimeConstant:Ia-LG-,10,10
 threshold:Ia-LG,12.35,19
 % Muscles
 %% SOL
