@@ -7,7 +7,7 @@ Number_Ia-SOL,400,
 Number_Ia-LG,160,
 NumberAxonNodes,0,
 timeStep,0.05,
-simDuration,100,
+simDuration,50,
 nerveLength_PTN,0.8,
 MNSomaRefPer,5.0,
 RCSomaRefPer,1.0,
@@ -320,7 +320,7 @@ l@soma:RC-,242,242
 res@soma:RC-,760,760
 % Afferents
 axonDelayCondVel:Ia-SOL-,55,66
-axonDelayThreshold:Ia-SOL-,18,9
+axonDelayThreshold:Ia-SOL-,17,6
 threshold:Ia-SOL,12.35,19
 axonDelayCondVel:Ia-LG-,55,66
 axonDelayThreshold:Ia-LG-,18,9

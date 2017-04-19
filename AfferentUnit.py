@@ -458,6 +458,7 @@ class AfferentUnit(object):
         self.v_mV = np.zeros((self.compNumber), dtype = np.float64)
         for i in xrange(len(self.compartment)):                                                              
             self.v_mV[i] = self.compartment[i].EqPot_mV
+        self.Delay.reset()
         self.tSpikes = np.zeros((self.compNumber), dtype = np.float64)
         self.lastCompSpikeTrain = []
         ## Vector with the instants of spikes at the terminal.

@@ -51,6 +51,7 @@ class AxonDelay(object):
             + **index**: integer corresponding to the motor unit order in the pool, according to 
             the Henneman's principle (size principle).
         '''
+        self.conf = conf
 
         ## Integer corresponding to the motor unit order in the pool, according to 
         ## the Henneman's principle (size principle).
@@ -77,8 +78,9 @@ class AxonDelay(object):
         self.indexOrthodromicSpike = 0
         self.indexAntidromicSpike = 0
 
+        self.electricCharge_muC = 0
 
-        self.threshold_mA = float(conf.parameterSet('axonDelayThreshold', pool, index))
+        self.threshold_muC = float(conf.parameterSet('axonDelayThreshold', pool, index))
 
         self.refractoryPeriod_ms = float(conf.parameterSet('axonDelayRefPeriod_' + nerve, pool, index))
 
@@ -119,17 +121,22 @@ class AxonDelay(object):
         
         '''
         if t - self.axonSpikeTrain > self.refractoryPeriod_ms:
-            if stimulus >= self.threshold_mA:
+            self.electricCharge_muC += stimulus * self.conf.timeStep_ms
+            if self.electricCharge_muC >= self.threshold_muC:
+                self.electricCharge_muC = 0
                 self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
                 self.addAntidromicSpike(t)
                 self.axonSpikeTrain = t
             if self.indexOrthodromicSpike < len(self.orthodromicSpikeTrain):
                 if t > self.orthodromicSpikeTrain[self.indexOrthodromicSpike]:
                     if self.indexAntidromicSpike < len(self.antidromicSpikeTrain):
-                        if math.fabs(self.orthodromicSpikeTrain[self.indexOrthodromicSpike] - self.antidromicSpikeTrain[self.indexAntidromicSpike]) < self.latencyStimulusSpinal_ms:
+                        if (math.fabs(self.orthodromicSpikeTrain[self.indexOrthodromicSpike] -
+                                      self.antidromicSpikeTrain[self.indexAntidromicSpike]) <
+                                self.latencyStimulusSpinal_ms):
                             self.indexOrthodromicSpike += 1
                             self.indexAntidromicSpike += 1
                     else:
+                        self.electricCharge_muC = 0
                         self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
                         self.axonSpikeTrain = t
                         self.indexOrthodromicSpike += 1
@@ -138,9 +145,11 @@ class AxonDelay(object):
         '''
 
         '''
+        self.electricCharge_muC = 0
         self.terminalSpikeTrain = float("-inf")
         self.axonSpikeTrain = float("-inf")
         
+
         self.orthodromicSpikeTrain = []
         self.antidromicSpikeTrain = []
         self.indexOrthodromicSpike = 0
