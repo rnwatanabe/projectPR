@@ -324,11 +324,11 @@ l@soma:RC-,242,242
 res@soma:RC-,760,760
 % Afferents
 axonDelayCondVel:Ia-SOL-,55,66
-axonDelayThreshold:Ia-SOL-,17,6
+axonDelayThreshold:Ia-SOL-,18,8
 axonDelayLeakTimeConstant:Ia-SOL-,10,
 threshold:Ia-SOL,12.35,19
 axonDelayCondVel:Ia-LG-,55,66
-axonDelayThreshold:Ia-LG-,18,9
+axonDelayThreshold:Ia-LG-,18,8
 axonDelayLeakTimeConstant:Ia-LG-,10,
 threshold:Ia-LG,12.35,19
 % Muscles
