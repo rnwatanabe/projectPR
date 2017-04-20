@@ -310,7 +310,7 @@ class AfferentUnit(object):
         self.stimulusModulationStop_ms = float(conf.parameterSet('stimModulationStop_' + self.nerve, pool, 0))
 
         exec 'def axonStimModulation(t): return '   +  conf.parameterSet('stimModulation_' + self.nerve, pool, 0)
-        
+        self.axonStimModulation = axonStimModulation
         ## Vector with the nerve stimulus, in mA.
         self.nerveStimulus_mA = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         self.createStimulus()
@@ -444,7 +444,7 @@ class AfferentUnit(object):
         for i in xrange(len(self.nerveStimulus_mA)):
             if (i * self.conf.timeStep_ms >= self.stimulusStart_ms and  i * self.conf.timeStep_ms <= self.stimulusStop_ms):
                 if (i * self.conf.timeStep_ms > self.stimulusModulationStart_ms and  i * self.conf.timeStep_ms < self.stimulusModulationStop_ms):
-                    stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz + axonStimModulation(i * self.conf.timeStep_ms)
+                    stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz + self.axonStimModulation(i * self.conf.timeStep_ms)
                 else:
                     stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz
                 if stimulusFrequency_Hz > 0:

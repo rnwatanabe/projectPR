@@ -30,7 +30,7 @@ def simulator():
     pools[1] = NeuralTract(conf, 'CMExt')
     pools[2] = AfferentPool(conf, 'Ia','SOL')
 
-    #pools.append(InterneuronPool(conf, 'RC'))
+    #pools.append(InterneuronPool(conf, 'RC', 'ext'))
 
     #ankle = jointAnkleForceTask(conf, pools)
     Syn = SynapsesFactory(conf, pools)

@@ -357,6 +357,8 @@ class MotorUnit(object):
 
         exec 'def axonStimModulation(t): return '   +  conf.parameterSet('stimModulation_' + self.nerve, pool, 0)
         
+        startStep = int(np.rint(self.stimulusStart_ms / self.conf.timeStep_ms))
+        self.axonStimModulation = axonStimModulation
         ## Vector with the nerve stimulus, in mA.
         self.nerveStimulus_mA = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         for i in xrange(len(self.nerveStimulus_mA)):
@@ -368,7 +370,7 @@ class MotorUnit(object):
                     if stimulusFrequency_Hz > 0:
                         stimulusPeriod_ms = 1000.0 / stimulusFrequency_Hz
                         numberOfSteps = int(np.rint(stimulusPeriod_ms / self.conf.timeStep_ms))
-                        if (i % numberOfSteps == 0):
+                        if ((i - startStep) % numberOfSteps == 0):
                             self.nerveStimulus_mA[i:int(np.rint(i+self.stimulusPulseDuration_ms / self.conf.timeStep_ms))] = self.stimulusIntensity_mA
         
         # 
