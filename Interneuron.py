@@ -84,7 +84,7 @@ class Interneuron(object):
     and a muscle unit.
     '''
 
-    def __init__(self, conf, pool, group, index):
+    def __init__(self, conf, pool, index):
         '''
         Constructor
 
@@ -95,8 +95,6 @@ class Interneuron(object):
             unit belongs.  It can
             be *RC* (Renshaw cell), *IaIn* (Ia Interneuron), *IbIn* (Ib Interneuron) and 
             *gII*.
-
-            + **group**:
 
             + **index**: integer corresponding to the motor unit order in
             the pool, according to the Henneman's principle (size principle).
@@ -120,14 +118,14 @@ class Interneuron(object):
         ## Vector of Compartment of the Motor Unit.
         self.compartment = dict()
         ## Value of the membrane potential, in mV, that is considered a spike.
-        self.threshold_mV = conf.parameterSet('threshold', pool + '_' + group, index)
+        self.threshold_mV = conf.parameterSet('threshold', pool, index)
 
         ## Anatomical position of the neuron, in mm.
-        self.position_mm = conf.parameterSet('position', pool + '_' + group, index)
+        self.position_mm = conf.parameterSet('position', pool, index)
         
 
         for i in xrange(len(compartmentsList)): 
-            self.compartment[i] = Compartment(compartmentsList[i], self.conf, self.pool + '_' + group, self.index, self.kind)
+            self.compartment[i] = Compartment(compartmentsList[i], self.conf, self.pool, self.index, self.kind)
 
         ## Number of compartments.
         self.compNumber = len(self.compartment)

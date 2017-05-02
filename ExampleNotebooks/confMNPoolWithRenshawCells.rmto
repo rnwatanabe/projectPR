@@ -1,14 +1,20 @@
 MUnumber_SOL-S,800,
 MUnumber_SOL-FR,0,
 MUnumber_SOL-FF,0,
-Number_RC,350,
+Number_RC_ext,350,
 Number_CMExt,400,
 NumberAxonNodes,0,
 timeStep,0.05,
 simDuration,100,
 nerveLength_PTN,0.8,
 MNSomaRefPer,5.0,
-RCSomaRefPer,1.0,
+RC_extSomaRefPer,1.0,
+thickness:SOL,18.4,
+skinThickness,1.5,
+MUSpatialDistribution,random,
+EMGAttenuationFactor,5,
+EMGWideningFactor,0.1,
+EMGNoiseEMG,0.7,
 % Model options
 activationModel,SOCDS,
 hillModel,No,
@@ -19,6 +25,14 @@ DriveTarget_CMExt,ISI,
 DriveFunction_CMExt,12+0*t,
 %Stimulus
 stimDistToTerm_PTN,0.2,
+stimStart_PTN,0,
+stimStop_PTN,3000,
+stimIntensity_PTN,0,
+stimFrequency_PTN,0,
+stimPulseDuration_PTN,1,
+stimModulation_PTN,5+0*t,
+stimModulationStart_PTN,200,
+stimModulationStop_PTN,400,
 % Synapses
 %% SOL
 EqPotSyn:SOL-S|excitatory,70.0,
@@ -66,47 +80,47 @@ dyn:CMExt->SOL-FF@dendrite|excitatory,None,
 dec:CMExt->SOL-S@dendrite|excitatory,inf,
 dec:CMExt->SOL-FR@dendrite|excitatory,inf,
 dec:CMExt->SOL-FF@dendrite|excitatory,inf,
-Con:RC->SOL-S@soma|inhibitory,4,
-Con:RC->SOL-FR@soma|inhibitory,4,
-Con:RC->SOL-FF@soma|inhibitory,4,
-gmax:RC->SOL-S@soma|inhibitory,0.44,
-gmax:RC->SOL-FR@soma|inhibitory,0.44,
-gmax:RC->SOL-FF@soma|inhibitory,0.44,
-delay:RC->SOL-S@soma|inhibitory,0.3,
-delay:RC->SOL-FR@soma|inhibitory,0.3,
-delay:RC->SOL-FF@soma|inhibitory,0.3,
-dyn:RC->SOL-S@soma|inhibitory,None,
-dyn:RC->SOL-FR@soma|inhibitory,None,
-dyn:RC->SOL-FF@soma|inhibitory,None,
-dec:RC->SOL-S@soma|inhibitory,0.22,
-dec:RC->SOL-FR@soma|inhibitory,0.22,
-dec:RC->SOL-FF@soma|inhibitory,0.22,
+Con:RC_ext->SOL-S@soma|inhibitory,4,
+Con:RC_ext->SOL-FR@soma|inhibitory,4,
+Con:RC_ext->SOL-FF@soma|inhibitory,4,
+gmax:RC_ext->SOL-S@soma|inhibitory,0.44,
+gmax:RC_ext->SOL-FR@soma|inhibitory,0.44,
+gmax:RC_ext->SOL-FF@soma|inhibitory,0.44,
+delay:RC_ext->SOL-S@soma|inhibitory,0.3,
+delay:RC_ext->SOL-FR@soma|inhibitory,0.3,
+delay:RC_ext->SOL-FF@soma|inhibitory,0.3,
+dyn:RC_ext->SOL-S@soma|inhibitory,None,
+dyn:RC_ext->SOL-FR@soma|inhibitory,None,
+dyn:RC_ext->SOL-FF@soma|inhibitory,None,
+dec:RC_ext->SOL-S@soma|inhibitory,0.22,
+dec:RC_ext->SOL-FR@soma|inhibitory,0.22,
+dec:RC_ext->SOL-FF@soma|inhibitory,0.22,
 %% RC
-EqPotSyn:RC-|excitatory,70.0,
-EqPotSyn:RC-|inhibitory,-16.0,
-alphaSyn:RC-|excitatory,0.5,
-betaSyn:RC-|excitatory,0.07,
-alphaSyn:RC-|inhibitory,0.5,
-betaSyn:RC-|inhibitory,1.2,
-TmaxSyn:RC-|excitatory,1.0,
-TmaxSyn:RC-|inhibitory,1.0,
-tPeakSyn:RC-|excitatory,3,
-tPeakSyn:RC-|inhibitory,0.4,
-Con:SOL-S>RC-@soma|excitatory,6,
-gmax:SOL-S>RC-@soma|excitatory,0.15,
-delay:SOL-S>RC-@soma|excitatory,0.3,
-dyn:SOL-S>RC-@soma|excitatory,Depressing,
-dec:SOL-S>RC-@soma|excitatory,0.01,
-var:SOL-S>RC-@soma|excitatory,0.5,
-tau:SOL-S>RC-@soma|excitatory,200,
-Con:Noise>RC-@soma|excitatory,100,
-gmax:Noise>RC-@soma|excitatory,0.015,
-delay:Noise>RC-@soma|excitatory,0.3,
-dyn:Noise>RC-@soma|excitatory,None,
-dec:Noise>RC-@soma|excitatory,inf,
-NoiseGammaOrder_RC,10,
-NoiseTarget_RC,FR,
-NoiseFunction_RC,7 + 0*t,
+EqPotSyn:RC_ext-|excitatory,70.0,
+EqPotSyn:RC_ext-|inhibitory,-16.0,
+alphaSyn:RC_ext-|excitatory,0.5,
+betaSyn:RC_ext-|excitatory,0.07,
+alphaSyn:RC_ext-|inhibitory,0.5,
+betaSyn:RC_ext-|inhibitory,1.2,
+TmaxSyn:RC_ext-|excitatory,1.0,
+TmaxSyn:RC_ext-|inhibitory,1.0,
+tPeakSyn:RC_ext-|excitatory,3,
+tPeakSyn:RC_ext-|inhibitory,0.4,
+Con:SOL-S>RC_ext-@soma|excitatory,6,
+gmax:SOL-S>RC_ext-@soma|excitatory,0.15,
+delay:SOL-S>RC_ext-@soma|excitatory,0.3,
+dyn:SOL-S>RC_ext-@soma|excitatory,Depressing,
+dec:SOL-S>RC_ext-@soma|excitatory,0.01,
+var:SOL-S>RC_ext-@soma|excitatory,0.5,
+tau:SOL-S>RC_ext-@soma|excitatory,200,
+Con:Noise>RC_ext-@soma|excitatory,100,
+gmax:Noise>RC_ext-@soma|excitatory,0.015,
+delay:Noise>RC_ext-@soma|excitatory,0.3,
+dyn:Noise>RC_ext-@soma|excitatory,None,
+dec:Noise>RC_ext-@soma|excitatory,inf,
+NoiseGammaOrder_RC_ext,10,
+NoiseTarget_RC_ext,FR,
+NoiseFunction_RC_ext,7 + 0*t,
 % Channel conductance
 %% Equilibrium Potential
 EqPot_Kf@soma,-10,
@@ -118,9 +132,9 @@ gmax_Na:SOL-S@soma,30000,
 gmax_Kf:SOL-S@soma,4000,
 gmax_Ks:SOL-S@soma,17000,
 %%% RC
-gmax_Na:RC-@soma,30000,
-gmax_Kf:RC-@soma,1000,
-gmax_Ks:RC-@soma,4000,
+gmax_Na:RC_ext-@soma,30000,
+gmax_Kf:RC_ext-@soma,1000,
+gmax_Ks:RC_ext-@soma,4000,
 %States
 PulseDur_m,0.6,
 PulseDur_h,0.6,
@@ -136,14 +150,14 @@ beta_h:SOL-S@soma,4,
 beta_n:SOL-S@soma,0.1,
 beta_q:SOL-S@soma,0.025,
 %% RC
-alpha_m:RC-@soma,22,
-alpha_h:RC-@soma,0.5,
-alpha_n:RC-@soma,1.5,
-alpha_q:RC-@soma,1.5,
-beta_m:RC-@soma,13,
-beta_h:RC-@soma,4,
-beta_n:RC-@soma,0.1,
-beta_q:RC-@soma,0.07,
+alpha_m:RC_ext-@soma,22,
+alpha_h:RC_ext-@soma,0.5,
+alpha_n:RC_ext-@soma,1.5,
+alpha_q:RC_ext-@soma,1.5,
+beta_m:RC_ext-@soma,13,
+beta_h:RC_ext-@soma,4,
+beta_n:RC_ext-@soma,0.1,
+beta_q:RC_ext-@soma,0.07,
 % Motoneurons
 cytR,70,
 membCapac,1,
@@ -161,7 +175,16 @@ EqPot@dendrite,0,
 EqPot@soma,0,
 IPump@dendrite,0,
 IPump@soma,0,
+axonDelayThreshold:SOL-S,18,12.4
+axonDelayThreshold:SOL-FR,12.4,12.2
+axonDelayThreshold:SOL-FF,12.2,12.0
 axonDelayCondVel:SOL-S,44,51
+axonDelayCondVel:SOL-FR,51,52
+axonDelayCondVel:SOL-FF,52,53
+axonDelayRefPeriod_PTN,5,
+axonDelayLeakTimeConstant:SOL-S,10,10
+axonDelayLeakTimeConstant:SOL-FR,10,10
+axonDelayLeakTimeConstant:SOL-FF,10,10
 twitchTimePeak:SOL-S,170.0,132.5
 twitchPeak:SOL-S,0.03,1.9
 bSatSOCDS:SOL-S,0.7,0.5
@@ -170,10 +193,16 @@ bSatSOCDS:SOL-FF,0.3,0.23
 twTetSOCDS:SOL-S,2.97,4.08
 twTetSOCDS:SOL-FR,4.08,6.71
 twTetSOCDS:SOL-FF,6.71,8.73
+EMGAmplitude:SOL-S,0.003,0.19
+EMGAmplitude:SOL-FR,0.19,0.25
+EMGAmplitude:SOL-FF,0.25,0.3
+EMGDuration:SOL-S,0.8,0.7
+EMGDuration:SOL-FR,0.7,0.6
+EMGDuration:SOL-FF,0.6,0.5
 % Interneurons
 %% RC
-position:RC-,0,18
-threshold:RC-,5,15
-d@soma:RC-,25,25
-l@soma:RC-,242,242
-res@soma:RC-,760,760
+position:RC_ext-,0,18
+threshold:RC_ext-,5,15
+d@soma:RC_ext-,25,25
+l@soma:RC_ext-,242,242
+res@soma:RC_ext-,760,760

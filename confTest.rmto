@@ -314,9 +314,9 @@ axonDelayCondVel:SOL-S,44,51
 axonDelayCondVel:SOL-FR,51,52
 axonDelayCondVel:SOL-FF,52,53
 axonDelayRefPeriod_PTN,5,
-axonDelayLeakTimeConstant:SOL-S,10,
-axonDelayLeakTimeConstant:SOL-FR,10,
-axonDelayLeakTimeConstant:SOL-FF,10,
+axonDelayLeakTimeConstant:SOL-S,10,10
+axonDelayLeakTimeConstant:SOL-FR,10,10
+axonDelayLeakTimeConstant:SOL-FF,10,10
 % Interneurons
 %% RC
 position:RC_ext-,0,18

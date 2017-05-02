@@ -4,12 +4,14 @@ MUnumber_SOL-FF,50,
 Number_Ia-SOL,400,
 Number_Ia-LG,160,
 Number_Ia-TA,280,
+Number_IaIn_ext,350,
 NumberAxonNodes,0,
 timeStep,0.05,
-simDuration,50,
+simDuration,1100,
 nerveLength_PTN,0.8,
 nerveLength_CPN,0.8,
 MNSomaRefPer,5.0,
+IaIn_extSomaRefPer,5.0,
 RCSomaRefPer,1.0,
 AFRefPer,5.0,
 skinThickness,1.5,
@@ -28,20 +30,20 @@ stimDistToTerm_PTN,0.2,
 stimStart_PTN,3,
 stimStop_PTN,3000,
 stimPulseDuration_PTN,1,
-stimIntensity_PTN,10,
+stimIntensity_PTN,13,
 stimFrequency_PTN,1,
 stimModulation_PTN,0*t,
 stimModulationStart_PTN,0,
 stimModulationStop_PTN,0,
-stimDistToTerm_PTN,0.14,
-stimStart_PTN,0,
-stimStop_PTN,3000,
-stimPulseDuration_PTN,1,
-stimIntensity_PTN,10,
-stimFrequency_PTN,1,
-stimModulation_PTN,0*t,
-stimModulationStart_PTN,0,
-stimModulationStop_PTN,0,
+stimDistToTerm_CPN,0.14,
+stimStart_CPN,1000,
+stimStop_CPN,3000,
+stimPulseDuration_CPN,1,
+stimIntensity_CPN,19,
+stimFrequency_CPN,1,
+stimModulation_CPN,0*t,
+stimModulationStart_CPN,0,
+stimModulationStop_CPN,0,
 % Synapses
 %% SOL
 EqPotSyn:SOL-S|excitatory,70.0,
@@ -104,6 +106,36 @@ dyn:Ia-LG>SOL-FF@dendrite|excitatory,None,
 dec:Ia-LG>SOL-S@dendrite|excitatory,inf,
 dec:Ia-LG>SOL-FR@dendrite|excitatory,inf,
 dec:Ia-LG>SOL-FF@dendrite|excitatory,inf,
+Con:IaIn_ext->SOL-S@soma|inhibitory,20,
+Con:IaIn_ext->SOL-FR@soma|inhibitory,20,
+Con:IaIn_ext->SOL-FF@soma|inhibitory,20,
+gmax:IaIn_ext->SOL-S@soma|inhibitory,0.5,
+gmax:IaIn_ext->SOL-FR@soma|inhibitory,0.5,
+gmax:IaIn_ext->SOL-FF@soma|inhibitory,0.5,
+delay:IaIn_ext->SOL-S@soma|inhibitory,0.3,
+delay:IaIn_ext->SOL-FR@soma|inhibitory,0.3,
+delay:IaIn_ext->SOL-FF@soma|inhibitory,0.3,
+dyn:IaIn_ext->SOL-S@soma|inhibitory,None,
+dyn:IaIn_ext->SOL-FR@soma|inhibitory,None,
+dyn:IaIn_ext->SOL-FF@soma|inhibitory,None,
+dec:IaIn_ext->SOL-S@soma|inhibitory,inf,
+dec:IaIn_ext->SOL-FR@soma|inhibitory,inf,
+dec:IaIn_ext->SOL-FF@soma|inhibitory,inf,
+EqPotSyn:IaIn_ext-|excitatory,70.0,
+EqPotSyn:IaIn_ext-|inhibitory,-16.0,
+alphaSyn:IaIn_ext-|excitatory,0.5,
+betaSyn:IaIn_ext-|excitatory,2.5,
+alphaSyn:IaIn_ext-|inhibitory,0.5,
+betaSyn:IaIn_ext-|inhibitory,1.2,
+TmaxSyn:IaIn_ext-|excitatory,1.0,
+TmaxSyn:IaIn_ext-|inhibitory,1.0,
+tPeakSyn:IaIn_ext-|excitatory,0.2,
+tPeakSyn:IaIn_ext-|inhibitory,0.4,
+Con:Ia-TA>IaIn_ext-@soma|excitatory,100,
+gmax:Ia-TA>IaIn_ext-@soma|excitatory,0.6,
+delay:Ia-TA>IaIn_ext-@soma|excitatory,0.3,
+dyn:Ia-TA>IaIn_ext-@soma|excitatory,None,
+dec:Ia-TA>IaIn_ext-@soma|excitatory,inf,
 % Channel conductance
 %% Equilibrium Potential
 EqPot_Kf@soma,-10,
@@ -120,6 +152,10 @@ gmax_Ks:SOL-FR@soma,37500,
 gmax_Na:SOL-FF@soma,30000,
 gmax_Kf:SOL-FF@soma,500,
 gmax_Ks:SOL-FF@soma,8000,
+%%%IaIn_ext
+gmax_Na:IaIn_ext-@soma,30000,
+gmax_Kf:IaIn_ext-@soma,1000,
+gmax_Ks:IaIn_ext-@soma,1000,
 %States
 PulseDur_m,0.6,
 PulseDur_h,0.6,
@@ -153,6 +189,15 @@ beta_m:SOL-FF@soma,13,
 beta_h:SOL-FF@soma,4,
 beta_n:SOL-FF@soma,0.1,
 beta_q:SOL-FF@soma,0.05,
+%%%IaIn_ext
+alpha_m:IaIn_ext-@soma,22,
+alpha_h:IaIn_ext-@soma,0.5,
+alpha_n:IaIn_ext-@soma,1.5,
+alpha_q:IaIn_ext-@soma,1.5,
+beta_m:IaIn_ext-@soma,13,
+beta_h:IaIn_ext-@soma,4,
+beta_n:IaIn_ext-@soma,0.03,
+beta_q:IaIn_ext-@soma,0.03,
 % Motoneurons
 cytR,70,
 membCapac,1,
@@ -213,6 +258,11 @@ axonDelayLeakTimeConstant:SOL-FR,10,10
 axonDelayLeakTimeConstant:SOL-FF,10,10
 axonDelayRefPeriod_PTN,5,
 % Interneurons
+position:IaIn_ext-,0,18
+threshold:IaIn_ext-,10,15
+d@soma:IaIn_ext-,25,25
+l@soma:IaIn_ext-,175,175
+res@soma:IaIn_ext-,6280,6280
 %% RC
 % Afferents
 axonDelayCondVel:Ia-SOL-,55,66
@@ -226,6 +276,7 @@ threshold:Ia-LG,12.35,19
 axonDelayCondVel:Ia-TA-,55,66
 axonDelayThreshold:Ia-TA-,18,8
 axonDelayLeakTimeConstant:Ia-TA-,10,10
+axonDelayRefPeriod_CPN,5,
 threshold:Ia-TA,12.35,19
 % Muscles
 %% SOL
