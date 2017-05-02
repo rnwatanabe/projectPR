@@ -30,6 +30,7 @@ stimFrequency_PTN,10,
 stimModulation_PTN,5+0*t,
 stimModulationStart_PTN,200,
 stimModulationStop_PTN,400,
+stimPulseDuration_PTN,1,
 % Synapses
 %% SOL
 EqPotSyn:SOL-S|excitatory,70.0,
@@ -156,8 +157,15 @@ IPump@soma,0,
 IPump@internode,0.00786,
 IPump@node,0.0333,
 axonDelayThreshold:SOL-S,18,12.4
+axonDelayThreshold:SOL-FR,12.4,12.2
+axonDelayThreshold:SOL-FF,12.2,12.0
 axonDelayCondVel:SOL-S,44,51
+axonDelayCondVel:SOL-FR,51,52
+axonDelayCondVel:SOL-FF,52,53
 axonDelayRefPeriod_PTN,5,
+axonDelayLeakTimeConstant:SOL-S,10,10
+axonDelayLeakTimeConstant:SOL-FR,10,10
+axonDelayLeakTimeConstant:SOL-FF,10,10
 twitchTimePeak:SOL-S,170.0,132.5
 twitchPeak:SOL-S,0.03,1.9
 bSatSOCDS:SOL-S,0.7,0.5
