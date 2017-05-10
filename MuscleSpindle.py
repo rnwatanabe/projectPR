@@ -157,6 +157,7 @@ class MuscleSpindle(object):
         self.GAMMABag1 = self.GAMMA1Bag1 * self.fusimotorActivation[0]
         self.GAMMABag2 = self.GAMMA2Bag2 * self.fusimotorActivation[1]
         self.GAMMAChain = self.GAMMA2Chain * self.fusimotorActivation[2]
+        
             
 
         self.computeFiberTension(t, fascicleLength, fascicleVelocity, fascicleAcceleration)
