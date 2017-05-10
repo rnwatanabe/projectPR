@@ -19,9 +19,8 @@
 '''
 
 
-from Compartment import Compartment
+
 import numpy as np
-from AxonDelay import AxonDelay
 import math
 from scipy.sparse import lil_matrix
 import time
@@ -97,12 +96,50 @@ class MuscleSpindle(object):
         ## Configuration object with the simulation parameters.
         self.conf = conf
 
-        self.pool = pool
+        self.muscle = muscle
+
         
-        self.kind = ''
+        self.beta0Bag1 = float(conf.parameterSet('beta0Bag1', muscle, 0))
+        self.beta0Bag2 = float(conf.parameterSet('beta0Bag2', muscle, 0))
+        self.beta0Chain = float(conf.parameterSet('beta0Chain', muscle, 0))
+        self.beta1Bag1 = float(conf.parameterSet('beta1Bag1', muscle, 0))
+        self.beta2Bag2 = float(conf.parameterSet('beta2Bag2', muscle, 0))
+        self.beta2Chain = float(conf.parameterSet('beta2Chain', muscle, 0))
+
         
-        
-    
+        self.GAMMA1Bag1 = float(conf.parameterSet('GAMMA1Bag1', muscle, 0))
+        self.GAMMA2Bag2 = float(conf.parameterSet('GAMMA2Bag2', muscle, 0))
+        self.GAMMA2Chain = float(conf.parameterSet('GAMMA2Chain', muscle, 0))
+
+        self.freq_bag1_Hz = float(conf.parameterSet('freqBag1', muscle, 0))
+        self.freq_bag2_Hz = float(conf.parameterSet('freqBag2', muscle, 0))
+        self.freq_Chain_Hz = float(conf.parameterSet('freqChain', muscle, 0))
+
+        self.tauBag1_ms = float(conf.parameterSet('tauBag1', muscle, 0))
+        self.tauBag2_ms = float(conf.parameterSet('tauBag2', muscle, 0))
+
+        self.betaBag1 = 0
+        self.betaBag2 = 0
+        self.betaChain = 0
+
+        self.GAMMABag1 = 0
+        self.GAMMABag2 = 0
+        self.GAMMAChain = 0
+
+        ## Vector with the activation of each fusimotor fiber. The first
+        # element is the frequency of Bag1, the second of Bag2 and the
+        # third of the Chain.  
+        self.fusimotorActivation = np.zeros((3), dtype=np.float64)
+
+        ## Vector with the tensions and tensions derivatives of each 
+        # fusimotor fiber. The first two elements correspond to the Bag1,
+        #  the third and fourth to Bag2 and the last ones to the Chain. 
+        self.fiberTension = np.zeros((6), dtype=np.float64)
+
+        self.IaFR_Hz = 0.0
+        self.IIFR_Hz = 0.0
+
+
     def atualizeMuscleSpindle(self, t, fascicleLength, fascicleVelocity, fascicleAcceleration, gammaMNDynamicFR, gammaMNStaticFR):
         '''
         Atualize the dynamical and nondynamical (delay) parts of the motor unit.
@@ -110,7 +147,79 @@ class MuscleSpindle(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
-        self.atualizeCompartments(t)
+
+        self.fusimotorActivation = self.computeFusimotorActivation(t, gammaMNDynamicFR, gammaMNStaticFR)
+        
+        self.betaBag1 = self.beta0Bag1 + self.beta1Bag1 * self.fusimotorActivation[0]
+        self.betaBag2 = self.beta0Bag2 + self.beta2Bag2 * self.fusimotorActivation[1]
+        self.betaChain = self.beta0Chain + self.beta2Chain * self.fusimotorActivation[2]
+        
+        self.GAMMABag1 = self.GAMMA1Bag1 * self.fusimotorActivation[0]
+        self.GAMMABag2 = self.GAMMA2Bag2 * self.fusimotorActivation[1]
+        self.GAMMAChain = self.GAMMA2Chain * self.fusimotorActivation[2]
+            
+
+        self.computeFiberTension(t, fascicleLength, fascicleVelocity, fascicleAcceleration)
+
+
+        self.IaFR = self.computeIa(t)
+        self.IIFR = self.computeII(t)
+
+    def computeFusimotorActivation(self, t, gammaMNDynamicFR, gammaMNStaticFR):
+        '''
+
+        '''
+        df = self.dfdt(t,gammaMNDynamicFR, gammaMNStaticFR)
+        self.fusimotorActivation[0] += self.conf.timeStep * df[0] 
+        self.fusimotorActivation[1] += self.conf.timeStep * df[1]
+        self.fusimotorActivation[2] = gammaMNStaticFR**2/(gammaMNStaticFR**2 + self.freq_Chain_Hz**2)
+
+
+    def dfdt(self, t, gammaMNDynamicFR, gammaMNStaticFR):
+        '''
+        '''
+        df = np.zeros((2))
+
+        df[0] = (gammaMNDynamicFR**2/(gammaMNDynamicFR**2 + self.freq_bag1_Hz**2) - self.fusimotorActivation[0]) / self.tauBag1_ms
+        df[1] = (gammaMNStaticFR**2/(gammaMNStaticFR**2 + self.freq_bag2_Hz**2) - self.fusimotorActivation[1]) / self.tauBag2_ms
+
+        return df
+
+    def computeFiberTension(self, t, fascicleLength, fascicleVelocity, fascicleAcceleration):
+        '''
+        '''
+        dT = self.dTdt(t, fascicleLength, fascicleVelocity, fascicleAcceleration)
+
+    def dTdt(self, fascicleLength, fascicleVelocity, fascicleAcceleration):
+        '''
+
+        '''
+        dT = np.zeros((6))
+        
+        dT[0] = self.fiberTension[1]
+        dT[1] = self.KsrBag1 / MBag1 * ()
+        dT[2] = self.fiberTension[3]
+        dT[3] = 
+        dT[4] = self.fiberTension[5]
+        dT[5] = 
+        return dT
+
+    def computeIa(self, t):
+        '''
+
+        '''
+
+    def computeII(self, t):
+        '''
+
+        '''
+
+
+
+
+
+
+
 
     
         

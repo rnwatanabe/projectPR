@@ -319,7 +319,11 @@ class AfferentUnit(object):
         self.lastCompSpikeTrain = []
         ## Vector with the instants of spikes at the terminal.
         self.terminalSpikeTrain = []
-                
+        
+
+        ## A PointProcessGenerator object, corresponding the generator of
+        ## spikes of the neural tract unit.   
+        self.spikesGenerator = PointProcessGenerator(self.GammaOrder, index)  
         
         ## Build synapses       
          
