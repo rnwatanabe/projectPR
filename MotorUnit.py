@@ -400,9 +400,7 @@ class MotorUnit(object):
          
         self.SynapsesOut = []
         self.transmitSpikesThroughSynapses = []
-        self.indicesOfSynapsesOnTarget = []
-
-         
+        self.indicesOfSynapsesOnTarget = []         
     
     def atualizeMotorUnit(self, t):
         '''

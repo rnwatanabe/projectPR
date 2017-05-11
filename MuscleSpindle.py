@@ -22,8 +22,7 @@
 
 import numpy as np
 import math
-from scipy.sparse import lil_matrix
-import time
+
 
 
 
@@ -118,6 +117,44 @@ class MuscleSpindle(object):
         self.tauBag1_ms = float(conf.parameterSet('tauBag1', muscle, 0))
         self.tauBag2_ms = float(conf.parameterSet('tauBag2', muscle, 0))
 
+        self.KsrBag1 = float(conf.parameterSet('KsrBag1', muscle, 0))
+        self.KsrBag2 = float(conf.parameterSet('KsrBag2', muscle, 0))
+        self.KsrChain = float(conf.parameterSet('KsrChain', muscle, 0))
+
+        self.MBag1 = float(conf.parameterSet('MBag1', muscle, 0))
+        self.MBag2 = float(conf.parameterSet('MBag2', muscle, 0))
+        self.MChain = float(conf.parameterSet('MChain', muscle, 0))
+
+        self.L0SrBag1 = float(conf.parameterSet('L0SrBag1', muscle, 0))
+        self.L0SrBag2 = float(conf.parameterSet('L0SrBag2', muscle, 0))
+        self.L0SrChain = float(conf.parameterSet('L0SrChain', muscle, 0))
+
+        self.L0PrBag1 = float(conf.parameterSet('L0PrBag1', muscle, 0))
+        self.L0PrBag2 = float(conf.parameterSet('L0PrBag2', muscle, 0))
+        self.L0PrChain = float(conf.parameterSet('L0PrChain', muscle, 0))
+
+        self.LNSrBag1 = float(conf.parameterSet('LNSrBag1', muscle, 0))
+        self.LNSrBag2 = float(conf.parameterSet('LNSrBag2', muscle, 0))
+        self.LNSrChain = float(conf.parameterSet('LNSrChain', muscle, 0))
+
+        
+        self.LNPrBag2 = float(conf.parameterSet('LNPrBag2', muscle, 0))
+        self.LNPrChain = float(conf.parameterSet('LNPrChain', muscle, 0))
+
+        self.RBag1 = float(conf.parameterSet('RBag1', muscle, 0))
+        self.RBag2 = float(conf.parameterSet('RBag2', muscle, 0))
+        self.RChain = float(conf.parameterSet('RChain', muscle, 0))
+
+        self.KPrBag1 = float(conf.parameterSet('KPrBag1', muscle, 0))
+        self.KPrBag2 = float(conf.parameterSet('KPrBag2', muscle, 0))
+        self.KPrChain = float(conf.parameterSet('KPrChain', muscle, 0))
+
+        self.GPrimaryBag1 = float(conf.parameterSet('GPrimaryBag1', muscle, 0))
+        self.GPrimaryBag2 = float(conf.parameterSet('GPrimaryBag2', muscle, 0))
+        self.GPrimaryChain = float(conf.parameterSet('GPrimaryChain', muscle, 0))
+
+        self.SOcclusionFactor = float(conf.parameterSet('SOcclusionFactor', muscle, 0))
+
         self.betaBag1 = 0
         self.betaBag2 = 0
         self.betaChain = 0
@@ -125,6 +162,16 @@ class MuscleSpindle(object):
         self.GAMMABag1 = 0
         self.GAMMABag2 = 0
         self.GAMMAChain = 0
+
+        self.primaryPotentialBag1 = 0
+        self.primaryPotentialBag2 = 0
+        self.primaryPotentialChain = 0
+
+        self.secondaryPotentialBag1 = 0
+        self.secondaryPotentialBag2 = 0
+        self.secondaryPotentialChain = 0
+
+        self.C = 1.0
 
         ## Vector with the activation of each fusimotor fiber. The first
         # element is the frequency of Bag1, the second of Bag2 and the
@@ -139,6 +186,8 @@ class MuscleSpindle(object):
         self.IaFR_Hz = 0.0
         self.IIFR_Hz = 0.0
 
+        print 'Muscle spindle from muscle ' + self.muscle + ' built.'
+
 
     def atualizeMuscleSpindle(self, t, fascicleLength, fascicleVelocity, fascicleAcceleration, gammaMNDynamicFR, gammaMNStaticFR):
         '''
@@ -148,7 +197,8 @@ class MuscleSpindle(object):
             + **t**: current instant, in ms.
         '''
 
-        self.fusimotorActivation = self.computeFusimotorActivation(t, gammaMNDynamicFR, gammaMNStaticFR)
+        self.computeFusimotorActivation(t, gammaMNDynamicFR, gammaMNStaticFR)
+        
         
         self.betaBag1 = self.beta0Bag1 + self.beta1Bag1 * self.fusimotorActivation[0]
         self.betaBag2 = self.beta0Bag2 + self.beta2Bag2 * self.fusimotorActivation[1]
@@ -158,21 +208,24 @@ class MuscleSpindle(object):
         self.GAMMABag2 = self.GAMMA2Bag2 * self.fusimotorActivation[1]
         self.GAMMAChain = self.GAMMA2Chain * self.fusimotorActivation[2]
         
-            
+        if fascicleVelocity > 0:
+            self.C = 1
+        else:
+            self.C = 0.42    
 
         self.computeFiberTension(t, fascicleLength, fascicleVelocity, fascicleAcceleration)
 
 
-        self.IaFR = self.computeIa(t)
-        self.IIFR = self.computeII(t)
+        self.IaFR_Hz = self.computeIa(t) / 1000
+        #self.IIFR = self.computeII(t)
 
     def computeFusimotorActivation(self, t, gammaMNDynamicFR, gammaMNStaticFR):
         '''
 
         '''
         df = self.dfdt(t,gammaMNDynamicFR, gammaMNStaticFR)
-        self.fusimotorActivation[0] += self.conf.timeStep * df[0] 
-        self.fusimotorActivation[1] += self.conf.timeStep * df[1]
+        self.fusimotorActivation[0] += self.conf.timeStep_ms * df[0] 
+        self.fusimotorActivation[1] += self.conf.timeStep_ms * df[1]
         self.fusimotorActivation[2] = gammaMNStaticFR**2/(gammaMNStaticFR**2 + self.freq_Chain_Hz**2)
 
 
@@ -190,30 +243,73 @@ class MuscleSpindle(object):
         '''
         '''
         dT = self.dTdt(t, fascicleLength, fascicleVelocity, fascicleAcceleration)
+        self.fiberTension += self.conf.timeStep_ms * dT
+        
 
-    def dTdt(self, fascicleLength, fascicleVelocity, fascicleAcceleration):
+    def dTdt(self, t, fascicleLength, fascicleVelocity, fascicleAcceleration):
         '''
 
         '''
         dT = np.zeros((6))
         
         dT[0] = self.fiberTension[1]
-        dT[1] = self.KsrBag1 / MBag1 * ()
+        dT[1] = self.KsrBag1 / self.MBag1 * (self.C * self.betaBag1 * np.sign(fascicleVelocity - self.fiberTension[1]/self.KsrBag1)
+                                        * math.fabs(fascicleVelocity - self.fiberTension[1]/self.KsrBag1)**0.3 * 
+                                        (fascicleLength - self.L0SrBag1 - self.fiberTension[0]/self.KsrBag1 - self.RBag1)
+                                        + self.KPrBag1 * (fascicleLength - self.L0SrBag1 - self.fiberTension[0]/self.KsrBag1 - self.L0PrBag1)
+                                        + self.MBag1 * fascicleAcceleration + self.GAMMABag1 - self.fiberTension[0]
+                                       )
         dT[2] = self.fiberTension[3]
-        dT[3] = 
+        dT[3] = self.KsrBag2 / self.MBag2 * (self.C * self.betaBag2 * np.sign(fascicleVelocity - self.fiberTension[3]/self.KsrBag2)
+                                        * math.fabs(fascicleVelocity - self.fiberTension[3]/self.KsrBag2)**0.3 * 
+                                        (fascicleLength - self.L0SrBag2 - self.fiberTension[2]/self.KsrBag2 - self.RBag2)
+                                        + self.KPrBag2 * (fascicleLength - self.L0SrBag2 - self.fiberTension[2]/self.KsrBag2 - self.L0PrBag2)
+                                        + self.MBag2 * fascicleAcceleration + self.GAMMABag2 - self.fiberTension[2]
+                                       )
         dT[4] = self.fiberTension[5]
-        dT[5] = 
+        dT[5] = self.KsrChain / self.MChain * (self.C * self.betaChain * np.sign(fascicleVelocity - self.fiberTension[5]/self.KsrChain)
+                                        * math.fabs(fascicleVelocity - self.fiberTension[5]/self.KsrChain)**0.3 * 
+                                        (fascicleLength - self.L0SrChain - self.fiberTension[4]/self.KsrChain - self.RChain)
+                                        + self.KPrChain * (fascicleLength - self.L0SrChain - self.fiberTension[4]/self.KsrChain - self.L0PrChain)
+                                        + self.MChain * fascicleAcceleration + self.GAMMAChain - self.fiberTension[4]
+                                       )
         return dT
 
     def computeIa(self, t):
         '''
 
         '''
+        self.computePrimaryActivity(t)
+
+        if (self.primaryPotentialBag1 >= (self.primaryPotentialBag2 + self.primaryPotentialChain)):
+            larger = self.primaryPotentialBag1
+            smaller = self.primaryPotentialBag2 + self.primaryPotentialChain
+        else:
+            smaller = self.primaryPotentialBag1
+            larger = self.primaryPotentialBag2 + self.primaryPotentialChain
+
+        return self.SOcclusionFactor * smaller + larger
 
     def computeII(self, t):
         '''
 
         '''
+
+    def computePrimaryActivity(self, t):
+        '''
+
+        '''
+        self.primaryPotentialBag1 = self.GPrimaryBag1 * (self.fiberTension[0] / self.KsrBag1 - 
+                                                         self.LNSrBag1 + self.L0PrBag1
+                                                        )
+
+        self.primaryPotentialBag2 = self.GPrimaryBag2 * (self.fiberTension[2] / self.KsrBag2 - 
+                                                         self.LNSrBag2 + self.L0PrBag2
+                                                        )
+                                                    
+        self.primaryPotentialChain = self.GPrimaryChain * (self.fiberTension[4] / self.KsrChain - 
+                                                         self.LNSrChain + self.L0PrChain
+                                                        )
 
 
 

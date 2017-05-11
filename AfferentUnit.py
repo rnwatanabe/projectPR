@@ -23,6 +23,7 @@
 from Compartment import Compartment
 import numpy as np
 from AxonDelay import AxonDelay
+from PointProcessGenerator import PointProcessGenerator
 import math
 from scipy.sparse import lil_matrix
 import time
@@ -320,7 +321,7 @@ class AfferentUnit(object):
         ## Vector with the instants of spikes at the terminal.
         self.terminalSpikeTrain = []
         
-
+        self.GammaOrder = float(conf.parameterSet('GammaOrder_' + self.pool + '-' + self.muscle, pool, 0))
         ## A PointProcessGenerator object, corresponding the generator of
         ## spikes of the neural tract unit.   
         self.spikesGenerator = PointProcessGenerator(self.GammaOrder, index)  

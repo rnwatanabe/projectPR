@@ -212,6 +212,8 @@ axonDelayCondVel:Ia-LG-,55,66
 axonDelayThreshold:Ia-LG-,18,8
 axonDelayLeakTimeConstant:Ia-LG-,10,10
 threshold:Ia-LG,12.35,19
+GammaOrder_Ia-SOL,25,
+GammaOrder_Ia-LG,25,
 % Muscles
 %% SOL
 thickness:SOL,18.4,
