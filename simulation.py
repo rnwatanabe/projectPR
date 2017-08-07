@@ -12,7 +12,7 @@ import time
 
 import matplotlib.pyplot as plt
 import numpy as np
-
+import mkl
 from Configuration import Configuration
 from MotorUnitPool import MotorUnitPool
 from InterneuronPool import InterneuronPool
@@ -25,6 +25,7 @@ def simulator():
 
     conf = Configuration('confTest.rmto')
     
+    
     pools = dict()
     pools[0] = MotorUnitPool(conf, 'SOL')
     pools[1] = NeuralTract(conf, 'CMExt')
@@ -35,7 +36,7 @@ def simulator():
     #ankle = jointAnkleForceTask(conf, pools)
     Syn = SynapsesFactory(conf, pools)
     del Syn
-    
+
     t = np.arange(0.0, conf.simDuration_ms, conf.timeStep_ms)
 
     dendV = np.zeros_like(t)
@@ -48,7 +49,7 @@ def simulator():
         #ankle.atualizeAnkle(t[i], 0)
         #for j in xrange(len(pools[0].unit)):
         #    pools[0].unit[j].iInjected[1] = 10
-        #pools[1].atualizePool(t[i])
+        pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
         pools[2].atualizeAfferentPool(t[i])
         dendV[i] = pools[0].unit[2].v_mV[0]

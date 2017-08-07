@@ -25,7 +25,7 @@ import numpy as np
 class MuscleHill(object):
 
     def __init__(self, conf, pool, MUnumber, MUtypeInumber, unit):
-        
+
         ##
         self.conf = conf
         ##

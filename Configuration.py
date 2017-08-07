@@ -67,7 +67,7 @@ class Configuration(object):
             + **filename**: name of the file with the parameter values. The extension  of the file should be .rmto.
           
         '''
-
+        
         ## An array with all the simulation parameters.
         self.confArray = open(filename,'r') 
         # This array will store all the contents of the configuration file
