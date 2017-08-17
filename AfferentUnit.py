@@ -293,6 +293,10 @@ class AfferentUnit(object):
          ## Distance, in m, of the stimulus position to the terminal. 
         self.stimulusPositiontoTerminal = self.nerveLength - float(conf.parameterSet('stimDistToTerm_' + self.nerve, pool, index))   
 
+        ##Frequency threshold of the afferent to th proprioceptor input
+        self.frequencyThreshold_Hz = float(conf.parameterSet('frequencyThreshold',  
+                                                             pool + '-' + muscle, index)) 
+        
         delayLength =  self.nerveLength - dynamicNerveLength
 
         if self.stimulusPositiontoTerminal < delayLength:
@@ -324,7 +328,8 @@ class AfferentUnit(object):
         self.GammaOrder = float(conf.parameterSet('GammaOrder_' + self.pool + '-' + self.muscle, pool, 0))
         ## A PointProcessGenerator object, corresponding the generator of
         ## spikes of the neural tract unit.   
-        self.spikesGenerator = PointProcessGenerator(self.GammaOrder, index)  
+        self.spikesGenerator = PointProcessGenerator(self.GammaOrder, index) 
+        self.proprioceptorSpikeTrain = self.spikesGenerator.points 
         
         ## Build synapses       
          
@@ -334,13 +339,19 @@ class AfferentUnit(object):
 
          
     
-    def atualizeAfferentUnit(self, t):
+    def atualizeAfferentUnit(self, t, proprioceptorFR):
         '''
         Atualize the dynamical and nondynamical (delay) parts of the motor unit.
 
         - Inputs:
             + **t**: current instant, in ms.
+
+            + **proprioceptorFR**: proprioceptor firing rate, in Hz.
         ''' 
+
+        self.spikesGenerator.atualizeGenerator(t, proprioceptorFR)
+        if self.proprioceptorSpikeTrain and -1e-3 < (t - self.proprioceptorSpikeTrain[-1][0]) < 1e-3:
+            self.Delay.addSpinalSpike(t)
         if self.compNumber: 
             self.atualizeCompartments(t)
         self.atualizeDelay(t)

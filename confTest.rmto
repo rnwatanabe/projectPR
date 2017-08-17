@@ -1,14 +1,14 @@
-MUnumber_SOL-S,800,
-MUnumber_SOL-FR,50,
-MUnumber_SOL-FF,50,
-Number_RC_ext,350,
+MUnumber_SOL-S,10,
+MUnumber_SOL-FR,3,
+MUnumber_SOL-FF,3,
+Number_RC_ext,0,
 Number_CMExt,400,
 Number_Ia-SOL,400,
 Number_Ia-LG,160,
 Number_Ia-TA,280,
 NumberAxonNodes,0,
 timeStep,0.05,
-simDuration,50,
+simDuration,200,
 nerveLength_PTN,0.8,
 nerveLength_CPN,0.8,
 MNSomaRefPer,5.0,
@@ -340,6 +340,9 @@ threshold:Ia-TA,12.35,19
 GammaOrder_Ia-SOL,25,
 GammaOrder_Ia-LG,25,
 GammaOrder_Ia-TA,25,
+frequencyThreshold:Ia-SOL-,0,50
+frequencyThreshold:Ia-LG-,0,50
+frequencyThreshold:Ia-TA-,0,50
 % Muscles
 %% SOL
 Fmax:SOL,3586,

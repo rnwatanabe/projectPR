@@ -88,15 +88,13 @@ class MuscleSpindle(object):
         - Inputs:
             + **conf**: Configuration object with the simulation parameters.
 
-            + **muscle**: string with the muscle to which the motor
-            unit belongs.              
+            + **muscle**: string with the muscle to which the muscle spindle belongs.              
         '''
 
         ## Configuration object with the simulation parameters.
         self.conf = conf
 
         self.muscle = muscle
-
         
         self.beta0Bag1 = float(conf.parameterSet('beta0Bag1', muscle, 0))
         self.beta0Bag2 = float(conf.parameterSet('beta0Bag2', muscle, 0))
@@ -104,7 +102,6 @@ class MuscleSpindle(object):
         self.beta1Bag1 = float(conf.parameterSet('beta1Bag1', muscle, 0))
         self.beta2Bag2 = float(conf.parameterSet('beta2Bag2', muscle, 0))
         self.beta2Chain = float(conf.parameterSet('beta2Chain', muscle, 0))
-
         
         self.GAMMA1Bag1 = float(conf.parameterSet('GAMMA1Bag1', muscle, 0))
         self.GAMMA2Bag2 = float(conf.parameterSet('GAMMA2Bag2', muscle, 0))
@@ -189,7 +186,8 @@ class MuscleSpindle(object):
         print 'Muscle spindle from muscle ' + self.muscle + ' built.'
 
 
-    def atualizeMuscleSpindle(self, t, fascicleLength, fascicleVelocity, fascicleAcceleration, gammaMNDynamicFR, gammaMNStaticFR):
+    def atualizeMuscleSpindle(self, t, fascicleLength, fascicleVelocity, 
+                              fascicleAcceleration, gammaMNDynamicFR, gammaMNStaticFR):
         '''
         Atualize the dynamical and nondynamical (delay) parts of the motor unit.
 

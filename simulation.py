@@ -51,7 +51,7 @@ def simulator():
         #    pools[0].unit[j].iInjected[1] = 10
         pools[1].atualizePool(t[i])
         pools[0].atualizeMotorUnitPool(t[i])
-        pools[2].atualizeAfferentPool(t[i])
+        pools[2].atualizeAfferentPool(t[i], pools[0].spindle.IaFR_Hz)
         dendV[i] = pools[0].unit[2].v_mV[0]
         somaV[i] = pools[0].unit[2].v_mV[1] 
         #nodeV1[i] = pools[0].unit[2].v_mV[3]

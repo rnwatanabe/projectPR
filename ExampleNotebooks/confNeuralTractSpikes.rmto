@@ -2,6 +2,6 @@ Number_CMExt,400,
 timeStep,0.05,
 simDuration,10000,
 % Inputs
-GammaOrder_CMExt,10,
+GammaOrder_CMExt,1,
 DriveTarget_CMExt,FR,
 DriveFunction_CMExt,7+0*t,

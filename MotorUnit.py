@@ -420,8 +420,7 @@ class MotorUnit(object):
         - Inputs:
             + **t**: current instant, in ms.
 
-        '''
-        
+        '''        
         np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.timeStep_ms, self.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -30.0, 120.0, self.v_mV)
         for i in xrange(self.somaIndex, self.compNumber):
             if self.v_mV[i] > self.threshold_mV and t-self.tSpikes[i] > self.MNRefPer_ms: 

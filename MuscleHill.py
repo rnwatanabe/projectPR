@@ -64,6 +64,8 @@ class MuscleHill(object):
         ##
         self.velocity_m_ms = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         ##
+        self.acceleration_m_ms2 = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        ##
         self.tendonLength_m = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         ##
         self.pennationAngle_rad = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
@@ -105,6 +107,8 @@ class MuscleHill(object):
         self.lengthNorm = 0
         ##  
         self.velocityNorm = 0
+        ##  
+        self.accelerationNorm = 0
         ##  
         self.tendonLengthNorm = 0
         ##
@@ -199,6 +203,7 @@ class MuscleHill(object):
         self.atualizeActivation(activation_Sat)
         self.lengthNorm = self.length_m[self.timeIndex] / self.optimalLength_m
         self.velocityNorm = self.velocity_m_ms[self.timeIndex] / self.optimalLength_m
+        self.accelerationNorm = self.acceleration_m_ms2[self.timeIndex] / self.optimalLength_m
         self.pennationAngle_rad[self.timeIndex] = self.computePennationAngle()
         self.tendonLength_m[self.timeIndex] = (self.musculoTendonLength_m[self.timeIndex] - 
                                                self.length_m[self.timeIndex] * math.cos(self.pennationAngle_rad[self.timeIndex]))
@@ -260,9 +265,11 @@ class MuscleHill(object):
     def computeAcceleration(self):
         '''
         '''
-        return ((self.tendonForce_N[self.timeIndex] - 
+        self.acceleration_m_ms2[self.timeIndex+1] =  ((self.tendonForce_N[self.timeIndex] - 
             self.force[self.timeIndex] * math.cos(self.pennationAngle_rad[self.timeIndex])) / 
             (self.mass * math.cos(self.pennationAngle_rad[self.timeIndex])) / 1000000)
+
+        return self.acceleration_m_ms2[self.timeIndex+1]
 
     def dLdt(self):
         '''

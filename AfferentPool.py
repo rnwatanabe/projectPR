@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2017  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    Contact: renato.watanabe@usp.br
+    Contact: renato.watanabe@ufabc.edu.br
 '''
 
 import numpy as np
@@ -63,7 +63,7 @@ class AfferentPool(object):
         ##
         print 'Afferent Pool ' + pool + ' of muscle ' + muscle + ' built'
 
-    def atualizeAfferentPool(self, t):
+    def atualizeAfferentPool(self, t, proprioceptorFR):
         '''
         Update all parts of the Motor Unit pool. It consists
         to update all motor units, the activation signal and
@@ -71,10 +71,15 @@ class AfferentPool(object):
 
         - Inputs:
             + **t**: current instant, in ms.
+
+            + **proprioceptorFR**: proprioceptor firing rate, in Hz.
         '''
 
         units = self.unit
-        for i in xrange(self.AFnumber): units[i].atualizeAfferentUnit(t)
+        for i in xrange(self.AFnumber): 
+            units[i].atualizeAfferentUnit(t, (max(0, proprioceptorFR - 
+                                              units[i].frequencyThreshold_Hz +
+                                              5))*self.conf.timeStep_ms/1000.0)
 
     def listSpikes(self):
         '''
@@ -83,15 +88,12 @@ class AfferentPool(object):
         '''
         for i in xrange(0,self.AFnumber):
             if i == 0:
-                somaSpikeTrain = np.array(self.unit[i].somaSpikeTrain)
                 lastCompSpikeTrain = np.array(self.unit[i].lastCompSpikeTrain)
                 terminalSpikeTrain = np.array(self.unit[i].terminalSpikeTrain)
             else:
-                somaSpikeTrain = np.append(somaSpikeTrain, np.array(self.unit[i].somaSpikeTrain))
                 lastCompSpikeTrain = np.append(lastCompSpikeTrain, np.array(self.unit[i].lastCompSpikeTrain))
                 terminalSpikeTrain = np.append(terminalSpikeTrain, np.array(self.unit[i].terminalSpikeTrain))
                 
-        self.poolSomaSpikes = np.reshape(somaSpikeTrain, (-1, 2))
         self.poolLastCompSpikes = np.reshape(lastCompSpikeTrain, (-1, 2))
         self.poolTerminalSpikes = np.reshape(terminalSpikeTrain, (-1, 2))
 
