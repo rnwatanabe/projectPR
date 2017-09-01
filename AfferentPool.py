@@ -21,6 +21,7 @@
 import numpy as np
 from AfferentUnit import AfferentUnit
 from scipy.sparse import lil_matrix
+from numpy import random
 
 class AfferentPool(object):
     '''
@@ -77,9 +78,9 @@ class AfferentPool(object):
 
         units = self.unit
         for i in xrange(self.AFnumber): 
-            units[i].atualizeAfferentUnit(t, (max(0, proprioceptorFR - 
-                                              units[i].frequencyThreshold_Hz +
-                                              5))*self.conf.timeStep_ms/1000.0)
+            units[i].atualizeAfferentUnit(t, max(0, (proprioceptorFR - 
+                                                 units[i].frequencyThreshold_Hz +
+                                                 5 + 2.5*np.random.randn(1))*self.conf.timeStep_ms/1000.0))
 
     def listSpikes(self):
         '''

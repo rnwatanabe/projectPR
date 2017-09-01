@@ -12,7 +12,6 @@ import time
 
 import matplotlib.pyplot as plt
 import numpy as np
-import mkl
 from Configuration import Configuration
 from MotorUnitPool import MotorUnitPool
 from InterneuronPool import InterneuronPool
@@ -129,6 +128,7 @@ def simulator():
     plt.plot(t, ankle.ankleAngle_rad, '-')
     '''
 
+
     pools[0].getMotorUnitPoolEMG()
 
     plt.figure()
@@ -140,11 +140,12 @@ def simulator():
     
 if __name__ == '__main__':
 
-    #cProfile.run('simulator()', sort = 'tottime')
+    cProfile.run('simulator()', sort = 'tottime')
     
     np.__config__.show()
     
     
-    simulator()
+    #simulator()
+    
     
     plt.show()
