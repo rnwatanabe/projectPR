@@ -68,7 +68,7 @@ def simulator():
     #np.savetxt('../results/NTspikes_noRC.txt', pools[1].poolTerminalSpikes)
     #np.savetxt('../results/RCspikes.txt', pools[2].poolSomaSpikes)
     np.savetxt('../results/SOLforce_noRC.txt', pools[0].Muscle.force)
-
+    '''
     plt.figure()
     plt.plot(pools[1].poolTerminalSpikes[:, 0],
              pools[1].poolTerminalSpikes[:, 1]+1, '.')
@@ -80,6 +80,7 @@ def simulator():
     plt.figure()
     plt.plot(pools[0].poolLastCompSpikes[:, 0],
              pools[0].poolLastCompSpikes[:, 1]+1, '.')        
+    '''
     '''         
     plt.figure()
     plt.plot(pools[0].poolTerminalSpikes[:, 0],
@@ -99,13 +100,14 @@ def simulator():
     plt.figure()
     plt.plot(t, pools[0].Muscle.tendonForce_N, '-')
     '''
-    
+    '''
     plt.figure()
     plt.plot(t, pools[0].Muscle.force, '-')
-
+    '''
     #print 'M = ' + str(np.mean(pools[0].Muscle.force[int(1000/conf.timeStep_ms):-1]))
     #print 'SD = ' + str(np.std(pools[0].Muscle.force[int(1000/conf.timeStep_ms):-1]))
     '''
+    
     plt.figure()
     plt.plot(t, dendV, '-')
 
@@ -121,12 +123,13 @@ def simulator():
     plt.plot(t, nodeV2, '-')
     '''
     '''
+    
     plt.figure()
     plt.plot(t, pools[0].Muscle.length_m, '-')
 
     plt.figure()
     plt.plot(t, ankle.ankleAngle_rad, '-')
-    '''
+    
 
 
     pools[0].getMotorUnitPoolEMG()
@@ -136,11 +139,11 @@ def simulator():
 
     plt.figure()
     plt.plot(t, pools[0].unit[0].nerveStimulus_mA, '-')
-
+    '''
     
 if __name__ == '__main__':
 
-    cProfile.run('simulator()', sort = 'tottime')
+    cProfile.run('simulator()', sort = 'cumtime')
     
     np.__config__.show()
     

@@ -54,7 +54,7 @@ def  gammaPoint(GammaOrder, GammaOrderInv):
      
      
 
-    return - GammaOrderInv * np.log(np.prod(numpy.random.uniform(0.0, 1.0, size=GammaOrder)))
+    return - GammaOrderInv * math.log(np.prod(numpy.random.uniform(low = 0.0, high = 1.0, size=GammaOrder)))
 
 class PointProcessGenerator(object):
     '''

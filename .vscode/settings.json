@@ -1,10 +1,10 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "python.pythonPath": "/opt/miniconda2/bin/python",
+    "python.pythonPath": "/home/rnwatanabe/anaconda2/bin/python",
     "python.linting.pylintEnabled": false,
-    "python.linting.pylintPath": "/opt/miniconda2/bin/pylint",
+    "python.linting.pylintPath": "/home/rnwatanabe/anaconda2/bin/pylint",
     "python.linting.pep8Enabled": false,
-    "python.linting.pep8Path": "/opt/miniconda2/bin/pep8",
+    "python.linting.pep8Path": "/home/rnwatanabe/anaconda2/bin/pep8",
     "python.linting.flake8Enabled": false,
-    "python.linting.flake8Path": "/opt/miniconda2/bin/flake8"
+    "python.linting.flake8Path": "/home/rnwatanabe/anaconda2/bin/flake8"
 }
