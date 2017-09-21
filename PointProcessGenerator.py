@@ -28,7 +28,7 @@ from numba import jit
 
 
 
-@jit
+#@jit
 def  gammaPoint(GammaOrder, GammaOrderInv):
     '''
     Generates a number according to a Gamma Distribution with an integer order **GammaOrder**.
@@ -54,7 +54,8 @@ def  gammaPoint(GammaOrder, GammaOrderInv):
      
      
 
-    return - GammaOrderInv * math.log(np.prod(numpy.random.uniform(low = 0.0, high = 1.0, size=GammaOrder)))
+    return - GammaOrderInv * math.log(np.prod(numpy.random.uniform(low = 0.0, high = 1.0,
+                                                                   size = GammaOrder)))
 
 class PointProcessGenerator(object):
     '''

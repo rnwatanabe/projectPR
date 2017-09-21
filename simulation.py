@@ -20,6 +20,7 @@ from NeuralTract import NeuralTract
 from SynapsesFactory import SynapsesFactory
 from jointAnkleForceTask import jointAnkleForceTask
 
+
 def simulator():
 
     conf = Configuration('confTest.rmto')
