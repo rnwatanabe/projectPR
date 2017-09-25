@@ -72,7 +72,7 @@ class PointProcessGenerator(object):
         '''
         ## Integer order of the Gamma distribution. 
         ## Gamma order 1 is Poisson process and order 10 is a Gaussian process.
-        self.GammaOrder = int(GammaOrder);
+        self.GammaOrder = int(GammaOrder)
         ## Inverse of the GammaOrder. This is necessary
         ## for computational efficiency.
         self.GammaOrderInv = 1.0 / GammaOrder

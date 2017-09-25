@@ -222,15 +222,10 @@ class ChannelConductance(object):
             self.compCond = compCondKsaxon
         if self.kind == 'H':
             self.condState.append(ConductanceState('qh', conf, pool, neuronKind, compKind, index))
-            self.compCond = compCondH
-
-            
+            self.compCond = compCondH            
         
         ## Integer with the number of states in the ionic channel.    
-        self.lenStates = len(self.condState)  
-        
-        
-          
+        self.lenStates = len(self.condState)          
     
     #@profile
     def computeCurrent(self, t, V_mV): 
@@ -249,6 +244,14 @@ class ChannelConductance(object):
             self.condState[i].computeStateValue(t)        
                           
         return self.compCond(V_mV, self.gmax_muS, self.condState, self.EqPot_mV)
+
+    def reset(self):
+        '''
+
+        '''
+        for i in xrange(self.lenStates):
+            self.condState[i].reset()
+
    
     
             

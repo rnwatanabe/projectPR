@@ -23,6 +23,7 @@ from MotorUnit import MotorUnit
 from MuscularActivation import MuscularActivation
 from MuscleNoHill import MuscleNoHill
 from MuscleHill import MuscleHill
+from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
 
 class MotorUnitPool(object):
@@ -80,7 +81,7 @@ class MotorUnitPool(object):
         
         #Force
         ## String indicating whther a Hill model is used or not. For now, it can be *No*.
-        self.hillModel = conf.parameterSet('hillModel',pool, 0)
+        self.hillModel = conf.parameterSet('hillModel', pool, 0)
         if self.hillModel == 'No': 
             self.Muscle = MuscleNoHill(self.conf, self.pool, self.MUnumber, MUnumber_S, self.unit)
         else:
@@ -90,6 +91,9 @@ class MotorUnitPool(object):
         ## EMG along time, in mV.
         self.emg = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         
+        # Spindle
+        self.spindle = MuscleSpindle(self.conf, self.pool)
+
 
         ##
         print 'Motor Unit Pool ' + pool + ' built'
@@ -108,6 +112,10 @@ class MotorUnitPool(object):
         for i in xrange(self.MUnumber): units[i].atualizeMotorUnit(t)
         self.Activation.atualizeActivationSignal(t, units)
         self.Muscle.atualizeForce(self.Activation.activation_Sat)
+        self.spindle.atualizeMuscleSpindle(t, self.Muscle.lengthNorm,
+                                           self.Muscle.velocityNorm, 
+                                           self.Muscle.accelerationNorm, 
+                                           31, 33)
 
     def listSpikes(self):
         '''
@@ -145,3 +153,17 @@ class MotorUnitPool(object):
             self.emg[i] = self.getMotorUnitPoolInstantEMG(i * self.conf.timeStep_ms)
 
 
+    def reset(self):
+        '''
+
+        '''
+
+                   
+        self.poolSomaSpikes = np.array([])
+        self.poolLastCompSpikes = np.array([])    
+        self.poolTerminalSpikes = np.array([])
+        self.emg = np.zeros((int(np.rint(self.conf.simDuration_ms/self.conf.timeStep_ms)), 1), dtype=float)
+
+        for i in xrange(self.MUnumber): self.unit[i].reset()
+        self.Activation.reset()
+        self.Muscle.reset()

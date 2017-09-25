@@ -1,12 +1,15 @@
 MUnumber_SOL-S,800,
-MUnumber_SOL-FR,0,
-MUnumber_SOL-FF,0,
-Number_CMExt,400,
+MUnumber_SOL-FR,50,
+MUnumber_SOL-FF,50,
+Number_Ia-SOL,400,
+Number_Ia-LG,160,
 NumberAxonNodes,0,
 timeStep,0.05,
-simDuration,100,
+simDuration,50,
 nerveLength_PTN,0.8,
 MNSomaRefPer,5.0,
+RCSomaRefPer,1.0,
+AFRefPer,5.0,
 skinThickness,1.5,
 MUSpatialDistribution,random,
 EMGAttenuationFactor,5,
@@ -15,21 +18,19 @@ EMGNoiseEMG,0.7,
 % Model options
 activationModel,SOCDS,
 hillModel,No,
+EMGModel,HR,
 StateType,pulse,
 % Inputs
-GammaOrder_CMExt,10,
-DriveTarget_CMExt,ISI,
-DriveFunction_CMExt,12+0*t,
 %Stimulus
 stimDistToTerm_PTN,0.2,
 stimStart_PTN,0,
 stimStop_PTN,3000,
-stimIntensity_PTN,0,
-stimFrequency_PTN,10,
 stimPulseDuration_PTN,1,
-stimModulation_PTN,5+0*t,
-stimModulationStart_PTN,200,
-stimModulationStop_PTN,400,
+stimIntensity_PTN,10,
+stimFrequency_PTN,5,
+stimModulation_PTN,0*t,
+stimModulationStart_PTN,0,
+stimModulationStop_PTN,0,
 % Synapses
 %% SOL
 EqPotSyn:SOL-S|excitatory,70.0,
@@ -62,21 +63,36 @@ tPeakSyn:SOL-FF|excitatory,0.2,
 tPeakSyn:SOL-S|inhibitory,0.4,
 tPeakSyn:SOL-FR|inhibitory,0.4,
 tPeakSyn:SOL-FF|inhibitory,0.4,
-Con:CMExt->SOL-S@dendrite|excitatory,30,
-Con:CMExt->SOL-FR@dendrite|excitatory,30,
-Con:CMExt->SOL-FF@dendrite|excitatory,30,
-gmax:CMExt->SOL-S@dendrite|excitatory,0.6,
-gmax:CMExt->SOL-FR@dendrite|excitatory,0.6,
-gmax:CMExt->SOL-FF@dendrite|excitatory,0.6,
-delay:CMExt->SOL-S@dendrite|excitatory,0.3,
-delay:CMExt->SOL-FR@dendrite|excitatory,0.3,
-delay:CMExt->SOL-FF@dendrite|excitatory,0.3,
-dyn:CMExt->SOL-S@dendrite|excitatory,None,
-dyn:CMExt->SOL-FR@dendrite|excitatory,None,
-dyn:CMExt->SOL-FF@dendrite|excitatory,None,
-dec:CMExt->SOL-S@dendrite|excitatory,inf,
-dec:CMExt->SOL-FR@dendrite|excitatory,inf,
-dec:CMExt->SOL-FF@dendrite|excitatory,inf,
+Con:Ia-SOL>SOL-S@dendrite|excitatory,90,
+Con:Ia-SOL>SOL-FR@dendrite|excitatory,90,
+Con:Ia-SOL>SOL-FF@dendrite|excitatory,90,
+gmax:Ia-SOL>SOL-S@dendrite|excitatory,0.6,
+gmax:Ia-SOL>SOL-FR@dendrite|excitatory,0.6,
+gmax:Ia-SOL>SOL-FF@dendrite|excitatory,0.6,
+delay:Ia-SOL>SOL-S@dendrite|excitatory,0.3,
+delay:Ia-SOL>SOL-FR@dendrite|excitatory,0.3,
+delay:Ia-SOL>SOL-FF@dendrite|excitatory,0.3,
+dyn:Ia-SOL>SOL-S@dendrite|excitatory,None,
+dyn:Ia-SOL>SOL-FR@dendrite|excitatory,None,
+dyn:Ia-SOL>SOL-FF@dendrite|excitatory,None,
+dec:Ia-SOL>SOL-S@dendrite|excitatory,inf,
+dec:Ia-SOL>SOL-FR@dendrite|excitatory,inf,
+dec:Ia-SOL>SOL-FF@dendrite|excitatory,inf,
+Con:Ia-LG>SOL-S@dendrite|excitatory,15,
+Con:Ia-LG>SOL-FR@dendrite|excitatory,15,
+Con:Ia-LG>SOL-FF@dendrite|excitatory,15,
+gmax:Ia-LG>SOL-S@dendrite|excitatory,0.6,
+gmax:Ia-LG>SOL-FR@dendrite|excitatory,0.6,
+gmax:Ia-LG>SOL-FF@dendrite|excitatory,0.6,
+delay:Ia-LG>SOL-S@dendrite|excitatory,0.3,
+delay:Ia-LG>SOL-FR@dendrite|excitatory,0.3,
+delay:Ia-LG>SOL-FF@dendrite|excitatory,0.3,
+dyn:Ia-LG>SOL-S@dendrite|excitatory,None,
+dyn:Ia-LG>SOL-FR@dendrite|excitatory,None,
+dyn:Ia-LG>SOL-FF@dendrite|excitatory,None,
+dec:Ia-LG>SOL-S@dendrite|excitatory,inf,
+dec:Ia-LG>SOL-FR@dendrite|excitatory,inf,
+dec:Ia-LG>SOL-FF@dendrite|excitatory,inf,
 % Channel conductance
 %% Equilibrium Potential
 EqPot_Kf@soma,-10,
@@ -87,11 +103,20 @@ EqPot_Na@soma,120,
 gmax_Na:SOL-S@soma,30000,
 gmax_Kf:SOL-S@soma,4000,
 gmax_Ks:SOL-S@soma,17000,
+gmax_Na:SOL-FR@soma,30000,
+gmax_Kf:SOL-FR@soma,4000,
+gmax_Ks:SOL-FR@soma,37500,
+gmax_Na:SOL-FF@soma,30000,
+gmax_Kf:SOL-FF@soma,500,
+gmax_Ks:SOL-FF@soma,8000,
 %States
 PulseDur_m,0.6,
 PulseDur_h,0.6,
 PulseDur_n,0.6,
 PulseDur_q,0.6,
+PulseDur_mp,0.6,
+PulseDur_qh,0.6,
+PulseDur_s,0.6,
 %% SOL
 alpha_m:SOL-S@soma,22,
 alpha_h:SOL-S@soma,0.5,
@@ -101,15 +126,22 @@ beta_m:SOL-S@soma,13,
 beta_h:SOL-S@soma,4,
 beta_n:SOL-S@soma,0.1,
 beta_q:SOL-S@soma,0.025,
-%% RC
-alpha_m:RC-@soma,22,
-alpha_h:RC-@soma,0.5,
-alpha_n:RC-@soma,1.5,
-alpha_q:RC-@soma,1.5,
-beta_m:RC-@soma,13,
-beta_h:RC-@soma,4,
-beta_n:RC-@soma,0.1,
-beta_q:RC-@soma,0.07,
+alpha_m:SOL-FR@soma,22,
+alpha_h:SOL-FR@soma,0.5,
+alpha_n:SOL-FR@soma,1.5,
+alpha_q:SOL-FR@soma,1.5,
+beta_m:SOL-FR@soma,13,
+beta_h:SOL-FR@soma,4,
+beta_n:SOL-FR@soma,0.1,
+beta_q:SOL-FR@soma,0.05,
+alpha_m:SOL-FF@soma,22,
+alpha_h:SOL-FF@soma,0.5,
+alpha_n:SOL-FF@soma,1.5,
+alpha_q:SOL-FF@soma,1.5,
+beta_m:SOL-FF@soma,13,
+beta_h:SOL-FF@soma,4,
+beta_n:SOL-FF@soma,0.1,
+beta_q:SOL-FF@soma,0.05,
 % Motoneurons
 cytR,70,
 membCapac,1,
@@ -117,23 +149,36 @@ membCapac,1,
 %%% S
 position:SOL-,0,18
 threshold:SOL-S,12.35,16.45
+threshold:SOL-FR,16.45,19.3
+threshold:SOL-FF,19.3,20.9
 d@dendrite:SOL-S,41.5,62.5
+d@dendrite:SOL-FR,62.5,83.5
+d@dendrite:SOL-FF,83.5,92.5
 d@soma:SOL-S,77.5,82.5
-d@node:SOL-S,5,5
-d@internode:SOL-S,12.5,12.5
+d@soma:SOL-FR,82.5,87.5
+d@soma:SOL-FF,87.5,112.5
 l@dendrite:SOL-S,5519,6789
+l@dendrite:SOL-FR,6789,8058
+l@dendrite:SOL-FF,8058,10578
 l@soma:SOL-S,77.5,82.5
-l@node:SOL-S,1.5,1.5
-l@internode:SOL-S,1400,1400
+l@soma:SOL-FR,82.5,87.5
+l@soma:SOL-FF,87.5,112.5
 res@dendrite:SOL-S,14350,10650
+res@dendrite:SOL-FR,10650,6950
+res@dendrite:SOL-FF,6950,6050
 res@soma:SOL-S,1150,1050
+res@soma:SOL-FR,1050,950
+res@soma:SOL-FF,950,650
 EqPot@dendrite,0,
 EqPot@soma,0,
 IPump@dendrite,0,
 IPump@soma,0,
-axonDelayCondVel:SOL-S,44,51
 twitchTimePeak:SOL-S,170.0,132.5
+twitchTimePeak:SOL-FR,135.5,100.5
+twitchTimePeak:SOL-FF,100.5,86
 twitchPeak:SOL-S,0.03,1.9
+twitchPeak:SOL-FR,1.9,2.5
+twitchPeak:SOL-FF,2.5,3
 bSatSOCDS:SOL-S,0.7,0.5
 bSatSOCDS:SOL-FR,0.5,0.3
 bSatSOCDS:SOL-FF,0.3,0.23
@@ -152,10 +197,28 @@ axonDelayThreshold:SOL-FF,12.2,12.0
 axonDelayCondVel:SOL-S,44,51
 axonDelayCondVel:SOL-FR,51,52
 axonDelayCondVel:SOL-FF,52,53
-axonDelayRefPeriod_PTN,5,
 axonDelayLeakTimeConstant:SOL-S,10,10
 axonDelayLeakTimeConstant:SOL-FR,10,10
 axonDelayLeakTimeConstant:SOL-FF,10,10
+axonDelayRefPeriod_PTN,5,
+% Interneurons
+%% RC
+% Afferents
+axonDelayCondVel:Ia-SOL-,55,66
+axonDelayThreshold:Ia-SOL-,18,8
+axonDelayLeakTimeConstant:Ia-SOL-,10,10
+threshold:Ia-SOL,12.35,19
+axonDelayCondVel:Ia-LG-,55,66
+axonDelayThreshold:Ia-LG-,18,8
+axonDelayLeakTimeConstant:Ia-LG-,10,10
+threshold:Ia-LG,12.35,19
+GammaOrder_Ia-SOL,25,
+GammaOrder_Ia-LG,25,
+frequencyThreshold:Ia-SOL-,0,50
+frequencyThreshold:Ia-LG-,0,50
+frequencyThreshold:Ia-TA-,0,50
+% Muscles
+%% SOL
 thickness:SOL,18.4,
 %Muscle Spindles
 freqBag1,60,

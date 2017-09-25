@@ -154,3 +154,12 @@ class Compartment(object):
         for i in xrange(0, self.numberChannels): I += self.Channels[i].computeCurrent(t, V_mV)
         
         return I
+
+    def reset(self):
+        '''
+
+        '''
+        for i in xrange(len(self.SynapsesIn)):
+            self.SynapsesIn[i].reset()
+        for i in xrange(len(self.Channels)):
+            self.Channels[i].reset()

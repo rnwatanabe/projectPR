@@ -137,3 +137,11 @@ class MuscularActivation(object):
         
         self.activation_nonSat = self.ActMatrix.dot(self.an)        
         self.activation_Sat = twitchSaturation(self.activation_nonSat, self.bSat)
+
+    def reset(self):
+        '''
+
+        '''
+        self.an = np.zeros((3*self.MUnumber, 1), dtype = float)
+        self.activation_nonSat = np.zeros((self.MUnumber, 1), dtype = float)
+        self.activation_Sat = np.zeros((self.MUnumber,1), dtype = float)    

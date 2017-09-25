@@ -50,6 +50,8 @@ class SynapsesFactory(object):
             for unitOut in xrange(len(pools[poolOut].unit)):
                 pools[poolOut].unit[unitOut].SynapsesOut = conf.determineSynapses(pools[poolOut].pool + '-' + 
                                                                                   pools[poolOut].unit[unitOut].kind)
+                #print pools[poolOut].pool
+                #print pools[poolOut].unit[unitOut].SynapsesOut
                 for synapseIn in xrange(len(pools[poolOut].unit[unitOut].SynapsesOut)):
                     conn = float(conf.parameterSet('Con:' + pools[poolOut].pool + '-' 
                                                    + pools[poolOut].unit[unitOut].kind + '>'

@@ -67,7 +67,7 @@ class Configuration(object):
             + **filename**: name of the file with the parameter values. The extension  of the file should be .rmto.
           
         '''
-
+        
         ## An array with all the simulation parameters.
         self.confArray = open(filename,'r') 
         # This array will store all the contents of the configuration file
@@ -129,8 +129,7 @@ class Configuration(object):
                 elif self.confArray[i][0] == 'MUnumber_' + pool + '-FF':
                     MUnumber_FF = int(self.confArray[i][1])
             Nnumber = MUnumber_S + MUnumber_FR + MUnumber_FF 
-                    
-        if pool == 'RC' or pool == 'IaIn' or pool == 'gII' or pool == 'IbIn':
+        else:
             for i in xrange(0, len(self.confArray)):
                 if self.confArray[i][0] == 'Number_' + pool:
                     Nnumber = int(self.confArray[i][1])
@@ -153,12 +152,12 @@ class Configuration(object):
                     paramVec_FF = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FF)
                 elif self.confArray[i][0] == paramTag + ':' + pool + '-':
                     paramVec = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), Nnumber)                    
-        
 
+        
         if paramVec_FR.size > 0:
-            paramVec = np.concatenate(paramVec, paramVec_FR)
+            paramVec = np.hstack((paramVec, paramVec_FR))
             if paramVec_FF.size > 0:
-                paramVec = np.concatenate(paramVec, paramVec_FF)
+                paramVec = np.hstack((paramVec, paramVec_FF))
 
         return paramVec[index]
 
@@ -201,4 +200,12 @@ class Configuration(object):
                                  self.confArray[i][0][posComp+1:posKind],
                                  self.confArray[i][0][posKind+1:]])
         return Synapses
+    
+    def changeConfigurationParameter(self, parameter, value1, value2):
+        '''
+        '''
+        for i in xrange(0, len(self.confArray)):
+            if self.confArray[i][0] == parameter:
+                self.confArray[i][1] = value1
+                self.confArray[i][2] = value2
         

@@ -19,6 +19,7 @@
 '''
 
 from Configuration import Configuration
+import math
 
 class AxonDelay(object):
     '''
@@ -28,7 +29,7 @@ class AxonDelay(object):
     '''
 
     
-    def __init__(self, conf, nerve, pool, length, index):
+    def __init__(self, conf, nerve, pool, length, stimulusPositiontoTerminal, index):
         '''
         Constructor
 
@@ -41,12 +42,16 @@ class AxonDelay(object):
 
             + **pool**: string with Motor unit pool to which the motor unit belongs.
 
-            + **length**: ## float, length of the part of the nerve that is
+            + **length**:  float, length of the part of the nerve that is
             modelled as a delay, in m.
+
+            + **stimulusPositiontoTerminal**: float, distance, in m, of the stimulus
+            position to the terminal, in m. If -1, indicates it is not in the Delay.
 
             + **index**: integer corresponding to the motor unit order in the pool, according to 
             the Henneman's principle (size principle).
         '''
+        self.conf = conf
 
         ## Integer corresponding to the motor unit order in the pool, according to 
         ## the Henneman's principle (size principle).
@@ -55,35 +60,103 @@ class AxonDelay(object):
         ## Length, in m, of the part of the nerve that is modelled as a delay.
         self.length_m = length
         ## Velocity of conduction, in m/s, of the part of the nerve that is not modelled as a delay.     
-        self.velocity_m_s = float(conf.parameterSet('axonCondVel',pool, index))
-        ## Distance, in m, of the stimulus position to the terminal. 
-        self.stimulusPositiontoTerminal = float(conf.parameterSet('stimDistToTerm_'+nerve, pool, index))   
+        self.velocity_m_s = float(conf.parameterSet('axonDelayCondVel',pool, index))
+        
         ## time, in ms, that the signal takes to travel between the stimulus and the spinal cord.        
-        self.latencyStimulusSpinal_ms = round((self.length_m - self.stimulusPositiontoTerminal)/self.velocity_m_s*1000/conf.timeStep_ms, 0) * conf.timeStep_ms
+        self.latencyStimulusSpinal_ms = round((self.length_m - stimulusPositiontoTerminal)/self.velocity_m_s*1000/conf.timeStep_ms, 0) * conf.timeStep_ms
         ## time, in ms, that the signal takes to travel between the spinal cord and the terminal.
         self.latencySpinalTerminal_ms = round((self.length_m)/self.velocity_m_s*1000/conf.timeStep_ms, 0) * conf.timeStep_ms
         ## time, in ms, tat the signal takes to travel between the stimulus and the terminal.
-        self.latencyStimulusTerminal_ms = round((self.stimulusPositiontoTerminal)/self.velocity_m_s*1000/conf.timeStep_ms, 0) * conf.timeStep_ms
-        
+        self.latencyStimulusTerminal_ms = round((stimulusPositiontoTerminal)/self.velocity_m_s*1000/conf.timeStep_ms, 0) * conf.timeStep_ms
+
         ## Float with instant, in ms, of the last spike in the terminal. 
         self.terminalSpikeTrain = float("-inf")
+        self.axonSpikeTrain = float("-inf")
+        
+        self.orthodromicSpikeTrain = []
+        self.antidromicSpikeTrain = []
+        self.indexOrthodromicSpike = 0
+        self.indexAntidromicSpike = 0
 
- 
-    def addTerminalSpike(self, t):
+        self.electricCharge_muC = 0
+
+        self.threshold_muC = float(conf.parameterSet('axonDelayThreshold', pool, index))
+
+        self.refractoryPeriod_ms = float(conf.parameterSet('axonDelayRefPeriod_' + nerve, pool, index))
+
+        self.leakageTimeConstant_ms = float(conf.parameterSet('axonDelayLeakTimeConstant', pool, index))
+    def addTerminalSpike(self, t, latency):
         '''
         Indicates to the AxonDelay object that a spike has occurred in the Terminal.
 
         - Inputs:
-            + **t**: current instant, in ms.    
+            + **t**: current instant, in ms.
+
+            + **latency**: time elapsed until the spike take effect, in ms.
         '''
-        self.terminalSpikeTrain = t+self.latencySpinalTerminal_ms
-        
-    
+        self.terminalSpikeTrain = t + latency
+
     def addSpinalSpike(self, t):
         '''
-        Indicates to the AxonDelay object that a spike has occurred in the soma.
+        Indicates to the AxonDelay object that a spike has occurred in the last
+        dynamical compartment of the motor unit.
 
         - Inputs:
-            + **t**: current instant, in ms.    
-        '''    
-        self.addTerminalSpike(t)
+            + **t**: current instant, in ms.
+        '''
+        self.orthodromicSpikeTrain.append(t + self.latencyStimulusSpinal_ms)
+
+    def addAntidromicSpike(self, t):
+        '''
+        Indicates to the AxonDelay object that a spike has occurred in the last
+        dynamical compartment of the motor unit.
+
+        - Inputs:
+            + **t**: current instant, in ms.
+        '''
+        self.antidromicSpikeTrain.append(t + self.latencyStimulusSpinal_ms)
+        
+
+    def atualizeStimulus(self, t, stimulus):
+        '''
+        
+        '''
+        if t - self.axonSpikeTrain > self.refractoryPeriod_ms:
+            self.electricCharge_muC = (stimulus * self.conf.timeStep_ms +
+                                       self.electricCharge_muC * 
+                                       math.exp(-self.conf.timeStep_ms/self.leakageTimeConstant_ms))
+            if self.electricCharge_muC >= self.threshold_muC:
+                self.electricCharge_muC = 0
+                self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
+                self.addAntidromicSpike(t)
+                self.axonSpikeTrain = t
+            if self.indexOrthodromicSpike < len(self.orthodromicSpikeTrain):
+                if t > self.orthodromicSpikeTrain[self.indexOrthodromicSpike]:
+                    if self.indexAntidromicSpike < len(self.antidromicSpikeTrain):
+                        if (math.fabs(self.orthodromicSpikeTrain[self.indexOrthodromicSpike] -
+                                      self.antidromicSpikeTrain[self.indexAntidromicSpike]) <
+                                self.latencyStimulusSpinal_ms):
+                            self.indexOrthodromicSpike += 1
+                            self.indexAntidromicSpike += 1
+                    else:
+                        self.electricCharge_muC = 0
+                        self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
+                        self.axonSpikeTrain = t
+                        self.indexOrthodromicSpike += 1
+
+    def reset(self):
+        '''
+
+        '''
+        self.electricCharge_muC = 0
+        self.terminalSpikeTrain = float("-inf")
+        self.axonSpikeTrain = float("-inf")
+        
+
+        self.orthodromicSpikeTrain = []
+        self.antidromicSpikeTrain = []
+        self.indexOrthodromicSpike = 0
+        self.indexAntidromicSpike = 0
+
+
+        

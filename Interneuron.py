@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2017  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    Contact: renato.watanabe@usp.br
+    Contact: renato.watanabe@ufabc.edu.br
 '''
 
 

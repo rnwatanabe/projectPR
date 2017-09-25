@@ -316,12 +316,14 @@ class Synapse(object):
 
             + **neuronKind**: 
         '''
+
         self.pool = pool
         self.kind = kind
         self.neuronKind = neuronKind
         self.index = index
+        self.conf = conf
 
-        self.timeStep_ms = conf.timeStep_ms
+        self.timeStep_ms = self.conf.timeStep_ms
 
         self.EqPot_mV = float(conf.parameterSet('EqPotSyn:' + pool + '-' + self.neuronKind + '|' + self.kind, pool, index))
         self.alpha_ms1 = float(conf.parameterSet('alphaSyn:' + pool + '-'  + self.neuronKind + '|' + self.kind, pool, index))
@@ -394,7 +396,7 @@ class Synapse(object):
         self.outQueue = deque([])
 
         self.dynamicGmax = np.array([])
-        ## List of individual conductance constribution 
+        ## List of individual conductance constribution
         ## to the global synaptic conductance
         ## (\f$S_{indCont} = \frac{g_{i_{max}}{G_{max}}\f$).
         self.synContrib = np.array([])
@@ -430,7 +432,6 @@ class Synapse(object):
             self.dynamicGmax = np.zeros_like(self.gmax_muS, dtype=float)
             self.synContrib = self.gmax_muS / self.gMaxTot_muS
             self.computeCurrent = self.computeCurrent2
-
         
         return self.computeConductance(t) * (self.EqPot_mV - V_mV)
 
@@ -473,10 +474,7 @@ class Synapse(object):
         idxEndPulse = []
                 
         while len(self.outQueue) and -1e-3 < t - self.tEndOfPulse[self.outQueue[0]] < 1e-3:
-            idxEndPulse.append(self.outQueue.popleft())
-            
-
-        
+            idxEndPulse.append(self.outQueue.popleft())        
 
         if len(idxBeginPulse):
             self.startConductance(t, idxBeginPulse)
@@ -592,3 +590,24 @@ class Synapse(object):
         else:
             self.variation = np.append(self.variation, 1.0 + variation)
         self.timeConstant_ms = np.append(self.timeConstant_ms, timeConstant)
+
+    def reset(self):
+        '''
+
+        '''
+        
+        
+        self.inQueue = deque([])
+        self.outQueue = deque([])
+        self.tBeginOfPulse = np.ones_like(self.gmax_muS,
+                                          dtype=float) * float("-inf")
+        self.tEndOfPulse = np.ones_like(self.gmax_muS,
+                                        dtype=float) * float("-inf")
+        self.tLastPulse = np.ones_like(self.gmax_muS,
+                                       dtype=float) * float("-inf")
+        self.conductanceState = np.zeros_like(self.gmax_muS,
+                                              dtype=int)
+        self.ri = np.zeros_like(self.gmax_muS, dtype=float)
+        self.ti = np.zeros_like(self.gmax_muS, dtype=float)
+        self.dynamicGmax = np.zeros_like(self.gmax_muS, dtype=float)
+        self.synContrib = self.gmax_muS / self.gMaxTot_muS

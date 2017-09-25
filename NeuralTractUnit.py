@@ -83,7 +83,6 @@ class NeuralTractUnit(object):
 
     def transmitSpikes(self, t):
         '''
-
         - Inputs:
             + **t**: current instant, in ms.
         '''

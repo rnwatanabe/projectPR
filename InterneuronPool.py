@@ -31,7 +31,7 @@ class InterneuronPool(object):
     '''
 
 
-    def __init__(self, conf, pool):
+    def __init__(self, conf, pool, group):
         '''
         Constructor
 
@@ -47,20 +47,20 @@ class InterneuronPool(object):
         ## Configuration object with the simulation parameters.
         self.conf = conf
         ## String with Motor unit pool to which the motor unit belongs.
-        self.pool = pool
+        self.pool = pool + '_' + group 
         ## Number of Neurons.
-        self.Nnumber = int(conf.parameterSet('Number_' + pool, pool, 0))
+        self.Nnumber = int(conf.parameterSet('Number_' + self.pool, pool, 0))
 
         ## List of Interneuron objects.
         self.unit = dict()
 
         for i in xrange(0, self.Nnumber):
-            self.unit[i] = Interneuron(conf, pool, i)
+            self.unit[i] = Interneuron(conf, self.pool, i)
 
         ## Vector with the instants of spikes in the soma compartment, in ms.
         self.poolSomaSpikes = np.array([])
         ##
-        print 'Interneuron Pool of ' + pool + ' built'
+        print 'Interneuron Pool of ' + pool + ' ' + group + ' built'
 
     def atualizeInterneuronPool(self, t):
         '''

@@ -207,10 +207,13 @@ class PulseConductanceState(object):
             if t > self.endOfPulse_ms:
                 self.changeState(t)
                 self.value = (self.value - 1) * self.AlphaExp + 1
-            else: self.value *= self.BetaExp              
-        
-            
-            
-        
-        
+            else: self.value *= self.BetaExp  
+
+    def reset(self):
+        '''
+
+        '''
+        self.value = float(0)
+        self.endOfPulse_ms = self.PulseDur_ms
+
         
