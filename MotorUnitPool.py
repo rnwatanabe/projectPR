@@ -25,6 +25,7 @@ from MuscleNoHill import MuscleNoHill
 from MuscleHill import MuscleHill
 from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
+import pathos.pools as pp
 
 class MotorUnitPool(object):
     '''
@@ -41,7 +42,9 @@ class MotorUnitPool(object):
 
             + **pool**: string with Motor unit pool to which the motor unit belongs.
         '''
+        self.t = 0
 
+        self.pool1 = pp.ProcessPool(4)
         ## Indicates that is Motor Unit pool.
         self.kind = 'MU'
 
@@ -107,15 +110,21 @@ class MotorUnitPool(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
-
+        self.t = t
         units = self.unit
-        for i in xrange(self.MUnumber): units[i].atualizeMotorUnit(t)
+        
+        #for i in xrange(self.MUnumber): units[i].atualizeMotorUnit(t)
+        self.pool1.map(self.atualizeUnit, range(self.MUnumber))
         self.Activation.atualizeActivationSignal(t, units)
         self.Muscle.atualizeForce(self.Activation.activation_Sat)
         self.spindle.atualizeMuscleSpindle(t, self.Muscle.lengthNorm,
                                            self.Muscle.velocityNorm, 
                                            self.Muscle.accelerationNorm, 
                                            31, 33)
+
+    def atualizeUnit(self,i):
+        
+        self.unit[i].atualizeMotorUnit(self.t)      
 
     def listSpikes(self):
         '''
