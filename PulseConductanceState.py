@@ -20,11 +20,11 @@
 
 
 import math
-from numba import jit
+#from numba import jit
 import numpy as np
 
 
-@jit
+#@jit
 def compValOn(v0, alpha, beta, t, t0):
     '''
     Time course of the state during the pulse for the *inactivation* states
@@ -42,7 +42,7 @@ def compValOn(v0, alpha, beta, t, t0):
     '''
     return v0 * np.exp(beta * (t0 - t))
 
-@jit
+#@jit
 def compValOff(v0, alpha, beta, t, t0):
     '''
     Time course of the state during the pulse for the *activation* states

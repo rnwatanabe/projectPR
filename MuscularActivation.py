@@ -21,9 +21,9 @@
 import numpy as np
 import math
 from scipy.sparse import lil_matrix
-from numba import jit
+#from numba import jit
 
-@jit
+#@jit
 def twitchSaturation(activationsat, b):
     '''
     Computes the muscle unit force after the nonlinear saturation. 
