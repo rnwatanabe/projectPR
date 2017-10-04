@@ -1,20 +1,16 @@
 '''
     Neuromuscular simulator in Python.
     Copyright (C) 2016  Renato Naville Watanabe
-
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     any later version.
-
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
     Contact: renato.watanabe@usp.br
 '''
 
@@ -36,10 +32,8 @@ class MotorUnitPool(object):
     def __init__(self, conf, pool):
         '''
         Constructor
-
         - Inputs:
             + **conf**: Configuration object with the simulation parameters.
-
             + **pool**: string with Motor unit pool to which the motor unit belongs.
         '''
         self.t = 0
@@ -106,7 +100,6 @@ class MotorUnitPool(object):
         Update all parts of the Motor Unit pool. It consists
         to update all motor units, the activation signal and
         the muscle force.
-
         - Inputs:
             + **t**: current instant, in ms.
         '''
@@ -147,7 +140,6 @@ class MotorUnitPool(object):
 
     def getMotorUnitPoolInstantEMG(self, t):
         '''
-
         '''
         emg = 0
         for i in xrange(self.MUnumber): emg += self.unit[i].getEMG(t)
@@ -156,7 +148,6 @@ class MotorUnitPool(object):
 
     def getMotorUnitPoolEMG(self):
         '''
-
         '''
         for i in xrange(0, len(self.emg)):
             self.emg[i] = self.getMotorUnitPoolInstantEMG(i * self.conf.timeStep_ms)
@@ -164,7 +155,6 @@ class MotorUnitPool(object):
 
     def reset(self):
         '''
-
         '''
 
                    
