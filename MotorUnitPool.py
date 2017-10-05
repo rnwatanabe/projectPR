@@ -26,6 +26,18 @@ from MuscleHill import MuscleHill
 from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
 
+# TODO
+
+def runge_kutta(derivativeFunction,t, x, timeStep, timeStepByTwo, timeStepBySix):
+    k1 = derivativeFunction(t, x)
+    k2 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k1)
+    k3 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k2)
+    k4 = derivativeFunction(t + timeStep, x + timeStep * k3)
+    
+    return x + timeStepBySix * (k1 + k2 + k2 + k3 + k3 + k4)
+
+
+
 class MotorUnitPool(object):
     '''
     Class that implements a motor unit pool. Encompasses a set of motor
@@ -48,6 +60,11 @@ class MotorUnitPool(object):
 
         ## Configuration object with the simulation parameters.
         self.conf = conf
+        # TODO
+        self.timeStep_ms = self.conf.timeStep_ms
+        self.timeStepByTwo_ms = self.conf.timeStepByTwo_ms
+        self.timeStepBySix_ms = self.conf.timeStepBySix_ms
+
         ## String with Motor unit pool to which the motor unit belongs.
         self.pool = pool
         MUnumber_S = int(conf.parameterSet('MUnumber_' + pool + '-S', pool, 0))
@@ -69,6 +86,39 @@ class MotorUnitPool(object):
                 self.unit[i] = MotorUnit(conf, pool, i, 'FR', self.muscleThickness_mm, conf.skinThickness_mm)
             else:
                 self.unit[i] = MotorUnit(conf, pool, i, 'FF', self.muscleThickness_mm, conf.skinThickness_mm)
+
+        # TODO
+        self.totalNumberOfCompartments = 0
+
+        for i in xrange(self.MUnumber):
+            self.totalNumberOfCompartments = self.totalNumberOfCompartments \
+                + self.unit[i].compNumber
+
+        self.v_mV = np.zeros((self.totalNumberOfCompartments),
+                             dtype = np.float64)
+        self.G = np.zeros((self.totalNumberOfCompartments,
+                          self.totalNumberOfCompartments), dtype = np.float64)
+        self.iInjected = np.zeros_like(self.v_mV, dtype = 'd')
+        self.capacitanceInv = np.zeros_like(self.v_mV, dtype = 'd')
+        self.iIonic = np.full_like(self.v_mV, 0.0)
+        self.EqCurrent_nA = np.zeros_like(self.v_mV, dtype = 'd')
+
+        for i in xrange(self.MUnumber):
+            self.v_mV[i*self.unit[i].compNumber:i*self.unit[i].compNumber \
+                    +self.unit[i].v_mV.shape[0]] = self.unit[i].v_mV
+            self.G[i*self.unit[i].compNumber:i*self.unit[i].compNumber \
+                    +self.unit[i].G.shape[0], \
+                    i*self.unit[i].compNumber:i*self.unit[i].compNumber \
+                    +self.unit[i].G.shape[1]] = self.unit[i].G
+            self.capacitanceInv[i*self.unit[i].compNumber: \
+                    i*self.unit[i].compNumber \
+                    +self.unit[i].capacitanceInv.shape[0]] \
+                    = self.unit[i].capacitanceInv
+            self.EqCurrent_nA[i*self.unit[i].compNumber: \
+                    i*self.unit[i].compNumber \
+                    +self.unit[i].EqCurrent_nA.shape[0]] \
+                    = self.unit[i].EqCurrent_nA
+
 
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
@@ -108,16 +158,32 @@ class MotorUnitPool(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
-        self.t = t
-        units = self.unit
         
-        for i in xrange(self.MUnumber): units[i].atualizeMotorUnit(t)
-        self.Activation.atualizeActivationSignal(t, units)
+        # TODO
+        np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.timeStep_ms,
+                            self.timeStepByTwo_ms, self.conf.timeStepBySix_ms),
+                            -30.0, 120.0, self.v_mV)
+        for i in xrange(self.MUnumber): self.unit[i].atualizeMotorUnit(t)
+        self.Activation.atualizeActivationSignal(t, self.unit)
         self.Muscle.atualizeForce(self.Activation.activation_Sat)
         self.spindle.atualizeMuscleSpindle(t, self.Muscle.lengthNorm,
                                            self.Muscle.velocityNorm, 
                                            self.Muscle.accelerationNorm, 
                                            31, 33)
+
+    def dVdt(self, t, V): 
+        
+        # TODO computeCurrent have other important attributes. Possible solution
+        # would be bring it to MotorUnitPool, but that's a lot of changes. So
+        # maybe it's better to call it from self.unit. In that case, the same 
+        # could be done for the other attributes copied previously, e.g. iIonic
+        #for i in xrange(self.totalNumberOfCompartments): 
+        #    self.iIonic.itemset(i, self.unit[i].compartment[i].computeCurrent(t,
+        #                                                              V.item(i)))
+
+              
+        return (self.iIonic + self.G.dot(V)  + self.iInjected
+                + self.EqCurrent_nA) * self.capacitanceInv
 
     def listSpikes(self):
         '''

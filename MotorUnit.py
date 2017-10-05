@@ -176,6 +176,7 @@ class MotorUnit(object):
         ## Configuration object with the simulation parameters.
         self.conf = conf
 
+        # TODO
         self.timeStep_ms = self.conf.timeStep_ms
         self.timeStepByTwo_ms = self.conf.timeStepByTwo_ms
         self.timeStepBySix_ms = self.conf.timeStepBySix_ms
@@ -259,7 +260,6 @@ class MotorUnit(object):
         ## Vector with the last instant of spike of all compartments. 
         self.tSpikes = np.zeros((self.compNumber), dtype = np.float64)
         
-        
         gCoupling_muS = np.zeros_like(self.v_mV, dtype = 'd')
         
             
@@ -304,9 +304,6 @@ class MotorUnit(object):
         ## Matrix of the conductance of the motoneuron. Multiplied by the vector self.v_mV,
         ## results in the passive currents of each compartment.
         self.G = np.float64(GC + GL)
-
-        
-        
 
         self.EqCurrent_nA = np.dot(-GL, EqPot) + IPump 
 
@@ -421,7 +418,11 @@ class MotorUnit(object):
             + **t**: current instant, in ms.
 
         '''        
+        # TODO
         np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.timeStep_ms, self.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -30.0, 120.0, self.v_mV)
+        # Get v_mV from MotorUnitPool.py
+
+
         for i in xrange(self.somaIndex, self.compNumber):
             if self.v_mV[i] > self.threshold_mV and t-self.tSpikes[i] > self.MNRefPer_ms: 
                 self.addCompartmentSpike(t, i)    
