@@ -76,7 +76,7 @@ def runge_kutta(derivativeFunction, t, x, timeStep, timeStepByTwo,  timeStepBySi
 
 
 
-class MuscleSpindle(object):
+class GolgiTendonOrgan(object):
     '''
     Class that implements a muscle spindle model. 
     '''

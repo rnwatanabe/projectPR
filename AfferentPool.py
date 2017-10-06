@@ -48,8 +48,7 @@ class AfferentPool(object):
         
         self.muscle = muscle
         self.AFnumber = int(conf.parameterSet('Number_' + pool + '-' + muscle, pool, 0))
-        
-        
+                
         ## Dictionary of Axon objects.
         self.unit = dict()
 
