@@ -163,7 +163,10 @@ class MotorUnitPool(object):
         np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.timeStep_ms,
                             self.timeStepByTwo_ms, self.conf.timeStepBySix_ms),
                             -30.0, 120.0, self.v_mV)
-        for i in xrange(self.MUnumber): self.unit[i].atualizeMotorUnit(t)
+        for i in xrange(self.MUnumber):
+            interval1 = i*self.unit[i].compNumber
+            interval2 = (i+1)*self.unit[i].compNumber
+            self.unit[i].atualizeMotorUnit(t, self.v_mV[interval1:interval2])
         self.Activation.atualizeActivationSignal(t, self.unit)
         self.Muscle.atualizeForce(self.Activation.activation_Sat)
         self.spindle.atualizeMuscleSpindle(t, self.Muscle.lengthNorm,
@@ -173,14 +176,15 @@ class MotorUnitPool(object):
 
     def dVdt(self, t, V): 
         
-        # TODO computeCurrent have other important attributes. Possible solution
-        # would be bring it to MotorUnitPool, but that's a lot of changes. So
-        # maybe it's better to call it from self.unit. In that case, the same 
+        # TODO calling it from self.unit. In that case, the same 
         # could be done for the other attributes copied previously, e.g. iIonic
-        #for i in xrange(self.totalNumberOfCompartments): 
-        #    self.iIonic.itemset(i, self.unit[i].compartment[i].computeCurrent(t,
-        #                                                              V.item(i)))
-
+        k = 0
+        for i in xrange(self.MUnumber):
+            for j in xrange(self.unit[i].compNumber):
+                self.iIonic.itemset(k,
+                                self.unit[i].compartment[j].computeCurrent(t,
+                                                                  V.item(k)))
+                k += 1
               
         return (self.iIonic + self.G.dot(V)  + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv

@@ -399,18 +399,19 @@ class MotorUnit(object):
         self.transmitSpikesThroughSynapses = []
         self.indicesOfSynapsesOnTarget = []         
     
-    def atualizeMotorUnit(self, t):
+    # TODO
+    def atualizeMotorUnit(self, t, v_mV):
         '''
         Atualize the dynamical and nondynamical (delay) parts of the motor unit.
 
         - Inputs:
             + **t**: current instant, in ms.
         ''' 
-        self.atualizeCompartments(t)
+        self.atualizeCompartments(t, v_mV)
         self.atualizeDelay(t)
 
     #@profile    
-    def atualizeCompartments(self, t):
+    def atualizeCompartments(self, t, v_mV):
         '''
         Atualize all neural compartments.
 
@@ -419,9 +420,9 @@ class MotorUnit(object):
 
         '''        
         # TODO
-        np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.timeStep_ms, self.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -30.0, 120.0, self.v_mV)
+        #np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.timeStep_ms, self.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -30.0, 120.0, self.v_mV)
         # Get v_mV from MotorUnitPool.py
-
+        self.v_mV = v_mV
 
         for i in xrange(self.somaIndex, self.compNumber):
             if self.v_mV[i] > self.threshold_mV and t-self.tSpikes[i] > self.MNRefPer_ms: 
