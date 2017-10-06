@@ -22,13 +22,13 @@
 import numpy as np
 import numpy.random
 import math
-from numba import jit
+#from numba import jit
 
 
 
 
 
-@jit
+#@jit
 def  gammaPoint(GammaOrder, GammaOrderInv):
     '''
     Generates a number according to a Gamma Distribution with an integer order **GammaOrder**.

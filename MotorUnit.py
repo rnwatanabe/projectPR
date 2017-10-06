@@ -176,9 +176,6 @@ class MotorUnit(object):
         ## Configuration object with the simulation parameters.
         self.conf = conf
 
-        self.timeStep_ms = self.conf.timeStep_ms
-        self.timeStepByTwo_ms = self.conf.timeStepByTwo_ms
-        self.timeStepBySix_ms = self.conf.timeStepBySix_ms
         ## String with the type of the motor unit. It can be
         ## *S* (slow), *FR* (fast and resistant) and
         ## *FF** (fast and fatigable).
@@ -259,7 +256,6 @@ class MotorUnit(object):
         ## Vector with the last instant of spike of all compartments. 
         self.tSpikes = np.zeros((self.compNumber), dtype = np.float64)
         
-        
         gCoupling_muS = np.zeros_like(self.v_mV, dtype = 'd')
         
             
@@ -304,9 +300,6 @@ class MotorUnit(object):
         ## Matrix of the conductance of the motoneuron. Multiplied by the vector self.v_mV,
         ## results in the passive currents of each compartment.
         self.G = np.float64(GC + GL)
-
-        
-        
 
         self.EqCurrent_nA = np.dot(-GL, EqPot) + IPump 
 
@@ -402,18 +395,18 @@ class MotorUnit(object):
         self.transmitSpikesThroughSynapses = []
         self.indicesOfSynapsesOnTarget = []         
     
-    def atualizeMotorUnit(self, t):
+    def atualizeMotorUnit(self, t, v_mV):
         '''
         Atualize the dynamical and nondynamical (delay) parts of the motor unit.
 
         - Inputs:
             + **t**: current instant, in ms.
         ''' 
-        self.atualizeCompartments(t)
+        self.atualizeCompartments(t, v_mV)
         self.atualizeDelay(t)
 
     #@profile    
-    def atualizeCompartments(self, t):
+    def atualizeCompartments(self, t, v_mV):
         '''
         Atualize all neural compartments.
 
@@ -421,7 +414,8 @@ class MotorUnit(object):
             + **t**: current instant, in ms.
 
         '''        
-        np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.timeStep_ms, self.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -30.0, 120.0, self.v_mV)
+        self.v_mV = v_mV
+
         for i in xrange(self.somaIndex, self.compNumber):
             if self.v_mV[i] > self.threshold_mV and t-self.tSpikes[i] > self.MNRefPer_ms: 
                 self.addCompartmentSpike(t, i)    
