@@ -22,8 +22,6 @@ from MuscleHill import MuscleHill
 from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
 
-# TODO
-
 def runge_kutta(derivativeFunction,t, x, timeStep, timeStepByTwo, timeStepBySix):
     k1 = derivativeFunction(t, x)
     k2 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k1)
@@ -31,8 +29,6 @@ def runge_kutta(derivativeFunction,t, x, timeStep, timeStepByTwo, timeStepBySix)
     k4 = derivativeFunction(t + timeStep, x + timeStep * k3)
     
     return x + timeStepBySix * (k1 + k2 + k2 + k3 + k3 + k4)
-
-
 
 class MotorUnitPool(object):
     '''
@@ -54,10 +50,6 @@ class MotorUnitPool(object):
 
         ## Configuration object with the simulation parameters.
         self.conf = conf
-        # TODO
-        self.timeStep_ms = self.conf.timeStep_ms
-        self.timeStepByTwo_ms = self.conf.timeStepByTwo_ms
-        self.timeStepBySix_ms = self.conf.timeStepBySix_ms
 
         ## String with Motor unit pool to which the motor unit belongs.
         self.pool = pool
@@ -81,7 +73,9 @@ class MotorUnitPool(object):
             else:
                 self.unit[i] = MotorUnit(conf, pool, i, 'FF', self.muscleThickness_mm, conf.skinThickness_mm)
 
-        # TODO
+        # This is used to get values from MotorUnit.py and make computations
+        # in MotorUnitPool.py
+        # TODO create it all here instead?
         self.totalNumberOfCompartments = 0
 
         for i in xrange(self.MUnumber):
@@ -151,10 +145,9 @@ class MotorUnitPool(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
-        
-        # TODO
-        np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.timeStep_ms,
-                            self.timeStepByTwo_ms, self.conf.timeStepBySix_ms),
+        np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.conf.timeStep_ms,
+                            self.conf.timeStepByTwo_ms,
+                            self.conf.timeStepBySix_ms),
                             -30.0, 120.0, self.v_mV)
         for i in xrange(self.MUnumber):
             interval1 = i*self.unit[i].compNumber
@@ -168,9 +161,6 @@ class MotorUnitPool(object):
                                            31, 33)
 
     def dVdt(self, t, V): 
-        
-        # TODO calling it from self.unit. In that case, the same 
-        # could be done for the other attributes copied previously, e.g. iIonic
         k = 0
         for i in xrange(self.MUnumber):
             for j in xrange(self.unit[i].compNumber):

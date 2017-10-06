@@ -176,10 +176,6 @@ class MotorUnit(object):
         ## Configuration object with the simulation parameters.
         self.conf = conf
 
-        # TODO
-        self.timeStep_ms = self.conf.timeStep_ms
-        self.timeStepByTwo_ms = self.conf.timeStepByTwo_ms
-        self.timeStepBySix_ms = self.conf.timeStepBySix_ms
         ## String with the type of the motor unit. It can be
         ## *S* (slow), *FR* (fast and resistant) and
         ## *FF** (fast and fatigable).
@@ -399,7 +395,6 @@ class MotorUnit(object):
         self.transmitSpikesThroughSynapses = []
         self.indicesOfSynapsesOnTarget = []         
     
-    # TODO
     def atualizeMotorUnit(self, t, v_mV):
         '''
         Atualize the dynamical and nondynamical (delay) parts of the motor unit.
@@ -419,9 +414,6 @@ class MotorUnit(object):
             + **t**: current instant, in ms.
 
         '''        
-        # TODO
-        #np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.timeStep_ms, self.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -30.0, 120.0, self.v_mV)
-        # Get v_mV from MotorUnitPool.py
         self.v_mV = v_mV
 
         for i in xrange(self.somaIndex, self.compNumber):
