@@ -54,7 +54,7 @@ def simulator():
 
     pools[0].listSpikes()
     pools[1].listSpikes()
-    
+    '''
     plt.figure()
     plt.plot(pools[1].poolTerminalSpikes[:, 0],
              pools[1].poolTerminalSpikes[:, 1]+1, '.')
@@ -72,7 +72,7 @@ def simulator():
 
     plt.figure()
     plt.plot(t, somaV, '-')
-    
+    '''
 if __name__ == '__main__':
 
     #cProfile.run('simulator()', sort = 'tottime')
@@ -81,5 +81,6 @@ if __name__ == '__main__':
     
     
     simulator()
-    
+    '''
     plt.show()
+    '''

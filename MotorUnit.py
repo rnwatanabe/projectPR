@@ -405,7 +405,7 @@ class MotorUnit(object):
         self.atualizeCompartments(t, v_mV)
         self.atualizeDelay(t)
 
-    #@profile    
+    #@profile        
     def atualizeCompartments(self, t, v_mV):
         '''
         Atualize all neural compartments.
@@ -420,30 +420,6 @@ class MotorUnit(object):
             if self.v_mV[i] > self.threshold_mV and t-self.tSpikes[i] > self.MNRefPer_ms: 
                 self.addCompartmentSpike(t, i)    
      
-    #@profile   
-    def dVdt(self, t, V): 
-        '''
-        Compute the potential derivative of all compartments of the motor unit.
-
-        - Inputs:
-            + **t**: current instant, in ms.
-
-            + **V**: Vector with the current potential value of all neural
-            compartments of the motor unit.
-        
-        \f{equation}{
-            \frac{dV}{dt} = (I_{active} + GV+ I_{inj} + I_{eq})C_inv   
-        }
-        where all the variables are vectors with the number of elements equal
-        to the number of compartments and \f$G\f$ is the conductance matrix built
-        in the compGCouplingMatrix function.
-        '''
-        
-        for i in xrange(self.compNumber): 
-            self.iIonic.itemset(i, self.compartment[i].computeCurrent(t, V.item(i)))
-
-              
-        return (self.iIonic + self.G.dot(V)  + self.iInjected + self.EqCurrent_nA) * self.capacitanceInv
     
     #@profile
     def addCompartmentSpike(self, t, comp):

@@ -21,6 +21,7 @@ from MuscleNoHill import MuscleNoHill
 from MuscleHill import MuscleHill
 from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
+from numba import jit, prange
 
 def runge_kutta(derivativeFunction,t, x, timeStep, timeStepByTwo, timeStepBySix):
     k1 = derivativeFunction(t, x)
@@ -136,7 +137,8 @@ class MotorUnitPool(object):
 
         ##
         print 'Motor Unit Pool ' + pool + ' built'
-        
+    
+         
     def atualizeMotorUnitPool(self, t):
         '''
         Update all parts of the Motor Unit pool. It consists
@@ -149,27 +151,25 @@ class MotorUnitPool(object):
                             self.conf.timeStepByTwo_ms,
                             self.conf.timeStepBySix_ms),
                             -30.0, 120.0, self.v_mV)
-        for i in xrange(self.MUnumber):
-            interval1 = i*self.unit[i].compNumber
-            interval2 = (i+1)*self.unit[i].compNumber
-            self.unit[i].atualizeMotorUnit(t, self.v_mV[interval1:interval2])
+        for i in prange(self.MUnumber):
+            self.unit[i].atualizeMotorUnit(t, self.v_mV[i*self.unit[i].compNumber:(i+1)*self.unit[i].compNumber])
         self.Activation.atualizeActivationSignal(t, self.unit)
         self.Muscle.atualizeForce(self.Activation.activation_Sat)
         self.spindle.atualizeMuscleSpindle(t, self.Muscle.lengthNorm,
                                            self.Muscle.velocityNorm, 
                                            self.Muscle.accelerationNorm, 
                                            31, 33)
-
+    
     def dVdt(self, t, V): 
         k = 0
         for i in xrange(self.MUnumber):
             for j in xrange(self.unit[i].compNumber):
                 self.iIonic.itemset(k,
-                                self.unit[i].compartment[j].computeCurrent(t,
-                                                                  V.item(k)))
+                                    self.unit[i].compartment[j].computeCurrent(t,
+                                                                               V.item(k)))
                 k += 1
               
-        return (self.iIonic + self.G.dot(V)  + self.iInjected
+        return (self.iIonic + self.G.dot(V) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
 
     def listSpikes(self):
