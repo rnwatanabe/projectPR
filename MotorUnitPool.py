@@ -138,7 +138,7 @@ class MotorUnitPool(object):
         ##
         print 'Motor Unit Pool ' + pool + ' built'
     
-         
+        
     def atualizeMotorUnitPool(self, t):
         '''
         Update all parts of the Motor Unit pool. It consists
@@ -151,7 +151,7 @@ class MotorUnitPool(object):
                             self.conf.timeStepByTwo_ms,
                             self.conf.timeStepBySix_ms),
                             -30.0, 120.0, self.v_mV)
-        for i in prange(self.MUnumber):
+        for i in xrange(self.MUnumber):
             self.unit[i].atualizeMotorUnit(t, self.v_mV[i*self.unit[i].compNumber:(i+1)*self.unit[i].compNumber])
         self.Activation.atualizeActivationSignal(t, self.unit)
         self.Muscle.atualizeForce(self.Activation.activation_Sat)
