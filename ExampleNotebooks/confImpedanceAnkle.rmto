@@ -19,6 +19,7 @@ NumberAxonNodes,0,
 timeStep,0.05,
 simDuration,100,
 nerveLength_PTN,0.8,
+nerveLength_CPN,0.8,
 MNSomaRefPer,5.0,
 skinThickness,1.5,
 MUSpatialDistribution,random,
@@ -45,6 +46,16 @@ stimFrequency_PTN,1,
 stimModulation_PTN,0*t,
 stimModulationStart_PTN,0,
 stimModulationStop_PTN,0,
+stimDistToTerm_CPN,0.2,
+stimDistToTerm_CPN,0.2,
+stimStart_CPN,3,
+stimStop_CPN,3000,
+stimPulseDuration_CPN,1,
+stimIntensity_CPN,0,
+stimFrequency_CPN,1,
+stimModulation_CPN,0*t,
+stimModulationStart_CPN,0,
+stimModulationStop_CPN,0,
 % Synapses
 %% SOL
 EqPotSyn:SOL-S|excitatory,70.0,
@@ -230,6 +241,7 @@ axonDelayLeakTimeConstant:SOL-S,10,10
 axonDelayLeakTimeConstant:SOL-FR,10,10
 axonDelayLeakTimeConstant:SOL-FF,10,10
 axonDelayRefPeriod_PTN,5,
+axonDelayRefPeriod_CPN,5,
 % Muscles
 %% SOL
 Fmax:SOL,3586,
@@ -447,8 +459,8 @@ twitchTimePeak:MG-S,110.0,86.5
 twitchTimePeak:MG-FR,86.5,55.25
 twitchTimePeak:MG-FF,55.25,25
 twitchPeak:MG-S,0.02,1.7
-twitchPeak:MG-FR,1.7,1,9
-twitchPeak:MG-FF,1,9,2,15
+twitchPeak:MG-FR,1.7,1.9
+twitchPeak:MG-FF,1.9,2.15
 bSatSOCDS:MG-S,1,0.85
 bSatSOCDS:MG-FR,0.85,0.48
 bSatSOCDS:MG-FF,0.48,0.43
@@ -680,8 +692,8 @@ twitchTimePeak:LG-S,110.0,86.5
 twitchTimePeak:LG-FR,86.5,55.25
 twitchTimePeak:LG-FF,55.25,25
 twitchPeak:LG-S,0.02,1.7
-twitchPeak:LG-FR,1.7,1,9
-twitchPeak:LG-FF,1,9,2,15
+twitchPeak:LG-FR,1.7,1.9
+twitchPeak:LG-FF,1.9,2.15
 bSatSOCDS:LG-S,1,0.85
 bSatSOCDS:LG-FR,0.85,0.48
 bSatSOCDS:LG-FF,0.48,0.43
@@ -883,8 +895,8 @@ twitchTimePeak:TA-S,110.0,86.5
 twitchTimePeak:TA-FR,86.5,55.25
 twitchTimePeak:TA-FF,55.25,25
 twitchPeak:TA-S,0.02,1.7
-twitchPeak:TA-FR,1.7,1,9
-twitchPeak:TA-FF,1,9,2,15
+twitchPeak:TA-FR,1.7,1.9
+twitchPeak:TA-FF,1.9,2.15
 bSatSOCDS:TA-S,1,0.85
 bSatSOCDS:TA-FR,0.85,0.48
 bSatSOCDS:TA-FF,0.48,0.43
@@ -944,7 +956,7 @@ VmaxTypeII:TA,-0.00915,
 muscleElasticity:TA,5,
 muscleViscosity:TA,5,
 muscleStrain:TA,0.5,
-muscleMass:LG,0.15,
+muscleMass:TA,0.15,
 tendonElasticity:TA,27.8,
 tendonLinearOnsetLength:TA,0.96,
 tendonCurvatureConstant:TA,0.005,
