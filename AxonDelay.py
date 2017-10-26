@@ -124,7 +124,8 @@ class AxonDelay(object):
         if t - self.axonSpikeTrain > self.refractoryPeriod_ms:
             self.electricCharge_muC = (stimulus * self.conf.timeStep_ms +
                                        self.electricCharge_muC * 
-                                       math.exp(-self.conf.timeStep_ms/self.leakageTimeConstant_ms))
+                                       math.exp(-self.conf.timeStep_ms
+                                                /self.leakageTimeConstant_ms))
             if self.electricCharge_muC >= self.threshold_muC:
                 self.electricCharge_muC = 0
                 self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)

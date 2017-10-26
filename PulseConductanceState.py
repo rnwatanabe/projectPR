@@ -20,7 +20,7 @@
 
 
 import math
-from numba import jit
+#from numba import jit
 import numpy as np
 
 

@@ -11,8 +11,8 @@ MUnumber_TA-S,250,
 MUnumber_TA-FR,50,
 MUnumber_TA-FF,50,
 Number_Ia-SOL,400,
-Number_Ia-MG,160,
-Number_Ia-LG,160,
+Number_Ia-MG,80,
+Number_Ia-LG,76,
 Number_Ia-TA,280,
 Number_CMExt,400,
 NumberAxonNodes,0,
@@ -665,7 +665,7 @@ beta_n:LG-FF@soma,0.1,
 beta_q:LG-FF@soma,0.05,
 % Motoneurons
 %%% S
-position:LG-,0,18
+position:LG-,10,18
 threshold:LG-S,12.35,16.45
 threshold:LG-FR,16.45,19.3
 threshold:LG-FF,19.3,20.9
@@ -868,7 +868,7 @@ beta_n:TA-FF@soma,0.1,
 beta_q:TA-FF@soma,0.05,
 % Motoneurons
 %%% S
-position:TA-,0,18
+position:TA-,50,57
 threshold:TA-S,12.35,16.45
 threshold:TA-FR,16.45,19.3
 threshold:TA-FF,19.3,20.9

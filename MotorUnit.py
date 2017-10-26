@@ -404,6 +404,7 @@ class MotorUnit(object):
         ''' 
         self.atualizeCompartments(t, v_mV)
         self.atualizeDelay(t)
+        
 
     #@profile        
     def atualizeCompartments(self, t, v_mV):
@@ -453,7 +454,13 @@ class MotorUnit(object):
 
         if -1e-3 < (t - self.Delay.terminalSpikeTrain) < 1e-3: 
             self.terminalSpikeTrain.append([t, self.index])
+                   
         
+        if self.Delay.indexAntidromicSpike < len(self.Delay.antidromicSpikeTrain) and -1e-2 < (t - self.Delay.antidromicSpikeTrain[self.Delay.indexAntidromicSpike]) < 1e-2: 
+            self.somaSpikeTrain.append([t, int(self.index)])
+            self.transmitSpikes(t)
+            self.Delay.indexAntidromicSpike += 1
+
         if self.stimulusCompartment == 'delay':
             self.Delay.atualizeStimulus(t, self.nerveStimulus_mA[int(np.rint(t/self.conf.timeStep_ms))])
 

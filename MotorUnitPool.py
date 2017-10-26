@@ -21,7 +21,7 @@ from MuscleNoHill import MuscleNoHill
 from MuscleHill import MuscleHill
 from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
-from numba import jit, prange
+#from numba import jit, prange
 
 def runge_kutta(derivativeFunction,t, x, timeStep, timeStepByTwo, timeStepBySix):
     k1 = derivativeFunction(t, x)

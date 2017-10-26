@@ -120,8 +120,7 @@ class MuscularActivation(object):
         - Inputs:
             + **t**: current instant, in ms.        
         '''
-        
-        
+               
         MUindices = np.arange(0, self.MUnumber)
         MUspike = np.array([], dtype = 'int')
         self.an[3*MUindices+1] = self.an[3*MUindices]
