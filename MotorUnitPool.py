@@ -23,6 +23,7 @@ from MuscleHill import MuscleHill
 from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
 from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll
+import time
 #from numba import jit, prange
 
 def SpMV_viaMKL( A, x, numberOfBlocks, sizeOfBlock ):
@@ -156,7 +157,9 @@ class MotorUnitPool(object):
                     = self.unit[i].EqCurrent_nA
         self.sizeOfBlock = int(self.totalNumberOfCompartments/self.MUnumber)
         self.G = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)) 
-        
+        tic = time.time()
+        X = self.G.data.ctypes.data_as(POINTER(c_double))
+        print time.time()-tic
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
         ## Vector with the instants of spikes in the last dynamical compartment, in ms.
