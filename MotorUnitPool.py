@@ -39,7 +39,7 @@ def SpMV_viaMKL( A, x ):
      from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll
      mkl = cdll.LoadLibrary("libmkl_rt.so")
 
-     SpMV = mkl.mkl_cspblas_dcsrgemv
+     SpMV = mkl.mkl_cspblas_dcsrsymv
      # Dissecting the "cspblas_dcsrgemv" name:
      # "c" - for "c-blas" like interface (as opposed to fortran)
      #    Also means expects sparse arrays to use 0-based indexing, which python does
@@ -155,6 +155,7 @@ class MotorUnitPool(object):
                     = self.unit[i].EqCurrent_nA
 
         self.G = self.G.tocsr() 
+        print self.G.todense()
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
         ## Vector with the instants of spikes in the last dynamical compartment, in ms.
@@ -215,7 +216,7 @@ class MotorUnitPool(object):
                                                                                V.item(k)))
                 k += 1
               
-        return (self.iIonic + self.G.dot(V) + self.iInjected
+        return (self.iIonic + SpMV_viaMKL(self.G,V) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
 
     def listSpikes(self):
