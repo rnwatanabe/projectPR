@@ -87,7 +87,7 @@ class MuscularActivation(object):
                                     -math.exp(-2*conf.timeStep_ms/unit[i].TwitchTc_ms), 
                                     math.pow(conf.timeStep_ms, 2.0)/unit[i].TwitchTc_ms*math.exp(1.0-conf.timeStep_ms/unit[i].TwitchTc_ms)]
              
-            self.ActMatrix.tocsr()   
+            self.ActMatrix = self.ActMatrix.tocsr()   
             ## Is a vector formed as:
             ## \f{equation}{
             ##    \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}                    
