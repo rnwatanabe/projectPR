@@ -154,8 +154,8 @@ class MotorUnitPool(object):
                     +self.unit[i].EqCurrent_nA.shape[0]] \
                     = self.unit[i].EqCurrent_nA
 
-        self.G = self.G.tocsr() 
-        print self.G.todense()
+        self.G = self.G.tobsr() 
+        
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
         ## Vector with the instants of spikes in the last dynamical compartment, in ms.
@@ -216,7 +216,7 @@ class MotorUnitPool(object):
                                                                                V.item(k)))
                 k += 1
               
-        return (self.iIonic + SpMV_viaMKL(self.G,V) + self.iInjected
+        return (self.iIonic + self.G.dot(V) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
 
     def listSpikes(self):
