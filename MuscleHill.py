@@ -83,7 +83,7 @@ class MuscleHill(object):
         self.pennationAngleAtOptimalLengthSin = math.sin(float(self.conf.parameterSet('optimalPennationAngle:' + pool, pool, 0)))
         ## Maximum force of the Hill model, in N.
         self.maximumForce_N = float(self.conf.parameterSet('Fmax:' + pool, pool, 0))
-        print self.maximumForce_N
+        
         ##  
         self.elasticity = float(self.conf.parameterSet('muscleElasticity:' + pool, pool, 0))
         ##  
@@ -178,6 +178,7 @@ class MuscleHill(object):
         ##  
         self.n4 = float(self.conf.parameterSet('n4:' + pool, pool, 0))
         
+        print 'Hill muscle of the ' + pool + ' muscle with maximum force of ' + str(self.maximumForce_N) + ' N  built.'
                                      
     def atualizeForce(self, activation_Sat):
         '''

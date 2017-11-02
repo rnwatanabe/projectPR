@@ -131,19 +131,19 @@ class AxonDelay(object):
                 self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
                 self.addAntidromicSpike(t)
                 self.axonSpikeTrain = t
-            if self.indexOrthodromicSpike < len(self.orthodromicSpikeTrain):
-                if t > self.orthodromicSpikeTrain[self.indexOrthodromicSpike]:
-                    if self.indexAntidromicSpike < len(self.antidromicSpikeTrain):
-                        if (math.fabs(self.orthodromicSpikeTrain[self.indexOrthodromicSpike] -
-                                      self.antidromicSpikeTrain[self.indexAntidromicSpike]) <
-                                self.latencyStimulusSpinal_ms):
-                            self.indexOrthodromicSpike += 1
-                            self.indexAntidromicSpike += 1
-                    else:
-                        self.electricCharge_muC = 0
-                        self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
-                        self.axonSpikeTrain = t
+        if self.indexOrthodromicSpike < len(self.orthodromicSpikeTrain):
+            if t > self.orthodromicSpikeTrain[self.indexOrthodromicSpike]:
+                if self.indexAntidromicSpike < len(self.antidromicSpikeTrain):
+                    if (math.fabs(self.orthodromicSpikeTrain[self.indexOrthodromicSpike] -
+                                    self.antidromicSpikeTrain[self.indexAntidromicSpike]) <
+                            self.latencyStimulusSpinal_ms):
                         self.indexOrthodromicSpike += 1
+                        self.indexAntidromicSpike += 1
+                else:
+                    self.electricCharge_muC = 0
+                    self.addTerminalSpike(t, self.latencyStimulusTerminal_ms)
+                    self.axonSpikeTrain = t
+                    self.indexOrthodromicSpike += 1
 
     def reset(self):
         '''

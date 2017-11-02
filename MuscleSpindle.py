@@ -310,8 +310,34 @@ class MuscleSpindle(object):
                                                         )
                                                     
         self.primaryPotentialChain = self.GPrimaryChain * (self.fiberTension[4] / self.KsrChain - 
-                                                         self.LNSrChain + self.L0SrChain
-                                                        )
+                                                           self.LNSrChain + self.L0SrChain
+                                                          )
+
+    def reset(self, t):
+        '''
+        '''
+        self.betaBag1 = 0
+        self.betaBag2 = 0
+        self.betaChain = 0
+
+        self.GAMMABag1 = 0
+        self.GAMMABag2 = 0
+        self.GAMMAChain = 0
+
+        self.primaryPotentialBag1 = 0
+        self.primaryPotentialBag2 = 0
+        self.primaryPotentialChain = 0
+
+        self.secondaryPotentialBag1 = 0
+        self.secondaryPotentialBag2 = 0
+        self.secondaryPotentialChain = 0
+      
+        self.fusimotorActivation = np.zeros((3), dtype=np.float64)
+
+        self.fiberTension = np.zeros((6), dtype=np.float64)
+
+        self.IaFR_Hz = 0.0
+        self.IIFR_Hz = 0.0
 
 
 

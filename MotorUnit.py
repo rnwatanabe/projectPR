@@ -415,7 +415,7 @@ class MotorUnit(object):
             + **t**: current instant, in ms.
 
         '''        
-        self.v_mV = v_mV
+        self.v_mV[:] = v_mV
 
         for i in xrange(self.somaIndex, self.compNumber):
             if self.v_mV[i] > self.threshold_mV and t-self.tSpikes[i] > self.MNRefPer_ms: 
@@ -457,9 +457,11 @@ class MotorUnit(object):
                    
         
         if self.Delay.indexAntidromicSpike < len(self.Delay.antidromicSpikeTrain) and -1e-2 < (t - self.Delay.antidromicSpikeTrain[self.Delay.indexAntidromicSpike]) < 1e-2: 
-            self.somaSpikeTrain.append([t, int(self.index)])
-            self.transmitSpikes(t)
-            self.Delay.indexAntidromicSpike += 1
+            if t-self.tSpikes[self.somaIndex] > self.MNRefPer_ms:
+                self.tSpikes[self.somaIndex] = t
+                self.somaSpikeTrain.append([t, int(self.index)])
+                self.transmitSpikes(t)
+                self.Delay.indexAntidromicSpike += 1
 
         if self.stimulusCompartment == 'delay':
             self.Delay.atualizeStimulus(t, self.nerveStimulus_mA[int(np.rint(t/self.conf.timeStep_ms))])
