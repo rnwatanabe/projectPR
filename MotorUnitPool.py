@@ -22,9 +22,10 @@ from MuscleNoHill import MuscleNoHill
 from MuscleHill import MuscleHill
 from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
+from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll
 #from numba import jit, prange
 
-def SpMV_viaMKL( A, x ):
+def SpMV_viaMKL( A, x, numberOfBlocks, sizeOfBlock ):
      '''
      Wrapper to Intel's SpMV
      (Sparse Matrix-Vector multiply)
@@ -39,7 +40,7 @@ def SpMV_viaMKL( A, x ):
      from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll
      mkl = cdll.LoadLibrary("libmkl_rt.so")
 
-     SpMV = mkl.mkl_cspblas_dcsrsymv
+     SpMV = mkl.mkl_cspblas_dbsrgemv
      # Dissecting the "cspblas_dcsrgemv" name:
      # "c" - for "c-blas" like interface (as opposed to fortran)
      #    Also means expects sparse arrays to use 0-based indexing, which python does
@@ -49,7 +50,7 @@ def SpMV_viaMKL( A, x ):
      # "ge"  for "general", e.g., the matrix has no special structure such as symmetry
      # "mv"  for "matrix-vector" multiply
 
-     m, n = A.shape
+     
 
      # The data of the matrix
      data    = A.data.ctypes.data_as(POINTER(c_double))
@@ -59,12 +60,12 @@ def SpMV_viaMKL( A, x ):
      # Allocate output, using same conventions as input
      nVectors = 1
      
-     y = np.empty(m,dtype=np.double,order='F')  
+     y = np.empty(numberOfBlocks*sizeOfBlock,dtype=np.double,order='F')  
 
      np_x = x.ctypes.data_as(POINTER(c_double))
      np_y = y.ctypes.data_as(POINTER(c_double))
      # now call MKL. This returns the answer in np_y, which links to y
-     SpMV(byref(c_char("N")), byref(c_int(m)),data ,indptr, indices, np_x, np_y ) 
+     SpMV(byref(c_char("N")), byref(c_int(numberOfBlocks)), byref(c_int(sizeOfBlock)),data ,indptr, indices, np_x, np_y ) 
 
      return y
 
@@ -153,8 +154,8 @@ class MotorUnitPool(object):
                     i*self.unit[i].compNumber \
                     +self.unit[i].EqCurrent_nA.shape[0]] \
                     = self.unit[i].EqCurrent_nA
-
-        self.G = self.G.tobsr() 
+        self.sizeOfBlock = int(self.totalNumberOfCompartments/self.MUnumber)
+        self.G = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)) 
         
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
@@ -216,7 +217,7 @@ class MotorUnitPool(object):
                                                                                V.item(k)))
                 k += 1
               
-        return (self.iIonic + self.G.dot(V) + self.iInjected
+        return (self.iIonic + SpMV_viaMKL(self.G,V,self.MUnumber, self.sizeOfBlock) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
 
     def listSpikes(self):
