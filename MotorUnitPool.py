@@ -66,7 +66,7 @@ def SpMV_viaMKL( A, x, numberOfBlocks, sizeOfBlock ):
      np_x = x.ctypes.data_as(POINTER(c_double))
      np_y = y.ctypes.data_as(POINTER(c_double))
      # now call MKL. This returns the answer in np_y, which links to y
-     SpMV(byref(c_char("N")), byref(c_int(numberOfBlocks)), byref(c_int(sizeOfBlock)),data ,indptr, indices, np_x, np_y ) 
+     SpMV(byref(c_char("T")), byref(c_int(numberOfBlocks)), byref(c_int(sizeOfBlock)),data ,indptr, indices, np_x, np_y ) 
 
      return y
 
