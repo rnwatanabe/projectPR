@@ -26,7 +26,7 @@ from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll
 import time
 #from numba import jit, prange
 
-def SpMV_viaMKL( A, x, numberOfBlocks, sizeOfBlock ):
+def SpMV_viaMKL( data, x, numberOfBlocks, sizeOfBlock, indptr, indices ):
      '''
      Wrapper to Intel's SpMV
      (Sparse Matrix-Vector multiply)
@@ -54,10 +54,7 @@ def SpMV_viaMKL( A, x, numberOfBlocks, sizeOfBlock ):
      
 
      # The data of the matrix
-     data    = A.data.ctypes.data_as(POINTER(c_double))
-     indptr  = A.indptr.ctypes.data_as(POINTER(c_int))
-     indices = A.indices.ctypes.data_as(POINTER(c_int))
-
+     
      # Allocate output, using same conventions as input
      nVectors = 1
      
@@ -156,9 +153,11 @@ class MotorUnitPool(object):
                     +self.unit[i].EqCurrent_nA.shape[0]] \
                     = self.unit[i].EqCurrent_nA
         self.sizeOfBlock = int(self.totalNumberOfCompartments/self.MUnumber)
-        self.G = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)) 
+        self.GMKL = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)).data.ctypes.data_as(POINTER(c_double)) 
+        self.indptrMKL = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)).indptr.ctypes.data_as(POINTER(c_int))
+        self.indicesMKL = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)).indices.ctypes.data_as(POINTER(c_int))
         tic = time.time()
-        X = self.G.data.ctypes.data_as(POINTER(c_double))
+        
         print time.time()-tic
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
@@ -220,8 +219,8 @@ class MotorUnitPool(object):
                                                                                V.item(k)))
                 k += 1
               
-        return (self.iIonic + SpMV_viaMKL(self.G,V,self.MUnumber, self.sizeOfBlock) + self.iInjected
-                + self.EqCurrent_nA) * self.capacitanceInv
+        return (self.iIonic + SpMV_viaMKL(self.GMKL,V,self.MUnumber, self.sizeOfBlock, self.indptrMKL, self.indicesMKL) 
+                + self.iInjected + self.EqCurrent_nA) * self.capacitanceInv
 
     def listSpikes(self):
         '''
