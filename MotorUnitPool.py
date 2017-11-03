@@ -76,7 +76,7 @@ def runge_kutta(derivativeFunction,t, x, timeStep, timeStepByTwo, timeStepBySix)
     k3 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k2)
     k4 = derivativeFunction(t + timeStep, x + timeStep * k3)
     
-    return x + timeStepBySix * (k1 + k2 + k2 + k3 + k3 + k4)
+    return x + timeStepBySix * (np.add(np.add(np.add(k1, k2, order = 'C'), np.add(k2, k3, order='C')), np.add(k3, k4, order='C'), order='C'))
 
 class MotorUnitPool(object):
     '''
@@ -196,10 +196,19 @@ class MotorUnitPool(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
+
+        k1 = self.dVdt(t, self.v_mV)
+        k2 = self.dVdt(t + self.conf.timeStepByTwo_ms, self.v_mV + self.conf.timeStepByTwo_ms * k1)
+        k3 = self.dVdt(t + self.conf.timeStepByTwo_ms, self.v_mV + self.conf.timeStepByTwo_ms * k2)
+        k4 = self.dVdt(t + self.conf.timeStep_ms, self.v_mV + self.conf.timeStep_ms * k3)
+        
+        np.clip(self.v_mV + self.conf.timeStepBySix_ms * ((np.add(np.add(np.add(k1, k2, order = 'F'), np.add(k2, k3, order='F')), np.add(k3, k4, order='F'), order='F'))),-30.0, 120.0, self.v_mV)
+        '''
         np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.conf.timeStep_ms,
                             self.conf.timeStepByTwo_ms,
                             self.conf.timeStepBySix_ms),
                             -30.0, 120.0, self.v_mV)
+        '''                    
         for i in xrange(self.MUnumber):
             self.unit[i].atualizeMotorUnit(t, self.v_mV[i*self.unit[i].compNumber:(i+1)*self.unit[i].compNumber])
         self.Activation.atualizeActivationSignal(t, self.unit)
