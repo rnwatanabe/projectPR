@@ -151,8 +151,7 @@ class AxonDelay(object):
         '''
         self.electricCharge_muC = 0
         self.terminalSpikeTrain = float("-inf")
-        self.axonSpikeTrain = float("-inf")
-        
+        self.axonSpikeTrain = float("-inf")        
 
         self.orthodromicSpikeTrain = []
         self.antidromicSpikeTrain = []

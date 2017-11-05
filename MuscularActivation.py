@@ -35,10 +35,10 @@ def SpMV_viaMKL( A, x):
 
      import numpy as np
      import scipy.sparse as sparse
-     from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll
+     from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll, c_char_p
      mkl = cdll.LoadLibrary("libmkl_rt.so")
 
-     SpMV = mkl.mkl_cspblas_dcsrgemv
+     SpMV = mkl.mkl_dcsrmv
      # Dissecting the "cspblas_dcsrgemv" name:
      # "c" - for "c-blas" like interface (as opposed to fortran)
      #    Also means expects sparse arrays to use 0-based indexing, which python does
@@ -48,22 +48,24 @@ def SpMV_viaMKL( A, x):
      # "ge"  for "general", e.g., the matrix has no special structure such as symmetry
      # "mv"  for "matrix-vector" multiply
 
-     m,n = A.shape
-
+     m,k = A.shape
+        
      # The data of the matrix
      data    = A.data.ctypes.data_as(POINTER(c_double))
-     indptr  = A.indptr.ctypes.data_as(POINTER(c_int))
+     indptb  = A.indptr.ctypes.data_as(POINTER(c_int))
+     indpte  = (A.indptr+3).ctypes.data_as(POINTER(c_int))
      indices = A.indices.ctypes.data_as(POINTER(c_int))
 
      # Allocate output, using same conventions as input
-     nVectors = 1
      
-     y = np.empty(m,dtype=np.double,order='F')  
+     matdescra = 'GUNC'
+     y = np.empty((m,1),dtype=np.double,order='F')  
 
      np_x = x.ctypes.data_as(POINTER(c_double))
      np_y = y.ctypes.data_as(POINTER(c_double))
      # now call MKL. This returns the answer in np_y, which links to y
-     SpMV(byref(c_char("N")), byref(c_int(m)),data ,indptr, indices, np_x, np_y ) 
+     SpMV(byref(c_char("N")), byref(c_int(m)), byref(c_int(k)),byref(c_double(1.0)), 
+          byref(c_char_p(matdescra)), data ,indices, indptb, indpte, np_x, byref(c_double(0.0)), np_y) 
 
      return y
 
@@ -132,7 +134,8 @@ class MuscularActivation(object):
                                     -math.exp(-2*conf.timeStep_ms/unit[i].TwitchTc_ms), 
                                     math.pow(conf.timeStep_ms, 2.0)/unit[i].TwitchTc_ms*math.exp(1.0-conf.timeStep_ms/unit[i].TwitchTc_ms)]
              
-            self.ActMatrix = self.ActMatrix.tocsr()   
+            self.ActMatrix = self.ActMatrix.tocsr() 
+        
             ## Is a vector formed as:
             ## \f{equation}{
             ##    \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}                    
@@ -177,9 +180,9 @@ class MuscularActivation(object):
                 MUspike = np.append(MUspike,i)
                
         self.an[3*MUspike+2] = self.diracDeltaValue
+                
+        self.activation_nonSat = SpMV_viaMKL(self.ActMatrix, self.an)  
             
-        
-        self.activation_nonSat = self.ActMatrix.dot(self.an)        
         self.activation_Sat = twitchSaturation(self.activation_nonSat, self.bSat)
 
     def reset(self):
