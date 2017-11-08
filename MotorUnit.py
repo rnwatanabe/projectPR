@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2017  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -99,54 +99,6 @@ def compGCouplingMatrix(gc):
             
     return GC
 
-#@profile
-def runge_kutta(derivativeFunction, t, x, timeStep, timeStepByTwo,  timeStepBySix):
-    '''
-    Function to implement the fourth order Runge-Kutta Method to solve numerically a 
-    differential equation.
-
-    - Inputs: 
-        + **derivativeFunction**: function that corresponds to the derivative of the differential equation.
-
-        + **t**: current instant.
-
-        + **x**:  current state value.
-
-        + **timeStep**: time step of the solution of the differential equation, in the same unit of t.
-
-        + **timeStepByTwo**:  timeStep divided by two, for computational efficiency.
-
-        + **timeStepBySix**: timeStep divided by six, for computational efficiency.
-
-    This method is intended to solve the following differential equation:
-
-    \f{equation}{
-        \frac{dx(t)}{dt} = f(t, x(t))
-    \f}
-    First, four derivatives are computed:
-
-    \f{align}{
-        k_1 &= f(t,x(t))\\
-        k_2 &= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_1)\\
-        k_3 &= f(t+\frac{\Delta t}{2}, x(t) + \frac{\Delta t}{2}.k_2)\\
-        k_4 &= f(t+\Delta t, x(t) + \Delta t.k_3)
-    \f}
-    where \f$\Delta t\f$ is the time step of the numerical solution of the
-    differential equation.
-
-    Then the value of \f$x(t+\Delta t)\f$ is computed with:
-
-    \f{equation}{
-        x(t+\Delta t) = x(t) + \frac{\Delta t}{6}(k_1 + 2k_2 + 2k_3+k_4)
-    \f}
-    '''       
-    k1 = derivativeFunction(t, x)
-    k2 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k1)
-    k3 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k2)
-    k4 = derivativeFunction(t + timeStep, x + timeStep * k3)
-    
-    return x + timeStepBySix * (k1 + k2 + k2 + k3 + k3 + k4)
-    #return x + timeStep * (k1)
 
 
 class MotorUnit(object):
@@ -415,12 +367,8 @@ class MotorUnit(object):
             + **t**: current instant, in ms.
 
         '''        
-<<<<<<< HEAD
-        np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.timeStep_ms, self.timeStepByTwo_ms, self.conf.timeStepBySix_ms), -30.0, 120.0, self.v_mV)
-=======
         self.v_mV[:] = v_mV
 
->>>>>>> parPool
         for i in xrange(self.somaIndex, self.compNumber):
             if self.v_mV[i] > self.threshold_mV and t-self.tSpikes[i] > self.MNRefPer_ms: 
                 self.addCompartmentSpike(t, i)    

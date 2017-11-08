@@ -222,10 +222,6 @@ class MotorUnitPool(object):
 
     def reset(self):
         '''
-<<<<<<< HEAD
-
-=======
->>>>>>> parPool
         '''
 
                    
@@ -236,8 +232,4 @@ class MotorUnitPool(object):
 
         for i in xrange(self.MUnumber): self.unit[i].reset()
         self.Activation.reset()
-<<<<<<< HEAD
         self.Muscle.reset()
-=======
-        self.Muscle.reset()
->>>>>>> parPool
