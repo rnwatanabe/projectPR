@@ -21,10 +21,55 @@
 import numpy as np
 import math
 from scipy.sparse import lil_matrix
-#from pyculib.sparse import csr_matrix
+from pyculib.sparse import csr_matrix
 
 #from numba import jit
 
+def SpMV_viaMKL( A, x):
+     '''
+     Wrapper to Intel's SpMV
+     (Sparse Matrix-Vector multiply)
+     For medium-sized matrices, this is 4x faster
+     than scipy's default implementation
+     Stephen Becker, April 24 2014
+     stephen.beckr@gmail.com
+     '''
+
+     import numpy as np
+     import scipy.sparse as sparse
+     from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll, c_char_p
+     mkl = cdll.LoadLibrary("libmkl_rt.so")
+
+     SpMV = mkl.mkl_dcsrmv
+     # Dissecting the "cspblas_dcsrgemv" name:
+     # "c" - for "c-blas" like interface (as opposed to fortran)
+     #    Also means expects sparse arrays to use 0-based indexing, which python does
+     # "sp"  for sparse
+     # "d"   for double-precision
+     # "csr" for compressed row format
+     # "ge"  for "general", e.g., the matrix has no special structure such as symmetry
+     # "mv"  for "matrix-vector" multiply
+
+     m,k = A.shape
+        
+     # The data of the matrix
+     data    = A.data.ctypes.data_as(POINTER(c_double))
+     indptb  = A.indptr.ctypes.data_as(POINTER(c_int))
+     indpte  = (A.indptr+3).ctypes.data_as(POINTER(c_int))
+     indices = A.indices.ctypes.data_as(POINTER(c_int))
+
+     # Allocate output, using same conventions as input
+     
+     matdescra = 'GUNC'
+     
+     y = np.empty((m,1),dtype=np.double,order='F')  
+
+     np_x = x.ctypes.data_as(POINTER(c_double))
+     np_y = y.ctypes.data_as(POINTER(c_double))
+     # now call MKL. This returns the answer in np_y, which links to y
+     SpMV(byref(c_char("N")), byref(c_int(m)), byref(c_int(k)),byref(c_double(1.0)), byref(c_char_p(matdescra)), data ,indices, indptb, indpte, np_x, byref(c_double(0.0)), np_y) 
+
+     return y
 
 
 #@jit
