@@ -216,8 +216,4 @@ class PulseConductanceState(object):
         self.value = float(0)
         self.endOfPulse_ms = self.PulseDur_ms
 
-<<<<<<< HEAD
         
-=======
-        
->>>>>>> parPool

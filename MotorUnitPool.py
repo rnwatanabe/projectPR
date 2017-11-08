@@ -168,8 +168,6 @@ class MotorUnitPool(object):
                                            self.Muscle.velocityNorm, 
                                            self.Muscle.accelerationNorm, 
                                            31, 33)
-<<<<<<< HEAD
-=======
     
     def dVdt(self, t, V): 
         #k = 0
@@ -184,7 +182,6 @@ class MotorUnitPool(object):
         return (self.iIonic + self.G.dot(V) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
         
->>>>>>> parPool
 
     def listSpikes(self):
         '''

@@ -83,7 +83,7 @@ def simulator():
     '''
 if __name__ == '__main__':
 
-    cProfile.run('simulator()', sort = 'cumtime')
+    #cProfile.run('simulator()', sort = 'cumtime')
     
     np.__config__.show()
     

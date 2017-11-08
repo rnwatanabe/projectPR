@@ -142,11 +142,6 @@ class MuscularActivation(object):
         self.activation_nonSat = self.ActMatrix.dot(self.an)  
         #self.ActMatrix1.
             
-<<<<<<< HEAD
-        
-        self.activation_nonSat = self.ActMatrix.dot(self.an)        
-=======
->>>>>>> parPool
         self.activation_Sat = twitchSaturation(self.activation_nonSat, self.bSat)
 
     def reset(self):
@@ -155,8 +150,4 @@ class MuscularActivation(object):
         '''
         self.an = np.zeros((3*self.MUnumber, 1), dtype = float)
         self.activation_nonSat = np.zeros((self.MUnumber, 1), dtype = float)
-<<<<<<< HEAD
         self.activation_Sat = np.zeros((self.MUnumber,1), dtype = float)    
-=======
-        self.activation_Sat = np.zeros((self.MUnumber,1), dtype = float)    
->>>>>>> parPool

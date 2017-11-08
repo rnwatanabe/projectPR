@@ -314,10 +314,6 @@ class MuscleSpindle(object):
                                                         )
                                                     
         self.primaryPotentialChain = self.GPrimaryChain * (self.fiberTension[4] / self.KsrChain - 
-<<<<<<< HEAD
-                                                         self.LNSrChain + self.L0SrChain
-                                                        )
-=======
                                                            self.LNSrChain + self.L0SrChain
                                                           )
 
@@ -346,7 +342,6 @@ class MuscleSpindle(object):
 
         self.IaFR_Hz = 0.0
         self.IIFR_Hz = 0.0
->>>>>>> parPool
 
 
 
