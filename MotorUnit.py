@@ -462,7 +462,7 @@ class MotorUnit(object):
                 self.somaSpikeTrain.append([t, int(self.index)])
                 self.transmitSpikes(t)
                 self.Delay.indexAntidromicSpike += 1
-
+        
         if self.stimulusCompartment == 'delay':
             self.Delay.atualizeStimulus(t, self.nerveStimulus_mA[int(np.rint(t/self.conf.timeStep_ms))])
 

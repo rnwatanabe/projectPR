@@ -2,7 +2,7 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "0.1.0",
-    "command": "/home/rnwatanabe//anaconda2/bin/python",
+    "command": "/opt/miniconda2/bin/python",
     "isShellCommand": true,
     "args": ["${file}"],
     "showOutput": "always"

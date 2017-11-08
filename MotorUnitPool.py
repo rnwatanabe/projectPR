@@ -22,53 +22,11 @@ from MuscleNoHill import MuscleNoHill
 from MuscleHill import MuscleHill
 from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
-from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll
+
 import time
 #from numba import jit, prange
 
-def SpMV_viaMKL( A, x, numberOfBlocks, sizeOfBlock ):
-     '''
-     Wrapper to Intel's SpMV
-     (Sparse Matrix-Vector multiply)
-     For medium-sized matrices, this is 4x faster
-     than scipy's default implementation
-     Stephen Becker, April 24 2014
-     stephen.beckr@gmail.com
-     '''
 
-     import numpy as np
-     import scipy.sparse as sparse
-     from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll
-     mkl = cdll.LoadLibrary("libmkl_rt.so")
-
-     SpMV = mkl.mkl_cspblas_dbsrgemv
-     # Dissecting the "cspblas_dcsrgemv" name:
-     # "c" - for "c-blas" like interface (as opposed to fortran)
-     #    Also means expects sparse arrays to use 0-based indexing, which python does
-     # "sp"  for sparse
-     # "d"   for double-precision
-     # "csr" for compressed row format
-     # "ge"  for "general", e.g., the matrix has no special structure such as symmetry
-     # "mv"  for "matrix-vector" multiply
-
-     
-
-     # The data of the matrix
-     data    = A.data.ctypes.data_as(POINTER(c_double))
-     indptr  = A.indptr.ctypes.data_as(POINTER(c_int))
-     indices = A.indices.ctypes.data_as(POINTER(c_int))
-
-     # Allocate output, using same conventions as input
-     nVectors = 1
-     
-     y = np.empty(numberOfBlocks*sizeOfBlock,dtype=np.double,order='F')  
-
-     np_x = x.ctypes.data_as(POINTER(c_double))
-     np_y = y.ctypes.data_as(POINTER(c_double))
-     # now call MKL. This returns the answer in np_y, which links to y
-     SpMV(byref(c_char("T")), byref(c_int(numberOfBlocks)), byref(c_int(sizeOfBlock)), data ,indptr, indices, np_x, np_y ) 
-
-     return y
 
 def runge_kutta(derivativeFunction,t, x, timeStep, timeStepByTwo, timeStepBySix):
     k1 = derivativeFunction(t, x)
@@ -157,7 +115,7 @@ class MotorUnitPool(object):
                     = self.unit[i].EqCurrent_nA
         self.sizeOfBlock = int(self.totalNumberOfCompartments/self.MUnumber)
         self.G = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)) 
-       
+        
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
         ## Vector with the instants of spikes in the last dynamical compartment, in ms.
@@ -196,19 +154,12 @@ class MotorUnitPool(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
-
-        k1 = self.dVdt(t, self.v_mV)
-        k2 = self.dVdt(t + self.conf.timeStepByTwo_ms, self.v_mV + self.conf.timeStepByTwo_ms * k1)
-        k3 = self.dVdt(t + self.conf.timeStepByTwo_ms, self.v_mV + self.conf.timeStepByTwo_ms * k2)
-        k4 = self.dVdt(t + self.conf.timeStep_ms, self.v_mV + self.conf.timeStep_ms * k3)
         
-        np.clip(self.v_mV + self.conf.timeStepBySix_ms * ((np.add(np.add(np.add(k1, k2, order = 'F'), np.add(k2, k3, order='F')), np.add(k3, k4, order='F'), order='F'))),-30.0, 120.0, self.v_mV)
-        '''
         np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.conf.timeStep_ms,
                             self.conf.timeStepByTwo_ms,
                             self.conf.timeStepBySix_ms),
                             -30.0, 120.0, self.v_mV)
-        '''                    
+                            
         for i in xrange(self.MUnumber):
             self.unit[i].atualizeMotorUnit(t, self.v_mV[i*self.unit[i].compNumber:(i+1)*self.unit[i].compNumber])
         self.Activation.atualizeActivationSignal(t, self.unit)
@@ -219,16 +170,18 @@ class MotorUnitPool(object):
                                            31, 33)
     
     def dVdt(self, t, V): 
-        k = 0
+        #k = 0
         for i in xrange(self.MUnumber):
             for j in xrange(self.unit[i].compNumber):
-                self.iIonic.itemset(k,
+                self.iIonic.itemset(i*self.unit[0].compNumber+j,
                                     self.unit[i].compartment[j].computeCurrent(t,
-                                                                               V.item(k)))
-                k += 1
+                                                                               V.item(i*self.unit[0].compNumber+j)))
+                #k += 1
+        
               
-        return (self.iIonic + SpMV_viaMKL(self.G,V,self.MUnumber, self.sizeOfBlock) + self.iInjected
+        return (self.iIonic + self.G.dot(V) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
+        
 
     def listSpikes(self):
         '''
