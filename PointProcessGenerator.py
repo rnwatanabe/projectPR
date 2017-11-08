@@ -22,7 +22,7 @@
 import numpy as np
 import numpy.random
 import math
-from numba import jit
+#from numba import jit
 
 
 

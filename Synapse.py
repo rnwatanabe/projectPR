@@ -20,12 +20,12 @@
 
 import math
 import numpy as np
-from numba import jit
+#from numba import jit
 from collections import deque
 
 
 
-@jit
+#@jit
 def compRon(Non, rInf, Ron, t0, t, tauOn):
     '''
     Computes the fraction of postsynaptic receptors
@@ -65,7 +65,7 @@ def compRon(Non, rInf, Ron, t0, t, tauOn):
     return Non * rInf + (Ron - Non * rInf) * np.exp((t0 - t) / tauOn)
 
 
-@jit
+#@jit
 def compRoff(Roff, t0, t, tauOff):
     '''
     Computes the fraction of postsynaptic receptors
@@ -99,7 +99,7 @@ def compRoff(Roff, t0, t, tauOff):
     '''
     return Roff * np.exp((t0 - t) / tauOff)
 
-@jit
+#@jit
 def compRiStart(ri, t, ti, tPeak, tauOff):
     '''
     Computes the fraction of bound postsynaptic receptors
@@ -129,7 +129,7 @@ def compRiStart(ri, t, ti, tPeak, tauOff):
     '''
     return ri * np.exp((ti + tPeak - t) / tauOff)
 
-@jit
+#@jit
 def compRiStop(rInf, ri, expFinish):
     '''
     Computes the fraction of bound postsynaptic receptors
@@ -160,7 +160,7 @@ def compRiStop(rInf, ri, expFinish):
     '''
     return rInf + (ri - rInf) * expFinish
 
-@jit
+#@jit
 def compRonStart(Ron, ri, synContrib):
     '''
     Incorporates a new conductance to the set of 
@@ -190,7 +190,7 @@ def compRonStart(Ron, ri, synContrib):
     '''
     return Ron + np.sum(ri * synContrib)
 
-@jit
+#@jit
 def compRoffStart(Roff, ri, synContrib):
     '''
     Incorporates a new conductance to the set of
@@ -222,7 +222,7 @@ def compRoffStart(Roff, ri, synContrib):
     '''
     return Roff - np.sum(ri * synContrib)
 
-@jit
+#@jit
 def compRonStop(Ron, ri, synContrib):
     '''
     Removes a conductance from the set of
@@ -253,7 +253,7 @@ def compRonStop(Ron, ri, synContrib):
     
     return Ron - np.sum(ri * synContrib)
 
-@jit
+#@jit
 def compRoffStop(Roff, ri, synContrib):
     '''
     Removes a conductance from the set of
@@ -286,7 +286,7 @@ def compRoffStop(Roff, ri, synContrib):
     return Roff + np.sum(ri * synContrib)
 
 #@profile
-@jit
+#@jit
 def compDynamicGmax(t, gmax, lastPulse, tau, dynamicGmax, var):
     return (gmax + np.exp((lastPulse - t) / tau) *
             (dynamicGmax * var - gmax)
@@ -446,8 +446,6 @@ class Synapse(object):
             + **V_mV**: membrane potential of the compartment that the
             synapse belongs, in mV.
         '''
-        if len(self.tBeginOfPulse) == 0:
-            print 'lenght synapse of the unit ' + str(self.index) + ' at ' + self.pool + ' = ' + str(len(self.tBeginOfPulse)) + ' id ' + str(id(self))   
         return self.computeConductance(t) * (self.EqPot_mV - V_mV)
     
     #@profile    

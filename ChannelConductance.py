@@ -21,7 +21,7 @@
 import numpy as np
 import math
 from PulseConductanceState import PulseConductanceState
-from numba import jit
+#from numba import jit
 
 
 def compCondKs(V_mV, gmax, state, EqPot):

@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2017  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -137,7 +137,11 @@ class SynapsesFactory(object):
                                                     pools[poolOut].unit[unitOut].indicesOfSynapsesOnTarget.append(len(pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].gmax_muS) - 1)
                                                     self.numberOfSynapses += 1
 
-        
+        print 'All the ' + str(self.numberOfSynapses) +  ' synapses were built'
+
+
+        ## Total number of synaptic noises in the system.
+        self.numberOfSynapticNoise = 0
 
         NoiseSynapsesOut = conf.determineSynapses('Noise')
         for synapseIn in xrange(len(NoiseSynapsesOut)):
@@ -194,10 +198,10 @@ class SynapsesFactory(object):
                                             pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].addConductance(gmax*weight, delay, dyn, var, tau)
                                             pools[poolOut].unit[unitOut].transmitSpikesThroughSynapses.append(pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse])                                                            
                                             pools[poolOut].unit[unitOut].indicesOfSynapsesOnTarget.append(len(pools[poolIn].unit[unitIn].compartment[compartmentIn].SynapsesIn[synapse].gmax_muS) - 1)
-                                            self.numberOfSynapses += 1
+                                            self.numberOfSynapticNoise += 1
                   
 
         
 
-        print 'All the ' + str(self.numberOfSynapses) +  ' synapses were built'                   
+        print 'All the ' + str(self.numberOfSynapticNoise) +  ' synaptic noises were built'                   
         

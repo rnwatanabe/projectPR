@@ -34,7 +34,9 @@ class jointAnkleForceTask(object):
 
         ##
         self.ankleAngle_rad = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.ankleTorque_Nm = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
 
+        print 'Ankle joint for Force Task built'
     def atualizeAnkle(self, t, ankleAngle):
         '''
         Update the ankle joint.
@@ -54,8 +56,28 @@ class jointAnkleForceTask(object):
         '''
         
         self.ankleAngle_rad[int(np.rint(t / self.conf.timeStep_ms))] = ankleAngle
-        
 
+    def computeTorque(self, t):
+        '''
+        '''
+        torque = 0
+        for muscle in self.muscles:
+            torque += muscle.Muscle.force[int(np.rint(t / self.conf.timeStep_ms))] * muscle.Muscle.momentArm_m[int(np.rint(t / self.conf.timeStep_ms))]
+        velocity = (self.ankleAngle_rad[int(np.rint(t / self.conf.timeStep_ms))] - 
+                    self.ankleAngle_rad[int(np.rint(t / self.conf.timeStep_ms)) - 1]) / self.conf.timeStep_ms
+        acceleration = (self.ankleAngle_rad[int(np.rint(t / self.conf.timeStep_ms))] - 
+                    2*self.ankleAngle_rad[int(np.rint(t / self.conf.timeStep_ms)) - 1]+
+                    self.ankleAngle_rad[int(np.rint(t / self.conf.timeStep_ms)) - 2]) / (self.conf.timeStep_ms**2)
+        
+        torque -= 0*1100*velocity + 0*320*self.ankleAngle_rad[int(np.rint(t / self.conf.timeStep_ms))] + 7246*acceleration
+        
+        self.ankleTorque_Nm[int(np.rint(t / self.conf.timeStep_ms))] = torque
+        
+    def reset(self, t):
+        '''
+        '''
+        self.ankleAngle_rad = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+        self.ankleTorque_Nm = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
 
         
         

@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2017  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20,11 +20,11 @@
 
 
 import math
-from numba import jit
+#from numba import jit
 import numpy as np
 
 
-@jit
+#@jit
 def compValOn(v0, alpha, beta, t, t0):
     '''
     Time course of the state during the pulse for the *inactivation* states
@@ -42,7 +42,7 @@ def compValOn(v0, alpha, beta, t, t0):
     '''
     return v0 * np.exp(beta * (t0 - t))
 
-@jit
+#@jit
 def compValOff(v0, alpha, beta, t, t0):
     '''
     Time course of the state during the pulse for the *activation* states
@@ -216,4 +216,8 @@ class PulseConductanceState(object):
         self.value = float(0)
         self.endOfPulse_ms = self.PulseDur_ms
 
+<<<<<<< HEAD
         
+=======
+        
+>>>>>>> parPool

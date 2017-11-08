@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2017  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,9 +21,13 @@
 import numpy as np
 import math
 from scipy.sparse import lil_matrix
-from numba import jit
+#from pyculib.sparse import csr_matrix
 
-@jit
+#from numba import jit
+
+
+
+#@jit
 def twitchSaturation(activationsat, b):
     '''
     Computes the muscle unit force after the nonlinear saturation. 
@@ -86,8 +90,10 @@ class MuscularActivation(object):
                 self.ActMatrix[i,3*i:3*i+3] = [2*math.exp(-conf.timeStep_ms/unit[i].TwitchTc_ms),
                                     -math.exp(-2*conf.timeStep_ms/unit[i].TwitchTc_ms), 
                                     math.pow(conf.timeStep_ms, 2.0)/unit[i].TwitchTc_ms*math.exp(1.0-conf.timeStep_ms/unit[i].TwitchTc_ms)]
-             
-            self.ActMatrix.tocsr()   
+
+            self.ActMatrix = self.ActMatrix.tocsr() 
+            #self.ActMatrix1 = csr_matrix(self.ActMatrix) 
+            #print self.ActMatrix1
             ## Is a vector formed as:
             ## \f{equation}{
             ##    \resizebox{0.95\hsize}{!}{$Av(n) = \left[\begin{array}{ccccccccccc}a_1(n-1)&a_1(n-2)&e_1(n-1)&...&a_i(n-i)&a_i(n-2)&e_i(n-1)&...&a__{N_{MU}}(n-1)&a__{N_{MU}}(n-2)&e_{N_{MU}}(n-1)\end{array}\right]^T$}                    
@@ -120,8 +126,7 @@ class MuscularActivation(object):
         - Inputs:
             + **t**: current instant, in ms.        
         '''
-        
-        
+               
         MUindices = np.arange(0, self.MUnumber)
         MUspike = np.array([], dtype = 'int')
         self.an[3*MUindices+1] = self.an[3*MUindices]
@@ -133,9 +138,15 @@ class MuscularActivation(object):
                 MUspike = np.append(MUspike,i)
                
         self.an[3*MUspike+2] = self.diracDeltaValue
+                
+        self.activation_nonSat = self.ActMatrix.dot(self.an)  
+        #self.ActMatrix1.
             
+<<<<<<< HEAD
         
         self.activation_nonSat = self.ActMatrix.dot(self.an)        
+=======
+>>>>>>> parPool
         self.activation_Sat = twitchSaturation(self.activation_nonSat, self.bSat)
 
     def reset(self):
@@ -144,4 +155,8 @@ class MuscularActivation(object):
         '''
         self.an = np.zeros((3*self.MUnumber, 1), dtype = float)
         self.activation_nonSat = np.zeros((self.MUnumber, 1), dtype = float)
+<<<<<<< HEAD
         self.activation_Sat = np.zeros((self.MUnumber,1), dtype = float)    
+=======
+        self.activation_Sat = np.zeros((self.MUnumber,1), dtype = float)    
+>>>>>>> parPool

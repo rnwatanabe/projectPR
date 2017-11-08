@@ -1,20 +1,17 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
-
+    Copyright (C) 2017  Renato Naville Watanabe
+                        Pablo Alejandro
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     any later version.
-
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
     Contact: renato.watanabe@usp.br
 '''
 
@@ -26,6 +23,19 @@ from MuscleHill import MuscleHill
 from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
 
+import time
+#from numba import jit, prange
+
+
+
+def runge_kutta(derivativeFunction,t, x, timeStep, timeStepByTwo, timeStepBySix):
+    k1 = derivativeFunction(t, x)
+    k2 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k1)
+    k3 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k2)
+    k4 = derivativeFunction(t + timeStep, x + timeStep * k3)
+    
+    return x + timeStepBySix * (np.add(np.add(np.add(k1, k2, order = 'C'), np.add(k2, k3, order='C')), np.add(k3, k4, order='C'), order='C'))
+
 class MotorUnitPool(object):
     '''
     Class that implements a motor unit pool. Encompasses a set of motor
@@ -35,18 +45,18 @@ class MotorUnitPool(object):
     def __init__(self, conf, pool):
         '''
         Constructor
-
         - Inputs:
             + **conf**: Configuration object with the simulation parameters.
-
             + **pool**: string with Motor unit pool to which the motor unit belongs.
         '''
+        self.t = 0
 
         ## Indicates that is Motor Unit pool.
         self.kind = 'MU'
 
         ## Configuration object with the simulation parameters.
         self.conf = conf
+
         ## String with Motor unit pool to which the motor unit belongs.
         self.pool = pool
         MUnumber_S = int(conf.parameterSet('MUnumber_' + pool + '-S', pool, 0))
@@ -69,6 +79,43 @@ class MotorUnitPool(object):
             else:
                 self.unit[i] = MotorUnit(conf, pool, i, 'FF', self.muscleThickness_mm, conf.skinThickness_mm)
 
+        # This is used to get values from MotorUnit.py and make computations
+        # in MotorUnitPool.py
+        # TODO create it all here instead?
+        self.totalNumberOfCompartments = 0
+
+        for i in xrange(self.MUnumber):
+            self.totalNumberOfCompartments = self.totalNumberOfCompartments \
+                + self.unit[i].compNumber
+
+        self.v_mV = np.zeros((self.totalNumberOfCompartments),
+                             dtype = np.double)
+             
+        self.G = lil_matrix((self.totalNumberOfCompartments,
+                          self.totalNumberOfCompartments), dtype = float)
+        self.iInjected = np.zeros_like(self.v_mV, dtype = 'd')
+        self.capacitanceInv = np.zeros_like(self.v_mV, dtype = 'd')
+        self.iIonic = np.full_like(self.v_mV, 0.0)
+        self.EqCurrent_nA = np.zeros_like(self.v_mV, dtype = 'd')
+
+        for i in xrange(self.MUnumber):
+            self.v_mV[i*self.unit[i].compNumber:i*self.unit[i].compNumber \
+                    +self.unit[i].v_mV.shape[0]] = self.unit[i].v_mV
+            self.G[i*self.unit[i].compNumber:i*self.unit[i].compNumber \
+                    +self.unit[i].G.shape[0], \
+                    i*self.unit[i].compNumber:i*self.unit[i].compNumber \
+                    +self.unit[i].G.shape[1]] = self.unit[i].G
+            self.capacitanceInv[i*self.unit[i].compNumber: \
+                    i*self.unit[i].compNumber \
+                    +self.unit[i].capacitanceInv.shape[0]] \
+                    = self.unit[i].capacitanceInv
+            self.EqCurrent_nA[i*self.unit[i].compNumber: \
+                    i*self.unit[i].compNumber \
+                    +self.unit[i].EqCurrent_nA.shape[0]] \
+                    = self.unit[i].EqCurrent_nA
+        self.sizeOfBlock = int(self.totalNumberOfCompartments/self.MUnumber)
+        self.G = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)) 
+        
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
         ## Vector with the instants of spikes in the last dynamical compartment, in ms.
@@ -97,25 +144,47 @@ class MotorUnitPool(object):
 
         ##
         print 'Motor Unit Pool ' + pool + ' built'
+    
         
     def atualizeMotorUnitPool(self, t):
         '''
         Update all parts of the Motor Unit pool. It consists
         to update all motor units, the activation signal and
         the muscle force.
-
         - Inputs:
             + **t**: current instant, in ms.
         '''
-
-        units = self.unit
-        for i in xrange(self.MUnumber): units[i].atualizeMotorUnit(t)
-        self.Activation.atualizeActivationSignal(t, units)
+        
+        np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.conf.timeStep_ms,
+                            self.conf.timeStepByTwo_ms,
+                            self.conf.timeStepBySix_ms),
+                            -30.0, 120.0, self.v_mV)
+                            
+        for i in xrange(self.MUnumber):
+            self.unit[i].atualizeMotorUnit(t, self.v_mV[i*self.unit[i].compNumber:(i+1)*self.unit[i].compNumber])
+        self.Activation.atualizeActivationSignal(t, self.unit)
         self.Muscle.atualizeForce(self.Activation.activation_Sat)
         self.spindle.atualizeMuscleSpindle(t, self.Muscle.lengthNorm,
                                            self.Muscle.velocityNorm, 
                                            self.Muscle.accelerationNorm, 
                                            31, 33)
+<<<<<<< HEAD
+=======
+    
+    def dVdt(self, t, V): 
+        #k = 0
+        for i in xrange(self.MUnumber):
+            for j in xrange(self.unit[i].compNumber):
+                self.iIonic.itemset(i*self.unit[0].compNumber+j,
+                                    self.unit[i].compartment[j].computeCurrent(t,
+                                                                               V.item(i*self.unit[0].compNumber+j)))
+                #k += 1
+        
+              
+        return (self.iIonic + self.G.dot(V) + self.iInjected
+                + self.EqCurrent_nA) * self.capacitanceInv
+        
+>>>>>>> parPool
 
     def listSpikes(self):
         '''
@@ -138,7 +207,6 @@ class MotorUnitPool(object):
 
     def getMotorUnitPoolInstantEMG(self, t):
         '''
-
         '''
         emg = 0
         for i in xrange(self.MUnumber): emg += self.unit[i].getEMG(t)
@@ -147,7 +215,6 @@ class MotorUnitPool(object):
 
     def getMotorUnitPoolEMG(self):
         '''
-
         '''
         for i in xrange(0, len(self.emg)):
             self.emg[i] = self.getMotorUnitPoolInstantEMG(i * self.conf.timeStep_ms)
@@ -155,7 +222,10 @@ class MotorUnitPool(object):
 
     def reset(self):
         '''
+<<<<<<< HEAD
 
+=======
+>>>>>>> parPool
         '''
 
                    
@@ -166,4 +236,8 @@ class MotorUnitPool(object):
 
         for i in xrange(self.MUnumber): self.unit[i].reset()
         self.Activation.reset()
+<<<<<<< HEAD
         self.Muscle.reset()
+=======
+        self.Muscle.reset()
+>>>>>>> parPool
