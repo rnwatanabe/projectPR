@@ -38,7 +38,7 @@ def simulator(pools, t, rank, nbrProcesses):
     dendV = np.zeros_like(t)
     somaV = np.zeros_like(t)
 
-    tic = time.clock()
+    tic = time.time()
     for i in xrange(0, len(t)):
         for j in xrange(len(pools[0].unit)):
             pools[0].unit[j].iInjected[1] = 10

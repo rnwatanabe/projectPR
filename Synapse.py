@@ -460,8 +460,6 @@ class Synapse(object):
             + **V_mV**: membrane potential of the compartment that the
             synapse belongs, in mV.
         '''
-        if len(self.tBeginOfPulse) == 0:
-            print 'lenght synapse of the unit ' + str(self.index) + ' at ' + self.pool + ' = ' + str(len(self.tBeginOfPulse)) + ' id ' + str(id(self))   
         return self.computeConductance(t) * (self.EqPot_mV - V_mV)
     
     #@profile    
