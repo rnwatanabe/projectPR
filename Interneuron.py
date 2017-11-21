@@ -242,10 +242,10 @@ class Interneuron(object):
 
     def transmitSpikes(self, t):
         '''
-
         - Inputs:
             + **t**: current instant, in ms.
         '''
+        
         for i in xrange(len(self.indicesOfSynapsesOnTarget)):
             self.transmitSpikesThroughSynapses[i].receiveSpike(t, self.indicesOfSynapsesOnTarget[i])
 

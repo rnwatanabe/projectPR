@@ -177,7 +177,7 @@ class MotorUnitPool(object):
         self.Activation = MuscularActivation(self.conf,self.pool, self.MUnumber,self.unit)
         
         #Force
-        ## String indicating whther a Hill model is used or not. For now, it can be *No*.
+        ## String indicating whther a Hill  model is used or not. For now, it can be *No*.
         self.hillModel = conf.parameterSet('hillModel', pool, 0)
         if self.hillModel == 'No': 
             self.Muscle = MuscleNoHill(self.conf, self.pool, self.MUnumber, MUnumber_S, self.unit)
