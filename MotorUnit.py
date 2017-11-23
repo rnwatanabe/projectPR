@@ -516,7 +516,7 @@ class MotorUnit(object):
         for i in xrange(len(self.nerveStimulus_mA)):
             if (i * self.conf.timeStep_ms >= self.stimulusStart_ms and  i * self.conf.timeStep_ms <= self.stimulusStop_ms):
                 if (i * self.conf.timeStep_ms > self.stimulusModulationStart_ms and  i * self.conf.timeStep_ms < self.stimulusModulationStop_ms):
-                    stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz + axonStimModulation(i * self.conf.timeStep_ms)
+                    stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz + self.axonStimModulation(i * self.conf.timeStep_ms)
                 else:
                     stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz
                 if stimulusFrequency_Hz > 0:

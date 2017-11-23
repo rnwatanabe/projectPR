@@ -22,7 +22,7 @@ from MuscleNoHill import MuscleNoHill
 from MuscleHill import MuscleHill
 from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
-import pyculib.sparse as pcu
+#import pyculib.sparse as pcu
 import time
 #from numba import jit, prange
 
@@ -41,7 +41,7 @@ def SpMV_viaMKL( A, x, numberOfBlocks, sizeOfBlock ):
      from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll
      mkl = cdll.LoadLibrary("libmkl_rt.so")
 
-     SpMV = mkl.mkl_cspblas_dbsrsymv
+     SpMV = mkl.mkl_cspblas_dbsrgemv
      # Dissecting the "cspblas_dcsrgemv" name:
      # "c" - for "c-blas" like interface (as opposed to fortran)
      #    Also means expects sparse arrays to use 0-based indexing, which python does
@@ -66,7 +66,7 @@ def SpMV_viaMKL( A, x, numberOfBlocks, sizeOfBlock ):
      np_x = x.ctypes.data_as(POINTER(c_double))
      np_y = y.ctypes.data_as(POINTER(c_double))
      # now call MKL. This returns the answer in np_y, which links to y
-     SpMV(byref(c_char("U")), byref(c_int(numberOfBlocks)), byref(c_int(sizeOfBlock)), data ,indptr, indices, np_x, np_y ) 
+     SpMV(byref(c_char("N")), byref(c_int(numberOfBlocks)), byref(c_int(sizeOfBlock)), data ,indptr, indices, np_x, np_y ) 
 
      return y
 
@@ -157,6 +157,7 @@ class MotorUnitPool(object):
                     = self.unit[i].EqCurrent_nA
         self.sizeOfBlock = int(self.totalNumberOfCompartments/self.MUnumber)
         self.G = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)) 
+        '''
         self.GGPU = pcu.csr_matrix(self.G)
         self.GPU = pcu.Sparse(0)
         self.m, self.n = self.GGPU.shape
@@ -166,6 +167,7 @@ class MotorUnitPool(object):
         self.csrRowPtr = self.GGPU.indptr
         self.csrColInd = self.GGPU.indices
         self.dVdtValue = np.empty(self.totalNumberOfCompartments,dtype=np.double)  
+        '''
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
         ## Vector with the instants of spikes in the last dynamical compartment, in ms.
@@ -220,17 +222,18 @@ class MotorUnitPool(object):
                                            31, 33)
     
     def dVdt(self, t, V): 
-        #k = 0
+        
         for i in xrange(self.MUnumber):
             for j in xrange(self.unit[i].compNumber):
                 self.iIonic.itemset(i*self.unit[0].compNumber+j,
                                     self.unit[i].compartment[j].computeCurrent(t,
                                                                                V.item(i*self.unit[0].compNumber+j)))
-                #k += 1
-        self.GPU.csrmv('N', self.m, self.n, self.nnz,  1.0, self.descr, self.csrVal, self.csrRowPtr, self.csrColInd, V, 0.0, self.dVdtValue)              
-        
-        return (self.iIonic + self.dVdtValue + self.iInjected
+        return (self.iIonic + self.G.dot(V) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
+        
+        
+        #return (self.iIonic + SpMV_viaMKL(self.G, V, self.totalNumberOfCompartments/self.sizeOfBlock, self.sizeOfBlock) + self.iInjected
+        #        + self.EqCurrent_nA) * self.capacitanceInv
         '''      
         return (self.iIonic + SpMV_viaMKL(self.G,V,self.MUnumber, self.sizeOfBlock) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
