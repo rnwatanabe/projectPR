@@ -10,18 +10,18 @@ from Configuration import Configuration
 from MotorUnitPool import MotorUnitPool
 from InterneuronPool import InterneuronPool
 from NeuralTract import NeuralTract
-from SynapsesFactory import SynapsesFactory
-
-# TODO
-from multiprocessing import Process
+from MPSynapsesFactory import SynapsesFactory
 
 def initialize():
     conf = Configuration('confTest.rmto')
 
     pools = dict()
     pools[0] = MotorUnitPool(conf, 'SOL')
-    #pools[1] = NeuralTract(conf, 'CMExt')
-    #pools[2] = InterneuronPool(conf, 'RC', 'ext')
+    pools[1] = NeuralTract(conf, 'CMExt')
+    pools[2] = InterneuronPool(conf, 'RC', 'ext')
+
+    for i in xrange(0,len(pools[0].unit)):
+        pools[0].unit[i].createStimulus()
 
     Syn = SynapsesFactory(conf, pools)
 
@@ -29,29 +29,29 @@ def initialize():
 
     return pools, t
 
-def simulator(pools, t, rank, nbrProcesses):
+def simulator(pools, t):
 
-    # TODO
-    processChunk = len(pools[0].unit) / (nbrProcesses)
-    processUnits = range(rank * processChunk, rank * processChunk + processChunk)
-
-    dendV = np.zeros_like(t)
     somaV = np.zeros_like(t)
 
-    tic = time.time()
     for i in xrange(0, len(t)):
-        for j in xrange(len(pools[0].unit)):
-            pools[0].unit[j].iInjected[1] = 10
-        #pools[1].atualizePool(t[i])
-        pools[0].atualizeMotorUnitPool(t[i], processUnits)
-        #pools[2].atualizeInterneuronPool(t[i])
-        somaV[i] = pools[0].unit[rank].v_mV[0] 
-    toc = time.clock()
-    print str(toc - tic) + ' seconds'
+        #for j in xrange(len(pools[0].unit)):
+        #    pools[0].iInjected[0] = 10
+        pools[1].atualizePool(t[i])
+        pools[0].atualizeMotorUnitPool(t[i]) 
+        pools[2].atualizeInterneuronPool(t[i])
+        # Stores membrane potential of the first RC
+        somaV[i] = pools[2].v_mV[1]
+        # Stores membrane potential of the soma of the first unit of the pool
+        #somaV[i] = pools[0].v_mV[1]
+        # Stores membrane potential of the dendrite of the second unit of the pool
+        #somaV[i] = pools[0].v_mV[2]
 
     pools[0].listSpikes()
-    pools[1].listSpikes()
     
+    #plt.figure()
+    #plt.plot(pools[0].poolSomaSpikes[:, 0],
+    #         pools[0].poolSomaSpikes[:, 1]+1, '.')
+
     #plt.figure()
     #plt.plot(pools[1].poolTerminalSpikes[:, 0],
     #         pools[1].poolTerminalSpikes[:, 1]+1, '.')
@@ -64,25 +64,20 @@ def simulator(pools, t, rank, nbrProcesses):
     #plt.figure()
     #plt.plot(t, pools[0].Muscle.force, '-')
 
-    #plt.figure()
+    plt.figure()
+    plt.plot(t, somaV, '-')
     #plt.plot(t, dendV, '-')
 
-    #plt.figure()
-    #plt.plot(t, somaV, '-')
+    plt.figure()
+    plt.plot(t, pools[0].unit[0].nerveStimulus_mA)
     
 if __name__ == '__main__':
 
+    tic = time.time()
     pools, t = initialize()
 
-    # TODO
-    nbrProcesses = 2
-    for i in xrange(nbrProcesses):
-        p = Process(target=simulator, args=(pools, t, i, nbrProcesses))
-        p.start()
-    print "==="
-    print "Main process awaits with join"
-    print "==="
-    p.join()
-    #simulator(pools, t)
+    simulator(pools, t)
+    toc =time.time()
 
     plt.show()
+    print str(toc - tic) + ' seconds'

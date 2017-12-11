@@ -23,18 +23,6 @@ import numpy as np
 #from numba import jit
 from collections import deque
 
-# TODO
-from multiprocessing import Process
-from multiprocessing.managers import SyncManager
-
-SyncManager.register('deque', deque)
-
-def Manager():
-    m = SyncManager()
-    m.start()
-    return m
-
-
 #@jit
 def compRon(Non, rInf, Ron, t0, t, tauOn):
     '''
@@ -402,12 +390,8 @@ class Synapse(object):
         self.ti = np.array([])
 
 
-        # TODO
-        m = Manager()
-        self.inQueue = m.deque([])
-        self.outQueue = m.deque([])
-        #self.inQueue = deque([])
-        #self.outQueue = deque([])
+        self.inQueue = deque([])
+        self.outQueue = deque([])
 
         self.dynamicGmax = np.array([])
         ## List of individual conductance constribution

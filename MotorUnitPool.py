@@ -22,7 +22,7 @@ from MuscleNoHill import MuscleNoHill
 from MuscleHill import MuscleHill
 from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
-import pyculib.sparse as pcu
+#import pyculib.sparse as pcu
 import time
 #from numba import jit, prange
 
@@ -140,9 +140,13 @@ class MotorUnitPool(object):
         self.iIonic = np.full_like(self.v_mV, 0.0)
         self.EqCurrent_nA = np.zeros_like(self.v_mV, dtype = 'd')
 
+        # Retrieving data from Motorneuron class
+        # Vectors or matrices from Motorneuron compartments are copied,
+        # populating larger vectors or matrices that will be used for computations
         for i in xrange(self.MUnumber):
             self.v_mV[i*self.unit[i].compNumber:i*self.unit[i].compNumber \
                     +self.unit[i].v_mV.shape[0]] = self.unit[i].v_mV
+            # Consists of smaller matrices on its diagonal
             self.G[i*self.unit[i].compNumber:i*self.unit[i].compNumber \
                     +self.unit[i].G.shape[0], \
                     i*self.unit[i].compNumber:i*self.unit[i].compNumber \
@@ -157,14 +161,15 @@ class MotorUnitPool(object):
                     = self.unit[i].EqCurrent_nA
         self.sizeOfBlock = int(self.totalNumberOfCompartments/self.MUnumber)
         self.G = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)) 
-        self.GGPU = pcu.csr_matrix(self.G)
-        self.GPU = pcu.Sparse(0)
-        self.m, self.n = self.GGPU.shape
-        self.nnz = self.GGPU.nnz
-        self.descr = self.GPU.matdescr()
-        self.csrVal = self.GGPU.data
-        self.csrRowPtr = self.GGPU.indptr
-        self.csrColInd = self.GGPU.indices
+        # TODO Conditional GPU use
+        #self.GGPU = pcu.csr_matrix(self.G)
+        #self.GPU = pcu.Sparse(0)
+        #self.m, self.n = self.GGPU.shape
+        #self.nnz = self.GGPU.nnz
+        #self.descr = self.GPU.matdescr()
+        #self.csrVal = self.GGPU.data
+        #self.csrRowPtr = self.GGPU.indptr
+        #self.csrColInd = self.GGPU.indices
         self.dVdtValue = np.empty(self.totalNumberOfCompartments,dtype=np.double)  
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
@@ -196,7 +201,7 @@ class MotorUnitPool(object):
         print 'Motor Unit Pool ' + pool + ' built'
     
         
-    def atualizeMotorUnitPool(self, t, units):
+    def atualizeMotorUnitPool(self, t):
         '''
         Update all parts of the Motor Unit pool. It consists
         to update all motor units, the activation signal and
@@ -204,7 +209,7 @@ class MotorUnitPool(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
-        
+
         np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.conf.timeStep_ms,
                             self.conf.timeStepByTwo_ms,
                             self.conf.timeStepBySix_ms),
@@ -227,11 +232,14 @@ class MotorUnitPool(object):
                                     self.unit[i].compartment[j].computeCurrent(t,
                                                                                V.item(i*self.unit[0].compNumber+j)))
                 #k += 1
+        return (self.iIonic + self.G.dot(V) + self.iInjected
+                + self.EqCurrent_nA) * self.capacitanceInv
+        '''      
+        # TODO Conditional GPU use
         self.GPU.csrmv('N', self.m, self.n, self.nnz,  1.0, self.descr, self.csrVal, self.csrRowPtr, self.csrColInd, V, 0.0, self.dVdtValue)              
         
         return (self.iIonic + self.dVdtValue + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
-        '''      
         return (self.iIonic + SpMV_viaMKL(self.G,V,self.MUnumber, self.sizeOfBlock) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
         '''

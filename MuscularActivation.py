@@ -21,7 +21,7 @@
 import numpy as np
 import math
 from scipy.sparse import lil_matrix
-from pyculib.sparse import csr_matrix
+#from pyculib.sparse import csr_matrix
 
 #from numba import jit
 
