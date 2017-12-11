@@ -170,7 +170,7 @@ class MotorUnitPool(object):
         self.csrVal = self.GGPU.data
         self.csrRowPtr = self.GGPU.indptr
         self.csrColInd = self.GGPU.indices
-        self.dVdtValue = np.empty(self.totalNumberOfCompartments,dtype=np.double)  
+        self.dVdtValue = nhep.empty(self.totalNumberOfCompartments,dtype=np.double)  
         '''
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
@@ -232,17 +232,6 @@ class MotorUnitPool(object):
                 self.iIonic.itemset(i*self.unit[0].compNumber+j,
                                     self.unit[i].compartment[j].computeCurrent(t,
                                                                                V.item(i*self.unit[0].compNumber+j)))
-<<<<<<< HEAD
-                #k += 1
-        return (self.iIonic + self.G.dot(V) + self.iInjected
-                + self.EqCurrent_nA) * self.capacitanceInv
-        '''      
-        # TODO Conditional GPU use
-        self.GPU.csrmv('N', self.m, self.n, self.nnz,  1.0, self.descr, self.csrVal, self.csrRowPtr, self.csrColInd, V, 0.0, self.dVdtValue)              
-        
-        return (self.iIonic + self.dVdtValue + self.iInjected
-                + self.EqCurrent_nA) * self.capacitanceInv
-=======
         return (self.iIonic + self.G.dot(V) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
         
@@ -250,7 +239,6 @@ class MotorUnitPool(object):
         #return (self.iIonic + SpMV_viaMKL(self.G, V, self.totalNumberOfCompartments/self.sizeOfBlock, self.sizeOfBlock) + self.iInjected
         #        + self.EqCurrent_nA) * self.capacitanceInv
         '''      
->>>>>>> upstream/parPool
         return (self.iIonic + SpMV_viaMKL(self.G,V,self.MUnumber, self.sizeOfBlock) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
         '''

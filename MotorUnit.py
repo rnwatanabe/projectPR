@@ -461,11 +461,15 @@ class MotorUnit(object):
 
             # Considers only MN-RC connections
             self.transmitSpikes(t)
-            self.Delay.indexAntidromicSpike += 1
+            
             # Refractory period of MN soma
             if t-self.tSpikes[self.somaIndex] > self.MNRefPer_ms:
                 self.tSpikes[self.somaIndex] = t
                 self.somaSpikeTrain.append([t, int(self.index)])
+                self.Delay.indexAntidromicSpike += 1
+                for channel in self.compartment[self.somaIndex].Channels:
+                    for channelState in channel.condState: channelState.changeState(t)    
+           
         
         if self.stimulusCompartment == 'delay':
             self.Delay.atualizeStimulus(t, self.nerveStimulus_mA[int(np.rint(t/self.conf.timeStep_ms))])
