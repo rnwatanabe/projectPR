@@ -69,7 +69,7 @@ class jointAnkleForceTask(object):
                     2*self.ankleAngle_rad[int(np.rint(t / self.conf.timeStep_ms)) - 1]+
                     self.ankleAngle_rad[int(np.rint(t / self.conf.timeStep_ms)) - 2]) / (self.conf.timeStep_ms**2)
         
-        torque -= 0*1100*velocity + 0*320*self.ankleAngle_rad[int(np.rint(t / self.conf.timeStep_ms))] + 7246*acceleration
+        torque -= 0*1100*velocity + 0*320*self.ankleAngle_rad[int(np.rint(t / self.conf.timeStep_ms))] + 0*7455*acceleration + 2.01*0.055*math.sin(self.ankleAngle_rad[int(np.rint(t / self.conf.timeStep_ms))])
         
         self.ankleTorque_Nm[int(np.rint(t / self.conf.timeStep_ms))] = torque
         

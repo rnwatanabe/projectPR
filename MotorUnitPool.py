@@ -41,7 +41,7 @@ def SpMV_viaMKL( A, x, numberOfBlocks, sizeOfBlock ):
      from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll
      mkl = cdll.LoadLibrary("libmkl_rt.so")
 
-     SpMV = mkl.mkl_cspblas_dbsrsymv
+     SpMV = mkl.mkl_cspblas_dbsrgemv
      # Dissecting the "cspblas_dcsrgemv" name:
      # "c" - for "c-blas" like interface (as opposed to fortran)
      #    Also means expects sparse arrays to use 0-based indexing, which python does
@@ -66,7 +66,7 @@ def SpMV_viaMKL( A, x, numberOfBlocks, sizeOfBlock ):
      np_x = x.ctypes.data_as(POINTER(c_double))
      np_y = y.ctypes.data_as(POINTER(c_double))
      # now call MKL. This returns the answer in np_y, which links to y
-     SpMV(byref(c_char("U")), byref(c_int(numberOfBlocks)), byref(c_int(sizeOfBlock)), data ,indptr, indices, np_x, np_y ) 
+     SpMV(byref(c_char("N")), byref(c_int(numberOfBlocks)), byref(c_int(sizeOfBlock)), data ,indptr, indices, np_x, np_y ) 
 
      return y
 
@@ -161,16 +161,17 @@ class MotorUnitPool(object):
                     = self.unit[i].EqCurrent_nA
         self.sizeOfBlock = int(self.totalNumberOfCompartments/self.MUnumber)
         self.G = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)) 
-        # TODO Conditional GPU use
-        #self.GGPU = pcu.csr_matrix(self.G)
-        #self.GPU = pcu.Sparse(0)
-        #self.m, self.n = self.GGPU.shape
-        #self.nnz = self.GGPU.nnz
-        #self.descr = self.GPU.matdescr()
-        #self.csrVal = self.GGPU.data
-        #self.csrRowPtr = self.GGPU.indptr
-        #self.csrColInd = self.GGPU.indices
+        '''
+        self.GGPU = pcu.csr_matrix(self.G)
+        self.GPU = pcu.Sparse(0)
+        self.m, self.n = self.GGPU.shape
+        self.nnz = self.GGPU.nnz
+        self.descr = self.GPU.matdescr()
+        self.csrVal = self.GGPU.data
+        self.csrRowPtr = self.GGPU.indptr
+        self.csrColInd = self.GGPU.indices
         self.dVdtValue = np.empty(self.totalNumberOfCompartments,dtype=np.double)  
+        '''
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
         ## Vector with the instants of spikes in the last dynamical compartment, in ms.
@@ -182,7 +183,7 @@ class MotorUnitPool(object):
         self.Activation = MuscularActivation(self.conf,self.pool, self.MUnumber,self.unit)
         
         #Force
-        ## String indicating whther a Hill model is used or not. For now, it can be *No*.
+        ## String indicating whther a Hill  model is used or not. For now, it can be *No*.
         self.hillModel = conf.parameterSet('hillModel', pool, 0)
         if self.hillModel == 'No': 
             self.Muscle = MuscleNoHill(self.conf, self.pool, self.MUnumber, MUnumber_S, self.unit)
@@ -225,12 +226,13 @@ class MotorUnitPool(object):
                                            31, 33)
     
     def dVdt(self, t, V): 
-        #k = 0
+        
         for i in xrange(self.MUnumber):
             for j in xrange(self.unit[i].compNumber):
                 self.iIonic.itemset(i*self.unit[0].compNumber+j,
                                     self.unit[i].compartment[j].computeCurrent(t,
                                                                                V.item(i*self.unit[0].compNumber+j)))
+<<<<<<< HEAD
                 #k += 1
         return (self.iIonic + self.G.dot(V) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
@@ -240,6 +242,15 @@ class MotorUnitPool(object):
         
         return (self.iIonic + self.dVdtValue + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
+=======
+        return (self.iIonic + self.G.dot(V) + self.iInjected
+                + self.EqCurrent_nA) * self.capacitanceInv
+        
+        
+        #return (self.iIonic + SpMV_viaMKL(self.G, V, self.totalNumberOfCompartments/self.sizeOfBlock, self.sizeOfBlock) + self.iInjected
+        #        + self.EqCurrent_nA) * self.capacitanceInv
+        '''      
+>>>>>>> upstream/parPool
         return (self.iIonic + SpMV_viaMKL(self.G,V,self.MUnumber, self.sizeOfBlock) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
         '''
