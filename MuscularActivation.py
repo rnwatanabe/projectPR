@@ -73,7 +73,7 @@ def SpMV_viaMKL( A, x):
 
 
 #@jit
-def twitchSaturation(activationsat, b):
+def twitchSaturation(activationsat):
     '''
     Computes the muscle unit force after the nonlinear saturation. 
 
@@ -89,7 +89,7 @@ def twitchSaturation(activationsat, b):
 - Outputs:
     + Saturated force.
     '''
-    return 2.0 / (1 + np.exp(-b * activationsat)) - 1
+    return 2.0 / (1 + np.exp(activationsat)) - 1
 
 class MuscularActivation(object):
 
@@ -102,8 +102,6 @@ class MuscularActivation(object):
 
         ## Model of the activation signal. For now, it can be *SOCDS* (second order critically damped system).
         self.activationModel = conf.parameterSet('activationModel', pool, 0)
-
-
 
         if self.activationModel == 'SOCDS':
             ## Matrix that multiplied by the vector formed as the formula below gives the activation
@@ -162,8 +160,9 @@ class MuscularActivation(object):
         self.activation_Sat = np.zeros((self.MUnumber,1), dtype = float)    
         ## Dirac's delta approximation amplitude value. Is the inverse
         ## of the simulation time step (\f$1/T\f$). 
-        self.diracDeltaValue = 1.0 / conf.timeStep_ms
+        self.diracDeltaValue = -self.bSat / conf.timeStep_ms
 
+        self.MUindices = np.arange(0, self.MUnumber)
     def atualizeActivationSignal(self, t, unit):
         '''
         Update the activation signal of the motor units.
@@ -172,22 +171,22 @@ class MuscularActivation(object):
             + **t**: current instant, in ms.        
         '''
                
-        MUindices = np.arange(0, self.MUnumber)
+        
         MUspike = np.array([], dtype = 'int')
-        self.an[3*MUindices+1] = self.an[3*MUindices]
-        self.an[3*MUindices] = self.activation_nonSat[MUindices]
-        self.an[3*MUindices+2] =  0
+        self.an[3*self.MUindices+1] = self.an[3*self.MUindices]
+        self.an[3*self.MUindices] = self.activation_nonSat[self.MUindices]
+        self.an[3*self.MUindices+2] =  0
 
         for i in xrange(self.MUnumber):
             if unit[i].terminalSpikeTrain and -1e-6 < (t - self.conf.timeStep_ms - unit[i].terminalSpikeTrain[-1][0]) < 1e-6: 
                 MUspike = np.append(MUspike,i)
                
-        self.an[3*MUspike+2] = self.diracDeltaValue
+        self.an[3*MUspike+2] = self.diracDeltaValue[MUspike]
                 
         self.activation_nonSat = self.ActMatrix.dot(self.an)  
         #self.ActMatrix1.
             
-        self.activation_Sat = twitchSaturation(self.activation_nonSat, self.bSat)
+        self.activation_Sat = twitchSaturation(self.activation_nonSat)
 
     def reset(self):
         '''

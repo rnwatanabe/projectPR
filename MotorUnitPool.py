@@ -162,7 +162,7 @@ class MotorUnitPool(object):
         self.sizeOfBlock = int(self.totalNumberOfCompartments/self.MUnumber)
         self.G = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)) 
         '''
-        self.GGPU = pcu.csr_matrix(self.G)
+        self.G  = pcu.csr_matrix(self.G)
         self.GPU = pcu.Sparse(0)
         self.m, self.n = self.GGPU.shape
         self.nnz = self.GGPU.nnz
@@ -236,12 +236,10 @@ class MotorUnitPool(object):
                 + self.EqCurrent_nA) * self.capacitanceInv
         
         
-        #return (self.iIonic + SpMV_viaMKL(self.G, V, self.totalNumberOfCompartments/self.sizeOfBlock, self.sizeOfBlock) + self.iInjected
+             
+        #return (self.iIonic + SpMV_viaMKL(self.G,V,self.MUnumber, self.sizeOfBlock) + self.iInjected
         #        + self.EqCurrent_nA) * self.capacitanceInv
-        '''      
-        return (self.iIonic + SpMV_viaMKL(self.G,V,self.MUnumber, self.sizeOfBlock) + self.iInjected
-                + self.EqCurrent_nA) * self.capacitanceInv
-        '''
+       
 
     def listSpikes(self):
         '''
