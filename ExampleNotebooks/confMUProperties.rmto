@@ -23,6 +23,7 @@ nerveLength_CPN,0.8,
 MNSomaRefPer,5.0,
 skinThickness,1.5,
 MUSpatialDistribution,random,
+MUParameterDistribution,exponential,
 EMGAttenuationFactor,5,
 EMGWideningFactor,0.1,
 EMGNoiseEMG,0.7,
@@ -915,9 +916,9 @@ axonDelayThreshold:TA-FF,12.2,12.0
 axonDelayCondVel:TA-S,44,51
 axonDelayCondVel:TA-FR,51,52
 axonDelayCondVel:TA-FF,52,53
-axonDelayLeakTimeConstant:TA-S,10,10
-axonDelayLeakTimeConstant:TA-FR,10,10
-axonDelayLeakTimeConstant:TA-FF,10,10
+axonDelayLeakTimeConstant:TA-S,10,11
+axonDelayLeakTimeConstant:TA-FR,11,11.5
+axonDelayLeakTimeConstant:TA-FF,11.5,12
 % Muscles
 Fmax:TA,674,
 optimalMuscleLength:TA,0.0640,
