@@ -164,7 +164,10 @@ class Configuration(object):
                     elif self.confArray[i][0] == paramTag + ':' + pool + '-FF':
                         paramVec_FF = np.array([float(self.confArray[i][1]), float(self.confArray[i][2])])
                     elif self.confArray[i][0] == paramTag + ':' + pool + '-':
-                        paramVec = float(self.confArray[i][1])*np.exp(1.0/Nnumber*np.log(float(self.confArray[i][2])/float(self.confArray[i][1])) * np.linspace(0,Nnumber,Nnumber))
+                        try:
+                            paramVec = float(self.confArray[i][1])*np.exp(1.0/Nnumber*np.log(float(self.confArray[i][2])/float(self.confArray[i][1])) * np.linspace(0,Nnumber,Nnumber))
+                        except ZeroDivisionError:
+                            paramVec = np.exp(1.0/Nnumber*np.log(float(self.confArray[i][2]) + 1) * np.linspace(0,Nnumber,Nnumber)) - 1
         
         if self.MUParameterDistribution == 'linear':           
             if paramVec_FR.size > 0:

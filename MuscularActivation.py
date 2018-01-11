@@ -163,6 +163,8 @@ class MuscularActivation(object):
         self.diracDeltaValue = -self.bSat / conf.timeStep_ms
 
         self.MUindices = np.arange(0, self.MUnumber)
+
+        
     def atualizeActivationSignal(self, t, unit):
         '''
         Update the activation signal of the motor units.
