@@ -30,7 +30,7 @@ EMGNoiseEMG,0.7,
 AFRefPer,5.0,
 % Model options
 activationModel,SOCDS,
-hillModel,Yes,
+hillModel,No,
 StateType,pulse,
 % Inputs
 GammaOrder_CMExt,10,

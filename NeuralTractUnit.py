@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2018  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ class NeuralTractUnit(object):
     '''
 
     
-    def __init__(self, conf, pool, GammaOrder, index):
+    def __init__(self, conf, pool, index):
         '''
         Constructor
 
@@ -45,13 +45,11 @@ class NeuralTractUnit(object):
             + **index**: integer corresponding to the neural tract unit identification.
 
         '''     
-        # point process generator data
-        ## Integer order of the Gamma distribution.     
-        self.GammaOrder = GammaOrder
+        
         
         ## A PointProcessGenerator object, corresponding the generator of
         ## spikes of the neural tract unit.   
-        self.spikesGenerator = PointProcessGenerator(self.GammaOrder, index)  
+        self.spikesGenerator = PointProcessGenerator(index)  
         ## List of the spikes of the neural tract unit.       
         self.terminalSpikeTrain = self.spikesGenerator.points
         
@@ -68,7 +66,7 @@ class NeuralTractUnit(object):
         self.index = index
     
       
-    def atualizeNeuralTractUnit(self, t, FR):
+    def atualizeNeuralTractUnit(self, t, FR, GammaOrder):
         '''
 
         - Inputs:
@@ -77,7 +75,7 @@ class NeuralTractUnit(object):
             + **FR**:
         '''
 
-        self.spikesGenerator.atualizeGenerator(t, FR)
+        self.spikesGenerator.atualizeGenerator(t, FR, GammaOrder)
         if self.terminalSpikeTrain and -1e-3 < (t - self.terminalSpikeTrain[-1][0]) < 1e-3:
             self.transmitSpikes(t)
 
@@ -88,4 +86,8 @@ class NeuralTractUnit(object):
         '''
         for i in xrange(len(self.indicesOfSynapsesOnTarget)):
             self.transmitSpikesThroughSynapses[i].receiveSpike(t, self.indicesOfSynapsesOnTarget[i])
-        
+
+    def reset(self):
+        self.spikesGenerator.reset()
+        self.terminalSpikeTrain = self.spikesGenerator.points
+    
