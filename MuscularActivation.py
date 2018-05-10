@@ -21,10 +21,7 @@
 import numpy as np
 import math
 from scipy.sparse import lil_matrix
-<<<<<<< HEAD
-=======
 #from pyculib.sparse import csr_matrix
->>>>>>> pabloAbur-parPool
 
 
 #from numba import jit
