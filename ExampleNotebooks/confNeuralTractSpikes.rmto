@@ -1,4 +1,4 @@
-Number_CMExt,10,
+Number_CMExt,400,
 timeStep,0.05,
 simDuration,10000,
 % Inputs
