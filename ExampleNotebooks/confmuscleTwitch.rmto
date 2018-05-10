@@ -1,11 +1,12 @@
 MUnumber_SOL-S,800,
 MUnumber_SOL-FR,50,
 MUnumber_SOL-FF,50,
-Number_Ia-SOL,400,
-Number_Ia-LG,160,
+Number_Ia-SOL,0,
+Number_Ia-LG,0,
+Number_Ia-TA,0,
 NumberAxonNodes,0,
 timeStep,0.05,
-simDuration,50,
+simDuration,1000,
 nerveLength_PTN,0.8,
 MNSomaRefPer,5.0,
 RCSomaRefPer,1.0,
@@ -15,23 +16,23 @@ MUSpatialDistribution,random,
 EMGAttenuationFactor,5,
 EMGWideningFactor,0.1,
 EMGNoiseEMG,0.7,
-MUParameterDistribution,linear,
 % Model options
 activationModel,SOCDS,
 hillModel,No,
 EMGModel,HR,
 StateType,pulse,
+MUParameterDistribution,linear,
 % Inputs
 %Stimulus
-stimDistToTerm_PTN,0.2,
-stimStart_PTN,0,
+stimDistToTerm_PTN,0.05,
+stimStart_PTN,3,
 stimStop_PTN,3000,
 stimPulseDuration_PTN,1,
-stimIntensity_PTN,10,
-stimFrequency_PTN,5,
+stimIntensity_PTN,30,
+stimFrequency_PTN,1,
 stimModulation_PTN,0*t,
-stimModulationStart_PTN,0,
-stimModulationStop_PTN,0,
+stimModulationStart_PTN,1000,
+stimModulationStop_PTN,3000,
 % Synapses
 %% SOL
 EqPotSyn:SOL-S|excitatory,70.0,
@@ -186,9 +187,9 @@ bSatSOCDS:SOL-FF,0.3,0.23
 twTetSOCDS:SOL-S,2.97,4.08
 twTetSOCDS:SOL-FR,4.08,6.71
 twTetSOCDS:SOL-FF,6.71,8.73
-EMGAmplitude:SOL-S,0.001,0.061
-EMGAmplitude:SOL-FR,0.061,0.082
-EMGAmplitude:SOL-FF,0.082,0.1
+EMGAmplitude:SOL-S,0.003,0.19
+EMGAmplitude:SOL-FR,0.19,0.25
+EMGAmplitude:SOL-FF,0.25,0.3
 EMGDuration:SOL-S,0.8,0.7
 EMGDuration:SOL-FR,0.7,0.6
 EMGDuration:SOL-FF,0.6,0.5
@@ -206,18 +207,13 @@ axonDelayRefPeriod_PTN,5,
 %% RC
 % Afferents
 axonDelayCondVel:Ia-SOL-,55,66
-axonDelayThreshold:Ia-SOL-,18,8
+axonDelayThreshold:Ia-SOL-,18,9
 axonDelayLeakTimeConstant:Ia-SOL-,10,10
 threshold:Ia-SOL,12.35,19
 axonDelayCondVel:Ia-LG-,55,66
-axonDelayThreshold:Ia-LG-,18,8
+axonDelayThreshold:Ia-LG-,18,9
 axonDelayLeakTimeConstant:Ia-LG-,10,10
 threshold:Ia-LG,12.35,19
-GammaOrder_Ia-SOL,25,
-GammaOrder_Ia-LG,25,
-frequencyThreshold:Ia-SOL-,0,50
-frequencyThreshold:Ia-LG-,0,50
-frequencyThreshold:Ia-TA-,0,50
 % Muscles
 %% SOL
 thickness:SOL,18.4,
@@ -263,7 +259,7 @@ LNSrChain,0.0423,
 LNPrBag2,0.89,
 LNPrChain,0.89,
 SOcclusionFactor,0.156,
-%Moment Arm
+%Moment-arm
 %% SOL
 m0:SOL,0.32284,
 m1:SOL,7.2186e-4,

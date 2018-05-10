@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2018  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -91,7 +91,10 @@ class Configuration(object):
                 self.EMGWidening_mm1 = float(self.confArray[i][1])
             if self.confArray[i][0] == 'EMGNoiseEMG':
                 ## EMG widening factor.
-                self.EMGNoiseEMG = float(self.confArray[i][1])    
+                self.EMGNoiseEMG = float(self.confArray[i][1])
+            if self.confArray[i][0] == 'MUParameterDistribution':
+                ## Distribution of the parameters along the motor units.
+                self.MUParameterDistribution = self.confArray[i][1]
         ## The variable  timeStep divided by two, for computational efficiency.
         self.timeStepByTwo_ms = self.timeStep_ms / 2.0; 
         ## The variable  timeStep divided by six, for computational efficiency.
@@ -137,28 +140,53 @@ class Configuration(object):
                     
         paramVec_S, paramVec_FR, paramVec_FF, paramVec = np.array([]),np.array([]), np.array([]), np.array([])
 
-                                
+        
         for i in xrange(0, len(self.confArray)):
             if self.confArray[i][0] == paramTag:
                 if (self.confArray[0][2] == ''):                       
                     return self.confArray[i][1]
             else:
-                if self.confArray[i][0] == paramTag + ':' + pool + '-S':
-                    paramVec_S = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_S)
-                    paramVec = paramVec_S
-                elif self.confArray[i][0] == paramTag + ':' + pool + '-FR':
-                    paramVec_FR = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FR)
-                elif self.confArray[i][0] == paramTag + ':' + pool + '-FF':
-                    paramVec_FF = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FF)
-                elif self.confArray[i][0] == paramTag + ':' + pool + '-':
-                    paramVec = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), Nnumber)                    
-
+                if self.MUParameterDistribution == 'linear':       
+                    if self.confArray[i][0] == paramTag + ':' + pool + '-S':
+                        paramVec_S = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_S)
+                        paramVec_S = paramVec_S + np.random.randn(len(paramVec_S))
+                        paramVec = paramVec_S
+                    elif self.confArray[i][0] == paramTag + ':' + pool + '-FR':
+                        paramVec_FR = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FR)
+                    elif self.confArray[i][0] == paramTag + ':' + pool + '-FF':
+                        paramVec_FF = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FF)
+                    elif self.confArray[i][0] == paramTag + ':' + pool + '-':
+                        paramVec = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), Nnumber)                    
+                elif self.MUParameterDistribution == 'exponential':           
+                    if self.confArray[i][0] == paramTag + ':' + pool + '-S':
+                        paramVec_S = np.array([float(self.confArray[i][1]), float(self.confArray[i][2])])
+                    elif self.confArray[i][0] == paramTag + ':' + pool + '-FR':
+                        paramVec_FR = np.array([float(self.confArray[i][1]), float(self.confArray[i][2])])
+                    elif self.confArray[i][0] == paramTag + ':' + pool + '-FF':
+                        paramVec_FF = np.array([float(self.confArray[i][1]), float(self.confArray[i][2])])
+                    elif self.confArray[i][0] == paramTag + ':' + pool + '-':
+                        try:
+                            paramVec = float(self.confArray[i][1])*np.exp(1.0/Nnumber*np.log(float(self.confArray[i][2])/float(self.confArray[i][1])) * np.linspace(0,Nnumber,Nnumber))
+                        except ZeroDivisionError:
+                            paramVec = np.exp(1.0/Nnumber*np.log(float(self.confArray[i][2]) + 1) * np.linspace(0,Nnumber,Nnumber)) - 1
         
-        if paramVec_FR.size > 0:
-            paramVec = np.hstack((paramVec, paramVec_FR))
-            if paramVec_FF.size > 0:
-                paramVec = np.hstack((paramVec, paramVec_FF))
-
+        if self.MUParameterDistribution == 'linear':           
+            if paramVec_FR.size > 0:
+                paramVec = np.hstack((paramVec, paramVec_FR))
+                if paramVec_FF.size > 0:
+                    paramVec = np.hstack((paramVec, paramVec_FF))
+        elif self.MUParameterDistribution == 'exponential':           
+            if paramVec_S.size > 0:
+                indexUnits = np.linspace(0,Nnumber, Nnumber)
+                if paramTag == 'twitchPeak':
+                    paramVec = paramVec_S[0]*np.exp(1.0/Nnumber*np.log(paramVec_FF[1]/paramVec_S[0]) * np.linspace(0,Nnumber,Nnumber))   
+                else:
+                    paramVec = ((paramVec_S[0] - (paramVec_S[1]+paramVec_FR[0])/2.0) * np.exp(-5.0*indexUnits/MUnumber_S)
+                                + ((paramVec_S[1]+paramVec_FR[0])/2.0 - paramVec_FF[1]) 
+                                * (1 - np.exp(1.0/MUnumber_FF*np.log(((paramVec_FR[1]+paramVec_FF[0])/2.0 - (paramVec_S[1] + paramVec_FR[0])/2.0)/(paramVec_FF[1]- (paramVec_S[1]+paramVec_FR[0])/2.0)) * (Nnumber - indexUnits)))
+                                + paramVec_FF[1]) 
+                
+        
         return paramVec[index]
 
     def inputFunctionGet(self, function):

@@ -50,6 +50,32 @@ class MuscleNoHill(object):
         self.lengthNorm = 1
         self.velocityNorm = 0
         self.accelerationNorm = 0 
+
+        ##
+        self.momentArm_m = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
+
+        ##  
+        self.m0 = float(self.conf.parameterSet('m0:' + pool, pool, 0))       
+        ##  
+        self.m1 = float(self.conf.parameterSet('m1:' + pool, pool, 0))
+        ##  
+        self.m2 = float(self.conf.parameterSet('m2:' + pool, pool, 0))
+        ##  
+        self.m3 = float(self.conf.parameterSet('m3:' + pool, pool, 0))
+        ##  
+        self.m4 = float(self.conf.parameterSet('m4:' + pool, pool, 0))
+
+        ##  
+        self.n0 = float(self.conf.parameterSet('n0:' + pool, pool, 0))       
+        ##  
+        self.n1 = float(self.conf.parameterSet('n1:' + pool, pool, 0))
+        ##  
+        self.n2 = float(self.conf.parameterSet('n2:' + pool, pool, 0))
+        ##  
+        self.n3 = float(self.conf.parameterSet('n3:' + pool, pool, 0))
+        ##  
+        self.n4 = float(self.conf.parameterSet('n4:' + pool, pool, 0))
+
     #@profile    
     def atualizeForce(self, activation_Sat):
         '''
@@ -73,6 +99,18 @@ class MuscleNoHill(object):
         '''
         self.force[self.timeIndex] = np.vdot(activation_Sat, self.maximumActivationForce)
         self.timeIndex += 1
+
+    def atualizeMusculoTendonLength(self, ankleAngle):
+        '''
+        '''
+        pass
+
+    def atualizeMomentArm(self, ankleAngle):
+        '''
+        '''
+        self.momentArm_m[self.timeIndex] = (self.n0 + self.n1 * ankleAngle + self.n2 * (ankleAngle ** 2) + 
+                                                      self.n3 * (ankleAngle ** 3) + self.n4 * (ankleAngle ** 4))
+
 
     def reset(self):
         '''

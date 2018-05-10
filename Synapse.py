@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2017  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,8 +22,6 @@ import math
 import numpy as np
 #from numba import jit
 from collections import deque
-
-
 
 #@jit
 def compRon(Non, rInf, Ron, t0, t, tauOn):
@@ -454,20 +452,15 @@ class Synapse(object):
 
         - Inputs:
             + **t**: current instant, in ms.
-        '''
-        
-        
+        '''   
         
         self.Ron = self.Ron * self.ExpOn + self.Non * self.rInf * (1 - self.ExpOn)
-        self.Roff *= self.ExpOff
-        
-        
+        self.Roff *= self.ExpOff       
         
         idxBeginPulse = []
         
         while len(self.inQueue) and  -1e-3 < t - self.tBeginOfPulse[self.inQueue[0]] < 1e-3:
             idxBeginPulse.append(self.inQueue.popleft())
-            
 
         idxEndPulse = []
                 
@@ -490,25 +483,20 @@ class Synapse(object):
 
             + **idxBeginPulse**: integer with the index of the conductance
                 that the pulse begin at time **t**.
-        '''
-
-        gmax = self.gmax_muS
-        lastPulse = self.tLastPulse
-        timeConstant = self.timeConstant_ms
+        '''      
+        
         dynG = self.dynamicGmax
-        var = self.variation
         condState = self.conductanceState
         ri = self.ri
-        tPeak = self.tPeak_ms
         ti = self.ti
         synCont = self.synContrib
 
         dynG[idxBeginPulse] = compDynamicGmax(t,
-                                              gmax[idxBeginPulse],
-                                              lastPulse[idxBeginPulse],
-                                              timeConstant[idxBeginPulse],
+                                              self.gmax_muS[idxBeginPulse],
+                                              self.tLastPulse[idxBeginPulse],
+                                              self.timeConstant_ms[idxBeginPulse],
                                               dynG[idxBeginPulse],
-                                              var[idxBeginPulse]
+                                              self.variation[idxBeginPulse]
                                              )
         synCont[idxBeginPulse] = dynG[idxBeginPulse] / self.gMaxTot_muS
         for i in np.where(condState[idxBeginPulse])[0]: self.outQueue.remove(idxBeginPulse[i])
@@ -516,7 +504,7 @@ class Synapse(object):
         idxTurningOnCond = np.array(idxBeginPulse)[np.where(np.logical_not(condState[idxBeginPulse]))[0]]
         if len(idxTurningOnCond):
             condState[idxTurningOnCond] = 1
-            ri[idxTurningOnCond] *= np.exp((ti[idxTurningOnCond] + tPeak - t) / self.tauOff)
+            ri[idxTurningOnCond] *= np.exp((ti[idxTurningOnCond] + self.tPeak_ms - t) / self.tauOff)
             self.Non += np.sum(synCont[idxTurningOnCond])
             ti[idxTurningOnCond] = t
             synGain = np.dot(ri[idxTurningOnCond], synCont[idxTurningOnCond])

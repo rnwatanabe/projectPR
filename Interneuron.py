@@ -179,52 +179,26 @@ class Interneuron(object):
         self.indicesOfSynapsesOnTarget = []
         
     
-    def atualizeInterneuron(self, t):
+    def atualizeInterneuron(self, t, v_mV):
         '''
         Atualize the dynamical and nondynamical (delay) parts of the motor unit.
 
         - Inputs:
             + **t**: current instant, in ms.
         '''
-        self.atualizeCompartments(t)
+        self.atualizeCompartments(t, v_mV)
 
-    def atualizeCompartments(self, t):
+    def atualizeCompartments(self, t, v_mV):
         '''
         Atualize all neural compartments.
 
         - Inputs:
             + **t**: current instant, in ms.
         '''
-        np.clip(runge_kutta(self.dVdt, t, self.v_mV,
-                            self.conf.timeStep_ms, self.conf.timeStepByTwo_ms,
-                            self.conf.timeStepBySix_ms),
-                -16.0, 120.0, self.v_mV)
+        self.v_mV[:] = v_mV
+
         if self.v_mV[self.somaIndex] > self.threshold_mV and t-self.tSomaSpike > self.RefPer_ms:
             self.addSomaSpike(t)
-
-    def dVdt(self, t, V):
-        '''
-        Compute the potential derivative of all compartments of the motor unit.
-
-        - Inputs:
-            + **t**: current instant, in ms.
-
-            + **V**: Vector with the current potential value of all neural
-            compartments of the motor unit.
-
-        \f{equation}{
-            \frac{dV}{dt} = (I_{active} + GV + I_{inj})C_inv
-        }
-        where all the variables are vectors with the number of elements equal
-        to the number of compartments and \f$G\f$ is the conductance matrix built
-        in the compGCouplingMatrix function.
-        '''
-        for compartment in xrange(0, self.compNumber):
-            self.iIonic.itemset(compartment,
-                                self.compartment[compartment].computeCurrent(t,
-                                                                             V.item(compartment)))
-
-        return (self.iIonic + np.dot(self.G, V)  + self.iInjected + self.EqCurrent_nA) * self.capacitanceInv
 
     def addSomaSpike(self, t):
         '''
@@ -242,10 +216,10 @@ class Interneuron(object):
 
     def transmitSpikes(self, t):
         '''
-
         - Inputs:
             + **t**: current instant, in ms.
         '''
+        
         for i in xrange(len(self.indicesOfSynapsesOnTarget)):
             self.transmitSpikesThroughSynapses[i].receiveSpike(t, self.indicesOfSynapsesOnTarget[i])
 

@@ -24,6 +24,14 @@ from scipy.sparse import lil_matrix
 
  
 
+def runge_kutta(derivativeFunction,t, x, timeStep, timeStepByTwo, timeStepBySix):
+    k1 = derivativeFunction(t, x)
+    k2 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k1)
+    k3 = derivativeFunction(t + timeStepByTwo, x + timeStepByTwo * k2)
+    k4 = derivativeFunction(t + timeStep, x + timeStep * k3)
+    
+    return x + timeStepBySix * (np.add(np.add(np.add(k1, k2, order = 'C'), np.add(k2, k3, order='C')), np.add(k3, k4, order='C'), order='C'))
+
 class InterneuronPool(object):
     '''
     Class that implements a motor unit pool. Encompasses a set of motor
@@ -60,6 +68,42 @@ class InterneuronPool(object):
         ## Vector with the instants of spikes in the soma compartment, in ms.
         self.poolSomaSpikes = np.array([])
         ##
+
+        # This is used to get values from Interneuron.py and make computations
+        # in InterneuronPool.py
+        # TODO create it all here instead?
+        self.totalNumberOfCompartments = 0
+
+        for i in xrange(self.Nnumber):
+            self.totalNumberOfCompartments = self.totalNumberOfCompartments \
+                + self.unit[i].compNumber
+
+        self.v_mV = np.zeros((self.totalNumberOfCompartments),
+                             dtype = np.double)
+             
+        self.G = lil_matrix((self.totalNumberOfCompartments,
+                          self.totalNumberOfCompartments), dtype = float)
+        self.iInjected = np.zeros_like(self.v_mV, dtype = 'd')
+        self.capacitanceInv = np.zeros_like(self.v_mV, dtype = 'd')
+        self.iIonic = np.full_like(self.v_mV, 0.0)
+        self.EqCurrent_nA = np.zeros_like(self.v_mV, dtype = 'd')
+
+        # Retrieving data from Interneuron class
+        for i in xrange(self.Nnumber):
+            self.v_mV[i*self.unit[i].compNumber:i*self.unit[i].compNumber \
+                    +self.unit[i].v_mV.shape[0]] = self.unit[i].v_mV
+            # With only one compartment, it is a diagonal matrix
+            self.G[i,i] = self.unit[i].G
+            self.capacitanceInv[i*self.unit[i].compNumber: \
+                    i*self.unit[i].compNumber \
+                    +self.unit[i].capacitanceInv.shape[0]] \
+                    = self.unit[i].capacitanceInv
+            self.EqCurrent_nA[i*self.unit[i].compNumber: \
+                    i*self.unit[i].compNumber \
+                    +self.unit[i].EqCurrent_nA.shape[0]] \
+                    = self.unit[i].EqCurrent_nA
+
+
         print 'Interneuron Pool of ' + pool + ' ' + group + ' built'
 
     def atualizeInterneuronPool(self, t):
@@ -73,7 +117,30 @@ class InterneuronPool(object):
 
         '''
         
-        for i in xrange(len(self.unit)): self.unit[i].atualizeInterneuron(t)
+        np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.conf.timeStep_ms,
+                            self.conf.timeStepByTwo_ms,
+                            self.conf.timeStepBySix_ms),
+                            -30.0, 120.0, self.v_mV)
+        
+        for i in xrange(self.Nnumber):
+            self.unit[i].atualizeInterneuron(t, self.v_mV[i*self.unit[i].compNumber:(i+1)*self.unit[i].compNumber])
+
+    def dVdt(self, t, V): 
+        #k = 0
+        for i in xrange(self.Nnumber):
+            for j in xrange(self.unit[i].compNumber):
+                self.iIonic.itemset(i*self.unit[0].compNumber+j,
+                                    self.unit[i].compartment[j].computeCurrent(t,
+                                                                               V.item(i*self.unit[0].compNumber+j)))
+                #k += 1
+        return (self.iIonic + self.G.dot(V) + self.iInjected
+                + self.EqCurrent_nA) * self.capacitanceInv
+        '''
+        self.GPU.csrmv('N', self.m, self.n, self.nnz,  1.0, self.descr, self.csrVal, self.csrRowPtr, self.csrColInd, V, 0.0, self.dVdtValue)              
+        
+        return (self.iIonic + self.dVdtValue + self.iInjected
+                + self.EqCurrent_nA) * self.capacitanceInv
+        '''
 
     def listSpikes(self):
         '''

@@ -85,6 +85,7 @@ class AxonDelay(object):
         self.refractoryPeriod_ms = float(conf.parameterSet('axonDelayRefPeriod_' + nerve, pool, index))
 
         self.leakageTimeConstant_ms = float(conf.parameterSet('axonDelayLeakTimeConstant', pool, index))
+        
     def addTerminalSpike(self, t, latency):
         '''
         Indicates to the AxonDelay object that a spike has occurred in the Terminal.

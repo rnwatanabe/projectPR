@@ -48,7 +48,8 @@ class MuscleHill(object):
 
         ## This is used for normalization purposes. It is the maximum force that
         ## the muscle reach when the Hill model is not used. 
-        self.maximumActivationForce = sum(self.twitchAmp_N * self.twTet)    
+        self.maximumActivationForce = sum(self.twitchAmp_N * self.twTet)   
+        print(self.maximumActivationForce) 
         ## Muscle force along time, in N.
         self.force = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         ##
@@ -200,7 +201,6 @@ class MuscleHill(object):
         }
         where \f$N_{MU}\f$ is the number of motor units in the pool.
         '''
-        
         self.atualizeActivation(activation_Sat)
         self.lengthNorm = self.length_m[self.timeIndex] / self.optimalLength_m
         self.velocityNorm = self.velocity_m_ms[self.timeIndex] / self.optimalLength_m

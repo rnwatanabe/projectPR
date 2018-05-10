@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2018  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    Contact: renato.watanabe@usp.br
+    Contact: renato.watanabe@ufabc.edu.br
 '''
 
 
@@ -29,16 +29,14 @@ import math
 
 
 #@jit
-def  gammaPoint(GammaOrder, GammaOrderInv):
+def  gammaPoint(GammaOrder):
     '''
     Generates a number according to a Gamma Distribution with an integer order **GammaOrder**.
 
     - Inputs:
         + **GammaOrder**: integer order of the Gamma distribution.
 
-        + **GammaOrderInv**:  inverse of the GammaOrder. This is necessary
-                                for computational efficiency.
-
+       
     - Outputs:
         + The number generated from the Gamma distribution.
 
@@ -54,14 +52,14 @@ def  gammaPoint(GammaOrder, GammaOrderInv):
      
      
 
-    return - GammaOrderInv * np.log(np.prod(numpy.random.uniform(0.0, 1.0, size=GammaOrder)))
+    return - 1.0/GammaOrder * np.log(np.prod(numpy.random.uniform(0.0, 1.0, size=GammaOrder)))
 
 class PointProcessGenerator(object):
     '''
     Generator of point processes.
     '''
     
-    def __init__(self, GammaOrder, index):
+    def __init__(self,  index):
         '''
         Constructor
 
@@ -70,25 +68,20 @@ class PointProcessGenerator(object):
 
             + **index**: integer corresponding to the unit order in the pool.
         '''
-        ## Integer order of the Gamma distribution. 
-        ## Gamma order 1 is Poisson process and order 10 is a Gaussian process.
-        self.GammaOrder = int(GammaOrder)
-        ## Inverse of the GammaOrder. This is necessary
-        ## for computational efficiency.
-        self.GammaOrderInv = 1.0 / GammaOrder
+       
         ## Integer corresponding to the unit order in the pool to which this
         ## generator is associated.
         self.index = index
 
         ## Auxiliary variable cummulating a value that indicates
         ## whether there will be a new spike or not.
-        self.threshold = gammaPoint(self.GammaOrder, self.GammaOrderInv)
+        self.threshold = gammaPoint(1)
 
         
         ## List of spike instants of the generator.
         self.points = []
 
-    def atualizeGenerator(self, t, firingRate):
+    def atualizeGenerator(self, t, firingRate, GammaOrder):
         '''
 
         - Inputs:
@@ -96,8 +89,12 @@ class PointProcessGenerator(object):
 
             + **firingRate**: instant firing rate, in spikes/s.
         '''
-        self.threshold -= firingRate
         if self.threshold <= 0 and t != 0:
             self.points.append([t, self.index])
-            self.threshold = gammaPoint(self.GammaOrder, self.GammaOrderInv)
+            self.threshold = gammaPoint(GammaOrder)
+        self.threshold -= firingRate
+
+    def reset(self):
+        self.points = []
+        self.threshold = gammaPoint(1)
             

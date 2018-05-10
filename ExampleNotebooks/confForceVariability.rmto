@@ -22,6 +22,7 @@ nerveLength_PTN,0.8,
 nerveLength_CPN,0.8,
 MNSomaRefPer,5.0,
 skinThickness,1.5,
+MUParameterDistribution,exponential,
 MUSpatialDistribution,random,
 EMGAttenuationFactor,5,
 EMGWideningFactor,0.1,
@@ -29,9 +30,8 @@ EMGNoiseEMG,0.7,
 AFRefPer,5.0,
 % Model options
 activationModel,SOCDS,
-hillModel,Yes,
+hillModel,No,
 StateType,pulse,
-MUParameterDistribution,linear,
 % Inputs
 GammaOrder_CMExt,10,
 DriveTarget_CMExt,ISI,
@@ -214,9 +214,9 @@ EqPot@dendrite,0,
 EqPot@soma,0,
 IPump@dendrite,0,
 IPump@soma,0,
-twitchTimePeak:SOL-S,170.0,132.5
-twitchTimePeak:SOL-FR,135.5,100.5
-twitchTimePeak:SOL-FF,100.5,86
+twitchTimePeak:SOL-S,170.0,90
+twitchTimePeak:SOL-FR,90,85
+twitchTimePeak:SOL-FF,85,80
 twitchPeak:SOL-S,0.03,1.9
 twitchPeak:SOL-FR,1.9,2.5
 twitchPeak:SOL-FF,2.5,3
@@ -238,16 +238,16 @@ axonDelayThreshold:SOL-FF,12.2,12.0
 axonDelayCondVel:SOL-S,44,51
 axonDelayCondVel:SOL-FR,51,52
 axonDelayCondVel:SOL-FF,52,53
-axonDelayLeakTimeConstant:SOL-S,10,10
-axonDelayLeakTimeConstant:SOL-FR,10,10
-axonDelayLeakTimeConstant:SOL-FF,10,10
+axonDelayLeakTimeConstant:SOL-S,12,11
+axonDelayLeakTimeConstant:SOL-FR,11,10.5
+axonDelayLeakTimeConstant:SOL-FF,10.5,10
 axonDelayRefPeriod_PTN,5,
 axonDelayRefPeriod_CPN,5,
 % Muscles
 %% SOL
 Fmax:SOL,3586,
 optimalMuscleLength:SOL,0.0490,
-initialMuscleLength:SOL,0.0525,
+initialMuscleLength:SOL,0.0555,
 optimalPennationAngle:SOL,0.4939,
 bTypeI:SOL,2.3,
 bTypeII:SOL,1.55,
@@ -291,11 +291,11 @@ thickness:SOL,18.4,
 % Afferents
 axonDelayCondVel:Ia-SOL-,55,66
 axonDelayThreshold:Ia-SOL-,18,8
-axonDelayLeakTimeConstant:Ia-SOL-,10,10
+axonDelayLeakTimeConstant:Ia-SOL-,12,10
 threshold:Ia-SOL,12.35,19
 axonDelayCondVel:Ia-LG-,55,66
 axonDelayThreshold:Ia-LG-,18,8
-axonDelayLeakTimeConstant:Ia-LG-,10,10
+axonDelayLeakTimeConstant:Ia-LG-,12,10
 threshold:Ia-LG,12.35,19
 GammaOrder_Ia-SOL,25,
 GammaOrder_Ia-LG,25,
@@ -456,9 +456,9 @@ res@soma:MG-S,1150,1050
 res@soma:MG-FR,1050,950
 res@soma:MG-FF,950,650
 res@node:MG-S,120,120
-twitchTimePeak:MG-S,110.0,86.5
-twitchTimePeak:MG-FR,86.5,55.25
-twitchTimePeak:MG-FF,55.25,25
+twitchTimePeak:MG-S,110.0,43
+twitchTimePeak:MG-FR,43,31
+twitchTimePeak:MG-FF,31,20
 twitchPeak:MG-S,0.02,1.7
 twitchPeak:MG-FR,1.7,1.9
 twitchPeak:MG-FF,1.9,2.15
@@ -480,9 +480,9 @@ axonDelayThreshold:MG-FF,12.2,12.0
 axonDelayCondVel:MG-S,44,51
 axonDelayCondVel:MG-FR,51,52
 axonDelayCondVel:MG-FF,52,53
-axonDelayLeakTimeConstant:MG-S,10,10
-axonDelayLeakTimeConstant:MG-FR,10,10
-axonDelayLeakTimeConstant:MG-FF,10,10
+axonDelayLeakTimeConstant:MG-S,12,11
+axonDelayLeakTimeConstant:MG-FR,11,10.5
+axonDelayLeakTimeConstant:MG-FF,10.5,10
 % Muscles
 Fmax:MG,1306,
 optimalMuscleLength:MG,0.0570,
@@ -530,7 +530,7 @@ thickness:MG,18.4,
 % Afferents
 axonDelayCondVel:Ia-MG-,55,66
 axonDelayThreshold:Ia-MG-,18,8
-axonDelayLeakTimeConstant:Ia-MG-,10,10
+axonDelayLeakTimeConstant:Ia-MG-,12,10
 threshold:Ia-MG,12.35,19
 GammaOrder_Ia-MG,25,
 frequencyThreshold:Ia-MG-,0,50
@@ -689,9 +689,9 @@ res@soma:LG-S,1150,1050
 res@soma:LG-FR,1050,950
 res@soma:LG-FF,950,650
 res@node:LG-S,120,120
-twitchTimePeak:LG-S,110.0,86.5
-twitchTimePeak:LG-FR,86.5,55.25
-twitchTimePeak:LG-FF,55.25,25
+twitchTimePeak:LG-S,110.0,43
+twitchTimePeak:LG-FR,43,31
+twitchTimePeak:LG-FF,31,20
 twitchPeak:LG-S,0.02,1.7
 twitchPeak:LG-FR,1.7,1.9
 twitchPeak:LG-FF,1.9,2.15
@@ -713,9 +713,9 @@ axonDelayThreshold:LG-FF,12.2,12.0
 axonDelayCondVel:LG-S,44,51
 axonDelayCondVel:LG-FR,51,52
 axonDelayCondVel:LG-FF,52,53
-axonDelayLeakTimeConstant:LG-S,10,10
-axonDelayLeakTimeConstant:LG-FR,10,10
-axonDelayLeakTimeConstant:LG-FF,10,10
+axonDelayLeakTimeConstant:LG-S,12,11
+axonDelayLeakTimeConstant:LG-FR,11,10.5
+axonDelayLeakTimeConstant:LG-FF,10.5,10
 % Muscles
 Fmax:LG,606,
 optimalMuscleLength:LG,0.0640,
@@ -763,7 +763,7 @@ thickness:LG,18.4,
 % Afferents
 axonDelayCondVel:Ia-LG-,55,66
 axonDelayThreshold:Ia-LG-,18,8
-axonDelayLeakTimeConstant:Ia-LG-,10,10
+axonDelayLeakTimeConstant:Ia-LG-,12,10
 threshold:Ia-LG,12.35,19
 GammaOrder_Ia-LG,25,
 frequencyThreshold:Ia-LG-,0,50
@@ -916,9 +916,9 @@ axonDelayThreshold:TA-FF,12.2,12.0
 axonDelayCondVel:TA-S,44,51
 axonDelayCondVel:TA-FR,51,52
 axonDelayCondVel:TA-FF,52,53
-axonDelayLeakTimeConstant:TA-S,10,10
-axonDelayLeakTimeConstant:TA-FR,10,10
-axonDelayLeakTimeConstant:TA-FF,10,10
+axonDelayLeakTimeConstant:TA-S,12,11
+axonDelayLeakTimeConstant:TA-FR,11,10.5
+axonDelayLeakTimeConstant:TA-FF,10.5,10
 % Muscles
 Fmax:TA,674,
 optimalMuscleLength:TA,0.0640,
@@ -966,7 +966,7 @@ thickness:TA,18.4,
 % Afferents
 axonDelayCondVel:Ia-TA-,55,66
 axonDelayThreshold:Ia-TA-,18,8
-axonDelayLeakTimeConstant:Ia-TA-,10,10
+axonDelayLeakTimeConstant:Ia-TA-,12,10
 threshold:Ia-TA,12.35,19
 GammaOrder_Ia-TA,25,
 frequencyThreshold:Ia-TA-,0,50

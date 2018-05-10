@@ -22,10 +22,50 @@ from MuscleNoHill import MuscleNoHill
 from MuscleHill import MuscleHill
 from MuscleSpindle import MuscleSpindle
 from scipy.sparse import lil_matrix
+<<<<<<< HEAD
+=======
+#import pyculib.sparse as pcu
+>>>>>>> pabloAbur-parPool
 import time
 #from numba import jit, prange
 
 
+<<<<<<< HEAD
+=======
+     import numpy as np
+     import scipy.sparse as sparse
+     from ctypes import POINTER,c_void_p,c_int,c_char,c_double,byref,cdll
+     mkl = cdll.LoadLibrary("libmkl_rt.so")
+
+     SpMV = mkl.mkl_cspblas_dbsrgemv
+     # Dissecting the "cspblas_dcsrgemv" name:
+     # "c" - for "c-blas" like interface (as opposed to fortran)
+     #    Also means expects sparse arrays to use 0-based indexing, which python does
+     # "sp"  for sparse
+     # "d"   for double-precision
+     # "csr" for compressed row format
+     # "ge"  for "general", e.g., the matrix has no special structure such as symmetry
+     # "mv"  for "matrix-vector" multiply
+
+     
+
+     # The data of the matrix
+     data    = A.data.ctypes.data_as(POINTER(c_double))
+     indptr  = A.indptr.ctypes.data_as(POINTER(c_int))
+     indices = A.indices.ctypes.data_as(POINTER(c_int))
+
+     # Allocate output, using same conventions as input
+
+     
+     y = np.empty(numberOfBlocks*sizeOfBlock,dtype=np.double,order='F')  
+
+     np_x = x.ctypes.data_as(POINTER(c_double))
+     np_y = y.ctypes.data_as(POINTER(c_double))
+     # now call MKL. This returns the answer in np_y, which links to y
+     SpMV(byref(c_char("N")), byref(c_int(numberOfBlocks)), byref(c_int(sizeOfBlock)), data ,indptr, indices, np_x, np_y ) 
+
+     return y
+>>>>>>> pabloAbur-parPool
 
 def runge_kutta(derivativeFunction,t, x, timeStep, timeStepByTwo, timeStepBySix):
     k1 = derivativeFunction(t, x)
@@ -97,9 +137,13 @@ class MotorUnitPool(object):
         self.iIonic = np.full_like(self.v_mV, 0.0)
         self.EqCurrent_nA = np.zeros_like(self.v_mV, dtype = 'd')
 
+        # Retrieving data from Motorneuron class
+        # Vectors or matrices from Motorneuron compartments are copied,
+        # populating larger vectors or matrices that will be used for computations
         for i in xrange(self.MUnumber):
             self.v_mV[i*self.unit[i].compNumber:i*self.unit[i].compNumber \
                     +self.unit[i].v_mV.shape[0]] = self.unit[i].v_mV
+            # Consists of smaller matrices on its diagonal
             self.G[i*self.unit[i].compNumber:i*self.unit[i].compNumber \
                     +self.unit[i].G.shape[0], \
                     i*self.unit[i].compNumber:i*self.unit[i].compNumber \
@@ -114,7 +158,21 @@ class MotorUnitPool(object):
                     = self.unit[i].EqCurrent_nA
         self.sizeOfBlock = int(self.totalNumberOfCompartments/self.MUnumber)
         self.G = self.G.tobsr(blocksize=(self.sizeOfBlock, self.sizeOfBlock)) 
+<<<<<<< HEAD
         
+=======
+        '''
+        self.G  = pcu.csr_matrix(self.G)
+        self.GPU = pcu.Sparse(0)
+        self.m, self.n = self.GGPU.shape
+        self.nnz = self.GGPU.nnz
+        self.descr = self.GPU.matdescr()
+        self.csrVal = self.GGPU.data
+        self.csrRowPtr = self.GGPU.indptr
+        self.csrColInd = self.GGPU.indices
+        self.dVdtValue = nhep.empty(self.totalNumberOfCompartments,dtype=np.double)  
+        '''
+>>>>>>> pabloAbur-parPool
         ## Vector with the instants of spikes in the soma compartment, in ms.            
         self.poolSomaSpikes = np.array([])
         ## Vector with the instants of spikes in the last dynamical compartment, in ms.
@@ -126,7 +184,7 @@ class MotorUnitPool(object):
         self.Activation = MuscularActivation(self.conf,self.pool, self.MUnumber,self.unit)
         
         #Force
-        ## String indicating whther a Hill model is used or not. For now, it can be *No*.
+        ## String indicating whther a Hill  model is used or not. For now, it can be *No*.
         self.hillModel = conf.parameterSet('hillModel', pool, 0)
         if self.hillModel == 'No': 
             self.Muscle = MuscleNoHill(self.conf, self.pool, self.MUnumber, MUnumber_S, self.unit)
@@ -153,7 +211,7 @@ class MotorUnitPool(object):
         - Inputs:
             + **t**: current instant, in ms.
         '''
-        
+
         np.clip(runge_kutta(self.dVdt, t, self.v_mV, self.conf.timeStep_ms,
                             self.conf.timeStepByTwo_ms,
                             self.conf.timeStepBySix_ms),
@@ -169,17 +227,28 @@ class MotorUnitPool(object):
                                            31, 33)
     
     def dVdt(self, t, V): 
-        #k = 0
+        
         for i in xrange(self.MUnumber):
             for j in xrange(self.unit[i].compNumber):
                 self.iIonic.itemset(i*self.unit[0].compNumber+j,
                                     self.unit[i].compartment[j].computeCurrent(t,
                                                                                V.item(i*self.unit[0].compNumber+j)))
+<<<<<<< HEAD
                 #k += 1
               
         return (self.iIonic + self.G.dot(V) + self.iInjected
                 + self.EqCurrent_nA) * self.capacitanceInv
         
+=======
+        return (self.iIonic + self.G.dot(V) + self.iInjected
+                + self.EqCurrent_nA) * self.capacitanceInv
+        
+        
+             
+        #return (self.iIonic + SpMV_viaMKL(self.G,V,self.MUnumber, self.sizeOfBlock) + self.iInjected
+        #        + self.EqCurrent_nA) * self.capacitanceInv
+       
+>>>>>>> pabloAbur-parPool
 
     def listSpikes(self):
         '''

@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2018  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -35,6 +35,7 @@ class NeuralTract(object):
 
             + **pool**: string with the name of the Neural tract.
         '''
+        self.conf = conf
         ## Indicates that is a neural tract.
         self.kind = 'NT'
         ## String with the name of the Neural tract.
@@ -48,34 +49,28 @@ class NeuralTract(object):
         self.GammaOrder = int(conf.parameterSet('GammaOrder_' + pool, pool, 0))
 
         for i in xrange(0, self.Number): 
-            self.unit[i] = NeuralTractUnit(conf, pool, self.GammaOrder, i)
+            self.unit[i] = NeuralTractUnit(conf, pool, i)
         ## Vector with the instants of spikes in the terminal, in ms.
         self.poolTerminalSpikes = np.array([]) 
         ## Indicates the measure that the TargetFunction of the
         ## spikes follows. For now it can be *ISI* (interspike
         ## interval) or *FR* (firing rate).
-        self.target = conf.parameterSet('DriveTarget_' + pool, pool, 0)
-        if self.target == 'ISI' :       
-            exec 'def DriveFunction(t): return 1000.0/('  +  conf.parameterSet('DriveFunction_' + pool, pool, 0) + ')'
-        else:
-            exec 'def DriveFunction(t): return '   +  conf.parameterSet('DriveFunction_' + pool, pool, 0)
         
         ## The  mean firing rate of the neural tract units. 
-        self.FR = conf.inputFunctionGet(DriveFunction) * conf.timeStep_ms/1000.0
         
         ## 
         self.timeIndex = 0
         ##
         print 'Descending Command ' + pool + ' built'
     
-    def atualizePool(self, t):
+    def atualizePool(self, t, FR, GammaOrder):
         '''
         Update all neural tract units from the neural tract.
         
         - Inputs:
             + **t**: cuurent instant, in ms.
         '''    
-        for i in xrange(self.Number): self.unit[i].atualizeNeuralTractUnit(t, self.FR[self.timeIndex])
+        for i in xrange(self.Number): self.unit[i].atualizeNeuralTractUnit(t, FR*self.conf.timeStep_ms/1000.0, GammaOrder)
         self.timeIndex +=1        
         
     def listSpikes(self):
@@ -91,5 +86,8 @@ class NeuralTract(object):
         self.poolTerminalSpikes = terminalSpikeTrain
             
         self.poolTerminalSpikes = np.reshape(self.poolTerminalSpikes, (-1, 2))
-        
+    
+    def reset(self):
+        for i in xrange(0,self.Number):
+            self.unit[i].reset()    
         

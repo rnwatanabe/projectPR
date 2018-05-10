@@ -456,12 +456,20 @@ class MotorUnit(object):
             self.terminalSpikeTrain.append([t, self.index])
                    
         
+        # Check whether there is antidromic impulse reaching soma or RC
         if self.Delay.indexAntidromicSpike < len(self.Delay.antidromicSpikeTrain) and -1e-2 < (t - self.Delay.antidromicSpikeTrain[self.Delay.indexAntidromicSpike]) < 1e-2: 
+
+            # Considers only MN-RC connections
+            self.transmitSpikes(t)
+            
+            # Refractory period of MN soma
             if t-self.tSpikes[self.somaIndex] > self.MNRefPer_ms:
                 self.tSpikes[self.somaIndex] = t
                 self.somaSpikeTrain.append([t, int(self.index)])
-                self.transmitSpikes(t)
                 self.Delay.indexAntidromicSpike += 1
+                for channel in self.compartment[self.somaIndex].Channels:
+                    for channelState in channel.condState: channelState.changeState(t)    
+           
         
         if self.stimulusCompartment == 'delay':
             self.Delay.atualizeStimulus(t, self.nerveStimulus_mA[int(np.rint(t/self.conf.timeStep_ms))])
@@ -516,7 +524,7 @@ class MotorUnit(object):
         for i in xrange(len(self.nerveStimulus_mA)):
             if (i * self.conf.timeStep_ms >= self.stimulusStart_ms and  i * self.conf.timeStep_ms <= self.stimulusStop_ms):
                 if (i * self.conf.timeStep_ms > self.stimulusModulationStart_ms and  i * self.conf.timeStep_ms < self.stimulusModulationStop_ms):
-                    stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz + axonStimModulation(i * self.conf.timeStep_ms)
+                    stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz + self.axonStimModulation(i * self.conf.timeStep_ms)
                 else:
                     stimulusFrequency_Hz = self.stimulusMeanFrequency_Hz
                 if stimulusFrequency_Hz > 0:

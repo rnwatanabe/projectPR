@@ -1,6 +1,5 @@
 '''
 Created on Sep 30, 2015
-
 @author: root
 '''
 
@@ -63,24 +62,21 @@ def simulator():
     plt.figure()
     plt.plot(pools[0].poolSomaSpikes[:, 0],
              pools[0].poolSomaSpikes[:, 1]+1, '.')
-
     plt.figure()
     plt.plot(t, pools[0].Muscle.force, '-')
-
     plt.figure()
     plt.plot(t, dendV, '-')
-
     plt.figure()
     plt.plot(t, somaV, '-')
     '''
 if __name__ == '__main__':
 
-    #cProfile.run('simulator()', sort = 'tottime')
+    cProfile.run('simulator()', sort = 'tottime')
     
     np.__config__.show()
     
     
-    simulator()
+    #simulator()
     '''
     plt.show()
     '''

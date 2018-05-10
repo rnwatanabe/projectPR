@@ -4,4 +4,9 @@ simDuration,10000,
 % Inputs
 GammaOrder_CMExt,1,
 DriveTarget_CMExt,FR,
+<<<<<<< HEAD
 DriveFunction_CMExt,100+0*t,
+=======
+DriveFunction_CMExt,7+0*t,
+MUParameterDistribution,linear,
+>>>>>>> pabloAbur-parPool
