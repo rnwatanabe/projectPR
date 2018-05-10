@@ -149,6 +149,7 @@ class Configuration(object):
                 if self.MUParameterDistribution == 'linear':       
                     if self.confArray[i][0] == paramTag + ':' + pool + '-S':
                         paramVec_S = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_S)
+                        paramVec_S = paramVec_S + np.random.randn(len(paramVec_S))
                         paramVec = paramVec_S
                     elif self.confArray[i][0] == paramTag + ':' + pool + '-FR':
                         paramVec_FR = np.linspace(float(self.confArray[i][1]), float(self.confArray[i][2]), MUnumber_FR)
