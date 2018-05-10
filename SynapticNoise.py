@@ -46,10 +46,12 @@ class SynapticNoise(object):
         ## List of NeuralTractUnit objects.
         self.unit = [] 
         
+        self.conf = conf
+        
         self.GammaOrder = int(conf.parameterSet('NoiseGammaOrder_' + pool, pool, 0))
 
         for i in xrange(0, self.Number): 
-            self.unit.append(NeuralTractUnit(conf, pool, self.GammaOrder, i))
+            self.unit.append(NeuralTractUnit(conf, pool, i))
         ## Vector with the instants of spikes in the terminal, in ms.
         self.poolTerminalSpikes = np.array([])
         ## Indicates the measure that the TargetFunction of the
@@ -79,7 +81,7 @@ class SynapticNoise(object):
         '''
         
 
-        for i in self.unit: i.atualizeNeuralTractUnit(t, self.FR[self.timeIndex])
+        for i in self.unit: i.atualizeNeuralTractUnit(t, self.FR[self.timeIndex]*self.conf.timeStep_ms/1000.0, self.GammaOrder)
         self.timeIndex +=1
 
     def listSpikes(self):

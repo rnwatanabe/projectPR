@@ -16,6 +16,7 @@ EMGNoiseEMG,0.7,
 activationModel,SOCDS,
 hillModel,Yes,
 StateType,pulse,
+MUParameterDistribution,linear,
 % Inputs
 GammaOrder_CMExt,10,
 DriveTarget_CMExt,ISI,

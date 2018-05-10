@@ -24,6 +24,7 @@ activationModel,SOCDS,
 hillModel,No,
 EMGModel,HR,
 StateType,pulse,
+MUParameterDistribution,linear,
 % Inputs
 %Stimulus
 stimDistToTerm_PTN,0.2,
@@ -330,3 +331,15 @@ LNSrChain,0.0423,
 LNPrBag2,0.89,
 LNPrChain,0.89,
 SOcclusionFactor,0.156,
+%Moment-arm
+%% SOL
+m0:SOL,0.32284,
+m1:SOL,7.2186e-4,
+m2:SOL,-2.2431e-6,
+m3:SOL,-3.1478e-8,
+m4:SOL,9.2739e-11,
+n0:SOL,-0.041363,
+n1:SOL,2.5739e-4,
+n2:SOL,5.4507e-6,
+n3:SOL,-2.2185e-8,
+n4:SOL,-5.4944e-11,
