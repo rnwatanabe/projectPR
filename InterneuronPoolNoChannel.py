@@ -20,7 +20,7 @@
 '''
 
 import numpy as np
-from Interneuron import Interneuron
+from InterneuronNoChannel import InterneuronNoChannel
 from scipy.sparse import lil_matrix
 
  
@@ -33,7 +33,7 @@ def runge_kutta(derivativeFunction,t, x, timeStep, timeStepByTwo, timeStepBySix)
     
     return x + timeStepBySix * (np.add(np.add(np.add(k1, k2, order = 'C'), np.add(k2, k3, order='C')), np.add(k3, k4, order='C'), order='C'))
 
-class InterneuronPool(object):
+class InterneuronPoolNoChannel(object):
     '''
     Class that implements a motor unit pool. Encompasses a set of motor
     units that controls a single  muscle.
@@ -64,7 +64,7 @@ class InterneuronPool(object):
         self.unit = dict()
 
         for i in xrange(0, self.Nnumber):
-            self.unit[i] = Interneuron(conf, self.pool, i)
+            self.unit[i] = InterneuronNoChannel(conf, self.pool, i)
 
         ## Vector with the instants of spikes in the soma compartment, in ms.
         self.poolSomaSpikes = np.array([])
