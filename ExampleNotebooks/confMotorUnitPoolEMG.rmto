@@ -16,6 +16,7 @@ EMGNoiseEMG,0.7,
 activationModel,SOCDS,
 hillModel,No,
 EMGModel,HR,
+MUParameterDistribution,linear,
 StateType,pulse,
 % Inputs
 GammaOrder_CMExt,10,

@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    Contact: renato.watanabe@usp.br
+    Contact: renato.watanabe@ufabc.edu.br
 '''
 
 
@@ -325,10 +325,10 @@ class AfferentUnit(object):
         ## Vector with the instants of spikes at the terminal.
         self.terminalSpikeTrain = []
         
-        self.GammaOrder = float(conf.parameterSet('GammaOrder_' + self.pool + '-' + self.muscle, pool, 0))
+        self.GammaOrder = int(conf.parameterSet('GammaOrder_' + self.pool + '-' + self.muscle, pool, 0))
         ## A PointProcessGenerator object, corresponding the generator of
         ## spikes of the neural tract unit.   
-        self.spikesGenerator = PointProcessGenerator(self.GammaOrder, index) 
+        self.spikesGenerator = PointProcessGenerator(index) 
         self.proprioceptorSpikeTrain = self.spikesGenerator.points 
         
         ## Build synapses       
@@ -349,7 +349,7 @@ class AfferentUnit(object):
             + **proprioceptorFR**: proprioceptor firing rate, in Hz.
         ''' 
 
-        self.spikesGenerator.atualizeGenerator(t, proprioceptorFR)
+        self.spikesGenerator.atualizeGenerator(t, proprioceptorFR, self.GammaOrder)
         if self.proprioceptorSpikeTrain and -1e-3 < (t - self.proprioceptorSpikeTrain[-1][0]) < 1e-3:
             self.Delay.addSpinalSpike(t)
         if self.compNumber: 

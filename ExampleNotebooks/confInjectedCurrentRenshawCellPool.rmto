@@ -4,6 +4,7 @@ simDuration,1000,
 RC_extSomaRefPer,1.0,
 % Model options
 StateType,pulse,
+MUParameterDistribution,linear,
 % Inputs
 %Stimulus
 %Equilibrium Potential

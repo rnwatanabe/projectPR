@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    Contact: renato.watanabe@usp.br
+    Contact: renato.watanabe@ufabc.edu.br
 '''
 
 
@@ -75,7 +75,7 @@ class PointProcessGenerator(object):
 
         ## Auxiliary variable cummulating a value that indicates
         ## whether there will be a new spike or not.
-        self.threshold = - 1
+        self.threshold = gammaPoint(1)
 
         
         ## List of spike instants of the generator.
@@ -96,5 +96,5 @@ class PointProcessGenerator(object):
 
     def reset(self):
         self.points = []
-        self.threshold = -1
+        self.threshold = gammaPoint(1)
             
