@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    Contact: renato.watanabe@usp.br
+    Contact: renato.watanabe@ufabc.edu.br
 '''
 from NeuralTractUnit import NeuralTractUnit
 import numpy as np
@@ -89,5 +89,6 @@ class NeuralTract(object):
     
     def reset(self):
         for i in xrange(0,self.Number):
-            self.unit[i].reset()    
+            self.unit[i].reset()  
+        self.timeIndex = 0  
         

@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2017  Renato Naville Watanabe
+    Copyright (C) 2018  Renato Naville Watanabe
                         Pablo Alejandro
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -275,6 +275,8 @@ class MotorUnitPool(object):
             self.emg[i] = self.getMotorUnitPoolInstantEMG(i * self.conf.timeStep_ms)
 
 
+
+
     def reset(self):
         '''
         '''
@@ -288,3 +290,4 @@ class MotorUnitPool(object):
         for i in xrange(self.MUnumber): self.unit[i].reset()
         self.Activation.reset()
         self.Muscle.reset()
+

@@ -44,7 +44,7 @@ def simulator():
     for i in xrange(0, len(t)):
         #for j in xrange(len(pools[0].unit)):
         #    pools[0].unit[j].iInjected[1] = 10
-        pools[1].atualizePool(t[i])
+        pools[1].atualizePool(t[i], 80, 10)
         pools[0].atualizeMotorUnitPool(t[i])
         dendV[i] = pools[0].unit[2].v_mV[0]
         somaV[i] = pools[0].unit[2].v_mV[1] 
@@ -71,12 +71,12 @@ def simulator():
     '''
 if __name__ == '__main__':
 
-    cProfile.run('simulator()', sort = 'tottime')
+    #cProfile.run('simulator()', sort = 'tottime')
     
     np.__config__.show()
     
     
-    #simulator()
+    simulator()
     '''
     plt.show()
     '''

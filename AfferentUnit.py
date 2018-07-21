@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2018  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -477,11 +477,11 @@ class AfferentUnit(object):
         self.v_mV = np.zeros((self.compNumber), dtype = np.float64)
         for i in xrange(len(self.compartment)):                                                              
             self.v_mV[i] = self.compartment[i].EqPot_mV
+            self.compartment[i].reset()
         self.Delay.reset()
         self.tSpikes = np.zeros((self.compNumber), dtype = np.float64)
         self.lastCompSpikeTrain = []
         ## Vector with the instants of spikes at the terminal.
-        self.terminalSpikeTrain = []
-
-
+        self.spikesGenerator.reset()
+        self.terminalSpikeTrain = self.spikesGenerator.points
 

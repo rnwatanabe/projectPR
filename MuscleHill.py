@@ -1,6 +1,6 @@
 '''
     Neuromuscular simulator in Python.
-    Copyright (C) 2016  Renato Naville Watanabe
+    Copyright (C) 2018  Renato Naville Watanabe
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -334,6 +334,7 @@ class MuscleHill(object):
 
         '''
         self.timeIndex = 0
+        self.force = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         self.tendonForce_N = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         self.contractileForce_N = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
         self.elasticForce_N = np.zeros((int(np.rint(conf.simDuration_ms/conf.timeStep_ms)), 1), dtype = float)
@@ -352,3 +353,4 @@ class MuscleHill(object):
         self.tendonLengthNorm = 0
         self.forceNorm = 0
         self.tendonForceNorm = 0
+        self.accelerationNorm = 0
