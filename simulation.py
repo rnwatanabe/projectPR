@@ -40,11 +40,14 @@ def simulator():
     internodeV = np.zeros_like(t)
     nodeV = np.zeros_like(t)
 
+    FR_neuralTract = 80
+    GammaOrder_neuralTract = 10
+
     tic = time.time()
     for i in xrange(0, len(t)):
         #for j in xrange(len(pools[0].unit)):
         #    pools[0].unit[j].iInjected[1] = 10
-        pools[1].atualizePool(t[i])
+        pools[1].atualizePool(t[i], FR_neuralTract, GammaOrder_neuralTract)
         pools[0].atualizeMotorUnitPool(t[i])
         dendV[i] = pools[0].unit[2].v_mV[0]
         somaV[i] = pools[0].unit[2].v_mV[1] 
